@@ -1,0 +1,12 @@
+name: Install development tools
+description: GitHub Action for installing development tools
+
+inputs:
+  tool:
+    description: Tools to install (comma-separated list)
+    required: true
+    # default: #publish:tool
+
+runs:
+  using: node16
+  main: main.js
