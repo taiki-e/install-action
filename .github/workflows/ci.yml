@@ -49,9 +49,9 @@ jobs:
       - uses: actions/checkout@v2
         with:
           persist-credentials: false
-      - uses: taiki-e/github-actions/install@main
-        with:
-          tool: prettier,shellcheck,shfmt
+      - uses: taiki-e/install-action@shellcheck
+      - uses: taiki-e/install-action@shfmt
+      - run: npm install prettier
       - run: shfmt -d $(git ls-files '*.sh')
         if: always()
       - run: npx prettier -c $(git ls-files '*.yml')
