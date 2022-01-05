@@ -62,7 +62,6 @@ tools=(
     git push origin main
     git tag "${tag}"
     git push origin --tags
-    sleep 10
 
     version_tag="v${version%%.*}"
     git checkout -b "${version_tag}"
