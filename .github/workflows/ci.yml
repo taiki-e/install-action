@@ -26,14 +26,14 @@ jobs:
           - ubuntu-18.04
         tool:
           - cargo-hack,cargo-llvm-cov,cargo-minimal-versions,parse-changelog,cross,shellcheck,shfmt
-          - cargo-hack@0.5.9,cargo-llvm-cov@0.1.13,cargo-minimal-versions@0.1.0,parse-changelog@0.4.5,cross@0.2.1,shellcheck@0.8.0,shfmt@3.4.2
+          - cargo-hack@0.5.10,cargo-llvm-cov@0.1.13,cargo-minimal-versions@0.1.1,parse-changelog@0.4.6,cross@0.2.1,shellcheck@0.8.0,shfmt@3.4.2
         include:
           - os: macos-10.15
-            tool: cargo-hack@0.5.9,cargo-llvm-cov@0.1.13,cargo-minimal-versions@0.1.0,parse-changelog@0.4.5,cross@0.2.1,shellcheck@0.8.0,shfmt@3.4.2
+            tool: cargo-hack@0.5.10,cargo-llvm-cov@0.1.13,cargo-minimal-versions@0.1.1,parse-changelog@0.4.6,cross@0.2.1,shellcheck@0.8.0,shfmt@3.4.2
           - os: windows-2019
             tool: cargo-hack,cargo-llvm-cov,cargo-minimal-versions,parse-changelog
           - os: windows-2019
-            tool: cargo-hack@0.5.9,cargo-llvm-cov@0.1.13,cargo-minimal-versions@0.1.0,parse-changelog@0.4.5,cross@0.2.1
+            tool: cargo-hack@0.5.10,cargo-llvm-cov@0.1.13,cargo-minimal-versions@0.1.1,parse-changelog@0.4.6,cross@0.2.1
     runs-on: ${{ matrix.os }}
     steps:
       - uses: actions/checkout@v2

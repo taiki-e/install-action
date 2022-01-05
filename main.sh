@@ -61,7 +61,7 @@ for tool in "${tools[@]}"; do
                 # https://github.com/taiki-e/cargo-llvm-cov/releases
                 cargo-llvm-cov) latest_version="0.1.13" ;;
                 # https://github.com/taiki-e/cargo-minimal-versions/releases
-                cargo-minimal-versions) latest_version="0.1.0" ;;
+                cargo-minimal-versions) latest_version="0.1.1" ;;
                 # https://github.com/taiki-e/parse-changelog/releases
                 parse-changelog) latest_version="0.4.6" ;;
                 *) exit 1 ;;
