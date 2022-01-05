@@ -54,11 +54,18 @@ for tool in "${tools[@]}"; do
     tool="${tool%@*}"
     info "installing ${tool}@${version}"
     case "${tool}" in
-        # https://github.com/taiki-e/cargo-hack/releases
-        # https://github.com/taiki-e/cargo-llvm-cov/releases
-        # https://github.com/taiki-e/cargo-minimal-versions/releases
-        # https://github.com/taiki-e/parse-changelog/releases
         cargo-hack | cargo-llvm-cov | cargo-minimal-versions | parse-changelog)
+            case "${tool}" in
+                # https://github.com/taiki-e/cargo-hack/releases
+                cargo-hack) latest_version="0.5.10" ;;
+                # https://github.com/taiki-e/cargo-llvm-cov/releases
+                cargo-llvm-cov) latest_version="0.1.13" ;;
+                # https://github.com/taiki-e/cargo-minimal-versions/releases
+                cargo-minimal-versions) latest_version="0.1.0" ;;
+                # https://github.com/taiki-e/parse-changelog/releases
+                parse-changelog) latest_version="0.4.6" ;;
+                *) exit 1 ;;
+            esac
             repo="taiki-e/${tool}"
             case "${OSTYPE}" in
                 linux*) target="x86_64-unknown-linux-musl" ;;
@@ -67,14 +74,15 @@ for tool in "${tools[@]}"; do
                 *) bail "unsupported OSTYPE '${OSTYPE}' for ${tool}" ;;
             esac
             case "${version}" in
-                latest) url="https://github.com/${repo}/releases/latest/download/${tool}-${target}.tar.gz" ;;
-                *) url="https://github.com/${repo}/releases/download/v${version}/${tool}-${target}.tar.gz" ;;
+                latest) version="${latest_version}" ;;
             esac
+            url="https://github.com/${repo}/releases/download/v${version}/${tool}-${target}.tar.gz"
             retry curl --proto '=https' --tlsv1.2 -fsSL --retry 10 --retry-connrefused "${url}" \
                 | tar xzf - -C ~/.cargo/bin
             ;;
-        # https://github.com/rust-embedded/cross/releases
         cross)
+            # https://github.com/rust-embedded/cross/releases
+            latest_version="0.2.1"
             repo="rust-embedded/cross"
             case "${OSTYPE}" in
                 linux*) target="x86_64-unknown-linux-musl" ;;
@@ -83,15 +91,15 @@ for tool in "${tools[@]}"; do
                 *) bail "unsupported OSTYPE '${OSTYPE}' for ${tool}" ;;
             esac
             case "${version}" in
-                latest) tag=$(retry curl --proto '=https' --tlsv1.2 -fsSL --retry 10 --retry-connrefused https://api.github.com/repos/${repo}/releases/latest | jq -r '.tag_name') ;;
-                *) tag="v${version}" ;;
+                latest) version="${latest_version}" ;;
             esac
-            url="https://github.com/${repo}/releases/download/${tag}/cross-${tag}-${target}.tar.gz"
+            url="https://github.com/${repo}/releases/download/v${version}/cross-v${version}-${target}.tar.gz"
             retry curl --proto '=https' --tlsv1.2 -fsSL --retry 10 --retry-connrefused "${url}" \
                 | tar xzf - -C ~/.cargo/bin
             ;;
-        # https://github.com/koalaman/shellcheck/releases
         shellcheck)
+            # https://github.com/koalaman/shellcheck/releases
+            latest_version="0.8.0"
             repo="koalaman/shellcheck"
             case "${OSTYPE}" in
                 linux*)
@@ -105,14 +113,15 @@ for tool in "${tools[@]}"; do
                 *) bail "unsupported OSTYPE '${OSTYPE}' for ${tool}" ;;
             esac
             case "${version}" in
-                latest) tag="$(retry curl --proto '=https' --tlsv1.2 -fsSL --retry 10 --retry-connrefused https://api.github.com/repos/${repo}/releases/latest | jq -r '.tag_name')" ;;
-                *) tag="v${version}" ;;
+                latest) version="${latest_version}" ;;
             esac
-            retry curl --proto '=https' --tlsv1.2 -fsSL --retry 10 --retry-connrefused "https://github.com/${repo}/releases/download/${tag}/shellcheck-${tag}.${target}.x86_64.tar.xz" \
-                | tar xJf - --strip-components 1 -C /usr/local/bin "shellcheck-${tag}/shellcheck"
+            url="https://github.com/${repo}/releases/download/v${version}/shellcheck-v${version}.${target}.x86_64.tar.xz"
+            retry curl --proto '=https' --tlsv1.2 -fsSL --retry 10 --retry-connrefused "${url}" \
+                | tar xJf - --strip-components 1 -C /usr/local/bin "shellcheck-v${version}/shellcheck"
             ;;
-        # https://github.com/mvdan/sh/releases
         shfmt)
+            # https://github.com/mvdan/sh/releases
+            latest_version="3.4.2"
             repo="mvdan/sh"
             case "${OSTYPE}" in
                 linux*) target="linux_amd64" ;;
@@ -121,10 +130,10 @@ for tool in "${tools[@]}"; do
                 *) bail "unsupported OSTYPE '${OSTYPE}' for ${tool}" ;;
             esac
             case "${version}" in
-                latest) tag="$(retry curl --proto '=https' --tlsv1.2 -fsSL --retry 10 --retry-connrefused https://api.github.com/repos/${repo}/releases/latest | jq -r '.tag_name')" ;;
-                *) tag="v${version}" ;;
+                latest) version="${latest_version}" ;;
             esac
-            retry curl --proto '=https' --tlsv1.2 -fsSL --retry 10 --retry-connrefused -o /usr/local/bin/shfmt "https://github.com/${repo}/releases/download/${tag}/shfmt_${tag}_${target}"
+            url="https://github.com/${repo}/releases/download/v${version}/shfmt_v${version}_${target}"
+            retry curl --proto '=https' --tlsv1.2 -fsSL --retry 10 --retry-connrefused -o /usr/local/bin/shfmt "${url}"
             chmod +x /usr/local/bin/shfmt
             ;;
         *) bail "unsupported tool '${tool}'" ;;

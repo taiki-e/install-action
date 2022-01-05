@@ -10,6 +10,8 @@ Note: In this file, do not use the hard wrap in the middle of a sentence for com
 
 ## [Unreleased]
 
+- Fix error in cases where the release has been created but the binary has not yet been uploaded.
+
 ## [1.0.0] - 2021-12-30
 
 Initial release
