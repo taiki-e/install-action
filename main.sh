@@ -136,6 +136,23 @@ for tool in "${tools[@]}"; do
             retry curl --proto '=https' --tlsv1.2 -fsSL --retry 10 --retry-connrefused -o /usr/local/bin/shfmt "${url}"
             chmod +x /usr/local/bin/shfmt
             ;;
+        valgrind)
+            case "${OSTYPE}" in
+                linux*) ;;
+                darwin* | cygwin* | msys*) bail "${tool} for non-linux is not supported yet by this action" ;;
+                *) bail "unsupported OSTYPE '${OSTYPE}' for ${tool}" ;;
+            esac
+            case "${version}" in
+                latest) ;;
+                *) warn "specifying the version of ${tool} is not supported yet by this action" ;;
+            esac
+            sudo apt-get -o Acquire::Retries=10 -qq update
+            # libc6-dbg is needed to run Valgrind
+            sudo apt-get -o Acquire::Retries=10 -qq -o Dpkg::Use-Pty=0 install -y libc6-dbg
+            # Use snap to install the latest Valgrind
+            # https://snapcraft.io/install/valgrind/ubuntu
+            sudo snap install valgrind --classic
+            ;;
         *) bail "unsupported tool '${tool}'" ;;
     esac
 

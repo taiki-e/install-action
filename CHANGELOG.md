@@ -10,6 +10,8 @@ Note: In this file, do not use the hard wrap in the middle of a sentence for com
 
 ## [Unreleased]
 
+- Support `valgrind`.
+
 ## [1.0.3] - 2022-01-06
 
 - Update `cargo-llvm-cov@latest` to 0.1.15.

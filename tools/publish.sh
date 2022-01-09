@@ -57,6 +57,7 @@ tools=(
     cross
     shellcheck
     shfmt
+    valgrind
 )
 
 (
