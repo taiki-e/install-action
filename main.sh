@@ -153,6 +153,15 @@ for tool in "${tools[@]}"; do
             # https://snapcraft.io/install/valgrind/ubuntu
             sudo snap install valgrind --classic
             ;;
+        wasm-pack)
+            # https://rustwasm.github.io/wasm-pack/installer
+            case "${OSTYPE}" in
+                linux* | darwin*) ;;
+                cygwin* | msys*) bail "${tool} for windows is not supported yet by this action" ;;
+                *) bail "unsupported OSTYPE '${OSTYPE}' for ${tool}" ;;
+            esac
+            retry curl --proto '=https' --tlsv1.2 -fsSL --retry 10 --retry-connrefused https://rustwasm.github.io/wasm-pack/installer/init.sh | sh
+            ;;
         *) bail "unsupported tool '${tool}'" ;;
     esac
 

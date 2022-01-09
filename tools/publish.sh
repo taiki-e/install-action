@@ -58,6 +58,7 @@ tools=(
     shellcheck
     shfmt
     valgrind
+    wasm-pack
 )
 
 (

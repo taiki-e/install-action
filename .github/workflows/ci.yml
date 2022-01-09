@@ -25,16 +25,14 @@ jobs:
         os:
           - ubuntu-18.04
         tool:
-          # NOTE: Specifying the version of valgrind is not supported.
-          - cargo-hack,cargo-llvm-cov,cargo-minimal-versions,parse-changelog,cross,shellcheck,shfmt,valgrind
+          # NOTE: Specifying the version of valgrind and wasm-pack is not supported.
+          - cargo-hack,cargo-llvm-cov,cargo-minimal-versions,parse-changelog,cross,shellcheck,shfmt,valgrind,wasm-pack
           - cargo-hack@0.5.10,cargo-llvm-cov@0.1.15,cargo-minimal-versions@0.1.1,parse-changelog@0.4.6,cross@0.2.1,shellcheck@0.8.0,shfmt@3.4.2
         include:
           - os: macos-10.15
-            tool: cargo-hack,cargo-llvm-cov,cargo-minimal-versions,parse-changelog,cross,shellcheck,shfmt
+            tool: cargo-hack,cargo-llvm-cov,cargo-minimal-versions,parse-changelog,cross,shellcheck,shfmt,wasm-pack
           - os: windows-2019
-            tool: cargo-hack,cargo-llvm-cov,cargo-minimal-versions,parse-changelog
-          - os: windows-2019
-            tool: cargo-hack@0.5.10,cargo-llvm-cov@0.1.15,cargo-minimal-versions@0.1.1,parse-changelog@0.4.6,cross@0.2.1
+            tool: cargo-hack,cargo-llvm-cov,cargo-minimal-versions,parse-changelog,cross
     runs-on: ${{ matrix.os }}
     steps:
       - uses: actions/checkout@v2
