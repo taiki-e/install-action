@@ -59,6 +59,7 @@ tools=(
     shfmt
     valgrind
     wasm-pack
+    wasmtime
 )
 
 (

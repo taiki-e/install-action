@@ -162,6 +162,23 @@ for tool in "${tools[@]}"; do
             esac
             retry curl --proto '=https' --tlsv1.2 -fsSL --retry 10 --retry-connrefused https://rustwasm.github.io/wasm-pack/installer/init.sh | sh
             ;;
+        wasmtime)
+            # https://github.com/bytecodealliance/wasmtime/releases
+            latest_version="0.33.0"
+            repo="bytecodealliance/wasmtime"
+            case "${OSTYPE}" in
+                linux*) target="x86_64-linux" ;;
+                darwin*) target="x86_64-macos" ;;
+                cygwin* | msys*) bail "${tool} for windows is not supported yet by this action" ;;
+                *) bail "unsupported OSTYPE '${OSTYPE}' for ${tool}" ;;
+            esac
+            case "${version}" in
+                latest) version="${latest_version}" ;;
+            esac
+            url="https://github.com/bytecodealliance/wasmtime/releases/download/v${version}/wasmtime-v${version}-${target}.tar.xz"
+            retry curl --proto '=https' --tlsv1.2 -fsSL --retry 10 --retry-connrefused "${url}" \
+                | tar xJf - --strip-components 1 -C ~/.cargo/bin "wasmtime-v${version}-${target}/wasmtime"
+            ;;
         *) bail "unsupported tool '${tool}'" ;;
     esac
 
