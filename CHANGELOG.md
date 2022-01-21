@@ -10,6 +10,8 @@ Note: In this file, do not use the hard wrap in the middle of a sentence for com
 
 ## [Unreleased]
 
+- Update `cargo-hack@latest` to 0.5.11.
+
 ## [1.1.0] - 2022-01-09
 
 - Support `valgrind`, `wasm-pack`, and `wasmtime`.
