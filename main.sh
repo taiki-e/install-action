@@ -81,9 +81,9 @@ for tool in "${tools[@]}"; do
                 | tar xzf - -C ~/.cargo/bin
             ;;
         cross)
-            # https://github.com/rust-embedded/cross/releases
+            # https://github.com/cross-rs/cross/releases
             latest_version="0.2.1"
-            repo="rust-embedded/cross"
+            repo="cross-rs/cross"
             case "${OSTYPE}" in
                 linux*) target="x86_64-unknown-linux-musl" ;;
                 darwin*) target="x86_64-apple-darwin" ;;
