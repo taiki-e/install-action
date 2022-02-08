@@ -30,23 +30,40 @@ fi
 git diff --exit-code
 git diff --exit-code --staged
 
+# Make sure the same release has not been created in the past.
+if gh release view "${tag}" &>/dev/null; then
+    bail "tag '${tag}' has already been created and pushed"
+fi
+
+release_date=$(date --utc '+%Y-%m-%d')
+if grep <CHANGELOG.md -E "^## \\[${version//./\\.}\\] - ${release_date}$" >/dev/null; then
+    bail "release ${version} already exist in CHANGELOG.md"
+fi
+if grep <CHANGELOG.md -E "^\\[${version//./\\.}\\]: " >/dev/null; then
+    bail "link to ${version} already exist in CHANGELOG.md"
+fi
+
+remote_url=$(grep -E '^\[Unreleased\]: https://' CHANGELOG.md | sed 's/^\[Unreleased\]: //' | sed 's/\.\.\.HEAD$//')
+before_tag=$(sed <<<"${remote_url}" 's/^.*\/compare\///')
+remote_url=$(sed <<<"${remote_url}" 's/\/compare\/v.*$//')
+
+sed -i "s/^## \\[Unreleased\\]/## [Unreleased]\\n\\n## [${version}] - ${release_date}/" CHANGELOG.md
+sed -i "s#^\[Unreleased\]: https://.*#[Unreleased]: ${remote_url}/compare/v${version}...HEAD\\n[${version}]: ${remote_url}/compare/${before_tag}...v${version}#" CHANGELOG.md
+if ! grep <CHANGELOG.md -E "^## \\[${version//./\\.}\\] - ${release_date}$" >/dev/null; then
+    bail "failed to update CHANGELOG.md"
+fi
+if ! grep <CHANGELOG.md -E "^\\[${version//./\\.}\\]: " >/dev/null; then
+    bail "failed to update CHANGELOG.md"
+fi
+
 # Make sure that a valid release note for this version exists.
 # https://github.com/taiki-e/parse-changelog
 echo "============== CHANGELOG =============="
 parse-changelog CHANGELOG.md "${version}"
 echo "======================================="
 
-if ! grep <CHANGELOG.md -E "^## \\[${version//./\\.}\\] - $(date --utc '+%Y-%m-%d')$" >/dev/null; then
-    bail "not found section '[${version}] - $(date --utc '+%Y-%m-%d')' in CHANGELOG.md"
-fi
-if ! grep <CHANGELOG.md -E "^\\[${version//./\\.}\\]: " >/dev/null; then
-    bail "not found link to [${version}] in CHANGELOG.md"
-fi
-
-# Make sure the same release has not been created in the past.
-if gh release view "${tag}" &>/dev/null; then
-    bail "tag '${tag}' has already been created and pushed"
-fi
+git add CHANGELOG.md
+git commit -m "Release ${version}"
 
 tools=(
     cargo-hack
