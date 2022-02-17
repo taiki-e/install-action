@@ -8,7 +8,7 @@ cd "$(dirname "$0")"/..
 # USAGE:
 #    ./tools/publish.sh <VERSION>
 #
-# NOTE:
+# Note:
 # - This script requires parse-changelog <https://github.com/taiki-e/parse-changelog>
 
 bail() {
@@ -31,28 +31,29 @@ git diff --exit-code
 git diff --exit-code --staged
 
 # Make sure the same release has not been created in the past.
-if gh release view "${tag}" &>/dev/null; then
+if gh release view "${tag}" >/dev/null; then
     bail "tag '${tag}' has already been created and pushed"
 fi
 
+# Make sure the same release does not exist in CHANGELOG.md.
 release_date=$(date --utc '+%Y-%m-%d')
-if grep <CHANGELOG.md -E "^## \\[${version//./\\.}\\] - ${release_date}$" >/dev/null; then
+if grep -Eq "^## \\[${version//./\\.}\\] - ${release_date}$" CHANGELOG.md; then
     bail "release ${version} already exist in CHANGELOG.md"
 fi
-if grep <CHANGELOG.md -E "^\\[${version//./\\.}\\]: " >/dev/null; then
+if grep -Eq "^\\[${version//./\\.}\\]: " CHANGELOG.md; then
     bail "link to ${version} already exist in CHANGELOG.md"
 fi
 
+# Update changelog.
 remote_url=$(grep -E '^\[Unreleased\]: https://' CHANGELOG.md | sed 's/^\[Unreleased\]: //' | sed 's/\.\.\.HEAD$//')
 before_tag=$(sed <<<"${remote_url}" 's/^.*\/compare\///')
 remote_url=$(sed <<<"${remote_url}" 's/\/compare\/v.*$//')
-
 sed -i "s/^## \\[Unreleased\\]/## [Unreleased]\\n\\n## [${version}] - ${release_date}/" CHANGELOG.md
 sed -i "s#^\[Unreleased\]: https://.*#[Unreleased]: ${remote_url}/compare/v${version}...HEAD\\n[${version}]: ${remote_url}/compare/${before_tag}...v${version}#" CHANGELOG.md
-if ! grep <CHANGELOG.md -E "^## \\[${version//./\\.}\\] - ${release_date}$" >/dev/null; then
+if ! grep -Eq "^## \\[${version//./\\.}\\] - ${release_date}$" CHANGELOG.md; then
     bail "failed to update CHANGELOG.md"
 fi
-if ! grep <CHANGELOG.md -E "^\\[${version//./\\.}\\]: " >/dev/null; then
+if ! grep -Eq "^\\[${version//./\\.}\\]: " CHANGELOG.md; then
     bail "failed to update CHANGELOG.md"
 fi
 
@@ -62,6 +63,7 @@ echo "============== CHANGELOG =============="
 parse-changelog CHANGELOG.md "${version}"
 echo "======================================="
 
+# Create a release commit.
 git add CHANGELOG.md
 git commit -m "Release ${version}"
 
@@ -88,7 +90,7 @@ tools=(
     version_tag="v${version%%.*}"
     git checkout -b "${version_tag}"
     git push origin refs/heads/"${version_tag}"
-    if git --no-pager tag | grep -E "^${version_tag}$" &>/dev/null; then
+    if git --no-pager tag | grep -Eq "^${version_tag}$"; then
         git tag -d "${version_tag}"
         git push --delete origin refs/tags/"${version_tag}"
     fi
@@ -106,7 +108,7 @@ for tool in "${tools[@]}"; do
         git add action.yml
         git commit -m "${tool}"
         git push origin -f refs/heads/"${tool}"
-        if git --no-pager tag | grep -E "^${tool}$" &>/dev/null; then
+        if git --no-pager tag | grep -Eq "^${tool}$"; then
             git tag -d "${tool}"
             git push --delete origin refs/tags/"${tool}"
         fi

@@ -7,7 +7,7 @@ cd "$(dirname "$0")"/..
 # USAGE:
 #    ./tools/tidy.sh
 #
-# NOTE: This script requires the following tools:
+# Note: This script requires the following tools:
 # - shfmt
 # - prettier
 # - shellcheck

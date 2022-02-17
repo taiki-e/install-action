@@ -25,7 +25,7 @@ jobs:
         os:
           - ubuntu-18.04
         tool:
-          # NOTE: Specifying the version of valgrind and wasm-pack is not supported.
+          # Note: Specifying the version of valgrind and wasm-pack is not supported.
           - cargo-hack,cargo-llvm-cov,cargo-minimal-versions,parse-changelog,cross,shellcheck,shfmt,valgrind,wasm-pack,wasmtime
           - cargo-hack@0.5.12,cargo-llvm-cov@0.2.0,cargo-minimal-versions@0.1.3,parse-changelog@0.4.7,cross@0.2.1,shellcheck@0.8.0,shfmt@3.4.2,wasmtime@0.34.0
         include:
