@@ -31,30 +31,33 @@ git diff --exit-code
 git diff --exit-code --staged
 
 # Make sure the same release has not been created in the past.
-if gh release view "${tag}" >/dev/null; then
+if gh release view "${tag}" &>/dev/null; then
     bail "tag '${tag}' has already been created and pushed"
 fi
 
-# Make sure the same release does not exist in CHANGELOG.md.
-release_date=$(date --utc '+%Y-%m-%d')
-if grep -Eq "^## \\[${version//./\\.}\\] - ${release_date}$" CHANGELOG.md; then
-    bail "release ${version} already exist in CHANGELOG.md"
-fi
-if grep -Eq "^\\[${version//./\\.}\\]: " CHANGELOG.md; then
-    bail "link to ${version} already exist in CHANGELOG.md"
-fi
+tags=$(git --no-pager tag)
+if [[ -n "${tags}" ]]; then
+    # Make sure the same release does not exist in CHANGELOG.md.
+    release_date=$(date --utc '+%Y-%m-%d')
+    if grep -Eq "^## \\[${version//./\\.}\\] - ${release_date}$" CHANGELOG.md; then
+        bail "release ${version} already exist in CHANGELOG.md"
+    fi
+    if grep -Eq "^\\[${version//./\\.}\\]: " CHANGELOG.md; then
+        bail "link to ${version} already exist in CHANGELOG.md"
+    fi
 
-# Update changelog.
-remote_url=$(grep -E '^\[Unreleased\]: https://' CHANGELOG.md | sed 's/^\[Unreleased\]: //' | sed 's/\.\.\.HEAD$//')
-before_tag=$(sed <<<"${remote_url}" 's/^.*\/compare\///')
-remote_url=$(sed <<<"${remote_url}" 's/\/compare\/v.*$//')
-sed -i "s/^## \\[Unreleased\\]/## [Unreleased]\\n\\n## [${version}] - ${release_date}/" CHANGELOG.md
-sed -i "s#^\[Unreleased\]: https://.*#[Unreleased]: ${remote_url}/compare/v${version}...HEAD\\n[${version}]: ${remote_url}/compare/${before_tag}...v${version}#" CHANGELOG.md
-if ! grep -Eq "^## \\[${version//./\\.}\\] - ${release_date}$" CHANGELOG.md; then
-    bail "failed to update CHANGELOG.md"
-fi
-if ! grep -Eq "^\\[${version//./\\.}\\]: " CHANGELOG.md; then
-    bail "failed to update CHANGELOG.md"
+    # Update changelog.
+    remote_url=$(grep -E '^\[Unreleased\]: https://' CHANGELOG.md | sed 's/^\[Unreleased\]: //' | sed 's/\.\.\.HEAD$//')
+    before_tag=$(sed <<<"${remote_url}" 's/^.*\/compare\///')
+    remote_url=$(sed <<<"${remote_url}" 's/\/compare\/v.*$//')
+    sed -i "s/^## \\[Unreleased\\]/## [Unreleased]\\n\\n## [${version}] - ${release_date}/" CHANGELOG.md
+    sed -i "s#^\[Unreleased\]: https://.*#[Unreleased]: ${remote_url}/compare/v${version}...HEAD\\n[${version}]: ${remote_url}/compare/${before_tag}...v${version}#" CHANGELOG.md
+    if ! grep -Eq "^## \\[${version//./\\.}\\] - ${release_date}$" CHANGELOG.md; then
+        bail "failed to update CHANGELOG.md"
+    fi
+    if ! grep -Eq "^\\[${version//./\\.}\\]: " CHANGELOG.md; then
+        bail "failed to update CHANGELOG.md"
+    fi
 fi
 
 # Make sure that a valid release note for this version exists.
@@ -63,9 +66,11 @@ echo "============== CHANGELOG =============="
 parse-changelog CHANGELOG.md "${version}"
 echo "======================================="
 
-# Create a release commit.
-git add CHANGELOG.md
-git commit -m "Release ${version}"
+if [[ -n "${tags}" ]]; then
+    # Create a release commit.
+    git add CHANGELOG.md
+    git commit -m "Release ${version}"
+fi
 
 tools=(
     cargo-hack
