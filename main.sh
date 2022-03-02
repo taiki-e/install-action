@@ -59,7 +59,7 @@ for tool in "${tools[@]}"; do
                 # https://github.com/taiki-e/cargo-hack/releases
                 cargo-hack) latest_version="0.5.12" ;;
                 # https://github.com/taiki-e/cargo-llvm-cov/releases
-                cargo-llvm-cov) latest_version="0.2.1" ;;
+                cargo-llvm-cov) latest_version="0.2.2" ;;
                 # https://github.com/taiki-e/cargo-minimal-versions/releases
                 cargo-minimal-versions) latest_version="0.1.3" ;;
                 # https://github.com/taiki-e/parse-changelog/releases
@@ -146,12 +146,12 @@ for tool in "${tools[@]}"; do
                 latest) ;;
                 *) warn "specifying the version of ${tool} is not supported yet by this action" ;;
             esac
-            sudo apt-get -o Acquire::Retries=10 -qq update
+            retry sudo apt-get -o Acquire::Retries=10 -qq update
             # libc6-dbg is needed to run Valgrind
-            sudo apt-get -o Acquire::Retries=10 -qq -o Dpkg::Use-Pty=0 install -y libc6-dbg
+            retry sudo apt-get -o Acquire::Retries=10 -qq -o Dpkg::Use-Pty=0 install -y libc6-dbg
             # Use snap to install the latest Valgrind
             # https://snapcraft.io/install/valgrind/ubuntu
-            sudo snap install valgrind --classic
+            retry sudo snap install valgrind --classic
             ;;
         wasm-pack)
             # https://rustwasm.github.io/wasm-pack/installer
