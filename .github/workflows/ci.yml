@@ -36,7 +36,7 @@ jobs:
             tool: cargo-hack,cargo-llvm-cov,cargo-minimal-versions,parse-changelog,cross
     runs-on: ${{ matrix.os }}
     steps:
-      - uses: actions/checkout@v2
+      - uses: actions/checkout@v3
         with:
           persist-credentials: false
       - uses: ./
@@ -46,7 +46,7 @@ jobs:
   tidy:
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@v2
+      - uses: actions/checkout@v3
         with:
           persist-credentials: false
       - uses: taiki-e/install-action@shellcheck
