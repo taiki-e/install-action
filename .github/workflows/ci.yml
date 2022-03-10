@@ -28,7 +28,7 @@ jobs:
         tool:
           # Note: Specifying the version of valgrind and wasm-pack is not supported.
           - cargo-hack,cargo-llvm-cov,cargo-minimal-versions,parse-changelog,cross,shellcheck,shfmt,valgrind,wasm-pack,wasmtime
-          - cargo-hack@0.5.12,cargo-llvm-cov@0.2.3,cargo-minimal-versions@0.1.3,parse-changelog@0.4.7,cross@0.2.1,shellcheck@0.8.0,shfmt@3.4.3,wasmtime@0.35.0
+          - cargo-hack@0.5.12,cargo-llvm-cov@0.2.3,cargo-minimal-versions@0.1.3,parse-changelog@0.4.7,cross@0.2.1,shellcheck@0.8.0,shfmt@3.4.3,wasmtime@0.35.1
         include:
           - os: macos-10.15
             tool: cargo-hack,cargo-llvm-cov,cargo-minimal-versions,parse-changelog,cross,shellcheck,shfmt,wasm-pack,wasmtime
