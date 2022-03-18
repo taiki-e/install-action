@@ -77,8 +77,9 @@ for tool in "${tools[@]}"; do
                 latest) version="${latest_version}" ;;
             esac
             url="https://github.com/${repo}/releases/download/v${version}/${tool}-${target}.tar.gz"
+            # shellcheck disable=SC2086
             retry curl --proto '=https' --tlsv1.2 -fsSL --retry 10 --retry-connrefused "${url}" \
-                | tar xzf - -C ~/.cargo/bin
+                | tar xzf - -C ${CARGO_HOME:-~/.cargo}/bin
             ;;
         cross)
             # https://github.com/cross-rs/cross/releases
@@ -94,8 +95,25 @@ for tool in "${tools[@]}"; do
                 latest) version="${latest_version}" ;;
             esac
             url="https://github.com/${repo}/releases/download/v${version}/cross-v${version}-${target}.tar.gz"
+            # shellcheck disable=SC2086
             retry curl --proto '=https' --tlsv1.2 -fsSL --retry 10 --retry-connrefused "${url}" \
-                | tar xzf - -C ~/.cargo/bin
+                | tar xzf - -C ${CARGO_HOME:-~/.cargo}/bin
+            ;;
+        nextest)
+            # https://nexte.st/book/pre-built-binaries.html
+            case "${OSTYPE}" in
+                linux*) url="https://get.nexte.st/latest/linux" ;;
+                darwin*) url="https://get.nexte.st/latest/mac" ;;
+                cygwin* | msys*) url="https://get.nexte.st/latest/windows-tar" ;;
+                *) bail "unsupported OSTYPE '${OSTYPE}' for ${tool}" ;;
+            esac
+            case "${version}" in
+                latest) ;;
+                *) warn "specifying the version of ${tool} is not supported yet by this action" ;;
+            esac
+            # shellcheck disable=SC2086
+            retry curl --proto '=https' --tlsv1.2 -fsSL --retry 10 --retry-connrefused "${url}" \
+                | tar xzf - -C ${CARGO_HOME:-~/.cargo}/bin
             ;;
         shellcheck)
             # https://github.com/koalaman/shellcheck/releases
@@ -176,15 +194,16 @@ for tool in "${tools[@]}"; do
                 latest) version="${latest_version}" ;;
             esac
             url="https://github.com/bytecodealliance/wasmtime/releases/download/v${version}/wasmtime-v${version}-${target}.tar.xz"
+            # shellcheck disable=SC2086
             retry curl --proto '=https' --tlsv1.2 -fsSL --retry 10 --retry-connrefused "${url}" \
-                | tar xJf - --strip-components 1 -C ~/.cargo/bin "wasmtime-v${version}-${target}/wasmtime"
+                | tar xJf - --strip-components 1 -C ${CARGO_HOME:-~/.cargo}/bin "wasmtime-v${version}-${target}/wasmtime"
             ;;
         *) bail "unsupported tool '${tool}'" ;;
     esac
 
     info "${tool} installed at $(type -P "${tool}")"
     case "${tool}" in
-        cargo-*) x cargo "${tool#cargo-}" --version ;;
+        cargo-* | nextest) x cargo "${tool#cargo-}" --version ;;
         *) x "${tool}" --version ;;
     esac
     echo

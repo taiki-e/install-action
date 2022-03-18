@@ -10,6 +10,8 @@ Note: In this file, do not use the hard wrap in the middle of a sentence for com
 
 ## [Unreleased]
 
+- Support `nextest`.
+
 ## [1.1.9] - 2022-03-10
 
 - Update `wasmtime@latest` to 0.35.1.
