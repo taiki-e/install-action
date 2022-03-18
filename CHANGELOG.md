@@ -10,6 +10,8 @@ Note: In this file, do not use the hard wrap in the middle of a sentence for com
 
 ## [Unreleased]
 
+## [1.2.2] - 2022-03-18
+
 - Support specifying the version of `nextest`. ([#2](https://github.com/taiki-e/install-action/pull/3), thanks @sunshowers)
 
 ## [1.2.1] - 2022-03-18
@@ -80,7 +82,8 @@ Note: In this file, do not use the hard wrap in the middle of a sentence for com
 
 Initial release
 
-[Unreleased]: https://github.com/taiki-e/install-action/compare/v1.2.1...HEAD
+[Unreleased]: https://github.com/taiki-e/install-action/compare/v1.2.2...HEAD
+[1.2.2]: https://github.com/taiki-e/install-action/compare/v1.2.1...v1.2.2
 [1.2.1]: https://github.com/taiki-e/install-action/compare/v1.2.0...v1.2.1
 [1.2.0]: https://github.com/taiki-e/install-action/compare/v1.1.9...v1.2.0
 [1.1.9]: https://github.com/taiki-e/install-action/compare/v1.1.8...v1.1.9
