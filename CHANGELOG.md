@@ -10,6 +10,8 @@ Note: In this file, do not use the hard wrap in the middle of a sentence for com
 
 ## [Unreleased]
 
+- Support specifying the version of `nextest`. ([#2](https://github.com/taiki-e/install-action/pull/3), thanks @sunshowers)
+
 ## [1.2.1] - 2022-03-18
 
 - Update `cargo-llvm-cov@latest` to 0.2.4.

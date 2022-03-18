@@ -66,6 +66,10 @@ echo "============== CHANGELOG =============="
 parse-changelog CHANGELOG.md "${version}"
 echo "======================================="
 
+if ! git branch | grep -q '\* main'; then
+    bail "current branch is not 'main'"
+fi
+
 if [[ -n "${tags}" ]]; then
     # Create a release commit.
     git add CHANGELOG.md
@@ -89,8 +93,8 @@ tools=(
 (
     set -x
 
-    git push origin main
     git tag "${tag}"
+    git push origin main
     git push origin --tags
 
     version_tag="v${version%%.*}"
