@@ -102,14 +102,10 @@ for tool in "${tools[@]}"; do
         nextest)
             # https://nexte.st/book/pre-built-binaries.html
             case "${OSTYPE}" in
-                linux*) url="https://get.nexte.st/latest/linux" ;;
-                darwin*) url="https://get.nexte.st/latest/mac" ;;
-                cygwin* | msys*) url="https://get.nexte.st/latest/windows-tar" ;;
+                linux*) url="https://get.nexte.st/${version}/linux" ;;
+                darwin*) url="https://get.nexte.st/${version}/mac" ;;
+                cygwin* | msys*) url="https://get.nexte.st/${version}/windows-tar" ;;
                 *) bail "unsupported OSTYPE '${OSTYPE}' for ${tool}" ;;
-            esac
-            case "${version}" in
-                latest) ;;
-                *) warn "specifying the version of ${tool} is not supported yet by this action" ;;
             esac
             # shellcheck disable=SC2086
             retry curl --proto '=https' --tlsv1.2 -fsSL --retry 10 --retry-connrefused "${url}" \
