@@ -78,6 +78,7 @@ tools=(
     cargo-minimal-versions
     parse-changelog
     cross
+    nextest
     shellcheck
     shfmt
     valgrind
