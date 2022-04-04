@@ -194,6 +194,25 @@ for tool in "${tools[@]}"; do
             retry curl --proto '=https' --tlsv1.2 -fsSL --retry 10 --retry-connrefused "${url}" \
                 | tar xJf - --strip-components 1 -C ${CARGO_HOME:-~/.cargo}/bin "wasmtime-v${version}-${target}/wasmtime"
             ;;
+        mdbook)
+            # https://github.com/rust-lang/mdBook/releases
+            latest_version="0.4.17"
+            repo="rust-lang/mdBook"
+            case "${OSTYPE}" in
+                linux*) target="x86_64-unknown-linux-gnu" ;;
+                darwin*) target="x86_64-apple-darwin" ;;
+                # TODO: mdbook has windows binaries, but they use `.zip` and not `.tar.gz`.
+                cygwin* | msys*) bail "${tool} for windows is not supported yet by this action" ;;
+                *) bail "unsupported OSTYPE '${OSTYPE}' for ${tool}" ;;
+            esac
+            case "${version}" in
+                latest) version="${latest_version}" ;;
+            esac
+            url="https://github.com/${repo}/releases/download/v${version}/${tool}-v${version}-${target}.tar.gz"
+            # shellcheck disable=SC2086
+            retry curl --proto '=https' --tlsv1.2 -fsSL --retry 10 --retry-connrefused "${url}" \
+                | tar xzf - -C ${CARGO_HOME:-~/.cargo}/bin
+            ;;
         *) bail "unsupported tool '${tool}'" ;;
     esac
 
