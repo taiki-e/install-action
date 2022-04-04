@@ -77,6 +77,7 @@ https://spdx.org/licenses
 | [**valgrind**](https://valgrind.org) | `/snap/bin` | [snap](https://snapcraft.io/install/valgrind/ubuntu) | Linux | [GPL-2.0-or-later](https://valgrind.org/docs/manual/license.gpl.html) |
 | [**wasm-pack**](https://github.com/rustwasm/wasm-pack) | `~/.cargo/bin` | [GitHub Releases](https://github.com/rustwasm/wasm-pack/releases) | Linux, macOS | [Apache-2.0](https://github.com/rustwasm/wasm-pack/blob/HEAD/LICENSE-APACHE) OR [MIT](https://github.com/rustwasm/wasm-pack/blob/HEAD/LICENSE-MIT) |
 | [**wasmtime**](https://github.com/bytecodealliance/wasmtime) | `~/.cargo/bin` | [GitHub Releases](https://github.com/bytecodealliance/wasmtime/releases) | Linux, macOS | [Apache-2.0 WITH LLVM-exception](https://github.com/bytecodealliance/wasmtime/blob/HEAD/LICENSE) |
+| [**mdbook**](https://github.com/rust-lang/mdBook) | `~/.cargo/bin` | [GitHub Releases](https://github.com/rust-lang/mdBook/releases) | Linux, macOS | [MPL-2.0](https://github.com/rust-lang/mdBook/blob/master/LICENSE) |
 
 <!-- TODO:
 | [**cmake**](https://cmake.org) | | [GitHub Releases](https://github.com/Kitware/CMake/releases) | Linux, macOS, Windows | [BSD-3-Clause](https://github.com/Kitware/CMake/blob/HEAD/Copyright.txt) |

@@ -27,13 +27,13 @@ jobs:
           - ubuntu-20.04
         tool:
           # Note: Specifying the version of valgrind and wasm-pack is not supported.
-          - cargo-hack,cargo-llvm-cov,cargo-minimal-versions,parse-changelog,cross,nextest,shellcheck,shfmt,valgrind,wasm-pack,wasmtime
-          - cargo-hack@0.5.12,cargo-llvm-cov@0.2.4,cargo-minimal-versions@0.1.3,parse-changelog@0.4.7,cross@0.2.1,nextest@0.9.11,shellcheck@0.8.0,shfmt@3.4.3,wasmtime@0.35.1
+          - cargo-hack,cargo-llvm-cov,cargo-minimal-versions,parse-changelog,cross,nextest,shellcheck,shfmt,valgrind,wasm-pack,wasmtime,mdbook
+          - cargo-hack@0.5.12,cargo-llvm-cov@0.2.4,cargo-minimal-versions@0.1.3,parse-changelog@0.4.7,cross@0.2.1,nextest@0.9.11,shellcheck@0.8.0,shfmt@3.4.3,wasmtime@0.35.1,mdbook@0.4.17
           # Nextest supports basic version ranges as well
           - nextest@0.9
         include:
           - os: macos-10.15
-            tool: cargo-hack,cargo-llvm-cov,cargo-minimal-versions,parse-changelog,cross,nextest,shellcheck,shfmt,wasm-pack,wasmtime
+            tool: cargo-hack,cargo-llvm-cov,cargo-minimal-versions,parse-changelog,cross,nextest,shellcheck,shfmt,wasm-pack,wasmtime,mdbook
           - os: windows-2019
             tool: cargo-hack,cargo-llvm-cov,cargo-minimal-versions,parse-changelog,cross,nextest
     runs-on: ${{ matrix.os }}

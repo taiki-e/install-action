@@ -88,6 +88,7 @@ tools=(
     valgrind
     wasm-pack
     wasmtime
+    mdbook
 )
 
 (
