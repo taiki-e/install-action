@@ -12,7 +12,7 @@ Note: In this file, do not use the hard wrap in the middle of a sentence for com
 
 ## [1.3.0] - 2022-04-04
 
-- Support `mdbook`. ([#2](https://github.com/taiki-e/install-action/pull/4), thanks @thomcc)
+- Support `mdbook`. ([#4](https://github.com/taiki-e/install-action/pull/4), thanks @thomcc)
 
 ## [1.2.2] - 2022-03-18
 
