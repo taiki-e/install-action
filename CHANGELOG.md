@@ -10,13 +10,15 @@ Note: In this file, do not use the hard wrap in the middle of a sentence for com
 
 ## [Unreleased]
 
+- Update `cargo-llvm-cov@latest` to 0.3.0.
+
 ## [1.3.0] - 2022-04-04
 
 - Support `mdbook`. ([#4](https://github.com/taiki-e/install-action/pull/4), thanks @thomcc)
 
 ## [1.2.2] - 2022-03-18
 
-- Support specifying the version of `nextest`. ([#2](https://github.com/taiki-e/install-action/pull/3), thanks @sunshowers)
+- Support specifying the version of `nextest`. ([#3](https://github.com/taiki-e/install-action/pull/3), thanks @sunshowers)
 
 ## [1.2.1] - 2022-03-18
 
