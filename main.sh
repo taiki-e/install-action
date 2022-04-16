@@ -178,7 +178,7 @@ for tool in "${tools[@]}"; do
             ;;
         wasmtime)
             # https://github.com/bytecodealliance/wasmtime/releases
-            latest_version="0.35.1"
+            latest_version="0.35.3"
             repo="bytecodealliance/wasmtime"
             case "${OSTYPE}" in
                 linux*) target="x86_64-linux" ;;
@@ -196,7 +196,7 @@ for tool in "${tools[@]}"; do
             ;;
         mdbook)
             # https://github.com/rust-lang/mdBook/releases
-            latest_version="0.4.17"
+            latest_version="0.4.18"
             repo="rust-lang/mdBook"
             case "${OSTYPE}" in
                 linux*) target="x86_64-unknown-linux-gnu" ;;
