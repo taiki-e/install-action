@@ -27,7 +27,7 @@ jobs:
         tool:
           # Note: Specifying the version of valgrind and wasm-pack is not supported.
           - cargo-hack,cargo-llvm-cov,cargo-minimal-versions,parse-changelog,cross,nextest,shellcheck,shfmt,valgrind,wasm-pack,wasmtime,mdbook
-          - cargo-hack@0.5.12,cargo-llvm-cov@0.3.0,cargo-minimal-versions@0.1.3,parse-changelog@0.4.7,cross@0.2.1,nextest@0.9.11,shellcheck@0.8.0,shfmt@3.4.3,wasmtime@0.35.3,mdbook@0.4.18
+          - cargo-hack@0.5.12,cargo-llvm-cov@0.3.0,cargo-minimal-versions@0.1.3,parse-changelog@0.4.7,cross@0.2.1,nextest@0.9.11,shellcheck@0.8.0,shfmt@3.4.3,wasmtime@0.36.0,mdbook@0.4.18
           # Nextest supports basic version ranges as well
           - nextest@0.9
         include:
