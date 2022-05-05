@@ -35,6 +35,10 @@ if gh release view "${tag}" &>/dev/null; then
     bail "tag '${tag}' has already been created and pushed"
 fi
 
+if ! git branch | grep -q '\* main'; then
+    bail "current branch is not 'main'"
+fi
+
 tags=$(git --no-pager tag)
 if [[ -n "${tags}" ]]; then
     # Make sure the same release does not exist in CHANGELOG.md.
@@ -65,10 +69,6 @@ fi
 echo "============== CHANGELOG =============="
 parse-changelog CHANGELOG.md "${version}"
 echo "======================================="
-
-if ! git branch | grep -q '\* main'; then
-    bail "current branch is not 'main'"
-fi
 
 if [[ -n "${tags}" ]]; then
     # Create a release commit.
