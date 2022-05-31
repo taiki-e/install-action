@@ -55,11 +55,11 @@ cargo_binstall() {
     esac
 
     if [ $is_zip = true ]; then
-        wget $url
+        retry curl --proto '=https' --tlsv1.2 -fsSL --retry 10 --retry-connrefused "$url" -o "cargo-binstall-${target}.zip"
         unzip "cargo-binstall-${target}.zip"
         rm "cargo-binstall-${target}.zip"
     else
-        wget -O- $url | tar xz
+        retry curl --proto '=https' --tlsv1.2 -fsSL --retry 10 --retry-connrefused "$url" | tar xz
     fi
 
     case "${version}" in
@@ -256,9 +256,7 @@ for tool in "${tools[@]}"; do
             retry curl --proto '=https' --tlsv1.2 -fsSL --retry 10 --retry-connrefused "${url}" \
                 | tar xzf - -C ${CARGO_HOME:-~/.cargo}/bin
             ;;
-        *)
-            cargo_binstall "$tool" "$version"
-            ;;
+        *) cargo_binstall "$tool" "$version" ;;
     esac
 
     info "${tool} installed at $(type -P "${tool}")"
