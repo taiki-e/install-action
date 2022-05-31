@@ -30,6 +30,49 @@ warn() {
 info() {
     echo "info: $*"
 }
+cargo_binstall() {
+    tool=$1
+    version=$2
+
+    target=$(rustc -vV | grep host | cut -c 7-)
+    base_url=https://github.com/ryankurte/cargo-binstall/releases/latest/download/cargo-binstall
+    is_zip=false
+    case "${target}" in
+        x86_64-unknown-linux-gnu) url="${base_url}-x86_64-unknown-linux-musl.tgz" ;;
+        x86_64-unknown-linux-musl) url="${base_url}-x86_64-unknown-linux-musl.tgz" ;;
+
+        armv7-unknown-linux-gnueabihf) url="${base_url}-armv7-unknown-linux-musleabihf.tgz" ;;
+        armv7-unknown-linux-musleabihf) url="${base_url}-armv7-unknown-linux-musleabihf.tgz" ;;
+
+        aarch64-unknown-linux-gnu) url="${base_url}-aarch64-unknown-linux-musl.tgz" ;;
+        aarch64-unknown-linux-musl) url="${base_url}-aarch64-unknown-linux-musl.tgz" ;;
+
+        x86_64-apple-darwin | aarch64-apple-darwin | x86_64-pc-windows-msvc)
+            is_zip=true
+            url="${base_url}-${target}.zip" ;;
+
+        *) bail "unsupported target '${TARGET}' for cargo-binstall" ;;
+    esac
+
+    if [ $is_zip = true ]; then
+        wget $url
+        unzip "cargo-binstall-${target}.zip"
+        rm "cargo-binstall-${target}.zip"
+    else
+        wget -O- $url | tar xz
+    fi
+
+    case "${version}" in
+        latest)
+            ./cargo-binstall binstall --no-confirm --target "$target" "$tool"
+            ;;
+        *)
+            ./cargo-binstall binstall --no-confirm --target "$target" --version "$version" "$tool"
+            ;;
+    esac
+
+    rm cargo-binstall
+}
 
 if [[ $# -gt 0 ]]; then
     bail "invalid argument '$1'"
@@ -213,7 +256,9 @@ for tool in "${tools[@]}"; do
             retry curl --proto '=https' --tlsv1.2 -fsSL --retry 10 --retry-connrefused "${url}" \
                 | tar xzf - -C ${CARGO_HOME:-~/.cargo}/bin
             ;;
-        *) bail "unsupported tool '${tool}'" ;;
+        *)
+            cargo_binstall "$tool" "$version"
+            ;;
     esac
 
     info "${tool} installed at $(type -P "${tool}")"
