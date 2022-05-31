@@ -75,8 +75,6 @@ cargo_binstall() {
             cargo binstall --no-confirm --target "$target" --version "$version" "$tool"
             ;;
     esac
-
-    rm cargo-binstall
 }
 
 if [[ $# -gt 0 ]]; then
