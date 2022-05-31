@@ -51,7 +51,7 @@ cargo_binstall() {
             is_zip=true
             url="${base_url}-${target}.zip" ;;
 
-        *) bail "unsupported target '${TARGET}' for cargo-binstall" ;;
+        *) bail "unsupported target '${target}' for cargo-binstall" ;;
     esac
 
     if [ $is_zip = true ]; then
