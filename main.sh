@@ -54,20 +54,25 @@ cargo_binstall() {
         *) bail "unsupported target '${target}' for cargo-binstall" ;;
     esac
 
-    if [ $is_zip = true ]; then
-        retry curl --proto '=https' --tlsv1.2 -fsSL --retry 10 --retry-connrefused "$url" -o "cargo-binstall-${target}.zip"
-        unzip "cargo-binstall-${target}.zip"
-        rm "cargo-binstall-${target}.zip"
-    else
-        retry curl --proto '=https' --tlsv1.2 -fsSL --retry 10 --retry-connrefused "$url" | tar xz
+    cargo_bin="${CARGO_HOME:-~/.cargo}/bin"
+
+    if [ ! -f "${cargo_bin}/cargo-binstall" ]; then
+        if [ $is_zip = true ]; then
+            retry curl --proto '=https' --tlsv1.2 -fsSL --retry 10 --retry-connrefused "$url" -o "cargo-binstall-${target}.zip"
+            unzip "cargo-binstall-${target}.zip"
+            rm "cargo-binstall-${target}.zip"
+        else
+            retry curl --proto '=https' --tlsv1.2 -fsSL --retry 10 --retry-connrefused "$url" | tar xz
+        fi
+        mv cargo-binstall "${cargo_bin}"
     fi
 
     case "${version}" in
         latest)
-            ./cargo-binstall binstall --no-confirm --target "$target" "$tool"
+            cargo binstall --no-confirm --target "$target" "$tool"
             ;;
         *)
-            ./cargo-binstall binstall --no-confirm --target "$target" --version "$version" "$tool"
+            cargo binstall --no-confirm --target "$target" --version "$version" "$tool"
             ;;
     esac
 
