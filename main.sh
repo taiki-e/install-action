@@ -31,10 +31,10 @@ info() {
     echo "info: $*"
 }
 cargo_binstall() {
-    tool=$1
-    version=$2
+    tool="$1"
+    version="$2"
 
-    target=$(rustc -vV | grep host | cut -c 7-)
+    target="$(rustc -vV | grep host | cut -c 7-)"
     base_url=https://github.com/ryankurte/cargo-binstall/releases/latest/download/cargo-binstall
     is_zip=false
     case "${target}" in
