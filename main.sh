@@ -49,7 +49,8 @@ cargo_binstall() {
 
         x86_64-apple-darwin | aarch64-apple-darwin | x86_64-pc-windows-msvc)
             is_zip=true
-            url="${base_url}-${target}.zip" ;;
+            url="${base_url}-${target}.zip"
+            ;;
 
         *) bail "unsupported target '${target}' for cargo-binstall" ;;
     esac
