@@ -52,6 +52,11 @@ cargo_binstall() {
             aarch64-unknown-linux-gnu) url="${base_url}-aarch64-unknown-linux-musl.tgz" ;;
             aarch64-unknown-linux-musl) url="${base_url}-aarch64-unknown-linux-musl.tgz" ;;
 
+            x86_64-pc-windows-gnu)
+                is_zip=true
+                url="${base_url}-x86_64-pc-windows-msvc.zip"
+                ;;
+
             x86_64-apple-darwin | aarch64-apple-darwin | x86_64-pc-windows-msvc)
                 is_zip=true
                 url="${base_url}-${target}.zip"
