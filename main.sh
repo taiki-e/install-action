@@ -34,6 +34,8 @@ cargo_binstall() {
     tool="$1"
     version="$2"
 
+    info "install-action does not support ${tool}, fallback to cargo-binstall"
+
     target="$(rustc -vV | grep host | cut -c 7-)"
     cargo_bin="${CARGO_HOME:-~/.cargo}/bin"
 
