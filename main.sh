@@ -35,29 +35,29 @@ cargo_binstall() {
     version="$2"
 
     target="$(rustc -vV | grep host | cut -c 7-)"
-    base_url=https://github.com/ryankurte/cargo-binstall/releases/latest/download/cargo-binstall
-    is_zip=false
-    case "${target}" in
-        x86_64-unknown-linux-gnu) url="${base_url}-x86_64-unknown-linux-musl.tgz" ;;
-        x86_64-unknown-linux-musl) url="${base_url}-x86_64-unknown-linux-musl.tgz" ;;
-
-        armv7-unknown-linux-gnueabihf) url="${base_url}-armv7-unknown-linux-musleabihf.tgz" ;;
-        armv7-unknown-linux-musleabihf) url="${base_url}-armv7-unknown-linux-musleabihf.tgz" ;;
-
-        aarch64-unknown-linux-gnu) url="${base_url}-aarch64-unknown-linux-musl.tgz" ;;
-        aarch64-unknown-linux-musl) url="${base_url}-aarch64-unknown-linux-musl.tgz" ;;
-
-        x86_64-apple-darwin | aarch64-apple-darwin | x86_64-pc-windows-msvc)
-            is_zip=true
-            url="${base_url}-${target}.zip"
-            ;;
-
-        *) bail "unsupported target '${target}' for cargo-binstall" ;;
-    esac
-
     cargo_bin="${CARGO_HOME:-~/.cargo}/bin"
 
     if [ ! -f "${cargo_bin}/cargo-binstall" ]; then
+        base_url=https://github.com/ryankurte/cargo-binstall/releases/latest/download/cargo-binstall
+        is_zip=false
+        case "${target}" in
+            x86_64-unknown-linux-gnu) url="${base_url}-x86_64-unknown-linux-musl.tgz" ;;
+            x86_64-unknown-linux-musl) url="${base_url}-x86_64-unknown-linux-musl.tgz" ;;
+
+            armv7-unknown-linux-gnueabihf) url="${base_url}-armv7-unknown-linux-musleabihf.tgz" ;;
+            armv7-unknown-linux-musleabihf) url="${base_url}-armv7-unknown-linux-musleabihf.tgz" ;;
+
+            aarch64-unknown-linux-gnu) url="${base_url}-aarch64-unknown-linux-musl.tgz" ;;
+            aarch64-unknown-linux-musl) url="${base_url}-aarch64-unknown-linux-musl.tgz" ;;
+
+            x86_64-apple-darwin | aarch64-apple-darwin | x86_64-pc-windows-msvc)
+                is_zip=true
+                url="${base_url}-${target}.zip"
+                ;;
+
+            *) bail "unsupported target '${target}' for cargo-binstall" ;;
+        esac
+
         if [ $is_zip = true ]; then
             retry curl --proto '=https' --tlsv1.2 -fsSL --retry 10 --retry-connrefused "$url" -o "cargo-binstall-${target}.zip"
             unzip "cargo-binstall-${target}.zip"
