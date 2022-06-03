@@ -31,11 +31,11 @@ info() {
     echo "info: $*"
 }
 install_cargo_binstall() {
-    info installing cargo-binstall
-
     cargo_bin="${CARGO_HOME:-~/.cargo}/bin"
 
     if [ ! -f "${cargo_bin}/cargo-binstall" ]; then
+        info installing cargo-binstall
+
         target="$(rustc -vV | grep host | cut -c 7-)"
         base_url=https://github.com/ryankurte/cargo-binstall/releases/latest/download/cargo-binstall
         is_zip=false
@@ -70,6 +70,8 @@ install_cargo_binstall() {
             retry curl --proto '=https' --tlsv1.2 -fsSL --retry 10 --retry-connrefused "$url" | tar xz
         fi
         mv cargo-binstall "${cargo_bin}"
+    else
+        info "cargo-binstall already installed on in ${cargo_bin}/cargo-binstall"
     fi
 }
 cargo_binstall() {
