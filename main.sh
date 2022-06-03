@@ -30,16 +30,13 @@ warn() {
 info() {
     echo "info: $*"
 }
-cargo_binstall() {
-    tool="$1"
-    version="$2"
+install_cargo_binstall() {
+    info installing cargo-binstall
 
-    info "install-action does not support ${tool}, fallback to cargo-binstall"
-
-    target="$(rustc -vV | grep host | cut -c 7-)"
     cargo_bin="${CARGO_HOME:-~/.cargo}/bin"
 
     if [ ! -f "${cargo_bin}/cargo-binstall" ]; then
+        target="$(rustc -vV | grep host | cut -c 7-)"
         base_url=https://github.com/ryankurte/cargo-binstall/releases/latest/download/cargo-binstall
         is_zip=false
         case "${target}" in
@@ -74,7 +71,16 @@ cargo_binstall() {
         fi
         mv cargo-binstall "${cargo_bin}"
     fi
+}
+cargo_binstall() {
+    tool="$1"
+    version="$2"
 
+    info "install-action does not support ${tool}, fallback to cargo-binstall"
+
+    install_cargo_binstall
+
+    target="$(rustc -vV | grep host | cut -c 7-)"
     case "${version}" in
         latest)
             cargo binstall --no-confirm --target "$target" "$tool"
