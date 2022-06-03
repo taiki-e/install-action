@@ -273,6 +273,7 @@ for tool in "${tools[@]}"; do
             retry curl --proto '=https' --tlsv1.2 -fsSL --retry 10 --retry-connrefused "${url}" \
                 | tar xzf - -C ${CARGO_HOME:-~/.cargo}/bin
             ;;
+        cargo-binstall) install_cargo_binstall ;;
         *) cargo_binstall "$tool" "$version" ;;
     esac
 
