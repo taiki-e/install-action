@@ -67,7 +67,7 @@ install_cargo_binstall() {
             unzip "cargo-binstall-${target}.zip"
             rm "cargo-binstall-${target}.zip"
         else
-            retry curl --proto '=https' --tlsv1.2 -fsSL --retry 10 --retry-connrefused "$url" | tar xz
+            retry curl --proto '=https' --tlsv1.2 -fsSL --retry 10 --retry-connrefused "$url" | tar xzf -
         fi
 
         mkdir -p "{cargo_bin}"
