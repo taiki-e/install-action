@@ -73,8 +73,12 @@ install_cargo_binstall() {
         echo Debugging
         ls -lsha
 
-        mkdir -p "{cargo_bin}"
-        mv cargo-binstall "${cargo_bin}"
+        mkdir -p "{cargo_bin}/"
+
+        case "${OSTYPE}" in
+            cygwin* | msys*) mv cargo-binstall.exe "${cargo_bin}/" ;;
+            *) mv cargo-binstall "${cargo_bin}/" ;;
+        esac
     else
         info "cargo-binstall already installed on in ${cargo_bin}/cargo-binstall"
     fi
