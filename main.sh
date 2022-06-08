@@ -283,11 +283,4 @@ for tool in "${tools[@]}"; do
         cargo-binstall) install_cargo_binstall ;;
         *) cargo_binstall "$tool" "$version" ;;
     esac
-
-    info "${tool} installed at $(type -P "${tool}")"
-    case "${tool}" in
-        cargo-* | nextest) x cargo "${tool#cargo-}" --version ;;
-        *) x "${tool}" --version ;;
-    esac
-    echo
 done
