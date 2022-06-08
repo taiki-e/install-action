@@ -82,13 +82,12 @@ cargo_binstall() {
 
     install_cargo_binstall
 
-    target="$(rustc -vV | grep host | cut -c 7-)"
     case "${version}" in
         latest)
-            cargo binstall --no-confirm --target "$target" "$tool"
+            cargo binstall --no-confirm "$tool"
             ;;
         *)
-            cargo binstall --no-confirm --target "$target" --version "$version" "$tool"
+            cargo binstall --no-confirm --version "$version" "$tool"
             ;;
     esac
 }
