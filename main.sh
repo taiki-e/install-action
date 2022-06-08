@@ -31,7 +31,7 @@ info() {
     echo "info: $*"
 }
 install_cargo_binstall() {
-    cargo_bin="${CARGO_HOME:-~/.cargo}/bin"
+    cargo_bin="${CARGO_HOME:-$HOME/.cargo}/bin"
 
     if [ ! -f "${cargo_bin}/cargo-binstall" ]; then
         info "installing cargo-binstall"
