@@ -34,7 +34,7 @@ install_cargo_binstall() {
     cargo_bin="${CARGO_HOME:-~/.cargo}/bin"
 
     if [ ! -f "${cargo_bin}/cargo-binstall" ]; then
-        info installing cargo-binstall
+        info "installing cargo-binstall"
 
         target="$(rustc -vV | grep host | cut -c 7-)"
         base_url=https://github.com/ryankurte/cargo-binstall/releases/latest/download/cargo-binstall
