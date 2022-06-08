@@ -69,6 +69,8 @@ install_cargo_binstall() {
         else
             retry curl --proto '=https' --tlsv1.2 -fsSL --retry 10 --retry-connrefused "$url" | tar xz
         fi
+
+        mkdir -p "{cargo_bin}"
         mv cargo-binstall "${cargo_bin}"
     else
         info "cargo-binstall already installed on in ${cargo_bin}/cargo-binstall"
