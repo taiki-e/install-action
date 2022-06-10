@@ -26,19 +26,20 @@ jobs:
           - ubuntu-20.04
         tool:
           # Note: Specifying the version of valgrind and wasm-pack is not supported.
-          - cargo-hack,cargo-llvm-cov,cargo-minimal-versions,parse-changelog,cross,nextest,shellcheck,shfmt,valgrind,wasm-pack,wasmtime,mdbook
-          - cargo-hack@0.5.14,cargo-llvm-cov@0.4.5,cargo-minimal-versions@0.1.4,parse-changelog@0.4.8,cross@0.2.1,nextest@0.9.11,shellcheck@0.8.0,shfmt@3.5.0,wasmtime@0.37.0,mdbook@0.4.18
+          # cargo-watch is supported by cargo-binstall (through quickinstall)
+          - cargo-hack,cargo-llvm-cov,cargo-minimal-versions,parse-changelog,cross,nextest,shellcheck,shfmt,valgrind,wasm-pack,wasmtime,mdbook,cargo-watch
+          - cargo-hack@0.5.14,cargo-llvm-cov@0.4.5,cargo-minimal-versions@0.1.4,parse-changelog@0.4.8,cross@0.2.1,nextest@0.9.11,shellcheck@0.8.0,shfmt@3.5.0,wasmtime@0.37.0,mdbook@0.4.18,cargo-watch@8.1.1
           # Nextest supports basic version ranges as well
           - nextest@0.9
         include:
           # Note: mdBook binary is incompatible with ubuntu 18.04,
           # see https://github.com/rust-lang/mdBook/issues/1779
           - os: ubuntu-18.04
-            tool: cargo-hack,cargo-llvm-cov,cargo-minimal-versions,parse-changelog,cross,nextest,shellcheck,shfmt,valgrind,wasm-pack,wasmtime
+            tool: cargo-hack,cargo-llvm-cov,cargo-minimal-versions,parse-changelog,cross,nextest,shellcheck,shfmt,valgrind,wasm-pack,wasmtime,cargo-watch
           - os: macos-10.15
-            tool: cargo-hack,cargo-llvm-cov,cargo-minimal-versions,parse-changelog,cross,nextest,shellcheck,shfmt,wasm-pack,wasmtime,mdbook
+            tool: cargo-hack,cargo-llvm-cov,cargo-minimal-versions,parse-changelog,cross,nextest,shellcheck,shfmt,wasm-pack,wasmtime,mdbook,cargo-watch
           - os: windows-2019
-            tool: cargo-hack,cargo-llvm-cov,cargo-minimal-versions,parse-changelog,cross,nextest
+            tool: cargo-hack,cargo-llvm-cov,cargo-minimal-versions,parse-changelog,cross,nextest,cargo-watch
     runs-on: ${{ matrix.os }}
     steps:
       - uses: actions/checkout@v3

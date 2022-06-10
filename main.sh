@@ -30,6 +30,73 @@ warn() {
 info() {
     echo "info: $*"
 }
+install_cargo_binstall() {
+    cargo_bin="${CARGO_HOME:-$HOME/.cargo}/bin"
+
+    if [ ! -f "${cargo_bin}/cargo-binstall" ]; then
+        info "installing cargo-binstall"
+
+        target="$(rustc -vV | grep host | cut -c 7-)"
+        base_url=https://github.com/ryankurte/cargo-binstall/releases/latest/download/cargo-binstall
+        is_zip=false
+        case "${target}" in
+            x86_64-unknown-linux-gnu) url="${base_url}-x86_64-unknown-linux-musl.tgz" ;;
+            x86_64-unknown-linux-musl) url="${base_url}-x86_64-unknown-linux-musl.tgz" ;;
+
+            armv7-unknown-linux-gnueabihf) url="${base_url}-armv7-unknown-linux-musleabihf.tgz" ;;
+            armv7-unknown-linux-musleabihf) url="${base_url}-armv7-unknown-linux-musleabihf.tgz" ;;
+
+            aarch64-unknown-linux-gnu) url="${base_url}-aarch64-unknown-linux-musl.tgz" ;;
+            aarch64-unknown-linux-musl) url="${base_url}-aarch64-unknown-linux-musl.tgz" ;;
+
+            x86_64-pc-windows-gnu)
+                is_zip=true
+                url="${base_url}-x86_64-pc-windows-msvc.zip"
+                ;;
+
+            x86_64-apple-darwin | aarch64-apple-darwin | x86_64-pc-windows-msvc)
+                is_zip=true
+                url="${base_url}-${target}.zip"
+                ;;
+
+            *) bail "unsupported target '${target}' for cargo-binstall" ;;
+        esac
+
+        if [ $is_zip = true ]; then
+            retry curl --proto '=https' --tlsv1.2 -fsSL --retry 10 --retry-connrefused "$url" -o "cargo-binstall-${target}.zip"
+            unzip "cargo-binstall-${target}.zip"
+            rm "cargo-binstall-${target}.zip"
+        else
+            retry curl --proto '=https' --tlsv1.2 -fsSL --retry 10 --retry-connrefused "$url" | tar xzf -
+        fi
+
+        mkdir -p "{cargo_bin}/"
+
+        case "${OSTYPE}" in
+            cygwin* | msys*) mv cargo-binstall.exe "${cargo_bin}/" ;;
+            *) mv cargo-binstall "${cargo_bin}/" ;;
+        esac
+    else
+        info "cargo-binstall already installed on in ${cargo_bin}/cargo-binstall"
+    fi
+}
+cargo_binstall() {
+    tool="$1"
+    version="$2"
+
+    info "install-action does not support ${tool}, fallback to cargo-binstall"
+
+    install_cargo_binstall
+
+    case "${version}" in
+        latest)
+            cargo binstall --no-confirm "$tool"
+            ;;
+        *)
+            cargo binstall --no-confirm --version "$version" "$tool"
+            ;;
+    esac
+}
 
 if [[ $# -gt 0 ]]; then
     bail "invalid argument '$1'"
@@ -213,13 +280,7 @@ for tool in "${tools[@]}"; do
             retry curl --proto '=https' --tlsv1.2 -fsSL --retry 10 --retry-connrefused "${url}" \
                 | tar xzf - -C ${CARGO_HOME:-~/.cargo}/bin
             ;;
-        *) bail "unsupported tool '${tool}'" ;;
+        cargo-binstall) install_cargo_binstall ;;
+        *) cargo_binstall "$tool" "$version" ;;
     esac
-
-    info "${tool} installed at $(type -P "${tool}")"
-    case "${tool}" in
-        cargo-* | nextest) x cargo "${tool#cargo-}" --version ;;
-        *) x "${tool}" --version ;;
-    esac
-    echo
 done
