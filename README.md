@@ -96,9 +96,11 @@ If you want a higher level of security, consider working on [#1](https://github.
 
 - [create-gh-release-action]: GitHub Action for creating GitHub Releases based on changelog.
 - [upload-rust-binary-action]: GitHub Action for building and uploading Rust binary to GitHub Releases.
+- [setup-cross-toolchain-action]: GitHub Action for setup toolchains for cross compilation and cross testing for Rust.
 
 [cargo-binstall]: https://github.com/ryankurte/cargo-binstall
 [create-gh-release-action]: https://github.com/taiki-e/create-gh-release-action
+[setup-cross-toolchain-action]: https://github.com/taiki-e/setup-cross-toolchain-action
 [upload-rust-binary-action]: https://github.com/taiki-e/upload-rust-binary-action
 
 ## License
