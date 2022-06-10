@@ -202,7 +202,7 @@ for tool in "${tools[@]}"; do
             ;;
         shfmt)
             # https://github.com/mvdan/sh/releases
-            latest_version="3.5.0"
+            latest_version="3.5.1"
             repo="mvdan/sh"
             case "${OSTYPE}" in
                 linux*) target="linux_amd64" ;;
