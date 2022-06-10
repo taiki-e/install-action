@@ -10,6 +10,8 @@ Note: In this file, do not use the hard wrap in the middle of a sentence for com
 
 ## [Unreleased]
 
+- Support `cargo-binstall`. ([#8](https://github.com/taiki-e/install-action/pull/8), thanks @NobodyXu)
+- Use `cargo-binstall` as a fallback if the unsupported package is specified. ([#8](https://github.com/taiki-e/install-action/pull/8), thanks @NobodyXu)
 - Update `shfmt@latest` to 3.5.1.
 
 ## [1.3.13] - 2022-06-02

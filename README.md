@@ -78,6 +78,9 @@ https://spdx.org/licenses
 | [**wasm-pack**](https://github.com/rustwasm/wasm-pack) | `~/.cargo/bin` | [GitHub Releases](https://github.com/rustwasm/wasm-pack/releases) | Linux, macOS | [Apache-2.0](https://github.com/rustwasm/wasm-pack/blob/HEAD/LICENSE-APACHE) OR [MIT](https://github.com/rustwasm/wasm-pack/blob/HEAD/LICENSE-MIT) |
 | [**wasmtime**](https://github.com/bytecodealliance/wasmtime) | `~/.cargo/bin` | [GitHub Releases](https://github.com/bytecodealliance/wasmtime/releases) | Linux, macOS | [Apache-2.0 WITH LLVM-exception](https://github.com/bytecodealliance/wasmtime/blob/HEAD/LICENSE) |
 | [**mdbook**](https://github.com/rust-lang/mdBook) | `~/.cargo/bin` | [GitHub Releases](https://github.com/rust-lang/mdBook/releases) | Linux, macOS | [MPL-2.0](https://github.com/rust-lang/mdBook/blob/HEAD/LICENSE) |
+| [**cargo-binstall**][cargo-binstall] | `~/.cargo/bin` | [GitHub Releases](https://github.com/ryankurte/cargo-binstall/releases) | Linux, macOS, Windows | [GPL-3.0](https://github.com/ryankurte/cargo-binstall/blob/HEAD/LICENSE.txt) |
+
+If a tool not included in the list above is specified, this action uses [cargo-binstall] as a fallback.
 
 <!-- TODO:
 | [**cmake**](https://cmake.org) | | [GitHub Releases](https://github.com/Kitware/CMake/releases) | Linux, macOS, Windows | [BSD-3-Clause](https://github.com/Kitware/CMake/blob/HEAD/Copyright.txt) |
@@ -94,6 +97,7 @@ If you want a higher level of security, consider working on [#1](https://github.
 - [create-gh-release-action]: GitHub Action for creating GitHub Releases based on changelog.
 - [upload-rust-binary-action]: GitHub Action for building and uploading Rust binary to GitHub Releases.
 
+[cargo-binstall]: https://github.com/ryankurte/cargo-binstall
 [create-gh-release-action]: https://github.com/taiki-e/create-gh-release-action
 [upload-rust-binary-action]: https://github.com/taiki-e/upload-rust-binary-action
 

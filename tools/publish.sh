@@ -89,6 +89,7 @@ tools=(
     wasm-pack
     wasmtime
     mdbook
+    cargo-binstall
 )
 
 (
