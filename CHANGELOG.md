@@ -10,6 +10,8 @@ Note: In this file, do not use the hard wrap in the middle of a sentence for com
 
 ## [Unreleased]
 
+## [1.4.0] - 2022-06-10
+
 - Support `cargo-binstall`. ([#8](https://github.com/taiki-e/install-action/pull/8), thanks @NobodyXu)
 - Use `cargo-binstall` as a fallback if the unsupported package is specified. ([#8](https://github.com/taiki-e/install-action/pull/8), thanks @NobodyXu)
 - Update `shfmt@latest` to 3.5.1.
@@ -147,7 +149,8 @@ Note: In this file, do not use the hard wrap in the middle of a sentence for com
 
 Initial release
 
-[Unreleased]: https://github.com/taiki-e/install-action/compare/v1.3.13...HEAD
+[Unreleased]: https://github.com/taiki-e/install-action/compare/v1.4.0...HEAD
+[1.4.0]: https://github.com/taiki-e/install-action/compare/v1.3.13...v1.4.0
 [1.3.13]: https://github.com/taiki-e/install-action/compare/v1.3.12...v1.3.13
 [1.3.12]: https://github.com/taiki-e/install-action/compare/v1.3.11...v1.3.12
 [1.3.11]: https://github.com/taiki-e/install-action/compare/v1.3.10...v1.3.11
