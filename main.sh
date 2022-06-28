@@ -248,7 +248,7 @@ for tool in "${tools[@]}"; do
             ;;
         wasmtime)
             # https://github.com/bytecodealliance/wasmtime/releases
-            latest_version="0.37.0"
+            latest_version="0.38.1"
             repo="bytecodealliance/wasmtime"
             case "${OSTYPE}" in
                 linux*) target="x86_64-linux" ;;
