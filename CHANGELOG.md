@@ -10,6 +10,7 @@ Note: In this file, do not use the hard wrap in the middle of a sentence for com
 
 ## [Unreleased]
 
+- Enable secure mode for `cargo-binstall`. ([#9](https://github.com/taiki-e/install-action/pull/9), thanks @NobodyXu)
 - Update `wasmtime@latest` to 0.38.1.
 
 ## [1.4.2] - 2022-06-16
