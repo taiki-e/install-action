@@ -88,12 +88,15 @@ cargo_binstall() {
 
     install_cargo_binstall
 
+    # --secure mode enforce downloads over secure transports only.
+    # As a result, http will be disabled, and it will also set
+    # min tls version to be 1.2
     case "${version}" in
         latest)
-            cargo binstall --no-confirm "$tool"
+            cargo binstall --secure --no-confirm "$tool"
             ;;
         *)
-            cargo binstall --no-confirm --version "$version" "$tool"
+            cargo binstall --secure --no-confirm --version "$version" "$tool"
             ;;
     esac
 }
