@@ -153,7 +153,7 @@ for tool in "${tools[@]}"; do
             ;;
         cross)
             # https://github.com/cross-rs/cross/releases
-            latest_version="0.2.2"
+            latest_version="0.2.1"
             repo="cross-rs/cross"
             case "${OSTYPE}" in
                 linux*) target="x86_64-unknown-linux-musl" ;;
