@@ -153,7 +153,7 @@ for tool in "${tools[@]}"; do
             ;;
         cross)
             # https://github.com/cross-rs/cross/releases
-            latest_version="0.2.1"
+            latest_version="0.2.2"
             repo="cross-rs/cross"
             case "${OSTYPE}" in
                 linux*) target="x86_64-unknown-linux-musl" ;;
@@ -164,7 +164,10 @@ for tool in "${tools[@]}"; do
             case "${version}" in
                 latest) version="${latest_version}" ;;
             esac
-            url="https://github.com/${repo}/releases/download/v${version}/cross-v${version}-${target}.tar.gz"
+            case "${version}" in
+                0.1* | 0.2.[0-1]) url="https://github.com/${repo}/releases/download/v${version}/cross-v${version}-${target}.tar.gz" ;;
+                *) url="https://github.com/${repo}/releases/download/v${version}/cross-${target}.tar.gz" ;;
+            esac
             # shellcheck disable=SC2086
             retry curl --proto '=https' --tlsv1.2 -fsSL --retry 10 --retry-connrefused "${url}" \
                 | tar xzf - -C ${CARGO_HOME:-~/.cargo}/bin
