@@ -10,6 +10,8 @@ Note: In this file, do not use the hard wrap in the middle of a sentence for com
 
 ## [Unreleased]
 
+## [1.5.1] - 2022-07-02
+
 - Update `mdbook@latest` to 0.4.19.
 
 ## [1.5.0] - 2022-06-28
@@ -164,7 +166,8 @@ Note: In this file, do not use the hard wrap in the middle of a sentence for com
 
 Initial release
 
-[Unreleased]: https://github.com/taiki-e/install-action/compare/v1.5.0...HEAD
+[Unreleased]: https://github.com/taiki-e/install-action/compare/v1.5.1...HEAD
+[1.5.1]: https://github.com/taiki-e/install-action/compare/v1.5.0...v1.5.1
 [1.5.0]: https://github.com/taiki-e/install-action/compare/v1.4.2...v1.5.0
 [1.4.2]: https://github.com/taiki-e/install-action/compare/v1.4.1...v1.4.2
 [1.4.1]: https://github.com/taiki-e/install-action/compare/v1.4.0...v1.4.1
