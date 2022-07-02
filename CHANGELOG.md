@@ -10,6 +10,8 @@ Note: In this file, do not use the hard wrap in the middle of a sentence for com
 
 ## [Unreleased]
 
+- Update `mdbook@latest` to 0.4.19.
+
 ## [1.5.0] - 2022-06-28
 
 - Enable secure mode for `cargo-binstall`. ([#9](https://github.com/taiki-e/install-action/pull/9), thanks @NobodyXu)
