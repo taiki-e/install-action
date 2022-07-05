@@ -99,16 +99,16 @@ tools=(
     git push origin main
     git push origin --tags
 
-    version_tag="v${version%%.*}"
-    git checkout -b "${version_tag}"
-    git push origin refs/heads/"${version_tag}"
-    if git --no-pager tag | grep -Eq "^${version_tag}$"; then
-        git tag -d "${version_tag}"
-        git push --delete origin refs/tags/"${version_tag}"
+    major_version_tag="v${version%%.*}"
+    git checkout -b "${major_version_tag}"
+    git push origin refs/heads/"${major_version_tag}"
+    if git --no-pager tag | grep -Eq "^${major_version_tag}$"; then
+        git tag -d "${major_version_tag}"
+        git push --delete origin refs/tags/"${major_version_tag}"
     fi
-    git tag "${version_tag}"
+    git tag "${major_version_tag}"
     git checkout main
-    git branch -d "${version_tag}"
+    git branch -d "${major_version_tag}"
 )
 
 for tool in "${tools[@]}"; do
