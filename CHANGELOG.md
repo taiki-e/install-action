@@ -11,6 +11,9 @@ Note: In this file, do not use the hard wrap in the middle of a sentence for com
 ## [Unreleased]
 
 - Update `mdbook@latest` to 0.4.20.
+- Update `cross@latest` to 0.2.4.
+- Update `cargo-minimal-versions@latest` to 0.1.5.
+- Update `parse-changelog@latest` to 0.4.9.
 
 ## [1.5.3] - 2022-07-07
 
