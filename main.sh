@@ -129,7 +129,7 @@ for tool in "${tools[@]}"; do
                 # https://github.com/taiki-e/cargo-hack/releases
                 cargo-hack) latest_version="0.5.15" ;;
                 # https://github.com/taiki-e/cargo-llvm-cov/releases
-                cargo-llvm-cov) latest_version="0.4.9" ;;
+                cargo-llvm-cov) latest_version="0.4.10" ;;
                 # https://github.com/taiki-e/cargo-minimal-versions/releases
                 cargo-minimal-versions) latest_version="0.1.5" ;;
                 # https://github.com/taiki-e/parse-changelog/releases
