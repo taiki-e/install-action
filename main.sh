@@ -269,7 +269,7 @@ for tool in "${tools[@]}"; do
             ;;
         mdbook)
             # https://github.com/rust-lang/mdBook/releases
-            latest_version="0.4.20"
+            latest_version="0.4.21"
             repo="rust-lang/mdBook"
             case "${OSTYPE}" in
                 linux*) target="x86_64-unknown-linux-gnu" ;;
