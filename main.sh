@@ -133,7 +133,7 @@ for tool in "${tools[@]}"; do
                 # https://github.com/taiki-e/cargo-minimal-versions/releases
                 cargo-minimal-versions) latest_version="0.1.5" ;;
                 # https://github.com/taiki-e/parse-changelog/releases
-                parse-changelog) latest_version="0.4.9" ;;
+                parse-changelog) latest_version="0.5.0" ;;
                 *) exit 1 ;;
             esac
             repo="taiki-e/${tool}"
