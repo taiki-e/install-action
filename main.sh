@@ -33,7 +33,7 @@ info() {
 install_cargo_binstall() {
     cargo_bin="${CARGO_HOME:-$HOME/.cargo}/bin"
 
-    if [ ! -f "${cargo_bin}/cargo-binstall" ]; then
+    if [[ ! -f "${cargo_bin}/cargo-binstall" ]]; then
         info "installing cargo-binstall"
 
         target="$(rustc -vV | grep host | cut -c 7-)"
@@ -62,20 +62,25 @@ install_cargo_binstall() {
             *) bail "unsupported target '${target}' for cargo-binstall" ;;
         esac
 
-        if [ $is_zip = true ]; then
-            retry curl --proto '=https' --tlsv1.2 -fsSL --retry 10 --retry-connrefused "$url" -o "cargo-binstall-${target}.zip"
-            unzip "cargo-binstall-${target}.zip"
-            rm "cargo-binstall-${target}.zip"
-        else
-            retry curl --proto '=https' --tlsv1.2 -fsSL --retry 10 --retry-connrefused "$url" | tar xzf -
-        fi
+        mkdir -p .install-action-tmp
+        (
+            cd .install-action-tmp
+            if [[ "${is_zip}" == "true" ]]; then
+                retry curl --proto '=https' --tlsv1.2 -fsSL --retry 10 --retry-connrefused "$url" -o "cargo-binstall-${target}.zip"
+                unzip "cargo-binstall-${target}.zip"
+                rm "cargo-binstall-${target}.zip"
+            else
+                retry curl --proto '=https' --tlsv1.2 -fsSL --retry 10 --retry-connrefused "$url" | tar xzf -
+            fi
 
-        mkdir -p "{cargo_bin}/"
+            mkdir -p "{cargo_bin}/"
 
-        case "${OSTYPE}" in
-            cygwin* | msys*) mv cargo-binstall.exe "${cargo_bin}/" ;;
-            *) mv cargo-binstall "${cargo_bin}/" ;;
-        esac
+            case "${OSTYPE}" in
+                cygwin* | msys*) mv cargo-binstall.exe "${cargo_bin}/" ;;
+                *) mv cargo-binstall "${cargo_bin}/" ;;
+            esac
+        )
+        rm -rf .install-action-tmp
     else
         info "cargo-binstall already installed on in ${cargo_bin}/cargo-binstall"
     fi

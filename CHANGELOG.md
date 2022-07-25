@@ -10,6 +10,8 @@ Note: In this file, do not use the hard wrap in the middle of a sentence for com
 
 ## [Unreleased]
 
+- Fix cargo-binstall installation on macOS and Windows.
+
 ## [1.5.10] - 2022-07-24
 
 - Update `parse-changelog@latest` to 0.5.0.
