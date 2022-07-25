@@ -43,7 +43,7 @@ download() {
             mkdir -p .install-action-tmp
             (
                 cd .install-action-tmp
-                info "downloading ${url}..."
+                info "downloading ${url}"
                 retry curl --proto '=https' --tlsv1.2 -fsSL --retry 10 --retry-connrefused "$url" -o tmp.zip
                 unzip tmp.zip
                 mv "${bin}" "${bin_dir}/"
@@ -59,7 +59,7 @@ download() {
     if [[ "${components}" != "0" ]]; then
         tar_args+=(--strip-components "${components}")
     fi
-    info "downloading ${url}..."
+    info "downloading ${url}"
     retry curl --proto '=https' --tlsv1.2 -fsSL --retry 10 --retry-connrefused "${url}" \
         | tar "${tar_args[@]}" -C "${bin_dir}" "${bin}"
 }
@@ -200,7 +200,7 @@ for tool in "${tools[@]}"; do
                 cygwin* | msys*) url="https://get.nexte.st/${version}/windows-tar" ;;
                 *) bail "unsupported OSTYPE '${OSTYPE}' for ${tool}" ;;
             esac
-            info "downloading ${url}..."
+            info "downloading ${url}"
             retry curl --proto '=https' --tlsv1.2 -fsSL --retry 10 --retry-connrefused "${url}" \
                 | tar xzf - -C "${cargo_bin}"
             ;;
@@ -247,7 +247,7 @@ for tool in "${tools[@]}"; do
                 latest) version="${latest_version}" ;;
             esac
             url="https://github.com/${repo}/releases/download/v${version}/shfmt_v${version}_${target}${exe}"
-            info "downloading ${url}..."
+            info "downloading ${url}"
             retry curl --proto '=https' --tlsv1.2 -fsSL --retry 10 --retry-connrefused -o /usr/local/bin/shfmt "${url}"
             chmod +x /usr/local/bin/shfmt
             ;;
