@@ -10,6 +10,8 @@ Note: In this file, do not use the hard wrap in the middle of a sentence for com
 
 ## [Unreleased]
 
+- Install Rust-related binaries to `/usr/local/bin` when `$CARGO_HOME/bin` and `$HOME/.cargo/bin` is not available.
+
 ## [1.6.1] - 2022-07-25
 
 - Fix diagnostics.
@@ -20,7 +22,7 @@ Note: In this file, do not use the hard wrap in the middle of a sentence for com
 - Support mdbook on Windows.
 - Support wasmtime on Windows.
 - Support nextest on Linux (musl).
-- Fix installation failure when `$CARGO_HOME/bin` or `$HOME/.cargo/bin` is not available.
+- Fix installation failure when `$CARGO_HOME/bin` and `$HOME/.cargo/bin` is not available.
 
 ## [1.5.11] - 2022-07-25
 
