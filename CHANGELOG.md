@@ -10,6 +10,8 @@ Note: In this file, do not use the hard wrap in the middle of a sentence for com
 
 ## [Unreleased]
 
+- Fix diagnostics.
+
 ## [1.6.0] - 2022-07-25
 
 - Support mdbook-linkcheck.
