@@ -10,6 +10,8 @@ Note: In this file, do not use the hard wrap in the middle of a sentence for com
 
 ## [Unreleased]
 
+## [1.5.11] - 2022-07-25
+
 - Fix cargo-binstall installation on macOS and Windows.
 
 ## [1.5.10] - 2022-07-24
@@ -208,7 +210,8 @@ Note: In this file, do not use the hard wrap in the middle of a sentence for com
 
 Initial release
 
-[Unreleased]: https://github.com/taiki-e/install-action/compare/v1.5.10...HEAD
+[Unreleased]: https://github.com/taiki-e/install-action/compare/v1.5.11...HEAD
+[1.5.11]: https://github.com/taiki-e/install-action/compare/v1.5.10...v1.5.11
 [1.5.10]: https://github.com/taiki-e/install-action/compare/v1.5.9...v1.5.10
 [1.5.9]: https://github.com/taiki-e/install-action/compare/v1.5.8...v1.5.9
 [1.5.8]: https://github.com/taiki-e/install-action/compare/v1.5.7...v1.5.8
