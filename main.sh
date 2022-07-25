@@ -128,8 +128,10 @@ case "${OSTYPE}" in
     cygwin* | msys*) exe=".exe" ;;
 esac
 
-cargo_bin="${CARGO_HOME:-$HOME/.cargo}/bin"
+cargo_bin="${CARGO_HOME:-"$HOME/.cargo"}/bin"
 mkdir -p "${cargo_bin}"
+# For version check. It is intentional that this is not wrote in GITHUB_ENV.
+export PATH="${cargo_bin}:$PATH"
 
 for tool in "${tools[@]}"; do
     if [[ "${tool}" == *"@"* ]]; then
