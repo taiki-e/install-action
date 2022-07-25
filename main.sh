@@ -30,15 +30,45 @@ warn() {
 info() {
     echo "info: $*"
 }
+download() {
+    local url="$1"
+    local bin_dir="$2"
+    local bin="$3"
+    local tar_args=()
+    case "${url}" in
+        *.tar.gz | *.tgz) tar_args+=("xzf") ;;
+        *.tar.bz2 | *.tbz2) tar_args+=("xjf") ;;
+        *.tar.xz | *.txz) tar_args+=("xJf") ;;
+        *.zip)
+            mkdir -p .install-action-tmp
+            (
+                cd .install-action-tmp
+                info "downloading ${url}..."
+                retry curl --proto '=https' --tlsv1.2 -fsSL --retry 10 --retry-connrefused "$url" -o tmp.zip
+                unzip tmp.zip
+                mv "${bin}" "${bin_dir}/"
+            )
+            rm -rf .install-action-tmp
+            return 0
+            ;;
+        *) bail "unrecognized archive format '${url}' for ${tool}" ;;
+    esac
+    tar_args+=("-")
+    local components
+    components=$(tr <<<"${bin}" -cd '/' | wc -c)
+    if [[ "${components}" != "0" ]]; then
+        tar_args+=(--strip-components "${components}")
+    fi
+    info "downloading ${url}..."
+    retry curl --proto '=https' --tlsv1.2 -fsSL --retry 10 --retry-connrefused "${url}" \
+        | tar "${tar_args[@]}" -C "${bin_dir}" "${bin}"
+}
 install_cargo_binstall() {
-    cargo_bin="${CARGO_HOME:-$HOME/.cargo}/bin"
-
     if [[ ! -f "${cargo_bin}/cargo-binstall" ]]; then
         info "installing cargo-binstall"
 
         target="$(rustc -vV | grep host | cut -c 7-)"
         base_url=https://github.com/ryankurte/cargo-binstall/releases/latest/download/cargo-binstall
-        is_zip=false
         case "${target}" in
             x86_64-unknown-linux-gnu) url="${base_url}-x86_64-unknown-linux-musl.tgz" ;;
             x86_64-unknown-linux-musl) url="${base_url}-x86_64-unknown-linux-musl.tgz" ;;
@@ -49,45 +79,23 @@ install_cargo_binstall() {
             aarch64-unknown-linux-gnu) url="${base_url}-aarch64-unknown-linux-musl.tgz" ;;
             aarch64-unknown-linux-musl) url="${base_url}-aarch64-unknown-linux-musl.tgz" ;;
 
-            x86_64-pc-windows-gnu)
-                is_zip=true
-                url="${base_url}-x86_64-pc-windows-msvc.zip"
-                ;;
+            x86_64-pc-windows-gnu) url="${base_url}-x86_64-pc-windows-msvc.zip" ;;
 
             x86_64-apple-darwin | aarch64-apple-darwin | x86_64-pc-windows-msvc)
-                is_zip=true
                 url="${base_url}-${target}.zip"
                 ;;
 
             *) bail "unsupported target '${target}' for cargo-binstall" ;;
         esac
 
-        mkdir -p .install-action-tmp
-        (
-            cd .install-action-tmp
-            if [[ "${is_zip}" == "true" ]]; then
-                retry curl --proto '=https' --tlsv1.2 -fsSL --retry 10 --retry-connrefused "$url" -o "cargo-binstall-${target}.zip"
-                unzip "cargo-binstall-${target}.zip"
-                rm "cargo-binstall-${target}.zip"
-            else
-                retry curl --proto '=https' --tlsv1.2 -fsSL --retry 10 --retry-connrefused "$url" | tar xzf -
-            fi
-
-            mkdir -p "{cargo_bin}/"
-
-            case "${OSTYPE}" in
-                cygwin* | msys*) mv cargo-binstall.exe "${cargo_bin}/" ;;
-                *) mv cargo-binstall "${cargo_bin}/" ;;
-            esac
-        )
-        rm -rf .install-action-tmp
+        download "${url}" "${cargo_bin}" "cargo-binstall${exe}"
     else
         info "cargo-binstall already installed on in ${cargo_bin}/cargo-binstall"
     fi
 }
 cargo_binstall() {
-    tool="$1"
-    version="$2"
+    local tool="$1"
+    local version="$2"
 
     info "install-action does not support ${tool}, fallback to cargo-binstall"
 
@@ -97,12 +105,8 @@ cargo_binstall() {
     # As a result, http will be disabled, and it will also set
     # min tls version to be 1.2
     case "${version}" in
-        latest)
-            cargo binstall --secure --no-confirm "$tool"
-            ;;
-        *)
-            cargo binstall --secure --no-confirm --version "$version" "$tool"
-            ;;
+        latest) cargo binstall --secure --no-confirm "$tool" ;;
+        *) cargo binstall --secure --no-confirm --version "$version" "$tool" ;;
     esac
 }
 
@@ -114,11 +118,18 @@ export DEBIAN_FRONTEND=noninteractive
 
 # Inputs
 tool="${INPUT_TOOL:-}"
-
 tools=()
 if [[ -n "${tool}" ]]; then
     while read -rd,; do tools+=("${REPLY}"); done <<<"${tool},"
 fi
+
+exe=""
+case "${OSTYPE}" in
+    cygwin* | msys*) exe=".exe" ;;
+esac
+
+cargo_bin="${CARGO_HOME:-$HOME/.cargo}/bin"
+mkdir -p "${cargo_bin}"
 
 for tool in "${tools[@]}"; do
     if [[ "${tool}" == *"@"* ]]; then
@@ -152,9 +163,7 @@ for tool in "${tools[@]}"; do
                 latest) version="${latest_version}" ;;
             esac
             url="https://github.com/${repo}/releases/download/v${version}/${tool}-${target}.tar.gz"
-            # shellcheck disable=SC2086
-            retry curl --proto '=https' --tlsv1.2 -fsSL --retry 10 --retry-connrefused "${url}" \
-                | tar xzf - -C ${CARGO_HOME:-~/.cargo}/bin
+            download "${url}" "${cargo_bin}" "${tool}${exe}"
             ;;
         cross)
             # https://github.com/cross-rs/cross/releases
@@ -170,46 +179,53 @@ for tool in "${tools[@]}"; do
                 latest) version="${latest_version}" ;;
             esac
             case "${version}" in
-                0.1* | 0.2.[0-1]) url="https://github.com/${repo}/releases/download/v${version}/cross-v${version}-${target}.tar.gz" ;;
+                0.1.* | 0.2.[0-1]) url="https://github.com/${repo}/releases/download/v${version}/cross-v${version}-${target}.tar.gz" ;;
                 *) url="https://github.com/${repo}/releases/download/v${version}/cross-${target}.tar.gz" ;;
             esac
-            # shellcheck disable=SC2086
-            retry curl --proto '=https' --tlsv1.2 -fsSL --retry 10 --retry-connrefused "${url}" \
-                | tar xzf - -C ${CARGO_HOME:-~/.cargo}/bin
+            download "${url}" "${cargo_bin}" "${tool}${exe}"
             ;;
         nextest)
             # https://nexte.st/book/pre-built-binaries.html
             case "${OSTYPE}" in
-                linux*) url="https://get.nexte.st/${version}/linux" ;;
+                linux*)
+                    # musl binaries are available on 0.9.29+.
+                    case "${version}" in
+                        0.[1-8].* | 0.9.[0-9] | 0.9.[0-1][0-9] | 0.9.2[0-8]) url="https://get.nexte.st/${version}/linux" ;;
+                        *) url="https://get.nexte.st/${version}/linux-musl" ;;
+                    esac
+                    ;;
                 darwin*) url="https://get.nexte.st/${version}/mac" ;;
                 cygwin* | msys*) url="https://get.nexte.st/${version}/windows-tar" ;;
                 *) bail "unsupported OSTYPE '${OSTYPE}' for ${tool}" ;;
             esac
-            # shellcheck disable=SC2086
+            info "downloading ${url}..."
             retry curl --proto '=https' --tlsv1.2 -fsSL --retry 10 --retry-connrefused "${url}" \
-                | tar xzf - -C ${CARGO_HOME:-~/.cargo}/bin
+                | tar xzf - -C "${cargo_bin}"
             ;;
         shellcheck)
             # https://github.com/koalaman/shellcheck/releases
             latest_version="0.8.0"
             repo="koalaman/shellcheck"
+            case "${version}" in
+                latest) version="${latest_version}" ;;
+            esac
+            base_url="https://github.com/${repo}/releases/download/v${version}/shellcheck-v${version}"
             case "${OSTYPE}" in
                 linux*)
                     if type -P shellcheck &>/dev/null; then
                         sudo apt-get -qq -o Dpkg::Use-Pty=0 remove -y shellcheck
                     fi
-                    target="linux"
+                    url="${base_url}.linux.x86_64.tar.xz"
                     ;;
-                darwin*) target="darwin" ;;
-                cygwin* | msys*) bail "${tool} for windows is not supported yet by this action" ;;
+                darwin*) url="${base_url}.darwin.x86_64.tar.xz" ;;
+                cygwin* | msys*)
+                    # TODO: In what directory should we install the binaries?
+                    # url="${base_url}.zip"
+                    bail "${tool} for windows is not supported yet by this action"
+                    ;;
                 *) bail "unsupported OSTYPE '${OSTYPE}' for ${tool}" ;;
             esac
-            case "${version}" in
-                latest) version="${latest_version}" ;;
-            esac
-            url="https://github.com/${repo}/releases/download/v${version}/shellcheck-v${version}.${target}.x86_64.tar.xz"
-            retry curl --proto '=https' --tlsv1.2 -fsSL --retry 10 --retry-connrefused "${url}" \
-                | tar xJf - --strip-components 1 -C /usr/local/bin "shellcheck-v${version}/shellcheck"
+            download "${url}" /usr/local/bin "shellcheck-v${version}/shellcheck"
             ;;
         shfmt)
             # https://github.com/mvdan/sh/releases
@@ -218,13 +234,18 @@ for tool in "${tools[@]}"; do
             case "${OSTYPE}" in
                 linux*) target="linux_amd64" ;;
                 darwin*) target="darwin_amd64" ;;
-                cygwin* | msys*) bail "${tool} for windows is not supported yet by this action" ;;
+                cygwin* | msys*)
+                    # TODO: In what directory should we install the binaries?
+                    # target="windows_amd64"
+                    bail "${tool} for windows is not supported yet by this action"
+                    ;;
                 *) bail "unsupported OSTYPE '${OSTYPE}' for ${tool}" ;;
             esac
             case "${version}" in
                 latest) version="${latest_version}" ;;
             esac
-            url="https://github.com/${repo}/releases/download/v${version}/shfmt_v${version}_${target}"
+            url="https://github.com/${repo}/releases/download/v${version}/shfmt_v${version}_${target}${exe}"
+            info "downloading ${url}..."
             retry curl --proto '=https' --tlsv1.2 -fsSL --retry 10 --retry-connrefused -o /usr/local/bin/shfmt "${url}"
             chmod +x /usr/local/bin/shfmt
             ;;
@@ -258,42 +279,65 @@ for tool in "${tools[@]}"; do
             # https://github.com/bytecodealliance/wasmtime/releases
             latest_version="0.39.1"
             repo="bytecodealliance/wasmtime"
-            case "${OSTYPE}" in
-                linux*) target="x86_64-linux" ;;
-                darwin*) target="x86_64-macos" ;;
-                cygwin* | msys*) bail "${tool} for windows is not supported yet by this action" ;;
-                *) bail "unsupported OSTYPE '${OSTYPE}' for ${tool}" ;;
-            esac
             case "${version}" in
                 latest) version="${latest_version}" ;;
             esac
-            url="https://github.com/bytecodealliance/wasmtime/releases/download/v${version}/wasmtime-v${version}-${target}.tar.xz"
-            # shellcheck disable=SC2086
-            retry curl --proto '=https' --tlsv1.2 -fsSL --retry 10 --retry-connrefused "${url}" \
-                | tar xJf - --strip-components 1 -C ${CARGO_HOME:-~/.cargo}/bin "wasmtime-v${version}-${target}/wasmtime"
+            base_url="https://github.com/bytecodealliance/wasmtime/releases/download/v${version}/wasmtime-v${version}"
+            case "${OSTYPE}" in
+                linux*)
+                    target="x86_64-linux"
+                    url="${base_url}-${target}.tar.xz"
+                    ;;
+                darwin*)
+                    target="x86_64-macos"
+                    url="${base_url}-${target}.tar.xz"
+                    ;;
+                cygwin* | msys*)
+                    target="x86_64-windows"
+                    url="${base_url}-${target}.zip"
+                    ;;
+                *) bail "unsupported OSTYPE '${OSTYPE}' for ${tool}" ;;
+            esac
+            download "${url}" "${cargo_bin}" "${tool}-v${version}-${target}/${tool}${exe}"
             ;;
         mdbook)
             # https://github.com/rust-lang/mdBook/releases
             latest_version="0.4.21"
             repo="rust-lang/mdBook"
+            case "${version}" in
+                latest) version="${latest_version}" ;;
+            esac
+            base_url="https://github.com/${repo}/releases/download/v${version}/${tool}-v${version}"
+            case "${OSTYPE}" in
+                linux*) url="${base_url}-x86_64-unknown-linux-gnu.tar.gz" ;;
+                darwin*) url="${base_url}-x86_64-apple-darwin.tar.gz" ;;
+                cygwin* | msys*) url="${base_url}-x86_64-pc-windows-msvc.zip" ;;
+                *) bail "unsupported OSTYPE '${OSTYPE}' for ${tool}" ;;
+            esac
+            download "${url}" "${cargo_bin}" "${tool}${exe}"
+            ;;
+        mdbook-linkcheck)
+            # https://github.com/Michael-F-Bryan/mdbook-linkcheck/releases
+            latest_version="0.7.6"
+            repo="Michael-F-Bryan/mdbook-linkcheck"
             case "${OSTYPE}" in
                 linux*) target="x86_64-unknown-linux-gnu" ;;
                 darwin*) target="x86_64-apple-darwin" ;;
-                # TODO: mdbook has windows binaries, but they use `.zip` and not `.tar.gz`.
-                cygwin* | msys*) bail "${tool} for windows is not supported yet by this action" ;;
+                cygwin* | msys*) target="x86_64-pc-windows-msvc" ;;
                 *) bail "unsupported OSTYPE '${OSTYPE}' for ${tool}" ;;
             esac
             case "${version}" in
                 latest) version="${latest_version}" ;;
             esac
-            url="https://github.com/${repo}/releases/download/v${version}/${tool}-v${version}-${target}.tar.gz"
-            # shellcheck disable=SC2086
-            retry curl --proto '=https' --tlsv1.2 -fsSL --retry 10 --retry-connrefused "${url}" \
-                | tar xzf - -C ${CARGO_HOME:-~/.cargo}/bin
+            url="https://github.com/${repo}/releases/download/v${version}/${tool}.${target}.zip"
+            download "${url}" "${cargo_bin}" "${tool}${exe}"
+            case "${OSTYPE}" in
+                linux* | darwin*) chmod +x "${cargo_bin}/${tool}${exe}" ;;
+            esac
             ;;
         cargo-binstall) install_cargo_binstall ;;
         *)
-            cargo_binstall "$tool" "$version"
+            cargo_binstall "${tool}" "${version}"
             continue
             ;;
     esac

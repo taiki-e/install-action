@@ -76,8 +76,9 @@ https://spdx.org/licenses
 | [**shfmt**](https://github.com/mvdan/sh) | `/usr/local/bin` | [GitHub Releases](https://github.com/mvdan/sh/releases) | Linux, macOS | [BSD-3-Clause](https://github.com/mvdan/sh/blob/HEAD/LICENSE) |
 | [**valgrind**](https://valgrind.org) | `/snap/bin` | [snap](https://snapcraft.io/install/valgrind/ubuntu) | Linux | [GPL-2.0-or-later](https://valgrind.org/docs/manual/license.gpl.html) |
 | [**wasm-pack**](https://github.com/rustwasm/wasm-pack) | `~/.cargo/bin` | [GitHub Releases](https://github.com/rustwasm/wasm-pack/releases) | Linux, macOS | [Apache-2.0](https://github.com/rustwasm/wasm-pack/blob/HEAD/LICENSE-APACHE) OR [MIT](https://github.com/rustwasm/wasm-pack/blob/HEAD/LICENSE-MIT) |
-| [**wasmtime**](https://github.com/bytecodealliance/wasmtime) | `~/.cargo/bin` | [GitHub Releases](https://github.com/bytecodealliance/wasmtime/releases) | Linux, macOS | [Apache-2.0 WITH LLVM-exception](https://github.com/bytecodealliance/wasmtime/blob/HEAD/LICENSE) |
-| [**mdbook**](https://github.com/rust-lang/mdBook) | `~/.cargo/bin` | [GitHub Releases](https://github.com/rust-lang/mdBook/releases) | Linux, macOS | [MPL-2.0](https://github.com/rust-lang/mdBook/blob/HEAD/LICENSE) |
+| [**wasmtime**](https://github.com/bytecodealliance/wasmtime) | `~/.cargo/bin` | [GitHub Releases](https://github.com/bytecodealliance/wasmtime/releases) | Linux, macOS, Windows | [Apache-2.0 WITH LLVM-exception](https://github.com/bytecodealliance/wasmtime/blob/HEAD/LICENSE) |
+| [**mdbook**](https://github.com/rust-lang/mdBook) | `~/.cargo/bin` | [GitHub Releases](https://github.com/rust-lang/mdBook/releases) | Linux, macOS, Windows | [MPL-2.0](https://github.com/rust-lang/mdBook/blob/HEAD/LICENSE) |
+| [**mdbook-linkcheck**](https://github.com/Michael-F-Bryan/mdbook-linkcheck) | `~/.cargo/bin` | [GitHub Releases](https://github.com/Michael-F-Bryan/mdbook-linkcheck/releases) | Linux, macOS, Windows | [MIT](https://github.com/Michael-F-Bryan/mdbook-linkcheck/blob/HEAD/LICENSE) |
 | [**cargo-binstall**][cargo-binstall] | `~/.cargo/bin` | [GitHub Releases](https://github.com/ryankurte/cargo-binstall/releases) | Linux, macOS, Windows | [GPL-3.0](https://github.com/ryankurte/cargo-binstall/blob/HEAD/LICENSE.txt) |
 
 If a tool not included in the list above is specified, this action uses [cargo-binstall] as a fallback.
