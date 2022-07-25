@@ -10,6 +10,8 @@ Note: In this file, do not use the hard wrap in the middle of a sentence for com
 
 ## [Unreleased]
 
+## [1.7.0] - 2022-07-25
+
 - Install Rust-related binaries to `/usr/local/bin` when `$CARGO_HOME/bin` and `$HOME/.cargo/bin` is not available.
 
 ## [1.6.1] - 2022-07-25
@@ -224,7 +226,8 @@ Note: In this file, do not use the hard wrap in the middle of a sentence for com
 
 Initial release
 
-[Unreleased]: https://github.com/taiki-e/install-action/compare/v1.6.1...HEAD
+[Unreleased]: https://github.com/taiki-e/install-action/compare/v1.7.0...HEAD
+[1.7.0]: https://github.com/taiki-e/install-action/compare/v1.6.1...v1.7.0
 [1.6.1]: https://github.com/taiki-e/install-action/compare/v1.6.0...v1.6.1
 [1.6.0]: https://github.com/taiki-e/install-action/compare/v1.5.11...v1.6.0
 [1.5.11]: https://github.com/taiki-e/install-action/compare/v1.5.10...v1.5.11
