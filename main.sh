@@ -140,6 +140,7 @@ for tool in "${tools[@]}"; do
         version="latest"
     fi
     tool="${tool%@*}"
+    bin="${tool}${exe}"
     info "installing ${tool}@${version}"
     case "${tool}" in
         cargo-hack | cargo-llvm-cov | cargo-minimal-versions | parse-changelog)
@@ -187,6 +188,7 @@ for tool in "${tools[@]}"; do
             download "${url}" "${cargo_bin}" "${tool}${exe}"
             ;;
         nextest)
+            bin="cargo-nextest"
             # https://nexte.st/book/pre-built-binaries.html
             case "${OSTYPE}" in
                 linux*)
@@ -344,9 +346,9 @@ for tool in "${tools[@]}"; do
             ;;
     esac
 
-    info "${tool} installed at $(type -P "${tool}")"
-    case "${tool}" in
-        cargo-* | nextest) x cargo "${tool#cargo-}" --version ;;
+    info "${tool} installed at $(type -P "${bin}")"
+    case "${bin}" in
+        cargo-*) x cargo "${tool#cargo-}" --version ;;
         *) x "${tool}" --version ;;
     esac
     echo
