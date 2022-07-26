@@ -192,7 +192,7 @@ for tool in "${tools[@]}"; do
             esac
             download "${url}" "${cargo_bin}" "${tool}${exe}"
             ;;
-        nextest)
+        nextest | cargo-nextest)
             bin="cargo-nextest"
             # https://nexte.st/book/pre-built-binaries.html
             case "${OSTYPE}" in
