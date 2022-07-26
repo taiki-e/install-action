@@ -83,6 +83,7 @@ tools=(
     parse-changelog
     cross
     nextest
+    cargo-nextest
     shellcheck
     shfmt
     valgrind
