@@ -10,6 +10,8 @@ Note: In this file, do not use the hard wrap in the middle of a sentence for com
 
 ## [Unreleased]
 
+## [1.8.0] - 2022-07-26
+
 - Only use musl binaries for nextest if glibc isn't available. See [#13](https://github.com/taiki-e/install-action/issues/13) for more.
 
 - Fix cargo-binstall installation failure. ([#16](https://github.com/taiki-e/install-action/pull/16), thanks @CAD97)
@@ -232,7 +234,8 @@ Note: In this file, do not use the hard wrap in the middle of a sentence for com
 
 Initial release
 
-[Unreleased]: https://github.com/taiki-e/install-action/compare/v1.7.0...HEAD
+[Unreleased]: https://github.com/taiki-e/install-action/compare/v1.8.0...HEAD
+[1.8.0]: https://github.com/taiki-e/install-action/compare/v1.7.0...v1.8.0
 [1.7.0]: https://github.com/taiki-e/install-action/compare/v1.6.1...v1.7.0
 [1.6.1]: https://github.com/taiki-e/install-action/compare/v1.6.0...v1.6.1
 [1.6.0]: https://github.com/taiki-e/install-action/compare/v1.5.11...v1.6.0
