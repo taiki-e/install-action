@@ -95,7 +95,7 @@ install_cargo_binstall() {
 
         download "${url}" "${cargo_bin}" "cargo-binstall${exe}"
         info "cargo-binstall installed at $(type -P "cargo-binstall${exe}")"
-        x cargo binstall | head -1 # cargo binstall doesn't have a normal --version flag
+        x cargo binstall --help | head -1 # cargo binstall doesn't have a normal --version flag
     else
         info "cargo-binstall already installed on in ${cargo_bin}/cargo-binstall"
     fi
