@@ -353,6 +353,7 @@ for tool in "${tools[@]}"; do
 
     info "${tool} installed at $(type -P "${bin}")"
     case "${bin}" in
+        cargo-binstall) x cargo binstall | head 1 ;; # cargo binstall doesn't have a normal --version flag
         cargo-*) x cargo "${tool#cargo-}" --version ;;
         *) x "${tool}" --version ;;
     esac
