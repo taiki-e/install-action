@@ -63,13 +63,18 @@ download() {
     retry curl --proto '=https' --tlsv1.2 -fsSL --retry 10 --retry-connrefused "${url}" \
         | tar "${tar_args[@]}" -C "${bin_dir}" "${bin}"
 }
+host_triple() {
+    if [[ -z "${host:-}" ]]; then
+        host="$(rustc -vV | grep host | cut -c 7-)"
+    fi
+}
 install_cargo_binstall() {
     if [[ ! -f "${cargo_bin}/cargo-binstall" ]]; then
         info "installing cargo-binstall"
 
-        target="$(rustc -vV | grep host | cut -c 7-)"
+        host_triple
         base_url=https://github.com/ryankurte/cargo-binstall/releases/latest/download/cargo-binstall
-        case "${target}" in
+        case "${host}" in
             x86_64-unknown-linux-gnu) url="${base_url}-x86_64-unknown-linux-musl.tgz" ;;
             x86_64-unknown-linux-musl) url="${base_url}-x86_64-unknown-linux-musl.tgz" ;;
 
@@ -82,10 +87,10 @@ install_cargo_binstall() {
             x86_64-pc-windows-gnu) url="${base_url}-x86_64-pc-windows-msvc.zip" ;;
 
             x86_64-apple-darwin | aarch64-apple-darwin | x86_64-pc-windows-msvc)
-                url="${base_url}-${target}.zip"
+                url="${base_url}-${host}.zip"
                 ;;
 
-            *) bail "unsupported target '${target}' for cargo-binstall" ;;
+            *) bail "unsupported target '${host}' for cargo-binstall" ;;
         esac
 
         download "${url}" "${cargo_bin}" "cargo-binstall${exe}"
@@ -192,9 +197,9 @@ for tool in "${tools[@]}"; do
             # https://nexte.st/book/pre-built-binaries.html
             case "${OSTYPE}" in
                 linux*)
-                    # musl binaries are available on 0.9.29+.
-                    case "${version}" in
-                        0.[1-8].* | 0.9.[0-9] | 0.9.[0-1][0-9] | 0.9.2[0-8]) url="https://get.nexte.st/${version}/linux" ;;
+                    host_triple
+                    case "${host}" in
+                        *-linux-gnu*) url="https://get.nexte.st/${version}/linux" ;;
                         *) url="https://get.nexte.st/${version}/linux-musl" ;;
                     esac
                     ;;

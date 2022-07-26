@@ -10,6 +10,8 @@ Note: In this file, do not use the hard wrap in the middle of a sentence for com
 
 ## [Unreleased]
 
+- Only use musl binaries for nextest if glibc isn't available. See [#13](https://github.com/taiki-e/install-action/issues/13) for more.
+
 ## [1.7.0] - 2022-07-25
 
 - Install Rust-related binaries to `/usr/local/bin` when `$CARGO_HOME/bin` and `$HOME/.cargo/bin` is not available.
