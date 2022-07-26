@@ -4,8 +4,8 @@ description: GitHub Action for installing development tools
 inputs:
   tool:
     description: Tools to install (comma-separated list)
-    required: true
-    # default: #publish:tool
+    required: false
+    default: cargo-minimal-versions
 
 runs:
   using: node16
