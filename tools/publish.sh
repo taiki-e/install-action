@@ -90,6 +90,7 @@ tools=(
     wasm-pack
     wasmtime
     mdbook
+    mdbook-linkcheck
     cargo-binstall
 )
 
