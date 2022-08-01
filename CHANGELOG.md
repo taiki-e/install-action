@@ -12,6 +12,8 @@ Note: In this file, do not use the hard wrap in the middle of a sentence for com
 
 - Fix missing include files when installing `protoc` on Linux and macOS.
 
+- Installation of `protoc` on Windows is not currently working (in all released versions) and is considered unsupported.
+
 ## [1.10.0] - 2022-08-01
 
 - Set the `PROTOC` environment variable when installing `protoc` if it has not already been set.
