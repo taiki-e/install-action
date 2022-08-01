@@ -173,14 +173,14 @@ for tool in "${tools[@]}"; do
                 *) exit 1 ;;
             esac
             repo="taiki-e/${tool}"
+            case "${version}" in
+                latest) version="${latest_version}" ;;
+            esac
             case "${OSTYPE}" in
                 linux*) target="x86_64-unknown-linux-musl" ;;
                 darwin*) target="x86_64-apple-darwin" ;;
                 cygwin* | msys*) target="x86_64-pc-windows-msvc" ;;
                 *) bail "unsupported OSTYPE '${OSTYPE}' for ${tool}" ;;
-            esac
-            case "${version}" in
-                latest) version="${latest_version}" ;;
             esac
             url="https://github.com/${repo}/releases/download/v${version}/${tool}-${target}.tar.gz"
             download "${url}" "${cargo_bin}" "${tool}${exe}"
@@ -188,7 +188,10 @@ for tool in "${tools[@]}"; do
         cross)
             # https://github.com/cross-rs/cross/releases
             latest_version="0.2.4"
-            repo="cross-rs/cross"
+            repo="cross-rs/${tool}"
+            case "${version}" in
+                latest) version="${latest_version}" ;;
+            esac
             case "${OSTYPE}" in
                 linux*) target="x86_64-unknown-linux-musl" ;;
                 darwin*) target="x86_64-apple-darwin" ;;
@@ -196,11 +199,8 @@ for tool in "${tools[@]}"; do
                 *) bail "unsupported OSTYPE '${OSTYPE}' for ${tool}" ;;
             esac
             case "${version}" in
-                latest) version="${latest_version}" ;;
-            esac
-            case "${version}" in
-                0.1.* | 0.2.[0-1]) url="https://github.com/${repo}/releases/download/v${version}/cross-v${version}-${target}.tar.gz" ;;
-                *) url="https://github.com/${repo}/releases/download/v${version}/cross-${target}.tar.gz" ;;
+                0.1.* | 0.2.[0-1]) url="https://github.com/${repo}/releases/download/v${version}/${tool}-v${version}-${target}.tar.gz" ;;
+                *) url="https://github.com/${repo}/releases/download/v${version}/${tool}-${target}.tar.gz" ;;
             esac
             download "${url}" "${cargo_bin}" "${tool}${exe}"
             ;;
@@ -230,7 +230,7 @@ for tool in "${tools[@]}"; do
             case "${version}" in
                 latest) version="${latest_version}" ;;
             esac
-            miner_patch_version="${latest_version#*.}"
+            miner_patch_version="${version#*.}"
             base_url="https://github.com/${repo}/releases/download/v${miner_patch_version}/protoc-${miner_patch_version}"
             bin_dir="/usr/local/bin"
             include_dir="/usr/local/include"
@@ -275,12 +275,12 @@ for tool in "${tools[@]}"; do
         shellcheck)
             # https://github.com/koalaman/shellcheck/releases
             latest_version="0.8.0"
-            repo="koalaman/shellcheck"
+            repo="koalaman/${tool}"
             case "${version}" in
                 latest) version="${latest_version}" ;;
             esac
-            base_url="https://github.com/${repo}/releases/download/v${version}/shellcheck-v${version}"
-            bin="shellcheck-v${version}/shellcheck${exe}"
+            base_url="https://github.com/${repo}/releases/download/v${version}/${tool}-v${version}"
+            bin="${tool}-v${version}/${tool}${exe}"
             case "${OSTYPE}" in
                 linux*)
                     if type -P shellcheck &>/dev/null; then
@@ -291,7 +291,7 @@ for tool in "${tools[@]}"; do
                 darwin*) url="${base_url}.darwin.x86_64.tar.xz" ;;
                 cygwin* | msys*)
                     url="${base_url}.zip"
-                    bin="shellcheck${exe}"
+                    bin="${tool}${exe}"
                     ;;
                 *) bail "unsupported OSTYPE '${OSTYPE}' for ${tool}" ;;
             esac
@@ -301,6 +301,9 @@ for tool in "${tools[@]}"; do
             # https://github.com/mvdan/sh/releases
             latest_version="3.5.1"
             repo="mvdan/sh"
+            case "${version}" in
+                latest) version="${latest_version}" ;;
+            esac
             bin_dir="/usr/local/bin"
             case "${OSTYPE}" in
                 linux*) target="linux_amd64" ;;
@@ -316,25 +319,22 @@ for tool in "${tools[@]}"; do
                     ;;
                 *) bail "unsupported OSTYPE '${OSTYPE}' for ${tool}" ;;
             esac
-            case "${version}" in
-                latest) version="${latest_version}" ;;
-            esac
-            url="https://github.com/${repo}/releases/download/v${version}/shfmt_v${version}_${target}${exe}"
+            url="https://github.com/${repo}/releases/download/v${version}/${tool}_v${version}_${target}${exe}"
             info "downloading ${url}"
-            retry curl --proto '=https' --tlsv1.2 -fsSL --retry 10 --retry-connrefused -o "${bin_dir}/shfmt${exe}" "${url}"
+            retry curl --proto '=https' --tlsv1.2 -fsSL --retry 10 --retry-connrefused -o "${bin_dir}/${tool}${exe}" "${url}"
             case "${OSTYPE}" in
-                linux* | darwin*) chmod +x "${bin_dir}/shfmt${exe}" ;;
+                linux* | darwin*) chmod +x "${bin_dir}/${tool}${exe}" ;;
             esac
             ;;
         valgrind)
+            case "${version}" in
+                latest) ;;
+                *) warn "specifying the version of ${tool} is not supported yet by this action" ;;
+            esac
             case "${OSTYPE}" in
                 linux*) ;;
                 darwin* | cygwin* | msys*) bail "${tool} for non-linux is not supported yet by this action" ;;
                 *) bail "unsupported OSTYPE '${OSTYPE}' for ${tool}" ;;
-            esac
-            case "${version}" in
-                latest) ;;
-                *) warn "specifying the version of ${tool} is not supported yet by this action" ;;
             esac
             retry sudo apt-get -o Acquire::Retries=10 -qq update
             # libc6-dbg is needed to run Valgrind
@@ -344,22 +344,29 @@ for tool in "${tools[@]}"; do
             retry sudo snap install valgrind --classic
             ;;
         wasm-pack)
-            # https://rustwasm.github.io/wasm-pack/installer
+            # https://github.com/rustwasm/wasm-pack/releases
+            latest_version="0.10.3"
+            repo="rustwasm/${tool}"
+            case "${version}" in
+                latest) version="${latest_version}" ;;
+            esac
             case "${OSTYPE}" in
-                linux* | darwin*) ;;
-                cygwin* | msys*) bail "${tool} for windows is not supported yet by this action" ;;
+                linux*) target="x86_64-unknown-linux-musl" ;;
+                darwin*) target="x86_64-apple-darwin" ;;
+                cygwin* | msys*) target="x86_64-pc-windows-msvc" ;;
                 *) bail "unsupported OSTYPE '${OSTYPE}' for ${tool}" ;;
             esac
-            retry curl --proto '=https' --tlsv1.2 -fsSL --retry 10 --retry-connrefused https://rustwasm.github.io/wasm-pack/installer/init.sh | sh
+            url="https://github.com/${repo}/releases/download/v${version}/${tool}-v${version}-${target}.tar.gz"
+            download "${url}" "${cargo_bin}" "${tool}-v${version}-${target}/${tool}${exe}"
             ;;
         wasmtime)
             # https://github.com/bytecodealliance/wasmtime/releases
             latest_version="0.39.1"
-            repo="bytecodealliance/wasmtime"
+            repo="bytecodealliance/${tool}"
             case "${version}" in
                 latest) version="${latest_version}" ;;
             esac
-            base_url="https://github.com/bytecodealliance/wasmtime/releases/download/v${version}/wasmtime-v${version}"
+            base_url="https://github.com/${repo}/releases/download/v${version}/${tool}-v${version}"
             case "${OSTYPE}" in
                 linux*)
                     target="x86_64-linux"
@@ -396,15 +403,15 @@ for tool in "${tools[@]}"; do
         mdbook-linkcheck)
             # https://github.com/Michael-F-Bryan/mdbook-linkcheck/releases
             latest_version="0.7.6"
-            repo="Michael-F-Bryan/mdbook-linkcheck"
+            repo="Michael-F-Bryan/${tool}"
+            case "${version}" in
+                latest) version="${latest_version}" ;;
+            esac
             case "${OSTYPE}" in
                 linux*) target="x86_64-unknown-linux-gnu" ;;
                 darwin*) target="x86_64-apple-darwin" ;;
                 cygwin* | msys*) target="x86_64-pc-windows-msvc" ;;
                 *) bail "unsupported OSTYPE '${OSTYPE}' for ${tool}" ;;
-            esac
-            case "${version}" in
-                latest) version="${latest_version}" ;;
             esac
             url="https://github.com/${repo}/releases/download/v${version}/${tool}.${target}.zip"
             download "${url}" "${cargo_bin}" "${tool}${exe}"
