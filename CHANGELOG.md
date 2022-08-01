@@ -10,6 +10,8 @@ Note: In this file, do not use the hard wrap in the middle of a sentence for com
 
 ## [Unreleased]
 
+- Support `protoc` on Windows.
+
 ## [1.10.1] - 2022-08-01
 
 - Fix missing include files when installing `protoc` on Linux and macOS.

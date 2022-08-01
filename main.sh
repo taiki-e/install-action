@@ -240,10 +240,10 @@ for tool in "${tools[@]}"; do
                 cygwin* | msys*)
                     url="${base_url}-win64.zip"
                     bin_dir="${HOME}/.install-action/bin"
-                    # TODO
-                    include_dir=""
+                    include_dir="${HOME}/.install-action/include"
                     if [[ ! -d "${bin_dir}" ]]; then
                         mkdir -p "${bin_dir}"
+                        mkdir -p "${include_dir}"
                         echo "${bin_dir}" >>"${GITHUB_PATH}"
                         export PATH="${PATH}:${bin_dir}"
                     fi
@@ -257,17 +257,20 @@ for tool in "${tools[@]}"; do
                 retry curl --proto '=https' --tlsv1.2 -fsSL --retry 10 --retry-connrefused "${url}" -o tmp.zip
                 unzip tmp.zip
                 mv "bin/protoc${exe}" "${bin_dir}/"
-                if [[ -n "${include_dir}" ]]; then
-                    mkdir -p "${include_dir}/"
-                    sudo cp -r include/. "${include_dir}/"
-                    ls "${include_dir}/"
+                mkdir -p "${include_dir}/"
+                case "${OSTYPE}" in
+                    linux* | darwin*) sudo cp -r include/. "${include_dir}/" ;;
+                    cygwin* | msys*)
+                        cp -r include/. "${include_dir}/"
+                        bin_dir=$(sed <<<"${bin_dir}" 's/^\/c\//C:\\/')
+                        ;;
+                esac
+                if [[ -z "${PROTOC:-}" ]]; then
+                    info "setting PROTOC environment variable"
+                    echo "PROTOC=${bin_dir}/protoc${exe}" >>"${GITHUB_ENV}"
                 fi
             )
             rm -rf .install-action-tmp
-            if [[ -z "${PROTOC:-}" ]]; then
-                info "setting PROTOC environment variable"
-                echo "PROTOC=${bin_dir}/protoc${exe}" >>"${GITHUB_ENV}"
-            fi
             ;;
         shellcheck)
             # https://github.com/koalaman/shellcheck/releases
