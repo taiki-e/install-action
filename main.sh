@@ -34,6 +34,16 @@ download() {
     local url="$1"
     local bin_dir="$2"
     local bin="$3"
+    if [[ "${bin_dir}" == "/usr/"* ]]; then
+        if [[ ! -d "${bin_dir}" ]]; then
+            bin_dir="${HOME}/.install-action/bin"
+            if [[ ! -d "${bin_dir}" ]]; then
+                mkdir -p "${bin_dir}"
+                echo "${bin_dir}" >>"${GITHUB_PATH}"
+                export PATH="${PATH}:${bin_dir}"
+            fi
+        fi
+    fi
     local tar_args=()
     case "${url}" in
         *.tar.gz | *.tgz) tar_args+=("xzf") ;;
@@ -213,6 +223,23 @@ for tool in "${tools[@]}"; do
             retry curl --proto '=https' --tlsv1.2 -fsSL --retry 10 --retry-connrefused "${url}" \
                 | tar xzf - -C "${cargo_bin}"
             ;;
+        protoc)
+            # https://github.com/protocolbuffers/protobuf/releases
+            latest_version="3.21.4"
+            repo="protocolbuffers/protobuf"
+            case "${version}" in
+                latest) version="${latest_version}" ;;
+            esac
+            miner_patch_version="${latest_version#*.}"
+            base_url="https://github.com/${repo}/releases/download/v${miner_patch_version}/protoc-${miner_patch_version}"
+            case "${OSTYPE}" in
+                linux*) url="${base_url}-linux-x86_64.zip" ;;
+                darwin*) url="${base_url}-osx-x86_64.zip" ;;
+                cygwin* | msys*) url="${base_url}-win64.zip" ;;
+                *) bail "unsupported OSTYPE '${OSTYPE}' for ${tool}" ;;
+            esac
+            download "${url}" /usr/local/bin "bin/protoc${exe}"
+            ;;
         shellcheck)
             # https://github.com/koalaman/shellcheck/releases
             latest_version="0.8.0"
@@ -221,6 +248,7 @@ for tool in "${tools[@]}"; do
                 latest) version="${latest_version}" ;;
             esac
             base_url="https://github.com/${repo}/releases/download/v${version}/shellcheck-v${version}"
+            bin="shellcheck-v${version}/shellcheck${exe}"
             case "${OSTYPE}" in
                 linux*)
                     if type -P shellcheck &>/dev/null; then
@@ -230,25 +258,29 @@ for tool in "${tools[@]}"; do
                     ;;
                 darwin*) url="${base_url}.darwin.x86_64.tar.xz" ;;
                 cygwin* | msys*)
-                    # TODO: In what directory should we install the binaries?
-                    # url="${base_url}.zip"
-                    bail "${tool} for windows is not supported yet by this action"
+                    url="${base_url}.zip"
+                    bin="shellcheck${exe}"
                     ;;
                 *) bail "unsupported OSTYPE '${OSTYPE}' for ${tool}" ;;
             esac
-            download "${url}" /usr/local/bin "shellcheck-v${version}/shellcheck"
+            download "${url}" /usr/local/bin "${bin}"
             ;;
         shfmt)
             # https://github.com/mvdan/sh/releases
             latest_version="3.5.1"
             repo="mvdan/sh"
+            bin_dir="/usr/local/bin"
             case "${OSTYPE}" in
                 linux*) target="linux_amd64" ;;
                 darwin*) target="darwin_amd64" ;;
                 cygwin* | msys*)
-                    # TODO: In what directory should we install the binaries?
-                    # target="windows_amd64"
-                    bail "${tool} for windows is not supported yet by this action"
+                    target="windows_amd64"
+                    bin_dir="${HOME}/.install-action/bin"
+                    if [[ ! -d "${bin_dir}" ]]; then
+                        mkdir -p "${bin_dir}"
+                        echo "${bin_dir}" >>"${GITHUB_PATH}"
+                        export PATH="${PATH}:${bin_dir}"
+                    fi
                     ;;
                 *) bail "unsupported OSTYPE '${OSTYPE}' for ${tool}" ;;
             esac
@@ -257,8 +289,10 @@ for tool in "${tools[@]}"; do
             esac
             url="https://github.com/${repo}/releases/download/v${version}/shfmt_v${version}_${target}${exe}"
             info "downloading ${url}"
-            retry curl --proto '=https' --tlsv1.2 -fsSL --retry 10 --retry-connrefused -o /usr/local/bin/shfmt "${url}"
-            chmod +x /usr/local/bin/shfmt
+            retry curl --proto '=https' --tlsv1.2 -fsSL --retry 10 --retry-connrefused -o "${bin_dir}/shfmt${exe}" "${url}"
+            case "${OSTYPE}" in
+                linux* | darwin*) chmod +x "${bin_dir}/shfmt${exe}" ;;
+            esac
             ;;
         valgrind)
             case "${OSTYPE}" in

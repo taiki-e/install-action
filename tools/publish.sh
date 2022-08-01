@@ -81,7 +81,11 @@ tools=(
     cargo-llvm-cov
     cargo-minimal-versions
     parse-changelog
+    cargo-binstall
     cross
+    mdbook
+    mdbook-linkcheck
+    protoc
     nextest
     cargo-nextest
     shellcheck
@@ -89,9 +93,6 @@ tools=(
     valgrind
     wasm-pack
     wasmtime
-    mdbook
-    mdbook-linkcheck
-    cargo-binstall
 )
 
 (

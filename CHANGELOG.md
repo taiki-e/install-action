@@ -10,6 +10,10 @@ Note: In this file, do not use the hard wrap in the middle of a sentence for com
 
 ## [Unreleased]
 
+- Support `protoc`.
+- Support `shellcheck` on Windows.
+- Support `shfmt` on Windows.
+
 ## [1.8.4] - 2022-08-01
 
 - Update `cargo-llvm-cov@latest` to 0.4.13.
@@ -25,13 +29,13 @@ Note: In this file, do not use the hard wrap in the middle of a sentence for com
 
 ## [1.8.1] - 2022-07-26
 
-- Fix cargo-binstall installation failure.
+- Fix `cargo-binstall` installation failure.
 
 ## [1.8.0] - 2022-07-26
 
 - Only use musl binaries for nextest if glibc isn't available. See [#13](https://github.com/taiki-e/install-action/issues/13) for more.
 
-- Fix cargo-binstall installation failure. ([#16](https://github.com/taiki-e/install-action/pull/16), thanks @CAD97)
+- Fix `cargo-binstall` installation failure. ([#16](https://github.com/taiki-e/install-action/pull/16), thanks @CAD97)
 
 - Accept `cargo-nextest` as an alias for `nextest`. ([#15](https://github.com/taiki-e/install-action/pull/15), thanks @CAD97)
 
@@ -45,15 +49,15 @@ Note: In this file, do not use the hard wrap in the middle of a sentence for com
 
 ## [1.6.0] - 2022-07-25
 
-- Support mdbook-linkcheck.
-- Support mdbook on Windows.
-- Support wasmtime on Windows.
-- Support nextest on Linux (musl).
+- Support `mdbook-linkcheck`.
+- Support `mdbook` on Windows.
+- Support `wasmtime` on Windows.
+- Support `nextest` on Linux (musl).
 - Fix installation failure when `$CARGO_HOME/bin` and `$HOME/.cargo/bin` is not available.
 
 ## [1.5.11] - 2022-07-25
 
-- Fix cargo-binstall installation on macOS and Windows.
+- Fix `cargo-binstall` installation on macOS and Windows.
 
 ## [1.5.10] - 2022-07-24
 
