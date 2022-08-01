@@ -10,6 +10,8 @@ Note: In this file, do not use the hard wrap in the middle of a sentence for com
 
 ## [Unreleased]
 
+## [1.10.0] - 2022-08-01
+
 - Set the `PROTOC` environment variable when installing `protoc` if it has not already been set.
 
 ## [1.9.0] - 2022-08-01
@@ -259,7 +261,8 @@ Note: In this file, do not use the hard wrap in the middle of a sentence for com
 
 Initial release
 
-[Unreleased]: https://github.com/taiki-e/install-action/compare/v1.9.0...HEAD
+[Unreleased]: https://github.com/taiki-e/install-action/compare/v1.10.0...HEAD
+[1.10.0]: https://github.com/taiki-e/install-action/compare/v1.9.0...v1.10.0
 [1.9.0]: https://github.com/taiki-e/install-action/compare/v1.8.4...v1.9.0
 [1.8.4]: https://github.com/taiki-e/install-action/compare/v1.8.3...v1.8.4
 [1.8.3]: https://github.com/taiki-e/install-action/compare/v1.8.2...v1.8.3
