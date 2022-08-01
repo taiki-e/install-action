@@ -10,6 +10,8 @@ Note: In this file, do not use the hard wrap in the middle of a sentence for com
 
 ## [Unreleased]
 
+- Update `cargo-llvm-cov@latest` to 0.4.13.
+
 ## [1.8.3] - 2022-07-30
 
 - Support `taiki-e/install-action@mdbook-linkcheck` shorthand for mdbook-linkcheck.
