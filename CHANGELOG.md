@@ -10,6 +10,8 @@ Note: In this file, do not use the hard wrap in the middle of a sentence for com
 
 ## [Unreleased]
 
+- Set the `PROTOC` environment variable when installing `protoc` if it has not already been set.
+
 ## [1.9.0] - 2022-08-01
 
 - Support `protoc`.

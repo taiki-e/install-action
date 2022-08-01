@@ -239,6 +239,14 @@ for tool in "${tools[@]}"; do
                 *) bail "unsupported OSTYPE '${OSTYPE}' for ${tool}" ;;
             esac
             download "${url}" /usr/local/bin "bin/protoc${exe}"
+            if [[ -z "${PROTOC:-}" ]]; then
+                info "setting PROTOC environment variable"
+                if [[ -d /usr/local/bin ]]; then
+                    echo "PROTOC=/usr/local/bin/protoc${exe}" >>"${GITHUB_ENV}"
+                else
+                    echo "PROTOC=${HOME}/.install-action/bin/protoc${exe}" >>"${GITHUB_ENV}"
+                fi
+            fi
             ;;
         shellcheck)
             # https://github.com/koalaman/shellcheck/releases
