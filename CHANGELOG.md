@@ -10,6 +10,8 @@ Note: In this file, do not use the hard wrap in the middle of a sentence for com
 
 ## [Unreleased]
 
+- Fix missing include files when installing `protoc` on Linux and macOS.
+
 ## [1.10.0] - 2022-08-01
 
 - Set the `PROTOC` environment variable when installing `protoc` if it has not already been set.

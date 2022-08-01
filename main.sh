@@ -54,7 +54,7 @@ download() {
             (
                 cd .install-action-tmp
                 info "downloading ${url}"
-                retry curl --proto '=https' --tlsv1.2 -fsSL --retry 10 --retry-connrefused "$url" -o tmp.zip
+                retry curl --proto '=https' --tlsv1.2 -fsSL --retry 10 --retry-connrefused "${url}" -o tmp.zip
                 unzip tmp.zip
                 mv "${bin}" "${bin_dir}/"
             )
@@ -232,20 +232,41 @@ for tool in "${tools[@]}"; do
             esac
             miner_patch_version="${latest_version#*.}"
             base_url="https://github.com/${repo}/releases/download/v${miner_patch_version}/protoc-${miner_patch_version}"
+            bin_dir="/usr/local/bin"
+            include_dir="/usr/local/include"
             case "${OSTYPE}" in
                 linux*) url="${base_url}-linux-x86_64.zip" ;;
                 darwin*) url="${base_url}-osx-x86_64.zip" ;;
-                cygwin* | msys*) url="${base_url}-win64.zip" ;;
+                cygwin* | msys*)
+                    url="${base_url}-win64.zip"
+                    bin_dir="${HOME}/.install-action/bin"
+                    # TODO
+                    include_dir=""
+                    if [[ ! -d "${bin_dir}" ]]; then
+                        mkdir -p "${bin_dir}"
+                        echo "${bin_dir}" >>"${GITHUB_PATH}"
+                        export PATH="${PATH}:${bin_dir}"
+                    fi
+                    ;;
                 *) bail "unsupported OSTYPE '${OSTYPE}' for ${tool}" ;;
             esac
-            download "${url}" /usr/local/bin "bin/protoc${exe}"
+            mkdir -p .install-action-tmp
+            (
+                cd .install-action-tmp
+                info "downloading ${url}"
+                retry curl --proto '=https' --tlsv1.2 -fsSL --retry 10 --retry-connrefused "${url}" -o tmp.zip
+                unzip tmp.zip
+                mv "bin/protoc${exe}" "${bin_dir}/"
+                if [[ -n "${include_dir}" ]]; then
+                    mkdir -p "${include_dir}/"
+                    sudo cp -r include/. "${include_dir}/"
+                    ls "${include_dir}/"
+                fi
+            )
+            rm -rf .install-action-tmp
             if [[ -z "${PROTOC:-}" ]]; then
                 info "setting PROTOC environment variable"
-                if [[ -d /usr/local/bin ]]; then
-                    echo "PROTOC=/usr/local/bin/protoc${exe}" >>"${GITHUB_ENV}"
-                else
-                    echo "PROTOC=${HOME}/.install-action/bin/protoc${exe}" >>"${GITHUB_ENV}"
-                fi
+                echo "PROTOC=${bin_dir}/protoc${exe}" >>"${GITHUB_ENV}"
             fi
             ;;
         shellcheck)
