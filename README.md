@@ -82,9 +82,9 @@ https://spdx.org/licenses
 | [**wasm-pack**](https://github.com/rustwasm/wasm-pack) | `$CARGO_HOME/bin` | [GitHub Releases](https://github.com/rustwasm/wasm-pack/releases) | Linux, macOS | [Apache-2.0](https://github.com/rustwasm/wasm-pack/blob/HEAD/LICENSE-APACHE) OR [MIT](https://github.com/rustwasm/wasm-pack/blob/HEAD/LICENSE-MIT) |
 | [**wasmtime**](https://github.com/bytecodealliance/wasmtime) | `$CARGO_HOME/bin` | [GitHub Releases](https://github.com/bytecodealliance/wasmtime/releases) | Linux, macOS, Windows | [Apache-2.0 WITH LLVM-exception](https://github.com/bytecodealliance/wasmtime/blob/HEAD/LICENSE) |
 
-If `$CARGO_HOME/bin` is not available, Rust-related binaries will be installed to `$HOME/.cargo/bin`.
-If `$HOME/.cargo/bin` is not available, Rust-related binaries will be installed to `/usr/local/bin`.
-If `/usr/local/bin` is not available, all binaries will be installed to `$HOME/.install-action/bin`.
+If `$CARGO_HOME/bin` is not available, Rust-related binaries will be installed to `$HOME/.cargo/bin`.<br>
+If `$HOME/.cargo/bin` is not available, Rust-related binaries will be installed to `/usr/local/bin`.<br>
+If `/usr/local/bin` is not available, all binaries will be installed to `$HOME/.install-action/bin`.<br>
 
 If a tool not included in the list above is specified, this action uses [cargo-binstall] as a fallback.
 
