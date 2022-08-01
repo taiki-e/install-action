@@ -84,7 +84,7 @@ https://spdx.org/licenses
 
 If `$CARGO_HOME/bin` is not available, Rust-related binaries will be installed to `$HOME/.cargo/bin`.<br>
 If `$HOME/.cargo/bin` is not available, Rust-related binaries will be installed to `/usr/local/bin`.<br>
-If `/usr/local/bin` is not available, all binaries will be installed to `$HOME/.install-action/bin`.<br>
+If `/usr/local/bin` is not available, binaries will be installed to `$HOME/.install-action/bin`.<br>
 
 If a tool not included in the list above is specified, this action uses [cargo-binstall] as a fallback.
 
