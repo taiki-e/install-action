@@ -10,6 +10,8 @@ Note: In this file, do not use the hard wrap in the middle of a sentence for com
 
 ## [Unreleased]
 
+## [1.10.1] - 2022-08-01
+
 - Fix missing include files when installing `protoc` on Linux and macOS.
 
 - Installation of `protoc` on Windows is not currently working (in all released versions) and is considered unsupported.
@@ -265,7 +267,8 @@ Note: In this file, do not use the hard wrap in the middle of a sentence for com
 
 Initial release
 
-[Unreleased]: https://github.com/taiki-e/install-action/compare/v1.10.0...HEAD
+[Unreleased]: https://github.com/taiki-e/install-action/compare/v1.10.1...HEAD
+[1.10.1]: https://github.com/taiki-e/install-action/compare/v1.10.0...v1.10.1
 [1.10.0]: https://github.com/taiki-e/install-action/compare/v1.9.0...v1.10.0
 [1.9.0]: https://github.com/taiki-e/install-action/compare/v1.8.4...v1.9.0
 [1.8.4]: https://github.com/taiki-e/install-action/compare/v1.8.3...v1.8.4
