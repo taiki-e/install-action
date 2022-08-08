@@ -70,10 +70,10 @@ https://spdx.org/licenses
 | [**cargo-llvm-cov**](https://github.com/taiki-e/cargo-llvm-cov) | `$CARGO_HOME/bin` | [GitHub Releases](https://github.com/taiki-e/cargo-llvm-cov/releases) | Linux, macOS, Windows | [Apache-2.0](https://github.com/taiki-e/cargo-llvm-cov/blob/HEAD/LICENSE-APACHE) OR [MIT](https://github.com/taiki-e/cargo-llvm-cov/blob/HEAD/LICENSE-MIT) |
 | [**cargo-minimal-versions**](https://github.com/taiki-e/cargo-minimal-versions) | `$CARGO_HOME/bin` | [GitHub Releases](https://github.com/taiki-e/cargo-minimal-versions/releases) | Linux, macOS, Windows | [Apache-2.0](https://github.com/taiki-e/cargo-minimal-versions/blob/HEAD/LICENSE-APACHE) OR [MIT](https://github.com/taiki-e/cargo-minimal-versions/blob/HEAD/LICENSE-MIT) |
 | [**parse-changelog**](https://github.com/taiki-e/parse-changelog) | `$CARGO_HOME/bin` | [GitHub Releases](https://github.com/taiki-e/parse-changelog/releases) | Linux, macOS, Windows | [Apache-2.0](https://github.com/taiki-e/parse-changelog/blob/HEAD/LICENSE-APACHE) OR [MIT](https://github.com/taiki-e/parse-changelog/blob/HEAD/LICENSE-MIT) |
-| [**cargo-binstall**][cargo-binstall] | `$CARGO_HOME/bin` | [GitHub Releases](https://github.com/ryankurte/cargo-binstall/releases) | Linux, macOS, Windows | [GPL-3.0](https://github.com/ryankurte/cargo-binstall/blob/HEAD/LICENSE.txt) |
+| [**cargo-binstall**][cargo-binstall] | `$CARGO_HOME/bin` | [GitHub Releases](https://github.com/cargo-bins/cargo-binstall/releases) | Linux, macOS, Windows | [GPL-3.0](https://github.com/cargo-bins/cargo-binstall/blob/HEAD/LICENSE.txt) |
 | [**cross**](https://github.com/cross-rs/cross) | `$CARGO_HOME/bin` | [GitHub Releases](https://github.com/cross-rs/cross/releases) | Linux, macOS, Windows | [Apache-2.0](https://github.com/cross-rs/cross/blob/HEAD/LICENSE-APACHE) OR [MIT](https://github.com/cross-rs/cross/blob/HEAD/LICENSE-MIT) |
-| [**mdbook-linkcheck**](https://github.com/Michael-F-Bryan/mdbook-linkcheck) | `$CARGO_HOME/bin` | [GitHub Releases](https://github.com/Michael-F-Bryan/mdbook-linkcheck/releases) | Linux, macOS, Windows | [MIT](https://github.com/Michael-F-Bryan/mdbook-linkcheck/blob/HEAD/LICENSE) |
 | [**mdbook**](https://github.com/rust-lang/mdBook) | `$CARGO_HOME/bin` | [GitHub Releases](https://github.com/rust-lang/mdBook/releases) | Linux, macOS, Windows | [MPL-2.0](https://github.com/rust-lang/mdBook/blob/HEAD/LICENSE) |
+| [**mdbook-linkcheck**](https://github.com/Michael-F-Bryan/mdbook-linkcheck) | `$CARGO_HOME/bin` | [GitHub Releases](https://github.com/Michael-F-Bryan/mdbook-linkcheck/releases) | Linux, macOS, Windows | [MIT](https://github.com/Michael-F-Bryan/mdbook-linkcheck/blob/HEAD/LICENSE) |
 | [**nextest**](https://github.com/nextest-rs/nextest) (alias: `cargo-nextest`) | `$CARGO_HOME/bin` | [GitHub Releases](https://github.com/nextest-rs/nextest/releases) | Linux, macOS, Windows | [Apache-2.0](https://github.com/nextest-rs/nextest/blob/HEAD/LICENSE-APACHE) OR [MIT](https://github.com/nextest-rs/nextest/blob/HEAD/LICENSE-MIT) |
 | [**protoc**](https://github.com/protocolbuffers/protobuf) | `/usr/local/bin` | [GitHub Releases](https://github.com/protocolbuffers/protobuf/releases) | Linux, macOS, Windows | [BSD-3-Clause](https://github.com/protocolbuffers/protobuf/blob/HEAD/LICENSE) |
 | [**shellcheck**](https://www.shellcheck.net) | `/usr/local/bin` | [GitHub Releases](https://github.com/koalaman/shellcheck/releases) | Linux, macOS, Windows | [GPL-3.0-or-later](https://github.com/koalaman/shellcheck/blob/HEAD/LICENSE) |
@@ -104,7 +104,7 @@ If you want a higher level of security, consider working on [#1](https://github.
 - [upload-rust-binary-action]: GitHub Action for building and uploading Rust binary to GitHub Releases.
 - [setup-cross-toolchain-action]: GitHub Action for setup toolchains for cross compilation and cross testing for Rust.
 
-[cargo-binstall]: https://github.com/ryankurte/cargo-binstall
+[cargo-binstall]: https://github.com/cargo-bins/cargo-binstall
 [create-gh-release-action]: https://github.com/taiki-e/create-gh-release-action
 [setup-cross-toolchain-action]: https://github.com/taiki-e/setup-cross-toolchain-action
 [upload-rust-binary-action]: https://github.com/taiki-e/upload-rust-binary-action

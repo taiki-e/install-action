@@ -83,7 +83,7 @@ install_cargo_binstall() {
         info "installing cargo-binstall"
 
         host_triple
-        base_url=https://github.com/ryankurte/cargo-binstall/releases/latest/download/cargo-binstall
+        base_url=https://github.com/cargo-bins/cargo-binstall/releases/latest/download/cargo-binstall
         case "${host}" in
             x86_64-unknown-linux-gnu) url="${base_url}-x86_64-unknown-linux-musl.tgz" ;;
             x86_64-unknown-linux-musl) url="${base_url}-x86_64-unknown-linux-musl.tgz" ;;
@@ -105,7 +105,7 @@ install_cargo_binstall() {
 
         download "${url}" "${cargo_bin}" "cargo-binstall${exe}"
         info "cargo-binstall installed at $(type -P "cargo-binstall${exe}")"
-        x cargo binstall --help | head -1 # cargo binstall doesn't have a normal --version flag
+        x cargo binstall -V
     else
         info "cargo-binstall already installed on in ${cargo_bin}/cargo-binstall"
     fi
