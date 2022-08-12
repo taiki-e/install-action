@@ -163,7 +163,7 @@ for tool in "${tools[@]}"; do
         cargo-hack | cargo-llvm-cov | cargo-minimal-versions | parse-changelog)
             case "${tool}" in
                 # https://github.com/taiki-e/cargo-hack/releases
-                cargo-hack) latest_version="0.5.16" ;;
+                cargo-hack) latest_version="0.5.17" ;;
                 # https://github.com/taiki-e/cargo-llvm-cov/releases
                 cargo-llvm-cov) latest_version="0.4.14" ;;
                 # https://github.com/taiki-e/cargo-minimal-versions/releases
