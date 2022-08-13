@@ -108,7 +108,7 @@ install_cargo_binstall() {
         x cargo binstall -V
     else
         info "cargo-binstall already installed on in ${cargo_bin}/cargo-binstall, upgrading"
-        cargo binstall --secure --no-confirm  --version '>=0.12.0' cargo-binstall
+        cargo binstall --secure --no-confirm --version '>=0.12.0' cargo-binstall
     fi
 }
 cargo_binstall() {
