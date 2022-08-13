@@ -10,10 +10,12 @@ Note: In this file, do not use the hard wrap in the middle of a sentence for com
 
 ## [Unreleased]
 
+- Make installation that uses `cargo-binstall` robust. ([#19](https://github.com/taiki-e/install-action/pull/19), thanks @NobodyXu)
+
 ## [1.11.0] - 2022-08-13
 
 - Update `cargo-hack@latest` to 0.5.17.
-- Support `cargo-udeps`.
+- Support `cargo-udeps`. ([#17](https://github.com/taiki-e/install-action/pull/17), thanks @gifnksm)
 
 ## [1.10.4] - 2022-08-06
 
