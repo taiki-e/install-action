@@ -80,6 +80,7 @@ tools=(
     cargo-hack
     cargo-llvm-cov
     cargo-minimal-versions
+    cargo-udeps
     parse-changelog
     cargo-binstall
     cross

@@ -185,6 +185,32 @@ for tool in "${tools[@]}"; do
             url="https://github.com/${repo}/releases/download/v${version}/${tool}-${target}.tar.gz"
             download "${url}" "${cargo_bin}" "${tool}${exe}"
             ;;
+        cargo-udeps)
+            # https://github.com/est31/cargo-udeps/releases
+            latest_version="0.1.30"
+            repo="est31/${tool}"
+            case "${version}" in
+                latest) version="${latest_version}" ;;
+            esac
+            base_url="https://github.com/${repo}/releases/download/v${version}/${tool}-v${version}"
+            case "${OSTYPE}" in
+                linux*)
+                    target="x86_64-unknown-linux-gnu"
+                    url="${base_url}-${target}.tar.gz"
+                    ;;
+                darwin*)
+                    target="x86_64-apple-darwin"
+                    url="${base_url}-${target}.tar.gz"
+                    ;;
+                cygwin* | msys*)
+                    target="x86_64-pc-windows-msvc"
+                    url="${base_url}-${target}.zip"
+                    ;;
+                *) bail "unsupported OSTYPE '${OSTYPE}' for ${tool}" ;;
+            esac
+            # leading `./` is required for cargo-udeps to work
+            download "${url}" "${cargo_bin}" "./${tool}-v${version}-${target}/${tool}${exe}"
+            ;;
         cross)
             # https://github.com/cross-rs/cross/releases
             latest_version="0.2.4"
@@ -431,6 +457,7 @@ for tool in "${tools[@]}"; do
 
     info "${tool} installed at $(type -P "${bin}")"
     case "${bin}" in
+        "cargo-udeps${exe}") x cargo udeps --help | head -1 ;; # cargo-udeps v0.1.30 does not support --version option
         cargo-*) x cargo "${tool#cargo-}" --version ;;
         *) x "${tool}" --version ;;
     esac
