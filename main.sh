@@ -107,7 +107,8 @@ install_cargo_binstall() {
         info "cargo-binstall installed at $(type -P "cargo-binstall${exe}")"
         x cargo binstall -V
     else
-        info "cargo-binstall already installed on in ${cargo_bin}/cargo-binstall"
+        info "cargo-binstall already installed on in ${cargo_bin}/cargo-binstall, upgrading"
+        cargo binstall --secure --no-confirm --version '>=0.12.0' cargo-binstall
     fi
 }
 cargo_binstall() {
@@ -122,8 +123,8 @@ cargo_binstall() {
     # As a result, http will be disabled, and it will also set
     # min tls version to be 1.2
     case "${version}" in
-        latest) cargo binstall --secure --no-confirm "$tool" ;;
-        *) cargo binstall --secure --no-confirm --version "$version" "$tool" ;;
+        latest) cargo binstall --force --secure --no-confirm "$tool" ;;
+        *) cargo binstall --force --secure --no-confirm --version "$version" "$tool" ;;
     esac
 }
 
