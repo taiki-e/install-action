@@ -11,6 +11,7 @@ Note: In this file, do not use the hard wrap in the middle of a sentence for com
 ## [Unreleased]
 
 - Update `cargo-hack@latest` to 0.5.17.
+- Support `cargo-udeps`.
 
 ## [1.10.4] - 2022-08-06
 
