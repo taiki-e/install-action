@@ -32,10 +32,6 @@ jobs:
           # Nextest supports basic version ranges as well
           - nextest@0.9
         include:
-          # Note: mdBook binary is incompatible with ubuntu 18.04,
-          # see https://github.com/rust-lang/mdBook/issues/1779
-          - os: ubuntu-18.04
-            tool: cargo-hack,cargo-llvm-cov,cargo-minimal-versions,parse-changelog,cargo-udeps,cross,nextest,protoc,shellcheck,shfmt,valgrind,wasm-pack,wasmtime,mdbook-linkcheck,cargo-watch
           - os: macos-11
             tool: cargo-hack,cargo-llvm-cov,cargo-minimal-versions,parse-changelog,cargo-udeps,cross,nextest,protoc,shellcheck,shfmt,wasm-pack,wasmtime,mdbook,mdbook-linkcheck,cargo-watch
           - os: windows-2019
