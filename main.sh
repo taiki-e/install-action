@@ -188,7 +188,7 @@ for tool in "${tools[@]}"; do
             ;;
         cargo-udeps)
             # https://github.com/est31/cargo-udeps/releases
-            latest_version="0.1.30"
+            latest_version="0.1.32"
             repo="est31/${tool}"
             case "${version}" in
                 latest) version="${latest_version}" ;;
@@ -252,7 +252,7 @@ for tool in "${tools[@]}"; do
             ;;
         protoc)
             # https://github.com/protocolbuffers/protobuf/releases
-            latest_version="3.21.4"
+            latest_version="3.21.5"
             repo="protocolbuffers/protobuf"
             case "${version}" in
                 latest) version="${latest_version}" ;;
@@ -388,7 +388,7 @@ for tool in "${tools[@]}"; do
             ;;
         wasmtime)
             # https://github.com/bytecodealliance/wasmtime/releases
-            latest_version="0.39.1"
+            latest_version="0.40.0"
             repo="bytecodealliance/${tool}"
             case "${version}" in
                 latest) version="${latest_version}" ;;

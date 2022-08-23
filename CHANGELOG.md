@@ -10,6 +10,10 @@ Note: In this file, do not use the hard wrap in the middle of a sentence for com
 
 ## [Unreleased]
 
+- Update `wasmtime@latest` to 0.40.0.
+- Update `cargo-udeps@latest` to 0.1.32.
+- Update `protoc@latest` to 3.21.5.
+
 ## [1.11.1] - 2022-08-13
 
 - Make installation that uses `cargo-binstall` robust. ([#19](https://github.com/taiki-e/install-action/pull/19), thanks @NobodyXu)
