@@ -10,6 +10,8 @@ Note: In this file, do not use the hard wrap in the middle of a sentence for com
 
 ## [Unreleased]
 
+- Support `cargo-valgrind`
+
 ## [1.11.2] - 2022-08-23
 
 - Update `wasmtime@latest` to 0.40.0.
