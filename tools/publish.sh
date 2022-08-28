@@ -81,6 +81,7 @@ tools=(
     cargo-llvm-cov
     cargo-minimal-versions
     cargo-udeps
+    cargo-valgrind
     parse-changelog
     cargo-binstall
     cross

@@ -212,6 +212,31 @@ for tool in "${tools[@]}"; do
             # leading `./` is required for cargo-udeps to work
             download "${url}" "${cargo_bin}" "./${tool}-v${version}-${target}/${tool}${exe}"
             ;;
+        cargo-valgrind)
+            # https://github.com/jfrimmel/cargo-valgrind
+            latest_version="2.1.0"
+            repo="jfrimmel/${tool}"
+            case "${version}" in
+                latest) version="${latest_version}" ;;
+            esac
+            base_url="https://github.com/${repo}/releases/download/v${version}/${tool}-${version}"
+            case "${OSTYPE}" in
+                linux*)
+                    target="x86_64-unknown-linux-musl"
+                    url="${base_url}-${target}.tar.gz"
+                    ;;
+                darwin*)
+                    target="x86_64-apple-darwin"
+                    url="${base_url}-${target}.tar.gz"
+                    ;;
+                cygwin* | msys*)
+                    target="x86_64-pc-windows-msvc"
+                    url="${base_url}-${target}.zip"
+                    ;;
+                *) bail "unsupported OSTYPE '${OSTYPE}' for ${tool}" ;;
+            esac
+            download "${url}" "${cargo_bin}" "${tool}${exe}"
+            ;;
         cross)
             # https://github.com/cross-rs/cross/releases
             latest_version="0.2.4"
@@ -459,6 +484,7 @@ for tool in "${tools[@]}"; do
     info "${tool} installed at $(type -P "${bin}")"
     case "${bin}" in
         "cargo-udeps${exe}") x cargo udeps --help | head -1 ;; # cargo-udeps v0.1.30 does not support --version option
+        "cargo-valgrind${exe}") x cargo valgrind --help ;;     # cargo-valgrind v2.1.0 does not support --version option
         cargo-*) x cargo "${tool#cargo-}" --version ;;
         *) x "${tool}" --version ;;
     esac
