@@ -10,6 +10,8 @@ Note: In this file, do not use the hard wrap in the middle of a sentence for com
 
 ## [Unreleased]
 
+- Update `wasmtime@latest` to 0.40.1.
+
 ## [1.12.0] - 2022-08-28
 
 - Support `cargo-valgrind`. ([#20](https://github.com/taiki-e/install-action/pull/20), thanks @messense)
