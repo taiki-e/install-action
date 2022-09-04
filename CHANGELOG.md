@@ -10,6 +10,8 @@ Note: In this file, do not use the hard wrap in the middle of a sentence for com
 
 ## [Unreleased]
 
+## [1.12.2] - 2022-09-04
+
 - Update `cargo-hack@latest` to 0.5.18.
 
 ## [1.12.1] - 2022-09-01
@@ -306,7 +308,8 @@ Note: In this file, do not use the hard wrap in the middle of a sentence for com
 
 Initial release
 
-[Unreleased]: https://github.com/taiki-e/install-action/compare/v1.12.1...HEAD
+[Unreleased]: https://github.com/taiki-e/install-action/compare/v1.12.2...HEAD
+[1.12.2]: https://github.com/taiki-e/install-action/compare/v1.12.1...v1.12.2
 [1.12.1]: https://github.com/taiki-e/install-action/compare/v1.12.0...v1.12.1
 [1.12.0]: https://github.com/taiki-e/install-action/compare/v1.11.2...v1.12.0
 [1.11.2]: https://github.com/taiki-e/install-action/compare/v1.11.1...v1.11.2
