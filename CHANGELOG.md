@@ -10,6 +10,8 @@ Note: In this file, do not use the hard wrap in the middle of a sentence for com
 
 ## [Unreleased]
 
+## [1.12.3] - 2022-09-08
+
 - Update `parse-changelog@latest` to 0.5.1.
 
 ## [1.12.2] - 2022-09-04
@@ -310,7 +312,8 @@ Note: In this file, do not use the hard wrap in the middle of a sentence for com
 
 Initial release
 
-[Unreleased]: https://github.com/taiki-e/install-action/compare/v1.12.2...HEAD
+[Unreleased]: https://github.com/taiki-e/install-action/compare/v1.12.3...HEAD
+[1.12.3]: https://github.com/taiki-e/install-action/compare/v1.12.2...v1.12.3
 [1.12.2]: https://github.com/taiki-e/install-action/compare/v1.12.1...v1.12.2
 [1.12.1]: https://github.com/taiki-e/install-action/compare/v1.12.0...v1.12.1
 [1.12.0]: https://github.com/taiki-e/install-action/compare/v1.11.2...v1.12.0
