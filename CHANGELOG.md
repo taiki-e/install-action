@@ -10,6 +10,8 @@ Note: In this file, do not use the hard wrap in the middle of a sentence for com
 
 ## [Unreleased]
 
+## [1.13.0] - 2022-09-10
+
 - Avoid using sudo on `protoc` installation.
 
 ## [1.12.4] - 2022-09-10
@@ -318,7 +320,8 @@ Note: In this file, do not use the hard wrap in the middle of a sentence for com
 
 Initial release
 
-[Unreleased]: https://github.com/taiki-e/install-action/compare/v1.12.4...HEAD
+[Unreleased]: https://github.com/taiki-e/install-action/compare/v1.13.0...HEAD
+[1.13.0]: https://github.com/taiki-e/install-action/compare/v1.12.4...v1.13.0
 [1.12.4]: https://github.com/taiki-e/install-action/compare/v1.12.3...v1.12.4
 [1.12.3]: https://github.com/taiki-e/install-action/compare/v1.12.2...v1.12.3
 [1.12.2]: https://github.com/taiki-e/install-action/compare/v1.12.1...v1.12.2
