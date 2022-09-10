@@ -10,6 +10,8 @@ Note: In this file, do not use the hard wrap in the middle of a sentence for com
 
 ## [Unreleased]
 
+- Avoid using sudo on `protoc` installation.
+
 ## [1.12.4] - 2022-09-10
 
 - Update `cargo-llvm-cov@latest` to 0.5.0.

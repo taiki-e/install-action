@@ -284,22 +284,19 @@ for tool in "${tools[@]}"; do
             esac
             miner_patch_version="${version#*.}"
             base_url="https://github.com/${repo}/releases/download/v${miner_patch_version}/protoc-${miner_patch_version}"
-            bin_dir="/usr/local/bin"
-            include_dir="/usr/local/include"
+            # Copying files to /usr/local/include requires sudo.
+            bin_dir="${HOME}/.install-action/bin"
+            include_dir="${HOME}/.install-action/include"
+            if [[ ! -d "${bin_dir}" ]]; then
+                mkdir -p "${bin_dir}"
+                mkdir -p "${include_dir}"
+                echo "${bin_dir}" >>"${GITHUB_PATH}"
+                export PATH="${PATH}:${bin_dir}"
+            fi
             case "${OSTYPE}" in
                 linux*) url="${base_url}-linux-x86_64.zip" ;;
                 darwin*) url="${base_url}-osx-x86_64.zip" ;;
-                cygwin* | msys*)
-                    url="${base_url}-win64.zip"
-                    bin_dir="${HOME}/.install-action/bin"
-                    include_dir="${HOME}/.install-action/include"
-                    if [[ ! -d "${bin_dir}" ]]; then
-                        mkdir -p "${bin_dir}"
-                        mkdir -p "${include_dir}"
-                        echo "${bin_dir}" >>"${GITHUB_PATH}"
-                        export PATH="${PATH}:${bin_dir}"
-                    fi
-                    ;;
+                cygwin* | msys*) url="${base_url}-win64.zip" ;;
                 *) bail "unsupported OSTYPE '${OSTYPE}' for ${tool}" ;;
             esac
             mkdir -p .install-action-tmp
@@ -310,12 +307,9 @@ for tool in "${tools[@]}"; do
                 unzip tmp.zip
                 mv "bin/protoc${exe}" "${bin_dir}/"
                 mkdir -p "${include_dir}/"
+                cp -r include/. "${include_dir}/"
                 case "${OSTYPE}" in
-                    linux* | darwin*) sudo cp -r include/. "${include_dir}/" ;;
-                    cygwin* | msys*)
-                        cp -r include/. "${include_dir}/"
-                        bin_dir=$(sed <<<"${bin_dir}" 's/^\/c\//C:\\/')
-                        ;;
+                    cygwin* | msys*) bin_dir=$(sed <<<"${bin_dir}" 's/^\/c\//C:\\/') ;;
                 esac
                 if [[ -z "${PROTOC:-}" ]]; then
                     info "setting PROTOC environment variable"
