@@ -10,6 +10,8 @@ Note: In this file, do not use the hard wrap in the middle of a sentence for com
 
 ## [Unreleased]
 
+- Update `protoc@latest` to 3.21.6.
+
 ## [1.13.0] - 2022-09-10
 
 - Avoid using sudo on `protoc` installation.
