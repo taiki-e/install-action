@@ -83,7 +83,9 @@ install_cargo_binstall() {
         info "installing cargo-binstall"
 
         host_triple
-        base_url=https://github.com/cargo-bins/cargo-binstall/releases/latest/download/cargo-binstall
+        # https://github.com/cargo-bins/cargo-binstall/releases
+        binstall_version="0.13.1"
+        base_url="https://github.com/cargo-bins/cargo-binstall/releases/download/v${binstall_version}/cargo-binstall"
         case "${host}" in
             x86_64-unknown-linux-gnu) url="${base_url}-x86_64-unknown-linux-musl.tgz" ;;
             x86_64-unknown-linux-musl) url="${base_url}-x86_64-unknown-linux-musl.tgz" ;;

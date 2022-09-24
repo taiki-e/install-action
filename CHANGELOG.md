@@ -11,6 +11,7 @@ Note: In this file, do not use the hard wrap in the middle of a sentence for com
 ## [Unreleased]
 
 - Update `cargo-hack@latest` to 0.5.20.
+- Downgrade `cargo-binstall@latest` to 0.13.1 to avoid [upstream bug](https://github.com/taiki-e/install-action/issues/21).
 
 ## [1.13.4] - 2022-09-22
 
