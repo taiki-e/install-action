@@ -39,7 +39,7 @@ To install a specific version, use `@version` syntax:
 ```yaml
 - uses: taiki-e/install-action@v1
   with:
-    tool: cargo-hack@0.5.19
+    tool: cargo-hack@0.5.20
 ```
 
 To install multiple tools:
