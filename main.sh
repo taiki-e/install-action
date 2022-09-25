@@ -470,6 +470,7 @@ for tool in "${tools[@]}"; do
             ;;
         cargo-binstall)
             install_cargo_binstall
+            echo
             continue
             ;;
         *)
