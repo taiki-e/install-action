@@ -79,12 +79,13 @@ host_triple() {
     fi
 }
 install_cargo_binstall() {
+    # https://github.com/cargo-bins/cargo-binstall/releases
+    binstall_version="0.13.3"
+
     if [[ ! -f "${cargo_bin}/cargo-binstall" ]]; then
         info "installing cargo-binstall"
 
         host_triple
-        # https://github.com/cargo-bins/cargo-binstall/releases
-        binstall_version="0.13.3"
         base_url="https://github.com/cargo-bins/cargo-binstall/releases/download/v${binstall_version}/cargo-binstall"
         case "${host}" in
             x86_64-unknown-linux-gnu) url="${base_url}-x86_64-unknown-linux-musl.tgz" ;;
@@ -110,7 +111,7 @@ install_cargo_binstall() {
         x cargo binstall -V
     else
         info "cargo-binstall already installed on in ${cargo_bin}/cargo-binstall, upgrading"
-        cargo binstall --secure --no-confirm --version '>=0.12.0' cargo-binstall
+        cargo binstall --secure --no-confirm --version "=${binstall_version}" cargo-binstall
     fi
 }
 cargo_binstall() {
