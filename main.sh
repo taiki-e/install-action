@@ -122,12 +122,12 @@ cargo_binstall() {
 
     install_cargo_binstall
 
-    # --secure mode enforce downloads over secure transports only.
+    # By default, cargo-binstall enforce downloads over secure transports only.
     # As a result, http will be disabled, and it will also set
     # min tls version to be 1.2
     case "${version}" in
-        latest) cargo binstall --force --secure --no-confirm "${tool}" ;;
-        *) cargo binstall --force --secure --no-confirm --version "${version}" "${tool}" ;;
+        latest) cargo binstall --force --no-confirm "${tool}" ;;
+        *) cargo binstall --force --no-confirm --version "${version}" "${tool}" ;;
     esac
 }
 
