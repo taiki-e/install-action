@@ -81,8 +81,18 @@ host_triple() {
 install_cargo_binstall() {
     # https://github.com/cargo-bins/cargo-binstall/releases
     binstall_version="0.13.3"
+    install_binstall='1'
+    if [[ -f "${cargo_bin}/cargo-binstall${exe}" ]]; then
+        if [[ "$(cargo binstall -V)" == "cargo-binstall ${binstall_version}" ]]; then
+            info "cargo-binstall already installed on in ${cargo_bin}/cargo-binstall${exe}"
+            install_binstall=''
+        else
+            info "cargo-binstall already installed on in ${cargo_bin}/cargo-binstall${exe}, but is not compatible version with install-action, upgrading"
+            rm "${cargo_bin}/cargo-binstall${exe}"
+        fi
+    fi
 
-    if [[ ! -f "${cargo_bin}/cargo-binstall" ]]; then
+    if [[ -n "${install_binstall}" ]]; then
         info "installing cargo-binstall"
 
         host_triple
@@ -109,9 +119,6 @@ install_cargo_binstall() {
         download "${url}" "${cargo_bin}" "cargo-binstall${exe}"
         info "cargo-binstall installed at $(type -P "cargo-binstall${exe}")"
         x cargo binstall -V
-    else
-        info "cargo-binstall already installed on in ${cargo_bin}/cargo-binstall, upgrading"
-        cargo binstall --secure --no-confirm --version "=${binstall_version}" cargo-binstall
     fi
 }
 cargo_binstall() {
