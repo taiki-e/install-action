@@ -10,6 +10,9 @@ Note: In this file, do not use the hard wrap in the middle of a sentence for com
 
 ## [Unreleased]
 
+- Work around cargo-binstall upgrade issue on Windows. ([#23](https://github.com/taiki-e/install-action/pull/23))
+- Ensure that the latest cargo-binstall is used. ([#22](https://github.com/taiki-e/install-action/pull/22), thanks @NobodyXu)
+
 ## [1.13.6] - 2022-09-25
 
 - Update `cargo-binstall@latest` to 0.13.3.
