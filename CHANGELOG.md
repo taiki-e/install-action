@@ -10,6 +10,8 @@ Note: In this file, do not use the hard wrap in the middle of a sentence for com
 
 ## [Unreleased]
 
+- Update `cargo-hack@latest` to 0.5.21.
+
 ## [1.13.7] - 2022-09-25
 
 - Work around cargo-binstall upgrade issue on Windows. ([#23](https://github.com/taiki-e/install-action/pull/23))
