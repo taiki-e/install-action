@@ -10,6 +10,8 @@ Note: In this file, do not use the hard wrap in the middle of a sentence for com
 
 ## [Unreleased]
 
+## [1.13.9] - 2022-09-28
+
 - Update `cargo-binstall@latest` to 0.14.0. ([#24](https://github.com/taiki-e/install-action/pull/24), thanks @coltfred)
 
 ## [1.13.8] - 2022-09-26
@@ -356,7 +358,8 @@ Note: In this file, do not use the hard wrap in the middle of a sentence for com
 
 Initial release
 
-[Unreleased]: https://github.com/taiki-e/install-action/compare/v1.13.8...HEAD
+[Unreleased]: https://github.com/taiki-e/install-action/compare/v1.13.9...HEAD
+[1.13.9]: https://github.com/taiki-e/install-action/compare/v1.13.8...v1.13.9
 [1.13.8]: https://github.com/taiki-e/install-action/compare/v1.13.7...v1.13.8
 [1.13.7]: https://github.com/taiki-e/install-action/compare/v1.13.6...v1.13.7
 [1.13.6]: https://github.com/taiki-e/install-action/compare/v1.13.5...v1.13.6
