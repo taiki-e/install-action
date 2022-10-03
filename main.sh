@@ -165,7 +165,7 @@ for tool in "${tools[@]}"; do
     if [[ "${tool}" == *"@"* ]]; then
         version="${tool#*@}"
         if [[ ! "${version}" =~ ^([1-9][0-9]*(\.[0-9]+(\.[0-9]+)?)?|0\.[1-9][0-9]*(\.[0-9]+)?|^0\.0\.[0-9]+)(-[0-9A-Za-z\.-]+)?(\+[0-9A-Za-z\.-]+)?$|^latest$ ]]; then
-            bail "takie-e/install-action does not support semver operators"
+            bail "install-action does not support semver operators"
         fi
     else
         version="latest"
