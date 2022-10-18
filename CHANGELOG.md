@@ -10,6 +10,8 @@ Note: In this file, do not use the hard wrap in the middle of a sentence for com
 
 ## [Unreleased]
 
+## [1.14.0] - 2022-10-18
+
 - Update `protoc@latest` to 3.21.7.
 - Update `cargo-binstall@latest` to 0.16.0. ([#28](https://github.com/taiki-e/install-action/pull/28), thanks @NobodyXu)
 - Reject semver operators in version. This was not supported even before, but was accidentally accepted in the `cargo-binstall` fallback. ([#26](https://github.com/taiki-e/install-action/pull/26), thanks @NobodyXu)
@@ -362,7 +364,8 @@ Note: In this file, do not use the hard wrap in the middle of a sentence for com
 
 Initial release
 
-[Unreleased]: https://github.com/taiki-e/install-action/compare/v1.13.9...HEAD
+[Unreleased]: https://github.com/taiki-e/install-action/compare/v1.14.0...HEAD
+[1.14.0]: https://github.com/taiki-e/install-action/compare/v1.13.9...v1.14.0
 [1.13.9]: https://github.com/taiki-e/install-action/compare/v1.13.8...v1.13.9
 [1.13.8]: https://github.com/taiki-e/install-action/compare/v1.13.7...v1.13.8
 [1.13.7]: https://github.com/taiki-e/install-action/compare/v1.13.6...v1.13.7
