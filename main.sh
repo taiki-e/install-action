@@ -290,7 +290,7 @@ for tool in "${tools[@]}"; do
             ;;
         protoc)
             # https://github.com/protocolbuffers/protobuf/releases
-            latest_version="3.21.8"
+            latest_version="3.21.9"
             repo="protocolbuffers/protobuf"
             case "${version}" in
                 latest) version="${latest_version}" ;;
@@ -420,7 +420,7 @@ for tool in "${tools[@]}"; do
             ;;
         wasmtime)
             # https://github.com/bytecodealliance/wasmtime/releases
-            latest_version="2.0.0"
+            latest_version="2.0.1"
             repo="bytecodealliance/${tool}"
             case "${version}" in
                 latest) version="${latest_version}" ;;
