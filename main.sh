@@ -201,7 +201,7 @@ for tool in "${tools[@]}"; do
             ;;
         cargo-udeps)
             # https://github.com/est31/cargo-udeps/releases
-            latest_version="0.1.33"
+            latest_version="0.1.35"
             repo="est31/${tool}"
             case "${version}" in
                 latest) version="${latest_version}" ;;
