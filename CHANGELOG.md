@@ -10,6 +10,8 @@ Note: In this file, do not use the hard wrap in the middle of a sentence for com
 
 ## [Unreleased]
 
+## [1.14.5] - 2022-11-27
+
 - Update `wasmtime@latest` to 3.0.0.
 - Update `cargo-binstall@latest` to 0.17.0.
 
@@ -387,7 +389,8 @@ Note: In this file, do not use the hard wrap in the middle of a sentence for com
 
 Initial release
 
-[Unreleased]: https://github.com/taiki-e/install-action/compare/v1.14.4...HEAD
+[Unreleased]: https://github.com/taiki-e/install-action/compare/v1.14.5...HEAD
+[1.14.5]: https://github.com/taiki-e/install-action/compare/v1.14.4...v1.14.5
 [1.14.4]: https://github.com/taiki-e/install-action/compare/v1.14.3...v1.14.4
 [1.14.3]: https://github.com/taiki-e/install-action/compare/v1.14.2...v1.14.3
 [1.14.2]: https://github.com/taiki-e/install-action/compare/v1.14.1...v1.14.2
