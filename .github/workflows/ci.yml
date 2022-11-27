@@ -28,7 +28,7 @@ jobs:
           # Note: Specifying the version of valgrind is not supported.
           # cargo-watch is supported by cargo-binstall (through quickinstall)
           - cargo-hack,cargo-llvm-cov,cargo-minimal-versions,parse-changelog,cargo-udeps,cargo-valgrind,cross,nextest,protoc,shellcheck,shfmt,valgrind,wasm-pack,wasmtime,mdbook,mdbook-linkcheck,cargo-watch
-          - cargo-hack@0.5.23,cargo-llvm-cov@0.5.1,cargo-minimal-versions@0.1.8,parse-changelog@0.5.2,cargo-udeps@0.1.35,cargo-valgrind@2.1.0,cross@0.2.4,nextest@0.9.11,protoc@3.21.9,shellcheck@0.8.0,shfmt@3.5.1,wasm-pack@0.10.3,wasmtime@3.0.0,mdbook@0.4.21,mdbook-linkcheck@0.7.6,cargo-watch@8.1.1
+          - cargo-hack@0.5.23,cargo-llvm-cov@0.5.2,cargo-minimal-versions@0.1.8,parse-changelog@0.5.2,cargo-udeps@0.1.35,cargo-valgrind@2.1.0,cross@0.2.4,nextest@0.9.11,protoc@3.21.9,shellcheck@0.8.0,shfmt@3.5.1,wasm-pack@0.10.3,wasmtime@3.0.0,mdbook@0.4.21,mdbook-linkcheck@0.7.6,cargo-watch@8.1.1
           # Nextest supports basic version ranges as well
           - nextest@0.9
         include:
