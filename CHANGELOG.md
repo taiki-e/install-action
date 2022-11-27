@@ -11,6 +11,7 @@ Note: In this file, do not use the hard wrap in the middle of a sentence for com
 ## [Unreleased]
 
 - Update `wasmtime@latest` to 3.0.0.
+- Update `cargo-binstall@latest` to 0.17.0.
 
 ## [1.14.4] - 2022-11-04
 
