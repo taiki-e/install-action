@@ -10,6 +10,7 @@ Note: In this file, do not use the hard wrap in the middle of a sentence for com
 
 ## [Unreleased]
 
+- Support `cargo-deny`.
 - Update `mdbook@latest` to 0.4.22.
 
 ## [1.14.7] - 2022-11-27

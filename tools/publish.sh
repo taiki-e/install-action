@@ -77,19 +77,20 @@ if [[ -n "${tags}" ]]; then
 fi
 
 tools=(
+    cargo-binstall
+    cargo-deny
     cargo-hack
     cargo-llvm-cov
     cargo-minimal-versions
+    cargo-nextest
     cargo-udeps
     cargo-valgrind
-    parse-changelog
-    cargo-binstall
     cross
     mdbook
     mdbook-linkcheck
-    protoc
     nextest
-    cargo-nextest
+    parse-changelog
+    protoc
     shellcheck
     shfmt
     valgrind

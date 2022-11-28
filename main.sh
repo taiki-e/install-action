@@ -250,6 +250,22 @@ for tool in "${tools[@]}"; do
             esac
             download "${url}" "${cargo_bin}" "${tool}${exe}"
             ;;
+        cargo-deny)
+            # https://github.com/EmbarkStudios/cargo-deny/releases
+            latest_version="0.13.5"
+            repo="EmbarkStudios/${tool}"
+            case "${version}" in
+                latest) version="${latest_version}" ;;
+            esac
+            case "${OSTYPE}" in
+                linux*) target="x86_64-unknown-linux-musl" ;;
+                darwin*) target="x86_64-apple-darwin" ;;
+                cygwin* | msys*) target="x86_64-pc-windows-msvc" ;;
+                *) bail "unsupported OSTYPE '${OSTYPE}' for ${tool}" ;;
+            esac
+            url="https://github.com/${repo}/releases/download/${version}/${tool}-${version}-${target}.tar.gz"
+            download "${url}" "${cargo_bin}" "${tool}-${version}-${target}/${tool}${exe}"
+            ;;
         cross)
             # https://github.com/cross-rs/cross/releases
             latest_version="0.2.4"
