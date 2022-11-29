@@ -10,6 +10,8 @@ Note: In this file, do not use the hard wrap in the middle of a sentence for com
 
 ## [Unreleased]
 
+## [1.15.0] - 2022-11-29
+
 - Support `cargo-deny`.
 - Update `mdbook@latest` to 0.4.22.
 
@@ -402,7 +404,8 @@ Note: In this file, do not use the hard wrap in the middle of a sentence for com
 
 Initial release
 
-[Unreleased]: https://github.com/taiki-e/install-action/compare/v1.14.7...HEAD
+[Unreleased]: https://github.com/taiki-e/install-action/compare/v1.15.0...HEAD
+[1.15.0]: https://github.com/taiki-e/install-action/compare/v1.14.7...v1.15.0
 [1.14.7]: https://github.com/taiki-e/install-action/compare/v1.14.6...v1.14.7
 [1.14.6]: https://github.com/taiki-e/install-action/compare/v1.14.5...v1.14.6
 [1.14.5]: https://github.com/taiki-e/install-action/compare/v1.14.4...v1.14.5
