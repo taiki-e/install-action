@@ -10,6 +10,8 @@ Note: In this file, do not use the hard wrap in the middle of a sentence for com
 
 ## [Unreleased]
 
+- Update `protoc@latest` to 3.21.10.
+
 ## [1.15.0] - 2022-11-29
 
 - Support `cargo-deny`.
