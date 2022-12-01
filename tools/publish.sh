@@ -8,8 +8,8 @@ cd "$(dirname "$0")"/..
 # USAGE:
 #    ./tools/publish.sh <VERSION>
 #
-# Note:
-# - This script requires parse-changelog <https://github.com/taiki-e/parse-changelog>
+# Note: This script requires the following tools:
+# - parse-changelog <https://github.com/taiki-e/parse-changelog>
 
 bail() {
     echo >&2 "error: $*"

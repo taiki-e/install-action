@@ -53,12 +53,5 @@ jobs:
           persist-credentials: false
       - uses: taiki-e/install-action@shellcheck
       - uses: taiki-e/install-action@shfmt
-      - run: npm install prettier
-      - run: shfmt -d $(git ls-files '*.sh')
-        if: always()
-      - run: npx prettier -c $(git ls-files '*.yml')
-        if: always()
-      - run: npx prettier -c $(git ls-files '*.js')
-        if: always()
-      - run: shellcheck $(git ls-files '*.sh')
+      - run: tools/tidy.sh
         if: always()
