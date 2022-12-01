@@ -436,7 +436,7 @@ for tool in "${tools[@]}"; do
             ;;
         wasmtime)
             # https://github.com/bytecodealliance/wasmtime/releases
-            latest_version="3.0.0"
+            latest_version="3.0.1"
             repo="bytecodealliance/${tool}"
             case "${version}" in
                 latest) version="${latest_version}" ;;
