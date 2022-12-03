@@ -18,6 +18,9 @@ defaults:
     shell: bash
 
 jobs:
+  tidy:
+    uses: taiki-e/workflows/.github/workflows/tidy-no-rust.yml@main
+
   test:
     strategy:
       fail-fast: false
@@ -44,14 +47,3 @@ jobs:
       - uses: ./
         with:
           tool: ${{ matrix.tool }}
-
-  tidy:
-    runs-on: ubuntu-latest
-    steps:
-      - uses: actions/checkout@v3
-        with:
-          persist-credentials: false
-      - uses: taiki-e/install-action@shellcheck
-      - uses: taiki-e/install-action@shfmt
-      - run: tools/tidy.sh
-        if: always()
