@@ -10,6 +10,8 @@ Note: In this file, do not use the hard wrap in the middle of a sentence for com
 
 ## [Unreleased]
 
+- Update `mdbook-linkcheck@latest` to 0.7.7.
+
 ## [1.15.1] - 2022-12-03
 
 - Update `wasmtime@latest` to 3.0.1.

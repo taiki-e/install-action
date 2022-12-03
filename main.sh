@@ -477,7 +477,7 @@ for tool in "${tools[@]}"; do
             ;;
         mdbook-linkcheck)
             # https://github.com/Michael-F-Bryan/mdbook-linkcheck/releases
-            latest_version="0.7.6"
+            latest_version="0.7.7"
             repo="Michael-F-Bryan/${tool}"
             case "${version}" in
                 latest) version="${latest_version}" ;;
