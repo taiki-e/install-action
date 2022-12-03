@@ -80,8 +80,8 @@ host_triple() {
 }
 install_cargo_binstall() {
     # https://github.com/cargo-bins/cargo-binstall/releases
-    binstall_version="0.17.0"
-    install_binstall='1'
+    local binstall_version="0.17.0"
+    local install_binstall='1'
     if [[ -f "${cargo_bin}/cargo-binstall${exe}" ]]; then
         if [[ "$(cargo binstall -V)" == "cargo-binstall ${binstall_version}" ]]; then
             info "cargo-binstall already installed on in ${cargo_bin}/cargo-binstall${exe}"
@@ -160,6 +160,16 @@ cargo_bin="${CARGO_HOME:-"${HOME}/.cargo"}/bin"
 if [[ ! -d "${cargo_bin}" ]]; then
     cargo_bin=/usr/local/bin
 fi
+
+# Refs: https://github.com/rust-lang/rustup/blob/HEAD/rustup-init.sh
+case "${OSTYPE}" in
+    linux*)
+        host_env="gnu"
+        if ldd --version 2>&1 | grep -q 'musl'; then
+            host_env="musl"
+        fi
+        ;;
+esac
 
 for tool in "${tools[@]}"; do
     if [[ "${tool}" == *"@"* ]]; then
@@ -290,9 +300,8 @@ for tool in "${tools[@]}"; do
             # https://nexte.st/book/pre-built-binaries.html
             case "${OSTYPE}" in
                 linux*)
-                    host_triple
-                    case "${host}" in
-                        *-linux-gnu*) url="https://get.nexte.st/${version}/linux" ;;
+                    case "${host_env}" in
+                        gnu) url="https://get.nexte.st/${version}/linux" ;;
                         *) url="https://get.nexte.st/${version}/linux-musl" ;;
                     esac
                     ;;
