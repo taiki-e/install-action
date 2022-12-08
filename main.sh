@@ -315,7 +315,7 @@ for tool in "${tools[@]}"; do
             ;;
         protoc)
             # https://github.com/protocolbuffers/protobuf/releases
-            latest_version="3.21.10"
+            latest_version="3.21.11"
             repo="protocolbuffers/protobuf"
             case "${version}" in
                 latest) version="${latest_version}" ;;

@@ -11,6 +11,7 @@ Note: In this file, do not use the hard wrap in the middle of a sentence for com
 ## [Unreleased]
 
 - Update `mdbook-linkcheck@latest` to 0.7.7.
+- Update `protoc@latest` to 3.21.11.
 
 ## [1.15.1] - 2022-12-03
 
