@@ -161,16 +161,6 @@ if [[ ! -d "${cargo_bin}" ]]; then
     cargo_bin=/usr/local/bin
 fi
 
-# Refs: https://github.com/rust-lang/rustup/blob/HEAD/rustup-init.sh
-case "${OSTYPE}" in
-    linux*)
-        host_env="gnu"
-        if ldd --version 2>&1 | grep -q 'musl'; then
-            host_env="musl"
-        fi
-        ;;
-esac
-
 for tool in "${tools[@]}"; do
     if [[ "${tool}" == *"@"* ]]; then
         version="${tool#*@}"
@@ -300,8 +290,9 @@ for tool in "${tools[@]}"; do
             # https://nexte.st/book/pre-built-binaries.html
             case "${OSTYPE}" in
                 linux*)
-                    case "${host_env}" in
-                        gnu) url="https://get.nexte.st/${version}/linux" ;;
+                    host_triple
+                    case "${host}" in
+                        *-linux-gnu*) url="https://get.nexte.st/${version}/linux" ;;
                         *) url="https://get.nexte.st/${version}/linux-musl" ;;
                     esac
                     ;;
