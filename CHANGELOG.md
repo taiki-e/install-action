@@ -10,6 +10,8 @@ Note: In this file, do not use the hard wrap in the middle of a sentence for com
 
 ## [Unreleased]
 
+- Fix bug regarding musl host detection. ([#29](https://github.com/taiki-e/install-action/issues/29))
+
 ## [1.15.2] - 2022-12-10
 
 - Update `mdbook-linkcheck@latest` to 0.7.7.
