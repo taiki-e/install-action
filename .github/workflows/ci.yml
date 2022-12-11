@@ -47,3 +47,25 @@ jobs:
       - uses: ./
         with:
           tool: ${{ matrix.tool }}
+
+  test-container:
+    strategy:
+      fail-fast: false
+      matrix:
+        include:
+          - container: alpine:latest
+            # cargo-udeps,protoc,valgrind,wasmtime,mdbook,mdbook-linkcheck don't support musl host.
+            tool: cargo-hack,cargo-llvm-cov,cargo-minimal-versions,parse-changelog,cargo-valgrind,cargo-deny,cross,nextest,shellcheck,shfmt,wasm-pack
+    runs-on: ubuntu-latest
+    container: ${{ matrix.container }}
+    steps:
+      - uses: actions/checkout@v3
+        with:
+          persist-credentials: false
+      - name: Install requirements
+        run: apk add cargo curl bash tar xz
+        shell: sh
+        if: startsWith(matrix.container, 'alpine')
+      - uses: ./
+        with:
+          tool: ${{ matrix.tool }}
