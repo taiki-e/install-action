@@ -137,6 +137,34 @@ cargo_binstall() {
         *) cargo binstall --force --no-confirm --version "${version}" "${tool}" ;;
     esac
 }
+apt_update() {
+    if type -P sudo &>/dev/null; then
+        retry sudo apt-get -o Acquire::Retries=10 -qq update
+    else
+        retry apt-get -o Acquire::Retries=10 -qq update
+    fi
+}
+apt_install() {
+    if type -P sudo &>/dev/null; then
+        retry sudo apt-get -o Acquire::Retries=10 -qq -o Dpkg::Use-Pty=0 install -y --no-install-recommends "$@"
+    else
+        retry apt-get -o Acquire::Retries=10 -qq -o Dpkg::Use-Pty=0 install -y --no-install-recommends "$@"
+    fi
+}
+apt_remove() {
+    if type -P sudo &>/dev/null; then
+        sudo apt-get -qq -o Dpkg::Use-Pty=0 remove -y "$@"
+    else
+        apt-get -qq -o Dpkg::Use-Pty=0 remove -y "$@"
+    fi
+}
+snap_install() {
+    if type -P sudo &>/dev/null; then
+        retry sudo snap install "$@"
+    else
+        retry snap install "$@"
+    fi
+}
 
 if [[ $# -gt 0 ]]; then
     bail "invalid argument '$1'"
@@ -313,7 +341,7 @@ for tool in "${tools[@]}"; do
             esac
             miner_patch_version="${version#*.}"
             base_url="https://github.com/${repo}/releases/download/v${miner_patch_version}/protoc-${miner_patch_version}"
-            # Copying files to /usr/local/include requires sudo.
+            # Copying files to /usr/local/include requires sudo, so do not use it.
             bin_dir="${HOME}/.install-action/bin"
             include_dir="${HOME}/.install-action/include"
             if [[ ! -d "${bin_dir}" ]]; then
@@ -359,7 +387,7 @@ for tool in "${tools[@]}"; do
             case "${OSTYPE}" in
                 linux*)
                     if type -P shellcheck &>/dev/null; then
-                        sudo apt-get -qq -o Dpkg::Use-Pty=0 remove -y shellcheck
+                        apt_remove shellcheck
                     fi
                     url="${base_url}.linux.x86_64.tar.xz"
                     ;;
@@ -411,12 +439,12 @@ for tool in "${tools[@]}"; do
                 darwin* | cygwin* | msys*) bail "${tool} for non-linux is not supported yet by this action" ;;
                 *) bail "unsupported OSTYPE '${OSTYPE}' for ${tool}" ;;
             esac
-            retry sudo apt-get -o Acquire::Retries=10 -qq update
+            apt_update
             # libc6-dbg is needed to run Valgrind
-            retry sudo apt-get -o Acquire::Retries=10 -qq -o Dpkg::Use-Pty=0 install -y libc6-dbg
+            apt_install libc6-dbg
             # Use snap to install the latest Valgrind
             # https://snapcraft.io/install/valgrind/ubuntu
-            retry sudo snap install valgrind --classic
+            snap_install valgrind --classic
             ;;
         wasm-pack)
             # https://github.com/rustwasm/wasm-pack/releases
