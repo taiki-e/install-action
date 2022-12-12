@@ -402,7 +402,7 @@ for tool in "${tools[@]}"; do
             ;;
         shfmt)
             # https://github.com/mvdan/sh/releases
-            latest_version="3.5.1"
+            latest_version="3.6.0"
             repo="mvdan/sh"
             case "${version}" in
                 latest) version="${latest_version}" ;;

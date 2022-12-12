@@ -10,6 +10,8 @@ Note: In this file, do not use the hard wrap in the middle of a sentence for com
 
 ## [Unreleased]
 
+- Update `shfmt@latest` to 3.6.0.
+
 ## [1.15.3] - 2022-12-11
 
 - Fix bug regarding musl host detection. ([#29](https://github.com/taiki-e/install-action/issues/29))
