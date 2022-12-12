@@ -80,7 +80,7 @@ host_triple() {
 }
 install_cargo_binstall() {
     # https://github.com/cargo-bins/cargo-binstall/releases
-    local binstall_version="0.17.0"
+    local binstall_version="0.18.0"
     local install_binstall='1'
     if [[ -f "${cargo_bin}/cargo-binstall${exe}" ]]; then
         if [[ "$(cargo binstall -V)" == "cargo-binstall ${binstall_version}" ]]; then
