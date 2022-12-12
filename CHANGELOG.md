@@ -10,6 +10,8 @@ Note: In this file, do not use the hard wrap in the middle of a sentence for com
 
 ## [Unreleased]
 
+## [1.15.4] - 2022-12-12
+
 - Update `shfmt@latest` to 3.6.0.
 - Update `cargo-binstall@latest` to 0.18.0.
 - Support installing `cargo-binstall` on linux with custom host targets such as x86_64-alpine-linux-musl.
@@ -423,7 +425,8 @@ Note: In this file, do not use the hard wrap in the middle of a sentence for com
 
 Initial release
 
-[Unreleased]: https://github.com/taiki-e/install-action/compare/v1.15.3...HEAD
+[Unreleased]: https://github.com/taiki-e/install-action/compare/v1.15.4...HEAD
+[1.15.4]: https://github.com/taiki-e/install-action/compare/v1.15.3...v1.15.4
 [1.15.3]: https://github.com/taiki-e/install-action/compare/v1.15.2...v1.15.3
 [1.15.2]: https://github.com/taiki-e/install-action/compare/v1.15.1...v1.15.2
 [1.15.1]: https://github.com/taiki-e/install-action/compare/v1.15.0...v1.15.1
