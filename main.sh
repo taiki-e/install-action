@@ -98,14 +98,14 @@ install_cargo_binstall() {
         host_triple
         base_url="https://github.com/cargo-bins/cargo-binstall/releases/download/v${binstall_version}/cargo-binstall"
         case "${host}" in
-            x86_64-unknown-linux-gnu) url="${base_url}-x86_64-unknown-linux-musl.tgz" ;;
-            x86_64-unknown-linux-musl) url="${base_url}-x86_64-unknown-linux-musl.tgz" ;;
+            x86_64-*-linux-gnu) url="${base_url}-x86_64-unknown-linux-musl.tgz" ;;
+            x86_64-*-linux-musl) url="${base_url}-x86_64-unknown-linux-musl.tgz" ;;
 
-            armv7-unknown-linux-gnueabihf) url="${base_url}-armv7-unknown-linux-musleabihf.tgz" ;;
-            armv7-unknown-linux-musleabihf) url="${base_url}-armv7-unknown-linux-musleabihf.tgz" ;;
+            armv7-*-linux-gnueabihf) url="${base_url}-armv7-unknown-linux-musleabihf.tgz" ;;
+            armv7-*-linux-musleabihf) url="${base_url}-armv7-unknown-linux-musleabihf.tgz" ;;
 
-            aarch64-unknown-linux-gnu) url="${base_url}-aarch64-unknown-linux-musl.tgz" ;;
-            aarch64-unknown-linux-musl) url="${base_url}-aarch64-unknown-linux-musl.tgz" ;;
+            aarch64-*-linux-gnu) url="${base_url}-aarch64-unknown-linux-musl.tgz" ;;
+            aarch64-*-linux-musl) url="${base_url}-aarch64-unknown-linux-musl.tgz" ;;
 
             x86_64-pc-windows-gnu) url="${base_url}-x86_64-pc-windows-msvc.zip" ;;
 

@@ -61,7 +61,7 @@ jobs:
             tool: cargo-hack,cargo-llvm-cov,cargo-minimal-versions,parse-changelog,cargo-udeps,cargo-valgrind,cargo-deny,cross,nextest,protoc,shellcheck,shfmt,wasm-pack,wasmtime,mdbook,mdbook-linkcheck,cargo-watch
           - container: alpine:latest
             # cargo-udeps,protoc,valgrind,wasmtime,mdbook,mdbook-linkcheck,cargo-watch don't provide prebuilt binaries for musl host.
-            tool: cargo-hack,cargo-llvm-cov,cargo-minimal-versions,parse-changelog,cargo-valgrind,cargo-deny,cross,nextest,shellcheck,shfmt,wasm-pack
+            tool: cargo-hack,cargo-llvm-cov,cargo-minimal-versions,parse-changelog,cargo-valgrind,cargo-deny,cross,nextest,shellcheck,shfmt,wasm-pack,cargo-binstall
     runs-on: ubuntu-latest
     container: ${{ matrix.container }}
     steps:

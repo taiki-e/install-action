@@ -11,6 +11,7 @@ Note: In this file, do not use the hard wrap in the middle of a sentence for com
 ## [Unreleased]
 
 - Update `shfmt@latest` to 3.6.0.
+- Support installing `cargo-binstall` on linux with custom host targets such as x86_64-alpine-linux-musl.
 
 ## [1.15.3] - 2022-12-11
 
