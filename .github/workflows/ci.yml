@@ -34,7 +34,7 @@ jobs:
         include:
           # Note: Specifying the version of valgrind and cargo-binstall is not supported.
           - os: ubuntu-20.04
-            tool: cargo-hack@0.5.24,cargo-llvm-cov@0.5.2,cargo-minimal-versions@0.1.8,parse-changelog@0.5.2,cargo-udeps@0.1.35,cargo-valgrind@2.1.0,cargo-deny@0.13.5,cross@0.2.4,nextest@0.9.11,protoc@3.21.11,shellcheck@0.8.0,shfmt@3.6.0,wasm-pack@0.10.3,wasmtime@3.0.1,mdbook@0.4.22,mdbook-linkcheck@0.7.7,cargo-watch@8.1.1
+            tool: cargo-hack@0.5.24,cargo-llvm-cov@0.5.2,cargo-minimal-versions@0.1.8,parse-changelog@0.5.2,cargo-udeps@0.1.35,cargo-valgrind@2.1.0,cargo-deny@0.13.5,cross@0.2.4,nextest@0.9.11,protoc@3.21.11,shellcheck@0.9.0,shfmt@3.6.0,wasm-pack@0.10.3,wasmtime@3.0.1,mdbook@0.4.22,mdbook-linkcheck@0.7.7,cargo-watch@8.1.1
           # Nextest supports basic version ranges as well. For other tools, this will be supported by https://github.com/taiki-e/install-action/pull/27.
           - os: ubuntu-20.04
             tool: nextest@0.9

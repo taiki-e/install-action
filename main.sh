@@ -377,7 +377,7 @@ for tool in "${tools[@]}"; do
             ;;
         shellcheck)
             # https://github.com/koalaman/shellcheck/releases
-            latest_version="0.8.0"
+            latest_version="0.9.0"
             repo="koalaman/${tool}"
             case "${version}" in
                 latest) version="${latest_version}" ;;

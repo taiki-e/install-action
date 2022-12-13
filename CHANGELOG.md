@@ -10,6 +10,8 @@ Note: In this file, do not use the hard wrap in the middle of a sentence for com
 
 ## [Unreleased]
 
+- Update `shellcheck@latest` to 0.9.0.
+
 ## [1.15.4] - 2022-12-12
 
 - Update `shfmt@latest` to 3.6.0.
