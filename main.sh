@@ -169,6 +169,15 @@ if [[ -n "${tool}" ]]; then
     while read -rd,; do tools+=("${REPLY}"); done <<<"${tool},"
 fi
 
+# Refs: https://github.com/rust-lang/rustup/blob/HEAD/rustup-init.sh
+case "${OSTYPE}" in
+    linux*)
+        host_env="gnu"
+        if (ldd --version 2>&1 || true) | grep -q 'musl'; then
+            host_env="musl"
+        fi
+        ;;
+esac
 exe=""
 case "${OSTYPE}" in
     cygwin* | msys*) exe=".exe" ;;
@@ -309,8 +318,8 @@ for tool in "${tools[@]}"; do
             case "${OSTYPE}" in
                 linux*)
                     host_triple
-                    case "${host}" in
-                        *-linux-gnu*) url="https://get.nexte.st/${version}/linux" ;;
+                    case "${host_env}" in
+                        gnu) url="https://get.nexte.st/${version}/linux" ;;
                         *) url="https://get.nexte.st/${version}/linux-musl" ;;
                     esac
                     ;;
