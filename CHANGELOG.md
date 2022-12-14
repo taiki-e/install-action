@@ -20,6 +20,8 @@ Note: In this file, do not use the hard wrap in the middle of a sentence for com
 
   The system's package manager is used for these installations. However, `bash`, which is an execution requirement of the action itself, and `cargo`, which is usually preferred for installation by rustup rather than the system's package manager, are *not* covered by these installations.
 
+  See also the [compatibility note in readme](https://github.com/taiki-e/install-action#compatibility).
+
 ## [1.15.5] - 2022-12-13
 
 - Update `shellcheck@latest` to 0.9.0.
