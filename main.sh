@@ -317,7 +317,6 @@ for tool in "${tools[@]}"; do
             # https://nexte.st/book/pre-built-binaries.html
             case "${OSTYPE}" in
                 linux*)
-                    host_triple
                     case "${host_env}" in
                         gnu) url="https://get.nexte.st/${version}/linux" ;;
                         *) url="https://get.nexte.st/${version}/linux-musl" ;;
