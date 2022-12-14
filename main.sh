@@ -51,7 +51,7 @@ download() {
             tar_args+=("xjf")
             if ! type -P bzip2 &>/dev/null; then
                 case "${base_distro}" in
-                    debian | alpine) sys_install bzip2 ;;
+                    debian | alpine | fedora) sys_install bzip2 ;;
                 esac
             fi
             ;;
@@ -60,21 +60,21 @@ download() {
             if ! type -P xz &>/dev/null; then
                 case "${base_distro}" in
                     debian) sys_install xz-utils ;;
-                    alpine) sys_install xz ;;
+                    alpine | fedora) sys_install xz ;;
                 esac
             fi
             ;;
         *.zip)
             if ! type -P unzip &>/dev/null; then
                 case "${base_distro}" in
-                    debian | alpine) sys_install unzip ;;
+                    debian | alpine | fedora) sys_install unzip ;;
                 esac
             fi
             mkdir -p .install-action-tmp
             (
                 cd .install-action-tmp
                 info "downloading ${url}"
-                retry curl --proto '=https' --tlsv1.2 -fsSL --retry 10 --retry-connrefused "${url}" -o tmp.zip
+                retry curl --proto '=https' --tlsv1.2 -fsSL --retry 10 "${url}" -o tmp.zip
                 unzip tmp.zip
                 mv "${bin}" "${bin_dir}/"
             )
@@ -90,7 +90,7 @@ download() {
         tar_args+=(--strip-components "${components}")
     fi
     info "downloading ${url}"
-    retry curl --proto '=https' --tlsv1.2 -fsSL --retry 10 --retry-connrefused "${url}" \
+    retry curl --proto '=https' --tlsv1.2 -fsSL --retry 10 "${url}" \
         | tar "${tar_args[@]}" -C "${bin_dir}" "${bin}"
 }
 host_triple() {
@@ -186,10 +186,18 @@ apk_install() {
         apk add "$@"
     fi
 }
+dnf_install() {
+    if type -P sudo &>/dev/null; then
+        retry sudo "${dnf}" install -y "$@"
+    else
+        retry "${dnf}" install -y "$@"
+    fi
+}
 sys_install() {
     case "${base_distro}" in
         debian) apt_install "$@" ;;
         alpine) apk_install "$@" ;;
+        fedora) dnf_install "$@" ;;
     esac
 }
 
@@ -217,9 +225,37 @@ case "${OSTYPE}" in
         fi
         if grep -q '^ID_LIKE=' /etc/os-release; then
             base_distro="$(grep '^ID_LIKE=' /etc/os-release | sed 's/^ID_LIKE=//')"
+            case "${base_distro}" in
+                *debian*) base_distro=debian ;;
+                *alpine*) base_distro=alpine ;;
+                *fedora*) base_distro=fedora ;;
+            esac
         else
             base_distro="$(grep '^ID=' /etc/os-release | sed 's/^ID=//')"
         fi
+        case "${base_distro}" in
+            fedora)
+                dnf=dnf
+                if ! type -P dnf &>/dev/null; then
+                    if type -P microdnf &>/dev/null; then
+                        # fedora-based distributions have "minimal" images that
+                        # use microdnf instead of dnf.
+                        dnf=microdnf
+                    else
+                        # If neither dnf nor microdnf is available, it is
+                        # probably an RHEL7-based distribution that does not
+                        # have dnf installed by default.
+                        if type -P sudo &>/dev/null; then
+                            sudo yum update -y
+                            sudo yum install -y dnf
+                        else
+                            yum update -y
+                            yum install -y dnf
+                        fi
+                    fi
+                fi
+                ;;
+        esac
         ;;
     cygwin* | msys*) exe=".exe" ;;
 esac
@@ -231,7 +267,7 @@ fi
 
 if ! type -P curl &>/dev/null || ! type -P tar &>/dev/null; then
     case "${base_distro}" in
-        debian | alpine) sys_install ca-certificates curl tar ;;
+        debian | alpine | fedora) sys_install ca-certificates curl tar ;;
     esac
 fi
 
@@ -376,7 +412,7 @@ for tool in "${tools[@]}"; do
                 *) bail "unsupported OSTYPE '${OSTYPE}' for ${tool}" ;;
             esac
             info "downloading ${url}"
-            retry curl --proto '=https' --tlsv1.2 -fsSL --retry 10 --retry-connrefused "${url}" \
+            retry curl --proto '=https' --tlsv1.2 -fsSL --retry 10 "${url}" \
                 | tar xzf - -C "${cargo_bin}"
             ;;
         protoc)
@@ -405,14 +441,14 @@ for tool in "${tools[@]}"; do
             esac
             if ! type -P unzip &>/dev/null; then
                 case "${base_distro}" in
-                    debian | alpine) sys_install unzip ;;
+                    debian | alpine | fedora) sys_install unzip ;;
                 esac
             fi
             mkdir -p .install-action-tmp
             (
                 cd .install-action-tmp
                 info "downloading ${url}"
-                retry curl --proto '=https' --tlsv1.2 -fsSL --retry 10 --retry-connrefused "${url}" -o tmp.zip
+                retry curl --proto '=https' --tlsv1.2 -fsSL --retry 10 "${url}" -o tmp.zip
                 unzip tmp.zip
                 mv "bin/protoc${exe}" "${bin_dir}/"
                 mkdir -p "${include_dir}/"
@@ -476,7 +512,7 @@ for tool in "${tools[@]}"; do
             esac
             url="https://github.com/${repo}/releases/download/v${version}/${tool}_v${version}_${target}${exe}"
             info "downloading ${url}"
-            retry curl --proto '=https' --tlsv1.2 -fsSL --retry 10 --retry-connrefused -o "${bin_dir}/${tool}${exe}" "${url}"
+            retry curl --proto '=https' --tlsv1.2 -fsSL --retry 10 -o "${bin_dir}/${tool}${exe}" "${url}"
             case "${OSTYPE}" in
                 linux* | darwin*) chmod +x "${bin_dir}/${tool}${exe}" ;;
             esac

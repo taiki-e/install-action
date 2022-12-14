@@ -104,11 +104,11 @@ If you want a higher level of security, consider working on [#1](https://github.
 
 ## Compatibility
 
-This action has been tested for GitHub-hosted runners (Ubuntu, macOS, Windows) and containers (Ubuntu, Debian, Alpine).
+This action has been tested for GitHub-hosted runners (Ubuntu, macOS, Windows) and containers (Ubuntu, Debian, Alpine, Fedora, CentOS, Rocky).
 To use this action in self-hosted runners or in containers, you will need to install at least the following:
 
 - bash
-- cargo (if you install cargo subcommands)
+- cargo (if you install cargo subcommands or use cargo-binstall fallback)
 
 ## Related Projects
 

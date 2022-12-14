@@ -56,34 +56,73 @@ jobs:
       fail-fast: false
       matrix:
         container:
-          - ubuntu:20.04
-          - debian:latest
+          - ubuntu:20.04 # glibc 2.31
+          - debian:11-slim # glibc 2.31
         tool:
           # valgrind: installing snap to container is difficult...
           - cargo-hack,cargo-llvm-cov,cargo-minimal-versions,parse-changelog,cargo-udeps,cargo-valgrind,cargo-deny,cross,nextest,protoc,shellcheck,shfmt,wasm-pack,wasmtime,mdbook,mdbook-linkcheck,cargo-watch
         include:
-          - container: ubuntu:18.04
+          - container: ubuntu:22.04 # glibc 2.35
+            # cargo-udeps depends on openssl 1.1
+            tool: cargo-hack,cargo-llvm-cov,cargo-minimal-versions,parse-changelog,cargo-valgrind,cargo-deny,cross,nextest,protoc,shellcheck,shfmt,wasm-pack,wasmtime,mdbook,mdbook-linkcheck,cargo-watch
+          - container: ubuntu:18.04 # glibc 2.27
             # The latest mdbook provides prebuilt binaries for musl host, but we don't support it yet (will be done by https://github.com/taiki-e/install-action/pull/27)
             tool: cargo-hack,cargo-llvm-cov,cargo-minimal-versions,parse-changelog,cargo-udeps,cargo-valgrind,cargo-deny,cross,nextest,protoc,shellcheck,shfmt,wasm-pack,wasmtime,mdbook-linkcheck,cargo-watch
-          - container: alpine:latest
-            # cargo-udeps,protoc,valgrind,wasmtime,mdbook,mdbook-linkcheck,cargo-watch don't provide prebuilt binaries for musl host.
+          - container: debian:10-slim # glibc 2.28
+            # The latest mdbook provides prebuilt binaries for musl host, but we don't support it yet (will be done by https://github.com/taiki-e/install-action/pull/27)
+            tool: cargo-hack,cargo-llvm-cov,cargo-minimal-versions,parse-changelog,cargo-udeps,cargo-valgrind,cargo-deny,cross,nextest,protoc,shellcheck,shfmt,wasm-pack,wasmtime,mdbook-linkcheck,cargo-watch
+          - container: fedora:latest # glibc 2.36 (as of fedora 37)
+            # cargo-udeps depends on openssl 1.1
+            tool: cargo-hack,cargo-llvm-cov,cargo-minimal-versions,parse-changelog,cargo-valgrind,cargo-deny,cross,nextest,protoc,shellcheck,shfmt,wasm-pack,wasmtime,mdbook,mdbook-linkcheck,cargo-watch
+          - container: rockylinux:8 # glibc 2.28
+            # The latest mdbook provides prebuilt binaries for musl host, but we don't support it yet (will be done by https://github.com/taiki-e/install-action/pull/27)
+            tool: cargo-hack,cargo-llvm-cov,cargo-minimal-versions,parse-changelog,cargo-udeps,cargo-valgrind,cargo-deny,cross,nextest,protoc,shellcheck,shfmt,wasm-pack,wasmtime,mdbook-linkcheck,cargo-watch
+          - container: rockylinux:8-minimal # glibc 2.28
+            # The latest mdbook provides prebuilt binaries for musl host, but we don't support it yet (will be done by https://github.com/taiki-e/install-action/pull/27)
+            tool: cargo-hack,cargo-llvm-cov,cargo-minimal-versions,parse-changelog,cargo-udeps,cargo-valgrind,cargo-deny,cross,nextest,protoc,shellcheck,shfmt,wasm-pack,wasmtime,mdbook-linkcheck,cargo-watch
+          - container: centos:7 # glibc 2.17
+            # cargo-udeps,protoc,valgrind,wasmtime,mdbook-linkcheck,cargo-watch don't provide prebuilt binaries for musl host.
+            # The latest mdbook provides prebuilt binaries for musl host, but we don't support it yet (will be done by https://github.com/taiki-e/install-action/pull/27)
+            # we don't support nextest on very old glibc due to https://github.com/taiki-e/install-action/issues/13.
+            tool: cargo-hack,cargo-llvm-cov,cargo-minimal-versions,parse-changelog,cargo-valgrind,cargo-deny,cross,shellcheck,shfmt,wasm-pack,cargo-binstall
+          - container: alpine:latest # musl 1.2.3 (as of alpine 3.17)
+            # cargo-udeps,protoc,valgrind,wasmtime,mdbook-linkcheck,cargo-watch don't provide prebuilt binaries for musl host.
+            # The latest mdbook provides prebuilt binaries for musl host, but we don't support it yet (will be done by https://github.com/taiki-e/install-action/pull/27)
             tool: cargo-hack,cargo-llvm-cov,cargo-minimal-versions,parse-changelog,cargo-valgrind,cargo-deny,cross,nextest,shellcheck,shfmt,wasm-pack,cargo-binstall
     runs-on: ubuntu-latest
     container: ${{ matrix.container }}
     steps:
-      - uses: actions/checkout@v3
-        with:
-          persist-credentials: false
       - name: Install requirements (ubuntu/debian)
         run: |
           set -ex
           apt-get -o Acquire::Retries=10 -qq update
           apt-get -o Acquire::Retries=10 -qq -o Dpkg::Use-Pty=0 install -y --no-install-recommends cargo
         if: startsWith(matrix.container, 'ubuntu') || startsWith(matrix.container, 'debian')
+      - name: Install requirements (fedora/rockylinux)
+        run: |
+          set -ex
+          dnf=dnf
+          if ! type -P dnf &>/dev/null; then
+            dnf=microdnf
+          fi
+          # tar and gzip are required for actions/checkout on rockylinux:*-minimal
+          $dnf install -y cargo tar gzip
+        if: startsWith(matrix.container, 'fedora') || startsWith(matrix.container, 'rockylinux')
+      - name: Install requirements (centos)
+        run: |
+          set -ex
+          curl --proto '=https' --tlsv1.2 -sSf https://sh.rustup.rs | sh -s -- -y --profile minimal --default-toolchain stable
+          echo "$HOME/.cargo/bin" >>"${GITHUB_PATH}"
+        if: startsWith(matrix.container, 'centos')
       - name: Install requirements (alpine)
-        run: apk add bash cargo
+        run: |
+          set -ex
+          apk add bash cargo
         shell: sh
         if: startsWith(matrix.container, 'alpine')
+      - uses: actions/checkout@v3
+        with:
+          persist-credentials: false
       - uses: ./
         with:
           tool: ${{ matrix.tool }}

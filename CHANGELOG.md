@@ -10,6 +10,8 @@ Note: In this file, do not use the hard wrap in the middle of a sentence for com
 
 ## [Unreleased]
 
+- Improve support for Fedora/RHEL based containers/self-hosted runners.
+
 ## [1.16.0] - 2022-12-14
 
 - Update `cargo-binstall@latest` to 0.18.1. ([#32](https://github.com/taiki-e/install-action/pull/32), thanks @NobodyXu)
