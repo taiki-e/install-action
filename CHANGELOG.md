@@ -10,6 +10,8 @@ Note: In this file, do not use the hard wrap in the middle of a sentence for com
 
 ## [Unreleased]
 
+- Update `cargo-binstall@latest` to 0.18.1. ([#32](https://github.com/taiki-e/install-action/pull/32), thanks @NobodyXu)
+
 - If the host environment lacks packages required for installation, such as `curl` or `tar`, install them if possible.
 
   It is mainly intended to make the use of this action easy on containers or self-hosted runners, and currently supports Debian-based distributions (including Ubuntu) and Alpine.
