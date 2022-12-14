@@ -9,6 +9,7 @@ GitHub Action for installing development tools (mainly from GitHub Releases).
   - [Example workflow](#example-workflow)
 - [Supported tools](#supported-tools)
 - [Security](#security)
+- [Compatibility](#compatibility)
 - [Related Projects](#related-projects)
 - [License](#license)
 
@@ -100,6 +101,14 @@ If a tool not included in the list above is specified, this action uses [cargo-b
 When installing the tool from GitHub Releases, this action will download the tool or its installer from GitHub Releases using HTTPS with tlsv1.2+. This is basically considered to be the same level of security as [the recommended installation of rustup](https://www.rust-lang.org/tools/install).
 
 If you want a higher level of security, consider working on [#1](https://github.com/taiki-e/install-action/issues/1).
+
+## Compatibility
+
+This action has been tested for GitHub-hosted runners (Ubuntu, macOS, Windows) and containers (Ubuntu, Debian, Alpine).
+To use this action in self-hosted runners or in containers, you will need to install at least the following:
+
+- bash
+- cargo (if you install cargo subcommands)
 
 ## Related Projects
 
