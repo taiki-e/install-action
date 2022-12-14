@@ -47,9 +47,29 @@ download() {
     local tar_args=()
     case "${url}" in
         *.tar.gz | *.tgz) tar_args+=("xzf") ;;
-        *.tar.bz2 | *.tbz2) tar_args+=("xjf") ;;
-        *.tar.xz | *.txz) tar_args+=("xJf") ;;
+        *.tar.bz2 | *.tbz2)
+            tar_args+=("xjf")
+            if ! type -P bzip2 &>/dev/null; then
+                case "${base_distro}" in
+                    debian | alpine) sys_install bzip2 ;;
+                esac
+            fi
+            ;;
+        *.tar.xz | *.txz)
+            tar_args+=("xJf")
+            if ! type -P xz &>/dev/null; then
+                case "${base_distro}" in
+                    debian) sys_install xz-utils ;;
+                    alpine) sys_install xz ;;
+                esac
+            fi
+            ;;
         *.zip)
+            if ! type -P unzip &>/dev/null; then
+                case "${base_distro}" in
+                    debian | alpine) sys_install unzip ;;
+                esac
+            fi
             mkdir -p .install-action-tmp
             (
                 cd .install-action-tmp
@@ -133,8 +153,12 @@ apt_update() {
     else
         retry apt-get -o Acquire::Retries=10 -qq update
     fi
+    apt_updated=1
 }
 apt_install() {
+    if [[ -z "${apt_updated:-}" ]]; then
+        apt_update
+    fi
     if type -P sudo &>/dev/null; then
         retry sudo apt-get -o Acquire::Retries=10 -qq -o Dpkg::Use-Pty=0 install -y --no-install-recommends "$@"
     else
@@ -155,6 +179,19 @@ snap_install() {
         retry snap install "$@"
     fi
 }
+apk_install() {
+    if type -P doas &>/dev/null; then
+        doas apk add "$@"
+    else
+        apk add "$@"
+    fi
+}
+sys_install() {
+    case "${base_distro}" in
+        debian) apt_install "$@" ;;
+        alpine) apk_install "$@" ;;
+    esac
+}
 
 if [[ $# -gt 0 ]]; then
     bail "invalid argument '$1'"
@@ -169,23 +206,33 @@ if [[ -n "${tool}" ]]; then
     while read -rd,; do tools+=("${REPLY}"); done <<<"${tool},"
 fi
 
-# Refs: https://github.com/rust-lang/rustup/blob/HEAD/rustup-init.sh
+base_distro=""
+exe=""
 case "${OSTYPE}" in
     linux*)
         host_env="gnu"
+        # Refs: https://github.com/rust-lang/rustup/blob/HEAD/rustup-init.sh
         if (ldd --version 2>&1 || true) | grep -q 'musl'; then
             host_env="musl"
         fi
+        if grep -q '^ID_LIKE=' /etc/os-release; then
+            base_distro="$(grep '^ID_LIKE=' /etc/os-release | sed 's/^ID_LIKE=//')"
+        else
+            base_distro="$(grep '^ID=' /etc/os-release | sed 's/^ID=//')"
+        fi
         ;;
-esac
-exe=""
-case "${OSTYPE}" in
     cygwin* | msys*) exe=".exe" ;;
 esac
 
 cargo_bin="${CARGO_HOME:-"${HOME}/.cargo"}/bin"
 if [[ ! -d "${cargo_bin}" ]]; then
     cargo_bin=/usr/local/bin
+fi
+
+if ! type -P curl &>/dev/null || ! type -P tar &>/dev/null; then
+    case "${base_distro}" in
+        debian | alpine) sys_install ca-certificates curl tar ;;
+    esac
 fi
 
 for tool in "${tools[@]}"; do
@@ -354,6 +401,11 @@ for tool in "${tools[@]}"; do
                 cygwin* | msys*) url="${base_url}-win64.zip" ;;
                 *) bail "unsupported OSTYPE '${OSTYPE}' for ${tool}" ;;
             esac
+            if ! type -P unzip &>/dev/null; then
+                case "${base_distro}" in
+                    debian | alpine) sys_install unzip ;;
+                esac
+            fi
             mkdir -p .install-action-tmp
             (
                 cd .install-action-tmp
@@ -437,7 +489,6 @@ for tool in "${tools[@]}"; do
                 darwin* | cygwin* | msys*) bail "${tool} for non-linux is not supported yet by this action" ;;
                 *) bail "unsupported OSTYPE '${OSTYPE}' for ${tool}" ;;
             esac
-            apt_update
             # libc6-dbg is needed to run Valgrind
             apt_install libc6-dbg
             # Use snap to install the latest Valgrind

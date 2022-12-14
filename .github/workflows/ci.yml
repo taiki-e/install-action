@@ -75,10 +75,10 @@ jobs:
         run: |
           set -ex
           apt-get -o Acquire::Retries=10 -qq update
-          apt-get -o Acquire::Retries=10 -qq -o Dpkg::Use-Pty=0 install -y --no-install-recommends ca-certificates cargo curl unzip xz-utils
+          apt-get -o Acquire::Retries=10 -qq -o Dpkg::Use-Pty=0 install -y --no-install-recommends cargo
         if: startsWith(matrix.container, 'ubuntu') || startsWith(matrix.container, 'debian')
       - name: Install requirements (alpine)
-        run: apk add bash cargo curl tar xz
+        run: apk add bash cargo
         shell: sh
         if: startsWith(matrix.container, 'alpine')
       - uses: ./

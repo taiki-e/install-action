@@ -10,6 +10,12 @@ Note: In this file, do not use the hard wrap in the middle of a sentence for com
 
 ## [Unreleased]
 
+- If the host environment lacks packages required for installation, such as `curl` or `tar`, install them if possible.
+
+  It is mainly intended to make the use of this action easy on containers or self-hosted runners, and currently supports Debian-based distributions (including Ubuntu) and Alpine.
+
+  The system's package manager is used for these installations. However, bash, which is an execution requirement of the action itself, and rustc, which is usually preferred for installation by rustup rather than the system's package manager, are *not* covered by these installations.
+
 ## [1.15.5] - 2022-12-13
 
 - Update `shellcheck@latest` to 0.9.0.
