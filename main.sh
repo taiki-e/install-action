@@ -93,11 +93,6 @@ download() {
     retry curl --proto '=https' --tlsv1.2 -fsSL --retry 10 "${url}" \
         | tar "${tar_args[@]}" -C "${bin_dir}" "${bin}"
 }
-host_triple() {
-    if [[ -z "${host:-}" ]]; then
-        host="$(rustc -vV | grep host | cut -c 7-)"
-    fi
-}
 install_cargo_binstall() {
     # https://github.com/cargo-bins/cargo-binstall/releases
     local binstall_version="0.18.1"
@@ -115,15 +110,12 @@ install_cargo_binstall() {
     if [[ -n "${install_binstall}" ]]; then
         info "installing cargo-binstall"
 
-        host_triple
         base_url="https://github.com/cargo-bins/cargo-binstall/releases/download/v${binstall_version}/cargo-binstall"
-        case "${host}" in
-            x86_64-*-linux-gnu | x86_64-*-linux-musl) url="${base_url}-x86_64-unknown-linux-musl.tgz" ;;
-            armv7-*-linux-gnueabihf | armv7-*-linux-musleabihf) url="${base_url}-armv7-unknown-linux-musleabihf.tgz" ;;
-            aarch64-*-linux-gnu | aarch64-*-linux-musl) url="${base_url}-aarch64-unknown-linux-musl.tgz" ;;
-            x86_64-pc-windows-gnu) url="${base_url}-x86_64-pc-windows-msvc.zip" ;;
-            x86_64-apple-darwin | aarch64-apple-darwin | x86_64-pc-windows-msvc) url="${base_url}-${host}.zip" ;;
-            *) bail "unsupported target '${host}' for cargo-binstall" ;;
+        case "${OSTYPE}" in
+            linux*) url="${base_url}-${host_arch}-unknown-linux-musl.tgz" ;;
+            darwin*) url="${base_url}-${host_arch}-apple-darwin.zip" ;;
+            cygwin* | msys*) url="${base_url}-x86_64-pc-windows-msvc.zip" ;;
+            *) bail "unsupported OSTYPE '${OSTYPE}' for cargo-binstall" ;;
         esac
 
         download "${url}" "${cargo_bin}" "cargo-binstall${exe}"
@@ -214,12 +206,26 @@ if [[ -n "${tool}" ]]; then
     while read -rd,; do tools+=("${REPLY}"); done <<<"${tool},"
 fi
 
+# Refs: https://github.com/rust-lang/rustup/blob/HEAD/rustup-init.sh
+case "$(uname -m)" in
+    aarch64 | arm64) host_arch="aarch64" ;;
+    xscale | arm | armv6l | armv7l | armv8l)
+        # Ignore arm for now, as we need to consider the version and whether hard-float is supported.
+        # https://github.com/rust-lang/rustup/pull/593
+        # https://github.com/cross-rs/cross/pull/1018
+        bail "32-bit ARM runner is not supported yet by this action"
+        ;;
+    # GitHub Actions Runner supports Linux (x86_64, aarch64, arm), Windows (x86_64, aarch64),
+    # and macOS (x86_64, aarch64).
+    # https://github.com/actions/runner
+    # So we can assume x86_64 unless it is aarch64 or arm.
+    *) host_arch="x86_64" ;;
+esac
 base_distro=""
 exe=""
 case "${OSTYPE}" in
     linux*)
         host_env="gnu"
-        # Refs: https://github.com/rust-lang/rustup/blob/HEAD/rustup-init.sh
         if (ldd --version 2>&1 || true) | grep -q 'musl'; then
             host_env="musl"
         fi
@@ -295,8 +301,8 @@ for tool in "${tools[@]}"; do
                 latest) version="${latest_version}" ;;
             esac
             case "${OSTYPE}" in
-                linux*) target="x86_64-unknown-linux-musl" ;;
-                darwin*) target="x86_64-apple-darwin" ;;
+                linux*) target="${host_arch}-unknown-linux-musl" ;;
+                darwin*) target="${host_arch}-apple-darwin" ;;
                 cygwin* | msys*) target="x86_64-pc-windows-msvc" ;;
                 *) bail "unsupported OSTYPE '${OSTYPE}' for ${tool}" ;;
             esac
@@ -330,7 +336,7 @@ for tool in "${tools[@]}"; do
             download "${url}" "${cargo_bin}" "./${tool}-v${version}-${target}/${tool}${exe}"
             ;;
         cargo-valgrind)
-            # https://github.com/jfrimmel/cargo-valgrind
+            # https://github.com/jfrimmel/cargo-valgrind/releases
             latest_version="2.1.0"
             repo="jfrimmel/${tool}"
             case "${version}" in
@@ -363,7 +369,7 @@ for tool in "${tools[@]}"; do
             esac
             case "${OSTYPE}" in
                 linux*) target="x86_64-unknown-linux-musl" ;;
-                darwin*) target="x86_64-apple-darwin" ;;
+                darwin*) target="${host_arch}-apple-darwin" ;;
                 cygwin* | msys*) target="x86_64-pc-windows-msvc" ;;
                 *) bail "unsupported OSTYPE '${OSTYPE}' for ${tool}" ;;
             esac
@@ -428,8 +434,8 @@ for tool in "${tools[@]}"; do
                 export PATH="${PATH}:${bin_dir}"
             fi
             case "${OSTYPE}" in
-                linux*) url="${base_url}-linux-x86_64.zip" ;;
-                darwin*) url="${base_url}-osx-x86_64.zip" ;;
+                linux*) url="${base_url}-linux-${host_arch/aarch/aarch_}.zip" ;;
+                darwin*) url="${base_url}-osx-${host_arch/aarch/aarch_}.zip" ;;
                 cygwin* | msys*) url="${base_url}-win64.zip" ;;
                 *) bail "unsupported OSTYPE '${OSTYPE}' for ${tool}" ;;
             esac
@@ -471,7 +477,7 @@ for tool in "${tools[@]}"; do
                     if type -P shellcheck &>/dev/null; then
                         apt_remove shellcheck
                     fi
-                    url="${base_url}.linux.x86_64.tar.xz"
+                    url="${base_url}.linux.${host_arch}.tar.xz"
                     ;;
                 darwin*) url="${base_url}.darwin.x86_64.tar.xz" ;;
                 cygwin* | msys*)
@@ -535,7 +541,7 @@ for tool in "${tools[@]}"; do
                 latest) version="${latest_version}" ;;
             esac
             case "${OSTYPE}" in
-                linux*) target="x86_64-unknown-linux-musl" ;;
+                linux*) target="${host_arch}-unknown-linux-musl" ;;
                 darwin*) target="x86_64-apple-darwin" ;;
                 cygwin* | msys*) target="x86_64-pc-windows-msvc" ;;
                 *) bail "unsupported OSTYPE '${OSTYPE}' for ${tool}" ;;
@@ -553,11 +559,11 @@ for tool in "${tools[@]}"; do
             base_url="https://github.com/${repo}/releases/download/v${version}/${tool}-v${version}"
             case "${OSTYPE}" in
                 linux*)
-                    target="x86_64-linux"
+                    target="${host_arch}-linux"
                     url="${base_url}-${target}.tar.xz"
                     ;;
                 darwin*)
-                    target="x86_64-macos"
+                    target="${host_arch}-macos"
                     url="${base_url}-${target}.tar.xz"
                     ;;
                 cygwin* | msys*)
