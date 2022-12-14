@@ -245,13 +245,7 @@ case "${OSTYPE}" in
                         # If neither dnf nor microdnf is available, it is
                         # probably an RHEL7-based distribution that does not
                         # have dnf installed by default.
-                        if type -P sudo &>/dev/null; then
-                            sudo yum update -y
-                            sudo yum install -y dnf
-                        else
-                            yum update -y
-                            yum install -y dnf
-                        fi
+                        dnf=yum
                     fi
                 fi
                 ;;
