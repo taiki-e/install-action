@@ -10,6 +10,8 @@ Note: In this file, do not use the hard wrap in the middle of a sentence for com
 
 ## [Unreleased]
 
+## [1.17.0] - 2022-12-14
+
 - Update `protoc@latest` to 3.21.12.
 - Support aarch64 self-hosted runners (Linux, macOS, Windows).
 - Improve support for Fedora/RHEL based containers/self-hosted runners.
@@ -445,7 +447,8 @@ Note: In this file, do not use the hard wrap in the middle of a sentence for com
 
 Initial release
 
-[Unreleased]: https://github.com/taiki-e/install-action/compare/v1.16.0...HEAD
+[Unreleased]: https://github.com/taiki-e/install-action/compare/v1.17.0...HEAD
+[1.17.0]: https://github.com/taiki-e/install-action/compare/v1.16.0...v1.17.0
 [1.16.0]: https://github.com/taiki-e/install-action/compare/v1.15.5...v1.16.0
 [1.15.5]: https://github.com/taiki-e/install-action/compare/v1.15.4...v1.15.5
 [1.15.4]: https://github.com/taiki-e/install-action/compare/v1.15.3...v1.15.4
