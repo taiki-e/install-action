@@ -55,13 +55,16 @@ jobs:
     strategy:
       fail-fast: false
       matrix:
+        container:
+          - ubuntu:20.04
+          - debian:latest
+        tool:
+          # valgrind: installing snap to container is difficult...
+          - cargo-hack,cargo-llvm-cov,cargo-minimal-versions,parse-changelog,cargo-udeps,cargo-valgrind,cargo-deny,cross,nextest,protoc,shellcheck,shfmt,wasm-pack,wasmtime,mdbook,mdbook-linkcheck,cargo-watch
         include:
-          - container: ubuntu:20.04
-            # valgrind: installing snap to container is difficult...
-            tool: cargo-hack,cargo-llvm-cov,cargo-minimal-versions,parse-changelog,cargo-udeps,cargo-valgrind,cargo-deny,cross,nextest,protoc,shellcheck,shfmt,wasm-pack,wasmtime,mdbook,mdbook-linkcheck,cargo-watch
-          - container: debian:latest
-            # valgrind: installing snap to container is difficult...
-            tool: cargo-hack,cargo-llvm-cov,cargo-minimal-versions,parse-changelog,cargo-udeps,cargo-valgrind,cargo-deny,cross,nextest,protoc,shellcheck,shfmt,wasm-pack,wasmtime,mdbook,mdbook-linkcheck,cargo-watch
+          - container: ubuntu:18.04
+            # The latest mdbook provides prebuilt binaries for musl host, but we don't support it yet (will be done by https://github.com/taiki-e/install-action/pull/27)
+            tool: cargo-hack,cargo-llvm-cov,cargo-minimal-versions,parse-changelog,cargo-udeps,cargo-valgrind,cargo-deny,cross,nextest,protoc,shellcheck,shfmt,wasm-pack,wasmtime,mdbook-linkcheck,cargo-watch
           - container: alpine:latest
             # cargo-udeps,protoc,valgrind,wasmtime,mdbook,mdbook-linkcheck,cargo-watch don't provide prebuilt binaries for musl host.
             tool: cargo-hack,cargo-llvm-cov,cargo-minimal-versions,parse-changelog,cargo-valgrind,cargo-deny,cross,nextest,shellcheck,shfmt,wasm-pack,cargo-binstall
