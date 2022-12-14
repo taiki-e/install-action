@@ -303,7 +303,12 @@ for tool in "${tools[@]}"; do
             case "${OSTYPE}" in
                 linux*) target="${host_arch}-unknown-linux-musl" ;;
                 darwin*) target="${host_arch}-apple-darwin" ;;
-                cygwin* | msys*) target="x86_64-pc-windows-msvc" ;;
+                cygwin* | msys*)
+                    case "${tool}" in
+                        cargo-llvm-cov) target="x86_64-pc-windows-msvc" ;;
+                        *) target="${host_arch}-pc-windows-msvc" ;;
+                    esac
+                    ;;
                 *) bail "unsupported OSTYPE '${OSTYPE}' for ${tool}" ;;
             esac
             url="https://github.com/${repo}/releases/download/v${version}/${tool}-${target}.tar.gz"
@@ -497,8 +502,18 @@ for tool in "${tools[@]}"; do
             esac
             bin_dir="/usr/local/bin"
             case "${OSTYPE}" in
-                linux*) target="linux_amd64" ;;
-                darwin*) target="darwin_amd64" ;;
+                linux*)
+                    case "${host_arch}" in
+                        aarch64) target="linux_arm64" ;;
+                        *) target="linux_amd64" ;;
+                    esac
+                    ;;
+                darwin*)
+                    case "${host_arch}" in
+                        aarch64) target="darwin_arm64" ;;
+                        *) target="darwin_amd64" ;;
+                    esac
+                    ;;
                 cygwin* | msys*)
                     target="windows_amd64"
                     bin_dir="${HOME}/.install-action/bin"
