@@ -601,7 +601,12 @@ for tool in "${tools[@]}"; do
             esac
             base_url="https://github.com/${repo}/releases/download/v${version}/${tool}-v${version}"
             case "${OSTYPE}" in
-                linux*) url="${base_url}-x86_64-unknown-linux-gnu.tar.gz" ;;
+                linux*)
+                    case "${version}" in
+                        0.[1-3].* | 0.4.? | 0.4.1? | 0.4.2[0-1]) url="${base_url}-x86_64-unknown-linux-gnu.tar.gz" ;;
+                        *) url="${base_url}-${host_arch}-unknown-linux-musl.tar.gz" ;;
+                    esac
+                    ;;
                 darwin*) url="${base_url}-x86_64-apple-darwin.tar.gz" ;;
                 cygwin* | msys*) url="${base_url}-x86_64-pc-windows-msvc.zip" ;;
                 *) bail "unsupported OSTYPE '${OSTYPE}' for ${tool}" ;;
