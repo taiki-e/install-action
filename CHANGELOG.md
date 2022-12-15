@@ -12,6 +12,7 @@ Note: In this file, do not use the hard wrap in the middle of a sentence for com
 
 - Update `mdbook@latest` to 0.4.23.
 - Support `mdbook` on Linux (musl).
+- Update `cargo-llvm-cov@latest` to 0.5.3.
 
 ## [1.17.0] - 2022-12-14
 
