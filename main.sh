@@ -594,7 +594,7 @@ for tool in "${tools[@]}"; do
             ;;
         mdbook)
             # https://github.com/rust-lang/mdBook/releases
-            latest_version="0.4.23"
+            latest_version="0.4.24"
             repo="rust-lang/mdBook"
             case "${version}" in
                 latest) version="${latest_version}" ;;
