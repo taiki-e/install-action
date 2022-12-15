@@ -1,6 +1,6 @@
 # install-action
 
-[![build status](https://img.shields.io/github/workflow/status/taiki-e/install-action/CI/main?style=flat-square&logo=github)](https://github.com/taiki-e/install-action/actions)
+[![build status](https://img.shields.io/github/actions/workflow/status/taiki-e/install-action/ci.yml?branch=main&style=flat-square&logo=github)](https://github.com/taiki-e/install-action/actions)
 
 GitHub Action for installing development tools (mainly from GitHub Releases).
 
