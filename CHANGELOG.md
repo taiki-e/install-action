@@ -10,6 +10,8 @@ Note: In this file, do not use the hard wrap in the middle of a sentence for com
 
 ## [Unreleased]
 
+## [1.17.3] - 2022-12-22
+
 - Update `wasmtime@latest` to 4.0.0.
 
 ## [1.17.2] - 2022-12-17
@@ -459,7 +461,8 @@ Note: In this file, do not use the hard wrap in the middle of a sentence for com
 
 Initial release
 
-[Unreleased]: https://github.com/taiki-e/install-action/compare/v1.17.2...HEAD
+[Unreleased]: https://github.com/taiki-e/install-action/compare/v1.17.3...HEAD
+[1.17.3]: https://github.com/taiki-e/install-action/compare/v1.17.2...v1.17.3
 [1.17.2]: https://github.com/taiki-e/install-action/compare/v1.17.1...v1.17.2
 [1.17.1]: https://github.com/taiki-e/install-action/compare/v1.17.0...v1.17.1
 [1.17.0]: https://github.com/taiki-e/install-action/compare/v1.16.0...v1.17.0
