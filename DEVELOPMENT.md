@@ -6,8 +6,6 @@
 
 See JSON files in `tools/codegen/base` directory for examples of the manifest.
 
-Note: Please specify the latest version as `>= <version>` in the `version_range` field unless you want to support older versions for a specific reason.
-
 2\. Generate manifest with the following command (replace `<tool>` with the tool name).
 
 ```sh
