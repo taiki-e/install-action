@@ -389,6 +389,9 @@ for tool in "${tools[@]}"; do
         if [[ ! "${version}" =~ ^([1-9][0-9]*(\.[0-9]+(\.[0-9]+)?)?|0\.[1-9][0-9]*(\.[0-9]+)?|^0\.0\.[0-9]+)(-[0-9A-Za-z\.-]+)?(\+[0-9A-Za-z\.-]+)?$|^latest$ ]]; then
             bail "install-action does not support semver operators"
         fi
+        if [[ ! "${version}" =~ ^([1-9][0-9]*(\.[0-9]+(\.[0-9]+)?)?|0\.[1-9][0-9]*(\.[0-9]+)?|^0\.0\.[0-9]+)$|^latest$ ]]; then
+            bail "install-action v2 does not support semver pre-release and build-metadata; please submit an issue if you need these supports again"
+        fi
     else
         version="latest"
     fi
