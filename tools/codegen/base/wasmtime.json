@@ -1,0 +1,26 @@
+{
+  "repository": "https://github.com/bytecodealliance/wasmtime",
+  "tag_prefix": "v",
+  "platform": {
+    "x86_64_linux_gnu": {
+      "asset_name": "${package}-v${version}-x86_64-linux.tar.xz",
+      "bin": "${package}-v${version}-x86_64-linux/${package}${exe}"
+    },
+    "x86_64_macos": {
+      "asset_name": "${package}-v${version}-x86_64-macos.tar.xz",
+      "bin": "${package}-v${version}-x86_64-macos/${package}${exe}"
+    },
+    "x86_64_windows": {
+      "asset_name": "${package}-v${version}-x86_64-windows.zip",
+      "bin": "${package}-v${version}-x86_64-windows/${package}${exe}"
+    },
+    "aarch64_linux_gnu": {
+      "asset_name": "${package}-v${version}-aarch64-linux.tar.xz",
+      "bin": "${package}-v${version}-aarch64-linux/${package}${exe}"
+    },
+    "aarch64_macos": {
+      "asset_name": "${package}-v${version}-aarch64-macos.tar.xz",
+      "bin": "${package}-v${version}-aarch64-macos/${package}${exe}"
+    }
+  }
+}

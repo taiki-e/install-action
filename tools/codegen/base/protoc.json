@@ -1,0 +1,22 @@
+{
+  "repository": "https://github.com/protocolbuffers/protobuf",
+  "tag_prefix": "v",
+  "default_major_version": "3",
+  "platform": {
+    "x86_64_linux_gnu": {
+      "asset_name": "${package}-${version}-linux-x86_64.zip"
+    },
+    "x86_64_macos": {
+      "asset_name": "${package}-${version}-osx-x86_64.zip"
+    },
+    "x86_64_windows": {
+      "asset_name": "${package}-${version}-win64.zip"
+    },
+    "aarch64_linux_gnu": {
+      "asset_name": "${package}-${version}-linux-aarch_64.zip"
+    },
+    "aarch64_macos": {
+      "asset_name": "${package}-${version}-osx-aarch_64.zip"
+    }
+  }
+}
