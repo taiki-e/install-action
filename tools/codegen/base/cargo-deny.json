@@ -1,0 +1,12 @@
+{
+  "repository": "https://github.com/EmbarkStudios/cargo-deny",
+  "tag_prefix": "",
+  "asset_name": "${package}-${version}-${rust_target}.tar.gz",
+  "bin": "${package}-${version}-${rust_target}/${package}${exe}",
+  "platform": {
+    "x86_64_linux_musl": {},
+    "x86_64_macos": {},
+    "x86_64_windows": {},
+    "aarch64_macos": {}
+  }
+}

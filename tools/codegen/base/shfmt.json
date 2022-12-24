@@ -1,0 +1,22 @@
+{
+  "repository": "https://github.com/mvdan/sh",
+  "tag_prefix": "v",
+  "bin_dir": "/usr/local/bin",
+  "platform": {
+    "x86_64_linux_gnu": {
+      "asset_name": "${package}_v${version}_linux_amd64"
+    },
+    "x86_64_macos": {
+      "asset_name": "${package}_v${version}_darwin_amd64"
+    },
+    "x86_64_windows": {
+      "asset_name": "${package}_v${version}_windows_amd64${exe}"
+    },
+    "aarch64_linux_gnu": {
+      "asset_name": "${package}_v${version}_linux_arm64"
+    },
+    "aarch64_macos": {
+      "asset_name": "${package}_v${version}_darwin_arm64"
+    }
+  }
+}

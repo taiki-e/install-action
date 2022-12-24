@@ -17,9 +17,10 @@ GitHub Action for installing development tools (mainly from GitHub Releases).
 
 ### Inputs
 
-| Name | Required | Description | Type | Default |
-| ---- |:--------:| ----------- | ---- | ------- |
-| tool | **true** | Tools to install (comma-separated list) | String | |
+| Name     | Required | Description                             | Type    | Default |
+| -------- |:--------:| --------------------------------------- | ------- | ------- |
+| tool     | **true** | Tools to install (comma-separated list) | String  |         |
+| checksum | false    | Whether to enable checksums             | Boolean | `true`  |
 
 ### Example workflow
 
@@ -100,7 +101,9 @@ If a tool not included in the list above is specified, this action uses [cargo-b
 
 When installing the tool from GitHub Releases, this action will download the tool or its installer from GitHub Releases using HTTPS with tlsv1.2+. This is basically considered to be the same level of security as [the recommended installation of rustup](https://www.rust-lang.org/tools/install).
 
-If you want a higher level of security, consider working on [#1](https://github.com/taiki-e/install-action/issues/1).
+Additionally, this action will also verify SHA256 checksums for downloaded files in all tools installed from GitHub Releases. This is enabled by default and can be disabled by setting the `checksum` input option to `false`.
+
+See the linked documentation for information on security when installed using [snap](https://snapcraft.io/docs) or [cargo-binstall](https://github.com/cargo-bins/cargo-binstall#faq).
 
 ## Compatibility
 

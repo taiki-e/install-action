@@ -6,6 +6,10 @@ inputs:
     description: Tools to install (comma-separated list)
     required: true
     # default: #publish:tool
+  checksum:
+    description: Whether to enable checksums
+    required: false
+    default: 'true'
 
 runs:
   using: node16
