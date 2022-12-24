@@ -131,7 +131,8 @@ jobs:
       - uses: actions/checkout@v3
         with:
           persist-credentials: false
-      - uses: dtolnay/rust-toolchain@nightly
+      - name: Install Rust
+        run: rustup toolchain add nightly --no-self-update && rustup default nightly
       - run: tools/manifest.sh
       - run: git add -N . && git diff --exit-code
         if: github.repository_owner != 'taiki-e' || github.event_name != 'schedule' && !(github.event_name == 'push' && github.ref == 'refs/heads/main')
