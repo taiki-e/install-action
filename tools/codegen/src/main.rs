@@ -98,7 +98,7 @@ fn main() -> Result<()> {
                 if manifests.is_empty() {
                     format!("={}", releases.first().unwrap().0).parse()?
                 } else {
-                    format!(">={}", semver_versions.last().unwrap()).parse()?
+                    format!(">{}", semver_versions.last().unwrap()).parse()?
                 }
             } else {
                 version_req.parse()?
