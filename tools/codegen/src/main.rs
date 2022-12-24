@@ -41,13 +41,10 @@ fn main() -> Result<()> {
     let mut releases: github::Releases = vec![];
     for page in 1.. {
         let per_page = 100;
-        let mut req = ureq::get(&format!(
+        let mut r: github::Releases = download(&format!(
             "https://api.github.com/repos/{repo}/releases?per_page={per_page}&page={page}"
-        ));
-        if let Ok(token) = env::var("INTERNAL_CODEGEN_GH_PAT") {
-            req = req.set("Authorization", &token);
-        }
-        let mut r: github::Releases = req.call()?.into_json()?;
+        ))?
+        .into_json()?;
         if r.len() < per_page {
             releases.append(&mut r);
             break;
@@ -163,10 +160,7 @@ fn main() -> Result<()> {
                 eprintln!("{url} is already downloaded");
                 fs::File::open(download_cache)?.read_to_end(&mut buf)?;
             } else {
-                ureq::get(&url)
-                    .call()?
-                    .into_reader()
-                    .read_to_end(&mut buf)?;
+                download(&url)?.into_reader().read_to_end(&mut buf)?;
                 eprintln!("downloaded complete");
                 fs::write(download_cache, &buf)?;
             }
@@ -267,6 +261,26 @@ fn replace_vars(s: &str, package: &str, version: &str, platform: HostPlatform) -
         .replace("${rust_target}", platform.rust_target())
         .replace("${version}", version)
         .replace("${exe}", platform.exe_suffix())
+}
+
+fn download(url: &str) -> Result<ureq::Response> {
+    let token = env::var("INTERNAL_CODEGEN_GH_PAT").ok();
+    let mut retry = 0;
+    let mut last_error = None;
+    while retry < 5 {
+        let mut req = ureq::get(url);
+        if let Some(token) = &token {
+            req = req.set("Authorization", token);
+        }
+        match req.call() {
+            Ok(res) => return Ok(res),
+            Err(e) => last_error = Some(e),
+        }
+        retry += 1;
+        eprintln!("download failed; retrying ({retry}/5)");
+        std::thread::sleep(std::time::Duration::from_secs(1));
+    }
+    Err(last_error.unwrap().into())
 }
 
 type Manifests = BTreeMap<Reverse<Version>, Manifest>;
