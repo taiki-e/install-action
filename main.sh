@@ -150,11 +150,17 @@ read_manifest() {
                 # TODO: However, a warning may make sense.
                 download_info=$(jq <<<"${manifest}" -r ".${host_arch}_linux_gnu")
             elif [[ "${host_env}" == "gnu" ]]; then
+                # TODO: don't hardcode tool name and use 'prefer_linux_gnu' field in base manifest.
                 case "${tool}" in
                     cargo-nextest | nextest)
-                        # musl build of nextest is slow, so use glibc build if host_env is gnu.
-                        # https://github.com/taiki-e/install-action/issues/13
-                        download_info=$(jq <<<"${manifest}" -r ".${host_arch}_linux_gnu")
+                        # TODO: don't hardcode required glibc version
+                        required_glibc_version=2.27
+                        higher_glibc_version=$(echo "${required_glibc_version}"$'\n'"${host_glibc_version}" | sort -Vu | tail -1)
+                        if [[ "${higher_glibc_version}" == "${host_glibc_version}" ]]; then
+                            # musl build of nextest is slow, so use glibc build if host_env is gnu.
+                            # https://github.com/taiki-e/install-action/issues/13
+                            download_info=$(jq <<<"${manifest}" -r ".${host_arch}_linux_gnu")
+                        fi
                         ;;
                 esac
             fi
@@ -326,6 +332,12 @@ case "$(uname -s)" in
         if (ldd --version 2>&1 || true) | grep -q 'musl'; then
             host_env="musl"
         fi
+        case "${host_env}" in
+            gnu)
+                host_glibc_version=$(ldd --version 2>&1 || true)
+                host_glibc_version=$(grep <<<"${host_glibc_version}" -E "GLIBC|GNU libc" | sed "s/.* //g")
+                ;;
+        esac
         if grep -q '^ID_LIKE=' /etc/os-release; then
             base_distro="$(grep '^ID_LIKE=' /etc/os-release | sed 's/^ID_LIKE=//')"
             case "${base_distro}" in
