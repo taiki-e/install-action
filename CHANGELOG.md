@@ -10,6 +10,8 @@ Note: In this file, do not use the hard wrap in the middle of a sentence for com
 
 ## [Unreleased]
 
+## [2.0.0] - 2022-12-25
+
 This release implements a mechanism to automatically track the latest version of the tool on our end. ([#27](https://github.com/taiki-e/install-action/pull/27))
 Hopefully, this will avoid situations such as "new version of the tool has been released, but the maintainer has not been aware of it for a number of months".
 This also makes it easier to add support for new tools.
@@ -487,7 +489,8 @@ Note: This release is considered a breaking change because installing on version
 
 Initial release
 
-[Unreleased]: https://github.com/taiki-e/install-action/compare/v1.17.3...HEAD
+[Unreleased]: https://github.com/taiki-e/install-action/compare/v2.0.0...HEAD
+[2.0.0]: https://github.com/taiki-e/install-action/compare/v1.17.3...v2.0.0
 [1.17.3]: https://github.com/taiki-e/install-action/compare/v1.17.2...v1.17.3
 [1.17.2]: https://github.com/taiki-e/install-action/compare/v1.17.1...v1.17.2
 [1.17.1]: https://github.com/taiki-e/install-action/compare/v1.17.0...v1.17.1
