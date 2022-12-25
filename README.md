@@ -25,7 +25,7 @@ GitHub Action for installing development tools (mainly from GitHub Releases).
 ### Example workflow
 
 ```yaml
-- uses: taiki-e/install-action@v1
+- uses: taiki-e/install-action@v2
   with:
     tool: cargo-hack
 ```
@@ -39,15 +39,24 @@ You can use the shorthand (if you do not need to pin the versions of this action
 To install a specific version, use `@version` syntax:
 
 ```yaml
-- uses: taiki-e/install-action@v1
+- uses: taiki-e/install-action@v2
   with:
     tool: cargo-hack@0.5.24
+```
+
+You can also omit patch version.
+(You can also omit the minor version if the major version is 1 or greater.)
+
+```yaml
+- uses: taiki-e/install-action@v2
+  with:
+    tool: cargo-hack@0.5
 ```
 
 To install multiple tools:
 
 ```yaml
-- uses: taiki-e/install-action@v1
+- uses: taiki-e/install-action@v2
   with:
     tool: cargo-hack,cargo-minimal-versions
 ```

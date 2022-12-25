@@ -10,6 +10,32 @@ Note: In this file, do not use the hard wrap in the middle of a sentence for com
 
 ## [Unreleased]
 
+This release implements a mechanism to automatically track the latest version of the tool on our end. ([#27](https://github.com/taiki-e/install-action/pull/27))
+Hopefully, this will avoid situations such as "new version of the tool has been released, but the maintainer has not been aware of it for a number of months".
+This also makes it easier to add support for new tools.
+
+This release also includes the following improvements:
+
+- Verify SHA256 checksums for downloaded files in all tools installed from GH releases. ([#27](https://github.com/taiki-e/install-action/pull/27))
+
+- Support omitting the patch/minor version in all tools installed from GH releases. ([#27](https://github.com/taiki-e/install-action/pull/27))
+
+  For example:
+
+  ```yaml
+  - uses: taiki-e/install-action@v2
+    with:
+      tool: cargo-hack@0.5
+  ```
+
+  You can also omit the minor version if the major version of tool is 1 or greater.
+
+- Support `just`. ([#34](https://github.com/taiki-e/install-action/pull/34))
+
+- Support `dprint`. ([#34](https://github.com/taiki-e/install-action/pull/34))
+
+Note: This release is considered a breaking change because installing on versions not yet recognized by the action or on pre-release versions will no longer work with this release. (They were never officially supported, but they could work before.) Please submit an issue if you need these supports again.
+
 ## [1.17.3] - 2022-12-22
 
 - Update `wasmtime@latest` to 4.0.0.
