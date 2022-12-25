@@ -2,6 +2,8 @@
 
 ## Add support for new tool
 
+(Example: [2ba826d](https://github.com/taiki-e/install-action/commit/2ba826d3ded42d6fa480b6bb82810d1282aa3460))
+
 1\. Add base manifest to [`tools/codegen/base`](tools/codegen/base) directory.
 
 See JSON files in `tools/codegen/base` directory for examples of the manifest.
