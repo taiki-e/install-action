@@ -79,27 +79,14 @@ if [[ -n "${tags}" ]]; then
     git commit -m "Release ${version}"
 fi
 
-tools=(
-    cargo-binstall
-    cargo-deny
-    cargo-hack
-    cargo-llvm-cov
-    cargo-minimal-versions
-    cargo-nextest
-    cargo-udeps
-    cargo-valgrind
-    cross
-    mdbook
-    mdbook-linkcheck
-    nextest
-    parse-changelog
-    protoc
-    shellcheck
-    shfmt
-    valgrind
-    wasm-pack
-    wasmtime
-)
+tools=()
+for tool in tools/codegen/base/*.json; do
+    tools+=("$(basename "${tool%.*}")")
+done
+# Aliases
+tools+=(nextest)
+# Not manifest-base
+tools+=(valgrind)
 
 (
     set -x

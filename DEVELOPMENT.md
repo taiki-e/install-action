@@ -12,8 +12,6 @@ See JSON files in `tools/codegen/base` directory for examples of the manifest.
 ./tools/manifest.sh <tool>
 ```
 
-3\. Add tool name to `tools` variable in `tools/publish.sh`.
+3\. Add tool name to test matrix in `.github/workflows/ci.yml`.
 
-4\. Add tool name to test matrix in `.github/workflows/ci.yml`.
-
-5\. Add tool name to table in "Supported tools" section in `README.md`.
+4\. Add tool name to table in "Supported tools" section in `README.md`.
