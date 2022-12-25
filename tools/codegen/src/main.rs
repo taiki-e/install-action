@@ -71,19 +71,27 @@ fn main() -> Result<()> {
             latest_only = true;
         }
     }
+    if manifest_path.is_file() {
+        match serde_json::from_slice(&fs::read(manifest_path)?) {
+            Ok(m) => manifests = m,
+            Err(e) => eprintln!("failed to load old manifest: {e}"),
+        }
+    }
     let version_req: Option<semver::VersionReq> = match args.get(1) {
-        _ if latest_only => Some(format!("={}", releases.first().unwrap().0).parse()?),
+        _ if latest_only => {
+            if !manifests.is_empty()
+                && manifests.first_key_value().unwrap().1.version
+                    == releases.first().unwrap().0.parse()?
+            {
+                return Ok(());
+            }
+            Some(format!("={}", releases.first().unwrap().0).parse()?)
+        }
         None => match base_info.version_range {
             Some(version_range) => Some(version_range.parse()?),
             None => Some(">= 0.0.1".parse()?), // HACK: ignore pre-releases
         },
         Some(version_req) => {
-            if manifest_path.is_file() {
-                match serde_json::from_slice(&fs::read(manifest_path)?) {
-                    Ok(m) => manifests = m,
-                    Err(e) => eprintln!("failed to load old manifest: {e}"),
-                }
-            }
             for version in manifests.keys() {
                 let Some(semver_version) = version.0.to_semver() else {
                     continue;
