@@ -10,6 +10,10 @@ Note: In this file, do not use the hard wrap in the middle of a sentence for com
 
 ## [Unreleased]
 
+- Update `cargo-hack@latest` to 0.5.25.
+
+- Update `cargo-minimal-versions@latest` to 0.1.9.
+
 ## [2.0.0] - 2022-12-25
 
 This release implements a mechanism to automatically track the latest version of the tool on our end. ([#27](https://github.com/taiki-e/install-action/pull/27))
