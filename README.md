@@ -104,10 +104,6 @@ If `/usr/local/bin` is not available, binaries will be installed to `$HOME/.inst
 
 If a tool not included in the list above is specified, this action uses [cargo-binstall] as a fallback.
 
-<!-- TODO:
-| [**cmake**](https://cmake.org) | | [GitHub Releases](https://github.com/Kitware/CMake/releases) | Linux, macOS, Windows | [BSD-3-Clause](https://github.com/Kitware/CMake/blob/HEAD/Copyright.txt) |
--->
-
 ## Security
 
 When installing the tool from GitHub Releases, this action will download the tool or its installer from GitHub Releases using HTTPS with tlsv1.2+. This is basically considered to be the same level of security as [the recommended installation of rustup](https://www.rust-lang.org/tools/install).
