@@ -134,19 +134,17 @@ download_and_extract() {
 read_manifest() {
     local tool="$1"
     local version="$2"
-    local manifest_data
-    manifest_data=$(<"${manifest_dir}/${tool}.json")
     local manifest
-    manifest=$(jq <<<"${manifest_data}" -r ".\"${version}\"")
-    case "${manifest}" in
-        null) bail "version '${version}' for ${tool} is not supported" ;;
-    esac
+    manifest=$(jq -r ".\"${version}\"" "${manifest_dir}/${tool}.json")
+    if [[ "${manifest}" == "null" ]]; then
+        bail "version '${version}' for ${tool} is not supported"
+    fi
     local exact_version
     exact_version=$(jq <<<"${manifest}" -r '.version')
     if [[ "${exact_version}" == "null" ]]; then
         exact_version="${version}"
     else
-        manifest=$(jq <<<"${manifest_data}" -r ".\"${exact_version}\"")
+        manifest=$(jq -r ".\"${exact_version}\"" "${manifest_dir}/${tool}.json")
     fi
     local download_info
     local host_platform
@@ -170,7 +168,7 @@ read_manifest() {
                     cargo-nextest | nextest)
                         # TODO: don't hardcode required glibc version
                         required_glibc_version=2.27
-                        higher_glibc_version=$(echo "${required_glibc_version}"$'\n'"${host_glibc_version}" | sort -Vu | tail -1)
+                        higher_glibc_version=$(sort <<<"${required_glibc_version}"$'\n'"${host_glibc_version}" -Vu | tail -1)
                         if [[ "${higher_glibc_version}" == "${host_glibc_version}" ]]; then
                             # musl build of nextest is slow, so use glibc build if host_env is gnu.
                             # https://github.com/taiki-e/install-action/issues/13
@@ -200,7 +198,7 @@ read_manifest() {
     url=$(jq <<<"${download_info}" -r '.url')
     if [[ "${url}" == "null" ]]; then
         local template
-        template=$(jq <<<"${manifest_data}" -r ".template.${host_platform}")
+        template=$(jq -r ".template.${host_platform}" "${manifest_dir}/${tool}.json")
         url=$(jq <<<"${template}" -r '.url')
         url="${url//\$\{version\}/${exact_version}}"
         bin_dir=$(jq <<<"${template}" -r '.bin_dir')
@@ -358,15 +356,12 @@ case "$(uname -s)" in
     Linux)
         host_os=linux
         host_env="gnu"
-        if (ldd --version 2>&1 || true) | grep -q 'musl'; then
+        ldd_version=$(ldd --version 2>&1 || true)
+        if grep <<<"${ldd_version}" -q 'musl'; then
             host_env="musl"
+        else
+            host_glibc_version=$(grep <<<"${ldd_version}" -E "GLIBC|GNU libc" | sed "s/.* //g")
         fi
-        case "${host_env}" in
-            gnu)
-                host_glibc_version=$(ldd --version 2>&1 || true)
-                host_glibc_version=$(grep <<<"${host_glibc_version}" -E "GLIBC|GNU libc" | sed "s/.* //g")
-                ;;
-        esac
         if grep -q '^ID_LIKE=' /etc/os-release; then
             base_distro="$(grep '^ID_LIKE=' /etc/os-release | sed 's/^ID_LIKE=//')"
             case "${base_distro}" in
