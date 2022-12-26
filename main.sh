@@ -134,21 +134,26 @@ download_and_extract() {
 read_manifest() {
     local tool="$1"
     local version="$2"
+    local manifest_data
+    manifest_data=$(<"${manifest_dir}/${tool}.json")
     local manifest
-    manifest=$(jq -r ".\"${version}\"" "${manifest_dir}/${tool}.json")
+    manifest=$(jq <<<"${manifest_data}" -r ".\"${version}\"")
     local download_info
+    local host_platform
     case "${host_os}" in
         linux)
             # Static-linked binaries compiled for linux-musl will also work on linux-gnu systems and are
             # usually preferred over linux-gnu binaries because they can avoid glibc version issues.
             # (rustc enables statically linking for linux-musl by default, except for mips.)
-            download_info=$(jq <<<"${manifest}" -r ".${host_arch}_linux_musl")
+            host_platform="${host_arch}_linux_musl"
+            download_info=$(jq <<<"${manifest}" -r ".${host_platform}")
             if [[ "${download_info}" == "null" ]]; then
                 # Even if host_env is musl, we won't issue an error here because it seems that in
                 # some cases linux-gnu binaries will work on linux-musl hosts.
                 # https://wiki.alpinelinux.org/wiki/Running_glibc_programs
                 # TODO: However, a warning may make sense.
-                download_info=$(jq <<<"${manifest}" -r ".${host_arch}_linux_gnu")
+                host_platform="${host_arch}_linux_gnu"
+                download_info=$(jq <<<"${manifest}" -r ".${host_platform}")
             elif [[ "${host_env}" == "gnu" ]]; then
                 # TODO: don't hardcode tool name and use 'prefer_linux_gnu' field in base manifest.
                 case "${tool}" in
@@ -159,7 +164,8 @@ read_manifest() {
                         if [[ "${higher_glibc_version}" == "${host_glibc_version}" ]]; then
                             # musl build of nextest is slow, so use glibc build if host_env is gnu.
                             # https://github.com/taiki-e/install-action/issues/13
-                            download_info=$(jq <<<"${manifest}" -r ".${host_arch}_linux_gnu")
+                            host_platform="${host_arch}_linux_gnu"
+                            download_info=$(jq <<<"${manifest}" -r ".${host_platform}")
                         fi
                         ;;
                 esac
@@ -168,9 +174,11 @@ read_manifest() {
         macos | windows)
             # Binaries compiled for x86_64 macOS will usually also work on aarch64 macOS.
             # Binaries compiled for x86_64 Windows will usually also work on aarch64 Windows 11+.
-            download_info=$(jq <<<"${manifest}" -r ".${host_arch}_${host_os}")
+            host_platform="${host_arch}_${host_os}"
+            download_info=$(jq <<<"${manifest}" -r ".${host_platform}")
             if [[ "${download_info}" == "null" ]] && [[ "${host_arch}" != "x86_64" ]]; then
-                download_info=$(jq <<<"${manifest}" -r ".download_info.x86_64_${host_os}")
+                host_platform="x86_64_${host_os}"
+                download_info=$(jq <<<"${manifest}" -r ".${host_platform}")
             fi
             ;;
         *) bail "unsupported OS type '${host_os}' for ${tool}" ;;
@@ -178,10 +186,26 @@ read_manifest() {
     if [[ "${download_info}" == "null" ]]; then
         bail "${tool}@${version} for '${host_os}' is not supported"
     fi
-    url=$(jq <<<"${download_info}" -r '.url')
     checksum=$(jq <<<"${download_info}" -r '.checksum')
-    bin_dir=$(jq <<<"${download_info}" -r '.bin_dir')
-    bin_in_archive=$(jq <<<"${download_info}" -r '.bin')
+    url=$(jq <<<"${download_info}" -r '.url')
+    if [[ "${url}" == "null" ]]; then
+        local template
+        template=$(jq <<<"${manifest_data}" -r ".template.${host_platform}")
+        local exact_version
+        exact_version=$(jq <<<"${manifest}" -r '.version')
+        if [[ "${exact_version}" == "null" ]]; then
+            exact_version="${version}"
+        fi
+        url=$(jq <<<"${template}" -r '.url')
+        url="${url//\$\{version\}/${exact_version}}"
+        bin_dir=$(jq <<<"${template}" -r '.bin_dir')
+        bin_dir="${bin_dir//\$\{version\}/${exact_version}}"
+        bin_in_archive=$(jq <<<"${template}" -r '.bin')
+        bin_in_archive="${bin_in_archive//\$\{version\}/${exact_version}}"
+    else
+        bin_dir=$(jq <<<"${download_info}" -r '.bin_dir')
+        bin_in_archive=$(jq <<<"${download_info}" -r '.bin')
+    fi
     if [[ "${bin_dir}" == "null" ]]; then
         bin_dir="${cargo_bin}"
     fi

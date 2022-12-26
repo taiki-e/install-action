@@ -1,438 +1,306 @@
 {
+  "template": {
+    "x86_64_linux_musl": {
+      "url": "https://github.com/rustwasm/wasm-pack/releases/download/v${version}/wasm-pack-v${version}-x86_64-unknown-linux-musl.tar.gz",
+      "bin": "wasm-pack-v${version}-x86_64-unknown-linux-musl/wasm-pack"
+    },
+    "x86_64_macos": {
+      "url": "https://github.com/rustwasm/wasm-pack/releases/download/v${version}/wasm-pack-v${version}-x86_64-apple-darwin.tar.gz",
+      "bin": "wasm-pack-v${version}-x86_64-apple-darwin/wasm-pack"
+    },
+    "x86_64_windows": {
+      "url": "https://github.com/rustwasm/wasm-pack/releases/download/v${version}/wasm-pack-v${version}-x86_64-pc-windows-msvc.tar.gz",
+      "bin": "wasm-pack-v${version}-x86_64-pc-windows-msvc/wasm-pack.exe"
+    },
+    "aarch64_linux_musl": {
+      "url": "https://github.com/rustwasm/wasm-pack/releases/download/v${version}/wasm-pack-v${version}-aarch64-unknown-linux-musl.tar.gz",
+      "bin": "wasm-pack-v${version}-aarch64-unknown-linux-musl/wasm-pack"
+    }
+  },
   "latest": {
     "version": "0.10.3",
     "x86_64_linux_musl": {
-      "url": "https://github.com/rustwasm/wasm-pack/releases/download/v0.10.3/wasm-pack-v0.10.3-x86_64-unknown-linux-musl.tar.gz",
-      "checksum": "9e4e7b4436d6fd914aa75f91f81bdedc31a3f2b8b94fb17578cff2c3aaa83bb3",
-      "bin": "wasm-pack-v0.10.3-x86_64-unknown-linux-musl/wasm-pack"
+      "checksum": "9e4e7b4436d6fd914aa75f91f81bdedc31a3f2b8b94fb17578cff2c3aaa83bb3"
     },
     "x86_64_macos": {
-      "url": "https://github.com/rustwasm/wasm-pack/releases/download/v0.10.3/wasm-pack-v0.10.3-x86_64-apple-darwin.tar.gz",
-      "checksum": "159751e24de3f50462140621c033a6bf8e89cbf1930e60cc725e2b0e84f23035",
-      "bin": "wasm-pack-v0.10.3-x86_64-apple-darwin/wasm-pack"
+      "checksum": "159751e24de3f50462140621c033a6bf8e89cbf1930e60cc725e2b0e84f23035"
     },
     "x86_64_windows": {
-      "url": "https://github.com/rustwasm/wasm-pack/releases/download/v0.10.3/wasm-pack-v0.10.3-x86_64-pc-windows-msvc.tar.gz",
-      "checksum": "978f00965c42838ccd43f501ff661939629d13fa037a90cbf9fe647d9152825a",
-      "bin": "wasm-pack-v0.10.3-x86_64-pc-windows-msvc/wasm-pack.exe"
+      "checksum": "978f00965c42838ccd43f501ff661939629d13fa037a90cbf9fe647d9152825a"
     },
     "aarch64_linux_musl": {
-      "url": "https://github.com/rustwasm/wasm-pack/releases/download/v0.10.3/wasm-pack-v0.10.3-aarch64-unknown-linux-musl.tar.gz",
-      "checksum": "2e6a0f1e2d07192d8e6b5bd4cc1c82459f3cbc0ecd8a301ed0a075699350b1c0",
-      "bin": "wasm-pack-v0.10.3-aarch64-unknown-linux-musl/wasm-pack"
+      "checksum": "2e6a0f1e2d07192d8e6b5bd4cc1c82459f3cbc0ecd8a301ed0a075699350b1c0"
     }
   },
   "0.10": {
     "version": "0.10.3",
     "x86_64_linux_musl": {
-      "url": "https://github.com/rustwasm/wasm-pack/releases/download/v0.10.3/wasm-pack-v0.10.3-x86_64-unknown-linux-musl.tar.gz",
-      "checksum": "9e4e7b4436d6fd914aa75f91f81bdedc31a3f2b8b94fb17578cff2c3aaa83bb3",
-      "bin": "wasm-pack-v0.10.3-x86_64-unknown-linux-musl/wasm-pack"
+      "checksum": "9e4e7b4436d6fd914aa75f91f81bdedc31a3f2b8b94fb17578cff2c3aaa83bb3"
     },
     "x86_64_macos": {
-      "url": "https://github.com/rustwasm/wasm-pack/releases/download/v0.10.3/wasm-pack-v0.10.3-x86_64-apple-darwin.tar.gz",
-      "checksum": "159751e24de3f50462140621c033a6bf8e89cbf1930e60cc725e2b0e84f23035",
-      "bin": "wasm-pack-v0.10.3-x86_64-apple-darwin/wasm-pack"
+      "checksum": "159751e24de3f50462140621c033a6bf8e89cbf1930e60cc725e2b0e84f23035"
     },
     "x86_64_windows": {
-      "url": "https://github.com/rustwasm/wasm-pack/releases/download/v0.10.3/wasm-pack-v0.10.3-x86_64-pc-windows-msvc.tar.gz",
-      "checksum": "978f00965c42838ccd43f501ff661939629d13fa037a90cbf9fe647d9152825a",
-      "bin": "wasm-pack-v0.10.3-x86_64-pc-windows-msvc/wasm-pack.exe"
+      "checksum": "978f00965c42838ccd43f501ff661939629d13fa037a90cbf9fe647d9152825a"
     },
     "aarch64_linux_musl": {
-      "url": "https://github.com/rustwasm/wasm-pack/releases/download/v0.10.3/wasm-pack-v0.10.3-aarch64-unknown-linux-musl.tar.gz",
-      "checksum": "2e6a0f1e2d07192d8e6b5bd4cc1c82459f3cbc0ecd8a301ed0a075699350b1c0",
-      "bin": "wasm-pack-v0.10.3-aarch64-unknown-linux-musl/wasm-pack"
+      "checksum": "2e6a0f1e2d07192d8e6b5bd4cc1c82459f3cbc0ecd8a301ed0a075699350b1c0"
     }
   },
   "0.10.3": {
     "x86_64_linux_musl": {
-      "url": "https://github.com/rustwasm/wasm-pack/releases/download/v0.10.3/wasm-pack-v0.10.3-x86_64-unknown-linux-musl.tar.gz",
-      "checksum": "9e4e7b4436d6fd914aa75f91f81bdedc31a3f2b8b94fb17578cff2c3aaa83bb3",
-      "bin": "wasm-pack-v0.10.3-x86_64-unknown-linux-musl/wasm-pack"
+      "checksum": "9e4e7b4436d6fd914aa75f91f81bdedc31a3f2b8b94fb17578cff2c3aaa83bb3"
     },
     "x86_64_macos": {
-      "url": "https://github.com/rustwasm/wasm-pack/releases/download/v0.10.3/wasm-pack-v0.10.3-x86_64-apple-darwin.tar.gz",
-      "checksum": "159751e24de3f50462140621c033a6bf8e89cbf1930e60cc725e2b0e84f23035",
-      "bin": "wasm-pack-v0.10.3-x86_64-apple-darwin/wasm-pack"
+      "checksum": "159751e24de3f50462140621c033a6bf8e89cbf1930e60cc725e2b0e84f23035"
     },
     "x86_64_windows": {
-      "url": "https://github.com/rustwasm/wasm-pack/releases/download/v0.10.3/wasm-pack-v0.10.3-x86_64-pc-windows-msvc.tar.gz",
-      "checksum": "978f00965c42838ccd43f501ff661939629d13fa037a90cbf9fe647d9152825a",
-      "bin": "wasm-pack-v0.10.3-x86_64-pc-windows-msvc/wasm-pack.exe"
+      "checksum": "978f00965c42838ccd43f501ff661939629d13fa037a90cbf9fe647d9152825a"
     },
     "aarch64_linux_musl": {
-      "url": "https://github.com/rustwasm/wasm-pack/releases/download/v0.10.3/wasm-pack-v0.10.3-aarch64-unknown-linux-musl.tar.gz",
-      "checksum": "2e6a0f1e2d07192d8e6b5bd4cc1c82459f3cbc0ecd8a301ed0a075699350b1c0",
-      "bin": "wasm-pack-v0.10.3-aarch64-unknown-linux-musl/wasm-pack"
+      "checksum": "2e6a0f1e2d07192d8e6b5bd4cc1c82459f3cbc0ecd8a301ed0a075699350b1c0"
     }
   },
   "0.10.2": {
     "x86_64_linux_musl": {
-      "url": "https://github.com/rustwasm/wasm-pack/releases/download/v0.10.2/wasm-pack-v0.10.2-x86_64-unknown-linux-musl.tar.gz",
-      "checksum": "ddf59a454fbee8712932803583d01756204c32fbfb13defa69f08c3e7afb6ac5",
-      "bin": "wasm-pack-v0.10.2-x86_64-unknown-linux-musl/wasm-pack"
+      "checksum": "ddf59a454fbee8712932803583d01756204c32fbfb13defa69f08c3e7afb6ac5"
     },
     "x86_64_macos": {
-      "url": "https://github.com/rustwasm/wasm-pack/releases/download/v0.10.2/wasm-pack-v0.10.2-x86_64-apple-darwin.tar.gz",
-      "checksum": "6d714c86a6aae1fcde5c6829f2fc17e2aa1588cb35788e1c693e9d8e89cb0430",
-      "bin": "wasm-pack-v0.10.2-x86_64-apple-darwin/wasm-pack"
+      "checksum": "6d714c86a6aae1fcde5c6829f2fc17e2aa1588cb35788e1c693e9d8e89cb0430"
     },
     "x86_64_windows": {
-      "url": "https://github.com/rustwasm/wasm-pack/releases/download/v0.10.2/wasm-pack-v0.10.2-x86_64-pc-windows-msvc.tar.gz",
-      "checksum": "abefc5f8124fd924804db0c792cba38aace00588d9216405a7517afc78e8b63e",
-      "bin": "wasm-pack-v0.10.2-x86_64-pc-windows-msvc/wasm-pack.exe"
+      "checksum": "abefc5f8124fd924804db0c792cba38aace00588d9216405a7517afc78e8b63e"
     },
     "aarch64_linux_musl": {
-      "url": "https://github.com/rustwasm/wasm-pack/releases/download/v0.10.2/wasm-pack-v0.10.2-aarch64-unknown-linux-musl.tar.gz",
-      "checksum": "3d693cb45dd242ab4bdb876ac151170d39edd7fb200383f2e40f890ca65c588e",
-      "bin": "wasm-pack-v0.10.2-aarch64-unknown-linux-musl/wasm-pack"
+      "checksum": "3d693cb45dd242ab4bdb876ac151170d39edd7fb200383f2e40f890ca65c588e"
     }
   },
   "0.10.1": {
     "x86_64_linux_musl": {
-      "url": "https://github.com/rustwasm/wasm-pack/releases/download/v0.10.1/wasm-pack-v0.10.1-x86_64-unknown-linux-musl.tar.gz",
-      "checksum": "524f8333e69c7157239c14c3140ee485b8cb4000d530344d62984e544f27c67f",
-      "bin": "wasm-pack-v0.10.1-x86_64-unknown-linux-musl/wasm-pack"
+      "checksum": "524f8333e69c7157239c14c3140ee485b8cb4000d530344d62984e544f27c67f"
     },
     "x86_64_macos": {
-      "url": "https://github.com/rustwasm/wasm-pack/releases/download/v0.10.1/wasm-pack-v0.10.1-x86_64-apple-darwin.tar.gz",
-      "checksum": "d37880f76962dbc3278d3ec2cf419ac187634af796af1423781d19d492f74505",
-      "bin": "wasm-pack-v0.10.1-x86_64-apple-darwin/wasm-pack"
+      "checksum": "d37880f76962dbc3278d3ec2cf419ac187634af796af1423781d19d492f74505"
     },
     "x86_64_windows": {
-      "url": "https://github.com/rustwasm/wasm-pack/releases/download/v0.10.1/wasm-pack-v0.10.1-x86_64-pc-windows-msvc.tar.gz",
-      "checksum": "036c632f7293060d69b2754793858701bfeced250cad02b91ef4cbf69594cd5c",
-      "bin": "wasm-pack-v0.10.1-x86_64-pc-windows-msvc/wasm-pack.exe"
+      "checksum": "036c632f7293060d69b2754793858701bfeced250cad02b91ef4cbf69594cd5c"
     }
   },
   "0.10.0": {
     "x86_64_linux_musl": {
-      "url": "https://github.com/rustwasm/wasm-pack/releases/download/v0.10.0/wasm-pack-v0.10.0-x86_64-unknown-linux-musl.tar.gz",
-      "checksum": "8b5a40add554891888de25ea974b4d096a37614c91c982a383d3eca97aa17e68",
-      "bin": "wasm-pack-v0.10.0-x86_64-unknown-linux-musl/wasm-pack"
+      "checksum": "8b5a40add554891888de25ea974b4d096a37614c91c982a383d3eca97aa17e68"
     },
     "x86_64_macos": {
-      "url": "https://github.com/rustwasm/wasm-pack/releases/download/v0.10.0/wasm-pack-v0.10.0-x86_64-apple-darwin.tar.gz",
-      "checksum": "bb1da9b5a10566cabcad593c96fb8d24ba3ac75de603b596eca2c7cbd1cfb31d",
-      "bin": "wasm-pack-v0.10.0-x86_64-apple-darwin/wasm-pack"
+      "checksum": "bb1da9b5a10566cabcad593c96fb8d24ba3ac75de603b596eca2c7cbd1cfb31d"
     },
     "x86_64_windows": {
-      "url": "https://github.com/rustwasm/wasm-pack/releases/download/v0.10.0/wasm-pack-v0.10.0-x86_64-pc-windows-msvc.tar.gz",
-      "checksum": "a3d7d13e250fa4afc6f27cf1f9e7b0bdc85ee7f06f56e16692ee46f6dd5e9255",
-      "bin": "wasm-pack-v0.10.0-x86_64-pc-windows-msvc/wasm-pack.exe"
+      "checksum": "a3d7d13e250fa4afc6f27cf1f9e7b0bdc85ee7f06f56e16692ee46f6dd5e9255"
     }
   },
   "0.9": {
     "version": "0.9.1",
     "x86_64_linux_musl": {
-      "url": "https://github.com/rustwasm/wasm-pack/releases/download/v0.9.1/wasm-pack-v0.9.1-x86_64-unknown-linux-musl.tar.gz",
-      "checksum": "d478bd20811067566bfc88141afcc857e7713b5385c684f6d50e7c2d549847f7",
-      "bin": "wasm-pack-v0.9.1-x86_64-unknown-linux-musl/wasm-pack"
+      "checksum": "d478bd20811067566bfc88141afcc857e7713b5385c684f6d50e7c2d549847f7"
     },
     "x86_64_macos": {
-      "url": "https://github.com/rustwasm/wasm-pack/releases/download/v0.9.1/wasm-pack-v0.9.1-x86_64-apple-darwin.tar.gz",
-      "checksum": "a98c70f0a40b1689eeaf639611ec6b18d0a73abb4a881533c8e0c2861457440f",
-      "bin": "wasm-pack-v0.9.1-x86_64-apple-darwin/wasm-pack"
+      "checksum": "a98c70f0a40b1689eeaf639611ec6b18d0a73abb4a881533c8e0c2861457440f"
     },
     "x86_64_windows": {
-      "url": "https://github.com/rustwasm/wasm-pack/releases/download/v0.9.1/wasm-pack-v0.9.1-x86_64-pc-windows-msvc.tar.gz",
-      "checksum": "dedd292bfe24756a46687e166ddd86e5dabc34cc5e43901d0efb6fd33da940a6",
-      "bin": "wasm-pack-v0.9.1-x86_64-pc-windows-msvc/wasm-pack.exe"
+      "checksum": "dedd292bfe24756a46687e166ddd86e5dabc34cc5e43901d0efb6fd33da940a6"
     }
   },
   "0.9.1": {
     "x86_64_linux_musl": {
-      "url": "https://github.com/rustwasm/wasm-pack/releases/download/v0.9.1/wasm-pack-v0.9.1-x86_64-unknown-linux-musl.tar.gz",
-      "checksum": "d478bd20811067566bfc88141afcc857e7713b5385c684f6d50e7c2d549847f7",
-      "bin": "wasm-pack-v0.9.1-x86_64-unknown-linux-musl/wasm-pack"
+      "checksum": "d478bd20811067566bfc88141afcc857e7713b5385c684f6d50e7c2d549847f7"
     },
     "x86_64_macos": {
-      "url": "https://github.com/rustwasm/wasm-pack/releases/download/v0.9.1/wasm-pack-v0.9.1-x86_64-apple-darwin.tar.gz",
-      "checksum": "a98c70f0a40b1689eeaf639611ec6b18d0a73abb4a881533c8e0c2861457440f",
-      "bin": "wasm-pack-v0.9.1-x86_64-apple-darwin/wasm-pack"
+      "checksum": "a98c70f0a40b1689eeaf639611ec6b18d0a73abb4a881533c8e0c2861457440f"
     },
     "x86_64_windows": {
-      "url": "https://github.com/rustwasm/wasm-pack/releases/download/v0.9.1/wasm-pack-v0.9.1-x86_64-pc-windows-msvc.tar.gz",
-      "checksum": "dedd292bfe24756a46687e166ddd86e5dabc34cc5e43901d0efb6fd33da940a6",
-      "bin": "wasm-pack-v0.9.1-x86_64-pc-windows-msvc/wasm-pack.exe"
+      "checksum": "dedd292bfe24756a46687e166ddd86e5dabc34cc5e43901d0efb6fd33da940a6"
     }
   },
   "0.9.0": {
     "x86_64_linux_musl": {
-      "url": "https://github.com/rustwasm/wasm-pack/releases/download/v0.9.0/wasm-pack-v0.9.0-x86_64-unknown-linux-musl.tar.gz",
-      "checksum": "b12dcf60d8cf54470e64661eb917722a452ecafbc8678b6ae814b5494d745a70",
-      "bin": "wasm-pack-v0.9.0-x86_64-unknown-linux-musl/wasm-pack"
+      "checksum": "b12dcf60d8cf54470e64661eb917722a452ecafbc8678b6ae814b5494d745a70"
     },
     "x86_64_macos": {
-      "url": "https://github.com/rustwasm/wasm-pack/releases/download/v0.9.0/wasm-pack-v0.9.0-x86_64-apple-darwin.tar.gz",
-      "checksum": "819517436b1eda7e6b3abab55de0a81375602ca82b160ae3588cf8a713d3e34a",
-      "bin": "wasm-pack-v0.9.0-x86_64-apple-darwin/wasm-pack"
+      "checksum": "819517436b1eda7e6b3abab55de0a81375602ca82b160ae3588cf8a713d3e34a"
     },
     "x86_64_windows": {
-      "url": "https://github.com/rustwasm/wasm-pack/releases/download/v0.9.0/wasm-pack-v0.9.0-x86_64-pc-windows-msvc.tar.gz",
-      "checksum": "1e680af2b917c145644d57d8c267ebefc1638708aa3533c5fb1b7e61311e9e1a",
-      "bin": "wasm-pack-v0.9.0-x86_64-pc-windows-msvc/wasm-pack.exe"
+      "checksum": "1e680af2b917c145644d57d8c267ebefc1638708aa3533c5fb1b7e61311e9e1a"
     }
   },
   "0.8": {
     "version": "0.8.1",
     "x86_64_linux_musl": {
-      "url": "https://github.com/rustwasm/wasm-pack/releases/download/v0.8.1/wasm-pack-v0.8.1-x86_64-unknown-linux-musl.tar.gz",
-      "checksum": "623f2274e2fe96f5c9e0cb6fd3464ca7cc5b563025d105da79b827e02eb9a665",
-      "bin": "wasm-pack-v0.8.1-x86_64-unknown-linux-musl/wasm-pack"
+      "checksum": "623f2274e2fe96f5c9e0cb6fd3464ca7cc5b563025d105da79b827e02eb9a665"
     },
     "x86_64_macos": {
-      "url": "https://github.com/rustwasm/wasm-pack/releases/download/v0.8.1/wasm-pack-v0.8.1-x86_64-apple-darwin.tar.gz",
-      "checksum": "0da91445eec6eb27feb3d313330594be32e7bc35784e7b3c00659b0d741cf610",
-      "bin": "wasm-pack-v0.8.1-x86_64-apple-darwin/wasm-pack"
+      "checksum": "0da91445eec6eb27feb3d313330594be32e7bc35784e7b3c00659b0d741cf610"
     },
     "x86_64_windows": {
-      "url": "https://github.com/rustwasm/wasm-pack/releases/download/v0.8.1/wasm-pack-v0.8.1-x86_64-pc-windows-msvc.tar.gz",
-      "checksum": "2317da644b4a9b1e9229ecbed94123f5f6e5c4da037c39ad5454d1b88799c4a0",
-      "bin": "wasm-pack-v0.8.1-x86_64-pc-windows-msvc/wasm-pack.exe"
+      "checksum": "2317da644b4a9b1e9229ecbed94123f5f6e5c4da037c39ad5454d1b88799c4a0"
     }
   },
   "0.8.1": {
     "x86_64_linux_musl": {
-      "url": "https://github.com/rustwasm/wasm-pack/releases/download/v0.8.1/wasm-pack-v0.8.1-x86_64-unknown-linux-musl.tar.gz",
-      "checksum": "623f2274e2fe96f5c9e0cb6fd3464ca7cc5b563025d105da79b827e02eb9a665",
-      "bin": "wasm-pack-v0.8.1-x86_64-unknown-linux-musl/wasm-pack"
+      "checksum": "623f2274e2fe96f5c9e0cb6fd3464ca7cc5b563025d105da79b827e02eb9a665"
     },
     "x86_64_macos": {
-      "url": "https://github.com/rustwasm/wasm-pack/releases/download/v0.8.1/wasm-pack-v0.8.1-x86_64-apple-darwin.tar.gz",
-      "checksum": "0da91445eec6eb27feb3d313330594be32e7bc35784e7b3c00659b0d741cf610",
-      "bin": "wasm-pack-v0.8.1-x86_64-apple-darwin/wasm-pack"
+      "checksum": "0da91445eec6eb27feb3d313330594be32e7bc35784e7b3c00659b0d741cf610"
     },
     "x86_64_windows": {
-      "url": "https://github.com/rustwasm/wasm-pack/releases/download/v0.8.1/wasm-pack-v0.8.1-x86_64-pc-windows-msvc.tar.gz",
-      "checksum": "2317da644b4a9b1e9229ecbed94123f5f6e5c4da037c39ad5454d1b88799c4a0",
-      "bin": "wasm-pack-v0.8.1-x86_64-pc-windows-msvc/wasm-pack.exe"
+      "checksum": "2317da644b4a9b1e9229ecbed94123f5f6e5c4da037c39ad5454d1b88799c4a0"
     }
   },
   "0.8.0": {
     "x86_64_linux_musl": {
-      "url": "https://github.com/rustwasm/wasm-pack/releases/download/v0.8.0/wasm-pack-v0.8.0-x86_64-unknown-linux-musl.tar.gz",
-      "checksum": "a28eea9d8d607495778322f8e28bc523621b3feefca185f6b1947d0bfa949eae",
-      "bin": "wasm-pack-v0.8.0-x86_64-unknown-linux-musl/wasm-pack"
+      "checksum": "a28eea9d8d607495778322f8e28bc523621b3feefca185f6b1947d0bfa949eae"
     },
     "x86_64_macos": {
-      "url": "https://github.com/rustwasm/wasm-pack/releases/download/v0.8.0/wasm-pack-v0.8.0-x86_64-apple-darwin.tar.gz",
-      "checksum": "0e8a8833e59c312b73832cd258667524548428585508716502e99a7b6d7263c5",
-      "bin": "wasm-pack-v0.8.0-x86_64-apple-darwin/wasm-pack"
+      "checksum": "0e8a8833e59c312b73832cd258667524548428585508716502e99a7b6d7263c5"
     },
     "x86_64_windows": {
-      "url": "https://github.com/rustwasm/wasm-pack/releases/download/v0.8.0/wasm-pack-v0.8.0-x86_64-pc-windows-msvc.tar.gz",
-      "checksum": "adb132f61792151f7302077bbb94fd7dbaa7abc29cd26aebe44bd09d2ec2c87e",
-      "bin": "wasm-pack-v0.8.0-x86_64-pc-windows-msvc/wasm-pack.exe"
+      "checksum": "adb132f61792151f7302077bbb94fd7dbaa7abc29cd26aebe44bd09d2ec2c87e"
     }
   },
   "0.7": {
     "version": "0.7.0",
     "x86_64_linux_musl": {
-      "url": "https://github.com/rustwasm/wasm-pack/releases/download/v0.7.0/wasm-pack-v0.7.0-x86_64-unknown-linux-musl.tar.gz",
-      "checksum": "e29446206ef47c2c7aab659387d66a8bf5018b8c55d91dec485f6415d90edafa",
-      "bin": "wasm-pack-v0.7.0-x86_64-unknown-linux-musl/wasm-pack"
+      "checksum": "e29446206ef47c2c7aab659387d66a8bf5018b8c55d91dec485f6415d90edafa"
     },
     "x86_64_macos": {
-      "url": "https://github.com/rustwasm/wasm-pack/releases/download/v0.7.0/wasm-pack-v0.7.0-x86_64-apple-darwin.tar.gz",
-      "checksum": "f596fcee41725869554a304e509ef8e2adf023226647edbc8c1d9bcf184609df",
-      "bin": "wasm-pack-v0.7.0-x86_64-apple-darwin/wasm-pack"
+      "checksum": "f596fcee41725869554a304e509ef8e2adf023226647edbc8c1d9bcf184609df"
     },
     "x86_64_windows": {
-      "url": "https://github.com/rustwasm/wasm-pack/releases/download/v0.7.0/wasm-pack-v0.7.0-x86_64-pc-windows-msvc.tar.gz",
-      "checksum": "e9fd17e27dcc0c549f597b2feb7f2030ac737e7f6a3dd338804ae180730cf2a0",
-      "bin": "wasm-pack-v0.7.0-x86_64-pc-windows-msvc/wasm-pack.exe"
+      "checksum": "e9fd17e27dcc0c549f597b2feb7f2030ac737e7f6a3dd338804ae180730cf2a0"
     }
   },
   "0.7.0": {
     "x86_64_linux_musl": {
-      "url": "https://github.com/rustwasm/wasm-pack/releases/download/v0.7.0/wasm-pack-v0.7.0-x86_64-unknown-linux-musl.tar.gz",
-      "checksum": "e29446206ef47c2c7aab659387d66a8bf5018b8c55d91dec485f6415d90edafa",
-      "bin": "wasm-pack-v0.7.0-x86_64-unknown-linux-musl/wasm-pack"
+      "checksum": "e29446206ef47c2c7aab659387d66a8bf5018b8c55d91dec485f6415d90edafa"
     },
     "x86_64_macos": {
-      "url": "https://github.com/rustwasm/wasm-pack/releases/download/v0.7.0/wasm-pack-v0.7.0-x86_64-apple-darwin.tar.gz",
-      "checksum": "f596fcee41725869554a304e509ef8e2adf023226647edbc8c1d9bcf184609df",
-      "bin": "wasm-pack-v0.7.0-x86_64-apple-darwin/wasm-pack"
+      "checksum": "f596fcee41725869554a304e509ef8e2adf023226647edbc8c1d9bcf184609df"
     },
     "x86_64_windows": {
-      "url": "https://github.com/rustwasm/wasm-pack/releases/download/v0.7.0/wasm-pack-v0.7.0-x86_64-pc-windows-msvc.tar.gz",
-      "checksum": "e9fd17e27dcc0c549f597b2feb7f2030ac737e7f6a3dd338804ae180730cf2a0",
-      "bin": "wasm-pack-v0.7.0-x86_64-pc-windows-msvc/wasm-pack.exe"
+      "checksum": "e9fd17e27dcc0c549f597b2feb7f2030ac737e7f6a3dd338804ae180730cf2a0"
     }
   },
   "0.6": {
     "version": "0.6.0",
     "x86_64_linux_musl": {
-      "url": "https://github.com/rustwasm/wasm-pack/releases/download/v0.6.0/wasm-pack-v0.6.0-x86_64-unknown-linux-musl.tar.gz",
-      "checksum": "b575bb48f101926342339036705f21d94ca56266568be4076c6e1a6f3afba290",
-      "bin": "wasm-pack-v0.6.0-x86_64-unknown-linux-musl/wasm-pack"
+      "checksum": "b575bb48f101926342339036705f21d94ca56266568be4076c6e1a6f3afba290"
     },
     "x86_64_macos": {
-      "url": "https://github.com/rustwasm/wasm-pack/releases/download/v0.6.0/wasm-pack-v0.6.0-x86_64-apple-darwin.tar.gz",
-      "checksum": "085af3cc14dc6305420fe602638ee7544ae7e57a78abe657a8cb27c0d15bbf30",
-      "bin": "wasm-pack-v0.6.0-x86_64-apple-darwin/wasm-pack"
+      "checksum": "085af3cc14dc6305420fe602638ee7544ae7e57a78abe657a8cb27c0d15bbf30"
     },
     "x86_64_windows": {
-      "url": "https://github.com/rustwasm/wasm-pack/releases/download/v0.6.0/wasm-pack-v0.6.0-x86_64-pc-windows-msvc.tar.gz",
-      "checksum": "cc5590a718a8a04008d561a4e0cbae421942fdb5e7b6a2ce68336f6fcdf17754",
-      "bin": "wasm-pack-v0.6.0-x86_64-pc-windows-msvc/wasm-pack.exe"
+      "checksum": "cc5590a718a8a04008d561a4e0cbae421942fdb5e7b6a2ce68336f6fcdf17754"
     }
   },
   "0.6.0": {
     "x86_64_linux_musl": {
-      "url": "https://github.com/rustwasm/wasm-pack/releases/download/v0.6.0/wasm-pack-v0.6.0-x86_64-unknown-linux-musl.tar.gz",
-      "checksum": "b575bb48f101926342339036705f21d94ca56266568be4076c6e1a6f3afba290",
-      "bin": "wasm-pack-v0.6.0-x86_64-unknown-linux-musl/wasm-pack"
+      "checksum": "b575bb48f101926342339036705f21d94ca56266568be4076c6e1a6f3afba290"
     },
     "x86_64_macos": {
-      "url": "https://github.com/rustwasm/wasm-pack/releases/download/v0.6.0/wasm-pack-v0.6.0-x86_64-apple-darwin.tar.gz",
-      "checksum": "085af3cc14dc6305420fe602638ee7544ae7e57a78abe657a8cb27c0d15bbf30",
-      "bin": "wasm-pack-v0.6.0-x86_64-apple-darwin/wasm-pack"
+      "checksum": "085af3cc14dc6305420fe602638ee7544ae7e57a78abe657a8cb27c0d15bbf30"
     },
     "x86_64_windows": {
-      "url": "https://github.com/rustwasm/wasm-pack/releases/download/v0.6.0/wasm-pack-v0.6.0-x86_64-pc-windows-msvc.tar.gz",
-      "checksum": "cc5590a718a8a04008d561a4e0cbae421942fdb5e7b6a2ce68336f6fcdf17754",
-      "bin": "wasm-pack-v0.6.0-x86_64-pc-windows-msvc/wasm-pack.exe"
+      "checksum": "cc5590a718a8a04008d561a4e0cbae421942fdb5e7b6a2ce68336f6fcdf17754"
     }
   },
   "0.5": {
     "version": "0.5.1",
     "x86_64_linux_musl": {
-      "url": "https://github.com/rustwasm/wasm-pack/releases/download/v0.5.1/wasm-pack-v0.5.1-x86_64-unknown-linux-musl.tar.gz",
-      "checksum": "2908d56fc3d94db02b02f07271c0a9926f7060dae2ba684d66e7023ca173bfb3",
-      "bin": "wasm-pack-v0.5.1-x86_64-unknown-linux-musl/wasm-pack"
+      "checksum": "2908d56fc3d94db02b02f07271c0a9926f7060dae2ba684d66e7023ca173bfb3"
     },
     "x86_64_macos": {
-      "url": "https://github.com/rustwasm/wasm-pack/releases/download/v0.5.1/wasm-pack-v0.5.1-x86_64-apple-darwin.tar.gz",
-      "checksum": "54a239d6b7aabfccde6dbcb34519d1e30b14752197a654115b1d0f1639119288",
-      "bin": "wasm-pack-v0.5.1-x86_64-apple-darwin/wasm-pack"
+      "checksum": "54a239d6b7aabfccde6dbcb34519d1e30b14752197a654115b1d0f1639119288"
     },
     "x86_64_windows": {
-      "url": "https://github.com/rustwasm/wasm-pack/releases/download/v0.5.1/wasm-pack-v0.5.1-x86_64-pc-windows-msvc.tar.gz",
-      "checksum": "3af55c7d5077c67c0e4cd9b5dd1d7c4247d09d3b1e0388a7c1b08de8b917cdd0",
-      "bin": "wasm-pack-v0.5.1-x86_64-pc-windows-msvc/wasm-pack.exe"
+      "checksum": "3af55c7d5077c67c0e4cd9b5dd1d7c4247d09d3b1e0388a7c1b08de8b917cdd0"
     }
   },
   "0.5.1": {
     "x86_64_linux_musl": {
-      "url": "https://github.com/rustwasm/wasm-pack/releases/download/v0.5.1/wasm-pack-v0.5.1-x86_64-unknown-linux-musl.tar.gz",
-      "checksum": "2908d56fc3d94db02b02f07271c0a9926f7060dae2ba684d66e7023ca173bfb3",
-      "bin": "wasm-pack-v0.5.1-x86_64-unknown-linux-musl/wasm-pack"
+      "checksum": "2908d56fc3d94db02b02f07271c0a9926f7060dae2ba684d66e7023ca173bfb3"
     },
     "x86_64_macos": {
-      "url": "https://github.com/rustwasm/wasm-pack/releases/download/v0.5.1/wasm-pack-v0.5.1-x86_64-apple-darwin.tar.gz",
-      "checksum": "54a239d6b7aabfccde6dbcb34519d1e30b14752197a654115b1d0f1639119288",
-      "bin": "wasm-pack-v0.5.1-x86_64-apple-darwin/wasm-pack"
+      "checksum": "54a239d6b7aabfccde6dbcb34519d1e30b14752197a654115b1d0f1639119288"
     },
     "x86_64_windows": {
-      "url": "https://github.com/rustwasm/wasm-pack/releases/download/v0.5.1/wasm-pack-v0.5.1-x86_64-pc-windows-msvc.tar.gz",
-      "checksum": "3af55c7d5077c67c0e4cd9b5dd1d7c4247d09d3b1e0388a7c1b08de8b917cdd0",
-      "bin": "wasm-pack-v0.5.1-x86_64-pc-windows-msvc/wasm-pack.exe"
+      "checksum": "3af55c7d5077c67c0e4cd9b5dd1d7c4247d09d3b1e0388a7c1b08de8b917cdd0"
     }
   },
   "0.5.0": {
     "x86_64_linux_musl": {
-      "url": "https://github.com/rustwasm/wasm-pack/releases/download/v0.5.0/wasm-pack-v0.5.0-x86_64-unknown-linux-musl.tar.gz",
-      "checksum": "194f29ce4fc246cb1d1df95ce39605d561da84e1098f890bfb9e5094d616b86f",
-      "bin": "wasm-pack-v0.5.0-x86_64-unknown-linux-musl/wasm-pack"
+      "checksum": "194f29ce4fc246cb1d1df95ce39605d561da84e1098f890bfb9e5094d616b86f"
     },
     "x86_64_macos": {
-      "url": "https://github.com/rustwasm/wasm-pack/releases/download/v0.5.0/wasm-pack-v0.5.0-x86_64-apple-darwin.tar.gz",
-      "checksum": "9f8acbcc097a392eb41c5d7a7652a74c844718677884030e912507b1d7964f8b",
-      "bin": "wasm-pack-v0.5.0-x86_64-apple-darwin/wasm-pack"
+      "checksum": "9f8acbcc097a392eb41c5d7a7652a74c844718677884030e912507b1d7964f8b"
     },
     "x86_64_windows": {
-      "url": "https://github.com/rustwasm/wasm-pack/releases/download/v0.5.0/wasm-pack-v0.5.0-x86_64-pc-windows-msvc.tar.gz",
-      "checksum": "f6536e708aec1aea00768920dbebf953d6135774b11a98e2b1dbd6eba4af9951",
-      "bin": "wasm-pack-v0.5.0-x86_64-pc-windows-msvc/wasm-pack.exe"
+      "checksum": "f6536e708aec1aea00768920dbebf953d6135774b11a98e2b1dbd6eba4af9951"
     }
   },
   "0.4": {
     "version": "0.4.2",
     "x86_64_linux_musl": {
-      "url": "https://github.com/rustwasm/wasm-pack/releases/download/v0.4.2/wasm-pack-v0.4.2-x86_64-unknown-linux-musl.tar.gz",
-      "checksum": "531906b0f1bb2e06c542dbbd6bd56671a59762299a01498e94c62534dc548c65",
-      "bin": "wasm-pack-v0.4.2-x86_64-unknown-linux-musl/wasm-pack"
+      "checksum": "531906b0f1bb2e06c542dbbd6bd56671a59762299a01498e94c62534dc548c65"
     },
     "x86_64_macos": {
-      "url": "https://github.com/rustwasm/wasm-pack/releases/download/v0.4.2/wasm-pack-v0.4.2-x86_64-apple-darwin.tar.gz",
-      "checksum": "2cb85362aa2b3fab4d07a35f95682ac2b2761948f41d3364aabc174152aec0c4",
-      "bin": "wasm-pack-v0.4.2-x86_64-apple-darwin/wasm-pack"
+      "checksum": "2cb85362aa2b3fab4d07a35f95682ac2b2761948f41d3364aabc174152aec0c4"
     }
   },
   "0.4.2": {
     "x86_64_linux_musl": {
-      "url": "https://github.com/rustwasm/wasm-pack/releases/download/v0.4.2/wasm-pack-v0.4.2-x86_64-unknown-linux-musl.tar.gz",
-      "checksum": "531906b0f1bb2e06c542dbbd6bd56671a59762299a01498e94c62534dc548c65",
-      "bin": "wasm-pack-v0.4.2-x86_64-unknown-linux-musl/wasm-pack"
+      "checksum": "531906b0f1bb2e06c542dbbd6bd56671a59762299a01498e94c62534dc548c65"
     },
     "x86_64_macos": {
-      "url": "https://github.com/rustwasm/wasm-pack/releases/download/v0.4.2/wasm-pack-v0.4.2-x86_64-apple-darwin.tar.gz",
-      "checksum": "2cb85362aa2b3fab4d07a35f95682ac2b2761948f41d3364aabc174152aec0c4",
-      "bin": "wasm-pack-v0.4.2-x86_64-apple-darwin/wasm-pack"
+      "checksum": "2cb85362aa2b3fab4d07a35f95682ac2b2761948f41d3364aabc174152aec0c4"
     }
   },
   "0.4.1": {
     "x86_64_linux_musl": {
-      "url": "https://github.com/rustwasm/wasm-pack/releases/download/v0.4.1/wasm-pack-v0.4.1-x86_64-unknown-linux-musl.tar.gz",
-      "checksum": "38f247a8e94bbefc7e7ccdf4b064286d8843c736792c36dfc9d471a0aefc1514",
-      "bin": "wasm-pack-v0.4.1-x86_64-unknown-linux-musl/wasm-pack"
+      "checksum": "38f247a8e94bbefc7e7ccdf4b064286d8843c736792c36dfc9d471a0aefc1514"
     },
     "x86_64_macos": {
-      "url": "https://github.com/rustwasm/wasm-pack/releases/download/v0.4.1/wasm-pack-v0.4.1-x86_64-apple-darwin.tar.gz",
-      "checksum": "2438b867544ce3406f37552c3ca0f08c201a29866fb7a7587806a7be4d321c61",
-      "bin": "wasm-pack-v0.4.1-x86_64-apple-darwin/wasm-pack"
+      "checksum": "2438b867544ce3406f37552c3ca0f08c201a29866fb7a7587806a7be4d321c61"
     }
   },
   "0.4.0": {
     "x86_64_linux_musl": {
-      "url": "https://github.com/rustwasm/wasm-pack/releases/download/v0.4.0/wasm-pack-v0.4.0-x86_64-unknown-linux-musl.tar.gz",
-      "checksum": "7680cc96560b3e76aa542c51c68cb4ef054f6495875c852931a3a8680bdf6890",
-      "bin": "wasm-pack-v0.4.0-x86_64-unknown-linux-musl/wasm-pack"
+      "checksum": "7680cc96560b3e76aa542c51c68cb4ef054f6495875c852931a3a8680bdf6890"
     },
     "x86_64_macos": {
-      "url": "https://github.com/rustwasm/wasm-pack/releases/download/v0.4.0/wasm-pack-v0.4.0-x86_64-apple-darwin.tar.gz",
-      "checksum": "2c0a23e42e0c5f3e428615217137647c6b15c54961fd9f6e28f567f4580e1274",
-      "bin": "wasm-pack-v0.4.0-x86_64-apple-darwin/wasm-pack"
+      "checksum": "2c0a23e42e0c5f3e428615217137647c6b15c54961fd9f6e28f567f4580e1274"
     }
   },
   "0.3": {
     "version": "0.3.1",
     "x86_64_linux_musl": {
-      "url": "https://github.com/rustwasm/wasm-pack/releases/download/v0.3.1/wasm-pack-v0.3.1-x86_64-unknown-linux-musl.tar.gz",
-      "checksum": "eab14fbe5b585c865c7ec24f68820e0d6da0215272058fa3ccf2bffc95dfb464",
-      "bin": "wasm-pack-v0.3.1-x86_64-unknown-linux-musl/wasm-pack"
+      "checksum": "eab14fbe5b585c865c7ec24f68820e0d6da0215272058fa3ccf2bffc95dfb464"
     },
     "x86_64_macos": {
-      "url": "https://github.com/rustwasm/wasm-pack/releases/download/v0.3.1/wasm-pack-v0.3.1-x86_64-apple-darwin.tar.gz",
-      "checksum": "5000a22d25e8c57ed7c177aea64260490713499e397baaa9ad59152f16796913",
-      "bin": "wasm-pack-v0.3.1-x86_64-apple-darwin/wasm-pack"
+      "checksum": "5000a22d25e8c57ed7c177aea64260490713499e397baaa9ad59152f16796913"
     }
   },
   "0.3.1": {
     "x86_64_linux_musl": {
-      "url": "https://github.com/rustwasm/wasm-pack/releases/download/v0.3.1/wasm-pack-v0.3.1-x86_64-unknown-linux-musl.tar.gz",
-      "checksum": "eab14fbe5b585c865c7ec24f68820e0d6da0215272058fa3ccf2bffc95dfb464",
-      "bin": "wasm-pack-v0.3.1-x86_64-unknown-linux-musl/wasm-pack"
+      "checksum": "eab14fbe5b585c865c7ec24f68820e0d6da0215272058fa3ccf2bffc95dfb464"
     },
     "x86_64_macos": {
-      "url": "https://github.com/rustwasm/wasm-pack/releases/download/v0.3.1/wasm-pack-v0.3.1-x86_64-apple-darwin.tar.gz",
-      "checksum": "5000a22d25e8c57ed7c177aea64260490713499e397baaa9ad59152f16796913",
-      "bin": "wasm-pack-v0.3.1-x86_64-apple-darwin/wasm-pack"
+      "checksum": "5000a22d25e8c57ed7c177aea64260490713499e397baaa9ad59152f16796913"
     }
   },
   "0.3.0": {
     "x86_64_linux_musl": {
-      "url": "https://github.com/rustwasm/wasm-pack/releases/download/v0.3.0/wasm-pack-v0.3.0-x86_64-unknown-linux-musl.tar.gz",
-      "checksum": "21426de66eafb74054413366435d8eaf2ca4589fe55ae1524e7fb58919c86496",
-      "bin": "wasm-pack-v0.3.0-x86_64-unknown-linux-musl/wasm-pack"
+      "checksum": "21426de66eafb74054413366435d8eaf2ca4589fe55ae1524e7fb58919c86496"
     },
     "x86_64_macos": {
-      "url": "https://github.com/rustwasm/wasm-pack/releases/download/v0.3.0/wasm-pack-v0.3.0-x86_64-apple-darwin.tar.gz",
-      "checksum": "6e06c850508b47c58c0079f12941f30bf4ec2a4495ef6f56432909c3afbde33d",
-      "bin": "wasm-pack-v0.3.0-x86_64-apple-darwin/wasm-pack"
+      "checksum": "6e06c850508b47c58c0079f12941f30bf4ec2a4495ef6f56432909c3afbde33d"
     }
   }
 }

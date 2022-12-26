@@ -1,531 +1,359 @@
 {
+  "template": {
+    "x86_64_linux_gnu": {
+      "url": "https://github.com/est31/cargo-udeps/releases/download/v${version}/cargo-udeps-v${version}-x86_64-unknown-linux-gnu.tar.gz",
+      "bin": "./cargo-udeps-v${version}-x86_64-unknown-linux-gnu/cargo-udeps"
+    },
+    "x86_64_macos": {
+      "url": "https://github.com/est31/cargo-udeps/releases/download/v${version}/cargo-udeps-v${version}-x86_64-apple-darwin.tar.gz",
+      "bin": "./cargo-udeps-v${version}-x86_64-apple-darwin/cargo-udeps"
+    },
+    "x86_64_windows": {
+      "url": "https://github.com/est31/cargo-udeps/releases/download/v${version}/cargo-udeps-v${version}-x86_64-pc-windows-msvc.zip",
+      "bin": "./cargo-udeps-v${version}-x86_64-pc-windows-msvc/cargo-udeps.exe"
+    }
+  },
   "latest": {
     "version": "0.1.35",
     "x86_64_linux_gnu": {
-      "url": "https://github.com/est31/cargo-udeps/releases/download/v0.1.35/cargo-udeps-v0.1.35-x86_64-unknown-linux-gnu.tar.gz",
-      "checksum": "a2291a214210d5c658697abc6a183dbb28f14dbb2757be364e6465c315561160",
-      "bin": "./cargo-udeps-v0.1.35-x86_64-unknown-linux-gnu/cargo-udeps"
+      "checksum": "a2291a214210d5c658697abc6a183dbb28f14dbb2757be364e6465c315561160"
     },
     "x86_64_macos": {
-      "url": "https://github.com/est31/cargo-udeps/releases/download/v0.1.35/cargo-udeps-v0.1.35-x86_64-apple-darwin.tar.gz",
-      "checksum": "c2677a9217a77299a049ce5ffb2da734f5d47123fd848dfb95e3f0fc1620101c",
-      "bin": "./cargo-udeps-v0.1.35-x86_64-apple-darwin/cargo-udeps"
+      "checksum": "c2677a9217a77299a049ce5ffb2da734f5d47123fd848dfb95e3f0fc1620101c"
     },
     "x86_64_windows": {
-      "url": "https://github.com/est31/cargo-udeps/releases/download/v0.1.35/cargo-udeps-v0.1.35-x86_64-pc-windows-msvc.zip",
-      "checksum": "fd39c8e7f92ec7bcb8a776162811133d6e9d7bac091c22b757cc1c4edcab179f",
-      "bin": "./cargo-udeps-v0.1.35-x86_64-pc-windows-msvc/cargo-udeps.exe"
+      "checksum": "fd39c8e7f92ec7bcb8a776162811133d6e9d7bac091c22b757cc1c4edcab179f"
     }
   },
   "0.1": {
     "version": "0.1.35",
     "x86_64_linux_gnu": {
-      "url": "https://github.com/est31/cargo-udeps/releases/download/v0.1.35/cargo-udeps-v0.1.35-x86_64-unknown-linux-gnu.tar.gz",
-      "checksum": "a2291a214210d5c658697abc6a183dbb28f14dbb2757be364e6465c315561160",
-      "bin": "./cargo-udeps-v0.1.35-x86_64-unknown-linux-gnu/cargo-udeps"
+      "checksum": "a2291a214210d5c658697abc6a183dbb28f14dbb2757be364e6465c315561160"
     },
     "x86_64_macos": {
-      "url": "https://github.com/est31/cargo-udeps/releases/download/v0.1.35/cargo-udeps-v0.1.35-x86_64-apple-darwin.tar.gz",
-      "checksum": "c2677a9217a77299a049ce5ffb2da734f5d47123fd848dfb95e3f0fc1620101c",
-      "bin": "./cargo-udeps-v0.1.35-x86_64-apple-darwin/cargo-udeps"
+      "checksum": "c2677a9217a77299a049ce5ffb2da734f5d47123fd848dfb95e3f0fc1620101c"
     },
     "x86_64_windows": {
-      "url": "https://github.com/est31/cargo-udeps/releases/download/v0.1.35/cargo-udeps-v0.1.35-x86_64-pc-windows-msvc.zip",
-      "checksum": "fd39c8e7f92ec7bcb8a776162811133d6e9d7bac091c22b757cc1c4edcab179f",
-      "bin": "./cargo-udeps-v0.1.35-x86_64-pc-windows-msvc/cargo-udeps.exe"
+      "checksum": "fd39c8e7f92ec7bcb8a776162811133d6e9d7bac091c22b757cc1c4edcab179f"
     }
   },
   "0.1.35": {
     "x86_64_linux_gnu": {
-      "url": "https://github.com/est31/cargo-udeps/releases/download/v0.1.35/cargo-udeps-v0.1.35-x86_64-unknown-linux-gnu.tar.gz",
-      "checksum": "a2291a214210d5c658697abc6a183dbb28f14dbb2757be364e6465c315561160",
-      "bin": "./cargo-udeps-v0.1.35-x86_64-unknown-linux-gnu/cargo-udeps"
+      "checksum": "a2291a214210d5c658697abc6a183dbb28f14dbb2757be364e6465c315561160"
     },
     "x86_64_macos": {
-      "url": "https://github.com/est31/cargo-udeps/releases/download/v0.1.35/cargo-udeps-v0.1.35-x86_64-apple-darwin.tar.gz",
-      "checksum": "c2677a9217a77299a049ce5ffb2da734f5d47123fd848dfb95e3f0fc1620101c",
-      "bin": "./cargo-udeps-v0.1.35-x86_64-apple-darwin/cargo-udeps"
+      "checksum": "c2677a9217a77299a049ce5ffb2da734f5d47123fd848dfb95e3f0fc1620101c"
     },
     "x86_64_windows": {
-      "url": "https://github.com/est31/cargo-udeps/releases/download/v0.1.35/cargo-udeps-v0.1.35-x86_64-pc-windows-msvc.zip",
-      "checksum": "fd39c8e7f92ec7bcb8a776162811133d6e9d7bac091c22b757cc1c4edcab179f",
-      "bin": "./cargo-udeps-v0.1.35-x86_64-pc-windows-msvc/cargo-udeps.exe"
+      "checksum": "fd39c8e7f92ec7bcb8a776162811133d6e9d7bac091c22b757cc1c4edcab179f"
     }
   },
   "0.1.33": {
     "x86_64_linux_gnu": {
-      "url": "https://github.com/est31/cargo-udeps/releases/download/v0.1.33/cargo-udeps-v0.1.33-x86_64-unknown-linux-gnu.tar.gz",
-      "checksum": "3f861a2c9be2b3b2333a2a37d6fc5914c5aae4b02a824c97e221c46f08252c7b",
-      "bin": "./cargo-udeps-v0.1.33-x86_64-unknown-linux-gnu/cargo-udeps"
+      "checksum": "3f861a2c9be2b3b2333a2a37d6fc5914c5aae4b02a824c97e221c46f08252c7b"
     },
     "x86_64_macos": {
-      "url": "https://github.com/est31/cargo-udeps/releases/download/v0.1.33/cargo-udeps-v0.1.33-x86_64-apple-darwin.tar.gz",
-      "checksum": "a82c1635490914a4da5be5644198549c14fbae012e6716b36002034c0e0e710e",
-      "bin": "./cargo-udeps-v0.1.33-x86_64-apple-darwin/cargo-udeps"
+      "checksum": "a82c1635490914a4da5be5644198549c14fbae012e6716b36002034c0e0e710e"
     },
     "x86_64_windows": {
-      "url": "https://github.com/est31/cargo-udeps/releases/download/v0.1.33/cargo-udeps-v0.1.33-x86_64-pc-windows-msvc.zip",
-      "checksum": "7265d7f8d79eeb965c98d61f55e7e918ad06beda43932584af87db9afde70be3",
-      "bin": "./cargo-udeps-v0.1.33-x86_64-pc-windows-msvc/cargo-udeps.exe"
+      "checksum": "7265d7f8d79eeb965c98d61f55e7e918ad06beda43932584af87db9afde70be3"
     }
   },
   "0.1.32": {
     "x86_64_linux_gnu": {
-      "url": "https://github.com/est31/cargo-udeps/releases/download/v0.1.32/cargo-udeps-v0.1.32-x86_64-unknown-linux-gnu.tar.gz",
-      "checksum": "dbb1a726366dcf07b0ae4ce3edaff518b15d04a8e90063ca0b13b4afea7b95d9",
-      "bin": "./cargo-udeps-v0.1.32-x86_64-unknown-linux-gnu/cargo-udeps"
+      "checksum": "dbb1a726366dcf07b0ae4ce3edaff518b15d04a8e90063ca0b13b4afea7b95d9"
     },
     "x86_64_macos": {
-      "url": "https://github.com/est31/cargo-udeps/releases/download/v0.1.32/cargo-udeps-v0.1.32-x86_64-apple-darwin.tar.gz",
-      "checksum": "9f16542c2de47f19d9d0fa1a849517d77a34fd9592ea1dbfa7e363dea78c62d3",
-      "bin": "./cargo-udeps-v0.1.32-x86_64-apple-darwin/cargo-udeps"
+      "checksum": "9f16542c2de47f19d9d0fa1a849517d77a34fd9592ea1dbfa7e363dea78c62d3"
     },
     "x86_64_windows": {
-      "url": "https://github.com/est31/cargo-udeps/releases/download/v0.1.32/cargo-udeps-v0.1.32-x86_64-pc-windows-msvc.zip",
-      "checksum": "05ffe8d3e9423449ec6030ef806d4b2e4baaa6f00df539e1d88642b438f963b0",
-      "bin": "./cargo-udeps-v0.1.32-x86_64-pc-windows-msvc/cargo-udeps.exe"
+      "checksum": "05ffe8d3e9423449ec6030ef806d4b2e4baaa6f00df539e1d88642b438f963b0"
     }
   },
   "0.1.31": {
     "x86_64_linux_gnu": {
-      "url": "https://github.com/est31/cargo-udeps/releases/download/v0.1.31/cargo-udeps-v0.1.31-x86_64-unknown-linux-gnu.tar.gz",
-      "checksum": "46e6253a81db1a7dbe4712852e24094eba65057d74051941cb9de8c6a4a0e457",
-      "bin": "./cargo-udeps-v0.1.31-x86_64-unknown-linux-gnu/cargo-udeps"
+      "checksum": "46e6253a81db1a7dbe4712852e24094eba65057d74051941cb9de8c6a4a0e457"
     },
     "x86_64_macos": {
-      "url": "https://github.com/est31/cargo-udeps/releases/download/v0.1.31/cargo-udeps-v0.1.31-x86_64-apple-darwin.tar.gz",
-      "checksum": "302241aae21b69fb4280da575ed5039180dc7ab7f2fed04113075b463f110881",
-      "bin": "./cargo-udeps-v0.1.31-x86_64-apple-darwin/cargo-udeps"
+      "checksum": "302241aae21b69fb4280da575ed5039180dc7ab7f2fed04113075b463f110881"
     },
     "x86_64_windows": {
-      "url": "https://github.com/est31/cargo-udeps/releases/download/v0.1.31/cargo-udeps-v0.1.31-x86_64-pc-windows-msvc.zip",
-      "checksum": "e889200f9e8881f0fa82104fab7f09e31230331e257b7c984dbdc3ddea7115b5",
-      "bin": "./cargo-udeps-v0.1.31-x86_64-pc-windows-msvc/cargo-udeps.exe"
+      "checksum": "e889200f9e8881f0fa82104fab7f09e31230331e257b7c984dbdc3ddea7115b5"
     }
   },
   "0.1.30": {
     "x86_64_linux_gnu": {
-      "url": "https://github.com/est31/cargo-udeps/releases/download/v0.1.30/cargo-udeps-v0.1.30-x86_64-unknown-linux-gnu.tar.gz",
-      "checksum": "369e270ea2bb14d3ab92e99a1f12334efcac27d5c1714b74aacc956550780575",
-      "bin": "./cargo-udeps-v0.1.30-x86_64-unknown-linux-gnu/cargo-udeps"
+      "checksum": "369e270ea2bb14d3ab92e99a1f12334efcac27d5c1714b74aacc956550780575"
     },
     "x86_64_macos": {
-      "url": "https://github.com/est31/cargo-udeps/releases/download/v0.1.30/cargo-udeps-v0.1.30-x86_64-apple-darwin.tar.gz",
-      "checksum": "296e652fe14fee79f6e5a1e1cb3758869b849f6592f382d74edbd667939c2c2d",
-      "bin": "./cargo-udeps-v0.1.30-x86_64-apple-darwin/cargo-udeps"
+      "checksum": "296e652fe14fee79f6e5a1e1cb3758869b849f6592f382d74edbd667939c2c2d"
     },
     "x86_64_windows": {
-      "url": "https://github.com/est31/cargo-udeps/releases/download/v0.1.30/cargo-udeps-v0.1.30-x86_64-pc-windows-msvc.zip",
-      "checksum": "5abc0df40f2f517eba0427b3d9797e7c6d7217069b63d5b9dc7091156cbd0873",
-      "bin": "./cargo-udeps-v0.1.30-x86_64-pc-windows-msvc/cargo-udeps.exe"
+      "checksum": "5abc0df40f2f517eba0427b3d9797e7c6d7217069b63d5b9dc7091156cbd0873"
     }
   },
   "0.1.29": {
     "x86_64_linux_gnu": {
-      "url": "https://github.com/est31/cargo-udeps/releases/download/v0.1.29/cargo-udeps-v0.1.29-x86_64-unknown-linux-gnu.tar.gz",
-      "checksum": "21e88dce237a69fb5b36771b83cb6b6fca20c09a2b5c576ea8efaf7218a5c641",
-      "bin": "./cargo-udeps-v0.1.29-x86_64-unknown-linux-gnu/cargo-udeps"
+      "checksum": "21e88dce237a69fb5b36771b83cb6b6fca20c09a2b5c576ea8efaf7218a5c641"
     },
     "x86_64_macos": {
-      "url": "https://github.com/est31/cargo-udeps/releases/download/v0.1.29/cargo-udeps-v0.1.29-x86_64-apple-darwin.tar.gz",
-      "checksum": "acd8f916b8a29659b2b28f7c2af2a02c112a8b7e0ed9e3b2876b1defb6deee41",
-      "bin": "./cargo-udeps-v0.1.29-x86_64-apple-darwin/cargo-udeps"
+      "checksum": "acd8f916b8a29659b2b28f7c2af2a02c112a8b7e0ed9e3b2876b1defb6deee41"
     },
     "x86_64_windows": {
-      "url": "https://github.com/est31/cargo-udeps/releases/download/v0.1.29/cargo-udeps-v0.1.29-x86_64-pc-windows-msvc.zip",
-      "checksum": "5652ff990e2e2899a3d9fb69f1f5ba4c35991419e618e47e0469d75a7c57e1ce",
-      "bin": "./cargo-udeps-v0.1.29-x86_64-pc-windows-msvc/cargo-udeps.exe"
+      "checksum": "5652ff990e2e2899a3d9fb69f1f5ba4c35991419e618e47e0469d75a7c57e1ce"
     }
   },
   "0.1.28": {
     "x86_64_linux_gnu": {
-      "url": "https://github.com/est31/cargo-udeps/releases/download/v0.1.28/cargo-udeps-v0.1.28-x86_64-unknown-linux-gnu.tar.gz",
-      "checksum": "d916d8915e8175f1fcc5e949662367a71835ecd7f6bd998ad8c474ad1224c2de",
-      "bin": "./cargo-udeps-v0.1.28-x86_64-unknown-linux-gnu/cargo-udeps"
+      "checksum": "d916d8915e8175f1fcc5e949662367a71835ecd7f6bd998ad8c474ad1224c2de"
     },
     "x86_64_macos": {
-      "url": "https://github.com/est31/cargo-udeps/releases/download/v0.1.28/cargo-udeps-v0.1.28-x86_64-apple-darwin.tar.gz",
-      "checksum": "5137db61f155f810e056df721e0ebeae35433009921c276bbaf1e1b4a4662c27",
-      "bin": "./cargo-udeps-v0.1.28-x86_64-apple-darwin/cargo-udeps"
+      "checksum": "5137db61f155f810e056df721e0ebeae35433009921c276bbaf1e1b4a4662c27"
     },
     "x86_64_windows": {
-      "url": "https://github.com/est31/cargo-udeps/releases/download/v0.1.28/cargo-udeps-v0.1.28-x86_64-pc-windows-msvc.zip",
-      "checksum": "fb0ceefb5e93561464a5f46ca33114d472cdd8d71e3b2b3e148bf08e204c6e14",
-      "bin": "./cargo-udeps-v0.1.28-x86_64-pc-windows-msvc/cargo-udeps.exe"
+      "checksum": "fb0ceefb5e93561464a5f46ca33114d472cdd8d71e3b2b3e148bf08e204c6e14"
     }
   },
   "0.1.27": {
     "x86_64_linux_gnu": {
-      "url": "https://github.com/est31/cargo-udeps/releases/download/v0.1.27/cargo-udeps-v0.1.27-x86_64-unknown-linux-gnu.tar.gz",
-      "checksum": "3cfa4a13aebe2db7002dbfed48e051945d109d9dc0eb8fc2a58ca0034509afb7",
-      "bin": "./cargo-udeps-v0.1.27-x86_64-unknown-linux-gnu/cargo-udeps"
+      "checksum": "3cfa4a13aebe2db7002dbfed48e051945d109d9dc0eb8fc2a58ca0034509afb7"
     },
     "x86_64_macos": {
-      "url": "https://github.com/est31/cargo-udeps/releases/download/v0.1.27/cargo-udeps-v0.1.27-x86_64-apple-darwin.tar.gz",
-      "checksum": "4d40392285bde414a50cd110130c6fdef7712fed1991b0a18aee97a7635cff2a",
-      "bin": "./cargo-udeps-v0.1.27-x86_64-apple-darwin/cargo-udeps"
+      "checksum": "4d40392285bde414a50cd110130c6fdef7712fed1991b0a18aee97a7635cff2a"
     },
     "x86_64_windows": {
-      "url": "https://github.com/est31/cargo-udeps/releases/download/v0.1.27/cargo-udeps-v0.1.27-x86_64-pc-windows-msvc.zip",
-      "checksum": "4356331d794a192212da643b65a7122d687424b1b98021085be1ef6d37f631c5",
-      "bin": "./cargo-udeps-v0.1.27-x86_64-pc-windows-msvc/cargo-udeps.exe"
+      "checksum": "4356331d794a192212da643b65a7122d687424b1b98021085be1ef6d37f631c5"
     }
   },
   "0.1.26": {
     "x86_64_linux_gnu": {
-      "url": "https://github.com/est31/cargo-udeps/releases/download/v0.1.26/cargo-udeps-v0.1.26-x86_64-unknown-linux-gnu.tar.gz",
-      "checksum": "a6afb71254ffa24aff510efe393ba948750c2382e88f385b04e00013614d9908",
-      "bin": "./cargo-udeps-v0.1.26-x86_64-unknown-linux-gnu/cargo-udeps"
+      "checksum": "a6afb71254ffa24aff510efe393ba948750c2382e88f385b04e00013614d9908"
     },
     "x86_64_macos": {
-      "url": "https://github.com/est31/cargo-udeps/releases/download/v0.1.26/cargo-udeps-v0.1.26-x86_64-apple-darwin.tar.gz",
-      "checksum": "13cf99903727ac1b028196dd513aef2529fd2412713f57155357438b5345dd40",
-      "bin": "./cargo-udeps-v0.1.26-x86_64-apple-darwin/cargo-udeps"
+      "checksum": "13cf99903727ac1b028196dd513aef2529fd2412713f57155357438b5345dd40"
     },
     "x86_64_windows": {
-      "url": "https://github.com/est31/cargo-udeps/releases/download/v0.1.26/cargo-udeps-v0.1.26-x86_64-pc-windows-msvc.zip",
-      "checksum": "53c97086663d24357488e8d6ce97b87db664e9072ee02a92d8194a7f2a03ab22",
-      "bin": "./cargo-udeps-v0.1.26-x86_64-pc-windows-msvc/cargo-udeps.exe"
+      "checksum": "53c97086663d24357488e8d6ce97b87db664e9072ee02a92d8194a7f2a03ab22"
     }
   },
   "0.1.25": {
     "x86_64_linux_gnu": {
-      "url": "https://github.com/est31/cargo-udeps/releases/download/v0.1.25/cargo-udeps-v0.1.25-x86_64-unknown-linux-gnu.tar.gz",
-      "checksum": "6ea23ee2cda4490d131c915474601343757283c979017dbda93b820a895ffdcc",
-      "bin": "./cargo-udeps-v0.1.25-x86_64-unknown-linux-gnu/cargo-udeps"
+      "checksum": "6ea23ee2cda4490d131c915474601343757283c979017dbda93b820a895ffdcc"
     },
     "x86_64_macos": {
-      "url": "https://github.com/est31/cargo-udeps/releases/download/v0.1.25/cargo-udeps-v0.1.25-x86_64-apple-darwin.tar.gz",
-      "checksum": "713d8ce3b4e1bafd42ac8f8c6ef0537a80a52734953272963c9dd089335ac416",
-      "bin": "./cargo-udeps-v0.1.25-x86_64-apple-darwin/cargo-udeps"
+      "checksum": "713d8ce3b4e1bafd42ac8f8c6ef0537a80a52734953272963c9dd089335ac416"
     },
     "x86_64_windows": {
-      "url": "https://github.com/est31/cargo-udeps/releases/download/v0.1.25/cargo-udeps-v0.1.25-x86_64-pc-windows-msvc.zip",
-      "checksum": "a13d64671b9ae8651658b1d38ca78516c6688531e26db8e6bebf98579b7d5750",
-      "bin": "./cargo-udeps-v0.1.25-x86_64-pc-windows-msvc/cargo-udeps.exe"
+      "checksum": "a13d64671b9ae8651658b1d38ca78516c6688531e26db8e6bebf98579b7d5750"
     }
   },
   "0.1.24": {
     "x86_64_linux_gnu": {
-      "url": "https://github.com/est31/cargo-udeps/releases/download/v0.1.24/cargo-udeps-v0.1.24-x86_64-unknown-linux-gnu.tar.gz",
-      "checksum": "c0fb48dc24923ad9595a7e1de870713c02791d7ac36de3c37070748b604674eb",
-      "bin": "./cargo-udeps-v0.1.24-x86_64-unknown-linux-gnu/cargo-udeps"
+      "checksum": "c0fb48dc24923ad9595a7e1de870713c02791d7ac36de3c37070748b604674eb"
     },
     "x86_64_macos": {
-      "url": "https://github.com/est31/cargo-udeps/releases/download/v0.1.24/cargo-udeps-v0.1.24-x86_64-apple-darwin.tar.gz",
-      "checksum": "82f2e368ed82d150bdde50ae107ce9589cc29d5f9de92bcaf10c5d4b070375ca",
-      "bin": "./cargo-udeps-v0.1.24-x86_64-apple-darwin/cargo-udeps"
+      "checksum": "82f2e368ed82d150bdde50ae107ce9589cc29d5f9de92bcaf10c5d4b070375ca"
     },
     "x86_64_windows": {
-      "url": "https://github.com/est31/cargo-udeps/releases/download/v0.1.24/cargo-udeps-v0.1.24-x86_64-pc-windows-msvc.zip",
-      "checksum": "5013df810bfc8120745a76306cac66cdaa02ca5c22c7ade07265cb14e78fd76f",
-      "bin": "./cargo-udeps-v0.1.24-x86_64-pc-windows-msvc/cargo-udeps.exe"
+      "checksum": "5013df810bfc8120745a76306cac66cdaa02ca5c22c7ade07265cb14e78fd76f"
     }
   },
   "0.1.23": {
     "x86_64_linux_gnu": {
-      "url": "https://github.com/est31/cargo-udeps/releases/download/v0.1.23/cargo-udeps-v0.1.23-x86_64-unknown-linux-gnu.tar.gz",
-      "checksum": "a88fb952d257536c93d53a45d3c343428a887d92e0f2f5b1fa27c9ef82e3ef24",
-      "bin": "./cargo-udeps-v0.1.23-x86_64-unknown-linux-gnu/cargo-udeps"
+      "checksum": "a88fb952d257536c93d53a45d3c343428a887d92e0f2f5b1fa27c9ef82e3ef24"
     },
     "x86_64_macos": {
-      "url": "https://github.com/est31/cargo-udeps/releases/download/v0.1.23/cargo-udeps-v0.1.23-x86_64-apple-darwin.tar.gz",
-      "checksum": "5da34b029a7f4cf9c2049ae035c237e61b685f7ef38bbb39634e264c2c9e1ae4",
-      "bin": "./cargo-udeps-v0.1.23-x86_64-apple-darwin/cargo-udeps"
+      "checksum": "5da34b029a7f4cf9c2049ae035c237e61b685f7ef38bbb39634e264c2c9e1ae4"
     },
     "x86_64_windows": {
-      "url": "https://github.com/est31/cargo-udeps/releases/download/v0.1.23/cargo-udeps-v0.1.23-x86_64-pc-windows-msvc.zip",
-      "checksum": "102e814ac80b95719c97163718919457cdefc63b508f41fe98be51b346fdc82e",
-      "bin": "./cargo-udeps-v0.1.23-x86_64-pc-windows-msvc/cargo-udeps.exe"
+      "checksum": "102e814ac80b95719c97163718919457cdefc63b508f41fe98be51b346fdc82e"
     }
   },
   "0.1.22": {
     "x86_64_linux_gnu": {
-      "url": "https://github.com/est31/cargo-udeps/releases/download/v0.1.22/cargo-udeps-v0.1.22-x86_64-unknown-linux-gnu.tar.gz",
-      "checksum": "6f787362cad3770f08727f62221f4108ea7cfc2b7d69d6d7fc98164042e3a12e",
-      "bin": "./cargo-udeps-v0.1.22-x86_64-unknown-linux-gnu/cargo-udeps"
+      "checksum": "6f787362cad3770f08727f62221f4108ea7cfc2b7d69d6d7fc98164042e3a12e"
     },
     "x86_64_macos": {
-      "url": "https://github.com/est31/cargo-udeps/releases/download/v0.1.22/cargo-udeps-v0.1.22-x86_64-apple-darwin.tar.gz",
-      "checksum": "50ad17ee22767ae3b5f41ec1611bf9e4407ad5514fc4d42adf5eff38248791c5",
-      "bin": "./cargo-udeps-v0.1.22-x86_64-apple-darwin/cargo-udeps"
+      "checksum": "50ad17ee22767ae3b5f41ec1611bf9e4407ad5514fc4d42adf5eff38248791c5"
     },
     "x86_64_windows": {
-      "url": "https://github.com/est31/cargo-udeps/releases/download/v0.1.22/cargo-udeps-v0.1.22-x86_64-pc-windows-msvc.zip",
-      "checksum": "b0175ad16c0f7b5f3d9e32d4544b292a1bce653839d7bcf2aca536b04167b8d2",
-      "bin": "./cargo-udeps-v0.1.22-x86_64-pc-windows-msvc/cargo-udeps.exe"
+      "checksum": "b0175ad16c0f7b5f3d9e32d4544b292a1bce653839d7bcf2aca536b04167b8d2"
     }
   },
   "0.1.21": {
     "x86_64_linux_gnu": {
-      "url": "https://github.com/est31/cargo-udeps/releases/download/v0.1.21/cargo-udeps-v0.1.21-x86_64-unknown-linux-gnu.tar.gz",
-      "checksum": "63760a60a8d248495ea92bea7d7a159c43c7c2260797b553e4cbe0dff339e38d",
-      "bin": "./cargo-udeps-v0.1.21-x86_64-unknown-linux-gnu/cargo-udeps"
+      "checksum": "63760a60a8d248495ea92bea7d7a159c43c7c2260797b553e4cbe0dff339e38d"
     },
     "x86_64_macos": {
-      "url": "https://github.com/est31/cargo-udeps/releases/download/v0.1.21/cargo-udeps-v0.1.21-x86_64-apple-darwin.tar.gz",
-      "checksum": "5711a693f22ad610f80b92a278116f326927db96529654f25692aeb9afff7e39",
-      "bin": "./cargo-udeps-v0.1.21-x86_64-apple-darwin/cargo-udeps"
+      "checksum": "5711a693f22ad610f80b92a278116f326927db96529654f25692aeb9afff7e39"
     },
     "x86_64_windows": {
-      "url": "https://github.com/est31/cargo-udeps/releases/download/v0.1.21/cargo-udeps-v0.1.21-x86_64-pc-windows-msvc.zip",
-      "checksum": "e74ae634507279573ea09591b68854b93abcac305df5573e1514d489a65efed6",
-      "bin": "./cargo-udeps-v0.1.21-x86_64-pc-windows-msvc/cargo-udeps.exe"
+      "checksum": "e74ae634507279573ea09591b68854b93abcac305df5573e1514d489a65efed6"
     }
   },
   "0.1.20": {
     "x86_64_linux_gnu": {
-      "url": "https://github.com/est31/cargo-udeps/releases/download/v0.1.20/cargo-udeps-v0.1.20-x86_64-unknown-linux-gnu.tar.gz",
-      "checksum": "d6cfbe77f437cdf43af05f2405551900fc26051b02063e6967f08d772ffd55d5",
-      "bin": "./cargo-udeps-v0.1.20-x86_64-unknown-linux-gnu/cargo-udeps"
+      "checksum": "d6cfbe77f437cdf43af05f2405551900fc26051b02063e6967f08d772ffd55d5"
     },
     "x86_64_macos": {
-      "url": "https://github.com/est31/cargo-udeps/releases/download/v0.1.20/cargo-udeps-v0.1.20-x86_64-apple-darwin.tar.gz",
-      "checksum": "88c64c6699e76d538cf42b4b4281abd86c4daa0cae6e4479dc923d89b6644a43",
-      "bin": "./cargo-udeps-v0.1.20-x86_64-apple-darwin/cargo-udeps"
+      "checksum": "88c64c6699e76d538cf42b4b4281abd86c4daa0cae6e4479dc923d89b6644a43"
     },
     "x86_64_windows": {
-      "url": "https://github.com/est31/cargo-udeps/releases/download/v0.1.20/cargo-udeps-v0.1.20-x86_64-pc-windows-msvc.zip",
-      "checksum": "7706ba3da4d092d0bb756a458c3aaa6278be88e826dbd3931f69f393bd6f336c",
-      "bin": "./cargo-udeps-v0.1.20-x86_64-pc-windows-msvc/cargo-udeps.exe"
+      "checksum": "7706ba3da4d092d0bb756a458c3aaa6278be88e826dbd3931f69f393bd6f336c"
     }
   },
   "0.1.19": {
     "x86_64_linux_gnu": {
-      "url": "https://github.com/est31/cargo-udeps/releases/download/v0.1.19/cargo-udeps-v0.1.19-x86_64-unknown-linux-gnu.tar.gz",
-      "checksum": "e00e15b4c0b92e5022deb3e3233cce0ad672e2115409617336596509a0539ff0",
-      "bin": "./cargo-udeps-v0.1.19-x86_64-unknown-linux-gnu/cargo-udeps"
+      "checksum": "e00e15b4c0b92e5022deb3e3233cce0ad672e2115409617336596509a0539ff0"
     },
     "x86_64_macos": {
-      "url": "https://github.com/est31/cargo-udeps/releases/download/v0.1.19/cargo-udeps-v0.1.19-x86_64-apple-darwin.tar.gz",
-      "checksum": "38fe129e2a7be7fec82edfd74c63e1597901367d32ccd425d12ec7d9775ad13a",
-      "bin": "./cargo-udeps-v0.1.19-x86_64-apple-darwin/cargo-udeps"
+      "checksum": "38fe129e2a7be7fec82edfd74c63e1597901367d32ccd425d12ec7d9775ad13a"
     },
     "x86_64_windows": {
-      "url": "https://github.com/est31/cargo-udeps/releases/download/v0.1.19/cargo-udeps-v0.1.19-x86_64-pc-windows-msvc.zip",
-      "checksum": "1124eae09270c4c2d83de25ef6b3971b5b6a5c1ea8f08f19230e1c70a84a58ba",
-      "bin": "./cargo-udeps-v0.1.19-x86_64-pc-windows-msvc/cargo-udeps.exe"
+      "checksum": "1124eae09270c4c2d83de25ef6b3971b5b6a5c1ea8f08f19230e1c70a84a58ba"
     }
   },
   "0.1.18": {
     "x86_64_linux_gnu": {
-      "url": "https://github.com/est31/cargo-udeps/releases/download/v0.1.18/cargo-udeps-v0.1.18-x86_64-unknown-linux-gnu.tar.gz",
-      "checksum": "c4d46673bfa3e3ca776c1e05551e02cf03feb811cbe5145cbbf6a6656392e1d7",
-      "bin": "./cargo-udeps-v0.1.18-x86_64-unknown-linux-gnu/cargo-udeps"
+      "checksum": "c4d46673bfa3e3ca776c1e05551e02cf03feb811cbe5145cbbf6a6656392e1d7"
     },
     "x86_64_macos": {
-      "url": "https://github.com/est31/cargo-udeps/releases/download/v0.1.18/cargo-udeps-v0.1.18-x86_64-apple-darwin.tar.gz",
-      "checksum": "0ff553909bb750348fcced274b5c2db695e7a4b2a2ff0d4719bb2b6a200f521e",
-      "bin": "./cargo-udeps-v0.1.18-x86_64-apple-darwin/cargo-udeps"
+      "checksum": "0ff553909bb750348fcced274b5c2db695e7a4b2a2ff0d4719bb2b6a200f521e"
     },
     "x86_64_windows": {
-      "url": "https://github.com/est31/cargo-udeps/releases/download/v0.1.18/cargo-udeps-v0.1.18-x86_64-pc-windows-msvc.zip",
-      "checksum": "324280e9269d8894d3656451c002dc89501ced96a9188fad1ad29c58f0f98946",
-      "bin": "./cargo-udeps-v0.1.18-x86_64-pc-windows-msvc/cargo-udeps.exe"
+      "checksum": "324280e9269d8894d3656451c002dc89501ced96a9188fad1ad29c58f0f98946"
     }
   },
   "0.1.17": {
     "x86_64_linux_gnu": {
-      "url": "https://github.com/est31/cargo-udeps/releases/download/v0.1.17/cargo-udeps-v0.1.17-x86_64-unknown-linux-gnu.tar.gz",
-      "checksum": "45f8d023bf4eb1f256a0f14df46ab3d4d95ec1d1dd613e84c6fca9efa9ae078b",
-      "bin": "./cargo-udeps-v0.1.17-x86_64-unknown-linux-gnu/cargo-udeps"
+      "checksum": "45f8d023bf4eb1f256a0f14df46ab3d4d95ec1d1dd613e84c6fca9efa9ae078b"
     },
     "x86_64_macos": {
-      "url": "https://github.com/est31/cargo-udeps/releases/download/v0.1.17/cargo-udeps-v0.1.17-x86_64-apple-darwin.tar.gz",
-      "checksum": "09b95b66c7e85f580f410838ac0360dfea777677faae974ecccf81384573accd",
-      "bin": "./cargo-udeps-v0.1.17-x86_64-apple-darwin/cargo-udeps"
+      "checksum": "09b95b66c7e85f580f410838ac0360dfea777677faae974ecccf81384573accd"
     },
     "x86_64_windows": {
-      "url": "https://github.com/est31/cargo-udeps/releases/download/v0.1.17/cargo-udeps-v0.1.17-x86_64-pc-windows-msvc.zip",
-      "checksum": "91c843baef416d7c546f27f8adc6be5489e7b5ec341ffa58d7bb4c2c11c57a41",
-      "bin": "./cargo-udeps-v0.1.17-x86_64-pc-windows-msvc/cargo-udeps.exe"
+      "checksum": "91c843baef416d7c546f27f8adc6be5489e7b5ec341ffa58d7bb4c2c11c57a41"
     }
   },
   "0.1.16": {
     "x86_64_linux_gnu": {
-      "url": "https://github.com/est31/cargo-udeps/releases/download/v0.1.16/cargo-udeps-v0.1.16-x86_64-unknown-linux-gnu.tar.gz",
-      "checksum": "356998cf01dfa46bbed729cd622a8c27ba299a0597e13d3ff2279b60466e6177",
-      "bin": "./cargo-udeps-v0.1.16-x86_64-unknown-linux-gnu/cargo-udeps"
+      "checksum": "356998cf01dfa46bbed729cd622a8c27ba299a0597e13d3ff2279b60466e6177"
     },
     "x86_64_macos": {
-      "url": "https://github.com/est31/cargo-udeps/releases/download/v0.1.16/cargo-udeps-v0.1.16-x86_64-apple-darwin.tar.gz",
-      "checksum": "50b178ea0113492c00edc990baf2b87f77b7fd77de25d97864948a1fa119e2a3",
-      "bin": "./cargo-udeps-v0.1.16-x86_64-apple-darwin/cargo-udeps"
+      "checksum": "50b178ea0113492c00edc990baf2b87f77b7fd77de25d97864948a1fa119e2a3"
     },
     "x86_64_windows": {
-      "url": "https://github.com/est31/cargo-udeps/releases/download/v0.1.16/cargo-udeps-v0.1.16-x86_64-pc-windows-msvc.zip",
-      "checksum": "dc61b650c20e828497cba1be3c525107f992dd68675e46a6a7405d3ffd4cea57",
-      "bin": "./cargo-udeps-v0.1.16-x86_64-pc-windows-msvc/cargo-udeps.exe"
+      "checksum": "dc61b650c20e828497cba1be3c525107f992dd68675e46a6a7405d3ffd4cea57"
     }
   },
   "0.1.15": {
     "x86_64_linux_gnu": {
-      "url": "https://github.com/est31/cargo-udeps/releases/download/v0.1.15/cargo-udeps-v0.1.15-x86_64-unknown-linux-gnu.tar.gz",
-      "checksum": "40b21ac14657b70cb24e322cc21b23fa1225048651c7babcb3b0089036f33272",
-      "bin": "./cargo-udeps-v0.1.15-x86_64-unknown-linux-gnu/cargo-udeps"
+      "checksum": "40b21ac14657b70cb24e322cc21b23fa1225048651c7babcb3b0089036f33272"
     },
     "x86_64_macos": {
-      "url": "https://github.com/est31/cargo-udeps/releases/download/v0.1.15/cargo-udeps-v0.1.15-x86_64-apple-darwin.tar.gz",
-      "checksum": "b9de0a9c37046f721264077a065e54bfc9c53da75665ffea228bc89ca86e9267",
-      "bin": "./cargo-udeps-v0.1.15-x86_64-apple-darwin/cargo-udeps"
+      "checksum": "b9de0a9c37046f721264077a065e54bfc9c53da75665ffea228bc89ca86e9267"
     },
     "x86_64_windows": {
-      "url": "https://github.com/est31/cargo-udeps/releases/download/v0.1.15/cargo-udeps-v0.1.15-x86_64-pc-windows-msvc.zip",
-      "checksum": "57bc884e475d1944335d63915601e54584e1abc7887a55e6f09bda2604a228d8",
-      "bin": "./cargo-udeps-v0.1.15-x86_64-pc-windows-msvc/cargo-udeps.exe"
+      "checksum": "57bc884e475d1944335d63915601e54584e1abc7887a55e6f09bda2604a228d8"
     }
   },
   "0.1.14": {
     "x86_64_linux_gnu": {
-      "url": "https://github.com/est31/cargo-udeps/releases/download/v0.1.14/cargo-udeps-v0.1.14-x86_64-unknown-linux-gnu.tar.gz",
-      "checksum": "44ae26b5b1334458d3f3624fab610d78ad73815b23b51825641366652c1730b4",
-      "bin": "./cargo-udeps-v0.1.14-x86_64-unknown-linux-gnu/cargo-udeps"
+      "checksum": "44ae26b5b1334458d3f3624fab610d78ad73815b23b51825641366652c1730b4"
     },
     "x86_64_macos": {
-      "url": "https://github.com/est31/cargo-udeps/releases/download/v0.1.14/cargo-udeps-v0.1.14-x86_64-apple-darwin.tar.gz",
-      "checksum": "38097b2c07c57ade1dbbe81f0bcb5f2720791c9506603f9c199b899f0cb75081",
-      "bin": "./cargo-udeps-v0.1.14-x86_64-apple-darwin/cargo-udeps"
+      "checksum": "38097b2c07c57ade1dbbe81f0bcb5f2720791c9506603f9c199b899f0cb75081"
     },
     "x86_64_windows": {
-      "url": "https://github.com/est31/cargo-udeps/releases/download/v0.1.14/cargo-udeps-v0.1.14-x86_64-pc-windows-msvc.zip",
-      "checksum": "64b21bbafd1d5a99db2c9fb0dd2cf76c491cf7d498f66a01dd3dd388205c2057",
-      "bin": "./cargo-udeps-v0.1.14-x86_64-pc-windows-msvc/cargo-udeps.exe"
+      "checksum": "64b21bbafd1d5a99db2c9fb0dd2cf76c491cf7d498f66a01dd3dd388205c2057"
     }
   },
   "0.1.13": {
     "x86_64_linux_gnu": {
-      "url": "https://github.com/est31/cargo-udeps/releases/download/v0.1.13/cargo-udeps-v0.1.13-x86_64-unknown-linux-gnu.tar.gz",
-      "checksum": "8c3ba8017c52ab8579de0df4f16ac15dabbe070b2040f21a89e4c7d5819cfa9f",
-      "bin": "./cargo-udeps-v0.1.13-x86_64-unknown-linux-gnu/cargo-udeps"
+      "checksum": "8c3ba8017c52ab8579de0df4f16ac15dabbe070b2040f21a89e4c7d5819cfa9f"
     },
     "x86_64_macos": {
-      "url": "https://github.com/est31/cargo-udeps/releases/download/v0.1.13/cargo-udeps-v0.1.13-x86_64-apple-darwin.tar.gz",
-      "checksum": "5fdcba8572a3b019adf487397261dafe063898a878167d1492f7cb0031860c63",
-      "bin": "./cargo-udeps-v0.1.13-x86_64-apple-darwin/cargo-udeps"
+      "checksum": "5fdcba8572a3b019adf487397261dafe063898a878167d1492f7cb0031860c63"
     },
     "x86_64_windows": {
-      "url": "https://github.com/est31/cargo-udeps/releases/download/v0.1.13/cargo-udeps-v0.1.13-x86_64-pc-windows-msvc.zip",
-      "checksum": "18e026ee3ae124c5c5afc081fae1c1af4496d43f5977ea8fe6379685ab123ef0",
-      "bin": "./cargo-udeps-v0.1.13-x86_64-pc-windows-msvc/cargo-udeps.exe"
+      "checksum": "18e026ee3ae124c5c5afc081fae1c1af4496d43f5977ea8fe6379685ab123ef0"
     }
   },
   "0.1.12": {
     "x86_64_linux_gnu": {
-      "url": "https://github.com/est31/cargo-udeps/releases/download/v0.1.12/cargo-udeps-v0.1.12-x86_64-unknown-linux-gnu.tar.gz",
-      "checksum": "1e9c5b7034cc74482bdf5ac3e03155b7041997be05902517abf4aa1ee5b243ad",
-      "bin": "./cargo-udeps-v0.1.12-x86_64-unknown-linux-gnu/cargo-udeps"
+      "checksum": "1e9c5b7034cc74482bdf5ac3e03155b7041997be05902517abf4aa1ee5b243ad"
     },
     "x86_64_macos": {
-      "url": "https://github.com/est31/cargo-udeps/releases/download/v0.1.12/cargo-udeps-v0.1.12-x86_64-apple-darwin.tar.gz",
-      "checksum": "f9e7f6f10ba51507fc33b58b5149352a041523eb89b1d6f3309309cfc519bce5",
-      "bin": "./cargo-udeps-v0.1.12-x86_64-apple-darwin/cargo-udeps"
+      "checksum": "f9e7f6f10ba51507fc33b58b5149352a041523eb89b1d6f3309309cfc519bce5"
     },
     "x86_64_windows": {
-      "url": "https://github.com/est31/cargo-udeps/releases/download/v0.1.12/cargo-udeps-v0.1.12-x86_64-pc-windows-msvc.zip",
-      "checksum": "ff89fe55d6d0dbba7a2676caa23ff8bfa6c8ea69e71738608281b1556e2ff530",
-      "bin": "./cargo-udeps-v0.1.12-x86_64-pc-windows-msvc/cargo-udeps.exe"
+      "checksum": "ff89fe55d6d0dbba7a2676caa23ff8bfa6c8ea69e71738608281b1556e2ff530"
     }
   },
   "0.1.11": {
     "x86_64_linux_gnu": {
-      "url": "https://github.com/est31/cargo-udeps/releases/download/v0.1.11/cargo-udeps-v0.1.11-x86_64-unknown-linux-gnu.tar.gz",
-      "checksum": "5034f09ef5afabc65cfe1577bc067d849f5d2f08936df67d7eddf0acf5126825",
-      "bin": "./cargo-udeps-v0.1.11-x86_64-unknown-linux-gnu/cargo-udeps"
+      "checksum": "5034f09ef5afabc65cfe1577bc067d849f5d2f08936df67d7eddf0acf5126825"
     },
     "x86_64_macos": {
-      "url": "https://github.com/est31/cargo-udeps/releases/download/v0.1.11/cargo-udeps-v0.1.11-x86_64-apple-darwin.tar.gz",
-      "checksum": "2c1b34cfe252da51bfa46906c0a7e604ead0275b283c34f6c35def195d89be57",
-      "bin": "./cargo-udeps-v0.1.11-x86_64-apple-darwin/cargo-udeps"
+      "checksum": "2c1b34cfe252da51bfa46906c0a7e604ead0275b283c34f6c35def195d89be57"
     },
     "x86_64_windows": {
-      "url": "https://github.com/est31/cargo-udeps/releases/download/v0.1.11/cargo-udeps-v0.1.11-x86_64-pc-windows-msvc.zip",
-      "checksum": "6b822b2512be7d9417ca414f134f86ac42b6ee664d045a828dc89afcc80c523b",
-      "bin": "./cargo-udeps-v0.1.11-x86_64-pc-windows-msvc/cargo-udeps.exe"
+      "checksum": "6b822b2512be7d9417ca414f134f86ac42b6ee664d045a828dc89afcc80c523b"
     }
   },
   "0.1.10": {
     "x86_64_linux_gnu": {
-      "url": "https://github.com/est31/cargo-udeps/releases/download/v0.1.10/cargo-udeps-v0.1.10-x86_64-unknown-linux-gnu.tar.gz",
-      "checksum": "2179f38ed4265af2584e4bb6510d98579ab61a3c3bd6e44d1be377297758a90a",
-      "bin": "./cargo-udeps-v0.1.10-x86_64-unknown-linux-gnu/cargo-udeps"
+      "checksum": "2179f38ed4265af2584e4bb6510d98579ab61a3c3bd6e44d1be377297758a90a"
     },
     "x86_64_macos": {
-      "url": "https://github.com/est31/cargo-udeps/releases/download/v0.1.10/cargo-udeps-v0.1.10-x86_64-apple-darwin.tar.gz",
-      "checksum": "69c93b55f4f4b68f199b4763ff728e29f09dc6ff876db7f243a238d7c9fe2327",
-      "bin": "./cargo-udeps-v0.1.10-x86_64-apple-darwin/cargo-udeps"
+      "checksum": "69c93b55f4f4b68f199b4763ff728e29f09dc6ff876db7f243a238d7c9fe2327"
     },
     "x86_64_windows": {
-      "url": "https://github.com/est31/cargo-udeps/releases/download/v0.1.10/cargo-udeps-v0.1.10-x86_64-pc-windows-msvc.zip",
-      "checksum": "486491f68d3c7a9c52401aa36930dd6c28f8d9826a6f30d079e5f3cc799011bd",
-      "bin": "./cargo-udeps-v0.1.10-x86_64-pc-windows-msvc/cargo-udeps.exe"
+      "checksum": "486491f68d3c7a9c52401aa36930dd6c28f8d9826a6f30d079e5f3cc799011bd"
     }
   },
   "0.1.9": {
     "x86_64_linux_gnu": {
-      "url": "https://github.com/est31/cargo-udeps/releases/download/v0.1.9/cargo-udeps-v0.1.9-x86_64-unknown-linux-gnu.tar.gz",
-      "checksum": "222c0babc34825bca02ea9459095af45caeaef0f4bd98fd80f14c4aa2d9a6f67",
-      "bin": "./cargo-udeps-v0.1.9-x86_64-unknown-linux-gnu/cargo-udeps"
+      "checksum": "222c0babc34825bca02ea9459095af45caeaef0f4bd98fd80f14c4aa2d9a6f67"
     },
     "x86_64_macos": {
-      "url": "https://github.com/est31/cargo-udeps/releases/download/v0.1.9/cargo-udeps-v0.1.9-x86_64-apple-darwin.tar.gz",
-      "checksum": "7b4c568bbff1f15c422f0e4beee973428adb526f30f8d4974014bdafd128fa54",
-      "bin": "./cargo-udeps-v0.1.9-x86_64-apple-darwin/cargo-udeps"
+      "checksum": "7b4c568bbff1f15c422f0e4beee973428adb526f30f8d4974014bdafd128fa54"
     },
     "x86_64_windows": {
-      "url": "https://github.com/est31/cargo-udeps/releases/download/v0.1.9/cargo-udeps-v0.1.9-x86_64-pc-windows-msvc.zip",
-      "checksum": "8d7464fa79959ff4b9914a4769c1a0578172f74cfea90839855855ab070d4d0d",
-      "bin": "./cargo-udeps-v0.1.9-x86_64-pc-windows-msvc/cargo-udeps.exe"
+      "checksum": "8d7464fa79959ff4b9914a4769c1a0578172f74cfea90839855855ab070d4d0d"
     }
   },
   "0.1.8": {
     "x86_64_linux_gnu": {
-      "url": "https://github.com/est31/cargo-udeps/releases/download/v0.1.8/cargo-udeps-v0.1.8-x86_64-unknown-linux-gnu.tar.gz",
-      "checksum": "db00d972d14376ea059f84fc411576f8cec2ad4ad29a407374266294d6758e3f",
-      "bin": "./cargo-udeps-v0.1.8-x86_64-unknown-linux-gnu/cargo-udeps"
+      "checksum": "db00d972d14376ea059f84fc411576f8cec2ad4ad29a407374266294d6758e3f"
     },
     "x86_64_macos": {
-      "url": "https://github.com/est31/cargo-udeps/releases/download/v0.1.8/cargo-udeps-v0.1.8-x86_64-apple-darwin.tar.gz",
-      "checksum": "abb8d205f1f9d8e890638fca23b3d960326b7aa94eb3c98cd31f72bc1eeb4a70",
-      "bin": "./cargo-udeps-v0.1.8-x86_64-apple-darwin/cargo-udeps"
+      "checksum": "abb8d205f1f9d8e890638fca23b3d960326b7aa94eb3c98cd31f72bc1eeb4a70"
     },
     "x86_64_windows": {
-      "url": "https://github.com/est31/cargo-udeps/releases/download/v0.1.8/cargo-udeps-v0.1.8-x86_64-pc-windows-msvc.zip",
-      "checksum": "7e35d28f7de7f56fa5cfffff4471fe24c72b7da15956fd0a81176cdf68ad12e9",
-      "bin": "./cargo-udeps-v0.1.8-x86_64-pc-windows-msvc/cargo-udeps.exe"
+      "checksum": "7e35d28f7de7f56fa5cfffff4471fe24c72b7da15956fd0a81176cdf68ad12e9"
     }
   },
   "0.1.7": {
     "x86_64_linux_gnu": {
-      "url": "https://github.com/est31/cargo-udeps/releases/download/v0.1.7/cargo-udeps-v0.1.7-x86_64-unknown-linux-gnu.tar.gz",
-      "checksum": "469915bcdc5daca376b1296a04207163cc03a3eea5f142463a3ccbf180e49c63",
-      "bin": "./cargo-udeps-v0.1.7-x86_64-unknown-linux-gnu/cargo-udeps"
+      "checksum": "469915bcdc5daca376b1296a04207163cc03a3eea5f142463a3ccbf180e49c63"
     },
     "x86_64_macos": {
-      "url": "https://github.com/est31/cargo-udeps/releases/download/v0.1.7/cargo-udeps-v0.1.7-x86_64-apple-darwin.tar.gz",
-      "checksum": "c8ea15dfbbcadc62fd3cef1f93d285cfd400ad9ea90615a020e99f69ddba5890",
-      "bin": "./cargo-udeps-v0.1.7-x86_64-apple-darwin/cargo-udeps"
+      "checksum": "c8ea15dfbbcadc62fd3cef1f93d285cfd400ad9ea90615a020e99f69ddba5890"
     },
     "x86_64_windows": {
-      "url": "https://github.com/est31/cargo-udeps/releases/download/v0.1.7/cargo-udeps-v0.1.7-x86_64-pc-windows-msvc.zip",
-      "checksum": "aa25c1329693bc167daf704ecc9e3b93a7d28e3e01d9df8a760370ad861ad155",
-      "bin": "./cargo-udeps-v0.1.7-x86_64-pc-windows-msvc/cargo-udeps.exe"
+      "checksum": "aa25c1329693bc167daf704ecc9e3b93a7d28e3e01d9df8a760370ad861ad155"
     }
   },
   "0.1.6": {
     "x86_64_linux_gnu": {
-      "url": "https://github.com/est31/cargo-udeps/releases/download/v0.1.6/cargo-udeps-v0.1.6-x86_64-unknown-linux-gnu.tar.gz",
-      "checksum": "645d77a5111f5ff807f77d19d23dede026c37738a1d163faadebc7f8ea90ff7c",
-      "bin": "./cargo-udeps-v0.1.6-x86_64-unknown-linux-gnu/cargo-udeps"
+      "checksum": "645d77a5111f5ff807f77d19d23dede026c37738a1d163faadebc7f8ea90ff7c"
     },
     "x86_64_macos": {
-      "url": "https://github.com/est31/cargo-udeps/releases/download/v0.1.6/cargo-udeps-v0.1.6-x86_64-apple-darwin.tar.gz",
-      "checksum": "041170b474e5790da18f2d5ce11f4936071511c365e460e4347109b6e3e7689d",
-      "bin": "./cargo-udeps-v0.1.6-x86_64-apple-darwin/cargo-udeps"
+      "checksum": "041170b474e5790da18f2d5ce11f4936071511c365e460e4347109b6e3e7689d"
     },
     "x86_64_windows": {
-      "url": "https://github.com/est31/cargo-udeps/releases/download/v0.1.6/cargo-udeps-v0.1.6-x86_64-pc-windows-msvc.zip",
-      "checksum": "578d74e874c372a7abe62a84c4c0143bd8f3229bb59464682d4e3492ca21d474",
-      "bin": "./cargo-udeps-v0.1.6-x86_64-pc-windows-msvc/cargo-udeps.exe"
+      "checksum": "578d74e874c372a7abe62a84c4c0143bd8f3229bb59464682d4e3492ca21d474"
     }
   }
 }

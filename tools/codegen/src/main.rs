@@ -77,11 +77,27 @@ fn main() -> Result<()> {
         match serde_json::from_slice(&fs::read(manifest_path)?) {
             Ok(m) => {
                 manifests = m;
-                for (k, v) in &mut manifests.map {
-                    if v.version.is_none() {
-                        v.version = Some(k.0.clone());
+                for (k, manifest) in &mut manifests.map {
+                    if manifest.version.is_none() {
+                        manifest.version = Some(k.0.clone());
+                    }
+                    let version = &*manifest.version.as_ref().unwrap().to_string();
+                    if let Some(template) = &manifests.template {
+                        for (platform, d) in &mut manifest.download_info {
+                            let template = &template.download_info[platform];
+                            d.url = Some(template.url.replace("${version}", version));
+                            d.bin_dir = template
+                                .bin_dir
+                                .as_ref()
+                                .map(|s| s.replace("${version}", version));
+                            d.bin = template
+                                .bin
+                                .as_ref()
+                                .map(|s| s.replace("${version}", version));
+                        }
                     }
                 }
+                manifests.template = None;
             }
             Err(e) => eprintln!("failed to load old manifest: {e}"),
         }
@@ -196,7 +212,7 @@ fn main() -> Result<()> {
             download_info.insert(
                 platform,
                 ManifestDownloadInfo {
-                    url,
+                    url: Some(url),
                     checksum: hash,
                     bin_dir: base_download_info
                         .bin_dir
@@ -271,6 +287,40 @@ fn main() -> Result<()> {
 
     if latest_only {
         manifests.map.retain(|k, _| k.0 == Version::latest());
+    }
+
+    let original_manifests = manifests.clone();
+    let mut template = Some(ManifestTemplate {
+        download_info: BTreeMap::new(),
+    });
+    'outer: for manifest in manifests.map.values_mut() {
+        let version = &*manifest.version.as_ref().unwrap().to_string();
+        let t = template.as_mut().unwrap();
+        for (platform, d) in &mut manifest.download_info {
+            let template_url = d.url.take().unwrap().replace(version, "${version}");
+            let template_bin_dir = d.bin_dir.take().map(|s| s.replace(version, "${version}"));
+            let template_bin = d.bin.take().map(|s| s.replace(version, "${version}"));
+            if let Some(d) = t.download_info.get(platform) {
+                if template_url != d.url || template_bin_dir != d.bin_dir || template_bin != d.bin {
+                    template = None;
+                    break 'outer;
+                }
+            } else {
+                t.download_info.insert(
+                    *platform,
+                    ManifestTemplateDownloadInfo {
+                        url: template_url,
+                        bin_dir: template_bin_dir,
+                        bin: template_bin,
+                    },
+                );
+            }
+        }
+    }
+    if template.is_none() {
+        manifests = original_manifests;
+    } else {
+        manifests.template = template;
     }
 
     // Only serialize version if key != version.
@@ -459,8 +509,9 @@ impl<'de> Deserialize<'de> for Version {
     }
 }
 
-#[derive(Debug, Default, Serialize, Deserialize)]
+#[derive(Debug, Clone, Default, Serialize, Deserialize)]
 struct Manifests {
+    template: Option<ManifestTemplate>,
     #[serde(flatten)]
     map: BTreeMap<Reverse<Version>, Manifest>,
 }
@@ -475,8 +526,26 @@ struct Manifest {
 
 #[derive(Debug, Clone, Serialize, Deserialize)]
 struct ManifestDownloadInfo {
-    url: String,
+    #[serde(skip_serializing_if = "Option::is_none")]
+    url: Option<String>,
     checksum: String,
+    /// Default to ${cargo_bin}
+    #[serde(skip_serializing_if = "Option::is_none")]
+    bin_dir: Option<String>,
+    /// Default to ${tool}${exe}
+    #[serde(skip_serializing_if = "Option::is_none")]
+    bin: Option<String>,
+}
+
+#[derive(Debug, Clone, Serialize, Deserialize)]
+struct ManifestTemplate {
+    #[serde(flatten)]
+    download_info: BTreeMap<HostPlatform, ManifestTemplateDownloadInfo>,
+}
+
+#[derive(Debug, Clone, Serialize, Deserialize)]
+struct ManifestTemplateDownloadInfo {
+    url: String,
     /// Default to ${cargo_bin}
     #[serde(skip_serializing_if = "Option::is_none")]
     bin_dir: Option<String>,
