@@ -1,4 +1,4 @@
-use anyhow::{Context as _, Result};
+use anyhow::{bail, Context as _, Result};
 use fs_err as fs;
 use serde::{Deserialize, Serialize};
 use sha2::{Digest, Sha256};
@@ -10,6 +10,7 @@ use std::{
     path::Path,
     slice,
     str::FromStr,
+    time::Duration,
 };
 
 fn main() -> Result<()> {
@@ -37,6 +38,7 @@ fn main() -> Result<()> {
         .repository
         .strip_prefix("https://github.com/")
         .context("repository must be starts with https://github.com/")?;
+
     eprintln!("downloading releases of https://github.com/{repo}");
     let mut releases: github::Releases = vec![];
     for page in 1.. {
@@ -61,7 +63,7 @@ fn main() -> Result<()> {
         })
         .collect();
 
-    let mut manifests: Manifests = BTreeMap::new();
+    let mut manifests: Manifests = Manifests::default();
     let mut semver_versions = BTreeSet::new();
     let mut has_build_metadata = false;
 
@@ -79,8 +81,8 @@ fn main() -> Result<()> {
     }
     let version_req: Option<semver::VersionReq> = match args.get(1) {
         _ if latest_only => {
-            if !manifests.is_empty()
-                && manifests.first_key_value().unwrap().1.version
+            if !manifests.map.is_empty()
+                && manifests.map.first_key_value().unwrap().1.version
                     == releases.first().unwrap().0.parse()?
             {
                 return Ok(());
@@ -92,7 +94,7 @@ fn main() -> Result<()> {
             None => Some(">= 0.0.1".parse()?), // HACK: ignore pre-releases
         },
         Some(version_req) => {
-            for version in manifests.keys() {
+            for version in manifests.map.keys() {
                 let Some(semver_version) = version.0.to_semver() else {
                     continue;
                 };
@@ -103,7 +105,7 @@ fn main() -> Result<()> {
             }
 
             let req = if version_req == "latest" {
-                if manifests.is_empty() {
+                if manifests.map.is_empty() {
                     format!("={}", releases.first().unwrap().0).parse()?
                 } else {
                     format!(">{}", semver_versions.last().unwrap()).parse()?
@@ -142,7 +144,7 @@ fn main() -> Result<()> {
                 .as_slice()
                 .iter()
                 .map(|asset_name| replace_vars(asset_name, package, version, platform))
-                .collect::<Vec<_>>();
+                .collect::<Result<Vec<_>>>()?;
             let (url, asset_name) = match asset_names.iter().find_map(|asset_name| {
                 release
                     .assets
@@ -191,7 +193,8 @@ fn main() -> Result<()> {
                         .bin
                         .as_ref()
                         .or(base_info.bin.as_ref())
-                        .map(|s| replace_vars(s, package, version, platform)),
+                        .map(|s| replace_vars(s, package, version, platform))
+                        .transpose()?,
                 },
             );
             buf.clear();
@@ -217,7 +220,7 @@ fn main() -> Result<()> {
         if semver_version.pre.is_empty() {
             semver_versions.insert(semver_version.clone());
         }
-        manifests.insert(
+        manifests.map.insert(
             Reverse(semver_version.clone().into()),
             Manifest {
                 version: semver_version.into(),
@@ -233,27 +236,27 @@ fn main() -> Result<()> {
         let mut prev_version = semver_versions.iter().next().unwrap();
         for version in &semver_versions {
             if !(version.major == 0 && version.minor == 0) {
-                manifests.insert(
+                manifests.map.insert(
                     Reverse(Version::new(version.major, Some(version.minor))),
-                    manifests[&Reverse(Version::from(version.clone()))].clone(),
+                    manifests.map[&Reverse(Version::from(version.clone()))].clone(),
                 );
             }
             if version.major != 0 {
-                manifests.insert(
+                manifests.map.insert(
                     Reverse(Version::new(version.major, None)),
-                    manifests[&Reverse(Version::from(version.clone()))].clone(),
+                    manifests.map[&Reverse(Version::from(version.clone()))].clone(),
                 );
             }
             prev_version = version;
         }
-        manifests.insert(
+        manifests.map.insert(
             Reverse(Version::latest()),
-            manifests[&Reverse(Version::from(prev_version.clone()))].clone(),
+            manifests.map[&Reverse(Version::from(prev_version.clone()))].clone(),
         );
     }
 
     if latest_only {
-        manifests.retain(|k, _| k.0 == Version::latest());
+        manifests.map.retain(|k, _| k.0 == Version::latest());
     }
 
     let mut buf = serde_json::to_vec_pretty(&manifests)?;
@@ -263,12 +266,17 @@ fn main() -> Result<()> {
     Ok(())
 }
 
-fn replace_vars(s: &str, package: &str, version: &str, platform: HostPlatform) -> String {
-    s.replace("${package}", package)
+fn replace_vars(s: &str, package: &str, version: &str, platform: HostPlatform) -> Result<String> {
+    let s = s
+        .replace("${package}", package)
         .replace("${tool}", package)
         .replace("${rust_target}", platform.rust_target())
         .replace("${version}", version)
-        .replace("${exe}", platform.exe_suffix())
+        .replace("${exe}", platform.exe_suffix());
+    if s.contains('$') {
+        bail!("variable not fully replaced: '{s}'");
+    }
+    Ok(s)
 }
 
 fn download(url: &str) -> Result<ureq::Response> {
@@ -286,12 +294,10 @@ fn download(url: &str) -> Result<ureq::Response> {
         }
         retry += 1;
         eprintln!("download failed; retrying ({retry}/5)");
-        std::thread::sleep(std::time::Duration::from_secs(1));
+        std::thread::sleep(Duration::from_secs(1));
     }
     Err(last_error.unwrap().into())
 }
-
-type Manifests = BTreeMap<Reverse<Version>, Manifest>;
 
 #[derive(Debug, Clone, PartialEq, Eq)]
 struct Version {
@@ -363,30 +369,28 @@ impl Ord for Version {
 }
 impl fmt::Display for Version {
     fn fmt(&self, f: &mut fmt::Formatter<'_>) -> fmt::Result {
-        'scope: {
-            let Some(major) = self.major else {
-                f.write_str("latest")?;
-                break 'scope;
-            };
-            f.write_str(&major.to_string())?;
-            let Some(minor) = self.minor else {
-                break 'scope;
-            };
-            f.write_str(".")?;
-            f.write_str(&minor.to_string())?;
-            let Some(patch) = self.patch else {
-                break 'scope;
-            };
-            f.write_str(".")?;
-            f.write_str(&patch.to_string())?;
-            if !self.pre.is_empty() {
-                f.write_str("-")?;
-                f.write_str(&self.pre)?;
-            }
-            if !self.build.is_empty() {
-                f.write_str("+")?;
-                f.write_str(&self.build)?;
-            }
+        let Some(major) = self.major else {
+            f.write_str("latest")?;
+            return Ok(());
+        };
+        f.write_str(&major.to_string())?;
+        let Some(minor) = self.minor else {
+            return Ok(());
+        };
+        f.write_str(".")?;
+        f.write_str(&minor.to_string())?;
+        let Some(patch) = self.patch else {
+            return Ok(());
+        };
+        f.write_str(".")?;
+        f.write_str(&patch.to_string())?;
+        if !self.pre.is_empty() {
+            f.write_str("-")?;
+            f.write_str(&self.pre)?;
+        }
+        if !self.build.is_empty() {
+            f.write_str("+")?;
+            f.write_str(&self.build)?;
         }
         Ok(())
     }
@@ -430,6 +434,12 @@ impl<'de> Deserialize<'de> for Version {
             .parse()
             .map_err(D::Error::custom)
     }
+}
+
+#[derive(Debug, Default, Serialize, Deserialize)]
+struct Manifests {
+    #[serde(flatten)]
+    map: BTreeMap<Reverse<Version>, Manifest>,
 }
 
 #[derive(Debug, Clone, Serialize, Deserialize)]
