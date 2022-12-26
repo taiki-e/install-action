@@ -53,6 +53,14 @@ jobs:
       - uses: ./
         with:
           tool: ${{ matrix.tool }}
+      # We use the version output to check the version of binstall, but they
+      # several times change the version output format in the past so we need to
+      # check it with CI. (e.g., 0.14.0->0.16.0 update change it
+      # from "cargo-binstall <version>" to "<version>")
+      - run: |
+          if [[ "$(cargo binstall -V)" != "$(jq -r '.latest.version' manifests/cargo-binstall.json)" ]]; then
+            exit 1
+          fi
 
   test-container:
     strategy:

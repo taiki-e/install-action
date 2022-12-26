@@ -227,7 +227,7 @@ install_cargo_binstall() {
     binstall_version=$(jq -r '.latest.version' "${manifest_dir}/cargo-binstall.json")
     local install_binstall='1'
     if [[ -f "${cargo_bin}/cargo-binstall${exe}" ]]; then
-        if [[ "$(cargo binstall -V)" == "cargo-binstall ${binstall_version}" ]]; then
+        if [[ "$(cargo binstall -V)" == "${binstall_version}" ]]; then
             info "cargo-binstall already installed on in ${cargo_bin}/cargo-binstall${exe}"
             install_binstall=''
         else
