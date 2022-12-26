@@ -1,24 +1,38 @@
 {
-  "latest": {
-    "version": "0.18.1",
+  "template": {
     "x86_64_linux_musl": {
-      "url": "https://github.com/cargo-bins/cargo-binstall/releases/download/v0.18.1/cargo-binstall-x86_64-unknown-linux-musl.tgz",
+      "url": "https://github.com/cargo-bins/cargo-binstall/releases/download/v${version}/cargo-binstall-x86_64-unknown-linux-musl.tgz"
+    },
+    "x86_64_macos": {
+      "url": "https://github.com/cargo-bins/cargo-binstall/releases/download/v${version}/cargo-binstall-x86_64-apple-darwin.zip"
+    },
+    "x86_64_windows": {
+      "url": "https://github.com/cargo-bins/cargo-binstall/releases/download/v${version}/cargo-binstall-x86_64-pc-windows-msvc.zip"
+    },
+    "aarch64_linux_musl": {
+      "url": "https://github.com/cargo-bins/cargo-binstall/releases/download/v${version}/cargo-binstall-aarch64-unknown-linux-musl.tgz"
+    },
+    "aarch64_macos": {
+      "url": "https://github.com/cargo-bins/cargo-binstall/releases/download/v${version}/cargo-binstall-aarch64-apple-darwin.zip"
+    }
+  },
+  "latest": {
+    "version": "0.18.1"
+  },
+  "0.18.1": {
+    "x86_64_linux_musl": {
       "checksum": "ef05f04e951665b617fe0796ec72e5dc51e8724ee0b09a0da129fa24162369a0"
     },
     "x86_64_macos": {
-      "url": "https://github.com/cargo-bins/cargo-binstall/releases/download/v0.18.1/cargo-binstall-x86_64-apple-darwin.zip",
       "checksum": "291ad8f69e3f31a620c17a68cb456f64ab736947a76c57ffcc6f8602a09b4cb5"
     },
     "x86_64_windows": {
-      "url": "https://github.com/cargo-bins/cargo-binstall/releases/download/v0.18.1/cargo-binstall-x86_64-pc-windows-msvc.zip",
       "checksum": "bfc078cb22626bb80e1bb23a3cc74f4362c1326ec3f3dfc1cc46e1bd13528906"
     },
     "aarch64_linux_musl": {
-      "url": "https://github.com/cargo-bins/cargo-binstall/releases/download/v0.18.1/cargo-binstall-aarch64-unknown-linux-musl.tgz",
       "checksum": "d26b5bbe14bbf7bd0f5fdd5b843f7f6df2c75d01168d42909932a422f17a4d5b"
     },
     "aarch64_macos": {
-      "url": "https://github.com/cargo-bins/cargo-binstall/releases/download/v0.18.1/cargo-binstall-aarch64-apple-darwin.zip",
       "checksum": "9ea261b7617bf6161447aa42b8e8979a7369aed3e5cef6b3774bec55fa4c70b6"
     }
   }

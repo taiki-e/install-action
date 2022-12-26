@@ -138,6 +138,16 @@ read_manifest() {
     manifest_data=$(<"${manifest_dir}/${tool}.json")
     local manifest
     manifest=$(jq <<<"${manifest_data}" -r ".\"${version}\"")
+    case "${manifest}" in
+        null) bail "version '${version}' for ${tool} is not supported" ;;
+    esac
+    local exact_version
+    exact_version=$(jq <<<"${manifest}" -r '.version')
+    if [[ "${exact_version}" == "null" ]]; then
+        exact_version="${version}"
+    else
+        manifest=$(jq <<<"${manifest_data}" -r ".\"${exact_version}\"")
+    fi
     local download_info
     local host_platform
     case "${host_os}" in
@@ -191,11 +201,6 @@ read_manifest() {
     if [[ "${url}" == "null" ]]; then
         local template
         template=$(jq <<<"${manifest_data}" -r ".template.${host_platform}")
-        local exact_version
-        exact_version=$(jq <<<"${manifest}" -r '.version')
-        if [[ "${exact_version}" == "null" ]]; then
-            exact_version="${version}"
-        fi
         url=$(jq <<<"${template}" -r '.url')
         url="${url//\$\{version\}/${exact_version}}"
         bin_dir=$(jq <<<"${template}" -r '.bin_dir')

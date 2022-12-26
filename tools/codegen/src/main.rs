@@ -78,10 +78,8 @@ fn main() -> Result<()> {
             Ok(m) => {
                 manifests = m;
                 for (k, manifest) in &mut manifests.map {
-                    if manifest.version.is_none() {
-                        manifest.version = Some(k.0.clone());
-                    }
-                    let version = &*manifest.version.as_ref().unwrap().to_string();
+                    let ManifestRef::Real(manifest) = manifest else { continue };
+                    let version = &*k.0.to_string();
                     if let Some(template) = &manifests.template {
                         for (platform, d) in &mut manifest.download_info {
                             let template = &template.download_info[platform];
@@ -104,18 +102,18 @@ fn main() -> Result<()> {
     }
     let version_req: Option<semver::VersionReq> = match args.get(1) {
         _ if latest_only => {
-            if !manifests.map.is_empty()
-                && *manifests
-                    .map
-                    .first_key_value()
-                    .unwrap()
-                    .1
-                    .version
-                    .as_ref()
-                    .unwrap()
-                    == releases.first().unwrap().0.parse()?
-            {
-                return Ok(());
+            if args.get(1).map(String::as_str) == Some("latest") {
+                if let Some(m) = manifests.map.first_key_value() {
+                    let version = match m.1 {
+                        ManifestRef::Ref { version } => version,
+                        ManifestRef::Real(_) => &m.0 .0,
+                    };
+                    if !manifests.map.is_empty()
+                        && *version == releases.first().unwrap().0.parse()?
+                    {
+                        return Ok(());
+                    }
+                }
             }
             Some(format!("={}", releases.first().unwrap().0).parse()?)
         }
@@ -252,10 +250,7 @@ fn main() -> Result<()> {
         }
         manifests.map.insert(
             Reverse(semver_version.clone().into()),
-            Manifest {
-                version: Some(semver_version.into()),
-                download_info,
-            },
+            ManifestRef::Real(Manifest { download_info }),
         );
     }
     if has_build_metadata {
@@ -267,34 +262,43 @@ fn main() -> Result<()> {
         for version in &semver_versions {
             if !(version.major == 0 && version.minor == 0) {
                 manifests.map.insert(
-                    Reverse(Version::new(version.major, Some(version.minor))),
-                    manifests.map[&Reverse(Version::from(version.clone()))].clone(),
+                    Reverse(Version::omitted(version.major, Some(version.minor))),
+                    ManifestRef::Ref {
+                        version: version.clone().into(),
+                    },
                 );
             }
             if version.major != 0 {
                 manifests.map.insert(
-                    Reverse(Version::new(version.major, None)),
-                    manifests.map[&Reverse(Version::from(version.clone()))].clone(),
+                    Reverse(Version::omitted(version.major, None)),
+                    ManifestRef::Ref {
+                        version: version.clone().into(),
+                    },
                 );
             }
             prev_version = version;
         }
         manifests.map.insert(
             Reverse(Version::latest()),
-            manifests.map[&Reverse(Version::from(prev_version.clone()))].clone(),
+            ManifestRef::Ref {
+                version: prev_version.clone().into(),
+            },
         );
     }
 
     if latest_only {
-        manifests.map.retain(|k, _| k.0 == Version::latest());
+        manifests
+            .map
+            .retain(|k, m| k.0 == Version::latest() || matches!(m, ManifestRef::Real(..)));
     }
 
     let original_manifests = manifests.clone();
     let mut template = Some(ManifestTemplate {
         download_info: BTreeMap::new(),
     });
-    'outer: for manifest in manifests.map.values_mut() {
-        let version = &*manifest.version.as_ref().unwrap().to_string();
+    'outer: for (version, manifest) in &mut manifests.map {
+        let ManifestRef::Real(manifest) = manifest else { continue };
+        let version = &*version.0.to_string();
         let t = template.as_mut().unwrap();
         for (platform, d) in &mut manifest.download_info {
             let template_url = d.url.take().unwrap().replace(version, "${version}");
@@ -321,15 +325,6 @@ fn main() -> Result<()> {
         manifests = original_manifests;
     } else {
         manifests.template = template;
-    }
-
-    // Only serialize version if key != version.
-    for (k, v) in &mut manifests.map {
-        if let Some(version) = &v.version {
-            if k.0 == *version {
-                v.version = None;
-            }
-        }
     }
 
     let mut buf = serde_json::to_vec_pretty(&manifests)?;
@@ -367,7 +362,7 @@ fn download(url: &str) -> Result<ureq::Response> {
         }
         retry += 1;
         eprintln!("download failed; retrying ({retry}/5)");
-        std::thread::sleep(Duration::from_secs(1));
+        std::thread::sleep(Duration::from_secs(retry));
     }
     Err(last_error.unwrap().into())
 }
@@ -382,7 +377,7 @@ struct Version {
 }
 
 impl Version {
-    fn new(major: u64, minor: Option<u64>) -> Self {
+    fn omitted(major: u64, minor: Option<u64>) -> Self {
         Self {
             major: Some(major),
             minor,
@@ -513,13 +508,18 @@ impl<'de> Deserialize<'de> for Version {
 struct Manifests {
     template: Option<ManifestTemplate>,
     #[serde(flatten)]
-    map: BTreeMap<Reverse<Version>, Manifest>,
+    map: BTreeMap<Reverse<Version>, ManifestRef>,
+}
+
+#[derive(Debug, Clone, Serialize, Deserialize)]
+#[serde(untagged)]
+enum ManifestRef {
+    Ref { version: Version },
+    Real(Manifest),
 }
 
 #[derive(Debug, Clone, Serialize, Deserialize)]
 struct Manifest {
-    #[serde(skip_serializing_if = "Option::is_none")]
-    version: Option<Version>,
     #[serde(flatten)]
     download_info: BTreeMap<HostPlatform, ManifestDownloadInfo>,
 }
