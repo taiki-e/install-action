@@ -75,14 +75,28 @@ fn main() -> Result<()> {
     }
     if manifest_path.is_file() {
         match serde_json::from_slice(&fs::read(manifest_path)?) {
-            Ok(m) => manifests = m,
+            Ok(m) => {
+                manifests = m;
+                for (k, v) in &mut manifests.map {
+                    if v.version.is_none() {
+                        v.version = Some(k.0.clone());
+                    }
+                }
+            }
             Err(e) => eprintln!("failed to load old manifest: {e}"),
         }
     }
     let version_req: Option<semver::VersionReq> = match args.get(1) {
         _ if latest_only => {
             if !manifests.map.is_empty()
-                && manifests.map.first_key_value().unwrap().1.version
+                && *manifests
+                    .map
+                    .first_key_value()
+                    .unwrap()
+                    .1
+                    .version
+                    .as_ref()
+                    .unwrap()
                     == releases.first().unwrap().0.parse()?
             {
                 return Ok(());
@@ -223,7 +237,7 @@ fn main() -> Result<()> {
         manifests.map.insert(
             Reverse(semver_version.clone().into()),
             Manifest {
-                version: semver_version.into(),
+                version: Some(semver_version.into()),
                 download_info,
             },
         );
@@ -257,6 +271,15 @@ fn main() -> Result<()> {
 
     if latest_only {
         manifests.map.retain(|k, _| k.0 == Version::latest());
+    }
+
+    // Only serialize version if key != version.
+    for (k, v) in &mut manifests.map {
+        if let Some(version) = &v.version {
+            if k.0 == *version {
+                v.version = None;
+            }
+        }
     }
 
     let mut buf = serde_json::to_vec_pretty(&manifests)?;
@@ -444,8 +467,8 @@ struct Manifests {
 
 #[derive(Debug, Clone, Serialize, Deserialize)]
 struct Manifest {
-    // TODO: only serialize version if key != version?
-    version: Version,
+    #[serde(skip_serializing_if = "Option::is_none")]
+    version: Option<Version>,
     #[serde(flatten)]
     download_info: BTreeMap<HostPlatform, ManifestDownloadInfo>,
 }
