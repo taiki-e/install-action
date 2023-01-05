@@ -420,7 +420,7 @@ if ! type -P jq &>/dev/null || ! type -P curl &>/dev/null || ! type -P tar &>/de
 fi
 
 if [[ ${#tools[@]} -eq 0 ]]; then
-    warn "no tool specified; this may caused by dependabot bug that handles '@<tool>' shorthand in wrong way"
+    warn "no tool specified; this could be caused by a dependabot bug where @<tool_name> tags on this action are replaced by @<version> tags"
     # Exit with 0 for backward compatibility, we want to reject it in the next major release.
     exit 0
 fi
