@@ -1,0 +1,15 @@
+{
+  "repository": "https://github.com/mozilla/grcov",
+  "tag_prefix": "v",
+  "asset_name": "${package}-${rust_target}.tar.bz2",
+  "version_range": ">= 0.8.7",
+  "platform": {
+    "x86_64_linux_musl": {},
+    "x86_64_macos": {},
+    "x86_64_windows": {
+      "asset_name": "${package}-${rust_target}.zip"
+    },
+    "aarch64_linux_musl": {},
+    "aarch64_macos": {}
+  }
+}
