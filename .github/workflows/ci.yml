@@ -30,19 +30,19 @@ jobs:
           - ubuntu-22.04
         tool:
           # cargo-watch is supported by cargo-binstall (through quickinstall)
-          - cargo-hack,cargo-llvm-cov,cargo-minimal-versions,parse-changelog,cargo-udeps,cargo-valgrind,cargo-deny,cross,dprint,just,nextest,protoc,shellcheck,shfmt,valgrind,wasm-pack,wasmtime,mdbook,mdbook-linkcheck,cargo-watch
+          - cargo-hack,cargo-llvm-cov,cargo-minimal-versions,parse-changelog,cargo-udeps,cargo-valgrind,cargo-deny,cross,dprint,just,nextest,protoc,shellcheck,shfmt,valgrind,wasm-pack,wasmtime,mdbook,mdbook-linkcheck,cargo-watch,grcov
         include:
           # Note: Specifying the version of valgrind and cargo-binstall is not supported.
           - os: ubuntu-20.04
-            tool: cargo-hack@0.5.24,cargo-llvm-cov@0.5.3,cargo-minimal-versions@0.1.8,parse-changelog@0.5.2,cargo-udeps@0.1.35,cargo-valgrind@2.1.0,cargo-deny@0.13.5,cross@0.2.4,dprint@0.34.1,just@1.9.0,nextest@0.9.11,protoc@3.21.12,shellcheck@0.9.0,shfmt@3.6.0,wasm-pack@0.10.3,wasmtime@4.0.0,mdbook@0.4.25,mdbook-linkcheck@0.7.7,cargo-watch@8.1.1
+            tool: cargo-hack@0.5.24,cargo-llvm-cov@0.5.3,cargo-minimal-versions@0.1.8,parse-changelog@0.5.2,cargo-udeps@0.1.35,cargo-valgrind@2.1.0,cargo-deny@0.13.5,cross@0.2.4,dprint@0.34.1,just@1.9.0,nextest@0.9.11,protoc@3.21.12,shellcheck@0.9.0,shfmt@3.6.0,wasm-pack@0.10.3,wasmtime@4.0.0,mdbook@0.4.25,mdbook-linkcheck@0.7.7,cargo-watch@8.1.1,grcov@0.8.13
           - os: ubuntu-20.04
-            tool: cargo-hack@0.5,cargo-llvm-cov@0.5,cargo-minimal-versions@0.1,parse-changelog@0.5,cargo-udeps@0.1,cargo-valgrind@2.1,cargo-deny@0.13,cross@0.2,dprint@0.34,just@1.9,nextest@0.9,protoc@3.21,shellcheck@0.9,shfmt@3.5,wasm-pack@0.10,wasmtime@4.0,mdbook@0.4,mdbook-linkcheck@0.7,cargo-watch@8.1
+            tool: cargo-hack@0.5,cargo-llvm-cov@0.5,cargo-minimal-versions@0.1,parse-changelog@0.5,cargo-udeps@0.1,cargo-valgrind@2.1,cargo-deny@0.13,cross@0.2,dprint@0.34,just@1.9,nextest@0.9,protoc@3.21,shellcheck@0.9,shfmt@3.5,wasm-pack@0.10,wasmtime@4.0,mdbook@0.4,mdbook-linkcheck@0.7,cargo-watch@8.1,grcov@0.8
           - os: ubuntu-20.04
             tool: cargo-valgrind@2,just@1,protoc@3,shfmt@3,wasmtime@4,cargo-watch@8
           - os: macos-11
-            tool: cargo-hack,cargo-llvm-cov,cargo-minimal-versions,parse-changelog,cargo-udeps,cargo-valgrind,cargo-deny,cross,dprint,just,nextest,protoc,shellcheck,shfmt,wasm-pack,wasmtime,mdbook,mdbook-linkcheck,cargo-watch
+            tool: cargo-hack,cargo-llvm-cov,cargo-minimal-versions,parse-changelog,cargo-udeps,cargo-valgrind,cargo-deny,cross,dprint,just,nextest,protoc,shellcheck,shfmt,wasm-pack,wasmtime,mdbook,mdbook-linkcheck,cargo-watch,grcov
           - os: windows-2019
-            tool: cargo-hack,cargo-llvm-cov,cargo-minimal-versions,parse-changelog,cargo-udeps,cargo-valgrind,cargo-deny,cross,dprint,just,nextest,protoc,shellcheck,shfmt,wasm-pack,wasmtime,mdbook,mdbook-linkcheck,cargo-watch
+            tool: cargo-hack,cargo-llvm-cov,cargo-minimal-versions,parse-changelog,cargo-udeps,cargo-valgrind,cargo-deny,cross,dprint,just,nextest,protoc,shellcheck,shfmt,wasm-pack,wasmtime,mdbook,mdbook-linkcheck,cargo-watch,grcov
     runs-on: ${{ matrix.os }}
     steps:
       - uses: actions/checkout@v3
@@ -75,20 +75,20 @@ jobs:
           - rockylinux:8-minimal # glibc 2.28
         tool:
           # valgrind: installing snap to container is difficult...
-          - cargo-hack,cargo-llvm-cov,cargo-minimal-versions,parse-changelog,cargo-udeps,cargo-valgrind,cargo-deny,cross,dprint,just,nextest,protoc,shellcheck,shfmt,wasm-pack,wasmtime,mdbook,mdbook-linkcheck,cargo-watch
+          - cargo-hack,cargo-llvm-cov,cargo-minimal-versions,parse-changelog,cargo-udeps,cargo-valgrind,cargo-deny,cross,dprint,just,nextest,protoc,shellcheck,shfmt,wasm-pack,wasmtime,mdbook,mdbook-linkcheck,cargo-watch,grcov
         include:
           - container: ubuntu:22.04 # glibc 2.35
             # cargo-udeps depends on openssl 1.1
-            tool: cargo-hack,cargo-llvm-cov,cargo-minimal-versions,parse-changelog,cargo-valgrind,cargo-deny,cross,dprint,just,nextest,protoc,shellcheck,shfmt,wasm-pack,wasmtime,mdbook,mdbook-linkcheck,cargo-watch
+            tool: cargo-hack,cargo-llvm-cov,cargo-minimal-versions,parse-changelog,cargo-valgrind,cargo-deny,cross,dprint,just,nextest,protoc,shellcheck,shfmt,wasm-pack,wasmtime,mdbook,mdbook-linkcheck,cargo-watch,grcov
           - container: fedora:latest # glibc 2.36 (as of fedora 37)
             # cargo-udeps depends on openssl 1.1
-            tool: cargo-hack,cargo-llvm-cov,cargo-minimal-versions,parse-changelog,cargo-valgrind,cargo-deny,cross,dprint,just,nextest,protoc,shellcheck,shfmt,wasm-pack,wasmtime,mdbook,mdbook-linkcheck,cargo-watch
+            tool: cargo-hack,cargo-llvm-cov,cargo-minimal-versions,parse-changelog,cargo-valgrind,cargo-deny,cross,dprint,just,nextest,protoc,shellcheck,shfmt,wasm-pack,wasmtime,mdbook,mdbook-linkcheck,cargo-watch,grcov
           - container: centos:7 # glibc 2.17
             # cargo-udeps,protoc,valgrind,wasmtime,mdbook-linkcheck,cargo-watch don't provide prebuilt binaries for musl host.
-            tool: cargo-hack,cargo-llvm-cov,cargo-minimal-versions,parse-changelog,cargo-valgrind,cargo-deny,cross,dprint,just,nextest,shellcheck,shfmt,wasm-pack,mdbook,cargo-binstall
+            tool: cargo-hack,cargo-llvm-cov,cargo-minimal-versions,parse-changelog,cargo-valgrind,cargo-deny,cross,dprint,just,nextest,shellcheck,shfmt,wasm-pack,mdbook,cargo-binstall,grcov
           - container: alpine:latest # musl 1.2.3 (as of alpine 3.17)
             # cargo-udeps,protoc,valgrind,wasmtime,mdbook-linkcheck,cargo-watch don't provide prebuilt binaries for musl host.
-            tool: cargo-hack,cargo-llvm-cov,cargo-minimal-versions,parse-changelog,cargo-valgrind,cargo-deny,cross,dprint,just,nextest,shellcheck,shfmt,wasm-pack,mdbook,cargo-binstall
+            tool: cargo-hack,cargo-llvm-cov,cargo-minimal-versions,parse-changelog,cargo-valgrind,cargo-deny,cross,dprint,just,nextest,shellcheck,shfmt,wasm-pack,mdbook,cargo-binstall,grcov
     runs-on: ubuntu-latest
     container: ${{ matrix.container }}
     steps:
