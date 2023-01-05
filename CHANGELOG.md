@@ -10,6 +10,7 @@ Note: In this file, do not use the hard wrap in the middle of a sentence for com
 
 ## [Unreleased]
 
+- Support `grcov`. ([#41](https://github.com/taiki-e/install-action/pull/41), thanks @thomcc)
 - Update `just@latest` to 1.11.0.
 
 ## [2.0.3] - 2023-01-03
