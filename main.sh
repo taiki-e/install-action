@@ -419,6 +419,12 @@ if ! type -P jq &>/dev/null || ! type -P curl &>/dev/null || ! type -P tar &>/de
     esac
 fi
 
+if [[ ${#tools[@]} -eq 0 ]]; then
+    warn "no tool specified; this may caused by dependabot bug that handles '@<tool>' shorthand in wrong way"
+    # Exit with 0 for backward compatibility, we want to reject it in the next major release.
+    exit 0
+fi
+
 for tool in "${tools[@]}"; do
     if [[ "${tool}" == *"@"* ]]; then
         version="${tool#*@}"

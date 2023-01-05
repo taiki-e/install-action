@@ -10,6 +10,12 @@ Note: In this file, do not use the hard wrap in the middle of a sentence for com
 
 ## [Unreleased]
 
+- Emit warning if tool is not specified.
+
+  If you encounter this warning, it may be due to a dependabot bug that handles `@<tool>` shorthand in wrong way.
+
+  Previously, the handling of this case was platform-dependent and may or may not have resulted in an error.
+
 ## [2.1.0] - 2023-01-05
 
 - Support `grcov`. ([#41](https://github.com/taiki-e/install-action/pull/41), thanks @thomcc)
