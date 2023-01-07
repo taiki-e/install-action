@@ -7,7 +7,7 @@ use std::{
     collections::{BTreeMap, BTreeSet},
     env, fmt,
     io::Read,
-    path::Path,
+    path::{Path, PathBuf},
     slice,
     str::FromStr,
     time::Duration,
@@ -23,14 +23,14 @@ fn main() -> Result<()> {
     }
     let package = &args[0];
 
-    let root_dir = Path::new(env!("CARGO_MANIFEST_DIR"))
-        .join("../..")
-        .canonicalize()?;
-    let manifest_path = &root_dir.join("manifests").join(format!("{package}.json"));
-    let download_cache_dir = &root_dir.join("tools/codegen/tmp/cache").join(package);
+    let workspace_root = &workspace_root();
+    let manifest_path = &workspace_root
+        .join("manifests")
+        .join(format!("{package}.json"));
+    let download_cache_dir = &workspace_root.join("tools/codegen/tmp/cache").join(package);
     fs::create_dir_all(download_cache_dir)?;
     let base_info: BaseManifest = serde_json::from_slice(&fs::read(
-        root_dir
+        workspace_root
             .join("tools/codegen/base")
             .join(format!("{package}.json")),
     )?)?;
@@ -332,6 +332,13 @@ fn main() -> Result<()> {
     fs::write(manifest_path, buf)?;
 
     Ok(())
+}
+
+fn workspace_root() -> PathBuf {
+    let mut dir = PathBuf::from(env!("CARGO_MANIFEST_DIR"));
+    dir.pop(); // codegen
+    dir.pop(); // tools
+    dir
 }
 
 fn replace_vars(s: &str, package: &str, version: &str, platform: HostPlatform) -> Result<String> {
