@@ -30,7 +30,8 @@ jobs:
           - ubuntu-22.04
         tool:
           # cargo-watch is supported by cargo-binstall (through quickinstall)
-          - cargo-hack,cargo-llvm-cov,cargo-minimal-versions,parse-changelog,cargo-udeps,cargo-valgrind,cargo-deny,cross,dprint,just,nextest,protoc,shellcheck,shfmt,valgrind,wasm-pack,wasmtime,mdbook,mdbook-linkcheck,cargo-watch,grcov
+          # TODO: valgrind installation sometime hangs.
+          - cargo-hack,cargo-llvm-cov,cargo-minimal-versions,parse-changelog,cargo-udeps,cargo-valgrind,cargo-deny,cross,dprint,just,nextest,protoc,shellcheck,shfmt,wasm-pack,wasmtime,mdbook,mdbook-linkcheck,cargo-watch,grcov
         include:
           # Note: Specifying the version of valgrind and cargo-binstall is not supported.
           - os: ubuntu-20.04
