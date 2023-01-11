@@ -18,11 +18,8 @@ Note: In this file, do not use the hard wrap in the middle of a sentence for com
 
 - Update `cargo-minimal-versions@latest` to 0.1.10.
 
-- Update `cargo-llvm-cov@latest` to 0.5.6.
-
 - Update `cargo-hack@latest` to 0.5.26.
 
-- Update `cargo-deny@latest` to 0.13.6.
 - Support `cargo-no-dev-deps`.
 
 ## [2.1.4] - 2023-01-10
@@ -48,6 +45,7 @@ Note: In this file, do not use the hard wrap in the middle of a sentence for com
 ## [2.1.0] - 2023-01-05
 
 - Support `grcov`. ([#41](https://github.com/taiki-e/install-action/pull/41), thanks @thomcc)
+
 - Update `just@latest` to 1.11.0.
 
 ## [2.0.3] - 2023-01-03
