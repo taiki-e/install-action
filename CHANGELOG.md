@@ -10,6 +10,8 @@ Note: In this file, do not use the hard wrap in the middle of a sentence for com
 
 ## [Unreleased]
 
+- Update `cargo-deny@latest` to 0.13.7.
+
 - Update `parse-changelog@latest` to 0.5.3.
 
 - Update `cargo-minimal-versions@latest` to 0.1.10.
