@@ -287,9 +287,10 @@ fn main() -> Result<()> {
     }
 
     if latest_only {
+        let ManifestRef::Ref { version } = manifests.map.first_key_value().unwrap().1.clone() else { unreachable!() };
         manifests
             .map
-            .retain(|k, m| k.0 == Version::latest() || matches!(m, ManifestRef::Real(..)));
+            .retain(|k, _| k.0 == Version::latest() || k.0 == version);
     }
 
     let original_manifests = manifests.clone();
