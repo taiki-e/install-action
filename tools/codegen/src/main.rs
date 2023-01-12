@@ -384,8 +384,8 @@ fn replace_vars(s: &str, package: &str, version: &str, platform: HostPlatform) -
 fn download(url: &str) -> Result<ureq::Response> {
     let token = env::var("INTERNAL_CODEGEN_GH_PAT").ok();
     let mut retry = 0;
-    let mut last_error = None;
-    while retry < 5 {
+    let mut last_error;
+    loop {
         let mut req = ureq::get(url);
         if let Some(token) = &token {
             req = req.set("Authorization", token);
@@ -395,8 +395,11 @@ fn download(url: &str) -> Result<ureq::Response> {
             Err(e) => last_error = Some(e),
         }
         retry += 1;
+        if retry > 5 {
+            break;
+        }
         eprintln!("download failed; retrying ({retry}/5)");
-        std::thread::sleep(Duration::from_secs(retry));
+        std::thread::sleep(Duration::from_secs(retry * 2));
     }
     Err(last_error.unwrap().into())
 }
