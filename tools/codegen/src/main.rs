@@ -286,11 +286,37 @@ fn main() -> Result<()> {
         );
     }
 
+    let ManifestRef::Ref { version: latest_version } = manifests.map.first_key_value().unwrap().1.clone() else { unreachable!() };
     if latest_only {
-        let ManifestRef::Ref { version } = manifests.map.first_key_value().unwrap().1.clone() else { unreachable!() };
         manifests
             .map
-            .retain(|k, _| k.0 == Version::latest() || k.0 == version);
+            .retain(|k, _| k.0 == Version::latest() || k.0 == latest_version);
+    }
+    let ManifestRef::Real(latest_manifest) = &manifests.map[&Reverse(latest_version.clone())] else { unreachable!() };
+    for &p in base_info.platform.keys() {
+        if latest_manifest.download_info.contains_key(&p) {
+            continue;
+        }
+        if !base_info.prefer_linux_gnu {
+            if p == HostPlatform::x86_64_linux_gnu
+                && latest_manifest
+                    .download_info
+                    .contains_key(&HostPlatform::x86_64_linux_musl)
+            {
+                continue;
+            }
+            if p == HostPlatform::aarch64_linux_gnu
+                && latest_manifest
+                    .download_info
+                    .contains_key(&HostPlatform::aarch64_linux_musl)
+            {
+                continue;
+            }
+        }
+        bail!(
+            "platform list in base manifest for {package} contains {p:?}, \
+             but latest release ({latest_version}) doesn't contain it"
+        );
     }
 
     let original_manifests = manifests.clone();
