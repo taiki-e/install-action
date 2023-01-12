@@ -563,6 +563,7 @@ struct ManifestTemplateDownloadInfo {
 }
 
 #[derive(Debug, Deserialize)]
+#[serde(deny_unknown_fields)]
 struct BaseManifest {
     /// Link to the GitHub repository.
     repository: String,
@@ -583,6 +584,7 @@ struct BaseManifest {
 }
 
 #[derive(Debug, Deserialize)]
+#[serde(deny_unknown_fields)]
 struct BaseManifestPlatformInfo {
     /// Asset name patterns. Default to the value at `BaseManifest::asset_name`.
     asset_name: Option<StringOrArray>,
