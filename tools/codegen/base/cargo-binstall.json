@@ -14,6 +14,9 @@
     "aarch64_linux_musl": {},
     "aarch64_macos": {
       "asset_name": "${package}-${rust_target}.zip"
+    },
+    "aarch64_windows": {
+      "asset_name": "${package}-${rust_target}.zip"
     }
   }
 }
