@@ -509,6 +509,7 @@ for tool in "${tools[@]}"; do
             # Use cargo-binstall fallback if tool is not available.
             if [[ ! -f "${manifest_dir}/${tool}.json" ]]; then
                 cargo_binstall "${tool}" "${version}"
+                echo
                 continue
             fi
 
