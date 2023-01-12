@@ -340,12 +340,13 @@ case "$(uname -m)" in
         # https://github.com/rust-lang/rustup/pull/593
         # https://github.com/cross-rs/cross/pull/1018
         # Does it seem only armv7l is supported?
-        # https://github.com/actions/runner/blob/6b9e8a6be411a6e63d5ccaf3c47e7b7622c5ec49/src/Misc/externals.sh#L174
+        # https://github.com/actions/runner/blob/caec043085990710070108f375cd0aeab45e1017/src/Misc/externals.sh#L174
         bail "32-bit ARM runner is not supported yet by this action"
         ;;
     # GitHub Actions Runner supports Linux (x86_64, aarch64, arm), Windows (x86_64, aarch64),
     # and macOS (x86_64, aarch64).
     # https://github.com/actions/runner
+    # https://github.com/actions/runner/blob/caec043085990710070108f375cd0aeab45e1017/.github/workflows/build.yml#L21
     # https://docs.github.com/en/actions/hosting-your-own-runners/about-self-hosted-runners#supported-architectures-and-operating-systems-for-self-hosted-runners
     # So we can assume x86_64 unless it is aarch64 or arm.
     *) host_arch="x86_64" ;;

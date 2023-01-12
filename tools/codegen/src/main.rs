@@ -29,6 +29,7 @@ fn main() -> Result<()> {
         .join(format!("{package}.json"));
     let download_cache_dir = &workspace_root.join("tools/codegen/tmp/cache").join(package);
     fs::create_dir_all(download_cache_dir)?;
+
     let base_info: BaseManifest = serde_json::from_slice(&fs::read(
         workspace_root
             .join("tools/codegen/base")
@@ -41,6 +42,8 @@ fn main() -> Result<()> {
 
     eprintln!("downloading releases of https://github.com/{repo}");
     let mut releases: github::Releases = vec![];
+    // GitHub API returns up to 100 results at a time. If the number of releases
+    // is greater than 100, multiple fetches are needed.
     for page in 1.. {
         let per_page = 100;
         let mut r: github::Releases = download(&format!(
@@ -642,6 +645,7 @@ impl StringOrArray {
 /// GitHub Actions Runner supports Linux (x86_64, aarch64, arm), Windows (x86_64, aarch64),
 /// and macOS (x86_64, aarch64).
 /// https://github.com/actions/runner
+/// https://github.com/actions/runner/blob/caec043085990710070108f375cd0aeab45e1017/.github/workflows/build.yml#L21
 /// https://docs.github.com/en/actions/hosting-your-own-runners/about-self-hosted-runners#supported-architectures-and-operating-systems-for-self-hosted-runners
 ///
 /// Note:
@@ -654,7 +658,7 @@ impl StringOrArray {
 ///   https://github.com/rust-lang/rustup/pull/593
 ///   https://github.com/cross-rs/cross/pull/1018
 ///   Does it seem only armv7l is supported?
-///   https://github.com/actions/runner/blob/6b9e8a6be411a6e63d5ccaf3c47e7b7622c5ec49/src/Misc/externals.sh#L174
+///   https://github.com/actions/runner/blob/caec043085990710070108f375cd0aeab45e1017/src/Misc/externals.sh#L174
 #[allow(non_camel_case_types)]
 #[derive(Debug, Clone, Copy, PartialEq, Eq, PartialOrd, Ord, Serialize, Deserialize)]
 enum HostPlatform {
