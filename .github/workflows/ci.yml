@@ -45,6 +45,7 @@ jobs:
           - os: windows-2019
             tool: cargo-hack,cargo-llvm-cov,cargo-minimal-versions,cargo-no-dev-deps,parse-changelog,cargo-udeps,cargo-valgrind,cargo-deny,cross,dprint,just,nextest,protoc,shellcheck,shfmt,wasm-pack,wasmtime,mdbook,mdbook-linkcheck,cargo-watch,grcov
     runs-on: ${{ matrix.os }}
+    timeout-minutes: 60
     steps:
       - uses: actions/checkout@v3
         with:
@@ -91,6 +92,7 @@ jobs:
             # cargo-udeps,protoc,valgrind,wasmtime,mdbook-linkcheck,cargo-watch don't provide prebuilt binaries for musl host.
             tool: cargo-hack,cargo-llvm-cov,cargo-minimal-versions,cargo-no-dev-deps,parse-changelog,cargo-valgrind,cargo-deny,cross,dprint,just,nextest,shellcheck,shfmt,wasm-pack,mdbook,cargo-binstall,grcov
     runs-on: ubuntu-latest
+    timeout-minutes: 60
     container: ${{ matrix.container }}
     steps:
       - name: Install requirements (ubuntu/debian)
@@ -132,6 +134,7 @@ jobs:
 
   manifest:
     runs-on: ubuntu-latest
+    timeout-minutes: 60
     permissions:
       contents: write # TODO test
       pull-requests: write
