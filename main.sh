@@ -324,6 +324,11 @@ tools=()
 if [[ -n "${tool}" ]]; then
     while read -rd,; do tools+=("${REPLY}"); done <<<"${tool},"
 fi
+if [[ ${#tools[@]} -eq 0 ]]; then
+    warn "no tool specified; this could be caused by a dependabot bug where @<tool_name> tags on this action are replaced by @<version> tags"
+    # Exit with 0 for backward compatibility, we want to reject it in the next major release.
+    exit 0
+fi
 
 enable_checksum="${INPUT_CHECKSUM:-}"
 case "${enable_checksum}" in
@@ -420,25 +425,19 @@ if ! type -P jq &>/dev/null || ! type -P curl &>/dev/null || ! type -P tar &>/de
     esac
 fi
 
-if [[ ${#tools[@]} -eq 0 ]]; then
-    warn "no tool specified; this could be caused by a dependabot bug where @<tool_name> tags on this action are replaced by @<version> tags"
-    # Exit with 0 for backward compatibility, we want to reject it in the next major release.
-    exit 0
-fi
-
 for tool in "${tools[@]}"; do
     if [[ "${tool}" == *"@"* ]]; then
         version="${tool#*@}"
+        tool="${tool%@*}"
         if [[ ! "${version}" =~ ^([1-9][0-9]*(\.[0-9]+(\.[0-9]+)?)?|0\.[1-9][0-9]*(\.[0-9]+)?|^0\.0\.[0-9]+)$|^latest$ ]]; then
             if [[ ! "${version}" =~ ^([1-9][0-9]*(\.[0-9]+(\.[0-9]+)?)?|0\.[1-9][0-9]*(\.[0-9]+)?|^0\.0\.[0-9]+)(-[0-9A-Za-z\.-]+)?(\+[0-9A-Za-z\.-]+)?$|^latest$ ]]; then
-                bail "install-action does not support semver operators"
+                bail "install-action does not support semver operators: '${version}'"
             fi
-            bail "install-action v2 does not support semver pre-release and build-metadata; please submit an issue if you need these supports again"
+            bail "install-action v2 does not support semver pre-release and build-metadata; please submit an issue if you need these supports again: '${version}'"
         fi
     else
         version="latest"
     fi
-    tool="${tool%@*}"
     info "installing ${tool}@${version}"
     case "${tool}" in
         protoc)
