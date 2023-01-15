@@ -291,9 +291,9 @@ snap_install() {
 }
 apk_install() {
     if type -P doas &>/dev/null; then
-        doas apk add "$@"
+        doas apk add --no-cache "$@"
     else
-        apk add "$@"
+        apk add --no-cache "$@"
     fi
 }
 dnf_install() {
@@ -338,34 +338,16 @@ case "${enable_checksum}" in
 esac
 
 # Refs: https://github.com/rust-lang/rustup/blob/HEAD/rustup-init.sh
-case "$(uname -m)" in
-    aarch64 | arm64) host_arch="aarch64" ;;
-    xscale | arm | armv6l | armv7l | armv8l)
-        # Ignore arm for now, as we need to consider the version and whether hard-float is supported.
-        # https://github.com/rust-lang/rustup/pull/593
-        # https://github.com/cross-rs/cross/pull/1018
-        # Does it seem only armv7l is supported?
-        # https://github.com/actions/runner/blob/caec043085990710070108f375cd0aeab45e1017/src/Misc/externals.sh#L174
-        bail "32-bit ARM runner is not supported yet by this action"
-        ;;
-    # GitHub Actions Runner supports Linux (x86_64, aarch64, arm), Windows (x86_64, aarch64),
-    # and macOS (x86_64, aarch64).
-    # https://github.com/actions/runner
-    # https://github.com/actions/runner/blob/caec043085990710070108f375cd0aeab45e1017/.github/workflows/build.yml#L21
-    # https://docs.github.com/en/actions/hosting-your-own-runners/about-self-hosted-runners#supported-architectures-and-operating-systems-for-self-hosted-runners
-    # So we can assume x86_64 unless it is aarch64 or arm.
-    *) host_arch="x86_64" ;;
-esac
 base_distro=""
 exe=""
 case "$(uname -s)" in
     Linux)
         host_os=linux
-        host_env="gnu"
         ldd_version=$(ldd --version 2>&1 || true)
         if grep <<<"${ldd_version}" -q 'musl'; then
             host_env="musl"
         else
+            host_env="gnu"
             host_glibc_version=$(grep <<<"${ldd_version}" -E "GLIBC|GNU libc" | sed "s/.* //g")
         fi
         if grep -q '^ID_LIKE=' /etc/os-release; then
@@ -402,6 +384,24 @@ case "$(uname -s)" in
         exe=".exe"
         ;;
     *) bail "unrecognized OS type '$(uname -s)'" ;;
+esac
+case "$(uname -m)" in
+    aarch64 | arm64) host_arch="aarch64" ;;
+    xscale | arm | armv6l | armv7l | armv8l)
+        # Ignore arm for now, as we need to consider the version and whether hard-float is supported.
+        # https://github.com/rust-lang/rustup/pull/593
+        # https://github.com/cross-rs/cross/pull/1018
+        # Does it seem only armv7l is supported?
+        # https://github.com/actions/runner/blob/caec043085990710070108f375cd0aeab45e1017/src/Misc/externals.sh#L174
+        bail "32-bit ARM runner is not supported yet by this action"
+        ;;
+    # GitHub Actions Runner supports Linux (x86_64, aarch64, arm), Windows (x86_64, aarch64),
+    # and macOS (x86_64, aarch64).
+    # https://github.com/actions/runner
+    # https://github.com/actions/runner/blob/caec043085990710070108f375cd0aeab45e1017/.github/workflows/build.yml#L21
+    # https://docs.github.com/en/actions/hosting-your-own-runners/about-self-hosted-runners#supported-architectures-and-operating-systems-for-self-hosted-runners
+    # So we can assume x86_64 unless it is aarch64 or arm.
+    *) host_arch="x86_64" ;;
 esac
 
 tmp_dir="${HOME}/.install-action/tmp"
