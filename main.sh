@@ -226,10 +226,10 @@ install_cargo_binstall() {
     local install_binstall='1'
     if [[ -f "${cargo_bin}/cargo-binstall${exe}" ]]; then
         if [[ "$(cargo binstall -V)" == "${binstall_version}" ]]; then
-            info "cargo-binstall already installed on in ${cargo_bin}/cargo-binstall${exe}"
+            info "cargo-binstall already installed at ${cargo_bin}/cargo-binstall${exe}"
             install_binstall=''
         else
-            info "cargo-binstall already installed on in ${cargo_bin}/cargo-binstall${exe}, but is not compatible version with install-action, upgrading"
+            info "cargo-binstall already installed at ${cargo_bin}/cargo-binstall${exe}, but is not compatible version with install-action, upgrading"
             rm "${cargo_bin}/cargo-binstall${exe}"
         fi
     fi
