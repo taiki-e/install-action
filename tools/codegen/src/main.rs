@@ -385,24 +385,32 @@ fn replace_vars(s: &str, package: &str, version: &str, platform: HostPlatform) -
 }
 
 fn download(url: &str) -> Result<ureq::Response> {
-    let token = env::var("INTERNAL_CODEGEN_GH_PAT").ok();
+    let mut token1 = env::var("INTERNAL_CODEGEN_GH_PAT").ok().filter(|v| !v.is_empty());
+    let mut token2 = env::var("GITHUB_TOKEN").ok().filter(|v| !v.is_empty());
     let mut retry = 0;
     let mut last_error;
     loop {
         let mut req = ureq::get(url);
-        if let Some(token) = &token {
+        if let Some(token) = &token1 {
+            req = req.set("Authorization", token);
+        } else if let Some(token) = &token2 {
             req = req.set("Authorization", token);
         }
         match req.call() {
             Ok(res) => return Ok(res),
             Err(e) => last_error = Some(e),
         }
+        if token1.is_some() {
+            token1 = None;
+        } else if token2.is_some() {
+            token2 = None;
+        }
         retry += 1;
-        if retry > 5 {
+        if retry > 10 {
             break;
         }
-        eprintln!("download failed; retrying ({retry}/5)");
-        std::thread::sleep(Duration::from_secs(retry * 2));
+        eprintln!("download failed; retrying ({retry}/10)");
+        std::thread::sleep(Duration::from_secs(retry * 4));
     }
     Err(last_error.unwrap().into())
 }

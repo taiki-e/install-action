@@ -145,6 +145,8 @@ jobs:
       - name: Install Rust
         run: rustup toolchain add nightly --no-self-update && rustup default nightly
       - run: tools/manifest.sh
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
       - run: git add -N . && git diff --exit-code
         if: github.repository_owner != 'taiki-e' || github.event_name != 'schedule' && !(github.event_name == 'push' && github.ref == 'refs/heads/main')
       - id: diff
