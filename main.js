@@ -6,8 +6,9 @@
 // without docker before composite actions were supported. However, due to
 // various problems with composite actions, this trick is still needed:
 // - https://github.com/actions/runner/issues/665
-// - https://github.com/actions/runner/issues/1947
 // - https://github.com/actions/runner/issues/2185
+// Although there are ways to work around these like cache-cargo-install-action does:
+// https://github.com/taiki-e/cache-cargo-install-action/blob/v1.0.1/action.yml#L9-L11
 
 const { execFileSync } = require('child_process');
 

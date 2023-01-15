@@ -125,10 +125,12 @@ To use this action in self-hosted runners or in containers, you will need to ins
 
 ## Related Projects
 
+- [cache-cargo-install-action]: GitHub Action for `cargo install` with cache.
 - [create-gh-release-action]: GitHub Action for creating GitHub Releases based on changelog.
 - [upload-rust-binary-action]: GitHub Action for building and uploading Rust binary to GitHub Releases.
 - [setup-cross-toolchain-action]: GitHub Action for setup toolchains for cross compilation and cross testing for Rust.
 
+[cache-cargo-install-action]: https://github.com/taiki-e/cache-cargo-install-action
 [cargo-binstall]: https://github.com/cargo-bins/cargo-binstall
 [create-gh-release-action]: https://github.com/taiki-e/create-gh-release-action
 [setup-cross-toolchain-action]: https://github.com/taiki-e/setup-cross-toolchain-action
