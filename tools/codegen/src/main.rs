@@ -385,7 +385,9 @@ fn replace_vars(s: &str, package: &str, version: &str, platform: HostPlatform) -
 }
 
 fn download(url: &str) -> Result<ureq::Response> {
-    let mut token1 = env::var("INTERNAL_CODEGEN_GH_PAT").ok().filter(|v| !v.is_empty());
+    let mut token1 = env::var("INTERNAL_CODEGEN_GH_PAT")
+        .ok()
+        .filter(|v| !v.is_empty());
     let mut token2 = env::var("GITHUB_TOKEN").ok().filter(|v| !v.is_empty());
     let mut retry = 0;
     let mut last_error;
