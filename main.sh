@@ -311,6 +311,11 @@ sys_install() {
     esac
 }
 
+# cargo-binstall may call `cargo install` on their fallback: https://github.com/taiki-e/install-action/pull/54#issuecomment-1383140833
+# cross calls rustup on `cross --version` if the current directly is cargo workspace.
+export CARGO_NET_RETRY=10
+export RUSTUP_MAX_RETRIES=10
+
 if [[ $# -gt 0 ]]; then
     bail "invalid argument '$1'"
 fi
