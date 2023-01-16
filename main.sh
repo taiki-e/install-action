@@ -241,22 +241,6 @@ install_cargo_binstall() {
         x cargo binstall -V
     fi
 }
-cargo_binstall() {
-    local tool="$1"
-    local version="$2"
-
-    info "install-action does not support ${tool}, fallback to cargo-binstall"
-
-    install_cargo_binstall
-
-    # By default, cargo-binstall enforce downloads over secure transports only.
-    # As a result, http will be disabled, and it will also set
-    # min tls version to be 1.2
-    case "${version}" in
-        latest) cargo binstall --force --no-confirm "${tool}" ;;
-        *) cargo binstall --force --no-confirm --version "${version}" "${tool}" ;;
-    esac
-}
 apt_update() {
     if type -P sudo &>/dev/null; then
         retry sudo apt-get -o Acquire::Retries=10 -qq update
@@ -430,6 +414,7 @@ if ! type -P jq &>/dev/null || ! type -P curl &>/dev/null || ! type -P tar &>/de
     esac
 fi
 
+unsupported_tools=()
 for tool in "${tools[@]}"; do
     if [[ "${tool}" == *"@"* ]]; then
         version="${tool#*@}"
@@ -443,9 +428,9 @@ for tool in "${tools[@]}"; do
     else
         version="latest"
     fi
-    info "installing ${tool}@${version}"
     case "${tool}" in
         protoc)
+            info "installing ${tool}@${version}"
             read_manifest "protoc" "${version}"
             # Copying files to /usr/local/include requires sudo, so do not use it.
             bin_dir="${HOME}/.install-action/bin"
@@ -480,6 +465,7 @@ for tool in "${tools[@]}"; do
             rm -rf "${tmp_dir}"
             ;;
         valgrind)
+            info "installing ${tool}@${version}"
             case "${version}" in
                 latest) ;;
                 *) warn "specifying the version of ${tool} is not supported yet by this action" ;;
@@ -496,6 +482,7 @@ for tool in "${tools[@]}"; do
             snap_install valgrind --classic
             ;;
         cargo-binstall)
+            info "installing ${tool}@${version}"
             case "${version}" in
                 latest) ;;
                 *) warn "specifying the version of ${tool} is not supported by this action" ;;
@@ -512,10 +499,14 @@ for tool in "${tools[@]}"; do
 
             # Use cargo-binstall fallback if tool is not available.
             if [[ ! -f "${manifest_dir}/${tool}.json" ]]; then
-                cargo_binstall "${tool}" "${version}"
-                echo
+                case "${version}" in
+                    latest) unsupported_tools+=("${tool}") ;;
+                    *) unsupported_tools+=("${tool}@${version}") ;;
+                esac
                 continue
             fi
+
+            info "installing ${tool}@${version}"
 
             # Pre-install
             case "${tool}" in
@@ -543,3 +534,14 @@ for tool in "${tools[@]}"; do
     esac
     echo
 done
+
+if [[ ${#unsupported_tools[@]} -gt 0 ]]; then
+    IFS=$','
+    info "install-action does not support ${unsupported_tools[*]}; fallback to cargo-binstall"
+    IFS=$'\n\t'
+    install_cargo_binstall
+    # By default, cargo-binstall enforce downloads over secure transports only.
+    # As a result, http will be disabled, and it will also set
+    # min tls version to be 1.2
+    cargo binstall --force --no-confirm "${unsupported_tools[@]}"
+fi
