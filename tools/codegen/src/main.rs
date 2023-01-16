@@ -40,7 +40,7 @@ fn main() -> Result<()> {
         .strip_prefix("https://github.com/")
         .context("repository must be starts with https://github.com/")?;
 
-    eprintln!("downloading releases of https://github.com/{repo}");
+    eprintln!("downloading releases of https://github.com/{repo} from https://api.github.com/repos/{repo}/releases");
     let mut releases: github::Releases = vec![];
     // GitHub API returns up to 100 results at a time. If the number of releases
     // is greater than 100, multiple fetches are needed.
@@ -56,13 +56,17 @@ fn main() -> Result<()> {
         }
         releases.append(&mut r);
     }
-    let releases: Vec<_> = releases
+    let releases: BTreeMap<_, _> = releases
         .iter()
         .filter_map(|release| {
-            release
-                .tag_name
-                .strip_prefix(&base_info.tag_prefix)
-                .map(|version| (version, release))
+            let version = release.tag_name.strip_prefix(&base_info.tag_prefix)?;
+            let mut semver_version = version.parse::<semver::Version>();
+            if semver_version.is_err() {
+                if let Some(default_major_version) = &base_info.default_major_version {
+                    semver_version = format!("{default_major_version}.{version}").parse();
+                }
+            }
+            Some((Reverse(semver_version.ok()?), (version, release)))
         })
         .collect();
 
@@ -112,13 +116,15 @@ fn main() -> Result<()> {
                         ManifestRef::Real(_) => &m.0 .0,
                     };
                     if !manifests.map.is_empty()
-                        && *version == releases.first().unwrap().0.parse()?
+                        && *version >= releases.first_key_value().unwrap().0 .0.clone().into()
                     {
                         return Ok(());
                     }
                 }
             }
-            Some(format!("={}", releases.first().unwrap().0).parse()?)
+            let req = format!("={}", releases.first_key_value().unwrap().0 .0).parse()?;
+            eprintln!("update manifest for versions '{req}'");
+            Some(req)
         }
         None => match base_info.version_range {
             Some(version_range) => Some(version_range.parse()?),
@@ -137,7 +143,7 @@ fn main() -> Result<()> {
 
             let req = if version_req == "latest" {
                 if manifests.map.is_empty() {
-                    format!("={}", releases.first().unwrap().0).parse()?
+                    format!("={}", releases.first_key_value().unwrap().0 .0).parse()?
                 } else {
                     format!(">{}", semver_versions.last().unwrap()).parse()?
                 }
@@ -150,18 +156,9 @@ fn main() -> Result<()> {
     };
 
     let mut buf = vec![];
-    for &(version, release) in &releases {
-        let mut semver_version = version.parse::<semver::Version>();
-        if semver_version.is_err() {
-            if let Some(default_major_version) = &base_info.default_major_version {
-                semver_version = format!("{default_major_version}.{version}").parse();
-            }
-        }
-        let Ok(semver_version) = semver_version else {
-            continue;
-        };
+    for (Reverse(semver_version), (version, release)) in &releases {
         if let Some(version_req) = &version_req {
-            if !version_req.matches(&semver_version) {
+            if !version_req.matches(semver_version) {
                 continue;
             }
         }
