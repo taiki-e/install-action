@@ -120,7 +120,7 @@ See the linked documentation for information on security when installed using [s
 ## Compatibility
 
 This action has been tested for GitHub-hosted runners (Ubuntu, macOS, Windows) and containers (Ubuntu, Debian, Alpine, Fedora, CentOS, Rocky).
-To use this action in self-hosted runners or in containers, you will need to install at least the following:
+To use this action in self-hosted runners or in containers, at least the following tools are required:
 
 - bash
 - cargo (if you install cargo subcommands or use cargo-binstall fallback)
