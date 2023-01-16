@@ -25,6 +25,8 @@ GitHub Action for installing development tools (mainly from GitHub Releases).
 
 ### Example workflow
 
+To install the latest version:
+
 ```yaml
 - uses: taiki-e/install-action@v2
   with:
