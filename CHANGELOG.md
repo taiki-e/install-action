@@ -12,6 +12,8 @@ Note: In this file, do not use the hard wrap in the middle of a sentence for com
 
 - Update `cargo-binstall@latest` to 0.19.2.
 
+- Use `cargo-binstall` batching mode (#54)
+
 ## [2.2.3] - 2023-01-16
 
 - Update `cargo-llvm-cov@latest` to 0.5.9.
