@@ -10,6 +10,8 @@ Note: In this file, do not use the hard wrap in the middle of a sentence for com
 
 ## [Unreleased]
 
+- Update `cargo-no-dev-deps@latest` to 0.2.1.
+
 - Update `cargo-minimal-versions@latest` to 0.1.11.
 
 ## [2.3.3] - 2023-01-21
