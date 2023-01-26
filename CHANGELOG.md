@@ -10,6 +10,8 @@ Note: In this file, do not use the hard wrap in the middle of a sentence for com
 
 ## [Unreleased]
 
+## [2.3.4] - 2023-01-26
+
 - Update `just@latest` to 1.13.0.
 
 - Update `cargo-hack@latest` to 0.5.27.
@@ -589,7 +591,8 @@ Note: This release is considered a breaking change because installing on version
 
 Initial release
 
-[Unreleased]: https://github.com/taiki-e/install-action/compare/v2.3.3...HEAD
+[Unreleased]: https://github.com/taiki-e/install-action/compare/v2.3.4...HEAD
+[2.3.4]: https://github.com/taiki-e/install-action/compare/v2.3.3...v2.3.4
 [2.3.3]: https://github.com/taiki-e/install-action/compare/v2.3.2...v2.3.3
 [2.3.2]: https://github.com/taiki-e/install-action/compare/v2.3.1...v2.3.2
 [2.3.1]: https://github.com/taiki-e/install-action/compare/v2.3.0...v2.3.1
