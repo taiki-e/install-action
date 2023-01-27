@@ -189,17 +189,17 @@ fn main() -> Result<()> {
                 }
             };
 
-            eprintln!("downloading {url} for checksum");
+            eprintln!("downloading {url} for checksum...");
             let download_cache = download_cache_dir.join(format!(
                 "{version}-{platform:?}-{}",
                 Path::new(&url).file_name().unwrap().to_str().unwrap()
             ));
             if download_cache.is_file() {
-                eprintln!("{url} is already downloaded");
+                eprintln!(" already downloaded");
                 fs::File::open(download_cache)?.read_to_end(&mut buf)?;
             } else {
                 download(&url)?.into_reader().read_to_end(&mut buf)?;
-                eprintln!("downloaded complete");
+                eprintln!(" downloaded complete");
                 fs::write(download_cache, &buf)?;
             }
             eprintln!("getting sha256 hash for {url}");
