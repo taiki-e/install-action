@@ -1,10 +1,24 @@
 {
   "template": null,
   "latest": {
-    "version": "0.2.4"
+    "version": "0.2.5"
   },
   "0.2": {
-    "version": "0.2.4"
+    "version": "0.2.5"
+  },
+  "0.2.5": {
+    "x86_64_linux_musl": {
+      "url": "https://github.com/cross-rs/cross/releases/download/v0.2.5/cross-x86_64-unknown-linux-musl.tar.gz",
+      "checksum": "a486cefa6cb486971b97be321ea9dfc2e90c1979550295314a368f53fab6d588"
+    },
+    "x86_64_macos": {
+      "url": "https://github.com/cross-rs/cross/releases/download/v0.2.5/cross-x86_64-apple-darwin.tar.gz",
+      "checksum": "84a664edbd5405efc985e9423804cc63d12e55691b9c7e9729355fdf7b9af015"
+    },
+    "x86_64_windows": {
+      "url": "https://github.com/cross-rs/cross/releases/download/v0.2.5/cross-x86_64-pc-windows-msvc.tar.gz",
+      "checksum": "3d4d6dbebf448b1f6856c662b2b342db0a7f6827e91ed88e2bf0e5ca00a30a81"
+    }
   },
   "0.2.4": {
     "x86_64_linux_musl": {
