@@ -1,0 +1,62 @@
+{
+  "template": {
+    "x86_64_linux_musl": {
+      "url": "https://github.com/xd009642/tarpaulin/releases/download/${version}/cargo-tarpaulin-x86_64-unknown-linux-musl.tar.gz"
+    },
+    "x86_64_macos": {
+      "url": "https://github.com/xd009642/tarpaulin/releases/download/${version}/cargo-tarpaulin-x86_64-apple-darwin.tar.gz"
+    },
+    "x86_64_windows": {
+      "url": "https://github.com/xd009642/tarpaulin/releases/download/${version}/cargo-tarpaulin-x86_64-pc-windows-msvc.zip"
+    },
+    "aarch64_linux_musl": {
+      "url": "https://github.com/xd009642/tarpaulin/releases/download/${version}/cargo-tarpaulin-aarch64-unknown-linux-musl.tar.gz"
+    },
+    "aarch64_macos": {
+      "url": "https://github.com/xd009642/tarpaulin/releases/download/${version}/cargo-tarpaulin-aarch64-apple-darwin.tar.gz"
+    }
+  },
+  "latest": {
+    "version": "0.25.0"
+  },
+  "0.25": {
+    "version": "0.25.0"
+  },
+  "0.25.0": {
+    "x86_64_linux_musl": {
+      "checksum": "e6ae2d11e684ee20f3860b1833de6fcb6ac44db5fc49a82a179bb969924870f3"
+    },
+    "x86_64_macos": {
+      "checksum": "94039bab671b054781df301191673c651bbe03cdf04d2f5cb4b7ff0055c0d08e"
+    },
+    "x86_64_windows": {
+      "checksum": "a3eb302b531a4b4efd3456e54b4a2f3c921aabcb9d54d81334fdef96f00170aa"
+    },
+    "aarch64_linux_musl": {
+      "checksum": "59d55dc3070ac2b297ad3695f9a73398392c2446678c616688635e0c4bec6574"
+    },
+    "aarch64_macos": {
+      "checksum": "65d03b2414b12f4fbfb1e1014ac42fa1deb9d91e69b29cd68952ae97722a1165"
+    }
+  },
+  "0.24": {
+    "version": "0.24.0"
+  },
+  "0.24.0": {
+    "x86_64_linux_musl": {
+      "checksum": "34969bccced3bdd7c34672011b7088beb3258bb27554294709171c394b04b40f"
+    },
+    "x86_64_macos": {
+      "checksum": "82f8dae075b18a2783616f35f03a999986ea6a7e0b581c7df97d74a68d172e76"
+    },
+    "x86_64_windows": {
+      "checksum": "26f639abbacf829a1e1c1ee966828c97c92606a132cd32b4e7e2c4406f6a5a36"
+    },
+    "aarch64_linux_musl": {
+      "checksum": "c06411dd38a095e3ce8f085aeaa6adc802094ea0a2c88fcf89a59e17f2a21597"
+    },
+    "aarch64_macos": {
+      "checksum": "e7ea6ff1c427ab262df5490eb15b49dfecf11ec557d90609de0898f94baba3b2"
+    }
+  }
+}
