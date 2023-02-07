@@ -129,7 +129,7 @@ jobs:
       - name: Install requirements (alpine)
         run: |
           set -eux
-          apk add bash cargo
+          apk --no-cache add bash cargo
         shell: sh
         if: startsWith(matrix.container, 'alpine')
       - uses: actions/checkout@v3
