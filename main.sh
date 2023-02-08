@@ -62,7 +62,7 @@ download_and_extract() {
             bin_dir="${HOME}/.install-action/bin"
             if [[ ! -d "${bin_dir}" ]]; then
                 mkdir -p "${bin_dir}"
-                echo "${bin_dir}" >>"${GITHUB_PATH}"
+                canonicalize_windows_path "${bin_dir}" >>"${GITHUB_PATH}"
                 export PATH="${PATH}:${bin_dir}"
             fi
         fi
@@ -294,6 +294,12 @@ sys_install() {
         fedora) dnf_install "$@" ;;
     esac
 }
+canonicalize_windows_path() {
+    case "${host_os}" in
+        windows) sed <<<"$1" 's/^\/c\//C:\\/' ;;
+        *) echo "$1" ;;
+    esac
+}
 
 # cargo-binstall may call `cargo install` on their fallback: https://github.com/taiki-e/install-action/pull/54#issuecomment-1383140833
 # cross calls rustup on `cross --version` if the current directly is cargo workspace.
@@ -395,7 +401,10 @@ esac
 
 tmp_dir="${HOME}/.install-action/tmp"
 cargo_bin="${CARGO_HOME:-"${HOME}/.cargo"}/bin"
-if [[ ! -d "${cargo_bin}" ]]; then
+# If $CARGO_HOME does not exist, or cargo installed outside of $CARGO_HOME/bin
+# is used ($CARGO_HOME/bin is most likely not included in the PATH), fallback to
+# /usr/local/bin or $HOME/.install-action/bin.
+if [[ ! -d "${cargo_bin}" ]] || [[ "${host_os}" != "windows" ]] && [[ "$(type -P cargo || true)" != "${cargo_bin}/cargo${exe}" ]]; then
     cargo_bin=/usr/local/bin
 fi
 
@@ -438,7 +447,7 @@ for tool in "${tools[@]}"; do
             if [[ ! -d "${bin_dir}" ]]; then
                 mkdir -p "${bin_dir}"
                 mkdir -p "${include_dir}"
-                echo "${bin_dir}" >>"${GITHUB_PATH}"
+                canonicalize_windows_path "${bin_dir}" >>"${GITHUB_PATH}"
                 export PATH="${PATH}:${bin_dir}"
             fi
             if ! type -P unzip &>/dev/null; then
@@ -454,9 +463,7 @@ for tool in "${tools[@]}"; do
                 mv "bin/protoc${exe}" "${bin_dir}/"
                 mkdir -p "${include_dir}/"
                 cp -r include/. "${include_dir}/"
-                case "${host_os}" in
-                    windows) bin_dir=$(sed <<<"${bin_dir}" 's/^\/c\//C:\\/') ;;
-                esac
+                bin_dir=$(canonicalize_windows_path "${bin_dir}")
                 if [[ -z "${PROTOC:-}" ]]; then
                     info "setting PROTOC environment variable"
                     echo "PROTOC=${bin_dir}/protoc${exe}" >>"${GITHUB_ENV}"
@@ -527,9 +534,21 @@ for tool in "${tools[@]}"; do
 
     info "${tool} installed at $(type -P "${tool}${exe}")"
     case "${tool}" in
-        cargo-udeps) x cargo udeps --help | head -1 ;; # cargo-udeps v0.1.30 does not support --version option
-        cargo-valgrind) x cargo valgrind --help ;;     # cargo-valgrind v2.1.0 does not support --version option
-        cargo-*) x cargo "${tool#cargo-}" --version ;;
+        cargo-*)
+            if type -P cargo &>/dev/null; then
+                case "${tool}" in
+                    cargo-udeps) x cargo udeps --help | head -1 ;; # cargo-udeps v0.1.30 does not support --version option
+                    cargo-valgrind) x cargo valgrind --help ;;     # cargo-valgrind v2.1.0 does not support --version option
+                    *) x cargo "${tool#cargo-}" --version ;;
+                esac
+            else
+                case "${tool}" in
+                    cargo-udeps) x "${tool}" udeps --help | head -1 ;; # cargo-udeps v0.1.30 does not support --version option
+                    cargo-valgrind) x "${tool}" valgrind --help ;;     # cargo-valgrind v2.1.0 does not support --version option
+                    *) x "${tool}" "${tool#cargo-}" --version ;;
+                esac
+            fi
+            ;;
         *) x "${tool}" --version ;;
     esac
     echo

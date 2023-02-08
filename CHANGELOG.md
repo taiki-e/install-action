@@ -10,6 +10,14 @@ Note: In this file, do not use the hard wrap in the middle of a sentence for com
 
 ## [Unreleased]
 
+- Support `cargo-tarpaulin`. ([#65](https://github.com/taiki-e/install-action/pull/65), thanks @orhun)
+
+- Allow installing cargo subcommands without `cargo`.
+
+- Fix issue where installed non-Rust related binaries cannot be found from PowerShell on Windows. Rust-related binaries, Unix shells such as bash, and non-Windows OS are not affected by this issue.
+
+- Fix install failure of Rust-related binaries when `$CARGO_HOME/bin` exists, but is not included in the `$PATH`. This failure occurred in slightly odd cases, such as multiple installations of rust in different directories.
+
 ## [2.3.5] - 2023-02-04
 
 - Update `cross@latest` to 0.2.5.
