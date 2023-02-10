@@ -28,6 +28,7 @@ fn main() -> Result<()> {
         .join("manifests")
         .join(format!("{package}.json"));
     let download_cache_dir = &workspace_root.join("tools/codegen/tmp/cache").join(package);
+    fs::create_dir_all(manifest_path.parent().unwrap())?;
     fs::create_dir_all(download_cache_dir)?;
 
     let base_info: BaseManifest = serde_json::from_slice(&fs::read(
@@ -59,6 +60,9 @@ fn main() -> Result<()> {
     let releases: BTreeMap<_, _> = releases
         .iter()
         .filter_map(|release| {
+            if release.prerelease {
+                return None;
+            }
             let version = release.tag_name.strip_prefix(&base_info.tag_prefix)?;
             let mut semver_version = version.parse::<semver::Version>();
             if semver_version.is_err() {
