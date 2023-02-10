@@ -1,0 +1,12 @@
+{
+  "repository": "https://github.com/getzola/zola",
+  "tag_prefix": "v",
+  "asset_name": "${package}-v${version}-${rust_target}.tar.gz",
+  "platform": {
+    "x86_64_linux_gnu": {},
+    "x86_64_macos": {},
+    "x86_64_windows": {
+      "asset_name": "${package}-v${version}-${rust_target}.zip"
+    }
+  }
+}
