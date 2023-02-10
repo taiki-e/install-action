@@ -20,6 +20,8 @@ Note: In this file, do not use the hard wrap in the middle of a sentence for com
 
 - Fix install failure of Rust-related binaries when `$CARGO_HOME/bin` exists, but is not included in the `$PATH`. This failure occurred in slightly odd cases, such as multiple installations of rust in different directories.
 
+- Use cargo-binstall fallback also if tool is available but the specified version not available. ([#68](https://github.com/taiki-e/install-action/pull/68))
+
 ## [2.3.5] - 2023-02-04
 
 - Update `cross@latest` to 0.2.5.
