@@ -137,17 +137,15 @@ read_manifest() {
     local manifest
     manifest=$(jq -r ".\"${version}\"" "${manifest_dir}/${tool}.json")
     if [[ "${manifest}" == "null" ]]; then
-        bail "version '${version}' for ${tool} is not supported"
+        download_info="null"
+        return 0
     fi
-    local exact_version
     exact_version=$(jq <<<"${manifest}" -r '.version')
     if [[ "${exact_version}" == "null" ]]; then
         exact_version="${version}"
     else
         manifest=$(jq -r ".\"${exact_version}\"" "${manifest_dir}/${tool}.json")
     fi
-    local download_info
-    local host_platform
     case "${host_os}" in
         linux)
             # Static-linked binaries compiled for linux-musl will also work on linux-gnu systems and are
@@ -191,6 +189,10 @@ read_manifest() {
             ;;
         *) bail "unsupported OS type '${host_os}' for ${tool}" ;;
     esac
+}
+read_download_info() {
+    local tool="$1"
+    local version="$2"
     if [[ "${download_info}" == "null" ]]; then
         bail "${tool}@${version} for '${host_os}' is not supported"
     fi
@@ -218,6 +220,10 @@ read_manifest() {
 }
 download_from_manifest() {
     read_manifest "$@"
+    download_from_download_info "$@"
+}
+download_from_download_info() {
+    read_download_info "$@"
     download_and_extract "${url}" "${checksum}" "${bin_dir}" "${bin_in_archive}"
 }
 install_cargo_binstall() {
@@ -441,6 +447,7 @@ for tool in "${tools[@]}"; do
         protoc)
             info "installing ${tool}@${version}"
             read_manifest "protoc" "${version}"
+            read_download_info "protoc" "${version}"
             # Copying files to /usr/local/include requires sudo, so do not use it.
             bin_dir="${HOME}/.install-action/bin"
             include_dir="${HOME}/.install-action/include"
@@ -513,6 +520,17 @@ for tool in "${tools[@]}"; do
                 continue
             fi
 
+            # Use cargo-binstall fallback if tool is available but the specified version not available.
+            read_manifest "${tool}" "${version}"
+            if [[ "${download_info}" == "null" ]]; then
+                warn "${tool}@${version} for '${host_os}' is not supported; fallback to cargo-binstall"
+                case "${version}" in
+                    latest) unsupported_tools+=("${tool}") ;;
+                    *) unsupported_tools+=("${tool}@${version}") ;;
+                esac
+                continue
+            fi
+
             info "installing ${tool}@${version}"
 
             # Pre-install
@@ -528,7 +546,7 @@ for tool in "${tools[@]}"; do
                     ;;
             esac
 
-            download_from_manifest "${tool}" "${version}"
+            download_from_download_info "${tool}" "${version}"
             ;;
     esac
 
