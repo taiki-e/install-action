@@ -10,6 +10,8 @@ Note: In this file, do not use the hard wrap in the middle of a sentence for com
 
 ## [Unreleased]
 
+## [2.4.0] - 2023-02-11
+
 - Support `cargo-tarpaulin`. ([#65](https://github.com/taiki-e/install-action/pull/65), thanks @orhun)
 
 - Support `zola`. ([#71](https://github.com/taiki-e/install-action/pull/71), thanks @tranzystorek-io)
@@ -609,7 +611,8 @@ Note: This release is considered a breaking change because installing on version
 
 Initial release
 
-[Unreleased]: https://github.com/taiki-e/install-action/compare/v2.3.5...HEAD
+[Unreleased]: https://github.com/taiki-e/install-action/compare/v2.4.0...HEAD
+[2.4.0]: https://github.com/taiki-e/install-action/compare/v2.3.5...v2.4.0
 [2.3.5]: https://github.com/taiki-e/install-action/compare/v2.3.4...v2.3.5
 [2.3.4]: https://github.com/taiki-e/install-action/compare/v2.3.3...v2.3.4
 [2.3.3]: https://github.com/taiki-e/install-action/compare/v2.3.2...v2.3.3
