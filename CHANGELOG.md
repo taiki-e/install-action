@@ -10,9 +10,11 @@ Note: In this file, do not use the hard wrap in the middle of a sentence for com
 
 ## [Unreleased]
 
-- Update `mdbook@latest` to 0.4.26.
-
 - Support `cargo-tarpaulin`. ([#65](https://github.com/taiki-e/install-action/pull/65), thanks @orhun)
+
+- Support `zola`. ([#71](https://github.com/taiki-e/install-action/pull/71), thanks @tranzystorek-io)
+
+- Update `mdbook@latest` to 0.4.26.
 
 - Allow installing cargo subcommands without `cargo`.
 
