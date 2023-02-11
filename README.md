@@ -103,6 +103,7 @@ https://spdx.org/licenses
 | [**valgrind**](https://valgrind.org) | `/snap/bin` | [snap](https://snapcraft.io/install/valgrind/ubuntu) | Linux | [GPL-2.0-or-later](https://valgrind.org/docs/manual/license.gpl.html) |
 | [**wasm-pack**](https://github.com/rustwasm/wasm-pack) | `$CARGO_HOME/bin` | [GitHub Releases](https://github.com/rustwasm/wasm-pack/releases) | Linux, macOS, Windows | [Apache-2.0](https://github.com/rustwasm/wasm-pack/blob/HEAD/LICENSE-APACHE) OR [MIT](https://github.com/rustwasm/wasm-pack/blob/HEAD/LICENSE-MIT) |
 | [**wasmtime**](https://github.com/bytecodealliance/wasmtime) | `$CARGO_HOME/bin` | [GitHub Releases](https://github.com/bytecodealliance/wasmtime/releases) | Linux, macOS, Windows | [Apache-2.0 WITH LLVM-exception](https://github.com/bytecodealliance/wasmtime/blob/HEAD/LICENSE) |
+| [**zola**](https://github.com/getzola/zola) | `$CARGO_HOME/bin` | [GitHub Releases](https://github.com/getzola/zola/releases) | Linux, macOS, Windows | [MIT](https://github.com/getzola/zola/blob/master/LICENSE) |
 
 If `$CARGO_HOME/bin` is not available, Rust-related binaries will be installed to `$HOME/.cargo/bin`.<br>
 If `$HOME/.cargo/bin` is not available, Rust-related binaries will be installed to `/usr/local/bin`.<br>
