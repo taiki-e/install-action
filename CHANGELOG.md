@@ -10,6 +10,8 @@ Note: In this file, do not use the hard wrap in the middle of a sentence for com
 
 ## [Unreleased]
 
+- Update `cargo-binstall@latest` to 0.20.1.
+
 ## [2.4.0] - 2023-02-11
 
 - Support `cargo-tarpaulin`. ([#65](https://github.com/taiki-e/install-action/pull/65), thanks @orhun)
