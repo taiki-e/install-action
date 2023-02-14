@@ -10,6 +10,8 @@ Note: In this file, do not use the hard wrap in the middle of a sentence for com
 
 ## [Unreleased]
 
+## [2.4.2] - 2023-02-14
+
 - Update `mdbook@latest` to 0.4.27.
 
 - Update `dprint@latest` to 0.34.5.
@@ -619,7 +621,8 @@ Note: This release is considered a breaking change because installing on version
 
 Initial release
 
-[Unreleased]: https://github.com/taiki-e/install-action/compare/v2.4.1...HEAD
+[Unreleased]: https://github.com/taiki-e/install-action/compare/v2.4.2...HEAD
+[2.4.2]: https://github.com/taiki-e/install-action/compare/v2.4.1...v2.4.2
 [2.4.1]: https://github.com/taiki-e/install-action/compare/v2.4.0...v2.4.1
 [2.4.0]: https://github.com/taiki-e/install-action/compare/v2.3.5...v2.4.0
 [2.3.5]: https://github.com/taiki-e/install-action/compare/v2.3.4...v2.3.5
