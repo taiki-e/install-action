@@ -12,6 +12,8 @@ Note: In this file, do not use the hard wrap in the middle of a sentence for com
 
 - Update `cargo-llvm-cov@latest` to 0.5.10.
 
+- Switch to composite action. ([#58](https://github.com/taiki-e/install-action/pull/58))
+
 ## [2.4.4] - 2023-02-21
 
 - Update `wasmtime@latest` to 6.0.0.
