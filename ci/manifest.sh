@@ -1,4 +1,4 @@
-#!/bin/bash
+#!/usr/bin/env bash
 set -euxo pipefail
 IFS=$'\n\t'
 cd "$(dirname "$0")"/..
