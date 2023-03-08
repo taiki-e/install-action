@@ -10,6 +10,8 @@ Note: In this file, do not use the hard wrap in the middle of a sentence for com
 
 ## [Unreleased]
 
+## [2.5.5] - 2023-03-08
+
 - Update `protoc@latest` to 3.22.1.
 
 - Update `mdbook@latest` to 0.4.28.
@@ -659,7 +661,8 @@ Note: This release is considered a breaking change because installing on version
 
 Initial release
 
-[Unreleased]: https://github.com/taiki-e/install-action/compare/v2.5.4...HEAD
+[Unreleased]: https://github.com/taiki-e/install-action/compare/v2.5.5...HEAD
+[2.5.5]: https://github.com/taiki-e/install-action/compare/v2.5.4...v2.5.5
 [2.5.4]: https://github.com/taiki-e/install-action/compare/v2.5.3...v2.5.4
 [2.5.3]: https://github.com/taiki-e/install-action/compare/v2.5.2...v2.5.3
 [2.5.2]: https://github.com/taiki-e/install-action/compare/v2.5.1...v2.5.2
