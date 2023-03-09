@@ -160,7 +160,7 @@ jobs:
     runs-on: ubuntu-latest
     timeout-minutes: 60
     permissions:
-      contents: write # TODO test
+      contents: write
       pull-requests: write
     steps:
       - uses: actions/checkout@v3
