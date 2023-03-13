@@ -15,6 +15,7 @@ for manifest in manifests/*.json; do
         git stash pop
         new_version=$(jq -r '.latest.version' "${manifest}")
         if [[ "${old_version}" != "${new_version}" ]]; then
+            # TODO: If there is a line about updating the same tool in the "Unreleased" section, replace it.
             msg="Update \`${name}@latest\` to ${new_version}"
             sed -i "s/^## \\[Unreleased\\]/## [Unreleased]\\n\\n- ${msg}./" CHANGELOG.md
             git add "${manifest}" CHANGELOG.md
