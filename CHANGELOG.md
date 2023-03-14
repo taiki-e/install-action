@@ -10,7 +10,7 @@ Note: In this file, do not use the hard wrap in the middle of a sentence for com
 
 ## [Unreleased]
 
-- Update `cargo-binstall@latest` to 0.21.3.
+- Update `cargo-binstall@latest` to 0.21.3. This fixes spurious error when accessing crates.io.
 
 ## [2.6.1] - 2023-03-14
 
