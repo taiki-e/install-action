@@ -10,6 +10,8 @@ Note: In this file, do not use the hard wrap in the middle of a sentence for com
 
 ## [Unreleased]
 
+- Update `zola@latest` to 0.17.2.
+
 - Update `wasm-pack@latest` to 0.11.0.
 
 - Update `cargo-nextest@latest` to 0.9.51.
