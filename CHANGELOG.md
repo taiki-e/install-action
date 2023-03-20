@@ -10,6 +10,8 @@ Note: In this file, do not use the hard wrap in the middle of a sentence for com
 
 ## [Unreleased]
 
+- Update `cargo-nextest@latest` to 0.9.51.
+
 ## [2.6.2] - 2023-03-14
 
 - Update `cargo-binstall@latest` to 0.21.3. This fixes spurious error when accessing crates.io.
