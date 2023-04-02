@@ -29,4 +29,3 @@ jobs:
           title: $version
           branch: 'main|v[0-9]+'
           token: ${{ secrets.GITHUB_TOKEN }}
-      - run: ci/publish.sh
