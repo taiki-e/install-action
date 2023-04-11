@@ -3,15 +3,6 @@ set -euxo pipefail
 IFS=$'\n\t'
 cd "$(dirname "$0")"/..
 
-bail() {
-    echo >&2 "error: $*"
-    exit 1
-}
-
-if [[ -z "${CI:-}" ]]; then
-    bail "this script is intended to call from release workflow on CI"
-fi
-
 git config user.name "Taiki Endo"
 git config user.email "te316e89@gmail.com"
 

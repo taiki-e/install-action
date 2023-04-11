@@ -21,10 +21,11 @@ jobs:
       contents: write
     steps:
       - uses: actions/checkout@v3
+        with:
+          persist-credentials: false
       - uses: taiki-e/create-gh-release-action@v1
         with:
           changelog: CHANGELOG.md
           title: $version
           branch: 'main|v[0-9]+'
           token: ${{ secrets.GITHUB_TOKEN }}
-      - run: ci/publish.sh
