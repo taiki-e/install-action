@@ -10,6 +10,10 @@ Note: In this file, do not use the hard wrap in the middle of a sentence for com
 
 ## [Unreleased]
 
+- Update `cargo-minimal-versions@latest` to 0.1.12.
+
+- Update `cargo-llvm-cov@latest` to 0.5.15.
+
 ## [2.6.13] - 2023-04-13
 
 - Update `protoc@latest` to 3.22.3.
