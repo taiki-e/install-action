@@ -180,7 +180,7 @@ jobs:
       - id: diff
         run: ci/manifest.sh
         if: github.repository_owner == 'taiki-e' && (github.event_name == 'schedule' || github.event_name == 'push' && github.ref == 'refs/heads/main')
-      - uses: taiki-e/create-pull-request@v4
+      - uses: peter-evans/create-pull-request@v5
         with:
           title: Update manifest
           body: |
