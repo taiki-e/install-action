@@ -17,10 +17,61 @@
     }
   },
   "latest": {
-    "version": "0.8.13"
+    "version": "0.8.18"
   },
   "0.8": {
-    "version": "0.8.13"
+    "version": "0.8.18"
+  },
+  "0.8.18": {
+    "x86_64_linux_musl": {
+      "checksum": "43b1b44a79b2fec04a4057ccaf199a1b015e02200d44c8c1a4eff4f2b2edfa87"
+    },
+    "x86_64_macos": {
+      "checksum": "b5fccffcde800c1bbaec94229b80fc678ad10420d9769b25a447f1c7c5bec573"
+    },
+    "x86_64_windows": {
+      "checksum": "1ae5759da07ffef41e5b2f9930a70e312c5e4bf8a64fe3a67b05c095601ad879"
+    },
+    "aarch64_linux_musl": {
+      "checksum": "272a869894d321554b8959ea8d9f90277dee8fe79ebc6da5349d047fccf86b36"
+    },
+    "aarch64_macos": {
+      "checksum": "a4b21dc5cc6ecd0ae0cf8016787b1d1b3e59a37d81d685bde45025f98a9a0ca2"
+    }
+  },
+  "0.8.16": {
+    "x86_64_linux_musl": {
+      "checksum": "c414d6c72c693c103a99ac33eb759fe870c2ebc90486853ce2d72e94f0392853"
+    },
+    "x86_64_macos": {
+      "checksum": "9b6725d2087a0f3e6b65395c2ce5e189e4d54b26b9d28a6a01ad878df56bd29a"
+    },
+    "x86_64_windows": {
+      "checksum": "e4e77816f6ce8c6a09b03f7bf853fd788a084e868ae23cd1e297831b388ce84c"
+    },
+    "aarch64_linux_musl": {
+      "checksum": "4f219438e490665c117d49f23ddd41990bbb423e89e03b59c0e3356df2a47196"
+    },
+    "aarch64_macos": {
+      "checksum": "5323fafa4714753eefcbed052971914dcc58cd9f3a4dfc53e5756518acba47ff"
+    }
+  },
+  "0.8.15": {
+    "x86_64_linux_musl": {
+      "checksum": "b4e369090a105aa264c287c1ced52d7cc04ec964179bd8affe05bcb762e75ea4"
+    },
+    "x86_64_macos": {
+      "checksum": "5f4dded36e2a7258f938fa9e6fdde9c887bbde9ba226dca46701a1bcfca1ab83"
+    },
+    "x86_64_windows": {
+      "checksum": "35d9add293fe2a573023dfc1a7c6fe8005ab52dea3f96805f80696851a299e7f"
+    },
+    "aarch64_linux_musl": {
+      "checksum": "6dca525df8411f456833cfe244eb657c523960140b745fa046aa22909da5d462"
+    },
+    "aarch64_macos": {
+      "checksum": "0ef477a66f7f74ce5810327923a1c6b73d9924d5dfb6dc2ba8c927cd2ceb039d"
+    }
   },
   "0.8.13": {
     "x86_64_linux_musl": {
