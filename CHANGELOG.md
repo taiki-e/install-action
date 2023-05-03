@@ -10,6 +10,8 @@ Note: In this file, do not use the hard wrap in the middle of a sentence for com
 
 ## [Unreleased]
 
+## [2.8.0] - 2023-05-03
+
 - Trim whitespace from tool names. ([#115](https://github.com/taiki-e/install-action/pull/115))
 
 ## [2.7.2] - 2023-04-28
@@ -773,7 +775,8 @@ Note: This release is considered a breaking change because installing on version
 
 Initial release
 
-[Unreleased]: https://github.com/taiki-e/install-action/compare/v2.7.2...HEAD
+[Unreleased]: https://github.com/taiki-e/install-action/compare/v2.8.0...HEAD
+[2.8.0]: https://github.com/taiki-e/install-action/compare/v2.7.2...v2.8.0
 [2.7.2]: https://github.com/taiki-e/install-action/compare/v2.7.1...v2.7.2
 [2.7.1]: https://github.com/taiki-e/install-action/compare/v2.7.0...v2.7.1
 [2.7.0]: https://github.com/taiki-e/install-action/compare/v2.6.19...v2.7.0
