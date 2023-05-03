@@ -52,7 +52,7 @@ jobs:
           - os: ubuntu-20.04
             tool: cargo-hack@0.5,cargo-llvm-cov@0.5,cargo-minimal-versions@0.1,cargo-no-dev-deps@0.1,parse-changelog@0.5,cargo-udeps@0.1,cargo-valgrind@2.1,cargo-deny@0.13,cross@0.2,dprint@0.34,just@1.9,nextest@0.9,protoc@3.21,shellcheck@0.9,shfmt@3.5,wasm-pack@0.10,wasmtime@6.0,mdbook@0.4,mdbook-linkcheck@0.7,cargo-watch@8.1,grcov@0.8,watchexec-cli@1.20,cargo-tarpaulin@0.25,zola@0.16
           - os: ubuntu-20.04
-            tool: cargo-valgrind@2,just@1,protoc@3,shfmt@3,wasmtime@7,cargo-watch@8,watchexec-cli@1
+            tool: cargo-valgrind@2, just@1, protoc@3, shfmt@3 ,wasmtime@7,cargo-watch@8,watchexec-cli@1
           - os: macos-11
             tool: cargo-hack,cargo-llvm-cov,cargo-minimal-versions,cargo-no-dev-deps,parse-changelog,cargo-udeps,cargo-valgrind,cargo-deny,cross,dprint,just,nextest,protoc,shellcheck,shfmt,wasm-pack,wasmtime,mdbook,mdbook-linkcheck,cargo-watch,grcov,watchexec-cli,cargo-tarpaulin,zola
           - os: windows-2019

@@ -323,7 +323,10 @@ manifest_dir="$(dirname "$0")/manifests"
 tool="${INPUT_TOOL:-}"
 tools=()
 if [[ -n "${tool}" ]]; then
-    while read -rd,; do tools+=("${REPLY}"); done <<<"${tool},"
+    while read -rd,; do
+        t="${REPLY# *}"
+        tools+=("${t%* }")
+    done <<<"${tool},"
 fi
 if [[ ${#tools[@]} -eq 0 ]]; then
     warn "no tool specified; this could be caused by a dependabot bug where @<tool_name> tags on this action are replaced by @<version> tags"

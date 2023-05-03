@@ -10,6 +10,8 @@ Note: In this file, do not use the hard wrap in the middle of a sentence for com
 
 ## [Unreleased]
 
+- Trim whitespace from tool names. ([#115](https://github.com/taiki-e/install-action/pull/115))
+
 ## [2.7.2] - 2023-04-28
 
 - Update `cargo-llvm-cov@latest` to 0.5.19.
