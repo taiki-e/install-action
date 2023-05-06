@@ -4,6 +4,10 @@
       "url": "https://github.com/est31/cargo-udeps/releases/download/v${version}/cargo-udeps-v${version}-x86_64-unknown-linux-gnu.tar.gz",
       "bin": "./cargo-udeps-v${version}-x86_64-unknown-linux-gnu/cargo-udeps"
     },
+    "x86_64_linux_musl": {
+      "url": "https://github.com/est31/cargo-udeps/releases/download/v${version}/cargo-udeps-v${version}-x86_64-unknown-linux-musl.tar.gz",
+      "bin": "./cargo-udeps-v${version}-x86_64-unknown-linux-musl/cargo-udeps"
+    },
     "x86_64_macos": {
       "url": "https://github.com/est31/cargo-udeps/releases/download/v${version}/cargo-udeps-v${version}-x86_64-apple-darwin.tar.gz",
       "bin": "./cargo-udeps-v${version}-x86_64-apple-darwin/cargo-udeps"
@@ -11,6 +15,18 @@
     "x86_64_windows": {
       "url": "https://github.com/est31/cargo-udeps/releases/download/v${version}/cargo-udeps-v${version}-x86_64-pc-windows-msvc.zip",
       "bin": "./cargo-udeps-v${version}-x86_64-pc-windows-msvc/cargo-udeps.exe"
+    },
+    "aarch64_linux_musl": {
+      "url": "https://github.com/est31/cargo-udeps/releases/download/v${version}/cargo-udeps-v${version}-aarch64-unknown-linux-musl.tar.gz",
+      "bin": "./cargo-udeps-v${version}-aarch64-unknown-linux-musl/cargo-udeps"
+    },
+    "aarch64_macos": {
+      "url": "https://github.com/est31/cargo-udeps/releases/download/v${version}/cargo-udeps-v${version}-aarch64-apple-darwin.tar.gz",
+      "bin": "./cargo-udeps-v${version}-aarch64-apple-darwin/cargo-udeps"
+    },
+    "aarch64_windows": {
+      "url": "https://github.com/est31/cargo-udeps/releases/download/v${version}/cargo-udeps-v${version}-aarch64-pc-windows-msvc.zip",
+      "bin": "./cargo-udeps-v${version}-aarch64-pc-windows-msvc/cargo-udeps.exe"
     }
   },
   "latest": {
@@ -20,14 +36,23 @@
     "version": "0.1.39"
   },
   "0.1.39": {
-    "x86_64_linux_gnu": {
-      "checksum": "c6ce53134935cb182f23cb2ad8eddfbd33398d9eed69770805776e7046b224d6"
+    "x86_64_linux_musl": {
+      "checksum": "6476cf5711a150c53b563ecb1680b45365c86b054079b483333a961e14dd2c8a"
     },
     "x86_64_macos": {
       "checksum": "c93e5e03c64ac351ec69a62d22c119e8b2f612fde5bc7938aade549bc38f4d49"
     },
     "x86_64_windows": {
       "checksum": "02e5ce690d027a28e323e753ba03f4ce164bd106d98afe437871778f1b166c8f"
+    },
+    "aarch64_linux_musl": {
+      "checksum": "f5de7ae1fb82ea797be27a56a0cfe80d2724a4ae4d380dd49f1d5ac221f45f4a"
+    },
+    "aarch64_macos": {
+      "checksum": "d605026264208372def2a3d62498070b02cd3e10fc74ffc7448e8b626fc7fd90"
+    },
+    "aarch64_windows": {
+      "checksum": "dc026ed1fe5ba3147eda788df31c9da660942b959c3f6b1441752f0f886aef53"
     }
   },
   "0.1.38": {

@@ -5,8 +5,14 @@
   "bin": "./${package}-v${version}-${rust_target}/${package}${exe}",
   "platform": {
     "x86_64_linux_gnu": {},
+    "x86_64_linux_musl": {},
     "x86_64_macos": {},
     "x86_64_windows": {
+      "asset_name": "${package}-v${version}-${rust_target}.zip"
+    },
+    "aarch64_linux_musl": {},
+    "aarch64_macos": {},
+    "aarch64_windows": {
       "asset_name": "${package}-v${version}-${rust_target}.zip"
     }
   }
