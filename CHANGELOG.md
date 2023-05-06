@@ -18,7 +18,7 @@ Note: In this file, do not use the hard wrap in the middle of a sentence for com
 
 - Update `cargo-nextest@latest` to 0.9.52.
 
-- Support `cargo-udeps` on Linux (musl) and aarch64 Linux/macOS/Windows.
+- Support `cargo-udeps` on x86_64 Linux (musl) and aarch64 Linux/macOS/Windows.
 
 ## [2.8.0] - 2023-05-03
 
