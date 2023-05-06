@@ -10,6 +10,8 @@ Note: In this file, do not use the hard wrap in the middle of a sentence for com
 
 ## [Unreleased]
 
+- Update `cargo-nextest@latest` to 0.9.52.
+
 ## [2.8.0] - 2023-05-03
 
 - Trim whitespace from tool names. ([#115](https://github.com/taiki-e/install-action/pull/115))
