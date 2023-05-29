@@ -12,6 +12,8 @@ Note: In this file, do not use the hard wrap in the middle of a sentence for com
 
 - Update `mdbook@latest` to 0.4.30.
 
+- Make cargo-binstall fallback more robust. ([#124](https://github.com/taiki-e/install-action/pull/124), thanks @NobodyXu)
+
 ## [2.8.8] - 2023-05-27
 
 - Update `wasmtime@latest` to 9.0.2.
