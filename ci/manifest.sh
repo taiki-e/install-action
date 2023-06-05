@@ -1,4 +1,5 @@
 #!/usr/bin/env bash
+# SPDX-License-Identifier: Apache-2.0 OR MIT
 set -euxo pipefail
 IFS=$'\n\t'
 cd "$(dirname "$0")"/..
