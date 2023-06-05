@@ -4,7 +4,7 @@ IFS=$'\n\t'
 cd "$(dirname "$0")"/..
 
 # shellcheck disable=SC2154
-trap 's=$?; echo >&2 "$0: Error on line "${LINENO}": ${BASH_COMMAND}"; exit ${s}' ERR
+trap 's=$?; echo >&2 "$0: error on line "${LINENO}": ${BASH_COMMAND}"; exit ${s}' ERR
 
 # Publish a new release.
 #
