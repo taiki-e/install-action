@@ -1,0 +1,27 @@
+{
+  "template": {
+    "x86_64_linux_gnu": {
+      "url": "https://github.com/thedodd/trunk/releases/download/v${version}/trunk-x86_64-unknown-linux-gnu.tar.gz"
+    },
+    "x86_64_macos": {
+      "url": "https://github.com/thedodd/trunk/releases/download/v${version}/trunk-x86_64-apple-darwin.tar.gz"
+    },
+    "x86_64_windows": {
+      "url": "https://github.com/thedodd/trunk/releases/download/v${version}/trunk-x86_64-pc-windows-msvc.zip"
+    }
+  },
+  "latest": {
+    "version": "0.16.0"
+  },
+  "0.16.0": {
+    "x86_64_linux_gnu": {
+      "checksum": "8a1abed6df4aeeb51306d796323324c895a30e55a37df3e3f48ed1f78f35fb16"
+    },
+    "x86_64_macos": {
+      "checksum": "0638206b8b3bd27a92b2dd252cca0560e01c8351755d6212a3278ac0047b58b5"
+    },
+    "x86_64_windows": {
+      "checksum": "0febcccfa58cd5e62eacd8a934ef6967f845a0a01ef7e42cecdf50348a309b5e"
+    }
+  }
+}

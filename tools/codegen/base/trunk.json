@@ -1,0 +1,13 @@
+{
+  "repository": "https://github.com/thedodd/trunk",
+  "tag_prefix": "v",
+  "asset_name": "${package}-${rust_target}.tar.gz",
+  "version_range": "latest",
+  "platform": {
+    "x86_64_linux_gnu": {},
+    "x86_64_macos": {},
+    "x86_64_windows": {
+      "asset_name": "${package}-${rust_target}.zip"
+    }
+  }
+}
