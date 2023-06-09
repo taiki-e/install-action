@@ -1,0 +1,52 @@
+{
+  "template": {
+    "x86_64_linux_musl": {
+      "url": "https://github.com/anchore/syft/releases/download/v${version}/syft_${version}_linux_amd64.tar.gz",
+      "bin_dir": "/usr/local/bin",
+      "bin": "syft"
+    },
+    "x86_64_macos": {
+      "url": "https://github.com/anchore/syft/releases/download/v${version}/syft_${version}_darwin_amd64.tar.gz",
+      "bin_dir": "/usr/local/bin",
+      "bin": "syft"
+    },
+    "x86_64_windows": {
+      "url": "https://github.com/anchore/syft/releases/download/v${version}/syft_${version}_windows_amd64.zip",
+      "bin_dir": "/usr/local/bin",
+      "bin": "syft.exe"
+    },
+    "aarch64_linux_musl": {
+      "url": "https://github.com/anchore/syft/releases/download/v${version}/syft_${version}_linux_arm64.tar.gz",
+      "bin_dir": "/usr/local/bin",
+      "bin": "syft"
+    },
+    "aarch64_macos": {
+      "url": "https://github.com/anchore/syft/releases/download/v${version}/syft_${version}_darwin_arm64.tar.gz",
+      "bin_dir": "/usr/local/bin",
+      "bin": "syft"
+    }
+  },
+  "latest": {
+    "version": "0.83.0"
+  },
+  "0.83": {
+    "version": "0.83.0"
+  },
+  "0.83.0": {
+    "x86_64_linux_musl": {
+      "checksum": "694e97a454327403fb440544c41fefd83d37f88f43c4f9ae0b0d67a3562bd25c"
+    },
+    "x86_64_macos": {
+      "checksum": "211f34f2e52e842d3248bc3a72c07e534d0d7a8e40babaa7a2034a41a077b70e"
+    },
+    "x86_64_windows": {
+      "checksum": "9131f458fdbbc88fe1bd8df666721ecb95ff751d0ca3e2cffecfd5e021c65e97"
+    },
+    "aarch64_linux_musl": {
+      "checksum": "388fbea52598e44f8529e3432555c53e6e161211a83020d2b749c5d160baf593"
+    },
+    "aarch64_macos": {
+      "checksum": "4b93cf316aa30bddb53d2dcd82f4c9d0353b337677cbdf8a470749f9e98eec82"
+    }
+  }
+}
