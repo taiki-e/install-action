@@ -9,6 +9,7 @@ GitHub Action for installing development tools (mainly from GitHub Releases).
   - [Inputs](#inputs)
   - [Example workflow](#example-workflow)
 - [Supported tools](#supported-tools)
+  - [Add support for new tool](#add-support-for-new-tool)
 - [Security](#security)
 - [Compatibility](#compatibility)
 - [Related Projects](#related-projects)
@@ -109,7 +110,11 @@ If `$CARGO_HOME/bin` is not available, Rust-related binaries will be installed t
 If `$HOME/.cargo/bin` is not available, Rust-related binaries will be installed to `/usr/local/bin`.<br>
 If `/usr/local/bin` is not available, binaries will be installed to `$HOME/.install-action/bin`.<br>
 
-If a tool not included in the list above is specified, this action uses [cargo-binstall] as a fallback.
+**If a tool not included in the list above is specified, this action uses [cargo-binstall] as a fallback.**
+
+### Add support for new tool
+
+See the [development guide](DEVELOPMENT.md) for how to add support for new tool.
 
 ## Security
 
