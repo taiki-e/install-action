@@ -1,0 +1,11 @@
+{
+  "repository": "https://github.com/sonos/dinghy",
+  "tag_prefix": "",
+  "asset_name": "${package}-${os_name}-${version}.tgz",
+  "platform": {
+    "x86_64_linux_gnu": {},
+    "x86_64_linux_musl": {},
+    "x86_64_macos": {}
+  },
+  "prefer_linux_gnu": true
+}
