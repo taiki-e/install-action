@@ -10,6 +10,8 @@ Note: In this file, do not use the hard wrap in the middle of a sentence for com
 
 ## [Unreleased]
 
+- Support `syft`. ([#135](https://github.com/taiki-e/install-action/pull/135), thanks @FirelightFlagboy)
+
 ## [2.9.4] - 2023-06-08
 
 - Update `parse-changelog@latest` to 0.5.4.
