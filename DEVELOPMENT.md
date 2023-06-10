@@ -16,11 +16,11 @@ See JSON files in `tools/codegen/base` directory for examples of the manifest.
 
 > If you're having problem with github api rate limit, you can use your GITHUB_TOKEN to increase the rate limit.
 > If you have `Github CLI` installed (the command `gh`), you can:
-> 
+>
 > ```shell
 > GITHUB_TOKEN=$(gh auth status --show-token 2>&1 | sed -n 's/^.*Token: \(.*\)$/\1/p') ./tools/manifest.sh <tool>
 > ```
 
 3\. Add tool name to test matrix in `.github/workflows/ci.yml`.
 
-4\. Add tool name to table in "Supported tools" section in `README.md`.
+4\. Add tool name to the table in ["Supported tools" section in `README.md`](https://github.com/taiki-e/install-action#supported-tools).
