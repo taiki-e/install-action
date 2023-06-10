@@ -203,7 +203,7 @@ fn main() -> Result<()> {
                 fs::File::open(download_cache)?.read_to_end(&mut buf)?;
             } else {
                 download(&url)?.into_reader().read_to_end(&mut buf)?;
-                eprintln!(" downloaded complete");
+                eprintln!(" download complete");
                 fs::write(download_cache, &buf)?;
             }
             eprintln!("getting sha256 hash for {url}");
@@ -377,6 +377,7 @@ fn replace_vars(s: &str, package: &str, version: &str, platform: HostPlatform) -
         .replace("${package}", package)
         .replace("${tool}", package)
         .replace("${rust_target}", platform.rust_target())
+        .replace("${os_name}", platform.os_name())
         .replace("${version}", version)
         .replace("${exe}", platform.exe_suffix());
     if s.contains('$') {
@@ -696,6 +697,16 @@ impl HostPlatform {
             Self::aarch64_linux_musl => "aarch64-unknown-linux-musl",
             Self::aarch64_macos => "aarch64-apple-darwin",
             Self::aarch64_windows => "aarch64-pc-windows-msvc",
+        }
+    }
+    fn os_name(self) -> &'static str {
+        match self {
+            Self::aarch64_linux_gnu
+            | Self::aarch64_linux_musl
+            | Self::x86_64_linux_gnu
+            | Self::x86_64_linux_musl => "linux",
+            Self::aarch64_macos | Self::x86_64_macos => "macos",
+            Self::aarch64_windows | Self::x86_64_windows => "windows",
         }
     }
     fn exe_suffix(self) -> &'static str {
