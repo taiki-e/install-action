@@ -10,6 +10,8 @@ Note: In this file, do not use the hard wrap in the middle of a sentence for com
 
 ## [Unreleased]
 
+- Support `cargo-dinghy`. ([#133](https://github.com/taiki-e/install-action/pull/133), thanks @notgull)
+
 ## [2.10.0] - 2023-06-10
 
 - Support `syft`. ([#135](https://github.com/taiki-e/install-action/pull/135), thanks @FirelightFlagboy)
