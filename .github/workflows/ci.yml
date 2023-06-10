@@ -44,7 +44,7 @@ jobs:
         tool:
           # cargo-watch/watchexec-cli is supported by cargo-binstall (through quickinstall)
           # TODO: valgrind installation sometime hangs.
-          - cargo-hack,cargo-llvm-cov,cargo-minimal-versions,cargo-no-dev-deps,parse-changelog,cargo-udeps,cargo-valgrind,cargo-deny,cross,dprint,just,nextest,protoc,shellcheck,shfmt,wasm-pack,wasmtime,mdbook,mdbook-linkcheck,cargo-watch,grcov,watchexec-cli,cargo-tarpaulin,zola,syft
+          - cargo-dinghy,cargo-hack,cargo-llvm-cov,cargo-minimal-versions,cargo-no-dev-deps,parse-changelog,cargo-udeps,cargo-valgrind,cargo-deny,cross,dprint,just,nextest,protoc,shellcheck,shfmt,wasm-pack,wasmtime,mdbook,mdbook-linkcheck,cargo-watch,grcov,watchexec-cli,cargo-tarpaulin,zola,syft
         include:
           # Note: Specifying the version of valgrind and cargo-binstall is not supported.
           - os: ubuntu-20.04
@@ -104,7 +104,7 @@ jobs:
           - fedora:latest # glibc 2.36 (as of fedora 37)
         tool:
           # valgrind: installing snap to container is difficult...
-          - cargo-hack,cargo-llvm-cov,cargo-minimal-versions,cargo-no-dev-deps,parse-changelog,cargo-udeps,cargo-valgrind,cargo-deny,cross,dprint,just,nextest,protoc,shellcheck,shfmt,wasm-pack,wasmtime,mdbook,mdbook-linkcheck,cargo-watch,grcov,watchexec-cli,cargo-tarpaulin,zola,syft
+          - cargo-dinghy,cargo-hack,cargo-llvm-cov,cargo-minimal-versions,cargo-no-dev-deps,parse-changelog,cargo-udeps,cargo-valgrind,cargo-deny,cross,dprint,just,nextest,protoc,shellcheck,shfmt,wasm-pack,wasmtime,mdbook,mdbook-linkcheck,cargo-watch,grcov,watchexec-cli,cargo-tarpaulin,zola,syft
         include:
           # glibc < 2.31
           # zola don't provide prebuilt binaries for musl or old glibc host.
