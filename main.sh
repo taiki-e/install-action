@@ -398,7 +398,7 @@ case "$(uname -m)" in
         # https://github.com/cross-rs/cross/pull/1018
         # Does it seem only armv7l is supported?
         # https://github.com/actions/runner/blob/caec043085990710070108f375cd0aeab45e1017/src/Misc/externals.sh#L174
-        bail "32-bit ARM runner is not supported yet by this action"
+        bail "32-bit ARM runner is not supported yet by this action; if you need support for this platform, please submit an issue at <https://github.com/taiki-e/install-action>"
         ;;
     # GitHub Actions Runner supports Linux (x86_64, aarch64, arm), Windows (x86_64, aarch64),
     # and macOS (x86_64, aarch64).
@@ -442,7 +442,7 @@ for tool in "${tools[@]}"; do
             if [[ ! "${version}" =~ ^([1-9][0-9]*(\.[0-9]+(\.[0-9]+)?)?|0\.[1-9][0-9]*(\.[0-9]+)?|^0\.0\.[0-9]+)(-[0-9A-Za-z\.-]+)?(\+[0-9A-Za-z\.-]+)?$|^latest$ ]]; then
                 bail "install-action does not support semver operators: '${version}'"
             fi
-            bail "install-action v2 does not support semver pre-release and build-metadata; please submit an issue if you need these supports again: '${version}'"
+            bail "install-action v2 does not support semver pre-release and build-metadata: '${version}'; if you need these supports again, please submit an issue at <https://github.com/taiki-e/install-action>"
         fi
     else
         version="latest"

@@ -99,7 +99,7 @@ for tool in tools/codegen/base/*.json; do
 done
 # Aliases
 tools+=(nextest)
-# Not manifest-base
+# Not manifest-based
 tools+=(valgrind)
 
 (
