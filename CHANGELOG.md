@@ -10,6 +10,8 @@ Note: In this file, do not use the hard wrap in the middle of a sentence for com
 
 ## [Unreleased]
 
+- Update `wasmtime@latest` to 9.0.4.
+
 ## [2.11.0] - 2023-06-10
 
 - Support `cargo-dinghy`. ([#133](https://github.com/taiki-e/install-action/pull/133), thanks @notgull)
