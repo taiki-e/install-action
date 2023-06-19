@@ -10,6 +10,8 @@ Note: In this file, do not use the hard wrap in the middle of a sentence for com
 
 ## [Unreleased]
 
+- Update `wasm-pack@latest` to 0.12.0.
+
 - Update `shfmt@latest` to 3.7.0.
 
 ## [2.11.3] - 2023-06-17
