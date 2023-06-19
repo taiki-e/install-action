@@ -555,23 +555,34 @@ for tool in "${tools[@]}"; do
     esac
 
     info "${tool} installed at $(type -P "${tool}${exe}")"
+    # At least cargo-udeps 0.1.30 and wasm-pack 0.12.0 do not support --version option.
     case "${tool}" in
         cargo-*)
             if type -P cargo &>/dev/null; then
                 case "${tool}" in
-                    cargo-udeps) x cargo udeps --help | head -1 ;; # cargo-udeps v0.1.30 does not support --version option
-                    cargo-valgrind) x cargo valgrind --help ;;     # cargo-valgrind v2.1.0 does not support --version option
-                    *) x cargo "${tool#cargo-}" --version ;;
+                    cargo-valgrind) x cargo "${tool#cargo-}" --help ;; # cargo-valgrind 2.1.0's --version option just calls cargo's --version option
+                    *)
+                        if ! x cargo "${tool#cargo-}" --version; then
+                            x cargo "${tool#cargo-}" --help
+                        fi
+                        ;;
                 esac
             else
                 case "${tool}" in
-                    cargo-udeps) x "${tool}" udeps --help | head -1 ;; # cargo-udeps v0.1.30 does not support --version option
-                    cargo-valgrind) x "${tool}" valgrind --help ;;     # cargo-valgrind v2.1.0 does not support --version option
-                    *) x "${tool}" "${tool#cargo-}" --version ;;
+                    cargo-valgrind) x "${tool}" "${tool#cargo-}" --help ;; # cargo-valgrind 2.1.0's --version option just calls cargo's --version option
+                    *)
+                        if ! x "${tool}" "${tool#cargo-}" --version; then
+                            x "${tool}" "${tool#cargo-}" --help
+                        fi
+                        ;;
                 esac
             fi
             ;;
-        *) x "${tool}" --version ;;
+        *)
+            if ! x "${tool}" --version; then
+                x "${tool}" --help
+            fi
+            ;;
     esac
     echo
 done
