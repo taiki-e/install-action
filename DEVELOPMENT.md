@@ -28,6 +28,6 @@ See JSON files in `tools/codegen/base` directory for examples of the manifest.
 ## Troubleshooting
 
 If one of the CI builds fails due to an bin path or release asset_name, fix the problem in the base
-manifest, and re-run the manifest tool to regenerate the manifest json file. The base manifest
-supports overriding the bin path per platform by adding the `"bin"` / `"asset_name"` to the platform
-object.
+manifest, and re-run the manifest tool `tools/manifest.sh` to regenerate the manifest json file. The
+base manifest supports overriding the bin path per platform by adding the `"bin"` / `"asset_name"`
+to the platform object.
