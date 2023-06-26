@@ -10,6 +10,8 @@ Note: In this file, do not use the hard wrap in the middle of a sentence for com
 
 ## [Unreleased]
 
+- Support `cargo-make`. ([#146](https://github.com/taiki-e/install-action/pull/146), thanks @joshka)
+
 ## [2.11.6] - 2023-06-22
 
 - Update `wasmtime@latest` to 10.0.1.
