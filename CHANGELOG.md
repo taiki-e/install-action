@@ -10,6 +10,8 @@ Note: In this file, do not use the hard wrap in the middle of a sentence for com
 
 ## [Unreleased]
 
+- Update `cargo-nextest@latest` to 0.9.54.
+
 ## [2.12.1] - 2023-06-26
 
 - Update `parse-changelog@latest` to 0.6.0.
