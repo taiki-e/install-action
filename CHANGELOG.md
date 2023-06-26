@@ -10,6 +10,8 @@ Note: In this file, do not use the hard wrap in the middle of a sentence for com
 
 ## [Unreleased]
 
+- Update `parse-changelog@latest` to 0.6.0.
+
 ## [2.12.0] - 2023-06-26
 
 - Support `cargo-make`. ([#146](https://github.com/taiki-e/install-action/pull/146), thanks @joshka)
