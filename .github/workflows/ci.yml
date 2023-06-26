@@ -101,8 +101,8 @@ jobs:
           - ubuntu:20.04 # glibc 2.31
           - ubuntu:22.04 # glibc 2.35
           - debian:11-slim # glibc 2.31
-          - debian:bookworm-slim # glibc 2.36
-          - fedora:latest # glibc 2.36 (as of fedora 37)
+          - debian:12-slim # glibc 2.36
+          - fedora:latest # glibc 2.37 (as of fedora 38)
         tool:
           # valgrind: installing snap to container is difficult...
           - cargo-dinghy,cargo-hack,cargo-llvm-cov,cargo-make,cargo-minimal-versions,cargo-no-dev-deps,parse-changelog,cargo-udeps,cargo-valgrind,cargo-deny,cross,dprint,just,nextest,protoc,shellcheck,shfmt,wasm-pack,wasmtime,mdbook,mdbook-linkcheck,cargo-watch,grcov,watchexec-cli,cargo-tarpaulin,zola,syft
@@ -121,7 +121,7 @@ jobs:
           - container: centos:7 # glibc 2.17
             # protoc,valgrind,wasmtime,mdbook-linkcheck,cargo-watch,zola don't provide prebuilt binaries for musl or old glibc host.
             tool: cargo-dinghy,cargo-hack,cargo-llvm-cov,cargo-make,cargo-minimal-versions,cargo-no-dev-deps,parse-changelog,cargo-udeps,cargo-valgrind,cargo-deny,cross,dprint,just,nextest,shellcheck,shfmt,wasm-pack,mdbook,cargo-binstall,grcov,watchexec-cli,cargo-tarpaulin,syft
-          - container: alpine:latest # musl 1.2.3 (as of alpine 3.17)
+          - container: alpine:latest # musl 1.2.4 (as of alpine 3.18)
             # protoc,valgrind,wasmtime,mdbook-linkcheck,cargo-watch,zola don't provide prebuilt binaries for musl host.
             tool: cargo-dinghy,cargo-hack,cargo-llvm-cov,cargo-make,cargo-minimal-versions,cargo-no-dev-deps,parse-changelog,cargo-udeps,cargo-valgrind,cargo-deny,cross,dprint,just,nextest,shellcheck,shfmt,wasm-pack,mdbook,cargo-binstall,grcov,watchexec-cli,cargo-tarpaulin,syft
     runs-on: ubuntu-latest
