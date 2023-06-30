@@ -10,6 +10,8 @@ Note: In this file, do not use the hard wrap in the middle of a sentence for com
 
 ## [Unreleased]
 
+## [2.12.4] - 2023-06-30
+
 - Update `syft@latest` to 0.84.1.
 
 - Update `mdbook@latest` to 0.4.31.
@@ -907,7 +909,8 @@ Note: This release is considered a breaking change because installing on version
 
 Initial release
 
-[Unreleased]: https://github.com/taiki-e/install-action/compare/v2.12.3...HEAD
+[Unreleased]: https://github.com/taiki-e/install-action/compare/v2.12.4...HEAD
+[2.12.4]: https://github.com/taiki-e/install-action/compare/v2.12.3...v2.12.4
 [2.12.3]: https://github.com/taiki-e/install-action/compare/v2.12.2...v2.12.3
 [2.12.2]: https://github.com/taiki-e/install-action/compare/v2.12.1...v2.12.2
 [2.12.1]: https://github.com/taiki-e/install-action/compare/v2.12.0...v2.12.1
