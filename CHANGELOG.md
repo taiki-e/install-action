@@ -10,6 +10,8 @@ Note: In this file, do not use the hard wrap in the middle of a sentence for com
 
 ## [Unreleased]
 
+- Update `mdbook@latest` to 0.4.31.
+
 - Update `cargo-llvm-cov@latest` to 0.5.22.
 
 ## [2.12.3] - 2023-06-28
