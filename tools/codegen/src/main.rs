@@ -89,7 +89,9 @@ fn main() -> Result<()> {
             Ok(m) => {
                 manifests = m;
                 for (k, manifest) in &mut manifests.map {
-                    let ManifestRef::Real(manifest) = manifest else { continue };
+                    let ManifestRef::Real(manifest) = manifest else {
+                        continue;
+                    };
                     let version = &*k.0.to_string();
                     if let Some(template) = &manifests.template {
                         for (platform, d) in &mut manifest.download_info {
@@ -290,13 +292,21 @@ fn main() -> Result<()> {
         );
     }
 
-    let ManifestRef::Ref { version: latest_version } = manifests.map.first_key_value().unwrap().1.clone() else { unreachable!() };
+    let ManifestRef::Ref {
+        version: latest_version,
+    } = manifests.map.first_key_value().unwrap().1.clone()
+    else {
+        unreachable!()
+    };
     if latest_only {
         manifests
             .map
             .retain(|k, _| k.0 == Version::latest() || k.0 == latest_version);
     }
-    let ManifestRef::Real(latest_manifest) = &manifests.map[&Reverse(latest_version.clone())] else { unreachable!() };
+    let ManifestRef::Real(latest_manifest) = &manifests.map[&Reverse(latest_version.clone())]
+    else {
+        unreachable!()
+    };
     for &p in base_info.platform.keys() {
         if latest_manifest.download_info.contains_key(&p) {
             continue;
@@ -328,7 +338,9 @@ fn main() -> Result<()> {
         download_info: BTreeMap::new(),
     });
     'outer: for (version, manifest) in &mut manifests.map {
-        let ManifestRef::Real(manifest) = manifest else { continue };
+        let ManifestRef::Real(manifest) = manifest else {
+            continue;
+        };
         let version = &*version.0.to_string();
         let t = template.as_mut().unwrap();
         for (platform, d) in &mut manifest.download_info {
