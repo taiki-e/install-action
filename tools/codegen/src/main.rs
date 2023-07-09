@@ -399,29 +399,20 @@ fn replace_vars(s: &str, package: &str, version: &str, platform: HostPlatform) -
 }
 
 fn download(url: &str) -> Result<ureq::Response> {
-    let mut token1 = env::var("INTERNAL_CODEGEN_GH_PAT")
-        .ok()
-        .filter(|v| !v.is_empty());
-    let mut token2 = env::var("GITHUB_TOKEN").ok().filter(|v| !v.is_empty());
+    let mut token = env::var("GITHUB_TOKEN").ok().filter(|v| !v.is_empty());
     let mut retry = 0;
     let mut last_error;
     loop {
         let mut req = ureq::get(url);
-        if let Some(token) = &token1 {
-            req = req.set("Authorization", token);
-        } else if let Some(token) = &token2 {
+        if let Some(token) = &token {
             req = req.set("Authorization", token);
         }
         match req.call() {
             Ok(res) => return Ok(res),
             Err(e) => last_error = Some(e),
         }
-        if retry == 3 || retry == 6 {
-            if token1.is_some() {
-                token1 = None;
-            } else if token2.is_some() {
-                token2 = None;
-            }
+        if retry == 5 && token.is_some() {
+            token = None;
         }
         retry += 1;
         if retry > 10 {
