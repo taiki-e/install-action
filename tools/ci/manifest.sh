@@ -2,7 +2,7 @@
 # SPDX-License-Identifier: Apache-2.0 OR MIT
 set -euxo pipefail
 IFS=$'\n\t'
-cd "$(dirname "$0")"/..
+cd "$(dirname "$0")"/../..
 
 bail() {
     echo >&2 "error: $*"

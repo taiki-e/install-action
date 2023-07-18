@@ -180,10 +180,8 @@ jobs:
       - run: tools/manifest.sh
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-      - run: git add -N . && git diff --exit-code
-        if: github.repository_owner != 'taiki-e' || github.event_name != 'schedule' && !(github.event_name == 'push' && github.ref == 'refs/heads/main')
       - id: diff
-        run: ci/manifest.sh
+        run: tools/ci/manifest.sh
         if: github.repository_owner == 'taiki-e' && (github.event_name == 'schedule' || github.event_name == 'push' && github.ref == 'refs/heads/main')
       - uses: peter-evans/create-pull-request@v5
         with:
@@ -193,3 +191,4 @@ jobs:
           branch: update-manifest
           token: ${{ secrets.CREATE_PR_TOKEN }}
         if: github.repository_owner == 'taiki-e' && (github.event_name == 'schedule' || github.event_name == 'push' && github.ref == 'refs/heads/main') && steps.diff.outputs.success == 'false'
+      - run: git add -N . && git diff --exit-code
