@@ -10,6 +10,8 @@ Note: In this file, do not use the hard wrap in the middle of a sentence for com
 
 ## [Unreleased]
 
+- Slightly improve the time taken to install tools distributed as `.zip`.
+
 ## [2.12.12] - 2023-07-17
 
 - Update `mdbook@latest` to 0.4.32.
