@@ -10,6 +10,8 @@ Note: In this file, do not use the hard wrap in the middle of a sentence for com
 
 ## [Unreleased]
 
+- Update `cargo-binstall@latest` to 1.1.0.
+
 ## [2.12.13] - 2023-07-18
 
 - Slightly improve the time taken to install tools distributed as `.zip`.
