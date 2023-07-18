@@ -115,7 +115,7 @@ download_and_extract() {
         else
             case "${url}" in
                 *.zip)
-                    unzip tmp
+                    unzip -q tmp "${bin_in_archive#\./}"
                     mv "${bin_in_archive}" "${bin_dir}/"
                     ;;
                 *) mv tmp "${installed_bin}" ;;
@@ -470,7 +470,7 @@ for tool in "${tools[@]}"; do
             (
                 cd "${tmp_dir}"
                 download_and_checksum "${url}" "${checksum}"
-                unzip tmp
+                unzip -q tmp
                 mv "bin/protoc${exe}" "${bin_dir}/"
                 mkdir -p "${include_dir}/"
                 cp -r include/. "${include_dir}/"
