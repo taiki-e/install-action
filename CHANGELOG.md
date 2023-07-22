@@ -10,6 +10,8 @@ Note: In this file, do not use the hard wrap in the middle of a sentence for com
 
 ## [Unreleased]
 
+## [2.12.17] - 2023-07-22
+
 - Update `cargo-binstall@latest` to 1.1.2.
 
 ## [2.12.16] - 2023-07-21
@@ -967,7 +969,8 @@ Note: This release is considered a breaking change because installing on version
 
 Initial release
 
-[Unreleased]: https://github.com/taiki-e/install-action/compare/v2.12.16...HEAD
+[Unreleased]: https://github.com/taiki-e/install-action/compare/v2.12.17...HEAD
+[2.12.17]: https://github.com/taiki-e/install-action/compare/v2.12.16...v2.12.17
 [2.12.16]: https://github.com/taiki-e/install-action/compare/v2.12.15...v2.12.16
 [2.12.15]: https://github.com/taiki-e/install-action/compare/v2.12.14...v2.12.15
 [2.12.14]: https://github.com/taiki-e/install-action/compare/v2.12.13...v2.12.14
