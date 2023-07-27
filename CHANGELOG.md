@@ -10,6 +10,10 @@ Note: In this file, do not use the hard wrap in the middle of a sentence for com
 
 ## [Unreleased]
 
+- Update `cargo-tarpaulin@latest` to 0.26.1.
+
+- Fix checksum error with `cargo-tarpaulin@0.26.0`. ([#167](https://github.com/taiki-e/install-action/pull/167))
+
 ## [2.12.18] - 2023-07-25
 
 - Update `wasmtime@latest` to 11.0.1.
