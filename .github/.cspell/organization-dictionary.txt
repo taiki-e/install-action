@@ -24,7 +24,6 @@ rustsec
 rustup
 valgrind
 xcompile
-Zdoctest
 Zmiri
 
 // Rust target triple
@@ -158,6 +157,7 @@ noninteractive
 noprofile
 norc
 nproc
+objcopy
 objdump
 pipefail
 powerset
