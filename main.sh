@@ -414,7 +414,7 @@ cargo_bin="${CARGO_HOME:-"${HOME}/.cargo"}/bin"
 # If $CARGO_HOME does not exist, or cargo installed outside of $CARGO_HOME/bin
 # is used ($CARGO_HOME/bin is most likely not included in the PATH), fallback to
 # /usr/local/bin or $HOME/.install-action/bin.
-if [[ ! -d "${cargo_bin}" ]] || [[ "${host_os}" != "windows" ]] && [[ "$(type -P cargo || true)" != "${cargo_bin}/cargo${exe}" ]]; then
+if [[ ! -d "${cargo_bin}" ]] || { [[ "${host_os}" != "windows" ]] && [[ "$(type -P cargo || true)" != "${cargo_bin}/cargo${exe}" ]]; }; then
     cargo_bin=/usr/local/bin
 fi
 
