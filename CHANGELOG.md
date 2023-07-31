@@ -10,6 +10,8 @@ Note: In this file, do not use the hard wrap in the middle of a sentence for com
 
 ## [Unreleased]
 
+- Update `dprint@latest` to 0.40.1.
+
 ## [2.13.0] - 2023-07-31
 
 - Support `cargo-careful`. ([#173](https://github.com/taiki-e/install-action/pull/173))
