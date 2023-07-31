@@ -10,6 +10,8 @@ Note: In this file, do not use the hard wrap in the middle of a sentence for com
 
 ## [Unreleased]
 
+## [2.13.0] - 2023-07-31
+
 - Support `cargo-careful`. ([#173](https://github.com/taiki-e/install-action/pull/173))
 
 - Improve performance and robustness for cases where the host environment lacks the packages required for installation, such as containers or self-hosted runners.
@@ -1003,7 +1005,8 @@ Note: This release is considered a breaking change because installing on version
 
 Initial release
 
-[Unreleased]: https://github.com/taiki-e/install-action/compare/v2.12.23...HEAD
+[Unreleased]: https://github.com/taiki-e/install-action/compare/v2.13.0...HEAD
+[2.13.0]: https://github.com/taiki-e/install-action/compare/v2.12.23...v2.13.0
 [2.12.23]: https://github.com/taiki-e/install-action/compare/v2.12.22...v2.12.23
 [2.12.22]: https://github.com/taiki-e/install-action/compare/v2.12.21...v2.12.22
 [2.12.21]: https://github.com/taiki-e/install-action/compare/v2.12.20...v2.12.21
