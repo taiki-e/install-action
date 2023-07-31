@@ -420,14 +420,28 @@ fi
 
 if ! type -P jq &>/dev/null || ! type -P curl &>/dev/null || ! type -P tar &>/dev/null; then
     case "${base_distro}" in
-        debian | alpine) sys_install ca-certificates curl jq tar ;;
-        fedora)
-            if [[ "${dnf}" == "yum" ]]; then
+        debian | fedora | alpine)
+            sys_packages=()
+            if ! type -P curl &>/dev/null; then
+                sys_packages+=(ca-certificates curl)
+            fi
+            if ! type -P tar &>/dev/null; then
+                sys_packages+=(tar)
+            fi
+            if [[ "${dnf:-}" == "yum" ]]; then
                 # On RHEL7-based distribution jq requires EPEL
-                sys_install ca-certificates curl tar epel-release
-                sys_install jq --enablerepo=epel
+                if ! type -P jq &>/dev/null; then
+                    sys_packages+=(epel-release)
+                    sys_install "${sys_packages[@]}"
+                    sys_install jq --enablerepo=epel
+                else
+                    sys_install "${sys_packages[@]}"
+                fi
             else
-                sys_install ca-certificates curl jq tar
+                if ! type -P jq &>/dev/null; then
+                    sys_packages+=(jq)
+                fi
+                sys_install "${sys_packages[@]}"
             fi
             ;;
     esac

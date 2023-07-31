@@ -103,6 +103,8 @@ jobs:
           - fedora:latest # glibc 2.37 (as of fedora 38)
           - rockylinux:8 # glibc 2.28
           - rockylinux:8-minimal # glibc 2.28
+          - rockylinux:9 # glibc 2.34
+          - rockylinux:9-minimal # glibc 2.34
           - centos:7 # glibc 2.17
           - alpine:latest # musl 1.2.4 (as of alpine 3.18)
     runs-on: ubuntu-latest

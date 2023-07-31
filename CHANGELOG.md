@@ -12,6 +12,8 @@ Note: In this file, do not use the hard wrap in the middle of a sentence for com
 
 - Support `cargo-careful`. ([#173](https://github.com/taiki-e/install-action/pull/173))
 
+- Improve performance and robustness for cases where the host environment lacks the packages required for installation, such as containers or self-hosted runners.
+
 ## [2.12.23] - 2023-07-31
 
 - Update `dprint@latest` to 0.40.0.
