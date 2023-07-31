@@ -421,6 +421,7 @@ fi
 if ! type -P jq &>/dev/null || ! type -P curl &>/dev/null || ! type -P tar &>/dev/null; then
     case "${base_distro}" in
         debian | fedora | alpine)
+            echo "::group::Install jq, curl, and/or tar"
             sys_packages=()
             if ! type -P curl &>/dev/null; then
                 sys_packages+=(ca-certificates curl)
@@ -443,6 +444,7 @@ if ! type -P jq &>/dev/null || ! type -P curl &>/dev/null || ! type -P tar &>/de
                 fi
                 sys_install "${sys_packages[@]}"
             fi
+            echo "::endgroup::"
             ;;
     esac
 fi
