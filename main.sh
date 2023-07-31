@@ -78,7 +78,11 @@ download_and_extract() {
             tar_args+=("xjf")
             if ! type -P bzip2 &>/dev/null; then
                 case "${base_distro}" in
-                    debian | alpine | fedora) sys_install bzip2 ;;
+                    debian | alpine | fedora)
+                        echo "::group::Install packages required for installation (bzip2)"
+                        sys_install bzip2
+                        echo "::endgroup::"
+                        ;;
                 esac
             fi
             ;;
@@ -86,15 +90,27 @@ download_and_extract() {
             tar_args+=("xJf")
             if ! type -P xz &>/dev/null; then
                 case "${base_distro}" in
-                    debian) sys_install xz-utils ;;
-                    alpine | fedora) sys_install xz ;;
+                    debian)
+                        echo "::group::Install packages required for installation (xz-utils)"
+                        sys_install xz-utils
+                        echo "::endgroup::"
+                        ;;
+                    alpine | fedora)
+                        echo "::group::Install packages required for installation (xz)"
+                        sys_install xz
+                        echo "::endgroup::"
+                        ;;
                 esac
             fi
             ;;
         *.zip)
             if ! type -P unzip &>/dev/null; then
                 case "${base_distro}" in
-                    debian | alpine | fedora) sys_install unzip ;;
+                    debian | alpine | fedora)
+                        echo "::group::Install packages required for installation (unzip)"
+                        sys_install unzip
+                        echo "::endgroup::"
+                        ;;
                 esac
             fi
             ;;
@@ -421,7 +437,7 @@ fi
 if ! type -P jq &>/dev/null || ! type -P curl &>/dev/null || ! type -P tar &>/dev/null; then
     case "${base_distro}" in
         debian | fedora | alpine)
-            echo "::group::Install jq, curl, and/or tar"
+            echo "::group::Install packages required for installation (jq, curl, and/or tar)"
             sys_packages=()
             if ! type -P curl &>/dev/null; then
                 sys_packages+=(ca-certificates curl)
@@ -479,7 +495,11 @@ for tool in "${tools[@]}"; do
             fi
             if ! type -P unzip &>/dev/null; then
                 case "${base_distro}" in
-                    debian | alpine | fedora) sys_install unzip ;;
+                    debian | alpine | fedora)
+                        echo "::group::Install packages required for installation (unzip)"
+                        sys_install unzip
+                        echo "::endgroup::"
+                        ;;
                 esac
             fi
             mkdir -p "${tmp_dir}"
