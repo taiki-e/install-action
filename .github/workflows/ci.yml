@@ -38,25 +38,19 @@ jobs:
     strategy:
       fail-fast: false
       matrix:
-        os:
-          - ubuntu-20.04
-          - ubuntu-22.04
-        tool:
-          # cargo-watch/watchexec-cli is supported by cargo-binstall (through quickinstall)
-          # TODO: valgrind installation sometime hangs.
-          - cargo-dinghy,cargo-hack,cargo-llvm-cov,cargo-make,cargo-minimal-versions,cargo-no-dev-deps,parse-changelog,cargo-udeps,cargo-valgrind,cargo-deny,cross,dprint,just,nextest,protoc,shellcheck,shfmt,wasm-pack,wasmtime,mdbook,mdbook-linkcheck,cargo-watch,grcov,watchexec-cli,cargo-tarpaulin,zola,syft
         include:
-          # Note: Specifying the version of valgrind and cargo-binstall is not supported.
           - os: ubuntu-20.04
-            tool: cargo-dinghy@0.6.4,cargo-hack@0.5.24,cargo-llvm-cov@0.5.3,cargo-make@0.36.11,cargo-minimal-versions@0.1.8,cargo-no-dev-deps@0.1.0,parse-changelog@0.5.2,cargo-udeps@0.1.35,cargo-valgrind@2.1.0,cargo-deny@0.13.5,cross@0.2.4,dprint@0.34.1,just@1.9.0,nextest@0.9.11,protoc@3.21.12,shellcheck@0.9.0,shfmt@3.6.0,wasm-pack@0.10.3,wasmtime@4.0.0,mdbook@0.4.25,mdbook-linkcheck@0.7.7,cargo-watch@8.1.1,grcov@0.8.13,watchexec-cli@1.20.5,cargo-tarpaulin@0.25.0,zola@0.16.1,syft@0.83.0
+          - os: ubuntu-22.04
           - os: ubuntu-20.04
-            tool: cargo-dinghy@0.6,cargo-hack@0.5,cargo-llvm-cov@0.5,cargo-make@0.36,cargo-minimal-versions@0.1,cargo-no-dev-deps@0.1,parse-changelog@0.5,cargo-udeps@0.1,cargo-valgrind@2.1,cargo-deny@0.13,cross@0.2,dprint@0.34,just@1.9,nextest@0.9,protoc@3.21,shellcheck@0.9,shfmt@3.5,wasm-pack@0.10,wasmtime@6.0,mdbook@0.4,mdbook-linkcheck@0.7,cargo-watch@8.1,grcov@0.8,watchexec-cli@1.20,cargo-tarpaulin@0.25,zola@0.16,syft@0.83
+            tool: major.minor.patch
           - os: ubuntu-20.04
-            tool: cargo-valgrind@2, just@1,protoc@3 , shfmt@3 ,wasmtime@7,cargo-watch@8,watchexec-cli@1
+            tool: major.minor
+          - os: ubuntu-20.04
+            tool: major
           - os: macos-11
-            tool: cargo-dinghy,cargo-hack,cargo-llvm-cov,cargo-make,cargo-minimal-versions,cargo-no-dev-deps,parse-changelog,cargo-udeps,cargo-valgrind,cargo-deny,cross,dprint,just,nextest,protoc,shellcheck,shfmt,wasm-pack,wasmtime,mdbook,mdbook-linkcheck,cargo-watch,grcov,watchexec-cli,cargo-tarpaulin,zola,syft
+          - os: macos-12
           - os: windows-2019
-            tool: cargo-hack,cargo-llvm-cov,cargo-make,cargo-minimal-versions,cargo-no-dev-deps,parse-changelog,cargo-udeps,cargo-valgrind,cargo-deny,cross,dprint,just,nextest,protoc,shellcheck,shfmt,wasm-pack,wasmtime,mdbook,mdbook-linkcheck,cargo-watch,grcov,watchexec-cli,cargo-tarpaulin,zola,syft
+          - os: windows-2022
     runs-on: ${{ matrix.os }}
     timeout-minutes: 60
     steps:
@@ -65,9 +59,12 @@ jobs:
           persist-credentials: false
       # cross attempts to install rust-src when Cargo.toml is available even if `cross --version`
       - run: rm Cargo.toml
+      - name: Generate tool list
+        id: tool-list
+        run: tools/ci/tool-list.sh "${{ matrix.tool }}" >>"${GITHUB_OUTPUT}"
       - uses: ./
         with:
-          tool: ${{ matrix.tool }}
+          tool: ${{ steps.tool-list.outputs.tool }}
       # https://docs.github.com/en/actions/using-workflows/workflow-syntax-for-github-actions#jobsjob_idstepsshell
       - name: Test bash
         run: just --version; shfmt --version; protoc --version
@@ -97,33 +94,17 @@ jobs:
       fail-fast: false
       matrix:
         container:
-          # glibc >= 2.31
+          - ubuntu:18.04 # glibc 2.27
           - ubuntu:20.04 # glibc 2.31
           - ubuntu:22.04 # glibc 2.35
+          - debian:10-slim # glibc 2.28
           - debian:11-slim # glibc 2.31
           - debian:12-slim # glibc 2.36
           - fedora:latest # glibc 2.37 (as of fedora 38)
-        tool:
-          # valgrind: installing snap to container is difficult...
-          - cargo-dinghy,cargo-hack,cargo-llvm-cov,cargo-make,cargo-minimal-versions,cargo-no-dev-deps,parse-changelog,cargo-udeps,cargo-valgrind,cargo-deny,cross,dprint,just,nextest,protoc,shellcheck,shfmt,wasm-pack,wasmtime,mdbook,mdbook-linkcheck,cargo-watch,grcov,watchexec-cli,cargo-tarpaulin,zola,syft
-        include:
-          # glibc < 2.31
-          # zola don't provide prebuilt binaries for musl or old glibc host.
-          - container: ubuntu:18.04 # glibc 2.27
-            tool: cargo-dinghy,cargo-hack,cargo-llvm-cov,cargo-make,cargo-minimal-versions,cargo-no-dev-deps,parse-changelog,cargo-udeps,cargo-valgrind,cargo-deny,cross,dprint,just,nextest,protoc,shellcheck,shfmt,wasm-pack,wasmtime,mdbook,mdbook-linkcheck,cargo-watch,grcov,watchexec-cli,cargo-tarpaulin,syft
-          - container: debian:10-slim # glibc 2.28
-            tool: cargo-dinghy,cargo-hack,cargo-llvm-cov,cargo-make,cargo-minimal-versions,cargo-no-dev-deps,parse-changelog,cargo-udeps,cargo-valgrind,cargo-deny,cross,dprint,just,nextest,protoc,shellcheck,shfmt,wasm-pack,wasmtime,mdbook,mdbook-linkcheck,cargo-watch,grcov,watchexec-cli,cargo-tarpaulin,syft
-          - container: rockylinux:8 # glibc 2.28
-            tool: cargo-dinghy,cargo-hack,cargo-llvm-cov,cargo-make,cargo-minimal-versions,cargo-no-dev-deps,parse-changelog,cargo-udeps,cargo-valgrind,cargo-deny,cross,dprint,just,nextest,protoc,shellcheck,shfmt,wasm-pack,wasmtime,mdbook,mdbook-linkcheck,cargo-watch,grcov,watchexec-cli,cargo-tarpaulin,syft
-          - container: rockylinux:8-minimal # glibc 2.28
-            tool: cargo-dinghy,cargo-hack,cargo-llvm-cov,cargo-make,cargo-minimal-versions,cargo-no-dev-deps,parse-changelog,cargo-udeps,cargo-valgrind,cargo-deny,cross,dprint,just,nextest,protoc,shellcheck,shfmt,wasm-pack,wasmtime,mdbook,mdbook-linkcheck,cargo-watch,grcov,watchexec-cli,cargo-tarpaulin,syft
-          # glibc < 2.27 or musl
-          - container: centos:7 # glibc 2.17
-            # protoc,valgrind,wasmtime,mdbook-linkcheck,cargo-watch,zola don't provide prebuilt binaries for musl or old glibc host.
-            tool: cargo-dinghy,cargo-hack,cargo-llvm-cov,cargo-make,cargo-minimal-versions,cargo-no-dev-deps,parse-changelog,cargo-udeps,cargo-valgrind,cargo-deny,cross,dprint,just,nextest,shellcheck,shfmt,wasm-pack,mdbook,cargo-binstall,grcov,watchexec-cli,cargo-tarpaulin,syft
-          - container: alpine:latest # musl 1.2.4 (as of alpine 3.18)
-            # protoc,valgrind,wasmtime,mdbook-linkcheck,cargo-watch,zola don't provide prebuilt binaries for musl host.
-            tool: cargo-dinghy,cargo-hack,cargo-llvm-cov,cargo-make,cargo-minimal-versions,cargo-no-dev-deps,parse-changelog,cargo-udeps,cargo-valgrind,cargo-deny,cross,dprint,just,nextest,shellcheck,shfmt,wasm-pack,mdbook,cargo-binstall,grcov,watchexec-cli,cargo-tarpaulin,syft
+          - rockylinux:8 # glibc 2.28
+          - rockylinux:8-minimal # glibc 2.28
+          - centos:7 # glibc 2.17
+          - alpine:latest # musl 1.2.4 (as of alpine 3.18)
     runs-on: ubuntu-latest
     timeout-minutes: 60
     container: ${{ matrix.container }}
@@ -161,9 +142,12 @@ jobs:
           persist-credentials: false
       # cross attempts to install rust-src when Cargo.toml is available even if `cross --version`
       - run: rm Cargo.toml
+      - name: Generate tool list
+        id: tool-list
+        run: tools/ci/tool-list.sh >>"${GITHUB_OUTPUT}"
       - uses: ./
         with:
-          tool: ${{ matrix.tool }}
+          tool: ${{ steps.tool-list.outputs.tool }}
 
   manifest:
     runs-on: ubuntu-latest
