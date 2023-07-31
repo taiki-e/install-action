@@ -1,6 +1,6 @@
 #!/usr/bin/env bash
 # SPDX-License-Identifier: Apache-2.0 OR MIT
-set -euxo pipefail
+set -euo pipefail
 IFS=$'\n\t'
 cd "$(dirname "$0")"/../..
 
@@ -15,6 +15,8 @@ fi
 
 git config user.name "Taiki Endo"
 git config user.email "te316e89@gmail.com"
+
+set -x
 
 for manifest in manifests/*.json; do
     git add -N "${manifest}"
