@@ -557,6 +557,7 @@ for tool in "${tools[@]}"; do
     info "${tool} installed at $(type -P "${tool}${exe}")"
     # At least cargo-udeps 0.1.30 and wasm-pack 0.12.0 do not support --version option.
     case "${tool}" in
+        cargo-careful) ;; # cargo-careful 0.3.4 does not support neither --version nor --help option.
         cargo-*)
             if type -P cargo &>/dev/null; then
                 case "${tool}" in

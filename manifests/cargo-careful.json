@@ -1,0 +1,41 @@
+{
+  "template": {
+    "x86_64_linux_musl": {
+      "url": "https://github.com/RalfJung/cargo-careful/releases/download/v${version}/cargo-careful.x86_64-unknown-linux-musl"
+    },
+    "x86_64_macos": {
+      "url": "https://github.com/RalfJung/cargo-careful/releases/download/v${version}/cargo-careful.x86_64-apple-darwin"
+    },
+    "x86_64_windows": {
+      "url": "https://github.com/RalfJung/cargo-careful/releases/download/v${version}/cargo-careful.exe"
+    }
+  },
+  "latest": {
+    "version": "0.3.4"
+  },
+  "0.3": {
+    "version": "0.3.4"
+  },
+  "0.3.4": {
+    "x86_64_linux_musl": {
+      "checksum": "a9cfc7775546bd646a9e9252527c5caa56c429d854c6d8664ab4d63ed87827bd"
+    },
+    "x86_64_macos": {
+      "checksum": "b29d263648fc287250a413ebf53ddb37310564ac44bfd71c5a35ca8eaddac22f"
+    },
+    "x86_64_windows": {
+      "checksum": "50cebcb95cda4fa3b4d5010ed6252be92de2748d3f5c00aff3bc6fe5f39c0906"
+    }
+  },
+  "0.3.3": {
+    "x86_64_linux_musl": {
+      "checksum": "bb2b06f4df62110c8ae89a006b548a10a4da36d0f8f3ff67f7417fb51ed96b0a"
+    },
+    "x86_64_macos": {
+      "checksum": "c396bae85ad4b414976ea6943bdb6fb666e56735ad51255ab615399e40641fec"
+    },
+    "x86_64_windows": {
+      "checksum": "87b35993b38fc60c069c45d58e79bae6c8f5253ce2459dff6a6b0b629c7aeb4c"
+    }
+  }
+}
