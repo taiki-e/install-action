@@ -74,6 +74,15 @@ fn main() -> Result<()> {
         })
         .collect();
 
+    let mut crates_io_info = None;
+    if base_info.bin_dir.is_none() {
+        eprintln!("downloading crate info from https://crates.io/api/v1/crates/{package}");
+        crates_io_info = Some(
+            download(&format!("https://crates.io/api/v1/crates/{package}"))?
+                .into_json::<crates_io::Crate>()?,
+        );
+    }
+
     let mut manifests: Manifests = Manifests::default();
     let mut semver_versions = BTreeSet::new();
     let mut has_build_metadata = false;
@@ -250,6 +259,14 @@ fn main() -> Result<()> {
                 download_info.remove(&HostPlatform::aarch64_linux_gnu);
             }
         }
+        if download_info.contains_key(&HostPlatform::x86_64_macos)
+            && download_info.contains_key(&HostPlatform::aarch64_macos)
+            && download_info[&HostPlatform::x86_64_macos].url
+                == download_info[&HostPlatform::aarch64_macos].url
+        {
+            // macOS universal binary or x86_64 binary that works on both x86_64 and aarch64 (rosetta).
+            download_info.remove(&HostPlatform::aarch64_macos);
+        }
         has_build_metadata |= !semver_version.build.is_empty();
         if semver_version.pre.is_empty() {
             semver_versions.insert(semver_version.clone());
@@ -266,6 +283,13 @@ fn main() -> Result<()> {
     } else if !semver_versions.is_empty() {
         let mut prev_version = semver_versions.iter().next().unwrap();
         for version in &semver_versions {
+            if let Some(crates_io_info) = &crates_io_info {
+                if let Some(v) = crates_io_info.versions.iter().find(|v| v.num == *version) {
+                    if v.yanked {
+                        continue;
+                    }
+                }
+            }
             if !(version.major == 0 && version.minor == 0) {
                 manifests.map.insert(
                     Reverse(Version::omitted(version.major, Some(version.minor))),
@@ -739,5 +763,21 @@ mod github {
         pub name: String,
         pub content_type: String,
         pub browser_download_url: String,
+    }
+}
+
+mod crates_io {
+    use serde::Deserialize;
+
+    // https://crates.io/api/v1/crates/<crate>
+    #[derive(Debug, Deserialize)]
+    pub struct Crate {
+        pub versions: Vec<Version>,
+    }
+
+    #[derive(Debug, Deserialize)]
+    pub struct Version {
+        pub num: semver::Version,
+        pub yanked: bool,
     }
 }
