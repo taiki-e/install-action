@@ -31,7 +31,7 @@ fn main() -> Result<()> {
     fs::create_dir_all(manifest_path.parent().unwrap())?;
     fs::create_dir_all(download_cache_dir)?;
 
-    let base_info: BaseManifest = serde_json::from_slice(&fs::read(
+    let mut base_info: BaseManifest = serde_json::from_slice(&fs::read(
         workspace_root
             .join("tools/codegen/base")
             .join(format!("{package}.json")),
@@ -75,10 +75,15 @@ fn main() -> Result<()> {
         .collect();
 
     let mut crates_io_info = None;
-    if base_info.bin_dir.is_none() {
-        eprintln!("downloading crate info from https://crates.io/api/v1/crates/{package}");
+    base_info.rust_crate = base_info
+        .rust_crate
+        .as_ref()
+        .map(|s| replace_vars(s, package, None, None))
+        .transpose()?;
+    if let Some(crate_name) = &base_info.rust_crate {
+        eprintln!("downloading crate info from https://crates.io/api/v1/crates/{crate_name}");
         crates_io_info = Some(
-            download(&format!("https://crates.io/api/v1/crates/{package}"))?
+            download(&format!("https://crates.io/api/v1/crates/{crate_name}"))?
                 .into_json::<crates_io::Crate>()?,
         );
     }
@@ -106,10 +111,6 @@ fn main() -> Result<()> {
                         for (platform, d) in &mut manifest.download_info {
                             let template = &template.download_info[platform];
                             d.url = Some(template.url.replace("${version}", version));
-                            d.bin_dir = template
-                                .bin_dir
-                                .as_ref()
-                                .map(|s| s.replace("${version}", version));
                             d.bin = template
                                 .bin
                                 .as_ref()
@@ -186,7 +187,7 @@ fn main() -> Result<()> {
                 .with_context(|| format!("asset_name is needed for {package} on {platform:?}"))?
                 .as_slice()
                 .iter()
-                .map(|asset_name| replace_vars(asset_name, package, version, platform))
+                .map(|asset_name| replace_vars(asset_name, package, Some(version), Some(platform)))
                 .collect::<Result<Vec<_>>>()?;
             let (url, asset_name) = match asset_names.iter().find_map(|asset_name| {
                 release
@@ -227,16 +228,11 @@ fn main() -> Result<()> {
                 ManifestDownloadInfo {
                     url: Some(url),
                     checksum: hash,
-                    bin_dir: base_download_info
-                        .bin_dir
-                        .as_ref()
-                        .or(base_info.bin_dir.as_ref())
-                        .cloned(),
                     bin: base_download_info
                         .bin
                         .as_ref()
                         .or(base_info.bin.as_ref())
-                        .map(|s| replace_vars(s, package, version, platform))
+                        .map(|s| replace_vars(s, package, Some(version), Some(platform)))
                         .transpose()?,
                 },
             );
@@ -369,10 +365,9 @@ fn main() -> Result<()> {
         let t = template.as_mut().unwrap();
         for (platform, d) in &mut manifest.download_info {
             let template_url = d.url.take().unwrap().replace(version, "${version}");
-            let template_bin_dir = d.bin_dir.take().map(|s| s.replace(version, "${version}"));
             let template_bin = d.bin.take().map(|s| s.replace(version, "${version}"));
             if let Some(d) = t.download_info.get(platform) {
-                if template_url != d.url || template_bin_dir != d.bin_dir || template_bin != d.bin {
+                if template_url != d.url || template_bin != d.bin {
                     template = None;
                     break 'outer;
                 }
@@ -381,7 +376,6 @@ fn main() -> Result<()> {
                     *platform,
                     ManifestTemplateDownloadInfo {
                         url: template_url,
-                        bin_dir: template_bin_dir,
                         bin: template_bin,
                     },
                 );
@@ -393,6 +387,8 @@ fn main() -> Result<()> {
     } else {
         manifests.template = template;
     }
+
+    manifests.rust_crate = base_info.rust_crate;
 
     let mut buf = serde_json::to_vec_pretty(&manifests)?;
     buf.push(b'\n');
@@ -408,14 +404,22 @@ fn workspace_root() -> PathBuf {
     dir
 }
 
-fn replace_vars(s: &str, package: &str, version: &str, platform: HostPlatform) -> Result<String> {
-    let s = s
-        .replace("${package}", package)
-        .replace("${tool}", package)
-        .replace("${rust_target}", platform.rust_target())
-        .replace("${os_name}", platform.os_name())
-        .replace("${version}", version)
-        .replace("${exe}", platform.exe_suffix());
+fn replace_vars(
+    s: &str,
+    package: &str,
+    version: Option<&str>,
+    platform: Option<HostPlatform>,
+) -> Result<String> {
+    let mut s = s.replace("${package}", package).replace("${tool}", package);
+    if let Some(platform) = platform {
+        s = s
+            .replace("${rust_target}", platform.rust_target())
+            .replace("${os_name}", platform.os_name())
+            .replace("${exe}", platform.exe_suffix());
+    }
+    if let Some(version) = version {
+        s = s.replace("${version}", version);
+    }
     if s.contains('$') {
         bail!("variable not fully replaced: '{s}'");
     }
@@ -587,6 +591,7 @@ impl<'de> Deserialize<'de> for Version {
 
 #[derive(Debug, Clone, Default, Serialize, Deserialize)]
 struct Manifests {
+    rust_crate: Option<String>,
     template: Option<ManifestTemplate>,
     #[serde(flatten)]
     map: BTreeMap<Reverse<Version>, ManifestRef>,
@@ -610,9 +615,6 @@ struct ManifestDownloadInfo {
     #[serde(skip_serializing_if = "Option::is_none")]
     url: Option<String>,
     checksum: String,
-    /// Default to ${cargo_bin}
-    #[serde(skip_serializing_if = "Option::is_none")]
-    bin_dir: Option<String>,
     /// Default to ${tool}${exe}
     #[serde(skip_serializing_if = "Option::is_none")]
     bin: Option<String>,
@@ -627,9 +629,6 @@ struct ManifestTemplate {
 #[derive(Debug, Clone, Serialize, Deserialize)]
 struct ManifestTemplateDownloadInfo {
     url: String,
-    /// Default to ${cargo_bin}
-    #[serde(skip_serializing_if = "Option::is_none")]
-    bin_dir: Option<String>,
     /// Default to ${tool}${exe}
     #[serde(skip_serializing_if = "Option::is_none")]
     bin: Option<String>,
@@ -642,11 +641,11 @@ struct BaseManifest {
     repository: String,
     /// Prefix of release tag.
     tag_prefix: String,
+    /// Crate name, if this is Rust crate.
+    rust_crate: Option<String>,
     default_major_version: Option<String>,
     /// Asset name patterns.
     asset_name: Option<StringOrArray>,
-    /// Directory where binary is installed. Default to `${cargo_bin}`.
-    bin_dir: Option<String>,
     /// Path to binary in archive. Default to `${tool}${exe}`.
     bin: Option<String>,
     platform: BTreeMap<HostPlatform, BaseManifestPlatformInfo>,
@@ -661,8 +660,6 @@ struct BaseManifest {
 struct BaseManifestPlatformInfo {
     /// Asset name patterns. Default to the value at `BaseManifest::asset_name`.
     asset_name: Option<StringOrArray>,
-    /// Directory where binary is installed. Default to the value at `BaseManifest::bin_dir`.
-    bin_dir: Option<String>,
     /// Path to binary in archive. Default to the value at `BaseManifest::bin`.
     bin: Option<String>,
 }

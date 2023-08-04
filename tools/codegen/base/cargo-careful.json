@@ -1,6 +1,7 @@
 {
   "repository": "https://github.com/RalfJung/cargo-careful",
   "tag_prefix": "v",
+  "rust_crate": "${package}",
   "asset_name": "${package}.${rust_target}",
   "platform": {
     "x86_64_linux_musl": {},

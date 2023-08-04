@@ -1,6 +1,7 @@
 {
   "repository": "https://github.com/EmbarkStudios/cargo-deny",
   "tag_prefix": "",
+  "rust_crate": "${package}",
   "asset_name": "${package}-${version}-${rust_target}.tar.gz",
   "bin": "${package}-${version}-${rust_target}/${package}${exe}",
   "platform": {

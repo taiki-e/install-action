@@ -1,24 +1,20 @@
 {
+  "rust_crate": null,
   "template": {
     "x86_64_linux_gnu": {
-      "url": "https://github.com/mvdan/sh/releases/download/v${version}/shfmt_v${version}_linux_amd64",
-      "bin_dir": "/usr/local/bin"
+      "url": "https://github.com/mvdan/sh/releases/download/v${version}/shfmt_v${version}_linux_amd64"
     },
     "x86_64_macos": {
-      "url": "https://github.com/mvdan/sh/releases/download/v${version}/shfmt_v${version}_darwin_amd64",
-      "bin_dir": "/usr/local/bin"
+      "url": "https://github.com/mvdan/sh/releases/download/v${version}/shfmt_v${version}_darwin_amd64"
     },
     "x86_64_windows": {
-      "url": "https://github.com/mvdan/sh/releases/download/v${version}/shfmt_v${version}_windows_amd64.exe",
-      "bin_dir": "/usr/local/bin"
+      "url": "https://github.com/mvdan/sh/releases/download/v${version}/shfmt_v${version}_windows_amd64.exe"
     },
     "aarch64_linux_gnu": {
-      "url": "https://github.com/mvdan/sh/releases/download/v${version}/shfmt_v${version}_linux_arm64",
-      "bin_dir": "/usr/local/bin"
+      "url": "https://github.com/mvdan/sh/releases/download/v${version}/shfmt_v${version}_linux_arm64"
     },
     "aarch64_macos": {
-      "url": "https://github.com/mvdan/sh/releases/download/v${version}/shfmt_v${version}_darwin_arm64",
-      "bin_dir": "/usr/local/bin"
+      "url": "https://github.com/mvdan/sh/releases/download/v${version}/shfmt_v${version}_darwin_arm64"
     }
   },
   "latest": {

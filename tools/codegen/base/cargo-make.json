@@ -1,6 +1,7 @@
 {
   "repository": "https://github.com/sagiegurari/cargo-make",
   "tag_prefix": "",
+  "rust_crate": "${package}",
   "asset_name": "${package}-v${version}-${rust_target}.zip",
   "bin": "${package}-v${version}-${rust_target}/${package}${exe}",
   "platform": {

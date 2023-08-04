@@ -1,6 +1,7 @@
 {
   "repository": "https://github.com/bytecodealliance/wasmtime",
   "tag_prefix": "v",
+  "rust_crate": "wasmtime-cli",
   "platform": {
     "x86_64_linux_gnu": {
       "asset_name": "${package}-v${version}-x86_64-linux.tar.xz",

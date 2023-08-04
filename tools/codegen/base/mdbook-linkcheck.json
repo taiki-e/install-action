@@ -1,6 +1,7 @@
 {
   "repository": "https://github.com/Michael-F-Bryan/mdbook-linkcheck",
   "tag_prefix": "v",
+  "rust_crate": "${package}",
   "asset_name": "${package}.${rust_target}.zip",
   "platform": {
     "x86_64_linux_gnu": {},

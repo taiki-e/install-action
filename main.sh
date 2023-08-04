@@ -152,6 +152,7 @@ read_manifest() {
     local tool="$1"
     local version="$2"
     local manifest
+    rust_crate=$(jq -r ".rust_crate" "${manifest_dir}/${tool}.json")
     manifest=$(jq -r ".\"${version}\"" "${manifest_dir}/${tool}.json")
     if [[ "${manifest}" == "null" ]]; then
         download_info="null"
@@ -220,15 +221,14 @@ read_download_info() {
         template=$(jq -r ".template.${host_platform}" "${manifest_dir}/${tool}.json")
         url=$(jq <<<"${template}" -r '.url')
         url="${url//\$\{version\}/${exact_version}}"
-        bin_dir=$(jq <<<"${template}" -r '.bin_dir')
-        bin_dir="${bin_dir//\$\{version\}/${exact_version}}"
         bin_in_archive=$(jq <<<"${template}" -r '.bin')
         bin_in_archive="${bin_in_archive//\$\{version\}/${exact_version}}"
     else
-        bin_dir=$(jq <<<"${download_info}" -r '.bin_dir')
         bin_in_archive=$(jq <<<"${download_info}" -r '.bin')
     fi
-    if [[ "${bin_dir}" == "null" ]]; then
+    if [[ "${rust_crate}" == "null" ]]; then
+        bin_dir="/usr/local/bin"
+    else
         bin_dir="${cargo_bin}"
     fi
     if [[ "${bin_in_archive}" == "null" ]]; then
@@ -563,10 +563,13 @@ for tool in "${tools[@]}"; do
             # Use cargo-binstall fallback if tool is available but the specified version not available.
             read_manifest "${tool}" "${version}"
             if [[ "${download_info}" == "null" ]]; then
+                if [[ "${rust_crate}" == "null" ]]; then
+                    bail "${tool}@${version} for '${host_os}' is not supported"
+                fi
                 warn "${tool}@${version} for '${host_os}' is not supported; fallback to cargo-binstall"
                 case "${version}" in
-                    latest) unsupported_tools+=("${tool}") ;;
-                    *) unsupported_tools+=("${tool}@${version}") ;;
+                    latest) unsupported_tools+=("${rust_crate}") ;;
+                    *) unsupported_tools+=("${rust_crate}@${version}") ;;
                 esac
                 continue
             fi

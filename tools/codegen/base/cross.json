@@ -1,6 +1,7 @@
 {
   "repository": "https://github.com/cross-rs/cross",
   "tag_prefix": "v",
+  "rust_crate": "${package}",
   "asset_name": [
     "${package}-${rust_target}.tar.gz",
     "${package}-v${version}-${rust_target}.tar.gz"

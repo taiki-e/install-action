@@ -1,6 +1,7 @@
 {
   "repository": "https://github.com/taiki-e/parse-changelog",
   "tag_prefix": "v",
+  "rust_crate": "${package}",
   "asset_name": "${package}-${rust_target}.tar.gz",
   "platform": {
     "x86_64_linux_gnu": {},

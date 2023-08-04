@@ -1,7 +1,6 @@
 {
   "repository": "https://github.com/anchore/syft",
   "tag_prefix": "v",
-  "bin_dir": "/usr/local/bin",
   "bin": "${package}${exe}",
   "version_range": ">= 0.83.0",
   "platform": {

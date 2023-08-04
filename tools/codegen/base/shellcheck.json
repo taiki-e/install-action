@@ -1,7 +1,6 @@
 {
   "repository": "https://github.com/koalaman/shellcheck",
   "tag_prefix": "v",
-  "bin_dir": "/usr/local/bin",
   "bin": "${package}-v${version}/${package}${exe}",
   "platform": {
     "x86_64_linux_gnu": {
