@@ -242,18 +242,16 @@ fn main() -> Result<()> {
             eprintln!("no release asset for {package} {version}");
             continue;
         }
-        if !base_info.prefer_linux_gnu {
-            // compact manifest
-            if download_info.contains_key(&HostPlatform::x86_64_linux_gnu)
-                && download_info.contains_key(&HostPlatform::x86_64_linux_musl)
-            {
-                download_info.remove(&HostPlatform::x86_64_linux_gnu);
-            }
-            if download_info.contains_key(&HostPlatform::aarch64_linux_gnu)
-                && download_info.contains_key(&HostPlatform::aarch64_linux_musl)
-            {
-                download_info.remove(&HostPlatform::aarch64_linux_gnu);
-            }
+        // compact manifest
+        if download_info.contains_key(&HostPlatform::x86_64_linux_gnu)
+            && download_info.contains_key(&HostPlatform::x86_64_linux_musl)
+        {
+            download_info.remove(&HostPlatform::x86_64_linux_gnu);
+        }
+        if download_info.contains_key(&HostPlatform::aarch64_linux_gnu)
+            && download_info.contains_key(&HostPlatform::aarch64_linux_musl)
+        {
+            download_info.remove(&HostPlatform::aarch64_linux_gnu);
         }
         if download_info.contains_key(&HostPlatform::x86_64_macos)
             && download_info.contains_key(&HostPlatform::aarch64_macos)
@@ -331,21 +329,19 @@ fn main() -> Result<()> {
         if latest_manifest.download_info.contains_key(&p) {
             continue;
         }
-        if !base_info.prefer_linux_gnu {
-            if p == HostPlatform::x86_64_linux_gnu
-                && latest_manifest
-                    .download_info
-                    .contains_key(&HostPlatform::x86_64_linux_musl)
-            {
-                continue;
-            }
-            if p == HostPlatform::aarch64_linux_gnu
-                && latest_manifest
-                    .download_info
-                    .contains_key(&HostPlatform::aarch64_linux_musl)
-            {
-                continue;
-            }
+        if p == HostPlatform::x86_64_linux_gnu
+            && latest_manifest
+                .download_info
+                .contains_key(&HostPlatform::x86_64_linux_musl)
+        {
+            continue;
+        }
+        if p == HostPlatform::aarch64_linux_gnu
+            && latest_manifest
+                .download_info
+                .contains_key(&HostPlatform::aarch64_linux_musl)
+        {
+            continue;
         }
         bail!(
             "platform list in base manifest for {package} contains {p:?}, \
@@ -649,9 +645,6 @@ struct BaseManifest {
     /// Path to binary in archive. Default to `${tool}${exe}`.
     bin: Option<String>,
     platform: BTreeMap<HostPlatform, BaseManifestPlatformInfo>,
-    /// Use glibc build if host_env is gnu.
-    #[serde(default)]
-    prefer_linux_gnu: bool,
     version_range: Option<String>,
 }
 

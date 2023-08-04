@@ -113,9 +113,9 @@ case "${host_os}" in
 esac
 # cargo-watch/watchexec-cli is supported by cargo-binstall (through quickinstall)
 case "${version}" in
-    latest) tools+=(cargo-watch watchexec-cli) ;;
-    major.minor.patch) tools+=(cargo-watch@8.1.1 watchexec-cli@1.20.5) ;;
-    major.minor) tools+=(cargo-watch@8.1 watchexec-cli@1.20) ;;
+    latest) tools+=(cargo-watch watchexec-cli nextest) ;;
+    major.minor.patch) tools+=(cargo-watch@8.1.1 watchexec-cli@1.20.5 nextest@0.9.57) ;;
+    major.minor) tools+=(cargo-watch@8.1 watchexec-cli@1.20 nextest@0.9) ;;
     major) tools+=(cargo-watch@8 watchexec-cli@1) ;;
     *) exit 1 ;;
 esac

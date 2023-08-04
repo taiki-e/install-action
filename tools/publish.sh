@@ -106,10 +106,8 @@ tools=()
 for tool in tools/codegen/base/*.json; do
     tools+=("$(basename "${tool%.*}")")
 done
-# Aliases
-tools+=(nextest)
 # Not manifest-based
-tools+=(valgrind)
+tools+=(valgrind nextest cargo-nextest)
 
 (
     set -x
