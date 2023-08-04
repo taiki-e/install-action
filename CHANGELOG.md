@@ -10,6 +10,8 @@ Note: In this file, do not use the hard wrap in the middle of a sentence for com
 
 ## [Unreleased]
 
+## [2.13.6] - 2023-08-04
+
 - Update `mdbook@latest` to 0.4.33.
 
 ## [2.13.5] - 2023-08-03
@@ -1029,7 +1031,8 @@ Note: This release is considered a breaking change because installing on version
 
 Initial release
 
-[Unreleased]: https://github.com/taiki-e/install-action/compare/v2.13.5...HEAD
+[Unreleased]: https://github.com/taiki-e/install-action/compare/v2.13.6...HEAD
+[2.13.6]: https://github.com/taiki-e/install-action/compare/v2.13.5...v2.13.6
 [2.13.5]: https://github.com/taiki-e/install-action/compare/v2.13.4...v2.13.5
 [2.13.4]: https://github.com/taiki-e/install-action/compare/v2.13.3...v2.13.4
 [2.13.3]: https://github.com/taiki-e/install-action/compare/v2.13.2...v2.13.3
