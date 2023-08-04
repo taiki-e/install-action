@@ -163,7 +163,24 @@ read_manifest() {
         exact_version="${version}"
     else
         manifest=$(jq -r ".\"${exact_version}\"" "${manifest_dir}/${tool}.json")
+        if [[ "${rust_crate}" != "null" ]]; then
+            crate_info=$(retry curl --proto '=https' --tlsv1.2 -fsSL --retry 10 "https://crates.io/api/v1/crates/${rust_crate}")
+            while true; do
+                yanked=$(jq <<<"${crate_info}" -r ".versions[] | select(.num == \"${exact_version}\") | .yanked")
+                if [[ "${yanked}" != "true" ]]; then
+                    break
+                fi
+                previous_stable_version=$(jq <<<"${manifest}" -r '.previous_stable_version')
+                if [[ "${previous_stable_version}" == "null" ]]; then
+                    break
+                fi
+                info "${tool}@${exact_version} is yanked; downgrade to ${previous_stable_version}"
+                exact_version="${previous_stable_version}"
+                manifest=$(jq -r ".\"${exact_version}\"" "${manifest_dir}/${tool}.json")
+            done
+        fi
     fi
+
     case "${host_os}" in
         linux)
             # Static-linked binaries compiled for linux-musl will also work on linux-gnu systems and are

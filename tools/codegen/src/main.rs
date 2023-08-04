@@ -269,8 +269,21 @@ fn main() -> Result<()> {
         }
         manifests.map.insert(
             Reverse(semver_version.clone().into()),
-            ManifestRef::Real(Manifest { download_info }),
+            ManifestRef::Real(Manifest {
+                previous_stable_version: None,
+                download_info,
+            }),
         );
+    }
+    let mut prev: Option<&Version> = None;
+    for (Reverse(v), m) in manifests.map.iter_mut().rev() {
+        let ManifestRef::Real(m) = m else { continue };
+        if base_info.rust_crate.is_some() {
+            m.previous_stable_version = prev.cloned();
+        } else {
+            m.previous_stable_version = None;
+        }
+        prev = Some(v);
     }
     if has_build_metadata {
         eprintln!(
@@ -606,6 +619,8 @@ enum ManifestRef {
 
 #[derive(Debug, Clone, Serialize, Deserialize)]
 struct Manifest {
+    #[serde(skip_serializing_if = "Option::is_none")]
+    previous_stable_version: Option<Version>,
     #[serde(flatten)]
     download_info: BTreeMap<HostPlatform, ManifestDownloadInfo>,
 }

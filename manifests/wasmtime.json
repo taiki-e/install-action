@@ -11,6 +11,7 @@
     "version": "11.0.1"
   },
   "11.0.1": {
+    "previous_stable_version": "11.0.0",
     "x86_64_linux_gnu": {
       "url": "https://github.com/bytecodealliance/wasmtime/releases/download/v11.0.1/wasmtime-v11.0.1-x86_64-linux.tar.xz",
       "checksum": "90bdbe4c650c7b45f96579f9026cff3071f1fa3ea7cf31fad5a3559c3318e23c",
@@ -38,6 +39,7 @@
     }
   },
   "11.0.0": {
+    "previous_stable_version": "10.0.1",
     "x86_64_linux_gnu": {
       "url": "https://github.com/bytecodealliance/wasmtime/releases/download/v11.0.0/wasmtime-v11.0.0-x86_64-linux.tar.xz",
       "checksum": "8723d437ff07b02ee3bc8885c8624bb34a52d96e70477f81e87d1936d2b84556",
@@ -71,6 +73,7 @@
     "version": "10.0.1"
   },
   "10.0.1": {
+    "previous_stable_version": "10.0.0",
     "x86_64_linux_gnu": {
       "url": "https://github.com/bytecodealliance/wasmtime/releases/download/v10.0.1/wasmtime-v10.0.1-x86_64-linux.tar.xz",
       "checksum": "ea7a96e7d30ff6d64d0e212900f9a2c4f1d009266e014d62cb5edb16c6f1a7f6",
@@ -98,6 +101,7 @@
     }
   },
   "10.0.0": {
+    "previous_stable_version": "9.0.4",
     "x86_64_linux_gnu": {
       "url": "https://github.com/bytecodealliance/wasmtime/releases/download/v10.0.0/wasmtime-v10.0.0-x86_64-linux.tar.xz",
       "checksum": "6df3770c26a0c892a89980d4a7d785b7356a855a4ac79c6745f02a7f2bf914fc",
@@ -131,6 +135,7 @@
     "version": "9.0.4"
   },
   "9.0.4": {
+    "previous_stable_version": "9.0.3",
     "x86_64_linux_gnu": {
       "url": "https://github.com/bytecodealliance/wasmtime/releases/download/v9.0.4/wasmtime-v9.0.4-x86_64-linux.tar.xz",
       "checksum": "1e38bae33433c2c31ceefd450a6d54f938b608d48a256497239342feeb6db772",
@@ -158,6 +163,7 @@
     }
   },
   "9.0.3": {
+    "previous_stable_version": "9.0.2",
     "x86_64_linux_gnu": {
       "url": "https://github.com/bytecodealliance/wasmtime/releases/download/v9.0.3/wasmtime-v9.0.3-x86_64-linux.tar.xz",
       "checksum": "7089f0ab5bf4d870e79a4c61404b36562e5ad486325d5da20d9c7dfd01cbce50",
@@ -185,6 +191,7 @@
     }
   },
   "9.0.2": {
+    "previous_stable_version": "9.0.1",
     "x86_64_linux_gnu": {
       "url": "https://github.com/bytecodealliance/wasmtime/releases/download/v9.0.2/wasmtime-v9.0.2-x86_64-linux.tar.xz",
       "checksum": "002822c52ea3499e7a0e4033a390123c7877b6655a69ce9426e1a370f351cae6",
@@ -212,6 +219,7 @@
     }
   },
   "9.0.1": {
+    "previous_stable_version": "9.0.0",
     "x86_64_linux_gnu": {
       "url": "https://github.com/bytecodealliance/wasmtime/releases/download/v9.0.1/wasmtime-v9.0.1-x86_64-linux.tar.xz",
       "checksum": "f90a3f7a0fe5a7c059947c029c28a2ae65ef24335d190f82e57725d9706cb413",
@@ -239,6 +247,7 @@
     }
   },
   "9.0.0": {
+    "previous_stable_version": "8.0.1",
     "x86_64_linux_gnu": {
       "url": "https://github.com/bytecodealliance/wasmtime/releases/download/v9.0.0/wasmtime-v9.0.0-x86_64-linux.tar.xz",
       "checksum": "7616b94d7c30eaa4d4ddf41a58128ac73b943c21565adb12d143ea46959de4e2",
@@ -272,6 +281,7 @@
     "version": "8.0.1"
   },
   "8.0.1": {
+    "previous_stable_version": "8.0.0",
     "x86_64_linux_gnu": {
       "url": "https://github.com/bytecodealliance/wasmtime/releases/download/v8.0.1/wasmtime-v8.0.1-x86_64-linux.tar.xz",
       "checksum": "555985b17523269350d253c160dac601e383e1612126489daf80648571e0b8c4",
@@ -299,6 +309,7 @@
     }
   },
   "8.0.0": {
+    "previous_stable_version": "7.0.1",
     "x86_64_linux_gnu": {
       "url": "https://github.com/bytecodealliance/wasmtime/releases/download/v8.0.0/wasmtime-v8.0.0-x86_64-linux.tar.xz",
       "checksum": "0ba34842bbac8896dbdd860173b2c554d93d63ecc490f725fe3331db913714ad",
@@ -332,6 +343,7 @@
     "version": "7.0.1"
   },
   "7.0.1": {
+    "previous_stable_version": "7.0.0",
     "x86_64_linux_gnu": {
       "url": "https://github.com/bytecodealliance/wasmtime/releases/download/v7.0.1/wasmtime-v7.0.1-x86_64-linux.tar.xz",
       "checksum": "3616ece4f17435d80abe71ea9a2b40446e2a1d936b1628c3566b08473ec5758d",
@@ -359,6 +371,7 @@
     }
   },
   "7.0.0": {
+    "previous_stable_version": "6.0.2",
     "x86_64_linux_gnu": {
       "url": "https://github.com/bytecodealliance/wasmtime/releases/download/v7.0.0/wasmtime-v7.0.0-x86_64-linux.tar.xz",
       "checksum": "b8a1c97f9107c885ea73a5c38677d0d340a7c26879d366e8a5f3dce84cffec99",
@@ -392,6 +405,7 @@
     "version": "6.0.2"
   },
   "6.0.2": {
+    "previous_stable_version": "6.0.1",
     "x86_64_linux_gnu": {
       "url": "https://github.com/bytecodealliance/wasmtime/releases/download/v6.0.2/wasmtime-v6.0.2-x86_64-linux.tar.xz",
       "checksum": "270bbda1054ce0cfd537744e0697dfcdd8dc321af5973a6af13c408e4e2c9b58",
@@ -419,6 +433,7 @@
     }
   },
   "6.0.1": {
+    "previous_stable_version": "6.0.0",
     "x86_64_linux_gnu": {
       "url": "https://github.com/bytecodealliance/wasmtime/releases/download/v6.0.1/wasmtime-v6.0.1-x86_64-linux.tar.xz",
       "checksum": "9fdc5f4cd679d77c42f6333793cd66ecca45347e4cbbeaf06cb0300f27ac5119",
@@ -446,6 +461,7 @@
     }
   },
   "6.0.0": {
+    "previous_stable_version": "5.0.1",
     "x86_64_linux_gnu": {
       "url": "https://github.com/bytecodealliance/wasmtime/releases/download/v6.0.0/wasmtime-v6.0.0-x86_64-linux.tar.xz",
       "checksum": "19090d9f0b6320d69908c3a9d3915c1b8149555d971061eda462edc0e212e0d3",
@@ -479,6 +495,7 @@
     "version": "5.0.1"
   },
   "5.0.1": {
+    "previous_stable_version": "5.0.0",
     "x86_64_linux_gnu": {
       "url": "https://github.com/bytecodealliance/wasmtime/releases/download/v5.0.1/wasmtime-v5.0.1-x86_64-linux.tar.xz",
       "checksum": "c87e4e820ee4b605b4c6aa7dd12807da6fb9789a5906b7ad9df83e8b43dc547a",
@@ -506,6 +523,7 @@
     }
   },
   "5.0.0": {
+    "previous_stable_version": "4.0.1",
     "x86_64_linux_gnu": {
       "url": "https://github.com/bytecodealliance/wasmtime/releases/download/v5.0.0/wasmtime-v5.0.0-x86_64-linux.tar.xz",
       "checksum": "a627a0391c52f3543bb48bb3052038291b4bd94e1dee8e520afb7ad2d7dabbbb",
@@ -539,6 +557,7 @@
     "version": "4.0.1"
   },
   "4.0.1": {
+    "previous_stable_version": "4.0.0",
     "x86_64_linux_gnu": {
       "url": "https://github.com/bytecodealliance/wasmtime/releases/download/v4.0.1/wasmtime-v4.0.1-x86_64-linux.tar.xz",
       "checksum": "ef6a6c6d1025031565eaeb4510dadc72fcfd3d11f2c402fbebb3f2022e8ce466",
@@ -566,6 +585,7 @@
     }
   },
   "4.0.0": {
+    "previous_stable_version": "3.0.1",
     "x86_64_linux_gnu": {
       "url": "https://github.com/bytecodealliance/wasmtime/releases/download/v4.0.0/wasmtime-v4.0.0-x86_64-linux.tar.xz",
       "checksum": "3dadebe46ff415fc5c0e7245bdcead36fb0e236247be966d5c653e8b4bed3f65",
@@ -599,6 +619,7 @@
     "version": "3.0.1"
   },
   "3.0.1": {
+    "previous_stable_version": "3.0.0",
     "x86_64_linux_gnu": {
       "url": "https://github.com/bytecodealliance/wasmtime/releases/download/v3.0.1/wasmtime-v3.0.1-x86_64-linux.tar.xz",
       "checksum": "8798b587251a6ebc535ba94000242ac4eaf6f38ae3884ce9dcbf9550f99a7359",
@@ -626,6 +647,7 @@
     }
   },
   "3.0.0": {
+    "previous_stable_version": "2.0.2",
     "x86_64_linux_gnu": {
       "url": "https://github.com/bytecodealliance/wasmtime/releases/download/v3.0.0/wasmtime-v3.0.0-x86_64-linux.tar.xz",
       "checksum": "f10556b2a3e4780032bc95955a5fa77411ce5d3c23c8af07f5306d0ed57794d8",
@@ -659,6 +681,7 @@
     "version": "2.0.2"
   },
   "2.0.2": {
+    "previous_stable_version": "2.0.1",
     "x86_64_linux_gnu": {
       "url": "https://github.com/bytecodealliance/wasmtime/releases/download/v2.0.2/wasmtime-v2.0.2-x86_64-linux.tar.xz",
       "checksum": "c49daee342399f6f2396db71b1042e81c5e5ab24d16306d99481c209cf0abb38",
@@ -686,6 +709,7 @@
     }
   },
   "2.0.1": {
+    "previous_stable_version": "2.0.0",
     "x86_64_linux_gnu": {
       "url": "https://github.com/bytecodealliance/wasmtime/releases/download/v2.0.1/wasmtime-v2.0.1-x86_64-linux.tar.xz",
       "checksum": "da92a4370c363ac583176c264bcc7f90a802af8832f6723106431885c1fab3eb",
@@ -713,6 +737,7 @@
     }
   },
   "2.0.0": {
+    "previous_stable_version": "1.0.2",
     "x86_64_linux_gnu": {
       "url": "https://github.com/bytecodealliance/wasmtime/releases/download/v2.0.0/wasmtime-v2.0.0-x86_64-linux.tar.xz",
       "checksum": "e641b35d3e3e4535d75ff89ba2db16d14c018051f923e80376faefe615b9391a",
@@ -746,6 +771,7 @@
     "version": "1.0.2"
   },
   "1.0.2": {
+    "previous_stable_version": "1.0.1",
     "x86_64_linux_gnu": {
       "url": "https://github.com/bytecodealliance/wasmtime/releases/download/v1.0.2/wasmtime-v1.0.2-x86_64-linux.tar.xz",
       "checksum": "8be5fc770235bc61b023f1e0f586c7abfb7a38ed9c4e4e8530e73387cb0c6314",
@@ -773,6 +799,7 @@
     }
   },
   "1.0.1": {
+    "previous_stable_version": "1.0.0",
     "x86_64_linux_gnu": {
       "url": "https://github.com/bytecodealliance/wasmtime/releases/download/v1.0.1/wasmtime-v1.0.1-x86_64-linux.tar.xz",
       "checksum": "8d539b8a62b4a4934a6d91b94e6f50ba797c81a3370b217da6e23827428150b1",
@@ -800,6 +827,7 @@
     }
   },
   "1.0.0": {
+    "previous_stable_version": "0.40.1",
     "x86_64_linux_gnu": {
       "url": "https://github.com/bytecodealliance/wasmtime/releases/download/v1.0.0/wasmtime-v1.0.0-x86_64-linux.tar.xz",
       "checksum": "e7e379b98b89440e381401dcf845a1325169df2bf5a38604ae5d6213ca819936",
@@ -830,6 +858,7 @@
     "version": "0.40.1"
   },
   "0.40.1": {
+    "previous_stable_version": "0.40.0",
     "x86_64_linux_gnu": {
       "url": "https://github.com/bytecodealliance/wasmtime/releases/download/v0.40.1/wasmtime-v0.40.1-x86_64-linux.tar.xz",
       "checksum": "328e37d1ca84899ac561ba162777f055cf738e54dcf884ac70bb9d9614bd7094",
@@ -857,6 +886,7 @@
     }
   },
   "0.40.0": {
+    "previous_stable_version": "0.39.1",
     "x86_64_linux_gnu": {
       "url": "https://github.com/bytecodealliance/wasmtime/releases/download/v0.40.0/wasmtime-v0.40.0-x86_64-linux.tar.xz",
       "checksum": "30fc4b130c0c1ea94ffc7c6ab9cf37db792938117f6db5c0e7cc689672423ea8",
@@ -887,6 +917,7 @@
     "version": "0.39.1"
   },
   "0.39.1": {
+    "previous_stable_version": "0.39.0",
     "x86_64_linux_gnu": {
       "url": "https://github.com/bytecodealliance/wasmtime/releases/download/v0.39.1/wasmtime-v0.39.1-x86_64-linux.tar.xz",
       "checksum": "5f4f48ca335a066b478de9c0f3c009b6f7484f4261d292c1eedae3ce5dd02061",
@@ -914,6 +945,7 @@
     }
   },
   "0.39.0": {
+    "previous_stable_version": "0.38.3",
     "x86_64_linux_gnu": {
       "url": "https://github.com/bytecodealliance/wasmtime/releases/download/v0.39.0/wasmtime-v0.39.0-x86_64-linux.tar.xz",
       "checksum": "1f03d94dc7fe2fbc4ab21a82a058e0ccad1eb7ead17b39647ff482f2dcf91901",
@@ -944,6 +976,7 @@
     "version": "0.38.3"
   },
   "0.38.3": {
+    "previous_stable_version": "0.38.2",
     "x86_64_linux_gnu": {
       "url": "https://github.com/bytecodealliance/wasmtime/releases/download/v0.38.3/wasmtime-v0.38.3-x86_64-linux.tar.xz",
       "checksum": "6db7ddff5d3a0f9a60154db9441c4f4c46fff82c75d52aa01a44c9f266ca38bd",
@@ -971,6 +1004,7 @@
     }
   },
   "0.38.2": {
+    "previous_stable_version": "0.38.1",
     "x86_64_linux_gnu": {
       "url": "https://github.com/bytecodealliance/wasmtime/releases/download/v0.38.2/wasmtime-v0.38.2-x86_64-linux.tar.xz",
       "checksum": "5a922d2f15a79da624e17f41ce3c5bbdd048e6cce395d85cd7d1d159bfa965b2",
@@ -998,6 +1032,7 @@
     }
   },
   "0.38.1": {
+    "previous_stable_version": "0.38.0",
     "x86_64_linux_gnu": {
       "url": "https://github.com/bytecodealliance/wasmtime/releases/download/v0.38.1/wasmtime-v0.38.1-x86_64-linux.tar.xz",
       "checksum": "a8805d626b660dc62a5d526cfcd657d41a67522725ff2810f61892ba5519e700",
@@ -1025,6 +1060,7 @@
     }
   },
   "0.38.0": {
+    "previous_stable_version": "0.37.0",
     "x86_64_linux_gnu": {
       "url": "https://github.com/bytecodealliance/wasmtime/releases/download/v0.38.0/wasmtime-v0.38.0-x86_64-linux.tar.xz",
       "checksum": "caf0a64aa3aef0e1cb5f7889384a2718d239f0f62f91a067b367ca8a45296758",
@@ -1055,6 +1091,7 @@
     "version": "0.37.0"
   },
   "0.37.0": {
+    "previous_stable_version": "0.36.0",
     "x86_64_linux_gnu": {
       "url": "https://github.com/bytecodealliance/wasmtime/releases/download/v0.37.0/wasmtime-v0.37.0-x86_64-linux.tar.xz",
       "checksum": "96e0068905c55bf24e84913f0d60ca91202eb3ea2b928fe236c63e64c3118fe8",
@@ -1085,6 +1122,7 @@
     "version": "0.36.0"
   },
   "0.36.0": {
+    "previous_stable_version": "0.35.3",
     "x86_64_linux_gnu": {
       "url": "https://github.com/bytecodealliance/wasmtime/releases/download/v0.36.0/wasmtime-v0.36.0-x86_64-linux.tar.xz",
       "checksum": "97ba12da1f96e40197998d843afb4e08a1d61cd844b721dfa0d1fa044a38b35a",
@@ -1110,6 +1148,7 @@
     "version": "0.35.3"
   },
   "0.35.3": {
+    "previous_stable_version": "0.35.2",
     "x86_64_linux_gnu": {
       "url": "https://github.com/bytecodealliance/wasmtime/releases/download/v0.35.3/wasmtime-v0.35.3-x86_64-linux.tar.xz",
       "checksum": "7519ef0e08716416cc44167ec838ff1362054c43c8bf6fc56056282c9107840a",
@@ -1132,6 +1171,7 @@
     }
   },
   "0.35.2": {
+    "previous_stable_version": "0.35.1",
     "x86_64_linux_gnu": {
       "url": "https://github.com/bytecodealliance/wasmtime/releases/download/v0.35.2/wasmtime-v0.35.2-x86_64-linux.tar.xz",
       "checksum": "9fac8bf1027238c9295896851c08c3d4b76f61bc9b3db5d3a607a092f5d13369",
@@ -1154,6 +1194,7 @@
     }
   },
   "0.35.1": {
+    "previous_stable_version": "0.35.0",
     "x86_64_linux_gnu": {
       "url": "https://github.com/bytecodealliance/wasmtime/releases/download/v0.35.1/wasmtime-v0.35.1-x86_64-linux.tar.xz",
       "checksum": "c7c22cd0aada9636f99f203aa0b14bc99a48518272270dd4dce277d4a51f07e6",
@@ -1176,6 +1217,7 @@
     }
   },
   "0.35.0": {
+    "previous_stable_version": "0.34.2",
     "x86_64_linux_gnu": {
       "url": "https://github.com/bytecodealliance/wasmtime/releases/download/v0.35.0/wasmtime-v0.35.0-x86_64-linux.tar.xz",
       "checksum": "c068fe467973b2dcf5a37ab3926ee8ee363a180b8b42796c8a25efa35b13e397",
@@ -1201,6 +1243,7 @@
     "version": "0.34.2"
   },
   "0.34.2": {
+    "previous_stable_version": "0.34.1",
     "x86_64_linux_gnu": {
       "url": "https://github.com/bytecodealliance/wasmtime/releases/download/v0.34.2/wasmtime-v0.34.2-x86_64-linux.tar.xz",
       "checksum": "211666ef45a651a6fe885dd456e3098fc9be57573146e56e8ae7684ae4d8a9ec",
@@ -1223,6 +1266,7 @@
     }
   },
   "0.34.1": {
+    "previous_stable_version": "0.34.0",
     "x86_64_linux_gnu": {
       "url": "https://github.com/bytecodealliance/wasmtime/releases/download/v0.34.1/wasmtime-v0.34.1-x86_64-linux.tar.xz",
       "checksum": "6e707170e8dc1d8279b698ce2a1ed7a50c7d986c91012ddc890589439515a9e5",
@@ -1240,6 +1284,7 @@
     }
   },
   "0.34.0": {
+    "previous_stable_version": "0.33.1",
     "x86_64_linux_gnu": {
       "url": "https://github.com/bytecodealliance/wasmtime/releases/download/v0.34.0/wasmtime-v0.34.0-x86_64-linux.tar.xz",
       "checksum": "8937edc3a940a92323a9405510110cb0dddbce25a5bd866e4a5af088da560ef0",
@@ -1265,6 +1310,7 @@
     "version": "0.33.1"
   },
   "0.33.1": {
+    "previous_stable_version": "0.33.0",
     "x86_64_linux_gnu": {
       "url": "https://github.com/bytecodealliance/wasmtime/releases/download/v0.33.1/wasmtime-v0.33.1-x86_64-linux.tar.xz",
       "checksum": "e7b4c30451dde8f79d2aec2112b68929e7603ff93d59e46cc3a1bee13d28cf30",
@@ -1287,6 +1333,7 @@
     }
   },
   "0.33.0": {
+    "previous_stable_version": "0.32.1",
     "x86_64_linux_gnu": {
       "url": "https://github.com/bytecodealliance/wasmtime/releases/download/v0.33.0/wasmtime-v0.33.0-x86_64-linux.tar.xz",
       "checksum": "c4c9f2ed9187c97e0ded9004dcaaeba1459d27f62f28797cc28d68be36276294",
@@ -1312,6 +1359,7 @@
     "version": "0.32.1"
   },
   "0.32.1": {
+    "previous_stable_version": "0.32.0",
     "x86_64_linux_gnu": {
       "url": "https://github.com/bytecodealliance/wasmtime/releases/download/v0.32.1/wasmtime-v0.32.1-x86_64-linux.tar.xz",
       "checksum": "278b30dedfd02b788822fe73ab96a86ff9b13c9df2efd9847dbba6164884d54d",
@@ -1334,6 +1382,7 @@
     }
   },
   "0.32.0": {
+    "previous_stable_version": "0.31.0",
     "x86_64_linux_gnu": {
       "url": "https://github.com/bytecodealliance/wasmtime/releases/download/v0.32.0/wasmtime-v0.32.0-x86_64-linux.tar.xz",
       "checksum": "24d7bf11bccc21e71b724c90cf35ca232a8a9dba62ab766bd30e0ccc928fc83b",
@@ -1359,6 +1408,7 @@
     "version": "0.31.0"
   },
   "0.31.0": {
+    "previous_stable_version": "0.30.0",
     "x86_64_linux_gnu": {
       "url": "https://github.com/bytecodealliance/wasmtime/releases/download/v0.31.0/wasmtime-v0.31.0-x86_64-linux.tar.xz",
       "checksum": "8d6f3f3b9691a6a36cec3c18227cb7bf1f62e95390083577a3f207f60afb39ea",
@@ -1384,6 +1434,7 @@
     "version": "0.30.0"
   },
   "0.30.0": {
+    "previous_stable_version": "0.29.0",
     "x86_64_linux_gnu": {
       "url": "https://github.com/bytecodealliance/wasmtime/releases/download/v0.30.0/wasmtime-v0.30.0-x86_64-linux.tar.xz",
       "checksum": "5cbf1193df60f441eb54a247daab18680357cfa24ad320a590b364e9342632f8",
@@ -1409,6 +1460,7 @@
     "version": "0.29.0"
   },
   "0.29.0": {
+    "previous_stable_version": "0.28.0",
     "x86_64_linux_gnu": {
       "url": "https://github.com/bytecodealliance/wasmtime/releases/download/v0.29.0/wasmtime-v0.29.0-x86_64-linux.tar.xz",
       "checksum": "623f2ca8074aeeba5d9bb69b3f60c55c773ddc2b4d564c52f9454ab0d45d012e",
@@ -1434,6 +1486,7 @@
     "version": "0.28.0"
   },
   "0.28.0": {
+    "previous_stable_version": "0.27.0",
     "x86_64_linux_gnu": {
       "url": "https://github.com/bytecodealliance/wasmtime/releases/download/v0.28.0/wasmtime-v0.28.0-x86_64-linux.tar.xz",
       "checksum": "714b3fcfd37621e2bd59c786208ebe7e2542cf88f0cef192e4eed2aefbecaa53",
@@ -1459,6 +1512,7 @@
     "version": "0.27.0"
   },
   "0.27.0": {
+    "previous_stable_version": "0.26.1",
     "x86_64_linux_gnu": {
       "url": "https://github.com/bytecodealliance/wasmtime/releases/download/v0.27.0/wasmtime-v0.27.0-x86_64-linux.tar.xz",
       "checksum": "2a9d3f09198e63c2e39cb8cd59c4a4cf196daa0111514e355304575f590c3f4a",
@@ -1484,6 +1538,7 @@
     "version": "0.26.1"
   },
   "0.26.1": {
+    "previous_stable_version": "0.26.0",
     "x86_64_linux_gnu": {
       "url": "https://github.com/bytecodealliance/wasmtime/releases/download/v0.26.1/wasmtime-v0.26.1-x86_64-linux.tar.xz",
       "checksum": "ff0785c3528e8f1471a3a23858c46414924733c91f604871fc84e401e51b7ec0",
@@ -1506,6 +1561,7 @@
     }
   },
   "0.26.0": {
+    "previous_stable_version": "0.25.0",
     "x86_64_linux_gnu": {
       "url": "https://github.com/bytecodealliance/wasmtime/releases/download/v0.26.0/wasmtime-v0.26.0-x86_64-linux.tar.xz",
       "checksum": "8a83ef7c6592200e86800e5f119bca5dbe4f30ab0d0ef56829a7e266e036c3f7",
@@ -1531,6 +1587,7 @@
     "version": "0.25.0"
   },
   "0.25.0": {
+    "previous_stable_version": "0.24.0",
     "x86_64_linux_gnu": {
       "url": "https://github.com/bytecodealliance/wasmtime/releases/download/v0.25.0/wasmtime-v0.25.0-x86_64-linux.tar.xz",
       "checksum": "33458447d9499bc560c6a74887607e02732214435c49ea3d86573ff755581821",
@@ -1556,6 +1613,7 @@
     "version": "0.24.0"
   },
   "0.24.0": {
+    "previous_stable_version": "0.23.0",
     "x86_64_linux_gnu": {
       "url": "https://github.com/bytecodealliance/wasmtime/releases/download/v0.24.0/wasmtime-v0.24.0-x86_64-linux.tar.xz",
       "checksum": "ab69f137d1843a075aa9b732557add70939bb45d67e95d233ad6f101c7607c69",
@@ -1581,6 +1639,7 @@
     "version": "0.23.0"
   },
   "0.23.0": {
+    "previous_stable_version": "0.22.1",
     "x86_64_linux_gnu": {
       "url": "https://github.com/bytecodealliance/wasmtime/releases/download/v0.23.0/wasmtime-v0.23.0-x86_64-linux.tar.xz",
       "checksum": "d410a78cb8820d1106edb49d296da80bc05420f17a04b8a6ec5e005da3bf5883",
@@ -1606,6 +1665,7 @@
     "version": "0.22.1"
   },
   "0.22.1": {
+    "previous_stable_version": "0.22.0",
     "x86_64_linux_gnu": {
       "url": "https://github.com/bytecodealliance/wasmtime/releases/download/v0.22.1/wasmtime-v0.22.1-x86_64-linux.tar.xz",
       "checksum": "09f050372070084b3fc7096ae0974aaa6a2651d1278dd71e8eab55244b157e2c",
@@ -1628,6 +1688,7 @@
     }
   },
   "0.22.0": {
+    "previous_stable_version": "0.21.0",
     "x86_64_linux_gnu": {
       "url": "https://github.com/bytecodealliance/wasmtime/releases/download/v0.22.0/wasmtime-v0.22.0-x86_64-linux.tar.xz",
       "checksum": "bb700bb4896a7190c4472b82cdc565518ad335b829538d5d0295dc4afcac70a7",
@@ -1653,6 +1714,7 @@
     "version": "0.21.0"
   },
   "0.21.0": {
+    "previous_stable_version": "0.20.0",
     "x86_64_linux_gnu": {
       "url": "https://github.com/bytecodealliance/wasmtime/releases/download/v0.21.0/wasmtime-v0.21.0-x86_64-linux.tar.xz",
       "checksum": "d3af5fa02091baaf637026c5d8fe1b5011f9f7de257dd838639c2916f929aa4e",
@@ -1678,6 +1740,7 @@
     "version": "0.20.0"
   },
   "0.20.0": {
+    "previous_stable_version": "0.19.0",
     "x86_64_linux_gnu": {
       "url": "https://github.com/bytecodealliance/wasmtime/releases/download/v0.20.0/wasmtime-v0.20.0-x86_64-linux.tar.xz",
       "checksum": "e32ad7d1e7bb70f5e9ad3128967fba6b32ebcc003332ba6c5276558ab2e4a864",
@@ -1703,6 +1766,7 @@
     "version": "0.19.0"
   },
   "0.19.0": {
+    "previous_stable_version": "0.18.0",
     "x86_64_linux_gnu": {
       "url": "https://github.com/bytecodealliance/wasmtime/releases/download/v0.19.0/wasmtime-v0.19.0-x86_64-linux.tar.xz",
       "checksum": "1b69df2a18c21effce127b7dc56b4ff0cf0ea7274cd28f2a314d07a99d8da928",
@@ -1728,6 +1792,7 @@
     "version": "0.18.0"
   },
   "0.18.0": {
+    "previous_stable_version": "0.16.0",
     "x86_64_linux_gnu": {
       "url": "https://github.com/bytecodealliance/wasmtime/releases/download/v0.18.0/wasmtime-v0.18.0-x86_64-linux.tar.xz",
       "checksum": "3475760b68382237d396157f9593da5febdfed1bebdb36f688c5d06f9ca28ca4",
@@ -1753,6 +1818,7 @@
     "version": "0.16.0"
   },
   "0.16.0": {
+    "previous_stable_version": "0.15.0",
     "x86_64_linux_gnu": {
       "url": "https://github.com/bytecodealliance/wasmtime/releases/download/v0.16.0/wasmtime-v0.16.0-x86_64-linux.tar.xz",
       "checksum": "834c0719a263f04ad8273e8568a9b96d12ebfe26711895f47abf774b6a7f5809",
@@ -1778,6 +1844,7 @@
     "version": "0.15.0"
   },
   "0.15.0": {
+    "previous_stable_version": "0.12.0",
     "x86_64_linux_gnu": {
       "url": "https://github.com/bytecodealliance/wasmtime/releases/download/v0.15.0/wasmtime-v0.15.0-x86_64-linux.tar.xz",
       "checksum": "3ffe31010c1363648cf4d2a145b0b1efbd9f09c3869372fb38fd88e7e84dee50",
@@ -1798,6 +1865,7 @@
     "version": "0.12.0"
   },
   "0.12.0": {
+    "previous_stable_version": "0.8.0",
     "x86_64_linux_gnu": {
       "url": "https://github.com/bytecodealliance/wasmtime/releases/download/v0.12.0/wasmtime-v0.12.0-x86_64-linux.tar.xz",
       "checksum": "16fe9964a21ae57661cea5971d5d8d2dba796195c2952420a66865123caad2b0",
