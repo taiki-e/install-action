@@ -16,7 +16,7 @@ Note: In this file, do not use the hard wrap in the middle of a sentence for com
 
   This is a change made in response to the request from the nextest maintainer, which potentially increases the installation time of nextest and the possibility of network errors during installation.
 
-  If you encounter network errors, you should usually be able to work around them by setting `GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}` environment variables.
+  If you encounter network errors, you should usually be able to work around them by setting `GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}` environment variable.
 
 ## [2.13.6] - 2023-08-04
 
