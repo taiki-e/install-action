@@ -10,6 +10,8 @@ Note: In this file, do not use the hard wrap in the middle of a sentence for com
 
 ## [Unreleased]
 
+## [2.14.0] - 2023-08-05
+
 - Use `cargo-binstall` to install `nextest`. ([#183](https://github.com/taiki-e/install-action/pull/183))
 
   This is a change made in response to the request from the nextest maintainer, which potentially increases the installation time of nextest and the possibility of network errors during installation.
@@ -1037,7 +1039,8 @@ Note: This release is considered a breaking change because installing on version
 
 Initial release
 
-[Unreleased]: https://github.com/taiki-e/install-action/compare/v2.13.6...HEAD
+[Unreleased]: https://github.com/taiki-e/install-action/compare/v2.14.0...HEAD
+[2.14.0]: https://github.com/taiki-e/install-action/compare/v2.13.6...v2.14.0
 [2.13.6]: https://github.com/taiki-e/install-action/compare/v2.13.5...v2.13.6
 [2.13.5]: https://github.com/taiki-e/install-action/compare/v2.13.4...v2.13.5
 [2.13.4]: https://github.com/taiki-e/install-action/compare/v2.13.3...v2.13.4
