@@ -10,6 +10,8 @@ Note: In this file, do not use the hard wrap in the middle of a sentence for com
 
 ## [Unreleased]
 
+- Update `mdbook@latest` to 0.4.34.
+
 ## [2.14.0] - 2023-08-05
 
 - Use `cargo-binstall` to install `nextest`. ([#183](https://github.com/taiki-e/install-action/pull/183))
