@@ -10,6 +10,8 @@ Note: In this file, do not use the hard wrap in the middle of a sentence for com
 
 ## [Unreleased]
 
+## [2.14.3] - 2023-08-09
+
 - Update `protoc@latest` to 3.24.0.
 
 - Update `parse-changelog@latest` to 0.6.2.
@@ -1053,7 +1055,8 @@ Note: This release is considered a breaking change because installing on version
 
 Initial release
 
-[Unreleased]: https://github.com/taiki-e/install-action/compare/v2.14.2...HEAD
+[Unreleased]: https://github.com/taiki-e/install-action/compare/v2.14.3...HEAD
+[2.14.3]: https://github.com/taiki-e/install-action/compare/v2.14.2...v2.14.3
 [2.14.2]: https://github.com/taiki-e/install-action/compare/v2.14.1...v2.14.2
 [2.14.1]: https://github.com/taiki-e/install-action/compare/v2.14.0...v2.14.1
 [2.14.0]: https://github.com/taiki-e/install-action/compare/v2.13.6...v2.14.0
