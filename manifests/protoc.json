@@ -2,10 +2,35 @@
   "rust_crate": null,
   "template": null,
   "latest": {
-    "version": "3.23.4"
+    "version": "3.24.0"
   },
   "3": {
-    "version": "3.23.4"
+    "version": "3.24.0"
+  },
+  "3.24": {
+    "version": "3.24.0"
+  },
+  "3.24.0": {
+    "x86_64_linux_gnu": {
+      "url": "https://github.com/protocolbuffers/protobuf/releases/download/v24.0/protoc-24.0-linux-x86_64.zip",
+      "checksum": "4feef12d91c4e452eac8c45bd11f43d51541db7fc6c18b4ca7bdd38af52c9d15"
+    },
+    "x86_64_macos": {
+      "url": "https://github.com/protocolbuffers/protobuf/releases/download/v24.0/protoc-24.0-osx-x86_64.zip",
+      "checksum": "c438ae68427aa848f4e2dbf7d6cbd4e6a13e30a6bcc61007fd95cfc90451264a"
+    },
+    "x86_64_windows": {
+      "url": "https://github.com/protocolbuffers/protobuf/releases/download/v24.0/protoc-24.0-win64.zip",
+      "checksum": "8c84d3d36936424a99934a9e5034f8a573615bf7f1b4246d536f33c120af60cd"
+    },
+    "aarch64_linux_gnu": {
+      "url": "https://github.com/protocolbuffers/protobuf/releases/download/v24.0/protoc-24.0-linux-aarch_64.zip",
+      "checksum": "d27f1479fc4707f275eaa952cef548f9fa0c8ef2d8cb5977f337d2ce61430682"
+    },
+    "aarch64_macos": {
+      "url": "https://github.com/protocolbuffers/protobuf/releases/download/v24.0/protoc-24.0-osx-aarch_64.zip",
+      "checksum": "e4cc0739f0f8ae31633fb11335f11e6fbe067ecda8fd1b4716e80cfe3661ee1d"
+    }
   },
   "3.23": {
     "version": "3.23.4"

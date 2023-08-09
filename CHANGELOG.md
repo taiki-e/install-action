@@ -10,6 +10,8 @@ Note: In this file, do not use the hard wrap in the middle of a sentence for com
 
 ## [Unreleased]
 
+- Update `protoc@latest` to 3.24.0.
+
 - Update `parse-changelog@latest` to 0.6.2.
 
 ## [2.14.2] - 2023-08-06
