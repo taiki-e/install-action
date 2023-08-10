@@ -21,7 +21,7 @@ set -x
 for manifest in manifests/*.json; do
     git add -N "${manifest}"
     if ! git diff --exit-code -- "${manifest}"; then
-        name="$(basename "${manifest%.*}")"
+        name=$(basename "${manifest%.*}")
         git stash
         old_version=$(jq -r '.latest.version' "${manifest}")
         git stash pop

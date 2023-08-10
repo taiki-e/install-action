@@ -15,6 +15,6 @@ if [[ $# -gt 0 ]]; then
 fi
 
 for manifest in tools/codegen/base/*.json; do
-    package="$(basename "${manifest%.*}")"
+    package=$(basename "${manifest%.*}")
     cargo run --release -p install-action-internal-codegen -- "${package}" latest
 done

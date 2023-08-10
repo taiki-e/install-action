@@ -80,7 +80,7 @@ for manifest in tools/codegen/base/*.json; do
     esac
     if [[ -n "${tool_name}" ]]; then
         if [[ "${version}" != "latest" ]]; then
-            latest_version="$(jq -r ".latest.version" "manifests/${tool_name}.json")"
+            latest_version=$(jq -r ".latest.version" "manifests/${tool_name}.json")
             case "${version}" in
                 major.minor.patch) tool_name+="@${latest_version}" ;;
                 major.minor) tool_name+="@${latest_version%.*}" ;;
