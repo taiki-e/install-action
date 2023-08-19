@@ -1,0 +1,82 @@
+{
+  "rust_crate": "cargo-machete",
+  "template": null,
+  "latest": {
+    "version": "0.5.0"
+  },
+  "0.5": {
+    "version": "0.5.0"
+  },
+  "0.5.0": {
+    "x86_64_linux_musl": {
+      "url": "https://github.com/bnjbvr/cargo-machete/releases/download/v0.5.0/cargo-machete-v0.5.0-x86_64-unknown-linux-musl.tar.gz",
+      "checksum": "1ce5cf9fa24f6861a14318fb96db59011865d0adf979c2240d006407815ca174",
+      "bin": "cargo-machete-v0.5.0-x86_64-unknown-linux-musl/cargo-machete"
+    },
+    "x86_64_macos": {
+      "url": "https://github.com/bnjbvr/cargo-machete/releases/download/v0.5.0/cargo-machete-v0.5.0-x86_64-apple-darwin.tar.gz",
+      "checksum": "0550b85e43905fe8bfe0e83cb04d220a80f7aa898aaa3be0fe7a96f8ffd5e7f5",
+      "bin": "cargo-machete-v0.5.0-x86_64-apple-darwin/cargo-machete"
+    },
+    "x86_64_windows": {
+      "url": "https://github.com/bnjbvr/cargo-machete/releases/download/v0.5.0/cargo-machete-v0.5.0-x86_64-pc-windows-msvc.tar.gz",
+      "checksum": "fd5ebb959cc214e8dab2661c65562eb0ec3d1da72d5f5a746f6bb6111b1854f8",
+      "bin": "cargo-machete-v0.5.0-x86_64-pc-windows-msvc/cargo-machete.exe"
+    },
+    "aarch64_macos": {
+      "url": "https://github.com/bnjbvr/cargo-machete/releases/download/v0.5.0/cargo-machete-v0.5.0-aarch64-apple-darwin.tar.gz",
+      "checksum": "0386aa9ace17f6d96244b1315f8e996325ab81584a37fd3bc1d300a84455e55f",
+      "bin": "cargo-machete-v0.5.0-aarch64-apple-darwin/cargo-machete"
+    }
+  },
+  "0.4": {
+    "version": "0.4.0"
+  },
+  "0.4.0": {
+    "x86_64_linux_musl": {
+      "url": "https://github.com/bnjbvr/cargo-machete/releases/download/v0.4.0/cargo-machete-v0.4.0-x86_64-unknown-linux-musl.tar.gz",
+      "checksum": "92e77b38b91e30e9d7383779b71035c5eebd8d874e1683db19239062d0dd1000",
+      "bin": "cargo-machete-v0.4.0-x86_64-unknown-linux-musl/cargo-machete"
+    },
+    "x86_64_macos": {
+      "url": "https://github.com/bnjbvr/cargo-machete/releases/download/v0.4.0/cargo-machete-v0.4.0-x86_64-apple-darwin.tar.gz",
+      "checksum": "db1f036bafc424af7247aa27748c08b3174b85b414e774cad51689f3e01ec64e",
+      "bin": "cargo-machete-v0.4.0-x86_64-apple-darwin/cargo-machete"
+    },
+    "x86_64_windows": {
+      "url": "https://github.com/bnjbvr/cargo-machete/releases/download/v0.4.0/cargo-machete-v0.4.0-x86_64-pc-windows-msvc.tar.gz",
+      "checksum": "0c31b0b4d7a3092dc84375d3993947cbdbf9db7f4d81128aca8a13e268cfe49c",
+      "bin": "cargo-machete-v0.4.0-x86_64-pc-windows-msvc/cargo-machete.exe"
+    },
+    "aarch64_macos": {
+      "url": "https://github.com/bnjbvr/cargo-machete/releases/download/v0.4.0/cargo-machete-v0.4.0-aarch64-apple-darwin.tar.gz",
+      "checksum": "5f8a3004642535c78d2b7a49cb0e1fc6287643bc5c52d10e77ae3e79b558e190",
+      "bin": "cargo-machete-v0.4.0-aarch64-apple-darwin/cargo-machete"
+    }
+  },
+  "0.3": {
+    "version": "0.3.1"
+  },
+  "0.3.1": {
+    "x86_64_linux_musl": {
+      "url": "https://github.com/bnjbvr/cargo-machete/releases/download/v0.3.1/cargo-machete-0.3.1-x86_64-unknown-linux-musl.tar.gz",
+      "checksum": "d5e15a4c1926296746e0da4d52d8c7203acc1d453c8874c6b6f56a0ae52d4d87",
+      "bin": "cargo-machete-0.3.1-x86_64-unknown-linux-musl/cargo-machete"
+    },
+    "x86_64_macos": {
+      "url": "https://github.com/bnjbvr/cargo-machete/releases/download/v0.3.1/cargo-machete-0.3.1-x86_64-apple-darwin.tar.gz",
+      "checksum": "83431f27f24f59d47385497d1a19ebe7c6e32f36dd163d804aa5b1337ca1489b",
+      "bin": "cargo-machete-0.3.1-x86_64-apple-darwin/cargo-machete"
+    },
+    "x86_64_windows": {
+      "url": "https://github.com/bnjbvr/cargo-machete/releases/download/v0.3.1/cargo-machete-0.3.1-x86_64-pc-windows-msvc.tar.gz",
+      "checksum": "28aa111b283bc97f9259b0644b99e0109dde6414a5a672e00347d8cbb6e83804",
+      "bin": "cargo-machete-0.3.1-x86_64-pc-windows-msvc/cargo-machete.exe"
+    },
+    "aarch64_macos": {
+      "url": "https://github.com/bnjbvr/cargo-machete/releases/download/v0.3.1/cargo-machete-0.3.1-aarch64-apple-darwin.tar.gz",
+      "checksum": "3ac0cee2102d74c71c831af1c7b8e229b254d3318927baed340728ddc61a10a8",
+      "bin": "cargo-machete-0.3.1-aarch64-apple-darwin/cargo-machete"
+    }
+  }
+}
