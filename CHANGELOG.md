@@ -10,6 +10,8 @@ Note: In this file, do not use the hard wrap in the middle of a sentence for com
 
 ## [Unreleased]
 
+## [2.16.0] - 2023-08-19
+
 - Support `cargo-machete`. ([#196](https://github.com/taiki-e/install-action/pull/196), thanks @tgnottingham)
 
 ## [2.15.6] - 2023-08-19
@@ -1089,7 +1091,8 @@ Note: This release is considered a breaking change because installing on version
 
 Initial release
 
-[Unreleased]: https://github.com/taiki-e/install-action/compare/v2.15.6...HEAD
+[Unreleased]: https://github.com/taiki-e/install-action/compare/v2.16.0...HEAD
+[2.16.0]: https://github.com/taiki-e/install-action/compare/v2.15.6...v2.16.0
 [2.15.6]: https://github.com/taiki-e/install-action/compare/v2.15.5...v2.15.6
 [2.15.5]: https://github.com/taiki-e/install-action/compare/v2.15.4...v2.15.5
 [2.15.4]: https://github.com/taiki-e/install-action/compare/v2.15.3...v2.15.4
