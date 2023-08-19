@@ -10,6 +10,8 @@ Note: In this file, do not use the hard wrap in the middle of a sentence for com
 
 ## [Unreleased]
 
+- Support `cargo-machete`. ([#196](https://github.com/taiki-e/install-action/pull/196), thanks @tgnottingham)
+
 ## [2.15.6] - 2023-08-19
 
 - Update `protoc@latest` to 3.24.1.
