@@ -10,6 +10,8 @@ Note: In this file, do not use the hard wrap in the middle of a sentence for com
 
 ## [Unreleased]
 
+- Update `wasmtime@latest` to 12.0.0.
+
 ## [2.16.0] - 2023-08-19
 
 - Support `cargo-machete`. ([#196](https://github.com/taiki-e/install-action/pull/196), thanks @tgnottingham)
