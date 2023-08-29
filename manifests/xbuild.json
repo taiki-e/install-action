@@ -1,0 +1,34 @@
+{
+  "rust_crate": "xbuild",
+  "template": {
+    "x86_64_linux_musl": {
+      "url": "https://github.com/rust-mobile/xbuild/releases/download/v${version}/xbuild-linux-x64",
+      "bin": "xbuild-linux-x64"
+    },
+    "x86_64_macos": {
+      "url": "https://github.com/rust-mobile/xbuild/releases/download/v${version}/xbuild-macos-x64",
+      "bin": "xbuild-macos-x64"
+    },
+    "x86_64_windows": {
+      "url": "https://github.com/rust-mobile/xbuild/releases/download/v${version}/xbuild-windows-x64.exe",
+      "bin": "xbuild-windows-x64.exe"
+    }
+  },
+  "latest": {
+    "version": "0.2.0"
+  },
+  "0.2": {
+    "version": "0.2.0"
+  },
+  "0.2.0": {
+    "x86_64_linux_musl": {
+      "checksum": "9c294809ec3cb314b34e9f644b5bbf6ed262c25c1eeb78a3691836a95bc58e0d"
+    },
+    "x86_64_macos": {
+      "checksum": "e357205fde5262d77b8b1dc1cb066a4f7b4edd0a83b71b3513ae466b08343305"
+    },
+    "x86_64_windows": {
+      "checksum": "ce503cd64e6449d1c3e3bc2bfb621e9dd3ebfc775e99c97f98c2ab145e533946"
+    }
+  }
+}

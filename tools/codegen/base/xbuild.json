@@ -1,0 +1,12 @@
+{
+  "repository": "https://github.com/rust-mobile/xbuild",
+  "tag_prefix": "v",
+  "rust_crate": "${package}",
+  "asset_name": "${package}-${os_name}-x64${exe}",
+  "bin": "${package}-${os_name}-x64${exe}",
+  "platform": {
+    "x86_64_linux_musl": {},
+    "x86_64_macos": {},
+    "x86_64_windows": {}
+  }
+}
