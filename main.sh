@@ -69,7 +69,12 @@ download_and_extract() {
         fi
     fi
     local installed_bin
-    installed_bin="${bin_dir}/$(basename "${bin_in_archive}")"
+
+    # xbuild's binary name is "x", as opposed to the usual crate name
+    case "${tool}" in
+        xbuild) installed_bin="${bin_dir}/x" ;;
+        *) installed_bin="${bin_dir}/$(basename "${bin_in_archive}")" ;;
+    esac 
 
     local tar_args=()
     case "${url}" in
@@ -596,6 +601,7 @@ for tool in "${tools[@]}"; do
                 esac
             fi
             ;;
+        xbuild) x "x" --version ;;
         *)
             if ! x "${tool}" --version; then
                 x "${tool}" --help
