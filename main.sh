@@ -570,15 +570,6 @@ for tool in "${tools[@]}"; do
                             ;;
                     esac
                     ;;
-                xbuild)
-                    case "${host_os}" in
-                        linux)
-                            if type -P xbuild &>/dev/null; then
-                                sys_install libssl-dev
-                            fi
-                            ;;
-                    esac
-                    ;;
             esac
 
             download_from_download_info "${tool}" "${version}"
