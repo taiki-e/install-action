@@ -574,7 +574,7 @@ for tool in "${tools[@]}"; do
                     case "${host_os}" in
                         linux)
                             if type -P xbuild &>/dev/null; then
-                                sys_install libssl-dev
+                                sys_install libssl3
                             fi
                             ;;
                     esac
