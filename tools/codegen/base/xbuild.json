@@ -4,6 +4,7 @@
   "rust_crate": "${package}",
   "asset_name": "${package}-${os_name}-x64${exe}",
   "bin": "${package}-${os_name}-x64${exe}",
+  "version_range": ">= 0.2.0",
   "platform": {
     "x86_64_linux_gnu": {},
     "x86_64_macos": {},
