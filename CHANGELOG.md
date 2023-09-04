@@ -10,6 +10,8 @@ Note: In this file, do not use the hard wrap in the middle of a sentence for com
 
 ## [Unreleased]
 
+- Support `xbuild`. ([#212](https://github.com/taiki-e/install-action/pull/212), thanks @notgull)
+
 - Update `cargo-hack@latest` to 0.6.5.
 
 - Update `cargo-deny@latest` to 0.14.2.
