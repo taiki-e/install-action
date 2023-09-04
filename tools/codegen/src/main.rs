@@ -178,6 +178,12 @@ fn main() -> Result<()> {
                 continue;
             }
         }
+
+        // Specifically skip versions of xbuild with build metadata.
+        if base_info.rust_crate.as_deref() == Some("xbuild") && !semver_version.build.is_empty() {
+            continue;
+        }
+
         let mut download_info = BTreeMap::new();
         for (&platform, base_download_info) in &base_info.platform {
             let asset_names = base_download_info

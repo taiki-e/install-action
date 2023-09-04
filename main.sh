@@ -3,7 +3,7 @@
 set -euo pipefail
 IFS=$'\n\t'
 
-x() {
+rx() {
     local cmd="$1"
     shift
     (
@@ -69,7 +69,12 @@ download_and_extract() {
         fi
     fi
     local installed_bin
-    installed_bin="${bin_dir}/$(basename "${bin_in_archive}")"
+
+    # xbuild's binary name is "x", as opposed to the usual crate name
+    case "${tool}" in
+        xbuild) installed_bin="${bin_dir}/x" ;;
+        *) installed_bin="${bin_dir}/$(basename "${bin_in_archive}")" ;;
+    esac
 
     local tar_args=()
     case "${url}" in
@@ -246,7 +251,7 @@ install_cargo_binstall() {
         info "installing cargo-binstall"
         download_from_manifest "cargo-binstall" "latest"
         info "cargo-binstall installed at $(type -P "cargo-binstall${exe}")"
-        x cargo binstall -V
+        rx cargo binstall -V
     fi
 }
 apt_update() {
@@ -578,27 +583,28 @@ for tool in "${tools[@]}"; do
         cargo-*)
             if type -P cargo &>/dev/null; then
                 case "${tool}" in
-                    cargo-valgrind) x cargo "${tool#cargo-}" --help ;; # cargo-valgrind 2.1.0's --version option just calls cargo's --version option
+                    cargo-valgrind) rx cargo "${tool#cargo-}" --help ;; # cargo-valgrind 2.1.0's --version option just calls cargo's --version option
                     *)
-                        if ! x cargo "${tool#cargo-}" --version; then
-                            x cargo "${tool#cargo-}" --help
+                        if ! rx cargo "${tool#cargo-}" --version; then
+                            rx cargo "${tool#cargo-}" --help
                         fi
                         ;;
                 esac
             else
                 case "${tool}" in
-                    cargo-valgrind) x "${tool}" "${tool#cargo-}" --help ;; # cargo-valgrind 2.1.0's --version option just calls cargo's --version option
+                    cargo-valgrind) rx "${tool}" "${tool#cargo-}" --help ;; # cargo-valgrind 2.1.0's --version option just calls cargo's --version option
                     *)
-                        if ! x "${tool}" "${tool#cargo-}" --version; then
-                            x "${tool}" "${tool#cargo-}" --help
+                        if ! rx "${tool}" "${tool#cargo-}" --version; then
+                            rx "${tool}" "${tool#cargo-}" --help
                         fi
                         ;;
                 esac
             fi
             ;;
+        xbuild) rx "x" --version ;;
         *)
-            if ! x "${tool}" --version; then
-                x "${tool}" --help
+            if ! rx "${tool}" --version; then
+                rx "${tool}" --help
             fi
             ;;
     esac

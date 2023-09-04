@@ -5,7 +5,11 @@ IFS=$'\n\t'
 cd "$(dirname "$0")"/../..
 
 # They don't provide prebuilt binaries for musl or old glibc host.
+glibc_pre_2_34_incompat=(
+    xbuild
+)
 glibc_pre_2_31_incompat=(
+    "${glibc_pre_2_34_incompat[@]}"
     zola
 )
 glibc_pre_2_27_incompat=(
@@ -41,13 +45,18 @@ case "$(uname -s)" in
             incompat_tools+=("${musl_incompat[@]}")
         else
             host_glibc_version=$(grep <<<"${ldd_version}" -E "GLIBC|GNU libc" | sed "s/.* //g")
-            higher_glibc_version=$(sort <<<"2.31"$'\n'"${host_glibc_version}" -Vu | tail -1)
+            higher_glibc_version=$(sort <<<"2.34"$'\n'"${host_glibc_version}" -Vu | tail -1)
             if [[ "${higher_glibc_version}" != "${host_glibc_version}" ]]; then
-                higher_glibc_version=$(sort <<<"2.27"$'\n'"${host_glibc_version}" -Vu | tail -1)
-                if [[ "${higher_glibc_version}" == "${host_glibc_version}" ]]; then
-                    incompat_tools+=("${glibc_pre_2_31_incompat[@]}")
+                higher_glibc_version=$(sort <<<"2.31"$'\n'"${host_glibc_version}" -Vu | tail -1)
+                if [[ "${higher_glibc_version}" != "${host_glibc_version}" ]]; then
+                    higher_glibc_version=$(sort <<<"2.27"$'\n'"${host_glibc_version}" -Vu | tail -1)
+                    if [[ "${higher_glibc_version}" == "${host_glibc_version}" ]]; then
+                        incompat_tools+=("${glibc_pre_2_31_incompat[@]}")
+                    else
+                        incompat_tools+=("${glibc_pre_2_27_incompat[@]}")
+                    fi
                 else
-                    incompat_tools+=("${glibc_pre_2_27_incompat[@]}")
+                    incompat_tools+=("${glibc_pre_2_34_incompat[@]}")
                 fi
             fi
         fi
