@@ -10,6 +10,8 @@ Note: In this file, do not use the hard wrap in the middle of a sentence for com
 
 ## [Unreleased]
 
+## [2.18.1] - 2023-09-05
+
 - Diagnostic improvements.
 
 ## [2.18.0] - 2023-09-04
@@ -1167,7 +1169,8 @@ Note: This release is considered a breaking change because installing on version
 
 Initial release
 
-[Unreleased]: https://github.com/taiki-e/install-action/compare/v2.18.0...HEAD
+[Unreleased]: https://github.com/taiki-e/install-action/compare/v2.18.1...HEAD
+[2.18.1]: https://github.com/taiki-e/install-action/compare/v2.18.0...v2.18.1
 [2.18.0]: https://github.com/taiki-e/install-action/compare/v2.17.8...v2.18.0
 [2.17.8]: https://github.com/taiki-e/install-action/compare/v2.17.7...v2.17.8
 [2.17.7]: https://github.com/taiki-e/install-action/compare/v2.17.6...v2.17.7
