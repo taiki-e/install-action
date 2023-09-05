@@ -102,10 +102,10 @@ jobs:
           - debian:11-slim # glibc 2.31
           - debian:12-slim # glibc 2.36
           - fedora:latest # glibc 2.37 (as of fedora 38)
-          - rockylinux:8 # glibc 2.28
-          - rockylinux:8-minimal # glibc 2.28
-          - rockylinux:9 # glibc 2.34
-          - rockylinux:9-minimal # glibc 2.34
+          - almalinux:8 # glibc 2.28
+          - almalinux:8-minimal # glibc 2.28
+          - almalinux:9 # glibc 2.34
+          - almalinux:9-minimal # glibc 2.34
           - centos:7 # glibc 2.17
           - alpine:latest # musl 1.2.4 (as of alpine 3.18)
     runs-on: ubuntu-latest
@@ -118,16 +118,16 @@ jobs:
           apt-get -o Acquire::Retries=10 -qq update
           apt-get -o Acquire::Retries=10 -o Dpkg::Use-Pty=0 install -y --no-install-recommends cargo
         if: startsWith(matrix.container, 'ubuntu') || startsWith(matrix.container, 'debian')
-      - name: Install requirements (fedora/rockylinux)
+      - name: Install requirements (fedora/almalinux)
         run: |
           set -euxo pipefail
           dnf=dnf
           if ! type -P dnf &>/dev/null; then
             dnf=microdnf
           fi
-          # tar and gzip are required for actions/checkout on rockylinux:*-minimal
+          # tar and gzip are required for actions/checkout on almalinux:*-minimal
           $dnf install -y cargo tar gzip
-        if: startsWith(matrix.container, 'fedora') || startsWith(matrix.container, 'rockylinux')
+        if: startsWith(matrix.container, 'fedora') || startsWith(matrix.container, 'almalinux')
       - name: Install requirements (centos)
         run: |
           set -euxo pipefail
