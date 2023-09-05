@@ -121,15 +121,12 @@ jobs:
       - name: Install requirements (fedora/almalinux/centos)
         run: |
           set -euxo pipefail
-          if type -P dnf &>/dev/null; then
-            dnf install -y cargo
-          elif type -P microdnf &>/dev/null; then
+          if ! type -P dnf &>/dev/null && type -P microdnf &>/dev/null; then
             # tar and gzip are required for actions/checkout on *-minimal images
-            microdnf install -y cargo tar gzip
-          else
-            curl --proto '=https' --tlsv1.2 -sSf https://sh.rustup.rs | sh -s -- -y --profile minimal --default-toolchain stable
-            echo "$HOME/.cargo/bin" >>"${GITHUB_PATH}"
+            microdnf install -y tar gzip
           fi
+          curl --proto '=https' --tlsv1.2 -sSf https://sh.rustup.rs | sh -s -- -y --profile minimal --default-toolchain stable
+          echo "$HOME/.cargo/bin" >>"${GITHUB_PATH}"
         if: startsWith(matrix.container, 'fedora') || startsWith(matrix.container, 'almalinux') ||  startsWith(matrix.container, 'centos')
       - name: Install requirements (alpine)
         run: |
