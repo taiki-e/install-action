@@ -10,6 +10,8 @@ Note: In this file, do not use the hard wrap in the middle of a sentence for com
 
 ## [Unreleased]
 
+- Diagnostic improvements.
+
 ## [2.18.0] - 2023-09-04
 
 - Support `xbuild`. ([#212](https://github.com/taiki-e/install-action/pull/212), thanks @notgull)
