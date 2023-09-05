@@ -576,35 +576,32 @@ for tool in "${tools[@]}"; do
             ;;
     esac
 
-    info "${tool} installed at $(type -P "${tool}${exe}")"
-    # At least cargo-udeps 0.1.30 and wasm-pack 0.12.0 do not support --version option.
     case "${tool}" in
-        cargo-careful) ;; # cargo-careful 0.3.4 does not support neither --version nor --help option.
+        xbuild) tool_bin="x" ;;
+        *) tool_bin="${tool}" ;;
+    esac
+    info "${tool} installed at $(type -P "${tool_bin}${exe}")"
+    # cargo-udeps 0.1.30 and wasm-pack 0.12.0 do not support --version option.
+    case "${tool}" in
+        cargo-careful | cargo-machete) ;; # cargo-careful 0.3.4 and cargo-machete 0.5.0 do not support neither --version nor --help option.
         cargo-*)
             if type -P cargo &>/dev/null; then
-                case "${tool}" in
-                    cargo-valgrind) rx cargo "${tool#cargo-}" --help ;; # cargo-valgrind 2.1.0's --version option just calls cargo's --version option
-                    *)
-                        if ! rx cargo "${tool#cargo-}" --version; then
-                            rx cargo "${tool#cargo-}" --help
-                        fi
-                        ;;
-                esac
+                _cargo=cargo
             else
-                case "${tool}" in
-                    cargo-valgrind) rx "${tool}" "${tool#cargo-}" --help ;; # cargo-valgrind 2.1.0's --version option just calls cargo's --version option
-                    *)
-                        if ! rx "${tool}" "${tool#cargo-}" --version; then
-                            rx "${tool}" "${tool#cargo-}" --help
-                        fi
-                        ;;
-                esac
+                _cargo="${tool}"
             fi
+            case "${tool}" in
+                cargo-valgrind) rx "${_cargo}" "${tool#cargo-}" --help ;; # cargo-valgrind 2.1.0's --version option just calls cargo's --version option
+                *)
+                    if ! rx "${_cargo}" "${tool#cargo-}" --version; then
+                        rx "${_cargo}" "${tool#cargo-}" --help
+                    fi
+                    ;;
+            esac
             ;;
-        xbuild) rx "x" --version ;;
         *)
-            if ! rx "${tool}" --version; then
-                rx "${tool}" --help
+            if ! rx "${tool_bin}" --version; then
+                rx "${tool_bin}" --help
             fi
             ;;
     esac
