@@ -81,6 +81,10 @@ jobs:
         run: just --version; shfmt --version; protoc --version
         shell: powershell
         if: startsWith(matrix.os, 'windows')
+      - name: Test cmd
+        run: just --version & shfmt --version & protoc --version
+        shell: cmd
+        if: startsWith(matrix.os, 'windows')
       # We use the version output to check the version of binstall, but they
       # several times change the version output format in the past so we need to
       # check it with CI. (e.g., 0.14.0->0.16.0 update change it
