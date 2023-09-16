@@ -41,11 +41,11 @@ jobs:
         include:
           - os: ubuntu-20.04
           - os: ubuntu-22.04
-          - os: ubuntu-20.04
+          - os: ubuntu-22.04
             tool: major.minor.patch
-          - os: ubuntu-20.04
+          - os: ubuntu-22.04
             tool: major.minor
-          - os: ubuntu-20.04
+          - os: ubuntu-22.04
             tool: major
           - os: macos-11
           - os: macos-12
@@ -134,11 +134,26 @@ jobs:
           apk --no-cache add bash cargo
         shell: sh
         if: startsWith(matrix.container, 'alpine')
-      - uses: actions/checkout@v3 # TODO: actions/checkout@v3 requires glibc 2.28+
+      - uses: actions/checkout@v3 # TODO: actions/checkout@v4 requires glibc 2.28+
         with:
           persist-credentials: false
       # cross attempts to install rust-src when Cargo.toml is available even if `cross --version`
       - run: rm Cargo.toml
+      - name: Generate tool list
+        id: tool-list
+        run: tools/ci/tool-list.sh >>"${GITHUB_OUTPUT}"
+      - uses: ./
+        with:
+          tool: ${{ steps.tool-list.outputs.tool }}
+
+  test-no-cargo:
+    runs-on: ubuntu-latest
+    timeout-minutes: 60
+    container: ubuntu:22.04
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          persist-credentials: false
       - name: Generate tool list
         id: tool-list
         run: tools/ci/tool-list.sh >>"${GITHUB_OUTPUT}"

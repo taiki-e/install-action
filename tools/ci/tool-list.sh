@@ -72,6 +72,10 @@ esac
 tools=()
 for manifest in tools/codegen/base/*.json; do
     tool_name=$(basename "${manifest%.*}")
+    # cross -V requires rustc
+    if [[ "${tool_name}" == "cross" ]] && ! type -P rustc &>/dev/null; then
+        continue
+    fi
     case "${host_os}" in
         linux*)
             for incompat in ${incompat_tools[@]+"${incompat_tools[@]}"}; do
@@ -120,14 +124,17 @@ case "${host_os}" in
         fi
         ;;
 esac
-# cargo-watch/watchexec-cli is supported by cargo-binstall (through quickinstall)
-case "${version}" in
-    latest) tools+=(cargo-watch watchexec-cli nextest) ;;
-    major.minor.patch) tools+=(cargo-watch@8.1.1 watchexec-cli@1.20.5 nextest@0.9.57) ;;
-    major.minor) tools+=(cargo-watch@8.1 watchexec-cli@1.20 nextest@0.9) ;;
-    major) tools+=(cargo-watch@8 watchexec-cli@1) ;;
-    *) exit 1 ;;
-esac
+# cargo-binstall requires cargo
+if type -P cargo &>/dev/null; then
+    # cargo-watch/watchexec-cli is supported by cargo-binstall (through quickinstall)
+    case "${version}" in
+        latest) tools+=(cargo-watch watchexec-cli nextest) ;;
+        major.minor.patch) tools+=(cargo-watch@8.1.1 watchexec-cli@1.20.5 nextest@0.9.57) ;;
+        major.minor) tools+=(cargo-watch@8.1 watchexec-cli@1.20 nextest@0.9) ;;
+        major) tools+=(cargo-watch@8 watchexec-cli@1) ;;
+        *) exit 1 ;;
+    esac
+fi
 
 # sort and dedup
 IFS=$'\n'
