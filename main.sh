@@ -58,18 +58,11 @@ download_and_extract() {
     local checksum="$2"
     local bin_dir="$3"
     local bin_in_archive="$4" # path to bin in archive
-    if [[ "${bin_dir}" == "/usr/"* ]]; then
-        if [[ ! -d "${bin_dir}" ]]; then
-            bin_dir="${HOME}/.install-action/bin"
-            if [[ ! -d "${bin_dir}" ]]; then
-                mkdir -p "${bin_dir}"
-                canonicalize_windows_path "${bin_dir}" >>"${GITHUB_PATH}"
-                export PATH="${PATH}:${bin_dir}"
-            fi
-        fi
+    if [[ "${bin_dir}" == "${install_action_dir}/bin" ]]; then
+        init_install_action_bin_dir
     fi
-    local installed_bin
 
+    local installed_bin
     # xbuild's binary name is "x", as opposed to the usual crate name
     case "${tool}" in
         xbuild) installed_bin="${bin_dir}/x" ;;
@@ -157,17 +150,17 @@ read_manifest() {
     local tool="$1"
     local version="$2"
     local manifest
-    rust_crate=$(jq -r ".rust_crate" "${manifest_dir}/${tool}.json")
-    manifest=$(jq -r ".\"${version}\"" "${manifest_dir}/${tool}.json")
+    rust_crate=$(call_jq -r ".rust_crate" "${manifest_dir}/${tool}.json")
+    manifest=$(call_jq -r ".\"${version}\"" "${manifest_dir}/${tool}.json")
     if [[ "${manifest}" == "null" ]]; then
         download_info="null"
         return 0
     fi
-    exact_version=$(jq <<<"${manifest}" -r '.version')
+    exact_version=$(call_jq <<<"${manifest}" -r '.version')
     if [[ "${exact_version}" == "null" ]]; then
         exact_version="${version}"
     else
-        manifest=$(jq -r ".\"${exact_version}\"" "${manifest_dir}/${tool}.json")
+        manifest=$(call_jq -r ".\"${exact_version}\"" "${manifest_dir}/${tool}.json")
     fi
     case "${host_os}" in
         linux)
@@ -175,24 +168,24 @@ read_manifest() {
             # usually preferred over linux-gnu binaries because they can avoid glibc version issues.
             # (rustc enables statically linking for linux-musl by default, except for mips.)
             host_platform="${host_arch}_linux_musl"
-            download_info=$(jq <<<"${manifest}" -r ".${host_platform}")
+            download_info=$(call_jq <<<"${manifest}" -r ".${host_platform}")
             if [[ "${download_info}" == "null" ]]; then
                 # Even if host_env is musl, we won't issue an error here because it seems that in
                 # some cases linux-gnu binaries will work on linux-musl hosts.
                 # https://wiki.alpinelinux.org/wiki/Running_glibc_programs
                 # TODO: However, a warning may make sense.
                 host_platform="${host_arch}_linux_gnu"
-                download_info=$(jq <<<"${manifest}" -r ".${host_platform}")
+                download_info=$(call_jq <<<"${manifest}" -r ".${host_platform}")
             fi
             ;;
         macos | windows)
             # Binaries compiled for x86_64 macOS will usually also work on aarch64 macOS.
             # Binaries compiled for x86_64 Windows will usually also work on aarch64 Windows 11+.
             host_platform="${host_arch}_${host_os}"
-            download_info=$(jq <<<"${manifest}" -r ".${host_platform}")
+            download_info=$(call_jq <<<"${manifest}" -r ".${host_platform}")
             if [[ "${download_info}" == "null" ]] && [[ "${host_arch}" != "x86_64" ]]; then
                 host_platform="x86_64_${host_os}"
-                download_info=$(jq <<<"${manifest}" -r ".${host_platform}")
+                download_info=$(call_jq <<<"${manifest}" -r ".${host_platform}")
             fi
             ;;
         *) bail "unsupported OS type '${host_os}' for ${tool}" ;;
@@ -204,20 +197,24 @@ read_download_info() {
     if [[ "${download_info}" == "null" ]]; then
         bail "${tool}@${version} for '${host_os}' is not supported"
     fi
-    checksum=$(jq <<<"${download_info}" -r '.checksum')
-    url=$(jq <<<"${download_info}" -r '.url')
+    checksum=$(call_jq <<<"${download_info}" -r '.checksum')
+    url=$(call_jq <<<"${download_info}" -r '.url')
     if [[ "${url}" == "null" ]]; then
         local template
-        template=$(jq -r ".template.${host_platform}" "${manifest_dir}/${tool}.json")
-        url=$(jq <<<"${template}" -r '.url')
+        template=$(call_jq -r ".template.${host_platform}" "${manifest_dir}/${tool}.json")
+        url=$(call_jq <<<"${template}" -r '.url')
         url="${url//\$\{version\}/${exact_version}}"
-        bin_in_archive=$(jq <<<"${template}" -r '.bin')
+        bin_in_archive=$(call_jq <<<"${template}" -r '.bin')
         bin_in_archive="${bin_in_archive//\$\{version\}/${exact_version}}"
     else
-        bin_in_archive=$(jq <<<"${download_info}" -r '.bin')
+        bin_in_archive=$(call_jq <<<"${download_info}" -r '.bin')
     fi
     if [[ "${rust_crate}" == "null" ]]; then
-        bin_dir="/usr/local/bin"
+        if [[ "${host_os}" == "windows" ]] || [[ ! -e /usr/local/bin ]]; then
+            bin_dir="${install_action_dir}/bin"
+        else
+            bin_dir=/usr/local/bin
+        fi
     else
         bin_dir="${cargo_bin}"
     fi
@@ -235,10 +232,11 @@ download_from_download_info() {
 }
 install_cargo_binstall() {
     local binstall_version
-    binstall_version=$(jq -r '.latest.version' "${manifest_dir}/cargo-binstall.json")
+    binstall_version=$(call_jq -r '.latest.version' "${manifest_dir}/cargo-binstall.json")
     local install_binstall='1'
-    if [[ -f "${cargo_bin}/cargo-binstall${exe}" ]]; then
-        if [[ "$(cargo binstall -V)" == "${binstall_version}" ]]; then
+    _binstall_version=$("cargo-binstall${exe}" binstall -V 2>/dev/null || echo "")
+    if [[ -n "${_binstall_version}" ]]; then
+        if [[ "${_binstall_version}" == "${binstall_version}" ]]; then
             info "cargo-binstall already installed at ${cargo_bin}/cargo-binstall${exe}"
             install_binstall=''
         else
@@ -248,10 +246,15 @@ install_cargo_binstall() {
     fi
 
     if [[ -n "${install_binstall}" ]]; then
-        info "installing cargo-binstall"
+        info "installing cargo-binstall@latest (${binstall_version})"
         download_from_manifest "cargo-binstall" "latest"
-        info "cargo-binstall installed at $(type -P "cargo-binstall${exe}")"
-        rx cargo binstall -V
+        installed_at=$(type -P "cargo-binstall${exe}" || echo "")
+        if [[ -n "${installed_at}" ]]; then
+            info "cargo-binstall installed at ${installed_at}"
+        else
+            warn "cargo-binstall should be installed at ${bin_dir:-}/cargo-binstall${exe}; but cargo-binstall${exe} not found in path"
+        fi
+        rx "cargo-binstall${exe}" binstall -V
     fi
 }
 apt_update() {
@@ -307,9 +310,21 @@ sys_install() {
         fedora) dnf_install "$@" ;;
     esac
 }
+init_install_action_bin_dir() {
+    if [[ -z "${init_install_action_bin:-}" ]]; then
+        init_install_action_bin=1
+        mkdir -p "${bin_dir}"
+        export PATH="${PATH}:${bin_dir}"
+        local _bin_dir
+        _bin_dir=$(canonicalize_windows_path "${bin_dir}")
+        # TODO: avoid this when already added
+        info "adding '${_bin_dir}' to PATH"
+        echo "${_bin_dir}" >>"${GITHUB_PATH}"
+    fi
+}
 canonicalize_windows_path() {
     case "${host_os}" in
-        windows) sed <<<"$1" 's/^\/c\//C:\\/' ;;
+        windows) sed <<<"$1" 's/^\/c\//C:\\/; s/\//\\/g' ;;
         *) echo "$1" ;;
     esac
 }
@@ -407,46 +422,101 @@ case "$(uname -m)" in
     # So we can assume x86_64 unless it is aarch64 or arm.
     *) host_arch="x86_64" ;;
 esac
+info "host platform: ${host_arch}_${host_os}"
 
-tmp_dir="${HOME}/.install-action/tmp"
+install_action_dir="${HOME}/.install-action"
+tmp_dir="${install_action_dir}/tmp"
 cargo_bin="${CARGO_HOME:-"${HOME}/.cargo"}/bin"
 # If $CARGO_HOME does not exist, or cargo installed outside of $CARGO_HOME/bin
 # is used ($CARGO_HOME/bin is most likely not included in the PATH), fallback to
-# /usr/local/bin or $HOME/.install-action/bin.
-if [[ ! -d "${cargo_bin}" ]] || { [[ "${host_os}" != "windows" ]] && [[ "$(type -P cargo || true)" != "${cargo_bin}/cargo${exe}" ]]; }; then
-    cargo_bin=/usr/local/bin
+# /usr/local/bin or $install_action_dir/bin.
+if [[ ! -e "${cargo_bin}" ]] || [[ "$(type -P cargo || true)" != "${cargo_bin}/cargo"* ]]; then
+    if type -P cargo &>/dev/null; then
+        info "cargo is located at $(type -P cargo)"
+    fi
+    if [[ "${host_os}" == "windows" ]] || [[ ! -e /usr/local/bin ]]; then
+        cargo_bin="${install_action_dir}/bin"
+    else
+        cargo_bin=/usr/local/bin
+    fi
 fi
 
-if ! type -P jq &>/dev/null || ! type -P curl &>/dev/null || ! type -P tar &>/dev/null; then
-    case "${base_distro}" in
-        debian | fedora | alpine)
-            echo "::group::Install packages required for installation (jq, curl, and/or tar)"
-            sys_packages=()
-            if ! type -P curl &>/dev/null; then
-                sys_packages+=(ca-certificates curl)
-            fi
-            if ! type -P tar &>/dev/null; then
-                sys_packages+=(tar)
-            fi
-            if [[ "${dnf:-}" == "yum" ]]; then
-                # On RHEL7-based distribution jq requires EPEL
-                if ! type -P jq &>/dev/null; then
-                    sys_packages+=(epel-release)
-                    sys_install "${sys_packages[@]}"
-                    sys_install jq --enablerepo=epel
-                else
-                    sys_install "${sys_packages[@]}"
-                fi
-            else
-                if ! type -P jq &>/dev/null; then
-                    sys_packages+=(jq)
-                fi
-                sys_install "${sys_packages[@]}"
-            fi
-            echo "::endgroup::"
-            ;;
-    esac
-fi
+jq_use_b=''
+case "${host_os}" in
+    linux)
+        if ! type -P jq &>/dev/null || ! type -P curl &>/dev/null || ! type -P tar &>/dev/null; then
+            case "${base_distro}" in
+                debian | fedora | alpine)
+                    echo "::group::Install packages required for installation (jq, curl, and/or tar)"
+                    sys_packages=()
+                    if ! type -P curl &>/dev/null; then
+                        sys_packages+=(ca-certificates curl)
+                    fi
+                    if ! type -P tar &>/dev/null; then
+                        sys_packages+=(tar)
+                    fi
+                    if [[ "${dnf:-}" == "yum" ]]; then
+                        # On RHEL7-based distribution jq requires EPEL
+                        if ! type -P jq &>/dev/null; then
+                            sys_packages+=(epel-release)
+                            sys_install "${sys_packages[@]}"
+                            sys_install jq --enablerepo=epel
+                        else
+                            sys_install "${sys_packages[@]}"
+                        fi
+                    else
+                        if ! type -P jq &>/dev/null; then
+                            sys_packages+=(jq)
+                        fi
+                        sys_install "${sys_packages[@]}"
+                    fi
+                    echo "::endgroup::"
+                    ;;
+                *) warn "install-action requires at least jq and curl on non-Debian/Fedora/Alpine-based Linux" ;;
+            esac
+        fi
+        ;;
+    macos)
+        if ! type -P jq &>/dev/null || ! type -P curl &>/dev/null; then
+            warn "install-action requires at least jq and curl on macOS"
+        fi
+        ;;
+    windows)
+        if ! type -P curl &>/dev/null; then
+            warn "install-action requires at least curl on Windows"
+        fi
+        # https://github.com/jqlang/jq/issues/1854
+        jq_use_b=1
+        jq="${install_action_dir}/jq/bin/jq.exe"
+        if [[ ! -f "${jq}" ]]; then
+            jq_version=$(jq --version || echo "")
+            case "${jq_version}" in
+                jq-1.[7-9]* | jq-1.[1-9][0-9]*) jq='' ;;
+                *)
+                    info "old jq (${jq_version}) has bug on Windows; downloading jq 1.7 (will not be added to PATH)"
+                    mkdir -p "${install_action_dir}/jq/bin"
+                    url='https://github.com/jqlang/jq/releases/download/jq-1.7/jq-windows-amd64.exe'
+                    checksum='2e9cc54d0a5d098e2007decec1dbb3c555ca2f5aabded7aec907fe0ffe401aab'
+                    (
+                        cd "${install_action_dir}/jq/bin"
+                        download_and_checksum "${url}" "${checksum}"
+                        mv tmp jq.exe
+                    )
+                    echo
+                    ;;
+            esac
+        fi
+        ;;
+    *) bail "unsupported host OS '${host_os}'" ;;
+esac
+call_jq() {
+    # https://github.com/jqlang/jq/issues/1854
+    if [[ -n "${jq_use_b}" ]]; then
+        "${jq:-jq}" -b "$@"
+    else
+        "${jq:-jq}" "$@"
+    fi
+}
 
 unsupported_tools=()
 for tool in "${tools[@]}"; do
@@ -468,13 +538,11 @@ for tool in "${tools[@]}"; do
             read_manifest "protoc" "${version}"
             read_download_info "protoc" "${version}"
             # Copying files to /usr/local/include requires sudo, so do not use it.
-            bin_dir="${HOME}/.install-action/bin"
-            include_dir="${HOME}/.install-action/include"
-            if [[ ! -d "${bin_dir}" ]]; then
-                mkdir -p "${bin_dir}"
+            bin_dir="${install_action_dir}/bin"
+            include_dir="${install_action_dir}/include"
+            init_install_action_bin_dir
+            if [[ ! -e "${include_dir}" ]]; then
                 mkdir -p "${include_dir}"
-                canonicalize_windows_path "${bin_dir}" >>"${GITHUB_PATH}"
-                export PATH="${PATH}:${bin_dir}"
             fi
             if ! type -P unzip &>/dev/null; then
                 case "${base_distro}" in
@@ -493,10 +561,10 @@ for tool in "${tools[@]}"; do
                 mv "bin/protoc${exe}" "${bin_dir}/"
                 mkdir -p "${include_dir}/"
                 cp -r include/. "${include_dir}/"
-                bin_dir=$(canonicalize_windows_path "${bin_dir}")
                 if [[ -z "${PROTOC:-}" ]]; then
-                    info "setting PROTOC environment variable"
-                    echo "PROTOC=${bin_dir}/protoc${exe}" >>"${GITHUB_ENV}"
+                    _bin_dir=$(canonicalize_windows_path "${bin_dir}")
+                    info "setting PROTOC environment variable to '${_bin_dir}/protoc${exe}'"
+                    echo "PROTOC=${_bin_dir}/protoc${exe}" >>"${GITHUB_ENV}"
                 fi
             )
             rm -rf "${tmp_dir}"
@@ -519,7 +587,6 @@ for tool in "${tools[@]}"; do
             snap_install valgrind --classic
             ;;
         cargo-binstall)
-            info "installing ${tool}@${version}"
             case "${version}" in
                 latest) ;;
                 *) warn "specifying the version of ${tool} is not supported by this action" ;;
@@ -580,21 +647,26 @@ for tool in "${tools[@]}"; do
         xbuild) tool_bin="x" ;;
         *) tool_bin="${tool}" ;;
     esac
-    info "${tool} installed at $(type -P "${tool_bin}${exe}")"
+    installed_at=$(type -P "${tool_bin}${exe}" || echo "")
+    if [[ -n "${installed_at}" ]]; then
+        tool_bin="${tool_bin}${exe}"
+    else
+        installed_at=$(type -P "${tool_bin}" || echo "")
+    fi
+    if [[ -n "${installed_at}" ]]; then
+        info "${tool} installed at ${installed_at}"
+    else
+        warn "${tool} should be installed at ${bin_dir:+"${bin_dir}/"}${tool_bin}${exe}; but ${tool_bin}${exe} not found in path"
+    fi
     # cargo-udeps 0.1.30 and wasm-pack 0.12.0 do not support --version option.
     case "${tool}" in
         cargo-careful | cargo-machete) ;; # cargo-careful 0.3.4 and cargo-machete 0.5.0 do not support neither --version nor --help option.
         cargo-*)
-            if type -P cargo &>/dev/null; then
-                _cargo=cargo
-            else
-                _cargo="${tool}"
-            fi
             case "${tool}" in
-                cargo-valgrind) rx "${_cargo}" "${tool#cargo-}" --help ;; # cargo-valgrind 2.1.0's --version option just calls cargo's --version option
+                cargo-valgrind) rx "${tool_bin}" "${tool#cargo-}" --help ;; # cargo-valgrind 2.1.0's --version option just calls cargo's --version option
                 *)
-                    if ! rx "${_cargo}" "${tool#cargo-}" --version; then
-                        rx "${_cargo}" "${tool#cargo-}" --help
+                    if ! rx "${tool_bin}" "${tool#cargo-}" --version; then
+                        rx "${tool_bin}" "${tool#cargo-}" --help
                     fi
                     ;;
             esac

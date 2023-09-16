@@ -10,6 +10,8 @@ Note: In this file, do not use the hard wrap in the middle of a sentence for com
 
 ## [Unreleased]
 
+- Fix some bugs on Windows.
+
 ## [2.18.11] - 2023-09-15
 
 - Update `cargo-hack@latest` to 0.6.8.
