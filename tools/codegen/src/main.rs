@@ -1,3 +1,5 @@
+// SPDX-License-Identifier: Apache-2.0 OR MIT
+
 use anyhow::{bail, Context as _, Result};
 use fs_err as fs;
 use serde::{Deserialize, Serialize};
