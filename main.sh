@@ -687,7 +687,7 @@ for tool in "${tools[@]}"; do
 done
 
 if [[ ${#unsupported_tools[@]} -gt 0 ]]; then
-    IFS=$','
+    IFS=','
     info "install-action does not support ${unsupported_tools[*]}; fallback to cargo-binstall"
     IFS=$'\n\t'
     install_cargo_binstall
