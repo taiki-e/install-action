@@ -493,16 +493,22 @@ case "${host_os}" in
             case "${jq_version}" in
                 jq-1.[7-9]* | jq-1.[1-9][0-9]*) jq='' ;;
                 *)
-                    info "old jq (${jq_version}) has bug on Windows; downloading jq 1.7 (will not be added to PATH)"
-                    mkdir -p "${install_action_dir}/jq/bin"
-                    url='https://github.com/jqlang/jq/releases/download/jq-1.7/jq-windows-amd64.exe'
-                    checksum='2e9cc54d0a5d098e2007decec1dbb3c555ca2f5aabded7aec907fe0ffe401aab'
-                    (
-                        cd "${install_action_dir}/jq/bin"
-                        download_and_checksum "${url}" "${checksum}"
-                        mv tmp jq.exe
-                    )
-                    echo
+                    _tmp=$(jq <<<"{}" -r .a || echo "")
+                    if [[ "${_tmp}" == "null" ]]; then
+                        jq=''
+                        jq_use_b=''
+                    else
+                        info "old jq (${jq_version}) has bug on Windows; downloading jq 1.7 (will not be added to PATH)"
+                        mkdir -p "${install_action_dir}/jq/bin"
+                        url='https://github.com/jqlang/jq/releases/download/jq-1.7/jq-windows-amd64.exe'
+                        checksum='2e9cc54d0a5d098e2007decec1dbb3c555ca2f5aabded7aec907fe0ffe401aab'
+                        (
+                            cd "${install_action_dir}/jq/bin"
+                            download_and_checksum "${url}" "${checksum}"
+                            mv tmp jq.exe
+                        )
+                        echo
+                    fi
                     ;;
             esac
         fi
