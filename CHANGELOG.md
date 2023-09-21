@@ -10,6 +10,8 @@ Note: In this file, do not use the hard wrap in the middle of a sentence for com
 
 ## [Unreleased]
 
+## [2.18.14] - 2023-09-21
+
 - Update `syft@latest` to 0.91.0.
 
 - Update `wasmtime@latest` to 13.0.0.
@@ -1237,7 +1239,8 @@ Note: This release is considered a breaking change because installing on version
 
 Initial release
 
-[Unreleased]: https://github.com/taiki-e/install-action/compare/v2.18.13...HEAD
+[Unreleased]: https://github.com/taiki-e/install-action/compare/v2.18.14...HEAD
+[2.18.14]: https://github.com/taiki-e/install-action/compare/v2.18.13...v2.18.14
 [2.18.13]: https://github.com/taiki-e/install-action/compare/v2.18.12...v2.18.13
 [2.18.12]: https://github.com/taiki-e/install-action/compare/v2.18.11...v2.18.12
 [2.18.11]: https://github.com/taiki-e/install-action/compare/v2.18.10...v2.18.11
