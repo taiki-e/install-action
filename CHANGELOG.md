@@ -10,6 +10,8 @@ Note: In this file, do not use the hard wrap in the middle of a sentence for com
 
 ## [Unreleased]
 
+## [2.18.16] - 2023-09-23
+
 - Update `cargo-machete@latest` to 0.6.0.
 
 - Update `cargo-llvm-cov@latest` to 0.5.32.
@@ -1247,7 +1249,8 @@ Note: This release is considered a breaking change because installing on version
 
 Initial release
 
-[Unreleased]: https://github.com/taiki-e/install-action/compare/v2.18.15...HEAD
+[Unreleased]: https://github.com/taiki-e/install-action/compare/v2.18.16...HEAD
+[2.18.16]: https://github.com/taiki-e/install-action/compare/v2.18.15...v2.18.16
 [2.18.15]: https://github.com/taiki-e/install-action/compare/v2.18.14...v2.18.15
 [2.18.14]: https://github.com/taiki-e/install-action/compare/v2.18.13...v2.18.14
 [2.18.13]: https://github.com/taiki-e/install-action/compare/v2.18.12...v2.18.13
