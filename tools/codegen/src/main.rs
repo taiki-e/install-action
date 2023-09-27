@@ -1,9 +1,5 @@
 // SPDX-License-Identifier: Apache-2.0 OR MIT
 
-use anyhow::{bail, Context as _, Result};
-use fs_err as fs;
-use serde::{Deserialize, Serialize};
-use sha2::{Digest, Sha256};
 use std::{
     cmp::Reverse,
     collections::{BTreeMap, BTreeSet},
@@ -14,6 +10,11 @@ use std::{
     str::FromStr,
     time::Duration,
 };
+
+use anyhow::{bail, Context as _, Result};
+use fs_err as fs;
+use serde::{Deserialize, Serialize};
+use sha2::{Digest, Sha256};
 
 fn main() -> Result<()> {
     let args: Vec<_> = env::args().skip(1).collect();
@@ -26,17 +27,13 @@ fn main() -> Result<()> {
     let package = &args[0];
 
     let workspace_root = &workspace_root();
-    let manifest_path = &workspace_root
-        .join("manifests")
-        .join(format!("{package}.json"));
+    let manifest_path = &workspace_root.join("manifests").join(format!("{package}.json"));
     let download_cache_dir = &workspace_root.join("tools/codegen/tmp/cache").join(package);
     fs::create_dir_all(manifest_path.parent().unwrap())?;
     fs::create_dir_all(download_cache_dir)?;
 
     let mut base_info: BaseManifest = serde_json::from_slice(&fs::read(
-        workspace_root
-            .join("tools/codegen/base")
-            .join(format!("{package}.json")),
+        workspace_root.join("tools/codegen/base").join(format!("{package}.json")),
     )?)?;
     let repo = base_info
         .repository
@@ -77,11 +74,8 @@ fn main() -> Result<()> {
         .collect();
 
     let mut crates_io_info = None;
-    base_info.rust_crate = base_info
-        .rust_crate
-        .as_ref()
-        .map(|s| replace_vars(s, package, None, None))
-        .transpose()?;
+    base_info.rust_crate =
+        base_info.rust_crate.as_ref().map(|s| replace_vars(s, package, None, None)).transpose()?;
     if let Some(crate_name) = &base_info.rust_crate {
         eprintln!("downloading crate info from https://crates.io/api/v1/crates/{crate_name}");
         crates_io_info = Some(
@@ -113,10 +107,7 @@ fn main() -> Result<()> {
                         for (platform, d) in &mut manifest.download_info {
                             let template = &template.download_info[platform];
                             d.url = Some(template.url.replace("${version}", version));
-                            d.bin = template
-                                .bin
-                                .as_ref()
-                                .map(|s| s.replace("${version}", version));
+                            d.bin = template.bin.as_ref().map(|s| s.replace("${version}", version));
                         }
                     }
                 }
@@ -231,19 +222,16 @@ fn main() -> Result<()> {
             let hash = format!("{hash:x}");
             eprintln!("{hash} *{asset_name}");
 
-            download_info.insert(
-                platform,
-                ManifestDownloadInfo {
-                    url: Some(url),
-                    checksum: hash,
-                    bin: base_download_info
-                        .bin
-                        .as_ref()
-                        .or(base_info.bin.as_ref())
-                        .map(|s| replace_vars(s, package, Some(version), Some(platform)))
-                        .transpose()?,
-                },
-            );
+            download_info.insert(platform, ManifestDownloadInfo {
+                url: Some(url),
+                checksum: hash,
+                bin: base_download_info
+                    .bin
+                    .as_ref()
+                    .or(base_info.bin.as_ref())
+                    .map(|s| replace_vars(s, package, Some(version), Some(platform)))
+                    .transpose()?,
+            });
             buf.clear();
         }
         if download_info.is_empty() {
@@ -295,39 +283,30 @@ fn main() -> Result<()> {
             if !(version.major == 0 && version.minor == 0) {
                 manifests.map.insert(
                     Reverse(Version::omitted(version.major, Some(version.minor))),
-                    ManifestRef::Ref {
-                        version: version.clone().into(),
-                    },
+                    ManifestRef::Ref { version: version.clone().into() },
                 );
             }
             if version.major != 0 {
-                manifests.map.insert(
-                    Reverse(Version::omitted(version.major, None)),
-                    ManifestRef::Ref {
+                manifests
+                    .map
+                    .insert(Reverse(Version::omitted(version.major, None)), ManifestRef::Ref {
                         version: version.clone().into(),
-                    },
-                );
+                    });
             }
             prev_version = version;
         }
-        manifests.map.insert(
-            Reverse(Version::latest()),
-            ManifestRef::Ref {
-                version: prev_version.clone().into(),
-            },
-        );
+        manifests.map.insert(Reverse(Version::latest()), ManifestRef::Ref {
+            version: prev_version.clone().into(),
+        });
     }
 
-    let ManifestRef::Ref {
-        version: latest_version,
-    } = manifests.map.first_key_value().unwrap().1.clone()
+    let ManifestRef::Ref { version: latest_version } =
+        manifests.map.first_key_value().unwrap().1.clone()
     else {
         unreachable!()
     };
     if latest_only {
-        manifests
-            .map
-            .retain(|k, _| k.0 == Version::latest() || k.0 == latest_version);
+        manifests.map.retain(|k, _| k.0 == Version::latest() || k.0 == latest_version);
     }
     let ManifestRef::Real(latest_manifest) = &manifests.map[&Reverse(latest_version.clone())]
     else {
@@ -338,16 +317,12 @@ fn main() -> Result<()> {
             continue;
         }
         if p == HostPlatform::x86_64_linux_gnu
-            && latest_manifest
-                .download_info
-                .contains_key(&HostPlatform::x86_64_linux_musl)
+            && latest_manifest.download_info.contains_key(&HostPlatform::x86_64_linux_musl)
         {
             continue;
         }
         if p == HostPlatform::aarch64_linux_gnu
-            && latest_manifest
-                .download_info
-                .contains_key(&HostPlatform::aarch64_linux_musl)
+            && latest_manifest.download_info.contains_key(&HostPlatform::aarch64_linux_musl)
         {
             continue;
         }
@@ -358,9 +333,7 @@ fn main() -> Result<()> {
     }
 
     let original_manifests = manifests.clone();
-    let mut template = Some(ManifestTemplate {
-        download_info: BTreeMap::new(),
-    });
+    let mut template = Some(ManifestTemplate { download_info: BTreeMap::new() });
     'outer: for (version, manifest) in &mut manifests.map {
         let ManifestRef::Real(manifest) = manifest else {
             continue;
@@ -376,13 +349,10 @@ fn main() -> Result<()> {
                     break 'outer;
                 }
             } else {
-                t.download_info.insert(
-                    *platform,
-                    ManifestTemplateDownloadInfo {
-                        url: template_url,
-                        bin: template_bin,
-                    },
-                );
+                t.download_info.insert(*platform, ManifestTemplateDownloadInfo {
+                    url: template_url,
+                    bin: template_bin,
+                });
             }
         }
     }
@@ -587,9 +557,7 @@ impl<'de> Deserialize<'de> for Version {
         D: serde::Deserializer<'de>,
     {
         use serde::de::Error as _;
-        String::deserialize(deserializer)?
-            .parse()
-            .map_err(D::Error::custom)
+        String::deserialize(deserializer)?.parse().map_err(D::Error::custom)
     }
 }
 
