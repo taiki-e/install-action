@@ -4,6 +4,9 @@
   "rust_crate": "${package}",
   "asset_name": "${package}-${rust_target}.tgz",
   "version_range": "latest",
+  "signing": {
+    "kind": "minisign-binstall"
+  },
   "platform": {
     "x86_64_linux_musl": {},
     "x86_64_macos": {

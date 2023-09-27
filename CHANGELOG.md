@@ -10,6 +10,8 @@ Note: In this file, do not use the hard wrap in the middle of a sentence for com
 
 ## [Unreleased]
 
+- Support signature verification. ([#237](https://github.com/taiki-e/install-action/pull/237))
+
 - Update `syft@latest` to 0.92.0.
 
 - Update `cargo-make@latest` to 0.37.2.
