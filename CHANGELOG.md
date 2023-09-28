@@ -12,11 +12,11 @@ Note: In this file, do not use the hard wrap in the middle of a sentence for com
 
 - Support signature verification. ([#237](https://github.com/taiki-e/install-action/pull/237))
 
+- Update `cargo-binstall@latest` to 1.4.1. This includes support for signature verification.
+
 - Update `syft@latest` to 0.92.0.
 
 - Update `cargo-make@latest` to 0.37.2.
-
-- Update `cargo-binstall@latest` to 1.4.1.
 
 ## [2.18.17] - 2023-09-26
 
