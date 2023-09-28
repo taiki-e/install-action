@@ -10,6 +10,8 @@ Note: In this file, do not use the hard wrap in the middle of a sentence for com
 
 ## [Unreleased]
 
+- Update `cargo-binstall@latest` to 1.4.2.
+
 ## [2.19.0] - 2023-09-28
 
 - Support signature verification. ([#237](https://github.com/taiki-e/install-action/pull/237))
