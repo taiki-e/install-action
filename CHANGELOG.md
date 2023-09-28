@@ -10,6 +10,8 @@ Note: In this file, do not use the hard wrap in the middle of a sentence for com
 
 ## [Unreleased]
 
+## [2.19.0] - 2023-09-28
+
 - Support signature verification. ([#237](https://github.com/taiki-e/install-action/pull/237))
 
 - Update `cargo-binstall@latest` to 1.4.1. This includes support for signature verification.
@@ -1261,7 +1263,8 @@ Note: This release is considered a breaking change because installing on version
 
 Initial release
 
-[Unreleased]: https://github.com/taiki-e/install-action/compare/v2.18.17...HEAD
+[Unreleased]: https://github.com/taiki-e/install-action/compare/v2.19.0...HEAD
+[2.19.0]: https://github.com/taiki-e/install-action/compare/v2.18.17...v2.19.0
 [2.18.17]: https://github.com/taiki-e/install-action/compare/v2.18.16...v2.18.17
 [2.18.16]: https://github.com/taiki-e/install-action/compare/v2.18.15...v2.18.16
 [2.18.15]: https://github.com/taiki-e/install-action/compare/v2.18.14...v2.18.15
