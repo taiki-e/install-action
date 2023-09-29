@@ -118,13 +118,13 @@ jobs:
     steps:
       - name: Install requirements (ubuntu/debian)
         run: |
-          set -euxo pipefail
+          set -eEuxo pipefail
           apt-get -o Acquire::Retries=10 -qq update
           apt-get -o Acquire::Retries=10 -o Dpkg::Use-Pty=0 install -y --no-install-recommends cargo
         if: startsWith(matrix.container, 'ubuntu') || startsWith(matrix.container, 'debian')
       - name: Install requirements (fedora/almalinux/centos)
         run: |
-          set -euxo pipefail
+          set -eEuxo pipefail
           if ! type -P dnf &>/dev/null && type -P microdnf &>/dev/null; then
             # tar and gzip are required for actions/checkout on *-minimal images
             microdnf install -y tar gzip
@@ -133,9 +133,7 @@ jobs:
           echo "$HOME/.cargo/bin" >>"${GITHUB_PATH}"
         if: startsWith(matrix.container, 'fedora') || startsWith(matrix.container, 'almalinux') ||  startsWith(matrix.container, 'centos')
       - name: Install requirements (alpine)
-        run: |
-          set -eux
-          apk --no-cache add bash cargo
+        run: apk --no-cache add bash cargo
         shell: sh
         if: startsWith(matrix.container, 'alpine')
       - uses: actions/checkout@v3 # TODO: actions/checkout@v4 requires glibc 2.28+
