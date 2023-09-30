@@ -32,7 +32,7 @@ concurrency:
 
 jobs:
   tidy:
-    uses: taiki-e/workflows/.github/workflows/tidy.yml@main
+    uses: taiki-e/github-actions/.github/workflows/tidy.yml@main
 
   test:
     strategy:
