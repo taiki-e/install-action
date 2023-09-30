@@ -10,6 +10,8 @@ Note: In this file, do not use the hard wrap in the middle of a sentence for com
 
 ## [Unreleased]
 
+- Update `mdbook@latest` to 0.4.35.
+
 - Update `parse-changelog@latest` to 0.6.3.
 
 - Update `cargo-dinghy@latest` to 0.6.8.
