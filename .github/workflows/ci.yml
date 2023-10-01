@@ -129,7 +129,7 @@ jobs:
             # tar and gzip are required for actions/checkout on *-minimal images
             microdnf install -y tar gzip
           fi
-          curl --proto '=https' --tlsv1.2 -fsSL --retry 10 https://sh.rustup.rs | sh -s -- -y --profile minimal --default-toolchain stable
+          curl --proto '=https' --tlsv1.2 -fsSL --retry 10 https://sh.rustup.rs | sh -s -- -y --profile minimal --default-toolchain stable --no-modify-path
           echo "$HOME/.cargo/bin" >>"${GITHUB_PATH}"
         if: startsWith(matrix.container, 'fedora') || startsWith(matrix.container, 'almalinux') ||  startsWith(matrix.container, 'centos')
       - name: Install requirements (alpine)
