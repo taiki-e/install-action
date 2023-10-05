@@ -4,18 +4,15 @@
   "rust_crate": "${package}",
   "asset_name": [
     "${package}-${rust_target}.tar.gz",
-    "${package}-v${version}-${rust_target}.tar.gz"
+    "${package}-v${version}-${rust_target}.tar.gz",
+    "${package}-${rust_target}.zip",
+    "${package}-v${version}-${rust_target}.zip"
   ],
   "platform": {
     "x86_64_linux_gnu": {},
     "x86_64_linux_musl": {},
     "x86_64_macos": {},
-    "x86_64_windows": {
-      "asset_name": [
-        "${package}-${rust_target}.zip",
-        "${package}-v${version}-${rust_target}.zip"
-      ]
-    },
+    "x86_64_windows": {},
     "aarch64_linux_musl": {},
     "aarch64_macos": {},
     "aarch64_windows": {}

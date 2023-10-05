@@ -1,28 +1,6 @@
 {
   "rust_crate": "parse-changelog",
-  "template": {
-    "x86_64_linux_gnu": {
-      "url": "https://github.com/taiki-e/parse-changelog/releases/download/v${version}/parse-changelog-x86_64-unknown-linux-gnu.tar.gz"
-    },
-    "x86_64_linux_musl": {
-      "url": "https://github.com/taiki-e/parse-changelog/releases/download/v${version}/parse-changelog-x86_64-unknown-linux-musl.tar.gz"
-    },
-    "x86_64_macos": {
-      "url": "https://github.com/taiki-e/parse-changelog/releases/download/v${version}/parse-changelog-x86_64-apple-darwin.tar.gz"
-    },
-    "x86_64_windows": {
-      "url": "https://github.com/taiki-e/parse-changelog/releases/download/v${version}/parse-changelog-x86_64-pc-windows-msvc.zip"
-    },
-    "aarch64_linux_musl": {
-      "url": "https://github.com/taiki-e/parse-changelog/releases/download/v${version}/parse-changelog-aarch64-unknown-linux-musl.tar.gz"
-    },
-    "aarch64_macos": {
-      "url": "https://github.com/taiki-e/parse-changelog/releases/download/v${version}/parse-changelog-aarch64-apple-darwin.tar.gz"
-    },
-    "aarch64_windows": {
-      "url": "https://github.com/taiki-e/parse-changelog/releases/download/v${version}/parse-changelog-aarch64-pc-windows-msvc.tar.gz"
-    }
-  },
+  "template": null,
   "latest": {
     "version": "0.6.3"
   },
@@ -31,81 +9,105 @@
   },
   "0.6.3": {
     "x86_64_linux_musl": {
+      "url": "https://github.com/taiki-e/parse-changelog/releases/download/v0.6.3/parse-changelog-x86_64-unknown-linux-musl.tar.gz",
       "checksum": "b01992d759aad7e861363e1d4bbb808b28d530844da1efbc9f8f0f54bad2f813"
     },
     "x86_64_macos": {
+      "url": "https://github.com/taiki-e/parse-changelog/releases/download/v0.6.3/parse-changelog-x86_64-apple-darwin.tar.gz",
       "checksum": "5d0fa26aa6e742b96d1ef8c7aeccdf63469512a706961921242bde2de7640d89"
     },
     "x86_64_windows": {
-      "checksum": "71f9367dd33b6ea754a71bdc59524470c955e78d9cf02ad2c09ec98a3ef44b81"
+      "url": "https://github.com/taiki-e/parse-changelog/releases/download/v0.6.3/parse-changelog-x86_64-pc-windows-msvc.tar.gz",
+      "checksum": "31c7bbe5b64ce66e948166e71e7d9c0ab5fb694daec7730ccb17b3448300e029"
     },
     "aarch64_linux_musl": {
+      "url": "https://github.com/taiki-e/parse-changelog/releases/download/v0.6.3/parse-changelog-aarch64-unknown-linux-musl.tar.gz",
       "checksum": "6aa06d96c2a7c89786f9925e6c54472c77fda0c813c335566f870ecb4ca34d8e"
     },
     "aarch64_macos": {
+      "url": "https://github.com/taiki-e/parse-changelog/releases/download/v0.6.3/parse-changelog-aarch64-apple-darwin.tar.gz",
       "checksum": "963e1b4614cd42a28090365522efc9d7a4f1220ffe9d7bc0b1da8ae29fa6fba9"
     },
     "aarch64_windows": {
+      "url": "https://github.com/taiki-e/parse-changelog/releases/download/v0.6.3/parse-changelog-aarch64-pc-windows-msvc.tar.gz",
       "checksum": "67fb1af8515d0b531bcea8686570d600fbe80c95994cb0c4cf7216b21a48aac4"
     }
   },
   "0.6.2": {
     "x86_64_linux_musl": {
+      "url": "https://github.com/taiki-e/parse-changelog/releases/download/v0.6.2/parse-changelog-x86_64-unknown-linux-musl.tar.gz",
       "checksum": "e64e446ba613599ca51583fc94fd1062bd79550e5e75bab9ef3047d021b6bb3a"
     },
     "x86_64_macos": {
+      "url": "https://github.com/taiki-e/parse-changelog/releases/download/v0.6.2/parse-changelog-x86_64-apple-darwin.tar.gz",
       "checksum": "11898a671fa48b328fc80d3287b9b9e36c1d97e22031c3bdd2c24fc1b9209ef9"
     },
     "x86_64_windows": {
-      "checksum": "e0a701a6bbd1e01dfa9827f7f6000ed4d7d1783fb17836cafacbfb346e23c19f"
+      "url": "https://github.com/taiki-e/parse-changelog/releases/download/v0.6.2/parse-changelog-x86_64-pc-windows-msvc.tar.gz",
+      "checksum": "8ef3f5dacd2f47811a6ba0559c2474d266c616a3bb76aea9bf3c5236b30891bb"
     },
     "aarch64_linux_musl": {
+      "url": "https://github.com/taiki-e/parse-changelog/releases/download/v0.6.2/parse-changelog-aarch64-unknown-linux-musl.tar.gz",
       "checksum": "1bcee8f53807c5a571460db33fcd12d00b22220a5e5a1ab6c536c904ef47c604"
     },
     "aarch64_macos": {
+      "url": "https://github.com/taiki-e/parse-changelog/releases/download/v0.6.2/parse-changelog-aarch64-apple-darwin.tar.gz",
       "checksum": "76f77e36fec9c4b57190aabdd36fb140121088d3bfa1b2672be2999b71eb6a48"
     },
     "aarch64_windows": {
+      "url": "https://github.com/taiki-e/parse-changelog/releases/download/v0.6.2/parse-changelog-aarch64-pc-windows-msvc.tar.gz",
       "checksum": "c9315d7352538cbe67dc9547ee8fbd6bf196fb0ae6317b903dbb6bc57b0420ff"
     }
   },
   "0.6.1": {
     "x86_64_linux_musl": {
+      "url": "https://github.com/taiki-e/parse-changelog/releases/download/v0.6.1/parse-changelog-x86_64-unknown-linux-musl.tar.gz",
       "checksum": "852a84c345787f959b5838958cd9d2f322059cce59fb5b005070b84182231a98"
     },
     "x86_64_macos": {
+      "url": "https://github.com/taiki-e/parse-changelog/releases/download/v0.6.1/parse-changelog-x86_64-apple-darwin.tar.gz",
       "checksum": "fcb4c8c48628967cbc2e52efbdb1a9b9151ff8de7cbb64fd60c8fc0cb5c12e73"
     },
     "x86_64_windows": {
-      "checksum": "1f0790b02b9afb4036e7bfdf5c0954f1099ac7b8474f4a729a29742b8bba68f2"
+      "url": "https://github.com/taiki-e/parse-changelog/releases/download/v0.6.1/parse-changelog-x86_64-pc-windows-msvc.tar.gz",
+      "checksum": "a0bf79cdfb76aa2ccb546c9734d3d06535858419485acb42dc3cce68088dc0be"
     },
     "aarch64_linux_musl": {
+      "url": "https://github.com/taiki-e/parse-changelog/releases/download/v0.6.1/parse-changelog-aarch64-unknown-linux-musl.tar.gz",
       "checksum": "5e31f9eefdc1b0db62bfd022e217b84d644db9f75b3eafaacd716dbb9361efdd"
     },
     "aarch64_macos": {
+      "url": "https://github.com/taiki-e/parse-changelog/releases/download/v0.6.1/parse-changelog-aarch64-apple-darwin.tar.gz",
       "checksum": "9f699a48e43af8a9ba92ad8c5e0400c57963be89297a0e0e318ef143c9f8cc8e"
     },
     "aarch64_windows": {
+      "url": "https://github.com/taiki-e/parse-changelog/releases/download/v0.6.1/parse-changelog-aarch64-pc-windows-msvc.tar.gz",
       "checksum": "a1b07108447f59bd3a8cb1055791b4cde570e7c6f8d1f953d850b5370da78b70"
     }
   },
   "0.6.0": {
     "x86_64_linux_musl": {
+      "url": "https://github.com/taiki-e/parse-changelog/releases/download/v0.6.0/parse-changelog-x86_64-unknown-linux-musl.tar.gz",
       "checksum": "80e57ee43411646c8b3adf0f4417c6155418385e1755f26a1dcc92069ef26bfc"
     },
     "x86_64_macos": {
+      "url": "https://github.com/taiki-e/parse-changelog/releases/download/v0.6.0/parse-changelog-x86_64-apple-darwin.tar.gz",
       "checksum": "4521b4264e3b1bf07580bfaef405d32ba4f4e31323160d999a3ab38c00d3470d"
     },
     "x86_64_windows": {
-      "checksum": "eadf1c574efc7ae46cf79492b37596ba44aebc7f5af6aadff2dad6e30b62e40c"
+      "url": "https://github.com/taiki-e/parse-changelog/releases/download/v0.6.0/parse-changelog-x86_64-pc-windows-msvc.tar.gz",
+      "checksum": "53d689b247d5e49ef5596c8a9e1d806ec08eabcc201542f2cc5394965cb5966a"
     },
     "aarch64_linux_musl": {
+      "url": "https://github.com/taiki-e/parse-changelog/releases/download/v0.6.0/parse-changelog-aarch64-unknown-linux-musl.tar.gz",
       "checksum": "8626ac4c3e6868b2bc4820a32b3533ab8265737908ee8335442942c8fa8d4d72"
     },
     "aarch64_macos": {
+      "url": "https://github.com/taiki-e/parse-changelog/releases/download/v0.6.0/parse-changelog-aarch64-apple-darwin.tar.gz",
       "checksum": "5eb69fda7e62869bae81f22db57d76d1fefabe0e9721c4941a4adcfea112d15a"
     },
     "aarch64_windows": {
+      "url": "https://github.com/taiki-e/parse-changelog/releases/download/v0.6.0/parse-changelog-aarch64-pc-windows-msvc.tar.gz",
       "checksum": "e435cd91923f4afdf3499a53cdb63446fd4a42a6b580209e93be2e2d47cb6d93"
     }
   },
@@ -114,95 +116,123 @@
   },
   "0.5.4": {
     "x86_64_linux_musl": {
+      "url": "https://github.com/taiki-e/parse-changelog/releases/download/v0.5.4/parse-changelog-x86_64-unknown-linux-musl.tar.gz",
       "checksum": "b2a430ebd0d23a3608258446d9f93162ca324fd2ca691ca3baa11625c9d7fec3"
     },
     "x86_64_macos": {
+      "url": "https://github.com/taiki-e/parse-changelog/releases/download/v0.5.4/parse-changelog-x86_64-apple-darwin.tar.gz",
       "checksum": "4476f9ce9de07ddba76f77e6260e3cbece3801654882c8161694d742f8f01a59"
     },
     "x86_64_windows": {
-      "checksum": "6cd753b60b3385e2fd3aef79bc9a6c954f01737e2380bdc06b2c55ef9d4b8c79"
+      "url": "https://github.com/taiki-e/parse-changelog/releases/download/v0.5.4/parse-changelog-x86_64-pc-windows-msvc.tar.gz",
+      "checksum": "e00a6a87be6c71a7f246cf3066cba8b76f02094ab6c482186eec9d037447bb21"
     },
     "aarch64_linux_musl": {
+      "url": "https://github.com/taiki-e/parse-changelog/releases/download/v0.5.4/parse-changelog-aarch64-unknown-linux-musl.tar.gz",
       "checksum": "73f85fdda5937ac3ee0fd3a4385998cc6a640736b3e73923b0afd061abb575be"
     },
     "aarch64_macos": {
+      "url": "https://github.com/taiki-e/parse-changelog/releases/download/v0.5.4/parse-changelog-aarch64-apple-darwin.tar.gz",
       "checksum": "164936f970d8ab870aa3355411db736994dbb86019630bf2818d0958d30768b5"
     },
     "aarch64_windows": {
+      "url": "https://github.com/taiki-e/parse-changelog/releases/download/v0.5.4/parse-changelog-aarch64-pc-windows-msvc.tar.gz",
       "checksum": "b7c1c92c83fce15746c1d289fbf14b31b3f43a043e28b25638ae8ed7b1005ea0"
     }
   },
   "0.5.3": {
     "x86_64_linux_musl": {
+      "url": "https://github.com/taiki-e/parse-changelog/releases/download/v0.5.3/parse-changelog-x86_64-unknown-linux-musl.tar.gz",
       "checksum": "7ec427621565a6bb67d7e46397471b374435bc4622339595afa42d74d2f2a2cf"
     },
     "x86_64_macos": {
+      "url": "https://github.com/taiki-e/parse-changelog/releases/download/v0.5.3/parse-changelog-x86_64-apple-darwin.tar.gz",
       "checksum": "9ab883043949d6b2080720dd88575774cb09bb8c97cacf8e8db06b46f91bc4a3"
     },
     "x86_64_windows": {
-      "checksum": "ff0032b4710ee12bbdf7afd11c382b81a011948fab529eb0259050531f49c89e"
+      "url": "https://github.com/taiki-e/parse-changelog/releases/download/v0.5.3/parse-changelog-x86_64-pc-windows-msvc.tar.gz",
+      "checksum": "2567460b8c516d6cb6425db18f8cfdd17f0e999b452ba74ed2b1b3c60013ffa8"
     },
     "aarch64_linux_musl": {
+      "url": "https://github.com/taiki-e/parse-changelog/releases/download/v0.5.3/parse-changelog-aarch64-unknown-linux-musl.tar.gz",
       "checksum": "d887eab1fd39ac54202058595efda8e4ef28d30697aea5b1d901e0922682db64"
     },
     "aarch64_macos": {
+      "url": "https://github.com/taiki-e/parse-changelog/releases/download/v0.5.3/parse-changelog-aarch64-apple-darwin.tar.gz",
       "checksum": "ceca49aff58a2ebd6cef9c54684c8311e71012ef2d9eb6b69524635ce13df0bc"
     },
     "aarch64_windows": {
+      "url": "https://github.com/taiki-e/parse-changelog/releases/download/v0.5.3/parse-changelog-aarch64-pc-windows-msvc.tar.gz",
       "checksum": "bf9e1df974e64704ed063442c500a274d627398279715061fb29c1fd417efc9a"
     }
   },
   "0.5.2": {
     "x86_64_linux_musl": {
+      "url": "https://github.com/taiki-e/parse-changelog/releases/download/v0.5.2/parse-changelog-x86_64-unknown-linux-musl.tar.gz",
       "checksum": "bcaa72cf77aac0b897a8f6380106acb44b1dd28e53feefdd8f91bb4becbf355f"
     },
     "x86_64_macos": {
+      "url": "https://github.com/taiki-e/parse-changelog/releases/download/v0.5.2/parse-changelog-x86_64-apple-darwin.tar.gz",
       "checksum": "3f0df01fe56c3e93747a252c4fa00cd40af53238747c5532665dc5ffea2e0016"
     },
     "x86_64_windows": {
-      "checksum": "73880b557ceeb9700285d240d64a1baeef42e2bcab50c7a2cd9cf0b8d3656509"
+      "url": "https://github.com/taiki-e/parse-changelog/releases/download/v0.5.2/parse-changelog-x86_64-pc-windows-msvc.tar.gz",
+      "checksum": "0de85d219007b5e4844378e61d095bb199f456827d0c22bc7a3389c4e1193cf0"
     },
     "aarch64_linux_musl": {
+      "url": "https://github.com/taiki-e/parse-changelog/releases/download/v0.5.2/parse-changelog-aarch64-unknown-linux-musl.tar.gz",
       "checksum": "41f4adb16160f2d31df32aebaae4a4966af9d8136b092f0e94d1788ff1c84866"
     },
     "aarch64_macos": {
+      "url": "https://github.com/taiki-e/parse-changelog/releases/download/v0.5.2/parse-changelog-aarch64-apple-darwin.tar.gz",
       "checksum": "ea4029f555127d082e4f4873ae1382f32b1d0afdaac6952eb346c5ae82c55fee"
     },
     "aarch64_windows": {
+      "url": "https://github.com/taiki-e/parse-changelog/releases/download/v0.5.2/parse-changelog-aarch64-pc-windows-msvc.tar.gz",
       "checksum": "a1981ac1f0cf6601561f903809cb874ed3141dba240253509e34a8219d002517"
     }
   },
   "0.5.1": {
     "x86_64_linux_musl": {
+      "url": "https://github.com/taiki-e/parse-changelog/releases/download/v0.5.1/parse-changelog-x86_64-unknown-linux-musl.tar.gz",
       "checksum": "c2591b7921d548f628cb2ce59cd6c0fab1fab44dac62d98a23c75b84d2f2b935"
     },
     "x86_64_macos": {
+      "url": "https://github.com/taiki-e/parse-changelog/releases/download/v0.5.1/parse-changelog-x86_64-apple-darwin.tar.gz",
       "checksum": "9fc483f5404131fc4ca68e6b200dfce3248c1eed72656b17258273090ea496fa"
     },
     "x86_64_windows": {
-      "checksum": "f82da8abf149c417647b99bb95266d749c26d24f0bd48080499fc335010572ed"
+      "url": "https://github.com/taiki-e/parse-changelog/releases/download/v0.5.1/parse-changelog-x86_64-pc-windows-msvc.tar.gz",
+      "checksum": "decca568f51dc5ce2c827a724b02ef257fbbb0c36d6183ae4ba710a43d69b9c7"
     },
     "aarch64_linux_musl": {
+      "url": "https://github.com/taiki-e/parse-changelog/releases/download/v0.5.1/parse-changelog-aarch64-unknown-linux-musl.tar.gz",
       "checksum": "1471f2bcdb4ccff7b525335149cd0b1baddc1243c1d7c4f1a093def61e5d3a10"
     },
     "aarch64_macos": {
+      "url": "https://github.com/taiki-e/parse-changelog/releases/download/v0.5.1/parse-changelog-aarch64-apple-darwin.tar.gz",
       "checksum": "604301690c6d8a104a268a149690fdc819635fc529d0f80cab15871e6548f150"
     }
   },
   "0.5.0": {
     "x86_64_linux_musl": {
+      "url": "https://github.com/taiki-e/parse-changelog/releases/download/v0.5.0/parse-changelog-x86_64-unknown-linux-musl.tar.gz",
       "checksum": "ea5a58854c97bb1be800831bd9d0253cc9c78d7f8df2e3593fd899b587d5f4cf"
     },
     "x86_64_macos": {
+      "url": "https://github.com/taiki-e/parse-changelog/releases/download/v0.5.0/parse-changelog-x86_64-apple-darwin.tar.gz",
       "checksum": "c284fd62849b4996ac7ca3a8c4a835a74fd22ff7b5e2557fafb8c7059ca82cd2"
     },
     "x86_64_windows": {
-      "checksum": "22bce029020c4b4dfe3019a2eb58f655a30dbc52c5a0644cf5bcbae8c2e2fc41"
+      "url": "https://github.com/taiki-e/parse-changelog/releases/download/v0.5.0/parse-changelog-x86_64-pc-windows-msvc.tar.gz",
+      "checksum": "b62e7c044bb300834687f71db78f5a44844de89575b2bb98949ada45f8ee8185"
     },
     "aarch64_linux_musl": {
+      "url": "https://github.com/taiki-e/parse-changelog/releases/download/v0.5.0/parse-changelog-aarch64-unknown-linux-musl.tar.gz",
       "checksum": "d2de3a2efcf7f507d4fbe24c9752e62c5c6ae8872a83efe31e05128887e8530c"
     },
     "aarch64_macos": {
+      "url": "https://github.com/taiki-e/parse-changelog/releases/download/v0.5.0/parse-changelog-aarch64-apple-darwin.tar.gz",
       "checksum": "c687c0344c73fda35d3d78c5ff508240a25b7c54a32b56e7f4322b034528997a"
     }
   },
@@ -211,127 +241,162 @@
   },
   "0.4.9": {
     "x86_64_linux_musl": {
+      "url": "https://github.com/taiki-e/parse-changelog/releases/download/v0.4.9/parse-changelog-x86_64-unknown-linux-musl.tar.gz",
       "checksum": "097ff59514f84cbc9b43406c9e8ff656fcfcbb821251eef538654e1cd0aac624"
     },
     "x86_64_macos": {
+      "url": "https://github.com/taiki-e/parse-changelog/releases/download/v0.4.9/parse-changelog-x86_64-apple-darwin.tar.gz",
       "checksum": "4d31a7bb6b4c68f0b47faaec9680fa6eb5a69e47ddbdc76e9d85086585857ad0"
     },
     "x86_64_windows": {
-      "checksum": "e94fba8988791b026299f04c17387fea4510146d0bc219a30f360a7cfe536c79"
+      "url": "https://github.com/taiki-e/parse-changelog/releases/download/v0.4.9/parse-changelog-x86_64-pc-windows-msvc.tar.gz",
+      "checksum": "d5893d72dd63f1466b68f5d768b6eecbb6454943e43f0d25a237bdc7f73ec057"
     },
     "aarch64_linux_musl": {
+      "url": "https://github.com/taiki-e/parse-changelog/releases/download/v0.4.9/parse-changelog-aarch64-unknown-linux-musl.tar.gz",
       "checksum": "c25095aa111756b1600a418a06346e7e728211f040e5f3fa99e5f9e72f744001"
     },
     "aarch64_macos": {
+      "url": "https://github.com/taiki-e/parse-changelog/releases/download/v0.4.9/parse-changelog-aarch64-apple-darwin.tar.gz",
       "checksum": "e894a0ffb7cd16086f3ecfbe2fc3ccc4775828dd336dfb74c53770fe4bf86150"
     }
   },
   "0.4.8": {
     "x86_64_linux_musl": {
+      "url": "https://github.com/taiki-e/parse-changelog/releases/download/v0.4.8/parse-changelog-x86_64-unknown-linux-musl.tar.gz",
       "checksum": "41bc030a00e13a83faf6021b7be3ab50af7479f5c6ca6ca0a00ae29a0d71bcc8"
     },
     "x86_64_macos": {
+      "url": "https://github.com/taiki-e/parse-changelog/releases/download/v0.4.8/parse-changelog-x86_64-apple-darwin.tar.gz",
       "checksum": "88c591fdf537064c64fde8f916065afacd845a5929c949aa6b4cd4b38a81437b"
     },
     "x86_64_windows": {
-      "checksum": "1ae6b5dabbeb27e7327af27b879a58662b7e9daf5cc63165cdd4969c96ffdc89"
+      "url": "https://github.com/taiki-e/parse-changelog/releases/download/v0.4.8/parse-changelog-x86_64-pc-windows-msvc.tar.gz",
+      "checksum": "98161b2e194a19f774358fd1882788f978b45c671571f253aee5d3a5dc6fba08"
     },
     "aarch64_linux_musl": {
+      "url": "https://github.com/taiki-e/parse-changelog/releases/download/v0.4.8/parse-changelog-aarch64-unknown-linux-musl.tar.gz",
       "checksum": "9756134014b0d24c300b54da03d554cdac710f3c2ba48beeb4031a151f3a2479"
     },
     "aarch64_macos": {
+      "url": "https://github.com/taiki-e/parse-changelog/releases/download/v0.4.8/parse-changelog-aarch64-apple-darwin.tar.gz",
       "checksum": "6340bb46d3daf9920512e578d5f6fb0e34e5a26e71845bc93797b87445584191"
     }
   },
   "0.4.7": {
     "x86_64_linux_musl": {
+      "url": "https://github.com/taiki-e/parse-changelog/releases/download/v0.4.7/parse-changelog-x86_64-unknown-linux-musl.tar.gz",
       "checksum": "b9869865ea79e3bf4931cca16a82f7226c84ffca9b508d2279b626e1c63e5151"
     },
     "x86_64_macos": {
+      "url": "https://github.com/taiki-e/parse-changelog/releases/download/v0.4.7/parse-changelog-x86_64-apple-darwin.tar.gz",
       "checksum": "d760dc945f491e37248d8446e8d373377e32bb1c1186e38be783c76147d91654"
     },
     "x86_64_windows": {
-      "checksum": "a53d5a49dda955432c1ec60160d2e017aef1d80124d3423e15e1441fdbf8a136"
+      "url": "https://github.com/taiki-e/parse-changelog/releases/download/v0.4.7/parse-changelog-x86_64-pc-windows-msvc.tar.gz",
+      "checksum": "a847379af44c795270a6bef976b20e5bb4bcdf2f0f559e4ec6267f049dbd7dfc"
     },
     "aarch64_linux_musl": {
+      "url": "https://github.com/taiki-e/parse-changelog/releases/download/v0.4.7/parse-changelog-aarch64-unknown-linux-musl.tar.gz",
       "checksum": "f4b1e860561adce28cbbf1ddebd6464830addf4157a6b4ea5dbfbd199c788cbf"
     }
   },
   "0.4.6": {
     "x86_64_linux_musl": {
+      "url": "https://github.com/taiki-e/parse-changelog/releases/download/v0.4.6/parse-changelog-x86_64-unknown-linux-musl.tar.gz",
       "checksum": "976d47ff81eafeda2d8d7bd4ed7bb13e466c46fe701e6ad9e6386ee615ea65a6"
     },
     "x86_64_macos": {
+      "url": "https://github.com/taiki-e/parse-changelog/releases/download/v0.4.6/parse-changelog-x86_64-apple-darwin.tar.gz",
       "checksum": "b76556015fc0346b28322869cf13fc637e1258d3e97416228da46135423d63cd"
     },
     "x86_64_windows": {
-      "checksum": "8584ad8d111520d52df09d15cc01025f87059d0c4d85a5fcd580f3b63ef19ee9"
+      "url": "https://github.com/taiki-e/parse-changelog/releases/download/v0.4.6/parse-changelog-x86_64-pc-windows-msvc.tar.gz",
+      "checksum": "f67bb072cdad0d740b44b950b50a8a42891b39290e8f28936c0783b7539e5162"
     }
   },
   "0.4.5": {
     "x86_64_linux_musl": {
+      "url": "https://github.com/taiki-e/parse-changelog/releases/download/v0.4.5/parse-changelog-x86_64-unknown-linux-musl.tar.gz",
       "checksum": "0da8fab497c50ee139e6595649fa532d18d37e0db72ef7974f38671ac4449432"
     },
     "x86_64_macos": {
+      "url": "https://github.com/taiki-e/parse-changelog/releases/download/v0.4.5/parse-changelog-x86_64-apple-darwin.tar.gz",
       "checksum": "4c9cfa68728db25c7cb81664be53125accad3a38b2c155efb2dc8fa9ca23b643"
     },
     "x86_64_windows": {
-      "checksum": "3d50c65434034db794a45398066694e57f82f5c80ad3e727f0d777501148de91"
+      "url": "https://github.com/taiki-e/parse-changelog/releases/download/v0.4.5/parse-changelog-x86_64-pc-windows-msvc.tar.gz",
+      "checksum": "19fd27e72c9822a9a620c821107f8d0ca93febf2f20185317035cb0d63db0caa"
     }
   },
   "0.4.4": {
     "x86_64_linux_musl": {
+      "url": "https://github.com/taiki-e/parse-changelog/releases/download/v0.4.4/parse-changelog-x86_64-unknown-linux-musl.tar.gz",
       "checksum": "6092da0f65f9853220d96bce57d0bed1dbe904f594f66f6e546ce765a202d8cb"
     },
     "x86_64_macos": {
+      "url": "https://github.com/taiki-e/parse-changelog/releases/download/v0.4.4/parse-changelog-x86_64-apple-darwin.tar.gz",
       "checksum": "4ea7d8b471fb1729d8943f9aefcfd16febbbf2409e83ba19efc03c67516931e2"
     },
     "x86_64_windows": {
-      "checksum": "59728a764d3ed873703151740f23eb1f60a486944035f8043b0294562eda281d"
+      "url": "https://github.com/taiki-e/parse-changelog/releases/download/v0.4.4/parse-changelog-x86_64-pc-windows-msvc.tar.gz",
+      "checksum": "76729ddd7729374d5b8923a0d85a0de5edf645ef6e2f3cf8c6d0230458164513"
     }
   },
   "0.4.3": {
     "x86_64_linux_musl": {
+      "url": "https://github.com/taiki-e/parse-changelog/releases/download/v0.4.3/parse-changelog-x86_64-unknown-linux-musl.tar.gz",
       "checksum": "f4120023ad79b68e3287e775c4e55773db8a298e7c995fde67c99c31ab1d38c6"
     },
     "x86_64_macos": {
+      "url": "https://github.com/taiki-e/parse-changelog/releases/download/v0.4.3/parse-changelog-x86_64-apple-darwin.tar.gz",
       "checksum": "7f717140cc8cc8531e443195f5ae1913d3ab01033d3538f7394622c561c5c470"
     },
     "x86_64_windows": {
-      "checksum": "531eea66ecfc1641d0d8591d9ba6f5c1d44bf8206093acd8c5d65a1d3e373935"
+      "url": "https://github.com/taiki-e/parse-changelog/releases/download/v0.4.3/parse-changelog-x86_64-pc-windows-msvc.tar.gz",
+      "checksum": "65ca90a7da79484466e65888bf3894d925d1924617d6a881f64c95a2a2bf59c5"
     }
   },
   "0.4.2": {
     "x86_64_linux_musl": {
+      "url": "https://github.com/taiki-e/parse-changelog/releases/download/v0.4.2/parse-changelog-x86_64-unknown-linux-musl.tar.gz",
       "checksum": "6bbe76fb0d634b5a84017ccc80bf97bb8af81a44b5c44fc5f08954671d4f63ef"
     },
     "x86_64_macos": {
+      "url": "https://github.com/taiki-e/parse-changelog/releases/download/v0.4.2/parse-changelog-x86_64-apple-darwin.tar.gz",
       "checksum": "3cc003763118f9d4d83f68f3a1e804cd6e33c2f7c4678bbf54ee0a54a11e3878"
     },
     "x86_64_windows": {
-      "checksum": "369e163832707459ecb8d1a84ea180ab72ae3b00e1a863737c8fa104449d2db5"
+      "url": "https://github.com/taiki-e/parse-changelog/releases/download/v0.4.2/parse-changelog-x86_64-pc-windows-msvc.tar.gz",
+      "checksum": "147919f6909058b09c9e9dd7f11681a177127c2ec05016472964aba36e1e7b7a"
     }
   },
   "0.4.1": {
     "x86_64_linux_musl": {
+      "url": "https://github.com/taiki-e/parse-changelog/releases/download/v0.4.1/parse-changelog-x86_64-unknown-linux-musl.tar.gz",
       "checksum": "95b904b065cc246de7e7b82d7aa3d6ee4a96dd9d2f2e195237c234d3e3395500"
     },
     "x86_64_macos": {
+      "url": "https://github.com/taiki-e/parse-changelog/releases/download/v0.4.1/parse-changelog-x86_64-apple-darwin.tar.gz",
       "checksum": "5bce895e3f57e958eb4ce4a5552e749a74593e2fc9d8e04422ed94df0b3b2056"
     },
     "x86_64_windows": {
-      "checksum": "afe7d832fd955b8d88ed19e20c0b25374714ea9e8017ec20b135d9bff5ef76a4"
+      "url": "https://github.com/taiki-e/parse-changelog/releases/download/v0.4.1/parse-changelog-x86_64-pc-windows-msvc.tar.gz",
+      "checksum": "78a57352c2903c9818be71d8e44a143442e5e0d4de70b6b84e8f7dfe02f1c398"
     }
   },
   "0.4.0": {
     "x86_64_linux_musl": {
+      "url": "https://github.com/taiki-e/parse-changelog/releases/download/v0.4.0/parse-changelog-x86_64-unknown-linux-musl.tar.gz",
       "checksum": "53a655b0763b12d421d625c7a53c08220883b6f081d9463d1b1dbf4aa5ad1d23"
     },
     "x86_64_macos": {
+      "url": "https://github.com/taiki-e/parse-changelog/releases/download/v0.4.0/parse-changelog-x86_64-apple-darwin.tar.gz",
       "checksum": "7049ccce500c2edcb7853b3e5a3761d0657e29833e6453b46a64123b95813dfe"
     },
     "x86_64_windows": {
-      "checksum": "f271492b124f696698a153c61962637d8761bd1a41d560dce6139f143211a16e"
+      "url": "https://github.com/taiki-e/parse-changelog/releases/download/v0.4.0/parse-changelog-x86_64-pc-windows-msvc.tar.gz",
+      "checksum": "b69da4c94be3e57c14cab8fecbfe795e52fc5c4fa709b7ece5de39281533b67c"
     }
   },
   "0.3": {
@@ -339,13 +404,16 @@
   },
   "0.3.0": {
     "x86_64_linux_musl": {
+      "url": "https://github.com/taiki-e/parse-changelog/releases/download/v0.3.0/parse-changelog-x86_64-unknown-linux-musl.tar.gz",
       "checksum": "2d9c383127227c2544ef57a9bcaff0b2db7598adc12fcdbfd6c8187cae6d52eb"
     },
     "x86_64_macos": {
+      "url": "https://github.com/taiki-e/parse-changelog/releases/download/v0.3.0/parse-changelog-x86_64-apple-darwin.tar.gz",
       "checksum": "8d71e1ff24efeb15d15ecef8973c1dcae94879a4b125149170117a054ada624c"
     },
     "x86_64_windows": {
-      "checksum": "5d4ebae0773209be7ac887acd423fcc55faf4698cb00bc0363a413d85c0011a6"
+      "url": "https://github.com/taiki-e/parse-changelog/releases/download/v0.3.0/parse-changelog-x86_64-pc-windows-msvc.tar.gz",
+      "checksum": "41544b1e17d9f3d2f20af1d464250ee0d55de0c399c8019b22d62fd060835ebe"
     }
   },
   "0.2": {
@@ -353,34 +421,43 @@
   },
   "0.2.2": {
     "x86_64_linux_musl": {
+      "url": "https://github.com/taiki-e/parse-changelog/releases/download/v0.2.2/parse-changelog-x86_64-unknown-linux-musl.tar.gz",
       "checksum": "c1ec7ce2f2eff915e5803106d02b4eac2a31eb80a88d86d4713d984004037e52"
     },
     "x86_64_macos": {
+      "url": "https://github.com/taiki-e/parse-changelog/releases/download/v0.2.2/parse-changelog-x86_64-apple-darwin.tar.gz",
       "checksum": "c5ed5285a427da8fe776f76a4b9c783124803bdbf6ec88fe81a2ca237c268bcf"
     },
     "x86_64_windows": {
-      "checksum": "1d4820db23edc91cd8cf6feb336648097b08bf0a6e3bb05fdd7c198e031f8a2f"
+      "url": "https://github.com/taiki-e/parse-changelog/releases/download/v0.2.2/parse-changelog-x86_64-pc-windows-msvc.tar.gz",
+      "checksum": "5315e763ceb0d1e27c14a0e7fdbcd6113b77cb835c25dff9d82cf585c537ac1b"
     }
   },
   "0.2.1": {
     "x86_64_linux_musl": {
+      "url": "https://github.com/taiki-e/parse-changelog/releases/download/v0.2.1/parse-changelog-x86_64-unknown-linux-musl.tar.gz",
       "checksum": "18f567e99bb588bab69a8c33c3e9c6d58bdede0eddde14b9d08f7ba9f6b00868"
     },
     "x86_64_macos": {
+      "url": "https://github.com/taiki-e/parse-changelog/releases/download/v0.2.1/parse-changelog-x86_64-apple-darwin.tar.gz",
       "checksum": "1a1317858ff1207f3483adf4a4140d439655e6c2c5ec107e94bc65f3a663cd59"
     },
     "x86_64_windows": {
-      "checksum": "0c01f5cbbf9e90a35224c4dc9bd94a6b9b2d9fe1f3b5b1711d2a135b82b3cb76"
+      "url": "https://github.com/taiki-e/parse-changelog/releases/download/v0.2.1/parse-changelog-x86_64-pc-windows-msvc.tar.gz",
+      "checksum": "b4d713f937e3a3214c657b67bed9ce8474a7919e0d3064c4dd854f615be1b5e5"
     }
   },
   "0.2.0": {
     "x86_64_linux_gnu": {
+      "url": "https://github.com/taiki-e/parse-changelog/releases/download/v0.2.0/parse-changelog-x86_64-unknown-linux-gnu.tar.gz",
       "checksum": "7fcb2a7a99d08b544ba7950558514a741edc023e689748f1045aa7f0f3cde10a"
     },
     "x86_64_macos": {
+      "url": "https://github.com/taiki-e/parse-changelog/releases/download/v0.2.0/parse-changelog-x86_64-apple-darwin.tar.gz",
       "checksum": "38eb988ea3c017ad6794360050d1f8c79ef7720a09db5c5d2c7a9b030b7501d9"
     },
     "x86_64_windows": {
+      "url": "https://github.com/taiki-e/parse-changelog/releases/download/v0.2.0/parse-changelog-x86_64-pc-windows-msvc.zip",
       "checksum": "12e6f5c0ddbd423d8ecffc18c36f6684f7b8be2f29f04bc9a6b62a8612cf9265"
     }
   },
@@ -389,12 +466,15 @@
   },
   "0.1.0": {
     "x86_64_linux_gnu": {
+      "url": "https://github.com/taiki-e/parse-changelog/releases/download/v0.1.0/parse-changelog-x86_64-unknown-linux-gnu.tar.gz",
       "checksum": "9c293e52e217d7669d2e18ff9cb226b108f50deffd8c501208996c7e498a05cc"
     },
     "x86_64_macos": {
+      "url": "https://github.com/taiki-e/parse-changelog/releases/download/v0.1.0/parse-changelog-x86_64-apple-darwin.tar.gz",
       "checksum": "a39b5ab20f52712e65347e141cc4cafbd3bb0808f82af2d9bc8442c1202ef48e"
     },
     "x86_64_windows": {
+      "url": "https://github.com/taiki-e/parse-changelog/releases/download/v0.1.0/parse-changelog-x86_64-pc-windows-msvc.zip",
       "checksum": "dc2e44b4a7f9cf0cf11a7ac75b2a42f70f6e97d6269917bcf09182ede4282bff"
     }
   }
