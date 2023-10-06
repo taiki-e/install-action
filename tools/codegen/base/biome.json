@@ -1,0 +1,30 @@
+{
+  "repository": "https://github.com/biomejs/biome",
+  "tag_prefix": "cli/v",
+  "platform": {
+    "x86_64_linux_gnu": {
+      "bin": "${package}${exe}",
+      "asset_name": "${package}-linux-x64"
+    },
+    "x86_64_macos": {
+      "bin": "${package}${exe}",
+      "asset_name": "${package}-darwin-x64"
+    },
+    "x86_64_windows": {
+      "bin": "${package}${exe}",
+      "asset_name": "${package}-win32-x64.exe"
+    },
+    "aarch64_linux_gnu": {
+      "bin": "${package}${exe}",
+      "asset_name": "${package}-linux-arm64"
+    },
+    "aarch64_macos": {
+      "bin": "${package}${exe}",
+      "asset_name": "${package}-darwin-arm64"
+    },
+    "aarch64_windows": {
+      "bin": "${package}${exe}",
+      "asset_name": "${package}-win32-arm64.exe"
+    }
+  }
+}

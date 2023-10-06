@@ -1,0 +1,58 @@
+{
+  "rust_crate": null,
+  "template": {
+    "x86_64_linux_gnu": {
+      "url": "https://github.com/biomejs/biome/releases/download/cli/v${version}/biome-linux-x64",
+      "bin": "biome"
+    },
+    "x86_64_macos": {
+      "url": "https://github.com/biomejs/biome/releases/download/cli/v${version}/biome-darwin-x64",
+      "bin": "biome"
+    },
+    "x86_64_windows": {
+      "url": "https://github.com/biomejs/biome/releases/download/cli/v${version}/biome-win32-x64.exe",
+      "bin": "biome.exe"
+    },
+    "aarch64_linux_gnu": {
+      "url": "https://github.com/biomejs/biome/releases/download/cli/v${version}/biome-linux-arm64",
+      "bin": "biome"
+    },
+    "aarch64_macos": {
+      "url": "https://github.com/biomejs/biome/releases/download/cli/v${version}/biome-darwin-arm64",
+      "bin": "biome"
+    },
+    "aarch64_windows": {
+      "url": "https://github.com/biomejs/biome/releases/download/cli/v${version}/biome-win32-arm64.exe",
+      "bin": "biome.exe"
+    }
+  },
+  "latest": {
+    "version": "1.2.2"
+  },
+  "1": {
+    "version": "1.2.2"
+  },
+  "1.2": {
+    "version": "1.2.2"
+  },
+  "1.2.2": {
+    "x86_64_linux_gnu": {
+      "checksum": "4748cc070d114faa357a75cc18d99d3062b3468862ca6eb973fcfe4c07bf9d8b"
+    },
+    "x86_64_macos": {
+      "checksum": "8f5f78b8c3c5e0dcff2531f6b847ff860b8d9c007f9f7564890f52a307284f7a"
+    },
+    "x86_64_windows": {
+      "checksum": "b7fa90a8bfa76331f9764ea4e661c98819899e715ab5b45f34bced2a889f424d"
+    },
+    "aarch64_linux_gnu": {
+      "checksum": "17f05345d1b6642da3ec88592612cf8af7ccbb09a011cee32d956dffe5fd920a"
+    },
+    "aarch64_macos": {
+      "checksum": "04aee13d57fff780d0ff05a6817a1da20745a5e6827f3701a039a15a40620ca9"
+    },
+    "aarch64_windows": {
+      "checksum": "fbf56fbfd9925d5350e543a532456f631c2f2b22ef04c8fb9154cf0721755039"
+    }
+  }
+}
