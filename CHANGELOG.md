@@ -10,6 +10,8 @@ Note: In this file, do not use the hard wrap in the middle of a sentence for com
 
 ## [Unreleased]
 
+- Support `biome`. ([#246](https://github.com/taiki-e/install-action/pull/246), thanks @nhedger)
+
 ## [2.19.4] - 2023-10-05
 
 - Update `protoc@latest` to 3.24.4.
