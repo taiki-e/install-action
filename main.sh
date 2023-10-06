@@ -665,6 +665,7 @@ for tool in "${tools[@]}"; do
     fi
     # cargo-udeps 0.1.30 and wasm-pack 0.12.0 do not support --version option.
     case "${tool}" in
+        biome) rx "${tool_bin}" --version || true ;; # biome up to 1.2.2 exits with 1 on --version and  --help
         cargo-careful | cargo-machete) ;; # cargo-careful 0.3.4 and cargo-machete 0.5.0 do not support neither --version nor --help option.
         cargo-*)
             case "${tool}" in
