@@ -17,7 +17,11 @@ use std::{
 
 use anyhow::{bail, Context as _, Result};
 use fs_err as fs;
-use serde::{Deserialize, Serialize};
+use serde::{
+    de::{self, Deserialize, Deserializer},
+    ser::{Serialize, Serializer},
+};
+use serde_derive::{Deserialize, Serialize};
 use sha2::{Digest, Sha256};
 
 fn main() -> Result<()> {
@@ -617,7 +621,7 @@ impl FromStr for Version {
 impl Serialize for Version {
     fn serialize<S>(&self, serializer: S) -> Result<S::Ok, S::Error>
     where
-        S: serde::Serializer,
+        S: Serializer,
     {
         String::serialize(&self.to_string(), serializer)
     }
@@ -625,10 +629,9 @@ impl Serialize for Version {
 impl<'de> Deserialize<'de> for Version {
     fn deserialize<D>(deserializer: D) -> Result<Self, D::Error>
     where
-        D: serde::Deserializer<'de>,
+        D: Deserializer<'de>,
     {
-        use serde::de::Error as _;
-        String::deserialize(deserializer)?.parse().map_err(D::Error::custom)
+        String::deserialize(deserializer)?.parse().map_err(de::Error::custom)
     }
 }
 
@@ -799,7 +802,7 @@ impl HostPlatform {
 }
 
 mod github {
-    use serde::Deserialize;
+    use serde_derive::Deserialize;
 
     // https://api.github.com/repos/<repo>/releases
     pub type Releases = Vec<Release>;
@@ -821,7 +824,7 @@ mod github {
 }
 
 mod crates_io {
-    use serde::Deserialize;
+    use serde_derive::Deserialize;
 
     // https://crates.io/api/v1/crates/<crate>
     #[derive(Debug, Deserialize)]
@@ -839,7 +842,7 @@ mod crates_io {
 }
 
 mod cargo_manifest {
-    use serde::Deserialize;
+    use serde_derive::Deserialize;
 
     #[derive(Debug, Deserialize)]
     pub struct Manifest {
