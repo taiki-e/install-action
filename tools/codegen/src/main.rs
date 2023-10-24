@@ -269,7 +269,7 @@ fn main() -> Result<()> {
                         eprintln!("download complete");
                     }
                     if pubkey.is_none() {
-                        let cargo_manifest = toml::from_str::<cargo_manifest::Manifest>(
+                        let cargo_manifest = toml_edit::de::from_str::<cargo_manifest::Manifest>(
                             &fs::read_to_string(crate_download_cache)?,
                         )?;
                         eprintln!(
