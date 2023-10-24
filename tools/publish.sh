@@ -23,6 +23,16 @@ x() {
         "${cmd}" "$@"
     )
 }
+retry() {
+    for i in {1..10}; do
+        if "$@"; then
+            return 0
+        else
+            sleep "${i}"
+        fi
+    done
+    "$@"
+}
 bail() {
     echo >&2 "error: $*"
     exit 1
@@ -113,15 +123,15 @@ tools+=(valgrind nextest cargo-nextest)
     set -x
 
     git tag "${tag}"
-    git push origin main
-    git push origin --tags
+    retry git push origin main
+    retry git push origin --tags
 
     major_version_tag="v${version%%.*}"
     git checkout -b "${major_version_tag}"
-    git push origin refs/heads/"${major_version_tag}"
+    retry git push origin refs/heads/"${major_version_tag}"
     if git --no-pager tag | grep -Eq "^${major_version_tag}$"; then
         git tag -d "${major_version_tag}"
-        git push --delete origin refs/tags/"${major_version_tag}"
+        retry git push --delete origin refs/tags/"${major_version_tag}"
     fi
     git tag "${major_version_tag}"
     git checkout main
@@ -136,10 +146,10 @@ for tool in "${tools[@]}"; do
         sed -i -e "s/# default: #publish:tool/default: ${tool}/g" action.yml
         git add action.yml
         git commit -m "${tool}"
-        git push origin -f refs/heads/"${tool}"
+        retry git push origin -f refs/heads/"${tool}"
         if git --no-pager tag | grep -Eq "^${tool}$"; then
             git tag -d "${tool}"
-            git push --delete origin refs/tags/"${tool}"
+            retry git push --delete origin refs/tags/"${tool}"
         fi
         git tag "${tool}"
         git checkout main
@@ -149,4 +159,4 @@ done
 
 set -x
 
-git push origin --tags
+retry git push origin --tags
