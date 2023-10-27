@@ -10,6 +10,8 @@ Note: In this file, do not use the hard wrap in the middle of a sentence for com
 
 ## [Unreleased]
 
+## [2.21.1] - 2023-10-27
+
 - Update `dprint@latest` to 0.42.3.
 
 - Update `cargo-minimal-versions@latest` to 0.1.21.
@@ -1373,7 +1375,8 @@ Note: This release is considered a breaking change because installing on version
 
 Initial release
 
-[Unreleased]: https://github.com/taiki-e/install-action/compare/v2.21.0...HEAD
+[Unreleased]: https://github.com/taiki-e/install-action/compare/v2.21.1...HEAD
+[2.21.1]: https://github.com/taiki-e/install-action/compare/v2.21.0...v2.21.1
 [2.21.0]: https://github.com/taiki-e/install-action/compare/v2.20.17...v2.21.0
 [2.20.17]: https://github.com/taiki-e/install-action/compare/v2.20.16...v2.20.17
 [2.20.16]: https://github.com/taiki-e/install-action/compare/v2.20.15...v2.20.16
