@@ -92,10 +92,37 @@
     }
   },
   "13": {
-    "version": "13.0.0"
+    "version": "13.0.1"
   },
   "13.0": {
-    "version": "13.0.0"
+    "version": "13.0.1"
+  },
+  "13.0.1": {
+    "x86_64_linux_gnu": {
+      "url": "https://github.com/bytecodealliance/wasmtime/releases/download/v13.0.1/wasmtime-v13.0.1-x86_64-linux.tar.xz",
+      "checksum": "65c98b4165d49e5d85fe189c99586c919f6f5d97d307debf02ead9ac239c9637",
+      "bin": "wasmtime-v13.0.1-x86_64-linux/wasmtime"
+    },
+    "x86_64_macos": {
+      "url": "https://github.com/bytecodealliance/wasmtime/releases/download/v13.0.1/wasmtime-v13.0.1-x86_64-macos.tar.xz",
+      "checksum": "210fa2a44460df64a44e13683438cf22036faced14fa77295d50e6a181d853ee",
+      "bin": "wasmtime-v13.0.1-x86_64-macos/wasmtime"
+    },
+    "x86_64_windows": {
+      "url": "https://github.com/bytecodealliance/wasmtime/releases/download/v13.0.1/wasmtime-v13.0.1-x86_64-windows.zip",
+      "checksum": "38992da8e4d41fa3391465afdd12d625f8b7e9883787354486dd80009f226979",
+      "bin": "wasmtime-v13.0.1-x86_64-windows/wasmtime.exe"
+    },
+    "aarch64_linux_gnu": {
+      "url": "https://github.com/bytecodealliance/wasmtime/releases/download/v13.0.1/wasmtime-v13.0.1-aarch64-linux.tar.xz",
+      "checksum": "fbc5ae03a1289aef4c712580e3f6d41cb9e5c1444149f6caa4cdfb766dd452f1",
+      "bin": "wasmtime-v13.0.1-aarch64-linux/wasmtime"
+    },
+    "aarch64_macos": {
+      "url": "https://github.com/bytecodealliance/wasmtime/releases/download/v13.0.1/wasmtime-v13.0.1-aarch64-macos.tar.xz",
+      "checksum": "4f766d93491dd4611063aec55fd723c348f94d0e847a7f5122a825e38783ecbd",
+      "bin": "wasmtime-v13.0.1-aarch64-macos/wasmtime"
+    }
   },
   "13.0.0": {
     "x86_64_linux_gnu": {
@@ -212,10 +239,37 @@
     }
   },
   "11": {
-    "version": "11.0.1"
+    "version": "11.0.2"
   },
   "11.0": {
-    "version": "11.0.1"
+    "version": "11.0.2"
+  },
+  "11.0.2": {
+    "x86_64_linux_gnu": {
+      "url": "https://github.com/bytecodealliance/wasmtime/releases/download/v11.0.2/wasmtime-v11.0.2-x86_64-linux.tar.xz",
+      "checksum": "71d67b23ba4e6a1a589dcfe0658fd7125b5ceb5953481f90611c616ba1dd8986",
+      "bin": "wasmtime-v11.0.2-x86_64-linux/wasmtime"
+    },
+    "x86_64_macos": {
+      "url": "https://github.com/bytecodealliance/wasmtime/releases/download/v11.0.2/wasmtime-v11.0.2-x86_64-macos.tar.xz",
+      "checksum": "b039ce32979d61c9e8d3dd82fa18d900954ee91f160666066d5353a1eb5a15b7",
+      "bin": "wasmtime-v11.0.2-x86_64-macos/wasmtime"
+    },
+    "x86_64_windows": {
+      "url": "https://github.com/bytecodealliance/wasmtime/releases/download/v11.0.2/wasmtime-v11.0.2-x86_64-windows.zip",
+      "checksum": "a5b3e795ec242a4c38184b4ce7d4239a8878985338e1afa7c33dbc86bd0f8b43",
+      "bin": "wasmtime-v11.0.2-x86_64-windows/wasmtime.exe"
+    },
+    "aarch64_linux_gnu": {
+      "url": "https://github.com/bytecodealliance/wasmtime/releases/download/v11.0.2/wasmtime-v11.0.2-aarch64-linux.tar.xz",
+      "checksum": "d1d628721c3d8b36d7d19b396b25d5b8d6f2a97f6e7b48f31913893b280a1b90",
+      "bin": "wasmtime-v11.0.2-aarch64-linux/wasmtime"
+    },
+    "aarch64_macos": {
+      "url": "https://github.com/bytecodealliance/wasmtime/releases/download/v11.0.2/wasmtime-v11.0.2-aarch64-macos.tar.xz",
+      "checksum": "2654ef8ad5c7f64c9c9cf0a4d7b50592785d3402329ca84e0e65e35896293c7a",
+      "bin": "wasmtime-v11.0.2-aarch64-macos/wasmtime"
+    }
   },
   "11.0.1": {
     "x86_64_linux_gnu": {
@@ -272,10 +326,37 @@
     }
   },
   "10": {
-    "version": "10.0.1"
+    "version": "10.0.2"
   },
   "10.0": {
-    "version": "10.0.1"
+    "version": "10.0.2"
+  },
+  "10.0.2": {
+    "x86_64_linux_gnu": {
+      "url": "https://github.com/bytecodealliance/wasmtime/releases/download/v10.0.2/wasmtime-v10.0.2-x86_64-linux.tar.xz",
+      "checksum": "08b0e924918ff7409ccec14475c753f991e6ef535e2875a1a48c89dbfc85162d",
+      "bin": "wasmtime-v10.0.2-x86_64-linux/wasmtime"
+    },
+    "x86_64_macos": {
+      "url": "https://github.com/bytecodealliance/wasmtime/releases/download/v10.0.2/wasmtime-v10.0.2-x86_64-macos.tar.xz",
+      "checksum": "2fb77c2ee05ac5c902f0bf57d7f8ab1f876bfd4f3c57c1fbbd36c97f60a8c798",
+      "bin": "wasmtime-v10.0.2-x86_64-macos/wasmtime"
+    },
+    "x86_64_windows": {
+      "url": "https://github.com/bytecodealliance/wasmtime/releases/download/v10.0.2/wasmtime-v10.0.2-x86_64-windows.zip",
+      "checksum": "3ca5fd7b4f6251e1b183d287dee08d6c38786f5ffb7dd313dda5b1672b7c2456",
+      "bin": "wasmtime-v10.0.2-x86_64-windows/wasmtime.exe"
+    },
+    "aarch64_linux_gnu": {
+      "url": "https://github.com/bytecodealliance/wasmtime/releases/download/v10.0.2/wasmtime-v10.0.2-aarch64-linux.tar.xz",
+      "checksum": "15ab7c7650499200729f3514d9232f848b304485fe60add47e22fc6c55629d48",
+      "bin": "wasmtime-v10.0.2-aarch64-linux/wasmtime"
+    },
+    "aarch64_macos": {
+      "url": "https://github.com/bytecodealliance/wasmtime/releases/download/v10.0.2/wasmtime-v10.0.2-aarch64-macos.tar.xz",
+      "checksum": "e2c66ca8ec6cf5999c93a3823a187e7cfba9225a06027922e9ed7f1fe6d86f5a",
+      "bin": "wasmtime-v10.0.2-aarch64-macos/wasmtime"
+    }
   },
   "10.0.1": {
     "x86_64_linux_gnu": {

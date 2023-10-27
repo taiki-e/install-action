@@ -146,6 +146,7 @@ fn main() -> Result<()> {
             }
 
             let req = if version_req == "latest" {
+                // TODO: this should check all missing versions
                 if manifests.map.is_empty() {
                     format!("={}", releases.first_key_value().unwrap().0 .0).parse()?
                 } else {
