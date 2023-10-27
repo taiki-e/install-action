@@ -10,6 +10,8 @@ Note: In this file, do not use the hard wrap in the middle of a sentence for com
 
 ## [Unreleased]
 
+- Update `cargo-minimal-versions@latest` to 0.1.21.
+
 ## [2.21.0] - 2023-10-27
 
 - Support `cargo-rdme`. ([#265](https://github.com/taiki-e/install-action/pull/265), thanks @joshka)
