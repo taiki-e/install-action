@@ -10,6 +10,8 @@ Note: In this file, do not use the hard wrap in the middle of a sentence for com
 
 ## [Unreleased]
 
+## [2.21.0] - 2023-10-27
+
 - Support `cargo-rdme`. ([#265](https://github.com/taiki-e/install-action/pull/265), thanks @joshka)
 
 - Update `dprint@latest` to 0.42.2.
@@ -1367,7 +1369,8 @@ Note: This release is considered a breaking change because installing on version
 
 Initial release
 
-[Unreleased]: https://github.com/taiki-e/install-action/compare/v2.20.17...HEAD
+[Unreleased]: https://github.com/taiki-e/install-action/compare/v2.21.0...HEAD
+[2.21.0]: https://github.com/taiki-e/install-action/compare/v2.20.17...v2.21.0
 [2.20.17]: https://github.com/taiki-e/install-action/compare/v2.20.16...v2.20.17
 [2.20.16]: https://github.com/taiki-e/install-action/compare/v2.20.15...v2.20.16
 [2.20.15]: https://github.com/taiki-e/install-action/compare/v2.20.14...v2.20.15
