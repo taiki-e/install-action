@@ -1,0 +1,15 @@
+{
+  "repository": "https://github.com/orium/cargo-rdme",
+  "tag_prefix": "v",
+  "platform": {
+    "x86_64_linux_musl": {
+      "asset_name": "${package}_v${version}_${rust_target}.tar.bz2"
+    },
+    "x86_64_macos": {
+      "asset_name": "${package}_v${version}_${rust_target}.zip"
+    },
+    "x86_64_windows": {
+      "asset_name": "${package}_v${version}_x86_64-pc-windows-gnu.zip"
+    }
+  }
+}
