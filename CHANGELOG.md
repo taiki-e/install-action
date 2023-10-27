@@ -10,6 +10,8 @@ Note: In this file, do not use the hard wrap in the middle of a sentence for com
 
 ## [Unreleased]
 
+- Support `cargo-rdme`. ([#265](https://github.com/taiki-e/install-action/pull/265), thanks @joshka)
+
 - Update `dprint@latest` to 0.42.2.
 
 ## [2.20.17] - 2023-10-27
