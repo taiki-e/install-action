@@ -15,3 +15,6 @@ sha2 = "0.10"
 tar = "0.4"
 toml_edit = { version = "0.20", features = ["serde"] }
 ureq = { version = "2", features = ["json"] }
+
+[lints]
+workspace = true

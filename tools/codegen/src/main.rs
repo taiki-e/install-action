@@ -1,7 +1,5 @@
 // SPDX-License-Identifier: Apache-2.0 OR MIT
 
-#![allow(clippy::single_match)]
-
 use std::{
     cmp::Reverse,
     collections::{BTreeMap, BTreeSet},
@@ -517,8 +515,8 @@ impl Version {
             major: Some(major),
             minor,
             patch: None,
-            pre: Default::default(),
-            build: Default::default(),
+            pre: semver::Prerelease::default(),
+            build: semver::BuildMetadata::default(),
         }
     }
     fn latest() -> Self {
@@ -526,8 +524,8 @@ impl Version {
             major: None,
             minor: None,
             patch: None,
-            pre: Default::default(),
-            build: Default::default(),
+            pre: semver::Prerelease::default(),
+            build: semver::BuildMetadata::default(),
         }
     }
     fn to_semver(&self) -> Option<semver::Version> {
@@ -611,8 +609,8 @@ impl FromStr for Version {
                     major: Some(v.major),
                     minor: v.minor,
                     patch: v.patch,
-                    pre: Default::default(),
-                    build: Default::default(),
+                    pre: semver::Prerelease::default(),
+                    build: semver::BuildMetadata::default(),
                 }),
                 Err(_e) => Err(e),
             },
@@ -806,21 +804,21 @@ mod github {
     use serde_derive::Deserialize;
 
     // https://api.github.com/repos/<repo>/releases
-    pub type Releases = Vec<Release>;
+    pub(crate) type Releases = Vec<Release>;
 
     // https://api.github.com/repos/<repo>/releases/<tag>
     #[derive(Debug, Deserialize)]
-    pub struct Release {
-        pub tag_name: String,
-        pub prerelease: bool,
-        pub assets: Vec<ReleaseAsset>,
+    pub(crate) struct Release {
+        pub(crate) tag_name: String,
+        pub(crate) prerelease: bool,
+        pub(crate) assets: Vec<ReleaseAsset>,
     }
 
     #[derive(Debug, Deserialize)]
-    pub struct ReleaseAsset {
-        pub name: String,
-        pub content_type: String,
-        pub browser_download_url: String,
+    pub(crate) struct ReleaseAsset {
+        pub(crate) name: String,
+        // pub(crate) content_type: String,
+        pub(crate) browser_download_url: String,
     }
 }
 
@@ -829,16 +827,16 @@ mod crates_io {
 
     // https://crates.io/api/v1/crates/<crate>
     #[derive(Debug, Deserialize)]
-    pub struct Crate {
-        pub versions: Vec<Version>,
+    pub(crate) struct Crate {
+        pub(crate) versions: Vec<Version>,
     }
 
     #[derive(Debug, Deserialize)]
-    pub struct Version {
-        pub checksum: String,
-        pub dl_path: String,
-        pub num: semver::Version,
-        pub yanked: bool,
+    pub(crate) struct Version {
+        pub(crate) checksum: String,
+        pub(crate) dl_path: String,
+        pub(crate) num: semver::Version,
+        pub(crate) yanked: bool,
     }
 }
 
@@ -846,28 +844,28 @@ mod cargo_manifest {
     use serde_derive::Deserialize;
 
     #[derive(Debug, Deserialize)]
-    pub struct Manifest {
-        pub package: Package,
+    pub(crate) struct Manifest {
+        pub(crate) package: Package,
     }
 
     #[derive(Debug, Deserialize)]
-    pub struct Package {
-        pub metadata: Metadata,
+    pub(crate) struct Package {
+        pub(crate) metadata: Metadata,
     }
 
     #[derive(Debug, Deserialize)]
-    pub struct Metadata {
-        pub binstall: Binstall,
+    pub(crate) struct Metadata {
+        pub(crate) binstall: Binstall,
     }
 
     #[derive(Debug, Deserialize)]
-    pub struct Binstall {
-        pub signing: BinstallSigning,
+    pub(crate) struct Binstall {
+        pub(crate) signing: BinstallSigning,
     }
 
     #[derive(Debug, Deserialize)]
-    pub struct BinstallSigning {
-        pub algorithm: String,
-        pub pubkey: String,
+    pub(crate) struct BinstallSigning {
+        pub(crate) algorithm: String,
+        pub(crate) pubkey: String,
     }
 }
