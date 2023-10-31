@@ -14,6 +14,8 @@ Note: In this file, do not use the hard wrap in the middle of a sentence for com
 
 - Update `biome@latest` to 1.3.3.
 
+- Support `dprint` on aarch64 Linux (musl).
+
 ## [2.21.5] - 2023-10-30
 
 - Update `cargo-llvm-cov@latest` to 0.5.36.

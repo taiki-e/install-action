@@ -16,6 +16,9 @@
     "aarch64_linux_gnu": {
       "url": "https://github.com/dprint/dprint/releases/download/${version}/dprint-aarch64-unknown-linux-gnu.zip"
     },
+    "aarch64_linux_musl": {
+      "url": "https://github.com/dprint/dprint/releases/download/${version}/dprint-aarch64-unknown-linux-musl.zip"
+    },
     "aarch64_macos": {
       "url": "https://github.com/dprint/dprint/releases/download/${version}/dprint-aarch64-apple-darwin.zip"
     }
@@ -36,8 +39,8 @@
     "x86_64_windows": {
       "checksum": "6eeb4b17eb7492f8e89cb8334581159686bb793c5e4dff6ecf029aa786f5e88c"
     },
-    "aarch64_linux_gnu": {
-      "checksum": "5f1d472fd6ed35704cdb3b016490761b47183b0a3b6c70b2a0e453045f1aa8a7"
+    "aarch64_linux_musl": {
+      "checksum": "6a99b4ed259c82487993dc17d488f21dd495f6b2fb59d99408734e51ea3c7377"
     },
     "aarch64_macos": {
       "checksum": "93c995332cb927cebd5b0937fc23939ea5f18b8a24a76e8535486abb9da4a68b"

@@ -313,6 +313,7 @@ fn main() -> Result<()> {
             continue;
         }
         // compact manifest
+        // TODO: do this before download binaries
         if download_info.contains_key(&HostPlatform::x86_64_linux_gnu)
             && download_info.contains_key(&HostPlatform::x86_64_linux_musl)
         {
