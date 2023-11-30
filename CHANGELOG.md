@@ -10,6 +10,8 @@ Note: In this file, do not use the hard wrap in the middle of a sentence for com
 
 ## [Unreleased]
 
+- Update `mdbook@latest` to 0.4.36.
+
 - Update `syft@latest` to 0.98.0.
 
 ## [2.21.22] - 2023-11-28
