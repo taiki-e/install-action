@@ -10,6 +10,8 @@ Note: In this file, do not use the hard wrap in the middle of a sentence for com
 
 ## [Unreleased]
 
+## [2.21.24] - 2023-12-01
+
 - Update `biome@latest` to 1.4.1.
 
 ## [2.21.23] - 2023-11-30
@@ -1473,7 +1475,8 @@ Note: This release is considered a breaking change because installing on version
 
 Initial release
 
-[Unreleased]: https://github.com/taiki-e/install-action/compare/v2.21.23...HEAD
+[Unreleased]: https://github.com/taiki-e/install-action/compare/v2.21.24...HEAD
+[2.21.24]: https://github.com/taiki-e/install-action/compare/v2.21.23...v2.21.24
 [2.21.23]: https://github.com/taiki-e/install-action/compare/v2.21.22...v2.21.23
 [2.21.22]: https://github.com/taiki-e/install-action/compare/v2.21.21...v2.21.22
 [2.21.21]: https://github.com/taiki-e/install-action/compare/v2.21.20...v2.21.21
