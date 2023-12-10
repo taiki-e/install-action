@@ -1,0 +1,25 @@
+{
+  "repository": "https://github.com/google/osv-scanner",
+  "tag_prefix": "v",
+  "version_range": ">= 1.0.0",
+  "platform": {
+    "x86_64_macos": {
+      "asset_name": "${package}_${version}_darwin_amd64"
+    },
+    "aarch64_macos": {
+      "asset_name": "${package}_${version}_darwin_arm64"
+    },
+    "x86_64_windows": {
+      "asset_name": "${package}_${version}_windows_amd64.exe"
+    },
+    "aarch64_windows": {
+      "asset_name": "${package}_${version}_windows_arm64.exe"
+    },
+    "x86_64_linux_gnu": {
+      "asset_name": "${package}_${version}_linux_amd64"
+    },
+    "aarch64_linux_gnu": {
+      "asset_name": "${package}_${version}_linux_arm64"
+    }
+  }
+}
