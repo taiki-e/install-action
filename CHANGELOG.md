@@ -10,6 +10,8 @@ Note: In this file, do not use the hard wrap in the middle of a sentence for com
 
 ## [Unreleased]
 
+- Update `cargo-binstall@latest` to 1.4.7.
+
 ## [2.22.0] - 2023-12-10
 
 - Support `osv-scanner`. ([#300](https://github.com/taiki-e/install-action/pull/300), thanks @jayvdb)
