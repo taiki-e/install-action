@@ -10,6 +10,8 @@ Note: In this file, do not use the hard wrap in the middle of a sentence for com
 
 ## [Unreleased]
 
+## [2.22.6] - 2023-12-18
+
 - Update `dprint@latest` to 0.44.0.
 
 ## [2.22.5] - 2023-12-16
@@ -1523,7 +1525,8 @@ Note: This release is considered a breaking change because installing on version
 
 Initial release
 
-[Unreleased]: https://github.com/taiki-e/install-action/compare/v2.22.5...HEAD
+[Unreleased]: https://github.com/taiki-e/install-action/compare/v2.22.6...HEAD
+[2.22.6]: https://github.com/taiki-e/install-action/compare/v2.22.5...v2.22.6
 [2.22.5]: https://github.com/taiki-e/install-action/compare/v2.22.4...v2.22.5
 [2.22.4]: https://github.com/taiki-e/install-action/compare/v2.22.3...v2.22.4
 [2.22.3]: https://github.com/taiki-e/install-action/compare/v2.22.2...v2.22.3
