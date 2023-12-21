@@ -1,0 +1,13 @@
+{
+  "repository": "https://github.com/bazhenov/cargo-export",
+  "tag_prefix": "v",
+  "rust_crate": "${package}",
+  "asset_name": "${package}-v${version}-${rust_target}.tar.gz",
+  "bin": "${package}-v${version}-${rust_target}/bin/${package}${exe}",
+  "platform": {
+    "x86_64_linux_musl": {},
+    "x86_64_macos": {},
+    "x86_64_windows": {},
+    "aarch64_macos": {}
+  }
+}
