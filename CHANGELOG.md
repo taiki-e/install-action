@@ -10,6 +10,8 @@ Note: In this file, do not use the hard wrap in the middle of a sentence for com
 
 ## [Unreleased]
 
+- Support `cargo-export`. ([#312](https://github.com/taiki-e/install-action/pull/312), thanks @bazhenov)
+
 ## [2.22.10] - 2023-12-21
 
 - Update `syft@latest` to 0.99.0.
