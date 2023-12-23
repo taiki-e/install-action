@@ -1,0 +1,63 @@
+{
+  "rust_crate": "cargo-export",
+  "template": {
+    "x86_64_linux_musl": {
+      "url": "https://github.com/bazhenov/cargo-export/releases/download/v${version}/cargo-export-v${version}-x86_64-unknown-linux-musl.tar.gz",
+      "bin": "cargo-export-v${version}-x86_64-unknown-linux-musl/bin/cargo-export"
+    },
+    "x86_64_macos": {
+      "url": "https://github.com/bazhenov/cargo-export/releases/download/v${version}/cargo-export-v${version}-x86_64-apple-darwin.tar.gz",
+      "bin": "cargo-export-v${version}-x86_64-apple-darwin/bin/cargo-export"
+    },
+    "x86_64_windows": {
+      "url": "https://github.com/bazhenov/cargo-export/releases/download/v${version}/cargo-export-v${version}-x86_64-pc-windows-msvc.tar.gz",
+      "bin": "cargo-export-v${version}-x86_64-pc-windows-msvc/bin/cargo-export.exe"
+    },
+    "aarch64_macos": {
+      "url": "https://github.com/bazhenov/cargo-export/releases/download/v${version}/cargo-export-v${version}-aarch64-apple-darwin.tar.gz",
+      "bin": "cargo-export-v${version}-aarch64-apple-darwin/bin/cargo-export"
+    }
+  },
+  "latest": {
+    "version": "0.2.5"
+  },
+  "0.2": {
+    "version": "0.2.5"
+  },
+  "0.2.5": {
+    "x86_64_linux_musl": {
+      "checksum": "eda03e2665396f156f32facb1ebc37e92cef359fdff25e50b0393e4e81483d65"
+    },
+    "x86_64_macos": {
+      "checksum": "ed10c42a43d5d576fe48ddaad6a3531f0f3e9c4229d7b8f802c5c381054986a5"
+    },
+    "x86_64_windows": {
+      "checksum": "79eaee7a619772cfafbfdf4ce3df689fd3db628375ad1cd7f63bc47202a4f76f"
+    },
+    "aarch64_macos": {
+      "checksum": "ed4b04d2efb4913d5e354cf0563916f83fdd71aaa751b3ecb0f2ee746929be94"
+    }
+  },
+  "0.2.4": {
+    "x86_64_macos": {
+      "checksum": "f0bdca8ae6b8d4168eb3e0852049c94f77baf22a78135391e8a968edab456d95"
+    },
+    "x86_64_windows": {
+      "checksum": "39264472a09f21d8452204d1d5a955c4b7ad8f59c68b226653cd621a7b689c36"
+    },
+    "aarch64_macos": {
+      "checksum": "801fbdbcce1ab7a7cce44a0bafe15c66f43751263ae9536668c5fce911cebed8"
+    }
+  },
+  "0.2.3": {
+    "x86_64_macos": {
+      "checksum": "cccbf3f1df341e7a62521141f295e857ad1fbe8b81406a1666affd1659fa2244"
+    },
+    "x86_64_windows": {
+      "checksum": "96baaa1564f4e89089e1f13cc33a68c401267e63917cb8ba43be93f323d71ca8"
+    },
+    "aarch64_macos": {
+      "checksum": "fca4aef395fe08ad313aa06cc6a14de11a6ae3432d78511a259ff2c7e3d81b8c"
+    }
+  }
+}
