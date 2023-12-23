@@ -10,6 +10,8 @@ Note: In this file, do not use the hard wrap in the middle of a sentence for com
 
 ## [Unreleased]
 
+## [2.23.0] - 2023-12-23
+
 - Support `cargo-export`. ([#312](https://github.com/taiki-e/install-action/pull/312), thanks @bazhenov)
 
 ## [2.22.10] - 2023-12-21
@@ -1543,7 +1545,8 @@ Note: This release is considered a breaking change because installing on version
 
 Initial release
 
-[Unreleased]: https://github.com/taiki-e/install-action/compare/v2.22.10...HEAD
+[Unreleased]: https://github.com/taiki-e/install-action/compare/v2.23.0...HEAD
+[2.23.0]: https://github.com/taiki-e/install-action/compare/v2.22.10...v2.23.0
 [2.22.10]: https://github.com/taiki-e/install-action/compare/v2.22.9...v2.22.10
 [2.22.9]: https://github.com/taiki-e/install-action/compare/v2.22.8...v2.22.9
 [2.22.8]: https://github.com/taiki-e/install-action/compare/v2.22.7...v2.22.8
