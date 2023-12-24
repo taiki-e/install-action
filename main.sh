@@ -501,8 +501,8 @@ case "${host_os}" in
                     else
                         info "old jq (${jq_version}) has bug on Windows; downloading jq 1.7 (will not be added to PATH)"
                         mkdir -p "${install_action_dir}/jq/bin"
-                        url='https://github.com/jqlang/jq/releases/download/jq-1.7/jq-windows-amd64.exe'
-                        checksum='2e9cc54d0a5d098e2007decec1dbb3c555ca2f5aabded7aec907fe0ffe401aab'
+                        url='https://github.com/jqlang/jq/releases/download/jq-1.7.1/jq-windows-amd64.exe'
+                        checksum='7451fbbf37feffb9bf262bd97c54f0da558c63f0748e64152dd87b0a07b6d6ab'
                         (
                             cd "${install_action_dir}/jq/bin"
                             download_and_checksum "${url}" "${checksum}"
