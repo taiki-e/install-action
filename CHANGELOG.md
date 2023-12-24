@@ -10,6 +10,8 @@ Note: In this file, do not use the hard wrap in the middle of a sentence for com
 
 ## [Unreleased]
 
+- Update `just@latest` to 1.18.1.
+
 ## [2.23.0] - 2023-12-23
 
 - Support `cargo-export`. ([#312](https://github.com/taiki-e/install-action/pull/312), thanks @bazhenov)
