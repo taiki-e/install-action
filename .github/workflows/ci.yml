@@ -111,7 +111,7 @@ jobs:
           - almalinux:9 # glibc 2.34
           - almalinux:9-minimal # glibc 2.34
           - centos:7 # glibc 2.17
-          - alpine:latest # musl 1.2.4 (as of alpine 3.18)
+          - alpine:latest # musl 1.2.4 (as of alpine 3.19)
     runs-on: ubuntu-latest
     timeout-minutes: 60
     container: ${{ matrix.container }}
