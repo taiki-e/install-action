@@ -10,6 +10,8 @@ Note: In this file, do not use the hard wrap in the middle of a sentence for com
 
 ## [Unreleased]
 
+- Update `just@latest` to 1.20.0.
+
 - Update `cargo-udeps@latest` to 0.1.45.
 
 ## [2.23.5] - 2023-12-28
