@@ -10,6 +10,8 @@ Note: In this file, do not use the hard wrap in the middle of a sentence for com
 
 ## [Unreleased]
 
+## [2.23.6] - 2023-12-29
+
 - Update `just@latest` to 1.20.0.
 
 - Update `cargo-udeps@latest` to 0.1.45.
@@ -1569,7 +1571,8 @@ Note: This release is considered a breaking change because installing on version
 
 Initial release
 
-[Unreleased]: https://github.com/taiki-e/install-action/compare/v2.23.5...HEAD
+[Unreleased]: https://github.com/taiki-e/install-action/compare/v2.23.6...HEAD
+[2.23.6]: https://github.com/taiki-e/install-action/compare/v2.23.5...v2.23.6
 [2.23.5]: https://github.com/taiki-e/install-action/compare/v2.23.4...v2.23.5
 [2.23.4]: https://github.com/taiki-e/install-action/compare/v2.23.3...v2.23.4
 [2.23.3]: https://github.com/taiki-e/install-action/compare/v2.23.2...v2.23.3
