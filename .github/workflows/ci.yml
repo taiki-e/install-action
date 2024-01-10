@@ -55,9 +55,7 @@ jobs:
     runs-on: ${{ matrix.os }}
     timeout-minutes: 60
     steps:
-      - uses: actions/checkout@v4
-        with:
-          persist-credentials: false
+      - uses: taiki-e/github-actions/checkout@main
       # cross attempts to install rust-src when Cargo.toml is available even if `cross --version`
       - run: rm Cargo.toml
       - name: Generate tool list
@@ -125,10 +123,6 @@ jobs:
       - name: Install requirements (fedora/almalinux/centos)
         run: |
           set -eEuxo pipefail
-          if ! type -P dnf &>/dev/null && type -P microdnf &>/dev/null; then
-            # tar and gzip are required for actions/checkout on *-minimal images
-            microdnf install -y tar gzip
-          fi
           curl --proto '=https' --tlsv1.2 -fsSL --retry 10 https://sh.rustup.rs | sh -s -- -y --profile minimal --default-toolchain stable --no-modify-path
           echo "$HOME/.cargo/bin" >>"${GITHUB_PATH}"
         if: startsWith(matrix.container, 'fedora') || startsWith(matrix.container, 'almalinux') ||  startsWith(matrix.container, 'centos')
@@ -136,9 +130,7 @@ jobs:
         run: apk --no-cache add bash cargo
         shell: sh
         if: startsWith(matrix.container, 'alpine')
-      - uses: actions/checkout@v3 # TODO: actions/checkout@v4 requires glibc 2.28+
-        with:
-          persist-credentials: false
+      - uses: taiki-e/github-actions/checkout@main
       # cross attempts to install rust-src when Cargo.toml is available even if `cross --version`
       - run: rm Cargo.toml
       - name: Generate tool list
@@ -153,9 +145,7 @@ jobs:
     timeout-minutes: 60
     container: ubuntu:22.04
     steps:
-      - uses: actions/checkout@v4
-        with:
-          persist-credentials: false
+      - uses: taiki-e/github-actions/checkout@main
       - name: Generate tool list
         id: tool-list
         run: tools/ci/tool-list.sh >>"${GITHUB_OUTPUT}"
@@ -170,9 +160,7 @@ jobs:
       contents: write
       pull-requests: write
     steps:
-      - uses: actions/checkout@v4
-        with:
-          persist-credentials: false
+      - uses: taiki-e/github-actions/checkout@main
       - name: Install Rust
         run: rustup toolchain add nightly --no-self-update && rustup default nightly
       - run: tools/manifest.sh
