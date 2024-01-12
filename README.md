@@ -81,7 +81,7 @@ https://spdx.org/licenses
 
 | Name | Where binaries will be installed | Where will it be installed from | Supported platform | License |
 | ---- | -------------------------------- | ------------------------------- | ------------------ | ------- |
-| [**biome**](https://biomejs.dev)| `/usr/local/bin` | [GitHub Releases](https://github.com/biomejs/biome/releases) | Linux, macOS, Windows | [MIT](https://github.com/biomejs/biome/blob/HEAD/LICENSE)
+| [**biome**](https://biomejs.dev)| `/usr/local/bin` | [GitHub Releases](https://github.com/biomejs/biome/releases) | Linux, macOS, Windows | [MIT](https://github.com/biomejs/biome/blob/HEAD/LICENSE) |
 | [**cargo-binstall**][cargo-binstall] | `$CARGO_HOME/bin` | [GitHub Releases](https://github.com/cargo-bins/cargo-binstall/releases) | Linux, macOS, Windows | [GPL-3.0](https://github.com/cargo-bins/cargo-binstall/blob/HEAD/crates/bin/LICENSE) |
 | [**cargo-careful**](https://github.com/RalfJung/cargo-careful) | `$CARGO_HOME/bin` | [GitHub Releases](https://github.com/RalfJung/cargo-careful/releases) | Linux, macOS, Windows | [Apache-2.0](https://github.com/RalfJung/cargo-careful/blob/HEAD/LICENSE-APACHE) OR [MIT](https://github.com/RalfJung/cargo-careful/blob/HEAD/LICENSE-MIT) |
 | [**cargo-deny**](https://github.com/EmbarkStudios/cargo-deny) | `$CARGO_HOME/bin` | [GitHub Releases](https://github.com/EmbarkStudios/cargo-deny/releases) | Linux, macOS, Windows | [Apache-2.0](https://github.com/EmbarkStudios/cargo-deny/blob/HEAD/LICENSE-APACHE) OR [MIT](https://github.com/EmbarkStudios/cargo-deny/blob/HEAD/LICENSE-MIT) |
