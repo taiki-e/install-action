@@ -10,6 +10,8 @@ Note: In this file, do not use the hard wrap in the middle of a sentence for com
 
 ## [Unreleased]
 
+## [2.25.6] - 2024-01-20
+
 - Update `syft@latest` to 0.101.1.
 
 - Update `cargo-deny@latest` to 0.14.4.
@@ -1641,7 +1643,8 @@ Note: This release is considered a breaking change because installing on version
 
 Initial release
 
-[Unreleased]: https://github.com/taiki-e/install-action/compare/v2.25.5...HEAD
+[Unreleased]: https://github.com/taiki-e/install-action/compare/v2.25.6...HEAD
+[2.25.6]: https://github.com/taiki-e/install-action/compare/v2.25.5...v2.25.6
 [2.25.5]: https://github.com/taiki-e/install-action/compare/v2.25.4...v2.25.5
 [2.25.4]: https://github.com/taiki-e/install-action/compare/v2.25.3...v2.25.4
 [2.25.3]: https://github.com/taiki-e/install-action/compare/v2.25.2...v2.25.3
