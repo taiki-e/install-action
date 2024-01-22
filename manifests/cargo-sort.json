@@ -1,0 +1,78 @@
+{
+  "rust_crate": "cargo-sort",
+  "template": {
+    "x86_64_linux_gnu": {
+      "url": "https://github.com/DevinR528/cargo-sort/releases/download/v${version}/cargo-sort-x86_64-unknown-linux-gnu.tar.gz"
+    },
+    "x86_64_macos": {
+      "url": "https://github.com/DevinR528/cargo-sort/releases/download/v${version}/cargo-sort-x86_64-apple-darwin.tar.gz"
+    },
+    "x86_64_windows": {
+      "url": "https://github.com/DevinR528/cargo-sort/releases/download/v${version}/cargo-sort-x86_64-pc-windows-msvc.zip"
+    }
+  },
+  "latest": {
+    "version": "1.0.9"
+  },
+  "1": {
+    "version": "1.0.9"
+  },
+  "1.0": {
+    "version": "1.0.9"
+  },
+  "1.0.9": {
+    "x86_64_linux_gnu": {
+      "checksum": "e7ad1db1b20e0a382f6a77ba3725fdfdf939e6f14d7de6a021b5c38113723186"
+    },
+    "x86_64_macos": {
+      "checksum": "fa6d5fa6281e0a2f930ef8dbadc88408bd209379b21b96c9525e25adc2f720b1"
+    },
+    "x86_64_windows": {
+      "checksum": "163494e1df9ebedb92d9600986d77497b32809df752ef2667859bd029032c1aa"
+    }
+  },
+  "1.0.8": {
+    "x86_64_linux_gnu": {
+      "checksum": "c6f1c50292835a00b51c5576a9289dae8a3ef319d6f16df9af97536251227c88"
+    },
+    "x86_64_macos": {
+      "checksum": "746d914cc4ce825b9ab0dd96b5121298883000580350cd681798ff3f1d966541"
+    },
+    "x86_64_windows": {
+      "checksum": "a6bea6439e933c2b012b015ccf052519879f5c5837274ddcd6d21dda8ca48a78"
+    }
+  },
+  "1.0.7": {
+    "x86_64_linux_gnu": {
+      "checksum": "b9ac1726277f3375344354f7b6af35fd068189af3ebf233b0f1a953100e6b934"
+    },
+    "x86_64_macos": {
+      "checksum": "02b4111c44e2d0d898b77cdb265b98bb4c78da93ec6f73ce896a458786df6470"
+    },
+    "x86_64_windows": {
+      "checksum": "e624d3e04b79a4f88774101358a9ba6cf0c50e852785f4b5925cd3c9ca7fd41e"
+    }
+  },
+  "1.0.6": {
+    "x86_64_linux_gnu": {
+      "checksum": "21e7d09f6ac6481a7b2643dc654fc07a496a12720d58619b7ba071055e0c5a2e"
+    },
+    "x86_64_macos": {
+      "checksum": "fa235d7a566b454c696922f972853cb3a8b37f5c2d08106a5431751f44e194b0"
+    },
+    "x86_64_windows": {
+      "checksum": "85cba2de979f7c7b26a710f9fdbedab782966781ebd35e4f1b5e493bc60e40a8"
+    }
+  },
+  "1.0.5": {
+    "x86_64_linux_gnu": {
+      "checksum": "a1470cd446b602ea6aa5b3d4782f3cb49aac15d5ae68e797ed80da947c608fbc"
+    },
+    "x86_64_macos": {
+      "checksum": "df32404cd5da6a15675ce3980a1633d27b83e08362d7250d76807f344cfb37f1"
+    },
+    "x86_64_windows": {
+      "checksum": "d56044541234fb8709ef9be6ed1e767c7b242a022f9891a40d0fc73ffdc80626"
+    }
+  }
+}
