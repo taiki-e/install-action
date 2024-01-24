@@ -10,6 +10,8 @@ Note: In this file, do not use the hard wrap in the middle of a sentence for com
 
 ## [Unreleased]
 
+- Update `cargo-deny@latest` to 0.14.9.
+
 ## [2.26.0] - 2024-01-24
 
 - Support `cargo-sort`. ([#344](https://github.com/taiki-e/install-action/pull/344), thanks @jhpratt)
