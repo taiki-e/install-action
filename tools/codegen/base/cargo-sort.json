@@ -1,0 +1,14 @@
+{
+  "repository": "https://github.com/DevinR528/cargo-sort",
+  "tag_prefix": "v",
+  "rust_crate": "${package}",
+  "asset_name": "${package}-${rust_target}.tar.gz",
+  "version_range": "> 1.0.5",
+  "platform": {
+    "x86_64_macos": {},
+    "x86_64_windows": {
+      "asset_name": "${package}-${rust_target}.zip"
+    },
+    "x86_64_linux_gnu": {}
+  }
+}
