@@ -10,6 +10,8 @@ Note: In this file, do not use the hard wrap in the middle of a sentence for com
 
 ## [Unreleased]
 
+## [2.26.0] - 2024-01-24
+
 - Support `cargo-sort`. ([#344](https://github.com/taiki-e/install-action/pull/344), thanks @jhpratt)
 
 ## [2.25.11] - 2024-01-23
@@ -1667,7 +1669,8 @@ Note: This release is considered a breaking change because installing on version
 
 Initial release
 
-[Unreleased]: https://github.com/taiki-e/install-action/compare/v2.25.11...HEAD
+[Unreleased]: https://github.com/taiki-e/install-action/compare/v2.26.0...HEAD
+[2.26.0]: https://github.com/taiki-e/install-action/compare/v2.25.11...v2.26.0
 [2.25.11]: https://github.com/taiki-e/install-action/compare/v2.25.10...v2.25.11
 [2.25.10]: https://github.com/taiki-e/install-action/compare/v2.25.9...v2.25.10
 [2.25.9]: https://github.com/taiki-e/install-action/compare/v2.25.8...v2.25.9
