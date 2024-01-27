@@ -76,10 +76,10 @@ if [[ -n "${tags}" ]]; then
     fi
     # Update changelog.
     remote_url=$(grep -E '^\[Unreleased\]: https://' "${changelog}" | sed 's/^\[Unreleased\]: //; s/\.\.\.HEAD$//')
-    before_tag="${remote_url#*/compare/}"
+    prev_tag="${remote_url#*/compare/}"
     remote_url="${remote_url%/compare/*}"
     sed -i "s/^## \\[Unreleased\\]/## [Unreleased]\\n\\n## [${version}] - ${release_date}/" "${changelog}"
-    sed -i "s#^\[Unreleased\]: https://.*#[Unreleased]: ${remote_url}/compare/${tag}...HEAD\\n[${version}]: ${remote_url}/compare/${before_tag}...${tag}#" "${changelog}"
+    sed -i "s#^\[Unreleased\]: https://.*#[Unreleased]: ${remote_url}/compare/${tag}...HEAD\\n[${version}]: ${remote_url}/compare/${prev_tag}...${tag}#" "${changelog}"
     if ! grep -Eq "^## \\[${version//./\\.}\\] - ${release_date}$" "${changelog}"; then
         bail "failed to update ${changelog}"
     fi
