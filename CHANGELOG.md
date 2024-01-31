@@ -10,6 +10,8 @@ Note: In this file, do not use the hard wrap in the middle of a sentence for com
 
 ## [Unreleased]
 
+- Update `syft@latest` to 0.103.1.
+
 ## [2.26.8] - 2024-01-31
 
 - Update `osv-scanner@latest` to 1.6.2.
