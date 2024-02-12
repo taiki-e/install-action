@@ -10,6 +10,8 @@ Note: In this file, do not use the hard wrap in the middle of a sentence for com
 
 ## [Unreleased]
 
+## [2.26.18] - 2024-02-12
+
 - Update `just@latest` to 1.24.0.
 
 ## [2.26.17] - 2024-02-11
@@ -1753,7 +1755,8 @@ Note: This release is considered a breaking change because installing on version
 
 Initial release
 
-[Unreleased]: https://github.com/taiki-e/install-action/compare/v2.26.17...HEAD
+[Unreleased]: https://github.com/taiki-e/install-action/compare/v2.26.18...HEAD
+[2.26.18]: https://github.com/taiki-e/install-action/compare/v2.26.17...v2.26.18
 [2.26.17]: https://github.com/taiki-e/install-action/compare/v2.26.16...v2.26.17
 [2.26.16]: https://github.com/taiki-e/install-action/compare/v2.26.15...v2.26.16
 [2.26.15]: https://github.com/taiki-e/install-action/compare/v2.26.14...v2.26.15
