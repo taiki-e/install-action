@@ -62,7 +62,7 @@ fn main() -> Result<()> {
         }
         releases.append(&mut r);
     }
-    let releases: BTreeMap<_, _> = releases
+    let mut releases: BTreeMap<_, _> = releases
         .iter()
         .filter_map(|release| {
             if release.prerelease {
@@ -78,6 +78,9 @@ fn main() -> Result<()> {
             Some((Reverse(semver_version.ok()?), (version, release)))
         })
         .collect();
+    for broken in &base_info.broken {
+        releases.remove(&Reverse(broken.clone()));
+    }
 
     let mut crates_io_info = None;
     base_info.rust_crate =
@@ -695,6 +698,8 @@ struct BaseManifest {
     /// Path to binary in archive. Default to `${tool}${exe}`.
     bin: Option<String>,
     signing: Option<Signing>,
+    #[serde(default)]
+    broken: Vec<semver::Version>,
     platform: BTreeMap<HostPlatform, BaseManifestPlatformInfo>,
     version_range: Option<String>,
 }
