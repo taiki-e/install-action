@@ -10,6 +10,8 @@ Note: In this file, do not use the hard wrap in the middle of a sentence for com
 
 ## [Unreleased]
 
+- Support `cargo-audit`. ([#371](https://github.com/taiki-e/install-action/pull/371), thanks @utkarshgupta137)
+
 ## [2.26.20] - 2024-02-15
 
 - Update `syft@latest` to 0.105.0.
