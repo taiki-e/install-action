@@ -2,13 +2,40 @@
   "rust_crate": "wasmtime-cli",
   "template": null,
   "latest": {
-    "version": "18.0.1"
+    "version": "18.0.2"
   },
   "18": {
-    "version": "18.0.1"
+    "version": "18.0.2"
   },
   "18.0": {
-    "version": "18.0.1"
+    "version": "18.0.2"
+  },
+  "18.0.2": {
+    "x86_64_linux_gnu": {
+      "url": "https://github.com/bytecodealliance/wasmtime/releases/download/v18.0.2/wasmtime-v18.0.2-x86_64-linux.tar.xz",
+      "checksum": "dc823d37bfd4641817b33e9b0dea83bfc7879979591d3158491ffb82293cc048",
+      "bin": "wasmtime-v18.0.2-x86_64-linux/wasmtime"
+    },
+    "x86_64_macos": {
+      "url": "https://github.com/bytecodealliance/wasmtime/releases/download/v18.0.2/wasmtime-v18.0.2-x86_64-macos.tar.xz",
+      "checksum": "432e8e04aa4370491e11569da7b338daecedea8074420ebeea90d167e45a815a",
+      "bin": "wasmtime-v18.0.2-x86_64-macos/wasmtime"
+    },
+    "x86_64_windows": {
+      "url": "https://github.com/bytecodealliance/wasmtime/releases/download/v18.0.2/wasmtime-v18.0.2-x86_64-windows.zip",
+      "checksum": "833a15544952d31900da46094b96306b239817505f9457430b983ee8bde1584e",
+      "bin": "wasmtime-v18.0.2-x86_64-windows/wasmtime.exe"
+    },
+    "aarch64_linux_gnu": {
+      "url": "https://github.com/bytecodealliance/wasmtime/releases/download/v18.0.2/wasmtime-v18.0.2-aarch64-linux.tar.xz",
+      "checksum": "732ae6240c90ce3bfe96e3217ad7fc914edf669514eb7b7bf96a32a156c232a8",
+      "bin": "wasmtime-v18.0.2-aarch64-linux/wasmtime"
+    },
+    "aarch64_macos": {
+      "url": "https://github.com/bytecodealliance/wasmtime/releases/download/v18.0.2/wasmtime-v18.0.2-aarch64-macos.tar.xz",
+      "checksum": "abc68b059e77c231bafd63b47a15fad50605604ae26c5a6cae542a9e81e7d591",
+      "bin": "wasmtime-v18.0.2-aarch64-macos/wasmtime"
+    }
   },
   "18.0.1": {
     "x86_64_linux_gnu": {
