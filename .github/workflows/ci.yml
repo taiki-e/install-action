@@ -47,9 +47,9 @@ jobs:
             tool: major.minor
           - os: ubuntu-22.04
             tool: major
-          - os: macos-11
           - os: macos-12
           - os: macos-13
+          - os: macos-14
           - os: windows-2019
           - os: windows-2022
     runs-on: ${{ matrix.os }}
