@@ -407,7 +407,7 @@ case "$(uname -s)" in
 esac
 case "$(uname -m)" in
     aarch64 | arm64) host_arch="aarch64" ;;
-    xscale | arm | armv6l | armv7l | armv8l)
+    xscale | arm | armv[6-9]l)
         # Ignore arm for now, as we need to consider the version and whether hard-float is supported.
         # https://github.com/rust-lang/rustup/pull/593
         # https://github.com/cross-rs/cross/pull/1018
