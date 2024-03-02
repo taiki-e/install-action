@@ -207,15 +207,15 @@ if [[ -n "$(git ls-files '*.yml' '*.js' '*.json')" ]]; then
         info "checking GitHub workflows"
         if type -P jq &>/dev/null; then
             if type -P python3 &>/dev/null || type -P python &>/dev/null; then
-                py_prefix=''
+                py_suffix=''
                 if type -P python3 &>/dev/null; then
-                    py_prefix='3'
+                    py_suffix='3'
                 fi
                 if [[ ! -d .venv ]]; then
-                    python"${py_prefix}" -m venv .venv
+                    python"${py_suffix}" -m venv .venv
                 fi
                 if [[ ! -e .venv/bin/yq ]]; then
-                    .venv/bin/pip"${py_prefix}" install yq
+                    .venv/bin/pip"${py_suffix}" install yq
                 fi
                 for workflow in .github/workflows/*.yml; do
                     # The top-level permissions must be weak as they are referenced by all jobs.
