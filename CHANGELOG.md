@@ -10,6 +10,8 @@ Note: In this file, do not use the hard wrap in the middle of a sentence for com
 
 ## [Unreleased]
 
+- Support `wasm-bindgen`. ([#383](https://github.com/taiki-e/install-action/pull/383), thanks @Ekleog)
+
 - Support `sccache`. ([#390](https://github.com/taiki-e/install-action/pull/390))
 
 ## [2.27.15] - 2024-03-02
