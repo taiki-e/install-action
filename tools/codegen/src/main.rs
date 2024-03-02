@@ -83,8 +83,11 @@ fn main() -> Result<()> {
     }
 
     let mut crates_io_info = None;
-    base_info.rust_crate =
-        base_info.rust_crate.as_ref().map(|s| replace_vars(s, package, None, None)).transpose()?;
+    base_info.rust_crate = base_info
+        .rust_crate
+        .as_ref()
+        .map(|s| replace_vars(s, package, None, None, base_info.rust_crate.as_deref()))
+        .transpose()?;
     if let Some(crate_name) = &base_info.rust_crate {
         eprintln!("downloading crate info from https://crates.io/api/v1/crates/{crate_name}");
         crates_io_info = Some(
@@ -185,7 +188,15 @@ fn main() -> Result<()> {
                 .with_context(|| format!("asset_name is needed for {package} on {platform:?}"))?
                 .as_slice()
                 .iter()
-                .map(|asset_name| replace_vars(asset_name, package, Some(version), Some(platform)))
+                .map(|asset_name| {
+                    replace_vars(
+                        asset_name,
+                        package,
+                        Some(version),
+                        Some(platform),
+                        base_info.rust_crate.as_deref(),
+                    )
+                })
                 .collect::<Result<Vec<_>>>()?;
             let (url, asset_name) = match asset_names.iter().find_map(|asset_name| {
                 release
@@ -306,7 +317,15 @@ fn main() -> Result<()> {
                     .bin
                     .as_ref()
                     .or(base_info.bin.as_ref())
-                    .map(|s| replace_vars(s, package, Some(version), Some(platform)))
+                    .map(|s| {
+                        replace_vars(
+                            s,
+                            package,
+                            Some(version),
+                            Some(platform),
+                            base_info.rust_crate.as_deref(),
+                        )
+                    })
                     .transpose()?,
             });
             buf.clear();
@@ -471,18 +490,33 @@ fn replace_vars(
     package: &str,
     version: Option<&str>,
     platform: Option<HostPlatform>,
+    rust_crate: Option<&str>,
 ) -> Result<String> {
+    const RUST_SPECIFIC: &[(&str, fn(HostPlatform) -> &'static str)] = &[
+        ("${rust_target}", HostPlatform::rust_target),
+        ("${rust_target_arch}", HostPlatform::rust_target_arch),
+        ("${rust_target_os}", HostPlatform::rust_target_os),
+    ];
     let mut s = s.replace("${package}", package).replace("${tool}", package);
     if let Some(platform) = platform {
-        s = s
-            .replace("${rust_target}", platform.rust_target())
-            .replace("${os_name}", platform.os_name())
-            .replace("${exe}", platform.exe_suffix());
+        s = s.replace("${exe}", platform.exe_suffix());
+        if rust_crate.is_some() {
+            for &(var, f) in RUST_SPECIFIC {
+                s = s.replace(var, f(platform));
+            }
+        }
     }
     if let Some(version) = version {
         s = s.replace("${version}", version);
     }
     if s.contains('$') {
+        for &(var, _) in RUST_SPECIFIC {
+            if s.contains(var) {
+                bail!(
+                    "base manifest for {package} refers {var}, but 'rust_crate' field is not set"
+                );
+            }
+        }
         bail!("variable not fully replaced: '{s}'");
     }
     Ok(s)
@@ -799,7 +833,19 @@ impl HostPlatform {
             Self::aarch64_windows => "aarch64-pc-windows-msvc",
         }
     }
-    fn os_name(self) -> &'static str {
+    fn rust_target_arch(self) -> &'static str {
+        match self {
+            Self::aarch64_linux_gnu
+            | Self::aarch64_linux_musl
+            | Self::aarch64_macos
+            | Self::aarch64_windows => "aarch64",
+            Self::x86_64_linux_gnu
+            | Self::x86_64_linux_musl
+            | Self::x86_64_macos
+            | Self::x86_64_windows => "x86_64",
+        }
+    }
+    fn rust_target_os(self) -> &'static str {
         match self {
             Self::aarch64_linux_gnu
             | Self::aarch64_linux_musl
