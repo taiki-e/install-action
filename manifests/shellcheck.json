@@ -1,7 +1,7 @@
 {
   "rust_crate": null,
   "template": {
-    "x86_64_linux_gnu": {
+    "x86_64_linux_musl": {
       "url": "https://github.com/koalaman/shellcheck/releases/download/v${version}/shellcheck-v${version}.linux.x86_64.tar.xz",
       "bin": "shellcheck-v${version}/shellcheck"
     },
@@ -13,7 +13,7 @@
       "url": "https://github.com/koalaman/shellcheck/releases/download/v${version}/shellcheck-v${version}.zip",
       "bin": "shellcheck.exe"
     },
-    "aarch64_linux_gnu": {
+    "aarch64_linux_musl": {
       "url": "https://github.com/koalaman/shellcheck/releases/download/v${version}/shellcheck-v${version}.linux.aarch64.tar.xz",
       "bin": "shellcheck-v${version}/shellcheck"
     }
@@ -25,7 +25,7 @@
     "version": "0.9.0"
   },
   "0.9.0": {
-    "x86_64_linux_gnu": {
+    "x86_64_linux_musl": {
       "checksum": "700324c6dd0ebea0117591c6cc9d7350d9c7c5c287acbad7630fa17b1d4d9e2f"
     },
     "x86_64_macos": {
@@ -34,7 +34,7 @@
     "x86_64_windows": {
       "checksum": "ae58191b1ea4ffd9e5b15da9134146e636440302ce3e2f46863e8d71c8be1bbb"
     },
-    "aarch64_linux_gnu": {
+    "aarch64_linux_musl": {
       "checksum": "179c579ef3481317d130adebede74a34dbbc2df961a70916dd4039ebf0735fae"
     }
   },
@@ -42,7 +42,7 @@
     "version": "0.8.0"
   },
   "0.8.0": {
-    "x86_64_linux_gnu": {
+    "x86_64_linux_musl": {
       "checksum": "ab6ee1b178f014d1b86d1e24da20d1139656c8b0ed34d2867fbb834dad02bf0a"
     },
     "x86_64_macos": {
@@ -51,7 +51,7 @@
     "x86_64_windows": {
       "checksum": "2a616cbb5b15aec8238f22c0d62dede1b6d155798adc45ff4d0206395a8a5833"
     },
-    "aarch64_linux_gnu": {
+    "aarch64_linux_musl": {
       "checksum": "9f47bbff5624babfa712eb9d64ece14c6c46327122d0c54983f627ae3a30a4ac"
     }
   },
@@ -59,7 +59,7 @@
     "version": "0.7.2"
   },
   "0.7.2": {
-    "x86_64_linux_gnu": {
+    "x86_64_linux_musl": {
       "checksum": "70423609f27b504d6c0c47e340f33652aea975e45f312324f2dbf91c95a3b188"
     },
     "x86_64_macos": {
@@ -68,12 +68,12 @@
     "x86_64_windows": {
       "checksum": "1b80bbb525e6d64961afff09fb4a9199a62d5e22347a9c92c151a791131467bd"
     },
-    "aarch64_linux_gnu": {
+    "aarch64_linux_musl": {
       "checksum": "a12bdfe0f95811ad6c0a091006b919b2834b0619b460cfa596f557edd62e45ab"
     }
   },
   "0.7.1": {
-    "x86_64_linux_gnu": {
+    "x86_64_linux_musl": {
       "checksum": "64f17152d96d7ec261ad3086ed42d18232fcb65148b44571b564d688269d36c8"
     },
     "x86_64_macos": {
@@ -82,12 +82,12 @@
     "x86_64_windows": {
       "checksum": "1763f8f4a639d39e341798c7787d360ed79c3d68a1cdbad0549c9c0767a75e98"
     },
-    "aarch64_linux_gnu": {
+    "aarch64_linux_musl": {
       "checksum": "b50cc31509b354ab5bbfc160bc0967567ed98cd9308fd43f38551b36cccc4446"
     }
   },
   "0.7.0": {
-    "x86_64_linux_gnu": {
+    "x86_64_linux_musl": {
       "checksum": "39c501aaca6aae3f3c7fc125b3c3af779ddbe4e67e4ebdc44c2ae5cba76c847f"
     },
     "x86_64_macos": {
@@ -96,7 +96,7 @@
     "x86_64_windows": {
       "checksum": "02cfa14220c8154bb7c97909e80e74d3a7fe2cbb7d80ac32adcac7988a95e387"
     },
-    "aarch64_linux_gnu": {
+    "aarch64_linux_musl": {
       "checksum": "012100d9778cfa7ea73bf42ab55b3e02cda7f75d65aab32c6445012398c89b54"
     }
   },
@@ -104,7 +104,7 @@
     "version": "0.6.0"
   },
   "0.6.0": {
-    "x86_64_linux_gnu": {
+    "x86_64_linux_musl": {
       "checksum": "95c7d6e8320d285a9f026b5241f48f1c02d225a1b08908660e8b84e58e9c7dce"
     },
     "x86_64_windows": {
@@ -115,7 +115,7 @@
     "version": "0.5.0"
   },
   "0.5.0": {
-    "x86_64_linux_gnu": {
+    "x86_64_linux_musl": {
       "checksum": "7d4c073a0342cf39bdb99c32b4749f1c022cf2cffdfb080c12c106aa9d341708"
     },
     "x86_64_windows": {
@@ -126,7 +126,7 @@
     "version": "0.4.7"
   },
   "0.4.7": {
-    "x86_64_linux_gnu": {
+    "x86_64_linux_musl": {
       "checksum": "deeea92a4d3a9c5b16ba15210d9c1ab84a2e12e29bf856427700afd896bbdc93"
     },
     "x86_64_windows": {
@@ -134,7 +134,7 @@
     }
   },
   "0.4.6": {
-    "x86_64_linux_gnu": {
+    "x86_64_linux_musl": {
       "checksum": "fe0a6e94d9cf24b5a46553265846480425067f95f2630317f8fd99bc60a13719"
     },
     "x86_64_windows": {

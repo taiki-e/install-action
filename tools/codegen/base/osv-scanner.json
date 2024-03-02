@@ -3,7 +3,7 @@
   "tag_prefix": "v",
   "version_range": ">= 1.0.0",
   "platform": {
-    "x86_64_linux_gnu": {
+    "x86_64_linux_musl": {
       "asset_name": "${package}_${version}_linux_amd64"
     },
     "x86_64_macos": {
@@ -12,7 +12,7 @@
     "x86_64_windows": {
       "asset_name": "${package}_${version}_windows_amd64${exe}"
     },
-    "aarch64_linux_gnu": {
+    "aarch64_linux_musl": {
       "asset_name": "${package}_${version}_linux_arm64"
     },
     "aarch64_macos": {
