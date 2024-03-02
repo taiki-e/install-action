@@ -12,6 +12,8 @@ Note: In this file, do not use the hard wrap in the middle of a sentence for com
 
 - Support `sccache`. ([#390](https://github.com/taiki-e/install-action/pull/390))
 
+- Support `cargo-fuzz`. ([#352](https://github.com/taiki-e/install-action/pull/352))
+
 ## [2.27.15] - 2024-03-02
 
 - Support `biome` on x86_64/aarch64 Linux (musl).
