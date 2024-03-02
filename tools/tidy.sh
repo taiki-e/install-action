@@ -54,6 +54,11 @@ error() {
     fi
     should_fail=1
 }
+venv() {
+    local bin="$1"
+    shift
+    "${venv_bin}/${bin}${exe}" "$@"
+}
 
 if [[ $# -gt 0 ]]; then
     cat <<EOF
@@ -211,15 +216,23 @@ if [[ -n "$(git ls-files '*.yml' '*.js' '*.json')" ]]; then
                 if type -P python3 &>/dev/null; then
                     py_suffix='3'
                 fi
+                exe=''
+                venv_bin='.venv/bin'
+                case "$(uname -s)" in
+                    MINGW* | MSYS* | CYGWIN* | Windows_NT)
+                        exe='.exe'
+                        venv_bin='.venv/Scripts'
+                        ;;
+                esac
                 if [[ ! -d .venv ]]; then
-                    python"${py_suffix}" -m venv .venv
+                    "python${py_suffix}" -m venv .venv
                 fi
-                if [[ ! -e .venv/bin/yq ]]; then
-                    .venv/bin/pip"${py_suffix}" install yq
+                if [[ ! -e "${venv_bin}/yq${exe}" ]]; then
+                    venv "pip${py_suffix}" install yq
                 fi
                 for workflow in .github/workflows/*.yml; do
                     # The top-level permissions must be weak as they are referenced by all jobs.
-                    permissions=$(.venv/bin/yq -c '.permissions' "${workflow}")
+                    permissions=$(venv yq -c '.permissions' "${workflow}")
                     case "${permissions}" in
                         '{"contents":"read"}' | '{"contents":"none"}') ;;
                         null) error "${workflow}: top level permissions not found; it must be 'contents: read' or weaker permissions" ;;
@@ -228,10 +241,10 @@ if [[ -n "$(git ls-files '*.yml' '*.js' '*.json')" ]]; then
                     # Make sure the 'needs' section is not out of date.
                     if grep -q '# tidy:needs' "${workflow}" && ! grep -Eq '# *needs: \[' "${workflow}"; then
                         # shellcheck disable=SC2207
-                        jobs_actual=($(.venv/bin/yq '.jobs' "${workflow}" | jq -r 'keys_unsorted[]'))
+                        jobs_actual=($(venv yq '.jobs' "${workflow}" | jq -r 'keys_unsorted[]'))
                         unset 'jobs_actual[${#jobs_actual[@]}-1]'
                         # shellcheck disable=SC2207
-                        jobs_expected=($(.venv/bin/yq -r '.jobs."ci-success".needs[]' "${workflow}"))
+                        jobs_expected=($(venv yq -r '.jobs."ci-success".needs[]' "${workflow}"))
                         if [[ "${jobs_actual[*]}" != "${jobs_expected[*]+"${jobs_expected[*]}"}" ]]; then
                             printf -v jobs '%s, ' "${jobs_actual[@]}"
                             sed -i "s/needs: \[.*\] # tidy:needs/needs: [${jobs%, }] # tidy:needs/" "${workflow}"
