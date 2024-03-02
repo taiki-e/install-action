@@ -10,6 +10,8 @@ Note: In this file, do not use the hard wrap in the middle of a sentence for com
 
 ## [Unreleased]
 
+## [2.28.0] - 2024-03-02
+
 - Support `wasm-bindgen`. ([#383](https://github.com/taiki-e/install-action/pull/383), thanks @Ekleog)
 
 - Support `sccache`. ([#390](https://github.com/taiki-e/install-action/pull/390))
@@ -1835,7 +1837,8 @@ Note: This release is considered a breaking change because installing on version
 
 Initial release
 
-[Unreleased]: https://github.com/taiki-e/install-action/compare/v2.27.15...HEAD
+[Unreleased]: https://github.com/taiki-e/install-action/compare/v2.28.0...HEAD
+[2.28.0]: https://github.com/taiki-e/install-action/compare/v2.27.15...v2.28.0
 [2.27.15]: https://github.com/taiki-e/install-action/compare/v2.27.14...v2.27.15
 [2.27.14]: https://github.com/taiki-e/install-action/compare/v2.27.13...v2.27.14
 [2.27.13]: https://github.com/taiki-e/install-action/compare/v2.27.12...v2.27.13
