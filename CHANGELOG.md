@@ -10,6 +10,10 @@ Note: In this file, do not use the hard wrap in the middle of a sentence for com
 
 ## [Unreleased]
 
+- Support `biome` on x86_64/aarch64 Linux (musl).
+
+- Support `zola` on aarch64 macOS. (Previously x86_64 macOS binary is used as fallback.)
+
 ## [2.27.14] - 2024-03-01
 
 - Update `syft@latest` to 1.0.0.

@@ -391,6 +391,16 @@ fn main() -> Result<()> {
         unreachable!()
     };
     for &p in base_info.platform.keys() {
+        if !manifests
+            .map
+            .values()
+            .any(|m| matches!(m, ManifestRef::Real(m) if m.download_info.contains_key(&p)))
+        {
+            bail!(
+                "platform list in base manifest for {package} contains {p:?}, \
+                 but result manifest doesn't contain it"
+            );
+        }
         if latest_manifest.download_info.contains_key(&p) {
             continue;
         }
@@ -481,6 +491,7 @@ fn replace_vars(
 fn download(url: &str) -> Result<ureq::Response> {
     let mut token = env::var("GITHUB_TOKEN").ok().filter(|v| !v.is_empty());
     let mut retry = 0;
+    let max_retry = 6;
     let mut last_error;
     loop {
         let mut req = ureq::get(url);
@@ -491,14 +502,14 @@ fn download(url: &str) -> Result<ureq::Response> {
             Ok(res) => return Ok(res),
             Err(e) => last_error = Some(e),
         }
-        if retry == 5 && token.is_some() {
+        if retry == max_retry / 2 && token.is_some() {
             token = None;
         }
         retry += 1;
-        if retry > 10 {
+        if retry > max_retry {
             break;
         }
-        eprintln!("download failed; retrying ({retry}/10)");
+        eprintln!("download failed; retrying after {}s ({retry}/{max_retry})", retry * 2);
         std::thread::sleep(Duration::from_secs(retry * 2));
     }
     Err(last_error.unwrap().into())

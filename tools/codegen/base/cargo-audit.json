@@ -3,14 +3,12 @@
   "tag_prefix": "cargo-audit/v",
   "rust_crate": "${package}",
   "asset_name": "${package}-${rust_target}-v${version}.tgz",
-  "bin": "${package}-${rust_target}-v${version}/${package}",
+  "bin": "${package}-${rust_target}-v${version}/${package}${exe}",
   "platform": {
-    "x86_64_linux_gnu": {},
     "x86_64_linux_musl": {},
     "x86_64_macos": {},
     "x86_64_windows": {
-      "asset_name": "${package}-${rust_target}-v${version}.zip",
-      "bin": "${package}-${rust_target}-v${version}/${package}.exe"
+      "asset_name": "${package}-${rust_target}-v${version}.zip"
     },
     "aarch64_linux_gnu": {}
   }

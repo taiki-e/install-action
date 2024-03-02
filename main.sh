@@ -411,8 +411,9 @@ case "$(uname -m)" in
         # Ignore arm for now, as we need to consider the version and whether hard-float is supported.
         # https://github.com/rust-lang/rustup/pull/593
         # https://github.com/cross-rs/cross/pull/1018
-        # Does it seem only armv7l is supported?
+        # Does it seem only armv7l+ is supported?
         # https://github.com/actions/runner/blob/caec043085990710070108f375cd0aeab45e1017/src/Misc/externals.sh#L174
+        # https://github.com/actions/runner/issues/688
         bail "32-bit ARM runner is not supported yet by this action; if you need support for this platform, please submit an issue at <https://github.com/taiki-e/install-action>"
         ;;
     # GitHub Actions Runner supports Linux (x86_64, aarch64, arm), Windows (x86_64, aarch64),

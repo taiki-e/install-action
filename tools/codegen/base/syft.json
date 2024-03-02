@@ -4,20 +4,20 @@
   "bin": "${package}${exe}",
   "version_range": ">= 0.83.0",
   "platform": {
+    "x86_64_linux_musl": {
+      "asset_name": "${package}_${version}_linux_amd64.tar.gz"
+    },
     "x86_64_macos": {
       "asset_name": "${package}_${version}_darwin_amd64.tar.gz"
-    },
-    "aarch64_macos": {
-      "asset_name": "${package}_${version}_darwin_arm64.tar.gz"
     },
     "x86_64_windows": {
       "asset_name": "${package}_${version}_windows_amd64.zip"
     },
-    "x86_64_linux_musl": {
-      "asset_name": "${package}_${version}_linux_amd64.tar.gz"
-    },
     "aarch64_linux_musl": {
       "asset_name": "${package}_${version}_linux_arm64.tar.gz"
+    },
+    "aarch64_macos": {
+      "asset_name": "${package}_${version}_darwin_arm64.tar.gz"
     }
   }
 }

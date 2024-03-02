@@ -9,6 +9,9 @@
     },
     "x86_64_windows": {
       "url": "https://github.com/getzola/zola/releases/download/v${version}/zola-v${version}-x86_64-pc-windows-msvc.zip"
+    },
+    "aarch64_macos": {
+      "url": "https://github.com/getzola/zola/releases/download/v${version}/zola-v${version}-aarch64-apple-darwin.tar.gz"
     }
   },
   "latest": {
@@ -26,6 +29,9 @@
     },
     "x86_64_windows": {
       "checksum": "9c0f2880ace47a723999a2b9a96fb12178d12d62cd5e56f3c975266552594949"
+    },
+    "aarch64_macos": {
+      "checksum": "2b558ad9f8ca7d68275916d5af7b0cbcbf94ccc49af7f7f33cd5b2ae1560316d"
     }
   },
   "0.17": {
