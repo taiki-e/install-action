@@ -62,7 +62,7 @@ fn main() -> Result<()> {
         }
         releases.append(&mut r);
     }
-    let mut releases: BTreeMap<_, _> = releases
+    let releases: BTreeMap<_, _> = releases
         .iter()
         .filter_map(|release| {
             if release.prerelease {
@@ -78,9 +78,6 @@ fn main() -> Result<()> {
             Some((Reverse(semver_version.ok()?), (version, release)))
         })
         .collect();
-    for broken in &base_info.broken {
-        releases.remove(&Reverse(broken.clone()));
-    }
 
     let mut crates_io_info = None;
     base_info.rust_crate = base_info
@@ -377,6 +374,9 @@ fn main() -> Result<()> {
                     }
                 }
             }
+            if base_info.broken.contains(version) {
+                continue;
+            }
             if !(version.major == 0 && version.minor == 0) {
                 manifests.map.insert(
                     Reverse(Version::omitted(version.major, Some(version.minor))),
@@ -417,7 +417,8 @@ fn main() -> Result<()> {
         {
             bail!(
                 "platform list in base manifest for {package} contains {p:?}, \
-                 but result manifest doesn't contain it"
+                 but result manifest doesn't contain it; \
+                 consider removing {p:?} from platform list in base manifest"
             );
         }
         if latest_manifest.download_info.contains_key(&p) {
@@ -435,7 +436,8 @@ fn main() -> Result<()> {
         }
         bail!(
             "platform list in base manifest for {package} contains {p:?}, \
-             but latest release ({latest_version}) doesn't contain it"
+             but latest release ({latest_version}) doesn't contain it; \
+             consider marking {latest_version} as broken by adding 'broken' field to base manifest"
         );
     }
 
