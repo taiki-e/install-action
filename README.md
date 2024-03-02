@@ -94,9 +94,9 @@ https://spdx.org/licenses
 | [**cargo-make**](https://github.com/sagiegurari/cargo-make) | `$CARGO_HOME/bin` | [GitHub Releases](https://github.com/sagiegurari/cargo-make/releases) | Linux, macOS, Windows | [Apache-2.0](https://github.com/sagiegurari/cargo-make/blob/HEAD/LICENSE) |
 | [**cargo-minimal-versions**](https://github.com/taiki-e/cargo-minimal-versions) | `$CARGO_HOME/bin` | [GitHub Releases](https://github.com/taiki-e/cargo-minimal-versions/releases) | Linux, macOS, Windows | [Apache-2.0](https://github.com/taiki-e/cargo-minimal-versions/blob/HEAD/LICENSE-APACHE) OR [MIT](https://github.com/taiki-e/cargo-minimal-versions/blob/HEAD/LICENSE-MIT) |
 | [**cargo-no-dev-deps**](https://github.com/taiki-e/cargo-no-dev-deps) | `$CARGO_HOME/bin` | [GitHub Releases](https://github.com/taiki-e/cargo-no-dev-deps/releases) | Linux, macOS, Windows | [Apache-2.0](https://github.com/taiki-e/cargo-no-dev-deps/blob/HEAD/LICENSE-APACHE) OR [MIT](https://github.com/taiki-e/cargo-no-dev-deps/blob/HEAD/LICENSE-MIT) |
-| [**cargo-rdme**](https://github.com/orium/cargo-rdme) | `$CARGO_HOME/bin` | [GitHub Releases](https://github.com/orium/cargo-rdme/releases) | Linux, macOS, Windows | [MPL-2.0](https://github.com/orium/cargo-rdme/blob/master/LICENSE.md) |
+| [**cargo-rdme**](https://github.com/orium/cargo-rdme) | `$CARGO_HOME/bin` | [GitHub Releases](https://github.com/orium/cargo-rdme/releases) | Linux, macOS, Windows | [MPL-2.0](https://github.com/orium/cargo-rdme/blob/HEAD/LICENSE.md) |
 | [**cargo-sort**](https://github.com/DevinR528/cargo-sort) | `$CARGO_HOME/bin` | [GitHub Releases](https://github.com/DevinR528/cargo-sort/releases) | Linux, macOS, Windows | [Apache-2.0 OR MIT](https://github.com/DevinR528/cargo-sort/blob/55ec89082466f6bb246d870a8d56d166a8e1f08b/Cargo.toml#L5) |
-| [**cargo-tarpaulin**](https://github.com/xd009642/tarpaulin) | `$CARGO_HOME/bin` | [GitHub Releases](https://github.com/xd009642/tarpaulin/releases) | Linux, macOS, Windows | [Apache-2.0](https://github.com/xd009642/tarpaulin/blob/develop/LICENSE-APACHE) OR [MIT](https://github.com/xd009642/tarpaulin/blob/develop/LICENSE-MIT) |
+| [**cargo-tarpaulin**](https://github.com/xd009642/tarpaulin) | `$CARGO_HOME/bin` | [GitHub Releases](https://github.com/xd009642/tarpaulin/releases) | Linux, macOS, Windows | [Apache-2.0](https://github.com/xd009642/tarpaulin/blob/HEAD/LICENSE-APACHE) OR [MIT](https://github.com/xd009642/tarpaulin/blob/HEAD/LICENSE-MIT) |
 | [**cargo-udeps**](https://github.com/est31/cargo-udeps) | `$CARGO_HOME/bin` | [GitHub Release](https://github.com/est31/cargo-udeps/releases) | Linux, macOS, Windows | [Apache-2.0 OR MIT](https://github.com/est31/cargo-udeps/blob/HEAD/LICENSE) |
 | [**cargo-valgrind**](https://github.com/jfrimmel/cargo-valgrind) | `$CARGO_HOME/bin` | [GitHub Release](https://github.com/jfrimmel/cargo-valgrind/releases) | Linux, macOS, Windows | [MIT](https://github.com/jfrimmel/cargo-valgrind/blob/HEAD/LICENSE-MIT) or [Apache-2.0](https://github.com/jfrimmel/cargo-valgrind/blob/HEAD/LICENSE-APACHE) |
 | [**cross**](https://github.com/cross-rs/cross) | `$CARGO_HOME/bin` | [GitHub Releases](https://github.com/cross-rs/cross/releases) | Linux, macOS, Windows | [Apache-2.0](https://github.com/cross-rs/cross/blob/HEAD/LICENSE-APACHE) OR [MIT](https://github.com/cross-rs/cross/blob/HEAD/LICENSE-MIT) |
@@ -109,6 +109,7 @@ https://spdx.org/licenses
 | [**osv-scanner**]( https://github.com/google/osv-scanner) | `/usr/local/bin` | [GitHub Releases]( https://github.com/google/osv-scanner/releases) | Linux, macOS, Windows | [Apache-2](https://github.com/google/osv-scanner/blob/HEAD/LICENSE) |
 | [**parse-changelog**](https://github.com/taiki-e/parse-changelog) | `$CARGO_HOME/bin` | [GitHub Releases](https://github.com/taiki-e/parse-changelog/releases) | Linux, macOS, Windows | [Apache-2.0](https://github.com/taiki-e/parse-changelog/blob/HEAD/LICENSE-APACHE) OR [MIT](https://github.com/taiki-e/parse-changelog/blob/HEAD/LICENSE-MIT) |
 | [**protoc**](https://github.com/protocolbuffers/protobuf) | `$HOME/.install-action/bin` | [GitHub Releases](https://github.com/protocolbuffers/protobuf/releases) | Linux, macOS, Windows | [BSD-3-Clause](https://github.com/protocolbuffers/protobuf/blob/HEAD/LICENSE) |
+| [**sccache**](https://github.com/mozilla/sccache) | `$CARGO_HOME/bin` | [GitHub Releases](https://github.com/mozilla/sccache/releases) | Linux, macOS, Windows | [Apache-2.0](https://github.com/mozilla/sccache/blob/HEAD/LICENSE) |
 | [**shellcheck**](https://www.shellcheck.net) | `/usr/local/bin` | [GitHub Releases](https://github.com/koalaman/shellcheck/releases) | Linux, macOS, Windows | [GPL-3.0-or-later](https://github.com/koalaman/shellcheck/blob/HEAD/LICENSE) |
 | [**shfmt**](https://github.com/mvdan/sh) | `/usr/local/bin` | [GitHub Releases](https://github.com/mvdan/sh/releases) | Linux, macOS, Windows | [BSD-3-Clause](https://github.com/mvdan/sh/blob/HEAD/LICENSE) |
 | [**syft**](https://github.com/anchore/syft) | `/usr/local/bin` | [Github Releases](https://github.com/anchore/syft/releases) | Linux, macOS, Windows | [Apache-2.0](https://github.com/anchore/syft/blob/HEAD/LICENSE) |
@@ -164,7 +165,8 @@ To use this action in self-hosted runners or in containers, at least the followi
 Licensed under either of [Apache License, Version 2.0](LICENSE-APACHE) or
 [MIT license](LICENSE-MIT) at your option.
 
-Each of the tools installed by this action has a different license. See the [Supported tools](#supported-tools) section for more information.
+Each of the tools installed by this action has a different license. See the
+[Supported tools](#supported-tools) section for more information.
 
 Unless you explicitly state otherwise, any contribution intentionally submitted
 for inclusion in the work by you, as defined in the Apache-2.0 license, shall
