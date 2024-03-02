@@ -54,18 +54,26 @@ download_and_checksum() {
 }
 download_and_extract() {
     local url="$1"
-    local checksum="$2"
-    local bin_dir="$3"
-    local bin_in_archive="$4" # path to bin in archive
+    shift
+    local checksum="$1"
+    shift
+    local bin_dir="$1"
+    shift
+    local bin_in_archive=("$@") # path to bin in archive
     if [[ "${bin_dir}" == "${install_action_dir}/bin" ]]; then
         init_install_action_bin_dir
     fi
 
-    local installed_bin
-    # xbuild's binary name is "x", as opposed to the usual crate name
+    installed_bin=()
+    local tmp
     case "${tool}" in
-        xbuild) installed_bin="${bin_dir}/x" ;;
-        *) installed_bin="${bin_dir}/$(basename "${bin_in_archive}")" ;;
+        # xbuild's binary name is "x", as opposed to the usual crate name
+        xbuild) installed_bin=("${bin_dir}/x") ;;
+        *)
+            for tmp in "${bin_in_archive[@]}"; do
+                installed_bin+=("${bin_dir}/$(basename "${tmp}")")
+            done
+            ;;
     esac
 
     local tar_args=()
@@ -119,19 +127,23 @@ download_and_extract() {
         download_and_checksum "${url}" "${checksum}"
         if [[ ${#tar_args[@]} -gt 0 ]]; then
             tar_args+=("tmp")
-            local components
-            components=$(tr <<<"${bin_in_archive}" -cd '/' | wc -c)
-            if [[ "${components}" != "0" ]]; then
-                tar_args+=(--strip-components "${components}")
-            fi
-            tar "${tar_args[@]}" -C "${bin_dir}" "${bin_in_archive}"
+            tar "${tar_args[@]}"
+            for tmp in "${bin_in_archive[@]}"; do
+                mv "${tmp}" "${bin_dir}/"
+            done
         else
             case "${url}" in
                 *.zip)
                     unzip -q tmp "${bin_in_archive#\./}"
-                    mv "${bin_in_archive}" "${bin_dir}/"
+                    for tmp in "${bin_in_archive[@]}"; do
+                        mv "${tmp}" "${bin_dir}/"
+                    done
                     ;;
-                *) mv tmp "${installed_bin}" ;;
+                *)
+                    for tmp in "${installed_bin[@]}"; do
+                        mv tmp "${tmp}"
+                    done
+                    ;;
             esac
         fi
     )
@@ -139,9 +151,11 @@ download_and_extract() {
 
     case "${host_os}" in
         linux | macos)
-            if [[ ! -x "${installed_bin}" ]]; then
-                chmod +x "${installed_bin}"
-            fi
+            for tmp in "${installed_bin[@]}"; do
+                if [[ ! -x "${tmp}" ]]; then
+                    chmod +x "${tmp}"
+                fi
+            done
             ;;
     esac
 }
@@ -198,15 +212,31 @@ read_download_info() {
     fi
     checksum=$(call_jq <<<"${download_info}" -r '.checksum')
     url=$(call_jq <<<"${download_info}" -r '.url')
+    local tmp
+    bin_in_archive=()
     if [[ "${url}" == "null" ]]; then
         local template
         template=$(call_jq -r ".template.${host_platform}" "${manifest_dir}/${tool}.json")
         url=$(call_jq <<<"${template}" -r '.url')
         url="${url//\$\{version\}/${exact_version}}"
-        bin_in_archive=$(call_jq <<<"${template}" -r '.bin')
-        bin_in_archive="${bin_in_archive//\$\{version\}/${exact_version}}"
+        tmp=$(call_jq <<<"${template}" -r '.bin' | sed -E "s/\\$\\{version\\}/${exact_version}/g")
+        if [[ "${tmp}" == *"["* ]]; then
+            # shellcheck disable=SC2207
+            bin_in_archive=($(call_jq <<<"${template}" -r '.bin[]' | sed -E "s/\\$\\{version\\}/${exact_version}/g"))
+        fi
     else
-        bin_in_archive=$(call_jq <<<"${download_info}" -r '.bin')
+        tmp=$(call_jq <<<"${download_info}" -r '.bin')
+        if [[ "${tmp}" == *"["* ]]; then
+            # shellcheck disable=SC2207
+            bin_in_archive=($(call_jq <<<"${download_info}" -r '.bin[]'))
+        fi
+    fi
+    if [[ ${#bin_in_archive[@]} -eq 0 ]]; then
+        if [[ "${tmp}" == "null" ]]; then
+            bin_in_archive=("${tool}${exe}")
+        else
+            bin_in_archive=("${tmp}")
+        fi
     fi
     if [[ "${rust_crate}" == "null" ]]; then
         if [[ "${host_os}" == "windows" ]] || [[ ! -e /usr/local/bin ]]; then
@@ -217,9 +247,6 @@ read_download_info() {
     else
         bin_dir="${cargo_bin}"
     fi
-    if [[ "${bin_in_archive}" == "null" ]]; then
-        bin_in_archive="${tool}${exe}"
-    fi
 }
 download_from_manifest() {
     read_manifest "$@"
@@ -227,7 +254,7 @@ download_from_manifest() {
 }
 download_from_download_info() {
     read_download_info "$@"
-    download_and_extract "${url}" "${checksum}" "${bin_dir}" "${bin_in_archive}"
+    download_and_extract "${url}" "${checksum}" "${bin_dir}" "${bin_in_archive[@]}"
 }
 install_cargo_binstall() {
     local binstall_version
@@ -540,6 +567,7 @@ for tool in "${tools[@]}"; do
     else
         version="latest"
     fi
+    installed_bin=()
     case "${tool}" in
         protoc)
             info "installing ${tool}@${version}"
@@ -576,6 +604,7 @@ for tool in "${tools[@]}"; do
                 fi
             )
             rm -rf "${tmp_dir}"
+            installed_bin=("${tool}${exe}")
             ;;
         valgrind)
             info "installing ${tool}@${version}"
@@ -593,6 +622,7 @@ for tool in "${tools[@]}"; do
             # Use snap to install the latest Valgrind
             # https://snapcraft.io/install/valgrind/ubuntu
             snap_install valgrind --classic
+            installed_bin=("${tool}${exe}")
             ;;
         cargo-binstall)
             case "${version}" in
@@ -651,41 +681,50 @@ for tool in "${tools[@]}"; do
             ;;
     esac
 
-    case "${tool}" in
-        xbuild) tool_bin="x" ;;
-        *) tool_bin="${tool}" ;;
-    esac
-    installed_at=$(type -P "${tool_bin}${exe}" || echo "")
-    if [[ -n "${installed_at}" ]]; then
-        tool_bin="${tool_bin}${exe}"
-    else
+    tool_bin_stems=()
+    for tool_bin in "${installed_bin[@]}"; do
+        tool_bin=$(basename "${tool_bin}")
+        tool_bin_stem="${tool_bin%.exe}"
         installed_at=$(type -P "${tool_bin}" || echo "")
-    fi
-    if [[ -n "${installed_at}" ]]; then
-        info "${tool} installed at ${installed_at}"
-    else
-        warn "${tool} should be installed at ${bin_dir:+"${bin_dir}/"}${tool_bin}${exe}; but ${tool_bin}${exe} not found in path"
-    fi
-    # cargo-udeps 0.1.30 and wasm-pack 0.12.0 do not support --version option.
-    case "${tool}" in
-        biome) rx "${tool_bin}" --version || true ;;                 # biome up to 1.2.2 exits with 1 on --version and  --help
-        cargo-careful | cargo-machete | wasm-bindgen-test-runner) ;; # these packages support neither --version nor --help option.
-        cargo-*)
-            case "${tool}" in
-                cargo-valgrind) rx "${tool_bin}" "${tool#cargo-}" --help ;; # cargo-valgrind 2.1.0's --version option just calls cargo's --version option
-                *)
-                    if ! rx "${tool_bin}" "${tool#cargo-}" --version; then
-                        rx "${tool_bin}" "${tool#cargo-}" --help
-                    fi
-                    ;;
-            esac
-            ;;
-        *)
-            if ! rx "${tool_bin}" --version; then
-                rx "${tool_bin}" --help
-            fi
-            ;;
-    esac
+        if [[ -z "${installed_at}" ]]; then
+            tool_bin="${tool_bin_stem}"
+            installed_at=$(type -P "${tool_bin}" || echo "")
+        fi
+        if [[ -n "${installed_at}" ]]; then
+            info "${tool_bin_stem} installed at ${installed_at}"
+        else
+            warn "${tool_bin_stem} should be installed at ${bin_dir:+"${bin_dir}/"}${tool_bin}${exe}; but ${tool_bin}${exe} not found in path"
+        fi
+        tool_bin_stems+=("${tool_bin_stem}")
+    done
+    for tool_bin_stem in "${tool_bin_stems[@]}"; do
+        # cargo-udeps 0.1.30 and wasm-pack 0.12.0 do not support --version flag.
+        case "${tool_bin_stem}" in
+            # biome up to 1.2.2 exits with 1 on both --version and --help flags.
+            # cargo-machete up to 0.6.0 does not support --version flag.
+            biome | cargo-machete) rx "${tool_bin_stem}" --version || true ;;
+            # these packages support neither --version nor --help flag.
+            cargo-careful | wasm-bindgen-test-runner) ;;
+            # wasm2es6js does not support --version flag and --help flag doesn't contains version info.
+            wasm2es6js) ;;
+            cargo-*)
+                case "${tool_bin_stem}" in
+                    # cargo-valgrind 2.1.0's --version flag just calls cargo's --version flag
+                    cargo-valgrind) rx "${tool_bin_stem}" "${tool_bin_stem#cargo-}" --help ;;
+                    *)
+                        if ! rx "${tool_bin_stem}" "${tool_bin_stem#cargo-}" --version; then
+                            rx "${tool_bin_stem}" "${tool_bin_stem#cargo-}" --help
+                        fi
+                        ;;
+                esac
+                ;;
+            *)
+                if ! rx "${tool_bin_stem}" --version; then
+                    rx "${tool_bin_stem}" --help
+                fi
+                ;;
+        esac
+    done
     echo
 done
 
