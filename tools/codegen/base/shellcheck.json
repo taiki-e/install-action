@@ -3,7 +3,7 @@
   "tag_prefix": "v",
   "bin": "${package}-v${version}/${package}${exe}",
   "platform": {
-    "x86_64_linux_gnu": {
+    "x86_64_linux_musl": {
       "asset_name": "${package}-v${version}.linux.x86_64.tar.xz"
     },
     "x86_64_macos": {
@@ -13,7 +13,7 @@
       "asset_name": "${package}-v${version}.zip",
       "bin": "${package}${exe}"
     },
-    "aarch64_linux_gnu": {
+    "aarch64_linux_musl": {
       "asset_name": "${package}-v${version}.linux.aarch64.tar.xz"
     }
   }
