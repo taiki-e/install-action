@@ -41,6 +41,7 @@ fn main() -> Result<()> {
     let mut base_info: BaseManifest = serde_json::from_slice(&fs::read(
         workspace_root.join("tools/codegen/base").join(format!("{package}.json")),
     )?)?;
+    base_info.validate();
     let repo = base_info
         .repository
         .strip_prefix("https://github.com/")
@@ -116,7 +117,10 @@ fn main() -> Result<()> {
                         for (platform, d) in &mut manifest.download_info {
                             let template = &template.download_info[platform];
                             d.url = Some(template.url.replace("${version}", version));
-                            d.bin = template.bin.as_ref().map(|s| s.replace("${version}", version));
+                            d.bin = template
+                                .bin
+                                .as_ref()
+                                .map(|s| s.map(|s| s.replace("${version}", version)));
                         }
                     }
                 }
@@ -310,11 +314,8 @@ fn main() -> Result<()> {
             download_info.insert(platform, ManifestDownloadInfo {
                 url: Some(url),
                 checksum: hash,
-                bin: base_download_info
-                    .bin
-                    .as_ref()
-                    .or(base_info.bin.as_ref())
-                    .map(|s| {
+                bin: base_download_info.bin.as_ref().or(base_info.bin.as_ref()).map(|s| {
+                    s.map(|s| {
                         replace_vars(
                             s,
                             package,
@@ -322,8 +323,9 @@ fn main() -> Result<()> {
                             Some(platform),
                             base_info.rust_crate.as_deref(),
                         )
+                        .unwrap()
                     })
-                    .transpose()?,
+                }),
             });
             buf.clear();
         }
@@ -451,7 +453,7 @@ fn main() -> Result<()> {
         let t = template.as_mut().unwrap();
         for (platform, d) in &mut manifest.download_info {
             let template_url = d.url.take().unwrap().replace(version, "${version}");
-            let template_bin = d.bin.take().map(|s| s.replace(version, "${version}"));
+            let template_bin = d.bin.take().map(|s| s.map(|s| s.replace(version, "${version}")));
             if let Some(d) = t.download_info.get(platform) {
                 if template_url != d.url || template_bin != d.bin {
                     template = None;
@@ -711,9 +713,9 @@ struct ManifestDownloadInfo {
     #[serde(skip_serializing_if = "Option::is_none")]
     url: Option<String>,
     checksum: String,
-    /// Default to ${tool}${exe}
+    /// Path to binaries in archive. Default to `${tool}${exe}`.
     #[serde(skip_serializing_if = "Option::is_none")]
-    bin: Option<String>,
+    bin: Option<StringOrArray>,
 }
 
 #[derive(Debug, Clone, Serialize, Deserialize)]
@@ -725,9 +727,9 @@ struct ManifestTemplate {
 #[derive(Debug, Clone, Serialize, Deserialize)]
 struct ManifestTemplateDownloadInfo {
     url: String,
-    /// Default to ${tool}${exe}
+    /// Path to binaries in archive. Default to `${tool}${exe}`.
     #[serde(skip_serializing_if = "Option::is_none")]
-    bin: Option<String>,
+    bin: Option<StringOrArray>,
 }
 
 #[derive(Debug, Deserialize)]
@@ -742,13 +744,25 @@ struct BaseManifest {
     default_major_version: Option<String>,
     /// Asset name patterns.
     asset_name: Option<StringOrArray>,
-    /// Path to binary in archive. Default to `${tool}${exe}`.
-    bin: Option<String>,
+    /// Path to binaries in archive. Default to `${tool}${exe}`.
+    bin: Option<StringOrArray>,
     signing: Option<Signing>,
     #[serde(default)]
     broken: Vec<semver::Version>,
     platform: BTreeMap<HostPlatform, BaseManifestPlatformInfo>,
     version_range: Option<String>,
+}
+impl BaseManifest {
+    fn validate(&self) {
+        if let Some(bin) = &self.bin {
+            assert!(!bin.as_slice().is_empty());
+        }
+        for m in self.platform.values() {
+            if let Some(bin) = &m.bin {
+                assert!(!bin.as_slice().is_empty());
+            }
+        }
+    }
 }
 
 #[derive(Debug, Deserialize)]
@@ -772,11 +786,11 @@ enum SigningKind {
 struct BaseManifestPlatformInfo {
     /// Asset name patterns. Default to the value at `BaseManifest::asset_name`.
     asset_name: Option<StringOrArray>,
-    /// Path to binary in archive. Default to the value at `BaseManifest::bin`.
-    bin: Option<String>,
+    /// Path to binaries in archive. Default to the value at `BaseManifest::bin`.
+    bin: Option<StringOrArray>,
 }
 
-#[derive(Debug, Clone, Deserialize)]
+#[derive(Debug, Clone, PartialEq, Serialize, Deserialize)]
 #[serde(untagged)]
 enum StringOrArray {
     String(String),
@@ -786,8 +800,14 @@ enum StringOrArray {
 impl StringOrArray {
     fn as_slice(&self) -> &[String] {
         match self {
-            Self::Array(v) => v,
             Self::String(s) => slice::from_ref(s),
+            Self::Array(v) => v,
+        }
+    }
+    fn map(&self, mut f: impl FnMut(&String) -> String) -> Self {
+        match self {
+            Self::String(s) => Self::String(f(s)),
+            Self::Array(v) => Self::Array(v.iter().map(f).collect()),
         }
     }
 }

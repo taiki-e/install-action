@@ -1,0 +1,119 @@
+{
+  "rust_crate": "wasm-bindgen-cli",
+  "template": {
+    "x86_64_linux_musl": {
+      "url": "https://github.com/rustwasm/wasm-bindgen/releases/download/${version}/wasm-bindgen-${version}-x86_64-unknown-linux-musl.tar.gz",
+      "bin": [
+        "wasm-bindgen-${version}-x86_64-unknown-linux-musl/wasm-bindgen-test-runner",
+        "wasm-bindgen-${version}-x86_64-unknown-linux-musl/wasm-bindgen",
+        "wasm-bindgen-${version}-x86_64-unknown-linux-musl/wasm2es6js"
+      ]
+    },
+    "x86_64_macos": {
+      "url": "https://github.com/rustwasm/wasm-bindgen/releases/download/${version}/wasm-bindgen-${version}-x86_64-apple-darwin.tar.gz",
+      "bin": [
+        "wasm-bindgen-${version}-x86_64-apple-darwin/wasm-bindgen-test-runner",
+        "wasm-bindgen-${version}-x86_64-apple-darwin/wasm-bindgen",
+        "wasm-bindgen-${version}-x86_64-apple-darwin/wasm2es6js"
+      ]
+    },
+    "x86_64_windows": {
+      "url": "https://github.com/rustwasm/wasm-bindgen/releases/download/${version}/wasm-bindgen-${version}-x86_64-pc-windows-msvc.tar.gz",
+      "bin": [
+        "wasm-bindgen-${version}-x86_64-pc-windows-msvc/wasm-bindgen-test-runner.exe",
+        "wasm-bindgen-${version}-x86_64-pc-windows-msvc/wasm-bindgen.exe",
+        "wasm-bindgen-${version}-x86_64-pc-windows-msvc/wasm2es6js.exe"
+      ]
+    },
+    "aarch64_linux_gnu": {
+      "url": "https://github.com/rustwasm/wasm-bindgen/releases/download/${version}/wasm-bindgen-${version}-aarch64-unknown-linux-gnu.tar.gz",
+      "bin": [
+        "wasm-bindgen-${version}-aarch64-unknown-linux-gnu/wasm-bindgen-test-runner",
+        "wasm-bindgen-${version}-aarch64-unknown-linux-gnu/wasm-bindgen",
+        "wasm-bindgen-${version}-aarch64-unknown-linux-gnu/wasm2es6js"
+      ]
+    },
+    "aarch64_macos": {
+      "url": "https://github.com/rustwasm/wasm-bindgen/releases/download/${version}/wasm-bindgen-${version}-aarch64-apple-darwin.tar.gz",
+      "bin": [
+        "wasm-bindgen-${version}-aarch64-apple-darwin/wasm-bindgen-test-runner",
+        "wasm-bindgen-${version}-aarch64-apple-darwin/wasm-bindgen",
+        "wasm-bindgen-${version}-aarch64-apple-darwin/wasm2es6js"
+      ]
+    }
+  },
+  "latest": {
+    "version": "0.2.91"
+  },
+  "0.2": {
+    "version": "0.2.91"
+  },
+  "0.2.91": {
+    "x86_64_linux_musl": {
+      "checksum": "48123760cd139036125dbc07aaf09c73237d2bf910810b00a2dabbbac7a92e4e"
+    },
+    "x86_64_macos": {
+      "checksum": "8c9378515f5162d77c8bbec8925e2444e4509fc5fd4e42c218b70bd7e7b5c34d"
+    },
+    "x86_64_windows": {
+      "checksum": "9077f846f8e29dbc246688294b02474c4247e176739b43b0ce5df093e3c23ccf"
+    },
+    "aarch64_linux_gnu": {
+      "checksum": "06a93a6c4ca7166082e8c6179e9f1dc6ca1df822894669b5257cdff08692bf00"
+    },
+    "aarch64_macos": {
+      "checksum": "8f644617cbd12763268854cb550604f18e15a869c9b2e63ba977278fee99ff3d"
+    }
+  },
+  "0.2.90": {
+    "x86_64_linux_musl": {
+      "checksum": "46131161e31617d102260b1420159fe5006f6b0fdb8a0a90fe7adc858b662132"
+    },
+    "x86_64_macos": {
+      "checksum": "374a460a4c8cf097e84725082da6c909830cbc6caa16538735bcc066971e3bcd"
+    },
+    "x86_64_windows": {
+      "checksum": "919b6f010164c5d2f28df505098d94c0ac3727c9aeeea2df12453008dc451c78"
+    },
+    "aarch64_linux_gnu": {
+      "checksum": "29075a17870097d800e471ec2a800f915c09c5c8d4b2b1436fd43381aa7bf480"
+    },
+    "aarch64_macos": {
+      "checksum": "d3724348014d028048b9539fac36858a0a1aba165814a69542d3038d65303093"
+    }
+  },
+  "0.2.89": {
+    "x86_64_linux_musl": {
+      "checksum": "e6361f3069a8a94ca44f0eb6e22b1de59ee71236bba2acd0278f1387e09a90d0"
+    },
+    "x86_64_macos": {
+      "checksum": "5ca6b6e9a2b971cdc5571a54a963f6f13ae6263bbf921998feeef3ff6b6b70b7"
+    },
+    "x86_64_windows": {
+      "checksum": "5dd04e972fc0910122f5d9881aa49470e6734e5a1d3294030eaace738771fddc"
+    },
+    "aarch64_linux_gnu": {
+      "checksum": "4ca6d7cedf6d47eec55d739bfd228270061a1c2bb4b625442e2bb716d2cc7337"
+    },
+    "aarch64_macos": {
+      "checksum": "cff8b011832e0f17fc94e4673a2910b04cb11bd527736b96f94abea24ff674be"
+    }
+  },
+  "0.2.88": {
+    "x86_64_linux_musl": {
+      "checksum": "d7dcb7f5ad1d0cb68df5d45ffd9119d1db3d42ee6d50a8b2d3c42a56c74bdd8e"
+    },
+    "x86_64_macos": {
+      "checksum": "0d1913322e657444c942c644abb687e46807fec31e3efbafb199a7932e677dcc"
+    },
+    "x86_64_windows": {
+      "checksum": "ed885be56d41c5c1d3b1495307d57a2d48b296cfe5afe92e06b6ea09c4ba4532"
+    },
+    "aarch64_linux_gnu": {
+      "checksum": "f13bb83170a3d44edfbebd263c695e6fb5815d77467490af1c49e2e8ec816803"
+    },
+    "aarch64_macos": {
+      "checksum": "712c787c411a765e5bf8f2f3f11db9d5ec823260b763e1017d6790e9b3c225ff"
+    }
+  }
+}

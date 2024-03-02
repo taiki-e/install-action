@@ -1,0 +1,19 @@
+{
+  "repository": "https://github.com/rustwasm/wasm-bindgen",
+  "tag_prefix": "",
+  "rust_crate": "wasm-bindgen-cli",
+  "version_range": ">= 0.2.88",
+  "asset_name": "wasm-bindgen-${version}-${rust_target}.tar.gz",
+  "bin": [
+    "wasm-bindgen-${version}-${rust_target}/wasm-bindgen-test-runner${exe}",
+    "wasm-bindgen-${version}-${rust_target}/wasm-bindgen${exe}",
+    "wasm-bindgen-${version}-${rust_target}/wasm2es6js${exe}"
+  ],
+  "platform": {
+    "x86_64_linux_musl": {},
+    "x86_64_macos": {},
+    "x86_64_windows": {},
+    "aarch64_linux_gnu": {},
+    "aarch64_macos": {}
+  }
+}
