@@ -10,6 +10,8 @@ Note: In this file, do not use the hard wrap in the middle of a sentence for com
 
 ## [Unreleased]
 
+- Update `wasm-bindgen@latest` to 0.2.92.
+
 ## [2.28.0] - 2024-03-02
 
 - Support `wasm-bindgen`. ([#383](https://github.com/taiki-e/install-action/pull/383), thanks @Ekleog)
