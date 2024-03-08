@@ -10,6 +10,8 @@ Note: In this file, do not use the hard wrap in the middle of a sentence for com
 
 ## [Unreleased]
 
+- Update `shellcheck@latest` to 0.10.0.
+
 ## [2.28.4] - 2024-03-06
 
 - Update `syft@latest` to 1.0.1.
