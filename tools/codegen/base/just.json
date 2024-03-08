@@ -2,6 +2,7 @@
   "repository": "https://github.com/casey/just",
   "tag_prefix": "",
   "rust_crate": "${package}",
+  "broken": ["1.25.0"],
   "asset_name": "${package}-${version}-${rust_target}.tar.gz",
   "platform": {
     "x86_64_linux_musl": {},
