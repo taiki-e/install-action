@@ -55,7 +55,7 @@ jobs:
     runs-on: ${{ matrix.os }}
     timeout-minutes: 60
     steps:
-      - uses: taiki-e/github-actions/checkout@main
+      - uses: taiki-e/checkout-action@v1
       # cross attempts to install rust-src when Cargo.toml is available even if `cross --version`
       - run: rm Cargo.toml
       - name: Generate tool list
@@ -130,7 +130,7 @@ jobs:
         run: apk --no-cache add bash cargo
         shell: sh
         if: startsWith(matrix.container, 'alpine')
-      - uses: taiki-e/github-actions/checkout@main
+      - uses: taiki-e/checkout-action@v1
       # cross attempts to install rust-src when Cargo.toml is available even if `cross --version`
       - run: rm Cargo.toml
       - name: Generate tool list
@@ -145,7 +145,7 @@ jobs:
     timeout-minutes: 60
     container: ubuntu:22.04
     steps:
-      - uses: taiki-e/github-actions/checkout@main
+      - uses: taiki-e/checkout-action@v1
       - name: Generate tool list
         id: tool-list
         run: tools/ci/tool-list.sh >>"${GITHUB_OUTPUT}"
@@ -160,7 +160,7 @@ jobs:
       contents: write
       pull-requests: write
     steps:
-      - uses: taiki-e/github-actions/checkout@main
+      - uses: taiki-e/checkout-action@v1
       - name: Install Rust
         run: rustup toolchain add nightly --no-self-update && rustup default nightly
       - run: tools/manifest.sh
