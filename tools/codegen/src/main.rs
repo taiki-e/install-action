@@ -417,6 +417,7 @@ fn main() -> Result<()> {
             .values()
             .any(|m| matches!(m, ManifestRef::Real(m) if m.download_info.contains_key(&p)))
         {
+            // TODO: better error message: https://github.com/taiki-e/install-action/pull/411
             bail!(
                 "platform list in base manifest for {package} contains {p:?}, \
                  but result manifest doesn't contain it; \
