@@ -10,6 +10,8 @@ Note: In this file, do not use the hard wrap in the middle of a sentence for com
 
 ## [Unreleased]
 
+- Support `git-cliff`. ([#411](https://github.com/taiki-e/install-action/pull/411), thanks @tranzystorekk)
+
 ## [2.28.16] - 2024-03-17
 
 - Update `cargo-deny@latest` to 0.14.17.
