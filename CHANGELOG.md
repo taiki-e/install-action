@@ -10,6 +10,8 @@ Note: In this file, do not use the hard wrap in the middle of a sentence for com
 
 ## [Unreleased]
 
+## [2.29.0] - 2024-03-18
+
 - Support `git-cliff`. ([#411](https://github.com/taiki-e/install-action/pull/411), thanks @tranzystorekk)
 
 ## [2.28.16] - 2024-03-17
@@ -1911,7 +1913,8 @@ Note: This release is considered a breaking change because installing on version
 
 Initial release
 
-[Unreleased]: https://github.com/taiki-e/install-action/compare/v2.28.16...HEAD
+[Unreleased]: https://github.com/taiki-e/install-action/compare/v2.29.0...HEAD
+[2.29.0]: https://github.com/taiki-e/install-action/compare/v2.28.16...v2.29.0
 [2.28.16]: https://github.com/taiki-e/install-action/compare/v2.28.15...v2.28.16
 [2.28.15]: https://github.com/taiki-e/install-action/compare/v2.28.14...v2.28.15
 [2.28.14]: https://github.com/taiki-e/install-action/compare/v2.28.13...v2.28.14
