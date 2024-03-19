@@ -10,6 +10,8 @@ Note: In this file, do not use the hard wrap in the middle of a sentence for com
 
 ## [Unreleased]
 
+- Update `cargo-minimal-versions@latest` to 0.1.27.
+
 ## [2.29.0] - 2024-03-18
 
 - Support `git-cliff`. ([#411](https://github.com/taiki-e/install-action/pull/411), thanks @tranzystorekk)
