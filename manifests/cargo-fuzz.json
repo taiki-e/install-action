@@ -1,0 +1,64 @@
+{
+  "rust_crate": "cargo-fuzz",
+  "template": {
+    "x86_64_linux_musl": {
+      "url": "https://github.com/rust-fuzz/cargo-fuzz/releases/download/${version}/cargo-fuzz-${version}-x86_64-unknown-linux-musl.tar.gz"
+    },
+    "x86_64_macos": {
+      "url": "https://github.com/rust-fuzz/cargo-fuzz/releases/download/${version}/cargo-fuzz-${version}-x86_64-apple-darwin.tar.gz"
+    },
+    "x86_64_windows": {
+      "url": "https://github.com/rust-fuzz/cargo-fuzz/releases/download/${version}/cargo-fuzz-${version}-x86_64-pc-windows-msvc.zip"
+    }
+  },
+  "latest": {
+    "version": "0.11.2"
+  },
+  "0.12.0": {
+    "x86_64_linux_musl": {
+      "checksum": "e5f38ce96c36e05c43b76fc00bf22537c944edc71e0f0e869ca18a6ab40e8efa"
+    },
+    "x86_64_macos": {
+      "checksum": "f28dece7bceefe9069632b677111f157b5c62c7b006c665d191bf562d9b56f8e"
+    },
+    "x86_64_windows": {
+      "checksum": "70ddcf1d31a40b8563e501d15ec676b9e81d7bad9e346a19afe8bb45286a0a52"
+    }
+  },
+  "0.11": {
+    "version": "0.11.2"
+  },
+  "0.11.4": {
+    "x86_64_linux_musl": {
+      "checksum": "c185905364d5cd32a3e6e32ef10d5f22ae999df13d569041465762ea05245cfb"
+    },
+    "x86_64_macos": {
+      "checksum": "0cf9c6d7a8b3de49eb8a518951aa8a7ad0733244294d075af5bc6486ac5bb2f2"
+    },
+    "x86_64_windows": {
+      "checksum": "0826605d7dd15433e2c779053b04588759ce648b4843efe6c29c466001af62d4"
+    }
+  },
+  "0.11.3": {
+    "x86_64_linux_musl": {
+      "checksum": "b1fce2bad4352e6d0a2271b091715a31099830ee351792f70a7f19fb3a171d1a"
+    },
+    "x86_64_macos": {
+      "checksum": "29d2609b2ab24385b729befeccd015501eb6bd6331c88e2026f19894d33364b2"
+    },
+    "x86_64_windows": {
+      "checksum": "6d34045c3d3ac31f5454b5745985544c5fbfb4d4e3231a4a5be17c94e3b12e86"
+    }
+  },
+  "0.11.2": {
+    "x86_64_linux_musl": {
+      "checksum": "0f5b5bce0b9ee8ed9dcf3f4699038c5178db9f536df7909a7e1cae8039f5626b"
+    },
+    "x86_64_macos": {
+      "checksum": "70f0cba45bd015eefe2e6e4b07d5a9e4b3e9eb90e637a2773c7a30ec1792602f"
+    },
+    "x86_64_windows": {
+      "checksum": "1867b415541f81265189daeed13d1cab16186641d9cb3c447b2a86c7ea002309"
+    }
+  }
+}

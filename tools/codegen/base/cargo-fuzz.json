@@ -1,0 +1,14 @@
+{
+  "repository": "https://github.com/rust-fuzz/cargo-fuzz",
+  "tag_prefix": "",
+  "rust_crate": "${package}",
+  "broken": ["0.11.3", "0.11.4", "0.12.0"],
+  "asset_name": "${package}-${version}-${rust_target}.tar.gz",
+  "platform": {
+    "x86_64_linux_musl": {},
+    "x86_64_macos": {},
+    "x86_64_windows": {
+      "asset_name": "${package}-${version}-${rust_target}.zip"
+    }
+  }
+}
