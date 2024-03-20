@@ -1,7 +1,7 @@
 // SPDX-License-Identifier: Apache-2.0 OR MIT
 
 use std::{
-    cmp::Reverse,
+    cmp::{self, Reverse},
     collections::{BTreeMap, BTreeSet},
     env,
     ffi::OsStr,
@@ -604,12 +604,12 @@ impl From<semver::Version> for Version {
     }
 }
 impl PartialOrd for Version {
-    fn partial_cmp(&self, other: &Self) -> Option<std::cmp::Ordering> {
+    fn partial_cmp(&self, other: &Self) -> Option<cmp::Ordering> {
         Some(self.cmp(other))
     }
 }
 impl Ord for Version {
-    fn cmp(&self, other: &Self) -> std::cmp::Ordering {
+    fn cmp(&self, other: &Self) -> cmp::Ordering {
         fn convert(v: &Version) -> semver::Version {
             semver::Version {
                 major: v.major.unwrap_or(u64::MAX),
