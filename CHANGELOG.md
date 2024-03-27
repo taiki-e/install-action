@@ -10,6 +10,8 @@ Note: In this file, do not use the hard wrap in the middle of a sentence for com
 
 ## [Unreleased]
 
+- Update `protoc@latest` to 3.26.1.
+
 ## [2.31.0] - 2024-03-27
 
 - Support `typos`. ([#422](https://github.com/taiki-e/install-action/pull/422), thanks @jayvdb)
