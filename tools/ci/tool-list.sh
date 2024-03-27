@@ -7,6 +7,7 @@ cd "$(dirname "$0")"/../..
 # They don't provide prebuilt binaries for musl or old glibc host.
 glibc_pre_2_34_incompat=(
     cargo-cyclonedx
+    cargo-spellcheck
     xbuild
 )
 glibc_pre_2_31_incompat=(

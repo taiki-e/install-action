@@ -1,0 +1,43 @@
+{
+  "rust_crate": "cargo-spellcheck",
+  "template": {
+    "x86_64_linux_gnu": {
+      "url": "https://github.com/drahnr/cargo-spellcheck/releases/download/v${version}/cargo-spellcheck-v${version}-x86_64-unknown-linux-gnu",
+      "bin": "cargo-spellcheck-v${version}-x86_64-unknown-linux-gnu"
+    },
+    "x86_64_windows": {
+      "url": "https://github.com/drahnr/cargo-spellcheck/releases/download/v${version}/cargo-spellcheck-v${version}-x86_64-pc-windows-gnu.exe",
+      "bin": "cargo-spellcheck-v${version}-x86_64-pc-windows-gnu.exe"
+    }
+  },
+  "latest": {
+    "version": "0.13.2"
+  },
+  "0.13": {
+    "version": "0.13.2"
+  },
+  "0.13.2": {
+    "x86_64_linux_gnu": {
+      "checksum": "f547b8f992dcc43f8a4106bae8b090ecb3fcb7ef6ce336081c22636f70e876d9"
+    },
+    "x86_64_windows": {
+      "checksum": "f54fb8243497258115d1eb55b99bfc94ab3e09636c78665d3b6410885ba9190a"
+    }
+  },
+  "0.13.1": {
+    "x86_64_linux_gnu": {
+      "checksum": "17af34dbefad5c45d23df3e4e81b0addc78782db0ed2e8e491a1532761463e1e"
+    },
+    "x86_64_windows": {
+      "checksum": "d18c19a3c5e7eb9ea516e691b54a4517a60517b6b1fb75b7f56a0c1dcc9b177e"
+    }
+  },
+  "0.13.0": {
+    "x86_64_linux_gnu": {
+      "checksum": "41e99240e55f38cc6d43d7ea9f2ccd448f584eefdc262129e4238f057d995923"
+    },
+    "x86_64_windows": {
+      "checksum": "57d45d5942d7ccd49599aae549c0bd5d906868eaeb39481088e55001d65f4784"
+    }
+  }
+}
