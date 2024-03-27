@@ -10,6 +10,8 @@ Note: In this file, do not use the hard wrap in the middle of a sentence for com
 
 ## [Unreleased]
 
+## [2.31.0] - 2024-03-27
+
 - Support `typos`. ([#422](https://github.com/taiki-e/install-action/pull/422), thanks @jayvdb)
 
 - Support `cargo-spellcheck`. ([#423](https://github.com/taiki-e/install-action/pull/423), thanks @jayvdb)
@@ -1957,7 +1959,8 @@ Note: This release is considered a breaking change because installing on version
 
 Initial release
 
-[Unreleased]: https://github.com/taiki-e/install-action/compare/v2.30.0...HEAD
+[Unreleased]: https://github.com/taiki-e/install-action/compare/v2.31.0...HEAD
+[2.31.0]: https://github.com/taiki-e/install-action/compare/v2.30.0...v2.31.0
 [2.30.0]: https://github.com/taiki-e/install-action/compare/v2.29.8...v2.30.0
 [2.29.8]: https://github.com/taiki-e/install-action/compare/v2.29.7...v2.29.8
 [2.29.7]: https://github.com/taiki-e/install-action/compare/v2.29.6...v2.29.7
