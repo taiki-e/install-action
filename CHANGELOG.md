@@ -10,9 +10,13 @@ Note: In this file, do not use the hard wrap in the middle of a sentence for com
 
 ## [Unreleased]
 
+- Support `typos`. ([#422](https://github.com/taiki-e/install-action/pull/422), thanks @jayvdb)
+
+- Support `cargo-spellcheck`. ([#423](https://github.com/taiki-e/install-action/pull/423), thanks @jayvdb)
+
 ## [2.30.0] - 2024-03-27
 
-- Support `cargo-cyclonedx`. ([#424)](https://github.com/taiki-e/install-action/pull/424), thanks @jayvdb)
+- Support `cargo-cyclonedx`. ([#424](https://github.com/taiki-e/install-action/pull/424), thanks @jayvdb)
 
 - Update `cargo-hack@latest` to 0.6.23.
 
