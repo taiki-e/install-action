@@ -1,0 +1,31 @@
+{
+  "rust_crate": "cargo-cyclonedx",
+  "template": {
+    "x86_64_linux_gnu": {
+      "url": "https://github.com/CycloneDX/cyclonedx-rust-cargo/releases/download/cargo-cyclonedx-${version}/cargo-cyclonedx-linux-amd64.tar.gz"
+    },
+    "x86_64_macos": {
+      "url": "https://github.com/CycloneDX/cyclonedx-rust-cargo/releases/download/cargo-cyclonedx-${version}/cargo-cyclonedx-Darwin-x86_64.tar.gz"
+    },
+    "x86_64_windows": {
+      "url": "https://github.com/CycloneDX/cyclonedx-rust-cargo/releases/download/cargo-cyclonedx-${version}/cargo-cyclonedx-Win-x86_64.zip"
+    }
+  },
+  "latest": {
+    "version": "0.5.0"
+  },
+  "0.5": {
+    "version": "0.5.0"
+  },
+  "0.5.0": {
+    "x86_64_linux_gnu": {
+      "checksum": "7daa885e9b6f59bf7674a2972bf1f37d9e21ab7461c3e2f9c59e99a966ab6026"
+    },
+    "x86_64_macos": {
+      "checksum": "70b197f8095fe2473baef1d96dd4409abb1aef20aeeea00f8a0cbebc25528ddb"
+    },
+    "x86_64_windows": {
+      "checksum": "11e063c29bdd85ceb061b30aa11073238a8c93302b1ff3f5ac37e91ac90b425a"
+    }
+  }
+}
