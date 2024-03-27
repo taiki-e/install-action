@@ -10,6 +10,8 @@ Note: In this file, do not use the hard wrap in the middle of a sentence for com
 
 ## [Unreleased]
 
+- Support `cargo-cyclonedx`. ([#424)](https://github.com/taiki-e/install-action/pull/424), thanks @jayvdb)
+
 - Update `cargo-hack@latest` to 0.6.23.
 
 ## [2.29.8] - 2024-03-26
