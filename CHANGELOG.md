@@ -10,6 +10,8 @@ Note: In this file, do not use the hard wrap in the middle of a sentence for com
 
 ## [Unreleased]
 
+- Fix `cargo-spellcheck` installation bug. ([#428](https://github.com/taiki-e/install-action/pull/428))
+
 ## [2.31.1] - 2024-03-28
 
 - Update `protoc@latest` to 3.26.1.
