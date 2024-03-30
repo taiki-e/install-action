@@ -10,6 +10,8 @@ Note: In this file, do not use the hard wrap in the middle of a sentence for com
 
 ## [Unreleased]
 
+- Update `git-cliff@latest` to 2.2.0.
+
 ## [2.31.2] - 2024-03-28
 
 - Fix `cargo-spellcheck` installation bug. ([#428](https://github.com/taiki-e/install-action/pull/428))
