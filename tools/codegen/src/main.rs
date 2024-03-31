@@ -26,7 +26,7 @@ fn main() -> Result<()> {
     let args: Vec<_> = env::args().skip(1).collect();
     if args.is_empty() || args.iter().any(|arg| arg.starts_with('-')) {
         println!(
-            "USAGE: cargo run -p install-action-internal-codegen -r -- <PACKAGE> [VERSION_REQ]"
+            "USAGE: cargo run --release -p install-action-internal-codegen -- <PACKAGE> [VERSION_REQ]"
         );
         std::process::exit(1);
     }

@@ -23,6 +23,18 @@ See JSON files in `tools/codegen/base` directory for examples of the manifest.
 > GITHUB_TOKEN=$(gh auth status --show-token 2>&1 | sed -n 's/^.*Token: \(.*\)$/\1/p') ./tools/manifest.sh <tool>
 > ```
 
+## Local testing
+
+To test locally after creating the manifest, run
+
+```sh
+INPUT_TOOL=tool_name INPUT_CHECKSUM=false ./main.sh
+```
+
+As this attempt to install into `/usr/local/bin/`, an error as follows suggests that the script is working:
+
+> mv: cannot create regular file '/usr/local/bin/tool_name': Permission denied
+
 ## Troubleshooting
 
 If one of the CI builds fails due to a bin path or release asset_name, fix the problem in the base
