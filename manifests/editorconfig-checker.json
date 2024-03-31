@@ -20,6 +20,10 @@
     "aarch64_macos": {
       "url": "https://github.com/editorconfig-checker/editorconfig-checker/releases/download/v${version}/ec-darwin-arm64.tar.gz",
       "bin": "bin/ec-darwin-arm64"
+    },
+    "aarch64_windows": {
+      "url": "https://github.com/editorconfig-checker/editorconfig-checker/releases/download/v${version}/ec-windows-arm64.exe.tar.gz",
+      "bin": "bin/ec-windows-arm64.exe"
     }
   },
   "latest": {
@@ -46,6 +50,9 @@
     },
     "aarch64_macos": {
       "checksum": "35324d5914d147cb51859e49c48909cef22ae448fca407b9d39f95dcc77be109"
+    },
+    "aarch64_windows": {
+      "checksum": "40b382a225a345e28f575010b637a372eb004ba3f1544341df0fbc265d183ff6"
     }
   }
 }
