@@ -68,9 +68,9 @@ download_and_extract() {
     local tmp
     case "${tool}" in
         # xbuild's binary name is "x", as opposed to the usual crate name
-        xbuild) installed_bin=("${bin_dir}/x") ;;
+        xbuild) installed_bin=("${bin_dir}/x${exe}") ;;
         # editorconfig-checker's binary name is renamed below
-        editorconfig-checker) installed_bin=("${bin_dir}/${tool}") ;;
+        editorconfig-checker) installed_bin=("${bin_dir}/${tool}${exe}") ;;
         *)
             for tmp in "${bin_in_archive[@]}"; do
                 installed_bin+=("${bin_dir}/$(basename "${tmp}")")
