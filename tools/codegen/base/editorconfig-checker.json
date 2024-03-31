@@ -22,6 +22,10 @@
     "x86_64_windows": {
       "asset_name": "ec-windows-amd64${exe}.tar.gz",
       "bin": "bin/ec-windows-amd64${exe}"
+    },
+    "aarch64_windows": {
+      "asset_name": "ec-windows-arm64${exe}.tar.gz",
+      "bin": "bin/ec-windows-arm64${exe}"
     }
   }
 }
