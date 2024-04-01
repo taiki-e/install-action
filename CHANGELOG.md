@@ -10,6 +10,10 @@ Note: In this file, do not use the hard wrap in the middle of a sentence for com
 
 ## [Unreleased]
 
+- Support `hyperfine`. ([#425](https://github.com/taiki-e/install-action/pull/425), thanks @jayvdb)
+
+- Support `editorconfig-checker`. ([#430](https://github.com/taiki-e/install-action/pull/430), thanks @jayvdb)
+
 - Update `cargo-hack@latest` to 0.6.24.
 
 ## [2.31.3] - 2024-03-30
