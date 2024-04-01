@@ -10,11 +10,11 @@ cd "$(dirname "$0")"/..
 #    ./tools/manifest.sh [PACKAGE [VERSION_REQ]]
 
 if [[ $# -gt 0 ]]; then
-    cargo run --release -p install-action-internal-codegen -- "$@"
+    cargo run --manifest-path tools/codegen/Cargo.toml --release -- "$@"
     exit 0
 fi
 
 for manifest in tools/codegen/base/*.json; do
     package=$(basename "${manifest%.*}")
-    cargo run --release -p install-action-internal-codegen -- "${package}" latest
+    cargo run --manifest-path tools/codegen/Cargo.toml --release -- "${package}" latest
 done
