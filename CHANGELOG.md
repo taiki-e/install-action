@@ -10,6 +10,8 @@ Note: In this file, do not use the hard wrap in the middle of a sentence for com
 
 ## [Unreleased]
 
+## [2.32.1] - 2024-04-01
+
 - Update `cargo-hack@latest` to 0.6.26.
 
 ## [2.32.0] - 2024-04-01
@@ -1981,7 +1983,8 @@ Note: This release is considered a breaking change because installing on version
 
 Initial release
 
-[Unreleased]: https://github.com/taiki-e/install-action/compare/v2.32.0...HEAD
+[Unreleased]: https://github.com/taiki-e/install-action/compare/v2.32.1...HEAD
+[2.32.1]: https://github.com/taiki-e/install-action/compare/v2.32.0...v2.32.1
 [2.32.0]: https://github.com/taiki-e/install-action/compare/v2.31.3...v2.32.0
 [2.31.3]: https://github.com/taiki-e/install-action/compare/v2.31.2...v2.31.3
 [2.31.2]: https://github.com/taiki-e/install-action/compare/v2.31.1...v2.31.2
