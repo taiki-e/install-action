@@ -10,6 +10,8 @@ Note: In this file, do not use the hard wrap in the middle of a sentence for com
 
 ## [Unreleased]
 
+- Update `editorconfig-checker@latest` to 3.0.1.
+
 ## [2.32.5] - 2024-04-03
 
 - Update `biome@latest` to 1.6.4.
