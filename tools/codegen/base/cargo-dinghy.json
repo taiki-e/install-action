@@ -2,6 +2,7 @@
   "repository": "https://github.com/sonos/dinghy",
   "tag_prefix": "",
   "rust_crate": "${package}",
+  "broken": ["0.7.0"],
   "asset_name": "${package}-${rust_target_os}-${version}.tgz",
   "bin": "${package}-${version}/${package}${exe}",
   "platform": {
