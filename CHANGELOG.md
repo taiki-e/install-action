@@ -10,6 +10,8 @@ Note: In this file, do not use the hard wrap in the middle of a sentence for com
 
 ## [Unreleased]
 
+- Update `git-cliff@latest` to 2.2.1.
+
 ## [2.32.11] - 2024-04-10
 
 - Update `typos@latest` to 1.20.7.
