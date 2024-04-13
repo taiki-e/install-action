@@ -31,6 +31,13 @@ warn() {
 info() {
     echo "info: $*"
 }
+_sudo() {
+    if type -P sudo &>/dev/null; then
+        sudo "$@"
+    else
+        "$@"
+    fi
+}
 download_and_checksum() {
     local url="$1"
     local checksum="$2"
@@ -289,36 +296,20 @@ install_cargo_binstall() {
     fi
 }
 apt_update() {
-    if type -P sudo &>/dev/null; then
-        retry sudo apt-get -o Acquire::Retries=10 -qq update
-    else
-        retry apt-get -o Acquire::Retries=10 -qq update
-    fi
+    retry _sudo apt-get -o Acquire::Retries=10 -qq update
     apt_updated=1
 }
 apt_install() {
     if [[ -z "${apt_updated:-}" ]]; then
         apt_update
     fi
-    if type -P sudo &>/dev/null; then
-        retry sudo apt-get -o Acquire::Retries=10 -o Dpkg::Use-Pty=0 install -y --no-install-recommends "$@"
-    else
-        retry apt-get -o Acquire::Retries=10 -o Dpkg::Use-Pty=0 install -y --no-install-recommends "$@"
-    fi
+    retry _sudo apt-get -o Acquire::Retries=10 -o Dpkg::Use-Pty=0 install -y --no-install-recommends "$@"
 }
 apt_remove() {
-    if type -P sudo &>/dev/null; then
-        sudo apt-get -qq -o Dpkg::Use-Pty=0 remove -y "$@"
-    else
-        apt-get -qq -o Dpkg::Use-Pty=0 remove -y "$@"
-    fi
+    _sudo apt-get -qq -o Dpkg::Use-Pty=0 remove -y "$@"
 }
 snap_install() {
-    if type -P sudo &>/dev/null; then
-        retry sudo snap install "$@"
-    else
-        retry snap install "$@"
-    fi
+    retry _sudo snap install "$@"
 }
 apk_install() {
     if type -P sudo &>/dev/null; then
@@ -330,11 +321,7 @@ apk_install() {
     fi
 }
 dnf_install() {
-    if type -P sudo &>/dev/null; then
-        retry sudo "${dnf}" install -y "$@"
-    else
-        retry "${dnf}" install -y "$@"
-    fi
+    retry _sudo "${dnf}" install -y "$@"
 }
 sys_install() {
     case "${base_distro}" in
