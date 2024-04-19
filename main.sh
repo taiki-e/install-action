@@ -714,8 +714,7 @@ for tool in "${tools[@]}"; do
         case "${tool_bin_stem}" in
             # biome up to 1.2.2 exits with 1 on both --version and --help flags.
             # cargo-machete up to 0.6.0 does not support --version flag.
-            biome) rx "${tool_bin_stem}" --version || true ;;
-            cargo-machete) rx "${tool_bin_stem}" "${tool_bin_stem#cargo-}" --version || true ;;
+            biome | cargo-machete) rx "${tool_bin_stem}" --version || true ;;
             # these packages support neither --version nor --help flag.
             cargo-careful | wasm-bindgen-test-runner) ;;
             # wasm2es6js does not support --version flag and --help flag doesn't contains version info.
