@@ -10,6 +10,8 @@ Note: In this file, do not use the hard wrap in the middle of a sentence for com
 
 ## [Unreleased]
 
+- Support `espup`. ([#456](https://github.com/taiki-e/install-action/pull/456))
+
 - Improve support for SUSE/Arch based containers/self-hosted runners.
 
 ## [2.32.20] - 2024-04-17

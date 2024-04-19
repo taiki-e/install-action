@@ -13,6 +13,7 @@ glibc_pre_2_34_incompat=(
 glibc_pre_2_31_incompat=(
     "${glibc_pre_2_34_incompat[@]}"
     cargo-sort
+    espup
     zola
 )
 glibc_pre_2_27_incompat=(
