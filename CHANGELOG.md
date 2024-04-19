@@ -10,6 +10,8 @@ Note: In this file, do not use the hard wrap in the middle of a sentence for com
 
 ## [Unreleased]
 
+- Update `parse-changelog@latest` to 0.6.7.
+
 ## [2.33.0] - 2024-04-19
 
 - Support `espup`. ([#456](https://github.com/taiki-e/install-action/pull/456))
