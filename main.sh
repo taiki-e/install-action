@@ -87,12 +87,23 @@ download_and_extract() {
 
     local tar_args=()
     case "${url}" in
-        *.tar.gz | *.tgz) tar_args+=("xzf") ;;
+        *.tar.gz | *.tgz)
+            tar_args+=("xzf")
+            if ! type -P gzip &>/dev/null; then
+                case "${base_distro}" in
+                    debian | fedora | suse | arch | alpine)
+                        echo "::group::Install packages required for installation (gzip)"
+                        sys_install gzip
+                        echo "::endgroup::"
+                        ;;
+                esac
+            fi
+            ;;
         *.tar.bz2 | *.tbz2)
             tar_args+=("xjf")
             if ! type -P bzip2 &>/dev/null; then
                 case "${base_distro}" in
-                    debian | alpine | fedora)
+                    debian | fedora | suse | arch | alpine)
                         echo "::group::Install packages required for installation (bzip2)"
                         sys_install bzip2
                         echo "::endgroup::"
@@ -109,7 +120,7 @@ download_and_extract() {
                         sys_install xz-utils
                         echo "::endgroup::"
                         ;;
-                    alpine | fedora)
+                    fedora | suse | arch | alpine)
                         echo "::group::Install packages required for installation (xz)"
                         sys_install xz
                         echo "::endgroup::"
@@ -120,7 +131,7 @@ download_and_extract() {
         *.zip)
             if ! type -P unzip &>/dev/null; then
                 case "${base_distro}" in
-                    debian | alpine | fedora)
+                    debian | fedora | suse | arch | alpine)
                         echo "::group::Install packages required for installation (unzip)"
                         sys_install unzip
                         echo "::endgroup::"
@@ -311,6 +322,15 @@ apt_remove() {
 snap_install() {
     retry _sudo snap install "$@"
 }
+dnf_install() {
+    retry _sudo "${dnf}" install -y "$@"
+}
+zypper_install() {
+    retry _sudo zypper install -y "$@"
+}
+pacman_install() {
+    retry _sudo pacman -Sy --noconfirm "$@"
+}
 apk_install() {
     if type -P sudo &>/dev/null; then
         sudo apk --no-cache add "$@"
@@ -320,14 +340,13 @@ apk_install() {
         apk --no-cache add "$@"
     fi
 }
-dnf_install() {
-    retry _sudo "${dnf}" install -y "$@"
-}
 sys_install() {
     case "${base_distro}" in
         debian) apt_install "$@" ;;
-        alpine) apk_install "$@" ;;
         fedora) dnf_install "$@" ;;
+        suse) zypper_install "$@" ;;
+        arch) pacman_install "$@" ;;
+        alpine) apk_install "$@" ;;
     esac
 }
 init_install_action_bin_dir() {
@@ -393,8 +412,10 @@ case "$(uname -s)" in
             base_distro=$(grep '^ID_LIKE=' /etc/os-release | sed 's/^ID_LIKE=//')
             case "${base_distro}" in
                 *debian*) base_distro=debian ;;
-                *alpine*) base_distro=alpine ;;
                 *fedora*) base_distro=fedora ;;
+                *suse*) base_distro=suse ;;
+                *arch*) base_distro=arch ;;
+                *alpine*) base_distro=alpine ;;
             esac
         else
             base_distro=$(grep '^ID=' /etc/os-release | sed 's/^ID=//')
@@ -426,19 +447,18 @@ case "$(uname -s)" in
 esac
 case "$(uname -m)" in
     aarch64 | arm64) host_arch="aarch64" ;;
-    xscale | arm | armv[6-9]l)
+    xscale | arm | armv*l)
         # Ignore arm for now, as we need to consider the version and whether hard-float is supported.
         # https://github.com/rust-lang/rustup/pull/593
         # https://github.com/cross-rs/cross/pull/1018
         # Does it seem only armv7l+ is supported?
-        # https://github.com/actions/runner/blob/caec043085990710070108f375cd0aeab45e1017/src/Misc/externals.sh#L174
+        # https://github.com/actions/runner/blob/v2.315.0/src/Misc/externals.sh#L189
         # https://github.com/actions/runner/issues/688
         bail "32-bit ARM runner is not supported yet by this action; if you need support for this platform, please submit an issue at <https://github.com/taiki-e/install-action>"
         ;;
     # GitHub Actions Runner supports Linux (x86_64, aarch64, arm), Windows (x86_64, aarch64),
     # and macOS (x86_64, aarch64).
-    # https://github.com/actions/runner
-    # https://github.com/actions/runner/blob/caec043085990710070108f375cd0aeab45e1017/.github/workflows/build.yml#L21
+    # https://github.com/actions/runner/blob/v2.315.0/.github/workflows/build.yml#L21
     # https://docs.github.com/en/actions/hosting-your-own-runners/about-self-hosted-runners#supported-architectures-and-operating-systems-for-self-hosted-runners
     # So we can assume x86_64 unless it is aarch64 or arm.
     *) host_arch="x86_64" ;;
@@ -467,7 +487,7 @@ case "${host_os}" in
     linux)
         if ! type -P jq &>/dev/null || ! type -P curl &>/dev/null || ! type -P tar &>/dev/null; then
             case "${base_distro}" in
-                debian | fedora | alpine)
+                debian | fedora | suse | arch | alpine)
                     echo "::group::Install packages required for installation (jq, curl, and/or tar)"
                     sys_packages=()
                     if ! type -P curl &>/dev/null; then
@@ -493,7 +513,7 @@ case "${host_os}" in
                     fi
                     echo "::endgroup::"
                     ;;
-                *) warn "install-action requires at least jq and curl on non-Debian/Fedora/Alpine-based Linux" ;;
+                *) warn "install-action requires at least jq and curl on non-Debian/Fedora/SUSE/Arch/Alpine-based Linux" ;;
             esac
         fi
         ;;
@@ -574,7 +594,7 @@ for tool in "${tools[@]}"; do
             fi
             if ! type -P unzip &>/dev/null; then
                 case "${base_distro}" in
-                    debian | alpine | fedora)
+                    debian | fedora | suse | arch | alpine)
                         echo "::group::Install packages required for installation (unzip)"
                         sys_install unzip
                         echo "::endgroup::"

@@ -819,8 +819,7 @@ impl StringOrArray {
 
 /// GitHub Actions Runner supports Linux (x86_64, aarch64, arm), Windows (x86_64, aarch64),
 /// and macOS (x86_64, aarch64).
-/// https://github.com/actions/runner
-/// https://github.com/actions/runner/blob/caec043085990710070108f375cd0aeab45e1017/.github/workflows/build.yml#L21
+/// https://github.com/actions/runner/blob/v2.315.0/.github/workflows/build.yml#L21
 /// https://docs.github.com/en/actions/hosting-your-own-runners/about-self-hosted-runners#supported-architectures-and-operating-systems-for-self-hosted-runners
 ///
 /// Note:
@@ -832,8 +831,9 @@ impl StringOrArray {
 /// - Ignore arm for now, as we need to consider the version and whether hard-float is supported.
 ///   https://github.com/rust-lang/rustup/pull/593
 ///   https://github.com/cross-rs/cross/pull/1018
-///   Does it seem only armv7l is supported?
-///   https://github.com/actions/runner/blob/caec043085990710070108f375cd0aeab45e1017/src/Misc/externals.sh#L174
+///   Does it seem only armv7l+ is supported?
+///   https://github.com/actions/runner/blob/v2.315.0/src/Misc/externals.sh#L189
+///   https://github.com/actions/runner/issues/688
 #[allow(non_camel_case_types)]
 #[derive(Debug, Clone, Copy, PartialEq, Eq, PartialOrd, Ord, Serialize, Deserialize)]
 enum HostPlatform {
