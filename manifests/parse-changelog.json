@@ -2,10 +2,36 @@
   "rust_crate": "parse-changelog",
   "template": null,
   "latest": {
-    "version": "0.6.7"
+    "version": "0.6.8"
   },
   "0.6": {
-    "version": "0.6.7"
+    "version": "0.6.8"
+  },
+  "0.6.8": {
+    "x86_64_linux_musl": {
+      "url": "https://github.com/taiki-e/parse-changelog/releases/download/v0.6.8/parse-changelog-x86_64-unknown-linux-musl.tar.gz",
+      "checksum": "c5d34291892c66cf5e2d45e61f822c420a86c48c54631422863894eeee8d11f1"
+    },
+    "x86_64_macos": {
+      "url": "https://github.com/taiki-e/parse-changelog/releases/download/v0.6.8/parse-changelog-x86_64-apple-darwin.tar.gz",
+      "checksum": "37a3fb9b9e1a46c99ca306a2a68a8c317d3011375d7274256389d16986b5c3f4"
+    },
+    "x86_64_windows": {
+      "url": "https://github.com/taiki-e/parse-changelog/releases/download/v0.6.8/parse-changelog-x86_64-pc-windows-msvc.tar.gz",
+      "checksum": "e4f971462c2fb29387af7269634027d57b06c05b644d7412249c8d0c25cfc799"
+    },
+    "aarch64_linux_musl": {
+      "url": "https://github.com/taiki-e/parse-changelog/releases/download/v0.6.8/parse-changelog-aarch64-unknown-linux-musl.tar.gz",
+      "checksum": "a3f1705c925d0b158c0a555a97848baa952d160cc7952dc66e1be1735d787316"
+    },
+    "aarch64_macos": {
+      "url": "https://github.com/taiki-e/parse-changelog/releases/download/v0.6.8/parse-changelog-aarch64-apple-darwin.tar.gz",
+      "checksum": "76314b47a0b6f60b5f635ad9af7577d618ea69759306b954dbe3b0196b32550e"
+    },
+    "aarch64_windows": {
+      "url": "https://github.com/taiki-e/parse-changelog/releases/download/v0.6.8/parse-changelog-aarch64-pc-windows-msvc.tar.gz",
+      "checksum": "c9e7db9dff60ec0adff8658968d0d9430db9a7c77fd1885b21d688a0d82e88ee"
+    }
   },
   "0.6.7": {
     "x86_64_linux_musl": {
