@@ -15,14 +15,6 @@ trap 's=$?; echo >&2 "$0: error on line "${LINENO}": ${BASH_COMMAND}"; exit ${s}
 # Note: This script requires the following tools:
 # - parse-changelog <https://github.com/taiki-e/parse-changelog>
 
-x() {
-    local cmd="$1"
-    shift
-    (
-        set -x
-        "${cmd}" "$@"
-    )
-}
 retry() {
     for i in {1..10}; do
         if "$@"; then
@@ -108,8 +100,11 @@ echo "======================================="
 
 if [[ -n "${tags}" ]]; then
     # Create a release commit.
-    x git add "${changelog}"
-    x git commit -m "Release ${version}"
+    (
+        set -x
+        git add "${changelog}"
+        git commit -m "Release ${version}"
+    )
 fi
 
 tools=()
