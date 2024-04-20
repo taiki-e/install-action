@@ -98,6 +98,13 @@ echo "============== CHANGELOG =============="
 echo "${changes}"
 echo "======================================="
 
+tools=()
+for tool in tools/codegen/base/*.json; do
+    tools+=("$(basename "${tool%.*}")")
+done
+# Not manifest-based
+tools+=(valgrind nextest cargo-nextest)
+
 if [[ -n "${tags}" ]]; then
     # Create a release commit.
     (
@@ -107,51 +114,37 @@ if [[ -n "${tags}" ]]; then
     )
 fi
 
-tools=()
-for tool in tools/codegen/base/*.json; do
-    tools+=("$(basename "${tool%.*}")")
-done
-# Not manifest-based
-tools+=(valgrind nextest cargo-nextest)
-
-(
-    set -x
-
-    git tag "${tag}"
-    retry git push origin main
-    retry git push origin --tags
-
-    major_version_tag="v${version%%.*}"
-    git checkout -b "${major_version_tag}"
-    retry git push origin refs/heads/"${major_version_tag}"
-    if git --no-pager tag | grep -Eq "^${major_version_tag}$"; then
-        git tag -d "${major_version_tag}"
-        retry git push --delete origin refs/tags/"${major_version_tag}"
-    fi
-    git tag "${major_version_tag}"
-    git checkout main
-    git branch -d "${major_version_tag}"
-)
-
-for tool in "${tools[@]}"; do
-    (
-        set -x
-        git checkout -b "${tool}"
-        sed -i -e "s/required: true/required: false/g" action.yml
-        sed -i -e "s/# default: #publish:tool/default: ${tool}/g" action.yml
-        git add action.yml
-        git commit -m "${tool}"
-        retry git push origin -f refs/heads/"${tool}"
-        if git --no-pager tag | grep -Eq "^${tool}$"; then
-            git tag -d "${tool}"
-            retry git push --delete origin refs/tags/"${tool}"
-        fi
-        git tag "${tool}"
-        git checkout main
-        git branch -D "${tool}"
-    )
-done
-
 set -x
 
+git tag "${tag}"
+retry git push origin main
 retry git push origin --tags
+
+major_version_tag="v${version%%.*}"
+git checkout -b "${major_version_tag}"
+retry git push origin refs/heads/"${major_version_tag}"
+if git --no-pager tag | grep -Eq "^${major_version_tag}$"; then
+    git tag -d "${major_version_tag}"
+    retry git push --delete origin refs/tags/"${major_version_tag}"
+fi
+git tag "${major_version_tag}"
+retry git push origin --tags
+git checkout main
+git branch -d "${major_version_tag}"
+
+for tool in "${tools[@]}"; do
+    git checkout -b "${tool}"
+    sed -i -e "s/required: true/required: false/g" action.yml
+    sed -i -e "s/# default: #publish:tool/default: ${tool}/g" action.yml
+    git add action.yml
+    git commit -m "${tool}"
+    retry git push origin -f refs/heads/"${tool}"
+    if git --no-pager tag | grep -Eq "^${tool}$"; then
+        git tag -d "${tool}"
+        retry git push --delete origin refs/tags/"${tool}"
+    fi
+    git tag "${tool}"
+    retry git push origin --tags
+    git checkout main
+    git branch -D "${tool}"
+done

@@ -409,7 +409,7 @@ case "$(uname -s)" in
     Linux)
         host_os=linux
         if grep -q '^ID_LIKE=' /etc/os-release; then
-            base_distro=$(grep '^ID_LIKE=' /etc/os-release | sed 's/^ID_LIKE=//')
+            base_distro=$(grep '^ID_LIKE=' /etc/os-release | cut -d= -f2)
             case "${base_distro}" in
                 *debian*) base_distro=debian ;;
                 *fedora*) base_distro=fedora ;;
@@ -418,7 +418,7 @@ case "$(uname -s)" in
                 *alpine*) base_distro=alpine ;;
             esac
         else
-            base_distro=$(grep '^ID=' /etc/os-release | sed 's/^ID=//')
+            base_distro=$(grep '^ID=' /etc/os-release | cut -d= -f2)
         fi
         case "${base_distro}" in
             fedora)
