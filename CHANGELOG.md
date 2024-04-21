@@ -10,6 +10,8 @@ Note: In this file, do not use the hard wrap in the middle of a sentence for com
 
 ## [Unreleased]
 
+## [2.33.3] - 2024-04-21
+
 - Update `sccache@latest` to 0.8.0.
 
 ## [2.33.2] - 2024-04-20
@@ -2085,7 +2087,8 @@ Note: This release is considered a breaking change because installing on version
 
 Initial release
 
-[Unreleased]: https://github.com/taiki-e/install-action/compare/v2.33.2...HEAD
+[Unreleased]: https://github.com/taiki-e/install-action/compare/v2.33.3...HEAD
+[2.33.3]: https://github.com/taiki-e/install-action/compare/v2.33.2...v2.33.3
 [2.33.2]: https://github.com/taiki-e/install-action/compare/v2.33.1...v2.33.2
 [2.33.1]: https://github.com/taiki-e/install-action/compare/v2.33.0...v2.33.1
 [2.33.0]: https://github.com/taiki-e/install-action/compare/v2.32.20...v2.33.0
