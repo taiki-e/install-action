@@ -35,13 +35,33 @@
     }
   },
   "latest": {
-    "version": "1.7.1"
+    "version": "1.7.2"
   },
   "1": {
-    "version": "1.7.1"
+    "version": "1.7.2"
   },
   "1.7": {
-    "version": "1.7.1"
+    "version": "1.7.2"
+  },
+  "1.7.2": {
+    "x86_64_linux_musl": {
+      "checksum": "1bad2fd02d9dc2d38800bb20d6222d0b6a3092e707ac8e0ec0f51134ea2525ae"
+    },
+    "x86_64_macos": {
+      "checksum": "568377bb375af65a9d6205365708a38fe1ac30105f7d1137248d7c343d69e8fa"
+    },
+    "x86_64_windows": {
+      "checksum": "5ebcab7d65c98268b199fcfe6e6732f46f2b41aeea77716a59110a380560d307"
+    },
+    "aarch64_linux_musl": {
+      "checksum": "bdfe7c9fe1b3118c88190e0e5fbc8b1e3cb6dde08b0510a326f3f962f09a7f67"
+    },
+    "aarch64_macos": {
+      "checksum": "c0c20ca8f6f9f2441e2aacfca9e1625793195f54224ba0358dc84e85bdee58f0"
+    },
+    "aarch64_windows": {
+      "checksum": "e48a8de12448ba6b7d5b274ced53ebddf98a3bfabf676c45c8b60a8b7ad2572b"
+    }
   },
   "1.7.1": {
     "x86_64_linux_musl": {
