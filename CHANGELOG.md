@@ -10,6 +10,8 @@ Note: In this file, do not use the hard wrap in the middle of a sentence for com
 
 ## [Unreleased]
 
+## [2.33.12] - 2024-05-01
+
 - Update `cargo-tarpaulin@latest` to 0.29.0.
 
 ## [2.33.11] - 2024-04-30
@@ -2121,7 +2123,8 @@ Note: This release is considered a breaking change because installing on version
 
 Initial release
 
-[Unreleased]: https://github.com/taiki-e/install-action/compare/v2.33.11...HEAD
+[Unreleased]: https://github.com/taiki-e/install-action/compare/v2.33.12...HEAD
+[2.33.12]: https://github.com/taiki-e/install-action/compare/v2.33.11...v2.33.12
 [2.33.11]: https://github.com/taiki-e/install-action/compare/v2.33.10...v2.33.11
 [2.33.10]: https://github.com/taiki-e/install-action/compare/v2.33.9...v2.33.10
 [2.33.9]: https://github.com/taiki-e/install-action/compare/v2.33.8...v2.33.9
