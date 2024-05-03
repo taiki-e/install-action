@@ -13,6 +13,10 @@
       "url": "https://github.com/EmbarkStudios/cargo-deny/releases/download/${version}/cargo-deny-${version}-x86_64-pc-windows-msvc.tar.gz",
       "bin": "cargo-deny-${version}-x86_64-pc-windows-msvc/cargo-deny.exe"
     },
+    "aarch64_linux_musl": {
+      "url": "https://github.com/EmbarkStudios/cargo-deny/releases/download/${version}/cargo-deny-${version}-aarch64-unknown-linux-musl.tar.gz",
+      "bin": "cargo-deny-${version}-aarch64-unknown-linux-musl/cargo-deny"
+    },
     "aarch64_macos": {
       "url": "https://github.com/EmbarkStudios/cargo-deny/releases/download/${version}/cargo-deny-${version}-aarch64-apple-darwin.tar.gz",
       "bin": "cargo-deny-${version}-aarch64-apple-darwin/cargo-deny"
@@ -33,6 +37,9 @@
     },
     "x86_64_windows": {
       "checksum": "5da19ca3efc6d207d075fdc29e22dc74bcb5476ec33eabfba9d788fc23513858"
+    },
+    "aarch64_linux_musl": {
+      "checksum": "027f050ba79720645e1c7c8239ee0c8896485c961152b8d025756be88266b302"
     },
     "aarch64_macos": {
       "checksum": "95562322593b203ffdf4d209a3781069c268fd6a4b3267b0a6b67919ff672225"

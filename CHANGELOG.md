@@ -12,6 +12,8 @@ Note: In this file, do not use the hard wrap in the middle of a sentence for com
 
 - Update `cargo-deny@latest` to 0.14.23.
 
+- Support `cargo-deny` on aarch64 Linux.
+
 ## [2.33.13] - 2024-05-03
 
 - Update `cargo-tarpaulin@latest` to 0.29.1.
