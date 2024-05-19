@@ -1,6 +1,8 @@
 {
   "rust_crate": null,
+  "website": "http://protobuf.dev",
   "template": null,
+  "license_markdown": "[BSD-3-Clause](https://github.com/protocolbuffers/protobuf/blob/HEAD/LICENSE)",
   "latest": {
     "version": "3.27.0"
   },
@@ -397,7 +399,29 @@
     }
   },
   "3.22": {
-    "version": "3.22.4"
+    "version": "3.22.5"
+  },
+  "3.22.5": {
+    "x86_64_linux_gnu": {
+      "url": "https://github.com/protocolbuffers/protobuf/releases/download/v22.5/protoc-22.5-linux-x86_64.zip",
+      "checksum": "c11692013bbffb7c257de7f82cd02d323700ebcdb8a4923ed02fea812f70f5e3"
+    },
+    "x86_64_macos": {
+      "url": "https://github.com/protocolbuffers/protobuf/releases/download/v22.5/protoc-22.5-osx-x86_64.zip",
+      "checksum": "3edd0c65e2a8efc83f24918db27e1bbc72f3abe7618cb4cfb1842630a830b562"
+    },
+    "x86_64_windows": {
+      "url": "https://github.com/protocolbuffers/protobuf/releases/download/v22.5/protoc-22.5-win64.zip",
+      "checksum": "f99d1e9e28f7704b22d4254fab293477ea0d4ef3e5b9aa940a8fccfc99c1ce4c"
+    },
+    "aarch64_linux_gnu": {
+      "url": "https://github.com/protocolbuffers/protobuf/releases/download/v22.5/protoc-22.5-linux-aarch_64.zip",
+      "checksum": "1890f845b333fe040ec002a659a4ff7515cd93f8db0066c3885d1fce9f70b208"
+    },
+    "aarch64_macos": {
+      "url": "https://github.com/protocolbuffers/protobuf/releases/download/v22.5/protoc-22.5-osx-aarch_64.zip",
+      "checksum": "b7fc6c6099ad10149d90f8b107871537ca030980354b402d8e034055ce082b77"
+    }
   },
   "3.22.4": {
     "x86_64_linux_gnu": {

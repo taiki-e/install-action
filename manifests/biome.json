@@ -1,5 +1,6 @@
 {
   "rust_crate": null,
+  "website": "https://biomejs.dev",
   "template": {
     "x86_64_linux_gnu": {
       "url": "https://github.com/biomejs/biome/releases/download/cli/v${version}/biome-linux-x64",
@@ -34,6 +35,7 @@
       "bin": "biome.exe"
     }
   },
+  "license_markdown": "[Apache-2.0](https://github.com/biomejs/biome/blob/main/LICENSE-APACHE)",
   "latest": {
     "version": "1.7.3"
   },

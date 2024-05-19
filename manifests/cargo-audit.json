@@ -1,5 +1,6 @@
 {
   "rust_crate": "cargo-audit",
+  "website": "https://rustsec.org",
   "template": {
     "x86_64_linux_musl": {
       "url": "https://github.com/rustsec/rustsec/releases/download/cargo-audit/v${version}/cargo-audit-x86_64-unknown-linux-musl-v${version}.tgz",
@@ -18,6 +19,7 @@
       "bin": "cargo-audit-aarch64-unknown-linux-gnu-v${version}/cargo-audit"
     }
   },
+  "license_markdown": "[Apache-2.0](https://github.com/rustsec/rustsec/blob/HEAD/cargo-audit/LICENSE-APACHE) OR [MIT](https://github.com/rustsec/rustsec/blob/HEAD/cargo-audit/LICENSE-MIT)",
   "latest": {
     "version": "0.20.0"
   },

@@ -1,5 +1,6 @@
 {
   "rust_crate": "mdbook-linkcheck",
+  "website": "https://michael-f-bryan.github.io/mdbook-linkcheck/",
   "template": {
     "x86_64_linux_gnu": {
       "url": "https://github.com/Michael-F-Bryan/mdbook-linkcheck/releases/download/v${version}/mdbook-linkcheck.x86_64-unknown-linux-gnu.zip"
@@ -11,6 +12,7 @@
       "url": "https://github.com/Michael-F-Bryan/mdbook-linkcheck/releases/download/v${version}/mdbook-linkcheck.x86_64-pc-windows-msvc.zip"
     }
   },
+  "license_markdown": "[MIT](https://github.com/Michael-F-Bryan/mdbook-linkcheck/blob/master/LICENSE)",
   "latest": {
     "version": "0.7.7"
   },

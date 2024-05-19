@@ -1,5 +1,6 @@
 {
   "rust_crate": null,
+  "website": "https://editorconfig-checker.github.io/",
   "template": {
     "x86_64_linux_gnu": {
       "url": "https://github.com/editorconfig-checker/editorconfig-checker/releases/download/v${version}/ec-linux-amd64.tar.gz",
@@ -26,6 +27,7 @@
       "bin": "bin/ec-windows-arm64.exe"
     }
   },
+  "license_markdown": "[MIT](https://github.com/editorconfig-checker/editorconfig-checker/blob/main/LICENSE)",
   "latest": {
     "version": "3.0.1"
   },

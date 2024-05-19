@@ -1,5 +1,6 @@
 {
   "rust_crate": "git-cliff",
+  "website": "https://git-cliff.org",
   "template": {
     "x86_64_linux_musl": {
       "url": "https://github.com/orhun/git-cliff/releases/download/v${version}/git-cliff-${version}-x86_64-unknown-linux-musl.tar.gz",
@@ -26,6 +27,7 @@
       "bin": "git-cliff-${version}/git-cliff.exe"
     }
   },
+  "license_markdown": "[MIT](https://github.com/orhun/git-cliff/blob/main/LICENSE-MIT) OR [Apache-2.0](https://github.com/orhun/git-cliff/blob/main/LICENSE-APACHE)",
   "latest": {
     "version": "2.2.2"
   },

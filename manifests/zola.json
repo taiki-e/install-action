@@ -1,5 +1,6 @@
 {
   "rust_crate": "zola",
+  "website": "https://www.getzola.org",
   "template": {
     "x86_64_linux_gnu": {
       "url": "https://github.com/getzola/zola/releases/download/v${version}/zola-v${version}-x86_64-unknown-linux-gnu.tar.gz"
@@ -14,6 +15,7 @@
       "url": "https://github.com/getzola/zola/releases/download/v${version}/zola-v${version}-aarch64-apple-darwin.tar.gz"
     }
   },
+  "license_markdown": "[MIT](https://github.com/getzola/zola/blob/master/LICENSE)",
   "latest": {
     "version": "0.18.0"
   },
