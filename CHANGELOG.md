@@ -10,6 +10,8 @@ Note: In this file, do not use the hard wrap in the middle of a sentence for com
 
 ## [Unreleased]
 
+## [2.33.26] - 2024-05-19
+
 - Update `cargo-careful@latest` to 0.4.2.
 
 ## [2.33.25] - 2024-05-18
@@ -2183,7 +2185,8 @@ Note: This release is considered a breaking change because installing on version
 
 Initial release
 
-[Unreleased]: https://github.com/taiki-e/install-action/compare/v2.33.25...HEAD
+[Unreleased]: https://github.com/taiki-e/install-action/compare/v2.33.26...HEAD
+[2.33.26]: https://github.com/taiki-e/install-action/compare/v2.33.25...v2.33.26
 [2.33.25]: https://github.com/taiki-e/install-action/compare/v2.33.24...v2.33.25
 [2.33.24]: https://github.com/taiki-e/install-action/compare/v2.33.23...v2.33.24
 [2.33.23]: https://github.com/taiki-e/install-action/compare/v2.33.22...v2.33.23
