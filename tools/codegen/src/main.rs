@@ -528,6 +528,7 @@ fn replace_vars(
 }
 
 /// Download using GITHUB_TOKEN.
+#[allow(clippy::missing_panics_doc)]
 fn download_github(url: &str) -> Result<ureq::Response> {
     let mut token = env::var("GITHUB_TOKEN").ok().filter(|v| !v.is_empty());
     let mut retry = 0;
@@ -556,6 +557,7 @@ fn download_github(url: &str) -> Result<ureq::Response> {
 }
 
 /// Download without using GITHUB_TOKEN.
+#[allow(clippy::missing_panics_doc)]
 pub fn download(url: &str) -> Result<ureq::Response> {
     let mut retry = 0;
     let max_retry = 6;
