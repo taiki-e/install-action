@@ -31,6 +31,7 @@ fn main() -> Result<()> {
         std::process::exit(1);
     }
     let package = &args[0];
+    let skip_existing_manifest_versions = std::env::var("SKIP_EXISTING_MANIFEST_VERSIONS").is_ok();
 
     let workspace_root = &workspace_root();
     let manifest_path = &workspace_root.join("manifests").join(format!("{package}.json"));
@@ -178,6 +179,13 @@ fn main() -> Result<()> {
         if base_info.rust_crate.as_deref() == Some("xbuild") && !semver_version.build.is_empty() {
             continue;
         }
+
+        let reverse_semver = Reverse(semver_version.clone().into());
+
+        if skip_existing_manifest_versions && manifests.map.contains_key(&reverse_semver) {
+            eprintln!("Skipping {semver_version} already in manifest");
+            continue;
+        };
 
         let mut download_info = BTreeMap::new();
         let mut pubkey = None;
@@ -357,10 +365,7 @@ fn main() -> Result<()> {
         if semver_version.pre.is_empty() {
             semver_versions.insert(semver_version.clone());
         }
-        manifests.map.insert(
-            Reverse(semver_version.clone().into()),
-            ManifestRef::Real(Manifest { download_info }),
-        );
+        manifests.map.insert(reverse_semver, ManifestRef::Real(Manifest { download_info }));
     }
     if has_build_metadata {
         eprintln!(
