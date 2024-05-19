@@ -54,7 +54,7 @@ fn main() -> Result<()> {
     // is greater than 100, multiple fetches are needed.
     for page in 1.. {
         let per_page = 100;
-        let mut r: github::Releases = download(&format!(
+        let mut r: github::Releases = download_github(&format!(
             "https://api.github.com/repos/{repo}/releases?per_page={per_page}&page={page}"
         ))?
         .into_json()?;
@@ -232,7 +232,7 @@ fn main() -> Result<()> {
                 eprintln!("already downloaded");
                 fs::File::open(download_cache)?.read_to_end(&mut buf)?;
             } else {
-                download(&url)?.into_reader().read_to_end(&mut buf)?;
+                download_github(&url)?.into_reader().read_to_end(&mut buf)?;
                 eprintln!("download complete");
                 fs::write(download_cache, &buf)?;
             }
@@ -254,7 +254,7 @@ fn main() -> Result<()> {
                         eprintln!("already downloaded");
                         minisign_verify::Signature::from_file(sig_download_cache)?
                     } else {
-                        let buf = download(&url)?.into_string()?;
+                        let buf = download_github(&url)?.into_string()?;
                         eprintln!("download complete");
                         fs::write(sig_download_cache, &buf)?;
                         minisign_verify::Signature::decode(&buf)?
@@ -532,7 +532,9 @@ fn replace_vars(
     Ok(s)
 }
 
-fn download(url: &str) -> Result<ureq::Response> {
+/// Download using GITHUB_TOKEN.
+#[allow(clippy::missing_panics_doc)]
+fn download_github(url: &str) -> Result<ureq::Response> {
     let mut token = env::var("GITHUB_TOKEN").ok().filter(|v| !v.is_empty());
     let mut retry = 0;
     let max_retry = 6;
@@ -554,6 +556,28 @@ fn download(url: &str) -> Result<ureq::Response> {
             break;
         }
         eprintln!("download failed; retrying after {}s ({retry}/{max_retry})", retry * 2);
+        std::thread::sleep(Duration::from_secs(retry * 2));
+    }
+    Err(last_error.unwrap().into())
+}
+
+/// Download without using GITHUB_TOKEN.
+#[allow(clippy::missing_panics_doc)]
+pub fn download(url: &str) -> Result<ureq::Response> {
+    let mut retry = 0;
+    let max_retry = 6;
+    let mut last_error;
+    loop {
+        let req = ureq::get(url);
+        match req.call() {
+            Ok(res) => return Ok(res),
+            Err(e) => last_error = Some(e),
+        }
+        retry += 1;
+        if retry > max_retry {
+            break;
+        }
+        eprintln!("download of {url} failed; retrying after {}s ({retry}/{max_retry})", retry * 2);
         std::thread::sleep(Duration::from_secs(retry * 2));
     }
     Err(last_error.unwrap().into())
