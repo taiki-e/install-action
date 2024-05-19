@@ -12,10 +12,21 @@
     }
   },
   "latest": {
-    "version": "0.4.1"
+    "version": "0.4.2"
   },
   "0.4": {
-    "version": "0.4.1"
+    "version": "0.4.2"
+  },
+  "0.4.2": {
+    "x86_64_linux_musl": {
+      "checksum": "ee14c5796acab604714e358de11bf5204055410ae8fd4891df7f5d62461402c3"
+    },
+    "x86_64_macos": {
+      "checksum": "480efaf0a577161332b27ea13c8703ead1b6355b5c6541f5bd61d440440b4bde"
+    },
+    "x86_64_windows": {
+      "checksum": "ac374b7799a37e3ef21c6bfe409583c3acbc57242fbb32e8534269b5e97b8ee9"
+    }
   },
   "0.4.1": {
     "x86_64_linux_musl": {
