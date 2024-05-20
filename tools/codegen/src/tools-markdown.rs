@@ -28,10 +28,32 @@ fn main() -> Result<()> {
         fs::read_dir(manifest_dir.clone()).unwrap().map(|r| r.unwrap()).collect();
     paths.sort_by_key(fs_err::DirEntry::path);
 
-    println!("# Tools");
-    println!();
-    println!("| Name | Where binaries will be installed | Where will it be installed from | Supported platform | License |");
-    println!("| ---- | -------------------------------- | ------------------------------- | ------------------ | ------- |");
+    let mut tools = vec![
+        ReadmeEntry {
+            name: "nextest".to_string(),
+            alias: "cargo-nextest".to_string().into(),
+            website: "https://nexte.st/".to_string(),
+            installed_to: InstalledTo::Cargo,
+            installed_from: InstalledFrom::Binstall,
+            platforms: Platforms::all(),
+            repository: "https://github.com/nextest-rs/nextest".to_string(),
+            license_markdown: "[Apache-2.0](https://github.com/nextest-rs/nextest/blob/HEAD/LICENSE-APACHE) OR [MIT](https://github.com/nextest-rs/nextest/blob/HEAD/LICENSE-MIT)".to_string()
+        },
+        ReadmeEntry {
+            name: "valgrind".to_string(),
+            alias: None,
+            website: "https://nexte.st/".to_string(),
+            installed_to: InstalledTo::Snap,
+            installed_from: InstalledFrom::Snap,
+            platforms: Platforms {
+                linux: true,
+                ..Default::default()
+            },
+            repository: "https://github.com/nextest-rs/nextest".to_string(),
+            license_markdown: "[Apache-2.0](https://github.com/nextest-rs/nextest/blob/HEAD/LICENSE-APACHE) OR [MIT](https://github.com/nextest-rs/nextest/blob/HEAD/LICENSE-MIT)".to_string()
+        }
+    ];
+
     for path in paths {
         let file_name = path.file_name();
         let mut name = PathBuf::from(file_name.clone());
@@ -74,16 +96,29 @@ fn main() -> Result<()> {
             installed_from,
             platforms,
             license_markdown,
+            alias: None,
         };
-        println!("{readme_entry}");
+        tools.push(readme_entry);
+    }
+
+    println!("# Tools");
+    println!();
+    println!("| Name | Where binaries will be installed | Where will it be installed from | Supported platform | License |");
+    println!("| ---- | -------------------------------- | ------------------------------- | ------------------ | ------- |");
+
+    tools.sort();
+
+    for tool in tools {
+        println!("{tool}");
     }
 
     Ok(())
 }
 
-#[derive(Debug)]
+#[derive(Debug, Eq, Ord, PartialEq, PartialOrd)]
 struct ReadmeEntry {
     name: String,
+    alias: Option<String>,
     website: String,
     repository: String,
     installed_to: InstalledTo,
@@ -92,16 +127,23 @@ struct ReadmeEntry {
     license_markdown: String,
 }
 
-#[derive(Debug)]
+#[derive(Debug, Eq, Ord, PartialEq, PartialOrd)]
 enum InstalledFrom {
+    Binstall,
     GitHubRelease,
+    Snap,
 }
 
-#[derive(Debug, Default, Eq, PartialEq)]
+#[derive(Debug, Default, Eq, PartialEq, Ord, PartialOrd)]
 struct Platforms {
-    windows: bool,
-    macos: bool,
     linux: bool,
+    macos: bool,
+    windows: bool,
+}
+impl Platforms {
+    fn all() -> Self {
+        Self { linux: true, macos: true, windows: true }
+    }
 }
 
 impl fmt::Display for Platforms {
@@ -122,17 +164,19 @@ impl fmt::Display for Platforms {
     }
 }
 
-#[derive(Debug)]
+#[derive(Debug, Eq, Ord, PartialEq, PartialOrd)]
 enum InstalledTo {
-    UsrLocal,
     Cargo,
+    Snap,
+    UsrLocal,
 }
 
 impl fmt::Display for InstalledTo {
     fn fmt(&self, f: &mut fmt::Formatter<'_>) -> fmt::Result {
         match self {
-            InstalledTo::UsrLocal => f.write_str("`/usr/local/bin`")?,
             InstalledTo::Cargo => f.write_str("`$CARGO_HOME/bin`")?,
+            InstalledTo::Snap => f.write_str("`/snap/bin`")?,
+            InstalledTo::UsrLocal => f.write_str("`/usr/local/bin`")?,
         }
 
         Ok(())
@@ -144,12 +188,23 @@ impl fmt::Display for ReadmeEntry {
         let name = format!("| [**{}**]({}) ", self.name, self.website);
         f.write_str(&name)?;
 
+        if let Some(alias) = self.alias.clone() {
+            let alias = format!("(alias: `{alias}`)");
+            f.write_str(&alias)?;
+        }
+
         f.write_str(&format!("| {} ", self.installed_to))?;
 
         match self.installed_from {
             InstalledFrom::GitHubRelease => {
-                let name = format!("| [GitHub Releases]({}/releases) ", self.repository);
-                f.write_str(&name)?;
+                let markdown = format!("| [GitHub Releases]({}/releases) ", self.repository);
+                f.write_str(&markdown)?;
+            }
+            InstalledFrom::Binstall => f.write_str("cargo-binstall")?,
+            InstalledFrom::Snap => {
+                let markdown =
+                    format!("| [snap](https://snapcraft.io/install/{}/ubuntu) ", self.name);
+                f.write_str(&markdown)?;
             }
         }
 
