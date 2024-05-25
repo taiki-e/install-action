@@ -10,6 +10,8 @@ Note: In this file, do not use the hard wrap in the middle of a sentence for com
 
 ## [Unreleased]
 
+## [2.33.31] - 2024-05-25
+
 - Update `cargo-binstall@latest` to 1.6.8.
 
 - Update `sccache@latest` to 0.8.1.
@@ -2205,7 +2207,8 @@ Note: This release is considered a breaking change because installing on version
 
 Initial release
 
-[Unreleased]: https://github.com/taiki-e/install-action/compare/v2.33.30...HEAD
+[Unreleased]: https://github.com/taiki-e/install-action/compare/v2.33.31...HEAD
+[2.33.31]: https://github.com/taiki-e/install-action/compare/v2.33.30...v2.33.31
 [2.33.30]: https://github.com/taiki-e/install-action/compare/v2.33.29...v2.33.30
 [2.33.29]: https://github.com/taiki-e/install-action/compare/v2.33.28...v2.33.29
 [2.33.28]: https://github.com/taiki-e/install-action/compare/v2.33.27...v2.33.28
