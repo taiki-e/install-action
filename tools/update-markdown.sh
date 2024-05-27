@@ -7,6 +7,6 @@ cd "$(dirname "$0")"/..
 # Update markdown
 #
 # USAGE:
-#    ./tools/update-markdown.sh [PACKAGE [VERSION_REQ]]
+#    ./tools/update-markdown.sh
 
 cargo run --manifest-path tools/codegen/Cargo.toml --bin generate-tools-markdown --release >TOOLS.md

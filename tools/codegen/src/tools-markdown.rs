@@ -42,15 +42,15 @@ fn main() -> Result<()> {
         ReadmeEntry {
             name: "valgrind".to_string(),
             alias: None,
-            website: "https://nexte.st/".to_string(),
+            website: "https://valgrind.org/".to_string(),
             installed_to: InstalledTo::Snap,
             installed_from: InstalledFrom::Snap,
             platforms: Platforms {
                 linux: true,
                 ..Default::default()
             },
-            repository: "https://github.com/nextest-rs/nextest".to_string(),
-            license_markdown: "[Apache-2.0](https://github.com/nextest-rs/nextest/blob/HEAD/LICENSE-APACHE) OR [MIT](https://github.com/nextest-rs/nextest/blob/HEAD/LICENSE-MIT)".to_string()
+            repository: "https://sourceware.org/git/valgrind.git".to_string(),
+            license_markdown: "[GPL-2.0](https://sourceware.org/git/?p=valgrind.git;a=blob;f=COPYING;hb=HEAD)".to_string()
         }
     ];
 
@@ -106,7 +106,7 @@ fn main() -> Result<()> {
     println!("| Name | Where binaries will be installed | Where will it be installed from | Supported platform | License |");
     println!("| ---- | -------------------------------- | ------------------------------- | ------------------ | ------- |");
 
-    tools.sort();
+    tools.sort_by(|x, y| x.name.cmp(&y.name));
 
     for tool in tools {
         println!("{tool}");
@@ -115,7 +115,7 @@ fn main() -> Result<()> {
     Ok(())
 }
 
-#[derive(Debug, Eq, Ord, PartialEq, PartialOrd)]
+#[derive(Debug)]
 struct ReadmeEntry {
     name: String,
     alias: Option<String>,
@@ -127,14 +127,14 @@ struct ReadmeEntry {
     license_markdown: String,
 }
 
-#[derive(Debug, Eq, Ord, PartialEq, PartialOrd)]
+#[derive(Debug, Eq, PartialEq)]
 enum InstalledFrom {
     Binstall,
     GitHubRelease,
     Snap,
 }
 
-#[derive(Debug, Default, Eq, PartialEq, Ord, PartialOrd)]
+#[derive(Debug, Default, Eq, PartialEq)]
 struct Platforms {
     linux: bool,
     macos: bool,
@@ -164,7 +164,7 @@ impl fmt::Display for Platforms {
     }
 }
 
-#[derive(Debug, Eq, Ord, PartialEq, PartialOrd)]
+#[derive(Debug, Eq, PartialEq)]
 enum InstalledTo {
     Cargo,
     Snap,
@@ -200,7 +200,7 @@ impl fmt::Display for ReadmeEntry {
                 let markdown = format!("| [GitHub Releases]({}/releases) ", self.repository);
                 f.write_str(&markdown)?;
             }
-            InstalledFrom::Binstall => f.write_str("cargo-binstall")?,
+            InstalledFrom::Binstall => f.write_str("| `cargo-binstall` ")?,
             InstalledFrom::Snap => {
                 let markdown =
                     format!("| [snap](https://snapcraft.io/install/{}/ubuntu) ", self.name);

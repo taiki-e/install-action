@@ -102,16 +102,16 @@ fn main() -> Result<()> {
         );
 
         if let Some(crate_repository) = info.crate_.repository.clone() {
-            // cargo-dinghy being fixed at https://github.com/sonos/dinghy/pull/231
+            // cargo-dinghy is fixed at https://github.com/sonos/dinghy/pull/231, but not yet released
             if crate_name != "cargo-dinghy"
                 && !crate_repository
                     .to_lowercase()
                     .starts_with(&base_info.repository.to_lowercase())
             {
-                panic!("warning: crate metadata repository {crate_repository} differs from base manifest");
+                panic!("metadata repository {crate_repository} differs from base manifest");
             }
         } else if crate_name != "zola" {
-            panic!("warning: crate metadata does not include a repository");
+            panic!("crate metadata does not include a repository");
         }
 
         crates_io_info = Some(info);
@@ -210,6 +210,10 @@ fn main() -> Result<()> {
                 manifests.license_markdown = license_markdown;
             }
         }
+    }
+
+    if manifests.license_markdown.is_empty() {
+        panic!("Unable to determine license_markdown; set manually")
     }
 
     let version_req: Option<semver::VersionReq> = match args.get(1) {
