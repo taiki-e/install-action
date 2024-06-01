@@ -1,6 +1,6 @@
 // SPDX-License-Identifier: Apache-2.0 OR MIT
 
-use std::{env, fmt, path::PathBuf};
+use std::{env, fmt, io::Write, path::PathBuf};
 
 use anyhow::Result;
 use fs_err as fs;
@@ -29,7 +29,7 @@ fn main() -> Result<()> {
     paths.sort_by_key(fs_err::DirEntry::path);
 
     let mut tools = vec![
-        ReadmeEntry {
+        MarkdownEntry {
             name: "nextest".to_string(),
             alias: "cargo-nextest".to_string().into(),
             website: "https://nexte.st/".to_string(),
@@ -39,7 +39,7 @@ fn main() -> Result<()> {
             repository: "https://github.com/nextest-rs/nextest".to_string(),
             license_markdown: "[Apache-2.0](https://github.com/nextest-rs/nextest/blob/HEAD/LICENSE-APACHE) OR [MIT](https://github.com/nextest-rs/nextest/blob/HEAD/LICENSE-MIT)".to_string()
         },
-        ReadmeEntry {
+        MarkdownEntry {
             name: "valgrind".to_string(),
             alias: None,
             website: "https://valgrind.org/".to_string(),
@@ -64,7 +64,7 @@ fn main() -> Result<()> {
         let manifests: Manifests =
             serde_json::from_slice(&fs::read(manifest_dir.join(file_name))?)?;
 
-        let website = match manifests.website {
+        let website = match base_info.website {
             Some(website) => website,
             None => base_info.repository.clone(),
         };
@@ -88,7 +88,7 @@ fn main() -> Result<()> {
 
         let license_markdown = manifests.license_markdown;
 
-        let readme_entry = ReadmeEntry {
+        let readme_entry = MarkdownEntry {
             name,
             website,
             repository,
@@ -101,22 +101,31 @@ fn main() -> Result<()> {
         tools.push(readme_entry);
     }
 
-    println!("# Tools");
-    println!();
-    println!("| Name | Where binaries will be installed | Where will it be installed from | Supported platform | License |");
-    println!("| ---- | -------------------------------- | ------------------------------- | ------------------ | ------- |");
-
     tools.sort_by(|x, y| x.name.cmp(&y.name));
 
+    let mut markdown_file = workspace_root.clone();
+    markdown_file.push("TOOLS.md");
+
+    let file = std::fs::File::create(markdown_file).expect("Unable to create file");
+    let mut file = std::io::BufWriter::new(file);
+
+    let header = "# Tools
+
+| Name | Where binaries will be installed | Where will it be installed from | Supported platform | License |
+| ---- | -------------------------------- | ------------------------------- | ------------------ | ------- |
+";
+
+    file.write_all(header.as_bytes()).expect("Unable to write header");
+
     for tool in tools {
-        println!("{tool}");
+        file.write_all(tool.to_string().as_bytes()).expect("Unable to write entry");
     }
 
     Ok(())
 }
 
 #[derive(Debug)]
-struct ReadmeEntry {
+struct MarkdownEntry {
     name: String,
     alias: Option<String>,
     website: String,
@@ -183,7 +192,7 @@ impl fmt::Display for InstalledTo {
     }
 }
 
-impl fmt::Display for ReadmeEntry {
+impl fmt::Display for MarkdownEntry {
     fn fmt(&self, f: &mut fmt::Formatter<'_>) -> fmt::Result {
         let name = format!("| [**{}**]({}) ", self.name, self.website);
         f.write_str(&name)?;
@@ -209,7 +218,7 @@ impl fmt::Display for ReadmeEntry {
         }
 
         f.write_str(&format!("| {} ", self.platforms))?;
-        f.write_str(&format!("| {} |", self.license_markdown))?;
+        f.write_str(&format!("| {} |\n", self.license_markdown))?;
         Ok(())
     }
 }

@@ -1,3 +1,4 @@
+<!-- omit in toc -->
 # install-action
 
 [![release](https://img.shields.io/github/release/taiki-e/install-action?style=flat-square&logo=github)](https://github.com/taiki-e/install-action/releases/latest)

@@ -164,9 +164,6 @@ impl<'de> Deserialize<'de> for Version {
 #[derive(Debug, Clone, Default, Serialize, Deserialize)]
 pub struct Manifests {
     pub rust_crate: Option<String>,
-    /// Optional website override.
-    #[serde(skip_serializing_if = "Option::is_none")]
-    pub website: Option<String>,
     pub template: Option<ManifestTemplate>,
     /// Markdown for the licenses.
     pub license_markdown: String,

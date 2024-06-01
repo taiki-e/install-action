@@ -153,36 +153,10 @@ fn main() -> Result<()> {
         }
     }
 
-    // Populate website
-    manifests.website = None;
+    // Check website
     if let Some(website) = base_info.website {
         if website.is_empty() || website == base_info.repository {
             panic!("Please do not put the repository in website, or set website to an empty value");
-        }
-        eprintln!("set to {website}");
-        manifests.website = Some(website);
-    } else {
-        if let Some(ref crate_io_info) = crates_io_info {
-            if let Some(ref homepage) = crate_io_info.crate_.homepage {
-                if !homepage.is_empty()
-                    && homepage != &base_info.repository
-                    && !homepage.contains("crates.io")
-                {
-                    manifests.website = Some(homepage.clone());
-                    eprintln!("set to {homepage}");
-                }
-            }
-        }
-        if manifests.website.is_none() {
-            if let Some(homepage) = repo_info.homepage {
-                if !homepage.is_empty()
-                    && homepage != base_info.repository
-                    && !homepage.contains("crates.io")
-                {
-                    manifests.website = Some(homepage.clone());
-                    eprintln!("set to {homepage}");
-                }
-            }
         }
     }
 
@@ -199,8 +173,6 @@ fn main() -> Result<()> {
             {
                 manifests.license_markdown = license_markdown;
             }
-        } else {
-            panic!("No license found in crate metadata; set license_markdown manually")
         }
     } else if let Some(license) = repo_info.license {
         if let Some(license) = license.spdx_id {
@@ -783,6 +755,7 @@ mod github {
     #[derive(Debug, Deserialize)]
     pub(crate) struct RepoMetadata {
         #[serde(default)]
+        #[allow(dead_code)]
         pub(crate) homepage: Option<String>,
         #[serde(default)]
         pub(crate) license: Option<RepoLicense>,
@@ -835,6 +808,7 @@ mod crates_io {
 
     #[derive(Debug, Deserialize)]
     pub(crate) struct CrateMetadata {
+        #[allow(dead_code)]
         pub(crate) homepage: Option<String>,
         pub(crate) repository: Option<String>,
     }
