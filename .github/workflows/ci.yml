@@ -66,10 +66,10 @@ jobs:
           tool: ${{ steps.tool-list.outputs.tool }}
       # https://docs.github.com/en/actions/using-workflows/workflow-syntax-for-github-actions#jobsjob_idstepsshell
       - name: Test bash
-        run: just --version; shfmt --version; protoc --version
+        run: just --version && shfmt --version && protoc --version
         shell: bash
       - name: Test sh
-        run: just --version; shfmt --version; protoc --version
+        run: just --version && shfmt --version && protoc --version
         shell: sh
         if: startsWith(matrix.os, 'ubuntu') || startsWith(matrix.os, 'macos')
       - name: Test pwsh
@@ -118,47 +118,13 @@ jobs:
     timeout-minutes: 60
     container: ${{ matrix.container }}
     steps:
-      - name: Install requirements (ubuntu/debian)
-        run: |
-          set -eEuxo pipefail
-          apt-get -o Acquire::Retries=10 -qq update
-          apt-get -o Acquire::Retries=10 -o Dpkg::Use-Pty=0 install -y --no-install-recommends cargo
-        if: startsWith(matrix.container, 'ubuntu') || startsWith(matrix.container, 'debian')
-      - name: Install requirements (fedora/almalinux/centos)
-        run: |
-          set -eEuxo pipefail
-          curl --proto '=https' --tlsv1.2 -fsSL --retry 10 https://sh.rustup.rs | sh -s -- -y --profile minimal --default-toolchain stable --no-modify-path
-          echo "$HOME/.cargo/bin" >>"${GITHUB_PATH}"
-        if: startsWith(matrix.container, 'fedora') || startsWith(matrix.container, 'almalinux') ||  startsWith(matrix.container, 'centos')
-      - name: Install requirements (opensuse)
-        run: |
-          set -eEuxo pipefail
-          zypper install -y rustup
-          rustup toolchain add stable --profile minimal
-        if: startsWith(matrix.container, 'opensuse')
-      - name: Install requirements (archlinux)
-        run: pacman -Sy --noconfirm rust
-        if: startsWith(matrix.container, 'archlinux')
       - name: Install requirements (alpine)
-        run: apk --no-cache add bash cargo
+        run: apk --no-cache add bash
         shell: sh
         if: startsWith(matrix.container, 'alpine')
       - uses: taiki-e/checkout-action@v1
       # cross attempts to install rust-src when Cargo.toml is available even if `cross --version`
       - run: rm Cargo.toml
-      - name: Generate tool list
-        id: tool-list
-        run: tools/ci/tool-list.sh >>"${GITHUB_OUTPUT}"
-      - uses: ./
-        with:
-          tool: ${{ steps.tool-list.outputs.tool }}
-
-  test-no-cargo:
-    runs-on: ubuntu-latest
-    timeout-minutes: 60
-    container: ubuntu
-    steps:
-      - uses: taiki-e/checkout-action@v1
       - name: Generate tool list
         id: tool-list
         run: tools/ci/tool-list.sh >>"${GITHUB_OUTPUT}"

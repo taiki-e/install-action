@@ -10,6 +10,8 @@ Note: In this file, do not use the hard wrap in the middle of a sentence for com
 
 ## [Unreleased]
 
+- Support cargo-binstall fallback without cargo.
+
 ## [2.33.36] - 2024-06-01
 
 - Update `cargo-llvm-cov@latest` to 0.6.10.

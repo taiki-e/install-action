@@ -748,5 +748,11 @@ if [[ ${#unsupported_tools[@]} -gt 0 ]]; then
     # By default, cargo-binstall enforce downloads over secure transports only.
     # As a result, http will be disabled, and it will also set
     # min tls version to be 1.2
-    cargo binstall --force --no-confirm --locked "${unsupported_tools[@]}"
+    cargo-binstall binstall --force --no-confirm --locked "${unsupported_tools[@]}"
+    if ! type -P cargo >/dev/null; then
+        _bin_dir=$(canonicalize_windows_path "${HOME}/.cargo/bin")
+        # TODO: avoid this when already added
+        info "adding '${_bin_dir}' to PATH"
+        echo "${_bin_dir}" >>"${GITHUB_PATH}"
+    fi
 fi
