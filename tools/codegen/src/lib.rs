@@ -234,7 +234,6 @@ pub struct BaseManifest {
 }
 impl BaseManifest {
     /// Validate the manifest.
-
     // The panic is an assert
     #[allow(clippy::missing_panics_doc)]
     pub fn validate(&self) {
