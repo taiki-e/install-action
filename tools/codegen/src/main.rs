@@ -678,19 +678,29 @@ fn get_license_markdown(spdx_expr: &str, repo: &String, default_branch: &String)
     let expr = spdx::Expression::parse_mode(spdx_expr, spdx::ParseMode::LAX).unwrap();
 
     let mut op = None;
-    let mut license_ids: Vec<&spdx::LicenseId> = vec![];
+    let mut license_ids: Vec<(&spdx::LicenseId, Option<&spdx::ExceptionId>)> = vec![];
 
     for node in expr.iter() {
         match node {
             ExprNode::Req(ExpressionReq {
-                req: spdx::LicenseReq { license: spdx::LicenseItem::Spdx { id, or_later }, .. },
+                req:
+                    spdx::LicenseReq {
+                        license: spdx::LicenseItem::Spdx { id, or_later },
+                        exception,
+                        ..
+                    },
                 ..
             }) => {
-                // TODO Use or_later
+                //eprintln!("{req:?}");
+                //panic!();
                 if *or_later {
                     panic!("need to handle or_later");
                 }
-                license_ids.push(id);
+                if let Some(exception_id) = exception {
+                    license_ids.push((id, Some(exception_id)));
+                } else {
+                    license_ids.push((id, None));
+                }
             }
             ExprNode::Op(current_op) => {
                 if op.is_some() && op != Some(current_op) {
@@ -705,7 +715,12 @@ fn get_license_markdown(spdx_expr: &str, repo: &String, default_branch: &String)
     match license_ids.len() {
         0 => panic!("No licenses"),
         1 => {
-            let license_id = license_ids.first().unwrap();
+            let (license_id, exception_id) = license_ids.first().unwrap();
+            let license_name = if let Some(exception_id) = exception_id {
+                format!("{} WITH {}", license_id.name, exception_id.name)
+            } else {
+                license_id.name.to_string()
+            };
             let name = license_id.name.split('-').next().unwrap().to_ascii_uppercase();
             for filename in
                 ["LICENSE".to_string(), format!("LICENSE-{name}"), "LICENSE.md".to_string()]
@@ -713,19 +728,24 @@ fn get_license_markdown(spdx_expr: &str, repo: &String, default_branch: &String)
                 let url = create_github_raw_link(repo, default_branch, &filename);
                 if github_head(&url).is_ok() {
                     let url = create_github_link(repo, default_branch, &filename);
-                    return Some(format!("[{}]({url})", license_id.name));
+                    return Some(format!("[{license_name}]({url})"));
                 }
             }
         }
         len => {
             let mut license_markdowns: Vec<String> = vec![];
-            for license_id in &license_ids {
+            for (license_id, exception_id) in &license_ids {
                 let name = license_id.name.split('-').next().unwrap().to_ascii_uppercase();
                 let filename = format!("LICENSE-{name}");
                 let url = create_github_raw_link(repo, default_branch, &filename);
+                let license_name = if let Some(exception_id) = exception_id {
+                    format!("{} WITH {}", license_id.name, exception_id.name)
+                } else {
+                    license_id.name.to_string()
+                };
                 if github_head(&url).is_ok() {
                     let url = create_github_link(repo, default_branch, &filename);
-                    license_markdowns.push(format!("[{}]({url})", license_id.name));
+                    license_markdowns.push(format!("[{license_name}]({url})"));
                 }
             }
             if license_markdowns.is_empty() {
