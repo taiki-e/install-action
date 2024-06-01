@@ -10,7 +10,7 @@ fn main() -> Result<()> {
     let args: Vec<_> = env::args().skip(1).collect();
     if !args.is_empty() || args.iter().any(|arg| arg.starts_with('-')) {
         println!(
-            "USAGE: cargo run --manifest-path tools/codegen/Cargo.toml --bin generate-readme --release"
+            "USAGE: cargo run --manifest-path tools/codegen/Cargo.toml --bin generate-tools-markdown --release"
         );
         std::process::exit(1);
     }
