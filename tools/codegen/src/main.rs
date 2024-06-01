@@ -108,7 +108,7 @@ fn main() -> Result<()> {
                     .to_lowercase()
                     .starts_with(&base_info.repository.to_lowercase())
             {
-                panic!("metadata repository {crate_repository} differs from base manifest");
+                panic!("repository {crate_repository} from crates.io differs from base manifest");
             }
         } else if crate_name != "zola" {
             panic!("crate metadata does not include a repository");
@@ -168,6 +168,7 @@ fn main() -> Result<()> {
         manifests.license_markdown = license_markdown;
     } else if let Some(detail) = crates_io_version_detail {
         if let Some(license) = detail.license {
+            eprintln!("Trying to using license '{license}' from crates.io ...");
             if let Some(license_markdown) =
                 get_license_markdown(&license, &repo.to_string(), &repo_info.default_branch)
             {
@@ -176,6 +177,7 @@ fn main() -> Result<()> {
         }
     } else if let Some(license) = repo_info.license {
         if let Some(license) = license.spdx_id {
+            eprintln!("Trying to using license '{license}' from github.com ...");
             if let Some(license_markdown) =
                 get_license_markdown(&license, &repo.to_string(), &repo_info.default_branch)
             {
@@ -691,8 +693,6 @@ fn get_license_markdown(spdx_expr: &str, repo: &String, default_branch: &String)
                     },
                 ..
             }) => {
-                //eprintln!("{req:?}");
-                //panic!();
                 if *or_later {
                     panic!("need to handle or_later");
                 }

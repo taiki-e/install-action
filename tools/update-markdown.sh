@@ -9,4 +9,4 @@ cd "$(dirname "$0")"/..
 # USAGE:
 #    ./tools/update-markdown.sh
 
-cargo run --manifest-path tools/codegen/Cargo.toml --bin generate-tools-markdown --release >TOOLS.md
+cargo run --manifest-path tools/codegen/Cargo.toml --bin generate-tools-markdown --release
