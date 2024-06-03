@@ -10,6 +10,8 @@ Note: In this file, do not use the hard wrap in the middle of a sentence for com
 
 ## [Unreleased]
 
+## [2.34.1] - 2024-06-03
+
 - Update `git-cliff@latest` to 2.3.0.
 
 ## [2.34.0] - 2024-06-01
@@ -2233,7 +2235,8 @@ Note: This release is considered a breaking change because installing on version
 
 Initial release
 
-[Unreleased]: https://github.com/taiki-e/install-action/compare/v2.34.0...HEAD
+[Unreleased]: https://github.com/taiki-e/install-action/compare/v2.34.1...HEAD
+[2.34.1]: https://github.com/taiki-e/install-action/compare/v2.34.0...v2.34.1
 [2.34.0]: https://github.com/taiki-e/install-action/compare/v2.33.36...v2.34.0
 [2.33.36]: https://github.com/taiki-e/install-action/compare/v2.33.35...v2.33.36
 [2.33.35]: https://github.com/taiki-e/install-action/compare/v2.33.34...v2.33.35
