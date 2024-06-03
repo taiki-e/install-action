@@ -77,11 +77,7 @@ Or:
 
 See [TOOLS.md](TOOLS.md) for the list of tools that are installed from manifests managed in this action.
 
-If `$CARGO_HOME/bin` is not available, Rust-related binaries will be installed to `$HOME/.cargo/bin`.<br>
-If `$HOME/.cargo/bin` is not available, Rust-related binaries will be installed to `/usr/local/bin`.<br>
-If `/usr/local/bin` is not available, binaries will be installed to `$HOME/.install-action/bin`.<br>
-
-**If a tool not included in the list above is specified, this action uses [cargo-binstall] as a fallback.**
+If a tool not included in the list above is specified, this action uses [cargo-binstall] as a fallback.
 
 ### Add support for new tool
 

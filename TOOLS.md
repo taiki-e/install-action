@@ -1,5 +1,13 @@
 # Tools
 
+This is a list of tools that are installed from manifests managed in this action.
+
+If a tool not included in the list below is specified, this action uses [cargo-binstall] as a fallback.
+
+> If `$CARGO_HOME/bin` is not available, Rust-related binaries will be installed to `$HOME/.cargo/bin`.<br>
+> If `$HOME/.cargo/bin` is not available, Rust-related binaries will be installed to `/usr/local/bin`.<br>
+> If `/usr/local/bin` is not available, binaries will be installed to `$HOME/.install-action/bin`.<br>
+
 | Name | Where binaries will be installed | Where will it be installed from | Supported platform | License |
 | ---- | -------------------------------- | ------------------------------- | ------------------ | ------- |
 | [**biome**](https://biomejs.dev) | `/usr/local/bin` | [GitHub Releases](https://github.com/biomejs/biome/releases) | Linux, macOS, Windows | [Apache-2.0](https://github.com/biomejs/biome/blob/main/LICENSE-APACHE) OR [MIT](https://github.com/biomejs/biome/blob/main/LICENSE-MIT) |
@@ -47,3 +55,5 @@
 | [**wasmtime**](https://github.com/bytecodealliance/wasmtime) | `$CARGO_HOME/bin` | [GitHub Releases](https://github.com/bytecodealliance/wasmtime/releases) | Linux, macOS, Windows | [Apache-2.0 WITH LLVM-exception](https://github.com/bytecodealliance/wasmtime/blob/main/LICENSE) |
 | [**xbuild**](https://github.com/rust-mobile/xbuild) | `$CARGO_HOME/bin` | [GitHub Releases](https://github.com/rust-mobile/xbuild/releases) | Linux, macOS, Windows | [Apache-2.0 OR MIT](https://github.com/rust-mobile/xbuild/blob/268939a99a50d7927bce3e343e5d2ed32eb8b30e/xbuild/Cargo.toml#L7) |
 | [**zola**](https://github.com/getzola/zola) | `$CARGO_HOME/bin` | [GitHub Releases](https://github.com/getzola/zola/releases) | Linux, macOS, Windows | [MIT](https://github.com/getzola/zola/blob/master/LICENSE) |
+
+[cargo-binstall]: https://github.com/cargo-bins/cargo-binstall
