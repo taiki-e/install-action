@@ -1,26 +1,23 @@
 // SPDX-License-Identifier: Apache-2.0 OR MIT
 
 use std::{
-    cmp::{self, Reverse},
+    cmp::Reverse,
     collections::{BTreeMap, BTreeSet},
     env,
     ffi::OsStr,
-    fmt,
     io::Read,
-    path::{Path, PathBuf},
-    slice,
-    str::FromStr,
+    path::Path,
     time::Duration,
 };
 
 use anyhow::{bail, Context as _, Result};
 use fs_err as fs;
-use serde::{
-    de::{self, Deserialize, Deserializer},
-    ser::{Serialize, Serializer},
+use install_action_internal_codegen::{
+    workspace_root, BaseManifest, HostPlatform, Manifest, ManifestDownloadInfo, ManifestRef,
+    ManifestTemplate, ManifestTemplateDownloadInfo, Manifests, Signing, SigningKind, Version,
 };
-use serde_derive::{Deserialize, Serialize};
 use sha2::{Digest, Sha256};
+use spdx::expression::{ExprNode, ExpressionReq, Operator};
 
 fn main() -> Result<()> {
     let args: Vec<_> = env::args().skip(1).collect();
@@ -46,7 +43,12 @@ fn main() -> Result<()> {
     let repo = base_info
         .repository
         .strip_prefix("https://github.com/")
-        .context("repository must be starts with https://github.com/")?;
+        .context("repository must start with https://github.com/")?;
+
+    eprintln!("downloading metadata from https://github.com/{repo}");
+
+    let repo_info: github::RepoMetadata =
+        download_github(&format!("https://api.github.com/repos/{repo}"))?.into_json()?;
 
     eprintln!("downloading releases of https://github.com/{repo} from https://api.github.com/repos/{repo}/releases");
     let mut releases: github::Releases = vec![];
@@ -82,6 +84,7 @@ fn main() -> Result<()> {
         .collect();
 
     let mut crates_io_info = None;
+    let mut crates_io_version_detail = None;
     base_info.rust_crate = base_info
         .rust_crate
         .as_ref()
@@ -89,10 +92,29 @@ fn main() -> Result<()> {
         .transpose()?;
     if let Some(crate_name) = &base_info.rust_crate {
         eprintln!("downloading crate info from https://crates.io/api/v1/crates/{crate_name}");
-        crates_io_info = Some(
-            download(&format!("https://crates.io/api/v1/crates/{crate_name}"))?
-                .into_json::<crates_io::Crate>()?,
+        let info = download(&format!("https://crates.io/api/v1/crates/{crate_name}"))?
+            .into_json::<crates_io::Crate>()?;
+        let latest_version = &info.versions[0].num;
+        crates_io_version_detail = Some(
+            download(&format!("https://crates.io/api/v1/crates/{crate_name}/{latest_version}"))?
+                .into_json::<crates_io::VersionMetadata>()?
+                .version,
         );
+
+        if let Some(crate_repository) = info.crate_.repository.clone() {
+            // cargo-dinghy is fixed at https://github.com/sonos/dinghy/pull/231, but not yet released
+            if crate_name != "cargo-dinghy"
+                && !crate_repository
+                    .to_lowercase()
+                    .starts_with(&base_info.repository.to_lowercase())
+            {
+                panic!("repository {crate_repository} from crates.io differs from base manifest");
+            }
+        } else if crate_name != "zola" {
+            panic!("crate metadata does not include a repository");
+        }
+
+        crates_io_info = Some(info);
     }
 
     let mut manifests: Manifests = Manifests::default();
@@ -130,6 +152,44 @@ fn main() -> Result<()> {
             Err(e) => eprintln!("failed to load old manifest: {e}"),
         }
     }
+
+    // Check website
+    if let Some(website) = base_info.website {
+        if website.is_empty() || website == base_info.repository {
+            panic!("Please do not put the repository in website, or set website to an empty value");
+        }
+    }
+
+    // Populate license_markdown
+    if let Some(license_markdown) = base_info.license_markdown {
+        if license_markdown.is_empty() {
+            panic!("license_markdown can not be an empty value");
+        }
+        manifests.license_markdown = license_markdown;
+    } else if let Some(detail) = crates_io_version_detail {
+        if let Some(license) = detail.license {
+            eprintln!("Trying to using license '{license}' from crates.io ...");
+            if let Some(license_markdown) =
+                get_license_markdown(&license, &repo.to_string(), &repo_info.default_branch)
+            {
+                manifests.license_markdown = license_markdown;
+            }
+        }
+    } else if let Some(license) = repo_info.license {
+        if let Some(license) = license.spdx_id {
+            eprintln!("Trying to using license '{license}' from github.com ...");
+            if let Some(license_markdown) =
+                get_license_markdown(&license, &repo.to_string(), &repo_info.default_branch)
+            {
+                manifests.license_markdown = license_markdown;
+            }
+        }
+    }
+
+    if manifests.license_markdown.is_empty() {
+        panic!("Unable to determine license_markdown; set manually")
+    }
+
     let version_req: Option<semver::VersionReq> = match args.get(1) {
         _ if latest_only => {
             let req = format!("={}", releases.first_key_value().unwrap().0 .0).parse()?;
@@ -488,13 +548,6 @@ fn main() -> Result<()> {
     Ok(())
 }
 
-fn workspace_root() -> PathBuf {
-    let mut dir = PathBuf::from(env!("CARGO_MANIFEST_DIR"));
-    dir.pop(); // codegen
-    dir.pop(); // tools
-    dir
-}
-
 fn replace_vars(
     s: &str,
     package: &str,
@@ -561,6 +614,35 @@ fn download_github(url: &str) -> Result<ureq::Response> {
     Err(last_error.unwrap().into())
 }
 
+#[allow(clippy::missing_panics_doc)]
+pub fn github_head(url: &str) -> Result<()> {
+    eprintln!("fetching head of {url} ..");
+    let mut token = env::var("GITHUB_TOKEN").ok().filter(|v| !v.is_empty());
+    let mut retry = 0;
+    let max_retry = 2;
+    let mut last_error;
+    loop {
+        let mut req = ureq::head(url);
+        if let Some(token) = &token {
+            req = req.set("Authorization", token);
+        }
+        match req.call() {
+            Ok(_) => return Ok(()),
+            Err(e) => last_error = Some(e),
+        }
+        if retry == max_retry / 2 && token.is_some() {
+            token = None;
+        }
+        retry += 1;
+        if retry > max_retry {
+            break;
+        }
+        eprintln!("head of {url} failed; retrying after {}s ({retry}/{max_retry})", retry * 2);
+        std::thread::sleep(Duration::from_secs(retry * 2));
+    }
+    Err(last_error.unwrap().into())
+}
+
 /// Download without using GITHUB_TOKEN.
 #[allow(clippy::missing_panics_doc)]
 pub fn download(url: &str) -> Result<ureq::Response> {
@@ -583,344 +665,128 @@ pub fn download(url: &str) -> Result<ureq::Response> {
     Err(last_error.unwrap().into())
 }
 
-#[derive(Debug, Clone, PartialEq, Eq)]
-struct Version {
-    major: Option<u64>,
-    minor: Option<u64>,
-    patch: Option<u64>,
-    pre: semver::Prerelease,
-    build: semver::BuildMetadata,
+#[must_use]
+fn create_github_raw_link(repository: &String, branch: &String, filename: &String) -> String {
+    format!("https://raw.githubusercontent.com/{repository}/{branch}/{filename}")
 }
 
-impl Version {
-    fn omitted(major: u64, minor: Option<u64>) -> Self {
-        Self {
-            major: Some(major),
-            minor,
-            patch: None,
-            pre: semver::Prerelease::default(),
-            build: semver::BuildMetadata::default(),
+#[must_use]
+fn create_github_link(repository: &String, branch: &String, filename: &String) -> String {
+    format!("https://github.com/{repository}/blob/{branch}/{filename}")
+}
+#[must_use]
+fn get_license_markdown(spdx_expr: &str, repo: &String, default_branch: &String) -> Option<String> {
+    // TODO: use https://docs.rs/spdx/latest/spdx/expression/struct.Expression.html#method.canonicalize ?
+    let expr = spdx::Expression::parse_mode(spdx_expr, spdx::ParseMode::LAX).unwrap();
+
+    let mut op = None;
+    let mut license_ids: Vec<(&spdx::LicenseId, Option<&spdx::ExceptionId>)> = vec![];
+
+    for node in expr.iter() {
+        match node {
+            ExprNode::Req(ExpressionReq {
+                req:
+                    spdx::LicenseReq {
+                        license: spdx::LicenseItem::Spdx { id, or_later },
+                        exception,
+                        ..
+                    },
+                ..
+            }) => {
+                if *or_later {
+                    panic!("need to handle or_later");
+                }
+                if let Some(exception_id) = exception {
+                    license_ids.push((id, Some(exception_id)));
+                } else {
+                    license_ids.push((id, None));
+                }
+            }
+            ExprNode::Op(current_op) => {
+                if op.is_some() && op != Some(current_op) {
+                    panic!("SPDX too complex");
+                }
+                op = Some(current_op);
+            }
+            ExprNode::Req(_) => {}
         }
     }
-    fn latest() -> Self {
-        Self {
-            major: None,
-            minor: None,
-            patch: None,
-            pre: semver::Prerelease::default(),
-            build: semver::BuildMetadata::default(),
-        }
-    }
-    fn to_semver(&self) -> Option<semver::Version> {
-        Some(semver::Version {
-            major: self.major?,
-            minor: self.minor?,
-            patch: self.patch?,
-            pre: self.pre.clone(),
-            build: self.build.clone(),
-        })
-    }
-}
-impl From<semver::Version> for Version {
-    fn from(v: semver::Version) -> Self {
-        Self {
-            major: Some(v.major),
-            minor: Some(v.minor),
-            patch: Some(v.patch),
-            pre: v.pre,
-            build: v.build,
-        }
-    }
-}
-impl PartialOrd for Version {
-    fn partial_cmp(&self, other: &Self) -> Option<cmp::Ordering> {
-        Some(self.cmp(other))
-    }
-}
-impl Ord for Version {
-    fn cmp(&self, other: &Self) -> cmp::Ordering {
-        fn convert(v: &Version) -> semver::Version {
-            semver::Version {
-                major: v.major.unwrap_or(u64::MAX),
-                minor: v.minor.unwrap_or(u64::MAX),
-                patch: v.patch.unwrap_or(u64::MAX),
-                pre: v.pre.clone(),
-                build: v.build.clone(),
+
+    match license_ids.len() {
+        0 => panic!("No licenses"),
+        1 => {
+            let (license_id, exception_id) = license_ids.first().unwrap();
+            let license_name = if let Some(exception_id) = exception_id {
+                format!("{} WITH {}", license_id.name, exception_id.name)
+            } else {
+                license_id.name.to_string()
+            };
+            let name = license_id.name.split('-').next().unwrap().to_ascii_uppercase();
+            for filename in
+                ["LICENSE".to_string(), format!("LICENSE-{name}"), "LICENSE.md".to_string()]
+            {
+                let url = create_github_raw_link(repo, default_branch, &filename);
+                if github_head(&url).is_ok() {
+                    let url = create_github_link(repo, default_branch, &filename);
+                    return Some(format!("[{license_name}]({url})"));
+                }
             }
         }
-        convert(self).cmp(&convert(other))
-    }
-}
-impl fmt::Display for Version {
-    fn fmt(&self, f: &mut fmt::Formatter<'_>) -> fmt::Result {
-        let Some(major) = self.major else {
-            f.write_str("latest")?;
-            return Ok(());
-        };
-        f.write_str(&major.to_string())?;
-        let Some(minor) = self.minor else {
-            return Ok(());
-        };
-        f.write_str(".")?;
-        f.write_str(&minor.to_string())?;
-        let Some(patch) = self.patch else {
-            return Ok(());
-        };
-        f.write_str(".")?;
-        f.write_str(&patch.to_string())?;
-        if !self.pre.is_empty() {
-            f.write_str("-")?;
-            f.write_str(&self.pre)?;
-        }
-        if !self.build.is_empty() {
-            f.write_str("+")?;
-            f.write_str(&self.build)?;
-        }
-        Ok(())
-    }
-}
-impl FromStr for Version {
-    type Err = semver::Error;
-    fn from_str(s: &str) -> Result<Self, Self::Err> {
-        if s == "latest" {
-            return Ok(Self::latest());
-        }
-        match s.parse::<semver::Version>() {
-            Ok(v) => Ok(v.into()),
-            Err(e) => match s.parse::<semver::Comparator>() {
-                Ok(v) => Ok(Self {
-                    major: Some(v.major),
-                    minor: v.minor,
-                    patch: v.patch,
-                    pre: semver::Prerelease::default(),
-                    build: semver::BuildMetadata::default(),
-                }),
-                Err(_e) => Err(e),
-            },
-        }
-    }
-}
-impl Serialize for Version {
-    fn serialize<S>(&self, serializer: S) -> Result<S::Ok, S::Error>
-    where
-        S: Serializer,
-    {
-        String::serialize(&self.to_string(), serializer)
-    }
-}
-impl<'de> Deserialize<'de> for Version {
-    fn deserialize<D>(deserializer: D) -> Result<Self, D::Error>
-    where
-        D: Deserializer<'de>,
-    {
-        String::deserialize(deserializer)?.parse().map_err(de::Error::custom)
-    }
-}
-
-#[derive(Debug, Clone, Default, Serialize, Deserialize)]
-struct Manifests {
-    rust_crate: Option<String>,
-    template: Option<ManifestTemplate>,
-    #[serde(flatten)]
-    map: BTreeMap<Reverse<Version>, ManifestRef>,
-}
-
-#[derive(Debug, Clone, Serialize, Deserialize)]
-#[serde(untagged)]
-enum ManifestRef {
-    Ref { version: Version },
-    Real(Manifest),
-}
-
-#[derive(Debug, Clone, Serialize, Deserialize)]
-struct Manifest {
-    #[serde(flatten)]
-    download_info: BTreeMap<HostPlatform, ManifestDownloadInfo>,
-}
-
-#[derive(Debug, Clone, Serialize, Deserialize)]
-struct ManifestDownloadInfo {
-    #[serde(skip_serializing_if = "Option::is_none")]
-    url: Option<String>,
-    checksum: String,
-    /// Path to binaries in archive. Default to `${tool}${exe}`.
-    #[serde(skip_serializing_if = "Option::is_none")]
-    bin: Option<StringOrArray>,
-}
-
-#[derive(Debug, Clone, Serialize, Deserialize)]
-struct ManifestTemplate {
-    #[serde(flatten)]
-    download_info: BTreeMap<HostPlatform, ManifestTemplateDownloadInfo>,
-}
-
-#[derive(Debug, Clone, Serialize, Deserialize)]
-struct ManifestTemplateDownloadInfo {
-    url: String,
-    /// Path to binaries in archive. Default to `${tool}${exe}`.
-    #[serde(skip_serializing_if = "Option::is_none")]
-    bin: Option<StringOrArray>,
-}
-
-#[derive(Debug, Deserialize)]
-#[serde(deny_unknown_fields)]
-struct BaseManifest {
-    /// Link to the GitHub repository.
-    repository: String,
-    /// Prefix of release tag.
-    tag_prefix: String,
-    /// Crate name, if this is Rust crate.
-    rust_crate: Option<String>,
-    default_major_version: Option<String>,
-    /// Asset name patterns.
-    asset_name: Option<StringOrArray>,
-    /// Path to binaries in archive. Default to `${tool}${exe}`.
-    bin: Option<StringOrArray>,
-    signing: Option<Signing>,
-    #[serde(default)]
-    broken: Vec<semver::Version>,
-    platform: BTreeMap<HostPlatform, BaseManifestPlatformInfo>,
-    version_range: Option<String>,
-}
-impl BaseManifest {
-    fn validate(&self) {
-        for bin in self.bin.iter().chain(self.platform.values().flat_map(|m| &m.bin)) {
-            assert!(!bin.as_slice().is_empty());
-            for bin in bin.as_slice() {
-                let file_name = Path::new(bin).file_name().unwrap().to_str().unwrap();
-                if !self.repository.ends_with("/xbuild") {
-                    assert!(
-                        !(file_name.contains("${version") || file_name.contains("${rust")),
-                        "{bin}"
-                    );
+        len => {
+            let mut license_markdowns: Vec<String> = vec![];
+            for (license_id, exception_id) in &license_ids {
+                let name = license_id.name.split('-').next().unwrap().to_ascii_uppercase();
+                let filename = format!("LICENSE-{name}");
+                let url = create_github_raw_link(repo, default_branch, &filename);
+                let license_name = if let Some(exception_id) = exception_id {
+                    format!("{} WITH {}", license_id.name, exception_id.name)
+                } else {
+                    license_id.name.to_string()
+                };
+                if github_head(&url).is_ok() {
+                    let url = create_github_link(repo, default_branch, &filename);
+                    license_markdowns.push(format!("[{license_name}]({url})"));
+                }
+            }
+            if license_markdowns.is_empty() {
+                panic!("Unable to find any license files in the repo for licenses {license_ids:?}");
+            }
+            if license_markdowns.len() != len {
+                panic!("Unable to find license files in the repo for all licenses {license_ids:?}; found {license_markdowns:?}");
+            }
+            match op {
+                None => panic!("op expected"),
+                Some(Operator::Or) => {
+                    return Some(license_markdowns.join(" OR "));
+                }
+                Some(Operator::And) => {
+                    return Some(license_markdowns.join(" AND "));
                 }
             }
         }
     }
-}
-
-#[derive(Debug, Deserialize)]
-#[serde(deny_unknown_fields)]
-struct Signing {
-    kind: SigningKind,
-}
-
-#[derive(Debug, Deserialize, PartialEq, Eq)]
-#[serde(rename_all = "kebab-case")]
-#[serde(deny_unknown_fields)]
-enum SigningKind {
-    /// algorithm: minisign
-    /// public key: package.metadata.binstall.signing.pubkey at Cargo.toml
-    /// <https://github.com/cargo-bins/cargo-binstall/blob/HEAD/SIGNING.md>
-    MinisignBinstall,
-}
-
-#[derive(Debug, Deserialize)]
-#[serde(deny_unknown_fields)]
-struct BaseManifestPlatformInfo {
-    /// Asset name patterns. Default to the value at `BaseManifest::asset_name`.
-    asset_name: Option<StringOrArray>,
-    /// Path to binaries in archive. Default to the value at `BaseManifest::bin`.
-    bin: Option<StringOrArray>,
-}
-
-#[derive(Debug, Clone, PartialEq, Serialize, Deserialize)]
-#[serde(untagged)]
-enum StringOrArray {
-    String(String),
-    Array(Vec<String>),
-}
-
-impl StringOrArray {
-    fn as_slice(&self) -> &[String] {
-        match self {
-            Self::String(s) => slice::from_ref(s),
-            Self::Array(v) => v,
-        }
-    }
-    fn map(&self, mut f: impl FnMut(&String) -> String) -> Self {
-        match self {
-            Self::String(s) => Self::String(f(s)),
-            Self::Array(v) => Self::Array(v.iter().map(f).collect()),
-        }
-    }
-}
-
-/// GitHub Actions Runner supports Linux (x86_64, aarch64, arm), Windows (x86_64, aarch64),
-/// and macOS (x86_64, aarch64).
-/// https://github.com/actions/runner/blob/v2.315.0/.github/workflows/build.yml#L21
-/// https://docs.github.com/en/actions/hosting-your-own-runners/about-self-hosted-runners#supported-architectures-and-operating-systems-for-self-hosted-runners
-///
-/// Note:
-/// - Static-linked binaries compiled for linux-musl will also work on linux-gnu systems and are
-///   usually preferred over linux-gnu binaries because they can avoid glibc version issues.
-///   (rustc enables statically linking for linux-musl by default, except for mips.)
-/// - Binaries compiled for x86_64 macOS will usually also work on aarch64 macOS.
-/// - Binaries compiled for x86_64 Windows will usually also work on aarch64 Windows 11+.
-/// - Ignore arm for now, as we need to consider the version and whether hard-float is supported.
-///   https://github.com/rust-lang/rustup/pull/593
-///   https://github.com/cross-rs/cross/pull/1018
-///   Does it seem only armv7l+ is supported?
-///   https://github.com/actions/runner/blob/v2.315.0/src/Misc/externals.sh#L189
-///   https://github.com/actions/runner/issues/688
-#[allow(non_camel_case_types)]
-#[derive(Debug, Clone, Copy, PartialEq, Eq, PartialOrd, Ord, Serialize, Deserialize)]
-enum HostPlatform {
-    x86_64_linux_gnu,
-    x86_64_linux_musl,
-    x86_64_macos,
-    x86_64_windows,
-    aarch64_linux_gnu,
-    aarch64_linux_musl,
-    aarch64_macos,
-    aarch64_windows,
-}
-
-impl HostPlatform {
-    fn rust_target(self) -> &'static str {
-        match self {
-            Self::x86_64_linux_gnu => "x86_64-unknown-linux-gnu",
-            Self::x86_64_linux_musl => "x86_64-unknown-linux-musl",
-            Self::x86_64_macos => "x86_64-apple-darwin",
-            Self::x86_64_windows => "x86_64-pc-windows-msvc",
-            Self::aarch64_linux_gnu => "aarch64-unknown-linux-gnu",
-            Self::aarch64_linux_musl => "aarch64-unknown-linux-musl",
-            Self::aarch64_macos => "aarch64-apple-darwin",
-            Self::aarch64_windows => "aarch64-pc-windows-msvc",
-        }
-    }
-    fn rust_target_arch(self) -> &'static str {
-        match self {
-            Self::aarch64_linux_gnu
-            | Self::aarch64_linux_musl
-            | Self::aarch64_macos
-            | Self::aarch64_windows => "aarch64",
-            Self::x86_64_linux_gnu
-            | Self::x86_64_linux_musl
-            | Self::x86_64_macos
-            | Self::x86_64_windows => "x86_64",
-        }
-    }
-    fn rust_target_os(self) -> &'static str {
-        match self {
-            Self::aarch64_linux_gnu
-            | Self::aarch64_linux_musl
-            | Self::x86_64_linux_gnu
-            | Self::x86_64_linux_musl => "linux",
-            Self::aarch64_macos | Self::x86_64_macos => "macos",
-            Self::aarch64_windows | Self::x86_64_windows => "windows",
-        }
-    }
-    fn exe_suffix(self) -> &'static str {
-        match self {
-            Self::x86_64_windows | Self::aarch64_windows => ".exe",
-            _ => "",
-        }
-    }
+    None
 }
 
 mod github {
     use serde_derive::Deserialize;
+
+    // https://api.github.com/repos/<repo>
+    #[derive(Debug, Deserialize)]
+    pub(crate) struct RepoMetadata {
+        #[serde(default)]
+        #[allow(dead_code)]
+        pub(crate) homepage: Option<String>,
+        #[serde(default)]
+        pub(crate) license: Option<RepoLicense>,
+        pub(crate) default_branch: String,
+    }
+
+    #[derive(Debug, Deserialize)]
+    pub(crate) struct RepoLicense {
+        #[serde(default)]
+        pub(crate) spdx_id: Option<String>,
+    }
 
     // https://api.github.com/repos/<repo>/releases
     pub(crate) type Releases = Vec<Release>;
@@ -948,6 +814,8 @@ mod crates_io {
     #[derive(Debug, Deserialize)]
     pub(crate) struct Crate {
         pub(crate) versions: Vec<Version>,
+        #[serde(rename = "crate")]
+        pub(crate) crate_: CrateMetadata,
     }
 
     #[derive(Debug, Deserialize)]
@@ -956,6 +824,24 @@ mod crates_io {
         pub(crate) dl_path: String,
         pub(crate) num: semver::Version,
         pub(crate) yanked: bool,
+    }
+
+    #[derive(Debug, Deserialize)]
+    pub(crate) struct CrateMetadata {
+        #[allow(dead_code)]
+        pub(crate) homepage: Option<String>,
+        pub(crate) repository: Option<String>,
+    }
+
+    // https://crates.io/api/v1/crates/<crate>/<version>
+    #[derive(Debug, Deserialize)]
+    pub(crate) struct VersionMetadata {
+        pub(crate) version: VersionMetadataDetail,
+    }
+
+    #[derive(Debug, Deserialize)]
+    pub(crate) struct VersionMetadataDetail {
+        pub(crate) license: Option<String>,
     }
 }
 

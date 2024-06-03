@@ -4,13 +4,11 @@
 
 (Example: [ffbd316](https://github.com/taiki-e/install-action/commit/ffbd316e0fe98cb460dae3a66cd2ef9deb398bb1))
 
-1\. Add tool name to the table in ["Supported tools" section in `README.md`](https://github.com/taiki-e/install-action#supported-tools).
-
-2\. Add base manifest to [`tools/codegen/base`](tools/codegen/base) directory.
+1\. Add base manifest to [`tools/codegen/base`](tools/codegen/base) directory.
 
 See JSON files in `tools/codegen/base` directory for examples of the manifest.
 
-3\. Generate manifest with the following command (replace `<tool>` with the tool name).
+2\. Generate manifest with the following command (replace `<tool>` with the tool name).
 
 ```sh
 ./tools/manifest.sh <tool>
@@ -22,6 +20,14 @@ See JSON files in `tools/codegen/base` directory for examples of the manifest.
 > ```shell
 > GITHUB_TOKEN=$(gh auth status --show-token 2>&1 | sed -n 's/^.*Token: \(.*\)$/\1/p') ./tools/manifest.sh <tool>
 > ```
+
+## Refresh TOOLS.md
+
+To update `TOOLS.md`, run
+
+```sh
+./tools/update-markdown.sh
+```
 
 ## Troubleshooting
 
