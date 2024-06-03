@@ -178,7 +178,7 @@ if [[ -n "$(git ls-files '*.rs')" ]]; then
                 publish=$(jq <<<"${root_pkg}" -r '.publish')
                 # Publishing is unrestricted if null, and forbidden if an empty array.
                 if [[ "${publish}" != "[]" ]]; then
-                    exclude=$(tomlq -r '.package.exclude[]' Cargo.toml)
+                    exclude=$(venv tomlq -r '.package.exclude[]' Cargo.toml)
                     if ! grep <<<"${exclude}" -Eq '^/\.\*$'; then
                         error "top-level Cargo.toml of non-virtual workspace should have 'exclude' field with \"/.*\""
                     fi
