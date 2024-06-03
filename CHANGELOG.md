@@ -10,6 +10,8 @@ Note: In this file, do not use the hard wrap in the middle of a sentence for com
 
 ## [Unreleased]
 
+- Update `git-cliff@latest` to 2.3.0.
+
 ## [2.34.0] - 2024-06-01
 
 - Support cargo-binstall fallback without cargo.
