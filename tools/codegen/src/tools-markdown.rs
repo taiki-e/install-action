@@ -6,6 +6,24 @@ use anyhow::Result;
 use fs_err as fs;
 use install_action_internal_codegen::{workspace_root, BaseManifest, Manifests};
 
+const HEADER: &str = "# Tools
+
+This is a list of tools that are installed from manifests managed in this action.
+
+If a tool not included in the list below is specified, this action uses [cargo-binstall] as a fallback.
+
+> If `$CARGO_HOME/bin` is not available, Rust-related binaries will be installed to `$HOME/.cargo/bin`.<br>
+> If `$HOME/.cargo/bin` is not available, Rust-related binaries will be installed to `/usr/local/bin`.<br>
+> If `/usr/local/bin` is not available, binaries will be installed to `$HOME/.install-action/bin`.<br>
+
+| Name | Where binaries will be installed | Where will it be installed from | Supported platform | License |
+| ---- | -------------------------------- | ------------------------------- | ------------------ | ------- |
+";
+
+const FOOTER: &str = "
+[cargo-binstall]: https://github.com/cargo-bins/cargo-binstall
+";
+
 fn main() -> Result<()> {
     let args: Vec<_> = env::args().skip(1).collect();
     if !args.is_empty() || args.iter().any(|arg| arg.starts_with('-')) {
@@ -109,17 +127,13 @@ fn main() -> Result<()> {
     let file = std::fs::File::create(markdown_file).expect("Unable to create file");
     let mut file = std::io::BufWriter::new(file);
 
-    let header = "# Tools
-
-| Name | Where binaries will be installed | Where will it be installed from | Supported platform | License |
-| ---- | -------------------------------- | ------------------------------- | ------------------ | ------- |
-";
-
-    file.write_all(header.as_bytes()).expect("Unable to write header");
+    file.write_all(HEADER.as_bytes()).expect("Unable to write header");
 
     for tool in tools {
         file.write_all(tool.to_string().as_bytes()).expect("Unable to write entry");
     }
+
+    file.write_all(FOOTER.as_bytes()).expect("Unable to write footer");
 
     Ok(())
 }
