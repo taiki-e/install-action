@@ -1,0 +1,38 @@
+{
+  "rust_crate": "cargo-semver-checks",
+  "template": {
+    "x86_64_linux_musl": {
+      "url": "https://github.com/obi1kenobi/cargo-semver-checks/releases/download/v${version}/cargo-semver-checks-x86_64-unknown-linux-musl.tar.gz"
+    },
+    "x86_64_macos": {
+      "url": "https://github.com/obi1kenobi/cargo-semver-checks/releases/download/v${version}/cargo-semver-checks-x86_64-apple-darwin.tar.gz"
+    },
+    "x86_64_windows": {
+      "url": "https://github.com/obi1kenobi/cargo-semver-checks/releases/download/v${version}/cargo-semver-checks-x86_64-pc-windows-msvc.tar.gz"
+    },
+    "aarch64_macos": {
+      "url": "https://github.com/obi1kenobi/cargo-semver-checks/releases/download/v${version}/cargo-semver-checks-aarch64-apple-darwin.tar.gz"
+    }
+  },
+  "license_markdown": "[Apache-2.0](https://github.com/obi1kenobi/cargo-semver-checks/blob/main/LICENSE-APACHE) OR [MIT](https://github.com/obi1kenobi/cargo-semver-checks/blob/main/LICENSE-MIT)",
+  "latest": {
+    "version": "0.31.0"
+  },
+  "0.31": {
+    "version": "0.31.0"
+  },
+  "0.31.0": {
+    "x86_64_linux_musl": {
+      "checksum": "4b40df7c8877451b3c31d33399f54bc1d988cad3a2712764ce632a7425cc57df"
+    },
+    "x86_64_macos": {
+      "checksum": "58809b0e431d19d6216552b222eb746b510b11dddb59dec93ae3efe302091748"
+    },
+    "x86_64_windows": {
+      "checksum": "6a819e7ef26590d78ce6c127b6c0d966bd2c5012ae823455e4370f01e5e22167"
+    },
+    "aarch64_macos": {
+      "checksum": "9e272af3f52835470d4f31e3791c83ee9dbf05a812af5d2f2077ec1e3c67aa67"
+    }
+  }
+}
