@@ -10,6 +10,10 @@ Note: In this file, do not use the hard wrap in the middle of a sentence for com
 
 ## [Unreleased]
 
+- Support `cargo-semver-checks` ([#507](https://github.com/taiki-e/install-action/pull/507), thanks @jayvdb)
+
+- Update `osv-scanner@latest` to 1.7.4. ([#506](https://github.com/taiki-e/install-action/pull/506), thanks @nmcdaines)
+
 - Update `typos@latest` to 1.22.1.
 
 - Update `protoc@latest` to 3.27.1.
@@ -30,7 +34,7 @@ Note: In this file, do not use the hard wrap in the middle of a sentence for com
 
 ## [2.34.0] - 2024-06-01
 
-- Support cargo-binstall fallback without cargo.
+- Support cargo-binstall fallback without cargo. ([#501](https://github.com/taiki-e/install-action/pull/501))
 
 ## [2.33.36] - 2024-06-01
 
