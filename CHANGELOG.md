@@ -10,6 +10,8 @@ Note: In this file, do not use the hard wrap in the middle of a sentence for com
 
 ## [Unreleased]
 
+## [2.35.0] - 2024-06-05
+
 - Support `cargo-semver-checks` ([#507](https://github.com/taiki-e/install-action/pull/507), thanks @jayvdb)
 
 - Update `osv-scanner@latest` to 1.7.4. ([#506](https://github.com/taiki-e/install-action/pull/506), thanks @nmcdaines)
@@ -2253,7 +2255,8 @@ Note: This release is considered a breaking change because installing on version
 
 Initial release
 
-[Unreleased]: https://github.com/taiki-e/install-action/compare/v2.34.3...HEAD
+[Unreleased]: https://github.com/taiki-e/install-action/compare/v2.35.0...HEAD
+[2.35.0]: https://github.com/taiki-e/install-action/compare/v2.34.3...v2.35.0
 [2.34.3]: https://github.com/taiki-e/install-action/compare/v2.34.2...v2.34.3
 [2.34.2]: https://github.com/taiki-e/install-action/compare/v2.34.1...v2.34.2
 [2.34.1]: https://github.com/taiki-e/install-action/compare/v2.34.0...v2.34.1
