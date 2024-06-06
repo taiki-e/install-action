@@ -1,0 +1,20 @@
+{
+  "repository": "https://github.com/rust-cross/cargo-zigbuild",
+  "tag_prefix": "v",
+  "rust_crate": "${package}",
+  "asset_name": "${package}-v${version}.${rust_target}.tar.gz",
+  "version_range": ">= 0.18.4",
+  "platform": {
+    "x86_64_linux_musl": {},
+    "x86_64_windows": {
+      "asset_name": "${package}-v${version}.windows-x64.zip"
+    },
+    "aarch64_linux_musl": {},
+    "aarch64_macos": {
+      "asset_name": "${package}-v${version}.apple-darwin.tar.gz"
+    },
+    "aarch64_windows": {
+      "asset_name": "${package}-v${version}.windows-arm64.zip"
+    }
+  }
+}

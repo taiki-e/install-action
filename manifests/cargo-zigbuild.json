@@ -1,0 +1,44 @@
+{
+  "rust_crate": "cargo-zigbuild",
+  "template": {
+    "x86_64_linux_musl": {
+      "url": "https://github.com/rust-cross/cargo-zigbuild/releases/download/v${version}/cargo-zigbuild-v${version}.x86_64-unknown-linux-musl.tar.gz"
+    },
+    "x86_64_windows": {
+      "url": "https://github.com/rust-cross/cargo-zigbuild/releases/download/v${version}/cargo-zigbuild-v${version}.windows-x64.zip"
+    },
+    "aarch64_linux_musl": {
+      "url": "https://github.com/rust-cross/cargo-zigbuild/releases/download/v${version}/cargo-zigbuild-v${version}.aarch64-unknown-linux-musl.tar.gz"
+    },
+    "aarch64_macos": {
+      "url": "https://github.com/rust-cross/cargo-zigbuild/releases/download/v${version}/cargo-zigbuild-v${version}.apple-darwin.tar.gz"
+    },
+    "aarch64_windows": {
+      "url": "https://github.com/rust-cross/cargo-zigbuild/releases/download/v${version}/cargo-zigbuild-v${version}.windows-arm64.zip"
+    }
+  },
+  "license_markdown": "[MIT](https://github.com/rust-cross/cargo-zigbuild/blob/main/LICENSE)",
+  "latest": {
+    "version": "0.18.4"
+  },
+  "0.18": {
+    "version": "0.18.4"
+  },
+  "0.18.4": {
+    "x86_64_linux_musl": {
+      "checksum": "bfcef631fe5ec5c0381d0028d47765dd4cef54ece10ebf2d76e62de6e7941d4e"
+    },
+    "x86_64_windows": {
+      "checksum": "5a5ea2b4d2dcd6d9196d5ca72e76c0d0714dae1ad287d313b89b1d78bcdc8364"
+    },
+    "aarch64_linux_musl": {
+      "checksum": "8271acf32a08fc6073153fffeca5d9289dce7ae13a3a9d64cacf0600904fa7f5"
+    },
+    "aarch64_macos": {
+      "checksum": "b04e989f6df22d46be292af8c4f799467d6e60305fe6ab55f9bdf1c795a0c70f"
+    },
+    "aarch64_windows": {
+      "checksum": "f5166b64a037508c4698e03bde3a57a53fde530fe604866050e1fef43cd5df6d"
+    }
+  }
+}
