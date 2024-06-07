@@ -10,6 +10,8 @@ Note: In this file, do not use the hard wrap in the middle of a sentence for com
 
 ## [Unreleased]
 
+## [2.36.0] - 2024-06-07
+
 - Support `cargo-zigbuild` ([#508](https://github.com/taiki-e/install-action/pull/508), thanks @jayvdb)
 
 ## [2.35.0] - 2024-06-05
@@ -2257,7 +2259,8 @@ Note: This release is considered a breaking change because installing on version
 
 Initial release
 
-[Unreleased]: https://github.com/taiki-e/install-action/compare/v2.35.0...HEAD
+[Unreleased]: https://github.com/taiki-e/install-action/compare/v2.36.0...HEAD
+[2.36.0]: https://github.com/taiki-e/install-action/compare/v2.35.0...v2.36.0
 [2.35.0]: https://github.com/taiki-e/install-action/compare/v2.34.3...v2.35.0
 [2.34.3]: https://github.com/taiki-e/install-action/compare/v2.34.2...v2.34.3
 [2.34.2]: https://github.com/taiki-e/install-action/compare/v2.34.1...v2.34.2
