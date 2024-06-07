@@ -10,6 +10,8 @@ Note: In this file, do not use the hard wrap in the middle of a sentence for com
 
 ## [Unreleased]
 
+- Update `typos@latest` to 1.22.3.
+
 ## [2.36.0] - 2024-06-07
 
 - Support `cargo-zigbuild` ([#508](https://github.com/taiki-e/install-action/pull/508), thanks @jayvdb)
