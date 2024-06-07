@@ -10,6 +10,8 @@ Note: In this file, do not use the hard wrap in the middle of a sentence for com
 
 ## [Unreleased]
 
+- Support `cargo-zigbuild` ([#508](https://github.com/taiki-e/install-action/pull/508), thanks @jayvdb)
+
 ## [2.35.0] - 2024-06-05
 
 - Support `cargo-semver-checks` ([#507](https://github.com/taiki-e/install-action/pull/507), thanks @jayvdb)
