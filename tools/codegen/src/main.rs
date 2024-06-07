@@ -36,6 +36,8 @@ fn main() -> Result<()> {
     fs::create_dir_all(manifest_path.parent().unwrap())?;
     fs::create_dir_all(download_cache_dir)?;
 
+    eprintln!("download cache: {}", download_cache_dir.display());
+
     let mut base_info: BaseManifest = serde_json::from_slice(&fs::read(
         workspace_root.join("tools/codegen/base").join(format!("{package}.json")),
     )?)?;
@@ -722,9 +724,12 @@ fn get_license_markdown(spdx_expr: &str, repo: &String, default_branch: &String)
                 license_id.name.to_string()
             };
             let name = license_id.name.split('-').next().unwrap().to_ascii_uppercase();
-            for filename in
-                ["LICENSE".to_string(), format!("LICENSE-{name}"), "LICENSE.md".to_string()]
-            {
+            for filename in [
+                "LICENSE".to_string(),
+                format!("LICENSE-{name}"),
+                "LICENSE.md".to_string(),
+                "COPYING".to_string(),
+            ] {
                 let url = create_github_raw_link(repo, default_branch, &filename);
                 if github_head(&url).is_ok() {
                     let url = create_github_link(repo, default_branch, &filename);
