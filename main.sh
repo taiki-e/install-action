@@ -439,6 +439,12 @@ case "${enable_checksum}" in
     *) bail "'checksum' input option must be 'true' or 'false': '${enable_checksum}'" ;;
 esac
 
+fallback="${INPUT_FALLBACK:-}"
+case "${fallback}" in
+    none | cargo-binstall) ;;
+    *) bail "'fallback' input option must be 'none' or 'cargo-binstall': '${fallback}'" ;;
+esac
+
 # Refs: https://github.com/rust-lang/rustup/blob/HEAD/rustup-init.sh
 base_distro=""
 exe=""
@@ -791,6 +797,9 @@ done
 
 if [[ ${#unsupported_tools[@]} -gt 0 ]]; then
     IFS=','
+    case "${fallback}" in
+        none) bail "install-action does not support ${unsupported_tools[*]} (fallback is disabled by 'fallback: none' input option)" ;;
+    esac
     info "install-action does not support ${unsupported_tools[*]}; fallback to cargo-binstall"
     IFS=$'\n\t'
     install_cargo_binstall

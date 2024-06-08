@@ -10,6 +10,8 @@ Note: In this file, do not use the hard wrap in the middle of a sentence for com
 
 ## [Unreleased]
 
+- Add `fallback: none` input option to ensure that fallback is not used. ([#517](https://github.com/taiki-e/install-action/pull/517))
+
 - `cargo-nextest` installation no longer use `cargo-binstall`.
   This improves security, performance, robustness of installation. See [#487](https://github.com/taiki-e/install-action/issues/487) for more.
 

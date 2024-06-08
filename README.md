@@ -79,6 +79,18 @@ See [TOOLS.md](TOOLS.md) for the list of tools that are installed from manifests
 
 If a tool not included in the list above is specified, this action uses [cargo-binstall] as a fallback.
 
+If you want to ensure that fallback is not used, use `fallback: none`.
+
+```yaml
+- uses: taiki-e/install-action@v2
+  with:
+    tool: cargo-hack
+    # Possible values:
+    # - none: disable all fallback
+    # - cargo-binstall (default): cargo-binstall (includes quickinstall)
+    fallback: none
+```
+
 ### Add support for new tool
 
 See the [development guide](DEVELOPMENT.md) for how to add support for new tool.
@@ -92,6 +104,8 @@ Additionally, this action will also verify SHA256 checksums for downloaded files
 Additionally, we also verify signature if the tool distributes signed archives. Signature verification is done at the stage of getting the checksum, so disabling the checksum will also disable signature verification.
 
 See the linked documentation for information on security when installed using [snap](https://snapcraft.io/docs) or [cargo-binstall](https://github.com/cargo-bins/cargo-binstall#faq).
+
+See the [Supported tools section](#supported-tools) for how to ensure that fallback is not used.
 
 ## Compatibility
 
