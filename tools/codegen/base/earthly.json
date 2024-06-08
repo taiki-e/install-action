@@ -1,0 +1,22 @@
+{
+  "repository": "https://github.com/earthly/earthly",
+  "tag_prefix": "v",
+  "version_range": ">= 0.8.13",
+  "platform": {
+    "x86_64_linux_gnu": {
+      "asset_name": "${package}-linux-amd64"
+    },
+    "x86_64_macos": {
+      "asset_name": "${package}-darwin-amd64"
+    },
+    "x86_64_windows": {
+      "asset_name": "${package}-windows-amd64.exe"
+    },
+    "aarch64_linux_gnu": {
+      "asset_name": "${package}-linux-arm64"
+    },
+    "aarch64_macos": {
+      "asset_name": "${package}-darwin-arm64"
+    }
+  }
+}
