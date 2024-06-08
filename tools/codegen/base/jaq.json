@@ -9,7 +9,7 @@
     "x86_64_windows": {
       "asset_name": "${package}-v${version}-${rust_target}.exe"
     },
-    "x86_64_linux_gnu": {},
+    "x86_64_linux_musl": {},
     "aarch64_macos": {},
     "aarch64_linux_gnu": {}
   }

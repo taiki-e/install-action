@@ -1,8 +1,8 @@
 {
   "rust_crate": "jaq",
   "template": {
-    "x86_64_linux_gnu": {
-      "url": "https://github.com/01mf02/jaq/releases/download/v${version}/jaq-v${version}-x86_64-unknown-linux-gnu"
+    "x86_64_linux_musl": {
+      "url": "https://github.com/01mf02/jaq/releases/download/v${version}/jaq-v${version}-x86_64-unknown-linux-musl"
     },
     "x86_64_macos": {
       "url": "https://github.com/01mf02/jaq/releases/download/v${version}/jaq-v${version}-x86_64-apple-darwin"
@@ -28,8 +28,8 @@
     "version": "1.4.0"
   },
   "1.4.0": {
-    "x86_64_linux_gnu": {
-      "checksum": "bbeeea83cc07848e6098fa0e48c9c90733fb715d58016088ad3c240dd55342f0"
+    "x86_64_linux_musl": {
+      "checksum": "fce247e4b9693ff260293bdb7d4ef564f765ed6fe889c42cebfd5d2e36b591bf"
     },
     "x86_64_macos": {
       "checksum": "f12c87eed86258b226c747ccbef55db95e78e6925eee55fe96e8a5eee4fe69f3"
