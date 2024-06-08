@@ -1,0 +1,32 @@
+{
+  "rust_crate": "wait-for-them",
+  "template": {
+    "x86_64_linux_gnu": {
+      "url": "https://github.com/shenek/wait-for-them/releases/download/v${version}/wait-for-them-linux"
+    },
+    "x86_64_windows": {
+      "url": "https://github.com/shenek/wait-for-them/releases/download/v${version}/wait-for-them-windows.exe"
+    },
+    "aarch64_macos": {
+      "url": "https://github.com/shenek/wait-for-them/releases/download/v${version}/wait-for-them-macos"
+    }
+  },
+  "license_markdown": "[GPL-3.0](https://github.com/shenek/wait-for-them/blob/master/Cargo.toml#L7)",
+  "latest": {
+    "version": "0.4.0"
+  },
+  "0.4": {
+    "version": "0.4.0"
+  },
+  "0.4.0": {
+    "x86_64_linux_gnu": {
+      "checksum": "2350e38c79f9e59d83ceade3ba7dc2a449bdaac075ea574786421a4bc4646f3d"
+    },
+    "x86_64_windows": {
+      "checksum": "1f716ee4f755a01b67e9606e91a0a65448d4f06113ba40b09e465af62a1c73da"
+    },
+    "aarch64_macos": {
+      "checksum": "a294da6da0ffc0b0a755eb3db50a968841356ff1fdc14724cfa288732496b6dc"
+    }
+  }
+}
