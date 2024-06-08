@@ -405,15 +405,17 @@ fn main() -> Result<()> {
         }
         // compact manifest
         // TODO: do this before download binaries
-        if download_info.contains_key(&HostPlatform::x86_64_linux_gnu)
-            && download_info.contains_key(&HostPlatform::x86_64_linux_musl)
-        {
-            download_info.remove(&HostPlatform::x86_64_linux_gnu);
-        }
-        if download_info.contains_key(&HostPlatform::aarch64_linux_gnu)
-            && download_info.contains_key(&HostPlatform::aarch64_linux_musl)
-        {
-            download_info.remove(&HostPlatform::aarch64_linux_gnu);
+        if !base_info.prefer_linux_gnu {
+            if download_info.contains_key(&HostPlatform::x86_64_linux_gnu)
+                && download_info.contains_key(&HostPlatform::x86_64_linux_musl)
+            {
+                download_info.remove(&HostPlatform::x86_64_linux_gnu);
+            }
+            if download_info.contains_key(&HostPlatform::aarch64_linux_gnu)
+                && download_info.contains_key(&HostPlatform::aarch64_linux_musl)
+            {
+                download_info.remove(&HostPlatform::aarch64_linux_gnu);
+            }
         }
         if download_info.contains_key(&HostPlatform::x86_64_macos)
             && download_info.contains_key(&HostPlatform::aarch64_macos)
@@ -427,7 +429,22 @@ fn main() -> Result<()> {
         if semver_version.pre.is_empty() {
             semver_versions.insert(semver_version.clone());
         }
-        manifests.map.insert(reverse_semver, ManifestRef::Real(Manifest { download_info }));
+        manifests.map.insert(
+            reverse_semver,
+            ManifestRef::Real(Manifest { previous_stable_version: None, download_info }),
+        );
+    }
+    if base_info.immediate_yank_reflection {
+        let mut prev: Option<&Version> = None;
+        for (Reverse(v), m) in manifests.map.iter_mut().rev() {
+            let ManifestRef::Real(m) = m else { continue };
+            if base_info.rust_crate.is_some() {
+                m.previous_stable_version = prev.cloned();
+            } else {
+                m.previous_stable_version = None;
+            }
+            prev = Some(v);
+        }
     }
     if has_build_metadata {
         eprintln!(
@@ -494,15 +511,17 @@ fn main() -> Result<()> {
         if latest_manifest.download_info.contains_key(&p) {
             continue;
         }
-        if p == HostPlatform::x86_64_linux_gnu
-            && latest_manifest.download_info.contains_key(&HostPlatform::x86_64_linux_musl)
-        {
-            continue;
-        }
-        if p == HostPlatform::aarch64_linux_gnu
-            && latest_manifest.download_info.contains_key(&HostPlatform::aarch64_linux_musl)
-        {
-            continue;
+        if !base_info.prefer_linux_gnu {
+            if p == HostPlatform::x86_64_linux_gnu
+                && latest_manifest.download_info.contains_key(&HostPlatform::x86_64_linux_musl)
+            {
+                continue;
+            }
+            if p == HostPlatform::aarch64_linux_gnu
+                && latest_manifest.download_info.contains_key(&HostPlatform::aarch64_linux_musl)
+            {
+                continue;
+            }
         }
         bail!(
             "platform list in base manifest for {package} contains {p:?}, \

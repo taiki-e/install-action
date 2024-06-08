@@ -102,8 +102,10 @@ tools=()
 for tool in tools/codegen/base/*.json; do
     tools+=("$(basename "${tool%.*}")")
 done
+# Alias
+tools+=(nextest)
 # Not manifest-based
-tools+=(valgrind nextest cargo-nextest)
+tools+=(valgrind)
 
 if [[ -n "${tags}" ]]; then
     # Create a release commit.
