@@ -10,6 +10,10 @@ inputs:
     description: Whether to enable checksums
     required: false
     default: 'true'
+  fallback:
+    description: Whether to use fallback (none or cargo-binstall)
+    required: false
+    default: 'cargo-binstall'
 
 # Note:
 # - inputs.* should be manually mapped to INPUT_* due to https://github.com/actions/runner/issues/665
@@ -22,3 +26,4 @@ runs:
       env:
         INPUT_TOOL: ${{ inputs.tool }}
         INPUT_CHECKSUM: ${{ inputs.checksum }}
+        INPUT_FALLBACK: ${{ inputs.fallback }}
