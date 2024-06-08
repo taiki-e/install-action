@@ -3,6 +3,7 @@
   "tag_prefix": "v",
   "rust_crate": "${package}",
   "asset_name": "${package}-v${version}-${rust_target}.tar.gz",
+  "bin": "${package}-v${version}-${rust_target}/${package}${exe}",
   "version_range": ">= 0.22.0",
   "platform": {
     "x86_64_macos": {},
