@@ -4,22 +4,28 @@
   "version_range": ">= 1.66.0",
   "platform": {
     "x86_64_linux_musl": {
-      "asset_name": "${package}-v${version}-linux-amd64.zip"
+      "asset_name": "${package}-v${version}-linux-amd64.zip",
+      "bin": "${package}-v${version}-linux-amd64/${package}"
     },
     "x86_64_macos": {
-      "asset_name": "${package}-v${version}-osx-amd64.zip"
+      "asset_name": "${package}-v${version}-osx-amd64.zip",
+      "bin": "${package}-v${version}-osx-amd64/${package}"
     },
     "x86_64_windows": {
-      "asset_name": "${package}-v${version}-windows-amd64.zip"
+      "asset_name": "${package}-v${version}-windows-amd64.zip",
+      "bin": "${package}-v${version}-windows-amd64/${package}${exe}"
     },
     "aarch64_linux_musl": {
-      "asset_name": "${package}-v${version}-linux-arm64.zip"
+      "asset_name": "${package}-v${version}-linux-arm64.zip",
+      "bin": "${package}-v${version}-linux-arm64/${package}"
     },
     "aarch64_macos": {
-      "asset_name": "${package}-v${version}-osx-arm64.zip"
+      "asset_name": "${package}-v${version}-osx-arm64.zip",
+      "bin": "${package}-v${version}-osx-arm64/${package}"
     },
     "aarch64_windows": {
-      "asset_name": "${package}-v${version}-windows-arm64.zip"
+      "asset_name": "${package}-v${version}-windows-arm64.zip",
+      "bin": "${package}-v${version}-windows-arm64/${package}${exe}"
     }
   }
 }

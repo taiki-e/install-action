@@ -2,22 +2,28 @@
   "rust_crate": null,
   "template": {
     "x86_64_linux_musl": {
-      "url": "https://github.com/rclone/rclone/releases/download/v${version}/rclone-v${version}-linux-amd64.zip"
+      "url": "https://github.com/rclone/rclone/releases/download/v${version}/rclone-v${version}-linux-amd64.zip",
+      "bin": "rclone-v${version}-linux-amd64/rclone"
     },
     "x86_64_macos": {
-      "url": "https://github.com/rclone/rclone/releases/download/v${version}/rclone-v${version}-osx-amd64.zip"
+      "url": "https://github.com/rclone/rclone/releases/download/v${version}/rclone-v${version}-osx-amd64.zip",
+      "bin": "rclone-v${version}-osx-amd64/rclone"
     },
     "x86_64_windows": {
-      "url": "https://github.com/rclone/rclone/releases/download/v${version}/rclone-v${version}-windows-amd64.zip"
+      "url": "https://github.com/rclone/rclone/releases/download/v${version}/rclone-v${version}-windows-amd64.zip",
+      "bin": "rclone-v${version}-windows-amd64/rclone.exe"
     },
     "aarch64_linux_musl": {
-      "url": "https://github.com/rclone/rclone/releases/download/v${version}/rclone-v${version}-linux-arm64.zip"
+      "url": "https://github.com/rclone/rclone/releases/download/v${version}/rclone-v${version}-linux-arm64.zip",
+      "bin": "rclone-v${version}-linux-arm64/rclone"
     },
     "aarch64_macos": {
-      "url": "https://github.com/rclone/rclone/releases/download/v${version}/rclone-v${version}-osx-arm64.zip"
+      "url": "https://github.com/rclone/rclone/releases/download/v${version}/rclone-v${version}-osx-arm64.zip",
+      "bin": "rclone-v${version}-osx-arm64/rclone"
     },
     "aarch64_windows": {
-      "url": "https://github.com/rclone/rclone/releases/download/v${version}/rclone-v${version}-windows-arm64.zip"
+      "url": "https://github.com/rclone/rclone/releases/download/v${version}/rclone-v${version}-windows-arm64.zip",
+      "bin": "rclone-v${version}-windows-arm64/rclone.exe"
     }
   },
   "license_markdown": "[MIT](https://github.com/rclone/rclone/blob/master/COPYING)",
