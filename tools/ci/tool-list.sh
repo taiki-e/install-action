@@ -27,6 +27,7 @@ glibc_pre_2_27_incompat=(
 )
 musl_incompat=(
     "${glibc_pre_2_27_incompat[@]}"
+    deepsource
 )
 
 incompat_tools=()

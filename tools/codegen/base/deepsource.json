@@ -1,0 +1,22 @@
+{
+  "repository": "https://github.com/DeepSourceCorp/cli",
+  "tag_prefix": "v",
+  "version_range": ">= 0.8.6",
+  "platform": {
+    "x86_64_linux_gnu": {
+      "asset_name": "${package}_${version}_linux_amd64.tar.gz"
+    },
+    "x86_64_macos": {
+      "asset_name": "${package}_${version}_darwin_amd64.tar.gz"
+    },
+    "x86_64_windows": {
+      "asset_name": "${package}_${version}_windows_amd64.tar.gz"
+    },
+    "aarch64_linux_gnu": {
+      "asset_name": "${package}_${version}_linux_arm64.tar.gz"
+    },
+    "aarch64_macos": {
+      "asset_name": "${package}_${version}_darwin_arm64.tar.gz"
+    }
+  }
+}
