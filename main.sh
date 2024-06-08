@@ -197,7 +197,29 @@ read_manifest() {
         exact_version="${version}"
     else
         manifest=$(call_jq -r ".\"${exact_version}\"" "${manifest_dir}/${tool}.json")
+        if [[ "${rust_crate}" != "null" ]]; then
+            # TODO: don't hardcode tool name and use 'immediate_yank_reflection' field in base manifest.
+            case "${tool}" in
+                cargo-nextest | nextest)
+                    crate_info=$(retry curl --proto '=https' --tlsv1.2 -fsSL --retry 10 "https://crates.io/api/v1/crates/${rust_crate}")
+                    while true; do
+                        yanked=$(jq <<<"${crate_info}" -r ".versions[] | select(.num == \"${exact_version}\") | .yanked")
+                        if [[ "${yanked}" != "true" ]]; then
+                            break
+                        fi
+                        previous_stable_version=$(jq <<<"${manifest}" -r '.previous_stable_version')
+                        if [[ "${previous_stable_version}" == "null" ]]; then
+                            break
+                        fi
+                        info "${tool}@${exact_version} is yanked; downgrade to ${previous_stable_version}"
+                        exact_version="${previous_stable_version}"
+                        manifest=$(jq -r ".\"${exact_version}\"" "${manifest_dir}/${tool}.json")
+                    done
+                    ;;
+            esac
+        fi
     fi
+
     case "${host_os}" in
         linux)
             # Static-linked binaries compiled for linux-musl will also work on linux-gnu systems and are
@@ -212,6 +234,21 @@ read_manifest() {
                 # TODO: However, a warning may make sense.
                 host_platform="${host_arch}_linux_gnu"
                 download_info=$(call_jq <<<"${manifest}" -r ".${host_platform}")
+            elif [[ "${host_env}" == "gnu" ]]; then
+                # TODO: don't hardcode tool name and use 'prefer_linux_gnu' field in base manifest.
+                case "${tool}" in
+                    cargo-nextest | nextest)
+                        # TODO: don't hardcode required glibc version
+                        required_glibc_version=2.27
+                        higher_glibc_version=$(sort <<<"${required_glibc_version}"$'\n'"${host_glibc_version}" -Vu | tail -1)
+                        if [[ "${higher_glibc_version}" == "${host_glibc_version}" ]]; then
+                            # musl build of nextest is slow, so use glibc build if host_env is gnu.
+                            # https://github.com/taiki-e/install-action/issues/13
+                            host_platform="${host_arch}_linux_gnu"
+                            download_info=$(jq <<<"${manifest}" -r ".${host_platform}")
+                        fi
+                        ;;
+                esac
             fi
             ;;
         macos | windows)
@@ -408,6 +445,13 @@ exe=""
 case "$(uname -s)" in
     Linux)
         host_os=linux
+        ldd_version=$(ldd --version 2>&1 || true)
+        if grep <<<"${ldd_version}" -q 'musl'; then
+            host_env="musl"
+        else
+            host_env="gnu"
+            host_glibc_version=$(grep <<<"${ldd_version}" -E "GLIBC|GNU libc" | sed "s/.* //g")
+        fi
         if grep -q '^ID_LIKE=' /etc/os-release; then
             base_distro=$(grep '^ID_LIKE=' /etc/os-release | cut -d= -f2)
             case "${base_distro}" in

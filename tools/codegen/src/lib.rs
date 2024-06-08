@@ -180,6 +180,8 @@ pub enum ManifestRef {
 
 #[derive(Debug, Clone, Serialize, Deserialize)]
 pub struct Manifest {
+    #[serde(skip_serializing_if = "Option::is_none")]
+    pub previous_stable_version: Option<Version>,
     #[serde(flatten)]
     pub download_info: BTreeMap<HostPlatform, ManifestDownloadInfo>,
 }
@@ -229,8 +231,15 @@ pub struct BaseManifest {
     pub signing: Option<Signing>,
     #[serde(default)]
     pub broken: Vec<semver::Version>,
-    pub platform: BTreeMap<HostPlatform, BaseManifestPlatformInfo>,
     pub version_range: Option<String>,
+    /// Use glibc build if host_env is gnu.
+    #[serde(default)]
+    pub prefer_linux_gnu: bool,
+    /// Check that the version is yanked not only when updating the manifest,
+    /// but also when running the action.
+    #[serde(default)]
+    pub immediate_yank_reflection: bool,
+    pub platform: BTreeMap<HostPlatform, BaseManifestPlatformInfo>,
 }
 impl BaseManifest {
     /// Validate the manifest.

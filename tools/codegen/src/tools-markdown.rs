@@ -46,31 +46,18 @@ fn main() -> Result<()> {
         fs::read_dir(manifest_dir.clone()).unwrap().map(|r| r.unwrap()).collect();
     paths.sort_by_key(fs_err::DirEntry::path);
 
-    let mut tools = vec![
-        MarkdownEntry {
-            name: "nextest".to_string(),
-            alias: "cargo-nextest".to_string().into(),
-            website: "https://nexte.st/".to_string(),
-            installed_to: InstalledTo::Cargo,
-            installed_from: InstalledFrom::Binstall,
-            platforms: Platforms::all(),
-            repository: "https://github.com/nextest-rs/nextest".to_string(),
-            license_markdown: "[Apache-2.0](https://github.com/nextest-rs/nextest/blob/HEAD/LICENSE-APACHE) OR [MIT](https://github.com/nextest-rs/nextest/blob/HEAD/LICENSE-MIT)".to_string()
-        },
-        MarkdownEntry {
-            name: "valgrind".to_string(),
-            alias: None,
-            website: "https://valgrind.org/".to_string(),
-            installed_to: InstalledTo::Snap,
-            installed_from: InstalledFrom::Snap,
-            platforms: Platforms {
-                linux: true,
-                ..Default::default()
-            },
-            repository: "https://sourceware.org/git/valgrind.git".to_string(),
-            license_markdown: "[GPL-2.0](https://sourceware.org/git/?p=valgrind.git;a=blob;f=COPYING;hb=HEAD)".to_string()
-        }
-    ];
+    let mut tools = vec![MarkdownEntry {
+        name: "valgrind".to_string(),
+        alias: None,
+        website: "https://valgrind.org/".to_string(),
+        installed_to: InstalledTo::Snap,
+        installed_from: InstalledFrom::Snap,
+        platforms: Platforms { linux: true, ..Default::default() },
+        repository: "https://sourceware.org/git/valgrind.git".to_string(),
+        license_markdown:
+            "[GPL-2.0](https://sourceware.org/git/?p=valgrind.git;a=blob;f=COPYING;hb=HEAD)"
+                .to_string(),
+    }];
 
     for path in paths {
         let file_name = path.file_name();
@@ -152,7 +139,6 @@ struct MarkdownEntry {
 
 #[derive(Debug, Eq, PartialEq)]
 enum InstalledFrom {
-    Binstall,
     GitHubRelease,
     Snap,
 }
@@ -162,11 +148,6 @@ struct Platforms {
     linux: bool,
     macos: bool,
     windows: bool,
-}
-impl Platforms {
-    fn all() -> Self {
-        Self { linux: true, macos: true, windows: true }
-    }
 }
 
 impl fmt::Display for Platforms {
@@ -223,7 +204,6 @@ impl fmt::Display for MarkdownEntry {
                 let markdown = format!("| [GitHub Releases]({}/releases) ", self.repository);
                 f.write_str(&markdown)?;
             }
-            InstalledFrom::Binstall => f.write_str("| `cargo-binstall` ")?,
             InstalledFrom::Snap => {
                 let markdown =
                     format!("| [snap](https://snapcraft.io/install/{}/ubuntu) ", self.name);
