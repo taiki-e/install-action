@@ -1,0 +1,59 @@
+{
+  "rust_crate": null,
+  "template": {
+    "x86_64_linux_musl": {
+      "url": "https://github.com/rclone/rclone/releases/download/v${version}/rclone-v${version}-linux-amd64.zip",
+      "bin": "rclone-v${version}-linux-amd64/rclone"
+    },
+    "x86_64_macos": {
+      "url": "https://github.com/rclone/rclone/releases/download/v${version}/rclone-v${version}-osx-amd64.zip",
+      "bin": "rclone-v${version}-osx-amd64/rclone"
+    },
+    "x86_64_windows": {
+      "url": "https://github.com/rclone/rclone/releases/download/v${version}/rclone-v${version}-windows-amd64.zip",
+      "bin": "rclone-v${version}-windows-amd64/rclone.exe"
+    },
+    "aarch64_linux_musl": {
+      "url": "https://github.com/rclone/rclone/releases/download/v${version}/rclone-v${version}-linux-arm64.zip",
+      "bin": "rclone-v${version}-linux-arm64/rclone"
+    },
+    "aarch64_macos": {
+      "url": "https://github.com/rclone/rclone/releases/download/v${version}/rclone-v${version}-osx-arm64.zip",
+      "bin": "rclone-v${version}-osx-arm64/rclone"
+    },
+    "aarch64_windows": {
+      "url": "https://github.com/rclone/rclone/releases/download/v${version}/rclone-v${version}-windows-arm64.zip",
+      "bin": "rclone-v${version}-windows-arm64/rclone.exe"
+    }
+  },
+  "license_markdown": "[MIT](https://github.com/rclone/rclone/blob/master/COPYING)",
+  "latest": {
+    "version": "1.66.0"
+  },
+  "1": {
+    "version": "1.66.0"
+  },
+  "1.66": {
+    "version": "1.66.0"
+  },
+  "1.66.0": {
+    "x86_64_linux_musl": {
+      "checksum": "b4d304b1dc76001b1d3bb820ae8d1ae60a072afbd3296be904a3ee00b3d4fab9"
+    },
+    "x86_64_macos": {
+      "checksum": "5adb4c5fe0675627461000a63156001301ec7cade966c55c8c4ebcfaeb62c5ae"
+    },
+    "x86_64_windows": {
+      "checksum": "8e8bb13fb0d7beb316487ecde8ead5426784cdcdbf8b4d8dd381c6fe8c7d92a0"
+    },
+    "aarch64_linux_musl": {
+      "checksum": "c50a3ab93082f21788f9244393b19f2426edeeb896eec2e3e05ffb2e8727e075"
+    },
+    "aarch64_macos": {
+      "checksum": "b5f4c4d06ff3d426aee99870ad437276c9ddaad55442f2df6a58b918115fe4cf"
+    },
+    "aarch64_windows": {
+      "checksum": "4e815350382249ffb6d9520262bbce81f45f63126134a0c365eb648a4d27e6ea"
+    }
+  }
+}
