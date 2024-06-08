@@ -10,6 +10,14 @@ Note: In this file, do not use the hard wrap in the middle of a sentence for com
 
 ## [Unreleased]
 
+- Support `rclone` ([#511](https://github.com/taiki-e/install-action/pull/511), thanks @jayvdb)
+
+- Support `xh` ([#512](https://github.com/taiki-e/install-action/pull/512), thanks @jayvdb)
+
+- Support `jaq` ([#513](https://github.com/taiki-e/install-action/pull/513), thanks @jayvdb)
+
+- Support `wait-for-them` ([#514](https://github.com/taiki-e/install-action/pull/514), thanks @jayvdb)
+
 - Update `cargo-binstall@latest` to 1.6.9.
 
 - Update `typos@latest` to 1.22.3.
