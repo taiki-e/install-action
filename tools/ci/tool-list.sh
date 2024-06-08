@@ -8,6 +8,7 @@ cd "$(dirname "$0")"/../..
 glibc_pre_2_34_incompat=(
     cargo-cyclonedx
     cargo-spellcheck
+    wait-for-them
     xbuild
 )
 glibc_pre_2_31_incompat=(
