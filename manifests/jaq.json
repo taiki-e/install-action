@@ -1,0 +1,47 @@
+{
+  "rust_crate": "jaq",
+  "template": {
+    "x86_64_linux_musl": {
+      "url": "https://github.com/01mf02/jaq/releases/download/v${version}/jaq-v${version}-x86_64-unknown-linux-musl"
+    },
+    "x86_64_macos": {
+      "url": "https://github.com/01mf02/jaq/releases/download/v${version}/jaq-v${version}-x86_64-apple-darwin"
+    },
+    "x86_64_windows": {
+      "url": "https://github.com/01mf02/jaq/releases/download/v${version}/jaq-v${version}-x86_64-pc-windows-msvc.exe"
+    },
+    "aarch64_linux_gnu": {
+      "url": "https://github.com/01mf02/jaq/releases/download/v${version}/jaq-v${version}-aarch64-unknown-linux-gnu"
+    },
+    "aarch64_macos": {
+      "url": "https://github.com/01mf02/jaq/releases/download/v${version}/jaq-v${version}-aarch64-apple-darwin"
+    }
+  },
+  "license_markdown": "[MIT](https://github.com/01mf02/jaq/blob/main/LICENSE-MIT)",
+  "latest": {
+    "version": "1.4.0"
+  },
+  "1": {
+    "version": "1.4.0"
+  },
+  "1.4": {
+    "version": "1.4.0"
+  },
+  "1.4.0": {
+    "x86_64_linux_musl": {
+      "checksum": "fce247e4b9693ff260293bdb7d4ef564f765ed6fe889c42cebfd5d2e36b591bf"
+    },
+    "x86_64_macos": {
+      "checksum": "f12c87eed86258b226c747ccbef55db95e78e6925eee55fe96e8a5eee4fe69f3"
+    },
+    "x86_64_windows": {
+      "checksum": "bb8189ee62b3b467f82e06484a7ab7478f8ddc1cc67ec95b7d2ebc2da38dd14d"
+    },
+    "aarch64_linux_gnu": {
+      "checksum": "2e6449091baf52bcb982e75685459464444ea8f29c7316d246f0bd407670c568"
+    },
+    "aarch64_macos": {
+      "checksum": "545e26ecd01b44468a894cd6576290cc8f787d0f06dd0ef8cc0b02bfe4c95c55"
+    }
+  }
+}

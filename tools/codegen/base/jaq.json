@@ -1,0 +1,16 @@
+{
+  "repository": "https://github.com/01mf02/jaq",
+  "tag_prefix": "v",
+  "rust_crate": "${package}",
+  "asset_name": "${package}-v${version}-${rust_target}",
+  "version_range": ">= 1.4.0",
+  "platform": {
+    "x86_64_macos": {},
+    "x86_64_windows": {
+      "asset_name": "${package}-v${version}-${rust_target}.exe"
+    },
+    "x86_64_linux_musl": {},
+    "aarch64_macos": {},
+    "aarch64_linux_gnu": {}
+  }
+}
