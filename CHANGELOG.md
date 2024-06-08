@@ -10,6 +10,8 @@ Note: In this file, do not use the hard wrap in the middle of a sentence for com
 
 ## [Unreleased]
 
+## [2.37.0] - 2024-06-08
+
 - Support `rclone` ([#511](https://github.com/taiki-e/install-action/pull/511), thanks @jayvdb)
 
 - Support `xh` ([#512](https://github.com/taiki-e/install-action/pull/512), thanks @jayvdb)
@@ -2271,7 +2273,8 @@ Note: This release is considered a breaking change because installing on version
 
 Initial release
 
-[Unreleased]: https://github.com/taiki-e/install-action/compare/v2.36.0...HEAD
+[Unreleased]: https://github.com/taiki-e/install-action/compare/v2.37.0...HEAD
+[2.37.0]: https://github.com/taiki-e/install-action/compare/v2.36.0...v2.37.0
 [2.36.0]: https://github.com/taiki-e/install-action/compare/v2.35.0...v2.36.0
 [2.35.0]: https://github.com/taiki-e/install-action/compare/v2.34.3...v2.35.0
 [2.34.3]: https://github.com/taiki-e/install-action/compare/v2.34.2...v2.34.3
