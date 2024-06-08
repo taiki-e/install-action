@@ -56,6 +56,7 @@ If a tool not included in the list below is specified, this action uses [cargo-b
 | [**wasm-pack**](https://github.com/rustwasm/wasm-pack) | `$CARGO_HOME/bin` | [GitHub Releases](https://github.com/rustwasm/wasm-pack/releases) | Linux, macOS, Windows | [MIT](https://github.com/rustwasm/wasm-pack/blob/master/LICENSE-MIT) OR [Apache-2.0](https://github.com/rustwasm/wasm-pack/blob/master/LICENSE-APACHE) |
 | [**wasmtime**](https://github.com/bytecodealliance/wasmtime) | `$CARGO_HOME/bin` | [GitHub Releases](https://github.com/bytecodealliance/wasmtime/releases) | Linux, macOS, Windows | [Apache-2.0 WITH LLVM-exception](https://github.com/bytecodealliance/wasmtime/blob/main/LICENSE) |
 | [**xbuild**](https://github.com/rust-mobile/xbuild) | `$CARGO_HOME/bin` | [GitHub Releases](https://github.com/rust-mobile/xbuild/releases) | Linux, macOS, Windows | [Apache-2.0 OR MIT](https://github.com/rust-mobile/xbuild/blob/268939a99a50d7927bce3e343e5d2ed32eb8b30e/xbuild/Cargo.toml#L7) |
+| [**xh**](https://github.com/ducaale/xh) | `$CARGO_HOME/bin` | [GitHub Releases](https://github.com/ducaale/xh/releases) | Linux, macOS, Windows | [MIT](https://github.com/ducaale/xh/blob/master/LICENSE) |
 | [**zola**](https://github.com/getzola/zola) | `$CARGO_HOME/bin` | [GitHub Releases](https://github.com/getzola/zola/releases) | Linux, macOS, Windows | [MIT](https://github.com/getzola/zola/blob/master/LICENSE) |
 
 [cargo-binstall]: https://github.com/cargo-bins/cargo-binstall
