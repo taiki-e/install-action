@@ -10,6 +10,8 @@ Note: In this file, do not use the hard wrap in the middle of a sentence for com
 
 ## [Unreleased]
 
+- Update `dprint@latest` to 0.46.2.
+
 ## [2.37.0] - 2024-06-08
 
 - Support `rclone` ([#511](https://github.com/taiki-e/install-action/pull/511), thanks @jayvdb)
