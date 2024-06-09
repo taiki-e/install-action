@@ -46,18 +46,55 @@ fn main() -> Result<()> {
         fs::read_dir(manifest_dir.clone()).unwrap().map(|r| r.unwrap()).collect();
     paths.sort_by_key(fs_err::DirEntry::path);
 
-    let mut tools = vec![MarkdownEntry {
-        name: "valgrind".to_string(),
-        alias: None,
-        website: "https://valgrind.org/".to_string(),
-        installed_to: InstalledTo::Snap,
-        installed_from: InstalledFrom::Snap,
-        platforms: Platforms { linux: true, ..Default::default() },
-        repository: "https://sourceware.org/git/valgrind.git".to_string(),
-        license_markdown:
-            "[GPL-2.0](https://sourceware.org/git/?p=valgrind.git;a=blob;f=COPYING;hb=HEAD)"
+    let mut tools = vec![
+        MarkdownEntry {
+            name: "valgrind".to_string(),
+            alias: None,
+            website: "https://valgrind.org/".to_string(),
+            installed_to: InstalledTo::Snap,
+            installed_from: InstalledFrom::Snap,
+            platforms: Platforms { linux: true, ..Default::default() },
+            repository: "https://sourceware.org/git/valgrind.git".to_string(),
+            license_markdown:
+                "[GPL-2.0](https://sourceware.org/git/?p=valgrind.git;a=blob;f=COPYING;hb=HEAD)"
+                    .to_string(),
+        },
+        MarkdownEntry {
+            name: "jq".to_string(),
+            alias: None,
+            website: "https://github.com/jqlang/jq".to_string(),
+            installed_to: InstalledTo::UsrBin,
+            installed_from: InstalledFrom::DistroPackage,
+            platforms: Platforms { linux: true, windows: true, macos: false },
+            repository: "https://github.com/jqlang/jq".to_string(),
+            license_markdown:
+                "[MIT AND ICU AND CC-BY-3.0](https://github.com/jqlang/jq/blob/master/jq.spec#L9)"
+                    .to_string(),
+        },
+        MarkdownEntry {
+            name: "curl".to_string(),
+            alias: None,
+            website: "https://github.com/curl/curl".to_string(),
+            installed_to: InstalledTo::UsrBin,
+            installed_from: InstalledFrom::DistroPackage,
+            platforms: Platforms { linux: true, ..Default::default() },
+            repository: "https://github.com/curl/curl".to_string(),
+            license_markdown: "[curl](https://github.com/curl/curl/blob/master/COPYING)"
                 .to_string(),
-    }];
+        },
+        MarkdownEntry {
+            name: "tar".to_string(),
+            alias: None,
+            website: "https://www.gnu.org/software/tar/".to_string(),
+            installed_to: InstalledTo::UsrBin,
+            installed_from: InstalledFrom::DistroPackage,
+            platforms: Platforms { linux: true, ..Default::default() },
+            repository: "https://git.savannah.gnu.org/cgit/tar.git".to_string(),
+            license_markdown:
+                "[GPL-3.0-or-later](https://git.savannah.gnu.org/cgit/tar.git/tree/COPYING)"
+                    .to_string(),
+        },
+    ];
 
     for path in paths {
         let file_name = path.file_name();
@@ -76,8 +113,11 @@ fn main() -> Result<()> {
 
         let repository = base_info.repository;
 
-        let installed_to =
-            if manifests.rust_crate.is_some() { InstalledTo::Cargo } else { InstalledTo::UsrLocal };
+        let installed_to = if manifests.rust_crate.is_some() {
+            InstalledTo::Cargo
+        } else {
+            InstalledTo::UsrLocalBin
+        };
 
         let installed_from = InstalledFrom::GitHubRelease;
         let mut platforms = Platforms::default();
@@ -141,6 +181,7 @@ struct MarkdownEntry {
 enum InstalledFrom {
     GitHubRelease,
     Snap,
+    DistroPackage,
 }
 
 #[derive(Debug, Default, Eq, PartialEq)]
@@ -172,7 +213,8 @@ impl fmt::Display for Platforms {
 enum InstalledTo {
     Cargo,
     Snap,
-    UsrLocal,
+    UsrBin,
+    UsrLocalBin,
 }
 
 impl fmt::Display for InstalledTo {
@@ -180,7 +222,8 @@ impl fmt::Display for InstalledTo {
         match self {
             InstalledTo::Cargo => f.write_str("`$CARGO_HOME/bin`")?,
             InstalledTo::Snap => f.write_str("`/snap/bin`")?,
-            InstalledTo::UsrLocal => f.write_str("`/usr/local/bin`")?,
+            InstalledTo::UsrBin => f.write_str("`/usr/bin`")?,
+            InstalledTo::UsrLocalBin => f.write_str("`/usr/local/bin`")?,
         }
 
         Ok(())
@@ -202,6 +245,13 @@ impl fmt::Display for MarkdownEntry {
         match self.installed_from {
             InstalledFrom::GitHubRelease => {
                 let markdown = format!("| [GitHub Releases]({}/releases) ", self.repository);
+                f.write_str(&markdown)?;
+            }
+            InstalledFrom::DistroPackage => {
+                let markdown = format!(
+                    "| [distro package](https://repology.org/project/{}/versions) ",
+                    self.name
+                );
                 f.write_str(&markdown)?;
             }
             InstalledFrom::Snap => {
