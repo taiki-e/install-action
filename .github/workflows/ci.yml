@@ -9,6 +9,7 @@ on:
     branches:
       - main
       - dev
+      - ci-*
   schedule:
     - cron: '0 0,3,6,9,12,15,18,21 * * *'
   workflow_dispatch:
