@@ -10,20 +10,28 @@ Note: In this file, do not use the hard wrap in the middle of a sentence for com
 
 ## [Unreleased]
 
+- Support `earthly`. ([#520](https://github.com/taiki-e/install-action/pull/520), thanks @jayvdb)
+
+- Support `deepsource`. ([#522](https://github.com/taiki-e/install-action/pull/522), thanks @jayvdb)
+
 - Add `fallback: none` input option to ensure that fallback is not used. ([#517](https://github.com/taiki-e/install-action/pull/517))
 
-- `cargo-nextest` installation no longer use `cargo-binstall`.
+- `cargo-nextest` installation no longer use `cargo-binstall`. ([#518](https://github.com/taiki-e/install-action/pull/518))
   This improves security, performance, robustness of installation. See [#487](https://github.com/taiki-e/install-action/issues/487) for more.
+
+- Update `dprint@latest` to 0.46.2.
+
+- Workaround glibc compatibility issue on archlinux. ([#525](https://github.com/taiki-e/install-action/pull/525), thanks @jayvdb)
 
 ## [2.37.0] - 2024-06-08
 
-- Support `rclone` ([#511](https://github.com/taiki-e/install-action/pull/511), thanks @jayvdb)
+- Support `rclone`. ([#511](https://github.com/taiki-e/install-action/pull/511), thanks @jayvdb)
 
-- Support `xh` ([#512](https://github.com/taiki-e/install-action/pull/512), thanks @jayvdb)
+- Support `xh`. ([#512](https://github.com/taiki-e/install-action/pull/512), thanks @jayvdb)
 
-- Support `jaq` ([#513](https://github.com/taiki-e/install-action/pull/513), thanks @jayvdb)
+- Support `jaq`. ([#513](https://github.com/taiki-e/install-action/pull/513), thanks @jayvdb)
 
-- Support `wait-for-them` ([#514](https://github.com/taiki-e/install-action/pull/514), thanks @jayvdb)
+- Support `wait-for-them`. ([#514](https://github.com/taiki-e/install-action/pull/514), thanks @jayvdb)
 
 - Update `cargo-binstall@latest` to 1.6.9.
 
@@ -31,11 +39,11 @@ Note: In this file, do not use the hard wrap in the middle of a sentence for com
 
 ## [2.36.0] - 2024-06-07
 
-- Support `cargo-zigbuild` ([#508](https://github.com/taiki-e/install-action/pull/508), thanks @jayvdb)
+- Support `cargo-zigbuild`. ([#508](https://github.com/taiki-e/install-action/pull/508), thanks @jayvdb)
 
 ## [2.35.0] - 2024-06-05
 
-- Support `cargo-semver-checks` ([#507](https://github.com/taiki-e/install-action/pull/507), thanks @jayvdb)
+- Support `cargo-semver-checks`. ([#507](https://github.com/taiki-e/install-action/pull/507), thanks @jayvdb)
 
 - Update `osv-scanner@latest` to 1.7.4. ([#506](https://github.com/taiki-e/install-action/pull/506), thanks @nmcdaines)
 
