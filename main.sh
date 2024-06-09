@@ -507,6 +507,10 @@ case "${host_os}" in
                         fi
                     else
                         if ! type -P jq &>/dev/null; then
+                            # https://github.com/taiki-e/install-action/issues/521
+                            if [[ "${base_distro}" == "arch" ]]; then
+                                sys_packages+=(glibc)
+                            fi
                             sys_packages+=(jq)
                         fi
                         sys_install "${sys_packages[@]}"
