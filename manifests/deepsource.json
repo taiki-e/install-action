@@ -1,0 +1,44 @@
+{
+  "rust_crate": null,
+  "template": {
+    "x86_64_linux_gnu": {
+      "url": "https://github.com/DeepSourceCorp/cli/releases/download/v${version}/deepsource_${version}_linux_amd64.tar.gz"
+    },
+    "x86_64_macos": {
+      "url": "https://github.com/DeepSourceCorp/cli/releases/download/v${version}/deepsource_${version}_darwin_amd64.tar.gz"
+    },
+    "x86_64_windows": {
+      "url": "https://github.com/DeepSourceCorp/cli/releases/download/v${version}/deepsource_${version}_windows_amd64.tar.gz"
+    },
+    "aarch64_linux_gnu": {
+      "url": "https://github.com/DeepSourceCorp/cli/releases/download/v${version}/deepsource_${version}_linux_arm64.tar.gz"
+    },
+    "aarch64_macos": {
+      "url": "https://github.com/DeepSourceCorp/cli/releases/download/v${version}/deepsource_${version}_darwin_arm64.tar.gz"
+    }
+  },
+  "license_markdown": "[BSD-2-Clause](https://github.com/DeepSourceCorp/cli/blob/master/LICENSE)",
+  "latest": {
+    "version": "0.8.6"
+  },
+  "0.8": {
+    "version": "0.8.6"
+  },
+  "0.8.6": {
+    "x86_64_linux_gnu": {
+      "checksum": "40490fa8403496d354ac5e69ba4a71c287bee579d4413b62ee54c5c3038792ca"
+    },
+    "x86_64_macos": {
+      "checksum": "0970061b4755ecce8736f1d9bc8932cdafb452528432267ce33a0d566a3ecdeb"
+    },
+    "x86_64_windows": {
+      "checksum": "10d7bf2d6d8073a20f47982fd1db4f285666c1a6be2d89f555b097676da106d2"
+    },
+    "aarch64_linux_gnu": {
+      "checksum": "9f4f2a22ec412ed826e011afca3bb49979e4ee89434abbf8086324c5b9ccc074"
+    },
+    "aarch64_macos": {
+      "checksum": "b4223a8a03f16853cdbc4d5d40a586fa9291167e55d21f051ae3bf0c359f693a"
+    }
+  }
+}
