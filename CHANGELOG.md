@@ -10,6 +10,8 @@ Note: In this file, do not use the hard wrap in the middle of a sentence for com
 
 ## [Unreleased]
 
+## [2.38.0] - 2024-06-09
+
 - Support `earthly`. ([#520](https://github.com/taiki-e/install-action/pull/520), thanks @jayvdb)
 
 - Support `deepsource`. ([#522](https://github.com/taiki-e/install-action/pull/522), thanks @jayvdb)
@@ -2286,7 +2288,8 @@ Note: This release is considered a breaking change because installing on version
 
 Initial release
 
-[Unreleased]: https://github.com/taiki-e/install-action/compare/v2.37.0...HEAD
+[Unreleased]: https://github.com/taiki-e/install-action/compare/v2.38.0...HEAD
+[2.38.0]: https://github.com/taiki-e/install-action/compare/v2.37.0...v2.38.0
 [2.37.0]: https://github.com/taiki-e/install-action/compare/v2.36.0...v2.37.0
 [2.36.0]: https://github.com/taiki-e/install-action/compare/v2.35.0...v2.36.0
 [2.35.0]: https://github.com/taiki-e/install-action/compare/v2.34.3...v2.35.0
