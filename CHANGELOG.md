@@ -10,6 +10,8 @@ Note: In this file, do not use the hard wrap in the middle of a sentence for com
 
 ## [Unreleased]
 
+## [2.38.1] - 2024-06-10
+
 - Update `biome@latest` to 1.8.1.
 
 ## [2.38.0] - 2024-06-09
@@ -2290,7 +2292,8 @@ Note: This release is considered a breaking change because installing on version
 
 Initial release
 
-[Unreleased]: https://github.com/taiki-e/install-action/compare/v2.38.0...HEAD
+[Unreleased]: https://github.com/taiki-e/install-action/compare/v2.38.1...HEAD
+[2.38.1]: https://github.com/taiki-e/install-action/compare/v2.38.0...v2.38.1
 [2.38.0]: https://github.com/taiki-e/install-action/compare/v2.37.0...v2.38.0
 [2.37.0]: https://github.com/taiki-e/install-action/compare/v2.36.0...v2.37.0
 [2.36.0]: https://github.com/taiki-e/install-action/compare/v2.35.0...v2.36.0
