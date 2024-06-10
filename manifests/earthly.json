@@ -19,10 +19,27 @@
   },
   "license_markdown": "[MPL-2.0](https://github.com/earthly/earthly/blob/main/LICENSE)",
   "latest": {
-    "version": "0.8.13"
+    "version": "0.8.14"
   },
   "0.8": {
-    "version": "0.8.13"
+    "version": "0.8.14"
+  },
+  "0.8.14": {
+    "x86_64_linux_gnu": {
+      "checksum": "9c184536faccf2e16e92ad06d2a2579e4b3ff6aaf6bf4c2f72b21228a6903bc2"
+    },
+    "x86_64_macos": {
+      "checksum": "09d749a4f5b9d71acb803ba229086b28f447ac2080492106f6f51536a64a0760"
+    },
+    "x86_64_windows": {
+      "checksum": "3244284dc9648d7cd3af350ab4a8bfd4c63b0e0e16e656c3e249fc1d58fe7e5f"
+    },
+    "aarch64_linux_gnu": {
+      "checksum": "a88786778964eb74b6b5db44734a4630dcedab49c4ed21fe432e9e6d08ff116c"
+    },
+    "aarch64_macos": {
+      "checksum": "0a0154bb94ef4c8692737156a74534d369947be1a4558e81603be3d2b4328d7b"
+    }
   },
   "0.8.13": {
     "x86_64_linux_gnu": {
