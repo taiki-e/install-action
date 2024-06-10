@@ -10,6 +10,8 @@ Note: In this file, do not use the hard wrap in the middle of a sentence for com
 
 ## [Unreleased]
 
+- Update `biome@latest` to 1.8.1.
+
 ## [2.38.0] - 2024-06-09
 
 - Support `earthly`. ([#520](https://github.com/taiki-e/install-action/pull/520), thanks @jayvdb)
