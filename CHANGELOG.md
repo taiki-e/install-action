@@ -10,6 +10,13 @@ Note: In this file, do not use the hard wrap in the middle of a sentence for com
 
 ## [Unreleased]
 
+- Workaround msys64 bash's buggy behavior. ([#533](https://github.com/taiki-e/install-action/pull/533))
+  This fixes an installation issue when default bash was overridden like the following:
+
+  ```sh
+  echo "C:\msys64\usr\bin" >> $GITHUB_PATH
+  ```
+
 - Update `typos@latest` to 1.22.4.
 
 - Update `earthly@latest` to 0.8.14.
