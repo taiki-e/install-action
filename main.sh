@@ -517,8 +517,15 @@ info "host platform: ${host_arch}_${host_os}"
 
 home="${HOME}"
 if [[ "${host_os}" == "windows" ]]; then
-    # https://github.com/taiki-e/install-action/pull/518#issuecomment-2160736760
-    home="${home/\/home\//\/c\/Users\/}"
+    if [[ "${home}" == "/home/"* ]]; then
+        if [[ -d "${home/\/home\//\/c\/Users\/}" ]]; then
+            # MSYS2 https://github.com/taiki-e/install-action/pull/518#issuecomment-2160736760
+            home="${home/\/home\//\/c\/Users\/}"
+        else
+            # TODO: Cygwin https://github.com/taiki-e/install-action/issues/224#issuecomment-1720196288
+            warn "\$HOME starting /home/ (${home}) on Windows bash is usually fake path, this may cause installation issue"
+        fi
+    fi
 fi
 install_action_dir="${home}/.install-action"
 tmp_dir="${install_action_dir}/tmp"

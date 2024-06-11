@@ -53,6 +53,9 @@ jobs:
           - os: macos-14
           - os: windows-2019
           - os: windows-2022
+          # https://github.com/taiki-e/install-action/pull/518#issuecomment-2160736760
+          - os: windows-2022
+            bash: msys64
     runs-on: ${{ matrix.os }}
     timeout-minutes: 60
     steps:
@@ -62,6 +65,11 @@ jobs:
       - name: Generate tool list
         id: tool-list
         run: tools/ci/tool-list.sh "${{ matrix.tool }}" >>"${GITHUB_OUTPUT}"
+      - run: |
+          set -eEuxo pipefail
+          echo "C:\msys64\mingw32\bin" >> $GITHUB_PATH
+          echo "C:\msys64\usr\bin" >> $GITHUB_PATH
+        if: matrix.bash == 'msys64'
       - uses: ./
         with:
           tool: ${{ steps.tool-list.outputs.tool }}
@@ -92,43 +100,6 @@ jobs:
           if [[ "$(cargo binstall -V)" != "$(jq -r '.latest.version' manifests/cargo-binstall.json)" ]]; then
             exit 1
           fi
-
-  # https://github.com/taiki-e/install-action/pull/518#issuecomment-2160736760
-  test-msys64:
-    strategy:
-      fail-fast: false
-      matrix:
-        include:
-          # - os: windows-2019
-          - os: windows-2022
-    runs-on: ${{ matrix.os }}
-    timeout-minutes: 60
-    steps:
-      - uses: taiki-e/checkout-action@v1
-      - run: |
-          echo "C:\msys64\mingw32\bin" >> $GITHUB_PATH
-          echo "C:\msys64\usr\bin" >> $GITHUB_PATH
-      # cross attempts to install rust-src when Cargo.toml is available even if `cross --version`
-      - run: rm Cargo.toml
-      - name: Generate tool list
-        id: tool-list
-        run: tools/ci/tool-list.sh >>"${GITHUB_OUTPUT}"
-      - uses: ./
-        with:
-          tool: ${{ steps.tool-list.outputs.tool }}
-      # https://docs.github.com/en/actions/using-workflows/workflow-syntax-for-github-actions#jobsjob_idstepsshell
-      - name: Test bash
-        run: just --version && shfmt --version && protoc --version
-        shell: bash
-      - name: Test pwsh
-        run: just --version; shfmt --version; protoc --version
-        shell: pwsh
-      - name: Test powershell
-        run: just --version; shfmt --version; protoc --version
-        shell: powershell
-      - name: Test cmd
-        run: just --version & shfmt --version & protoc --version
-        shell: cmd
 
   test-container:
     strategy:
