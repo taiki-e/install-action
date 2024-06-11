@@ -400,7 +400,7 @@ init_install_action_bin_dir() {
 }
 canonicalize_windows_path() {
     case "${host_os}" in
-        windows) sed <<<"$1" 's/^\/c\//C:\\/; s/\//\\/g' ;;
+        windows) sed <<<"$1" 's/^\/cygdrive\//\//; s/^\/c\//C:\\/; s/\//\\/g' ;;
         *) echo "$1" ;;
     esac
 }
@@ -521,8 +521,10 @@ if [[ "${host_os}" == "windows" ]]; then
         if [[ -d "${home/\/home\//\/c\/Users\/}" ]]; then
             # MSYS2 https://github.com/taiki-e/install-action/pull/518#issuecomment-2160736760
             home="${home/\/home\//\/c\/Users\/}"
+        elif [[ -d "${home/\/home\//\/cygdrive\/c\/Users\/}" ]]; then
+            # Cygwin https://github.com/taiki-e/install-action/issues/224#issuecomment-1720196288
+            home="${home/\/home\//\/cygdrive\/c\/Users\/}"
         else
-            # TODO: Cygwin https://github.com/taiki-e/install-action/issues/224#issuecomment-1720196288
             warn "\$HOME starting /home/ (${home}) on Windows bash is usually fake path, this may cause installation issue"
         fi
     fi

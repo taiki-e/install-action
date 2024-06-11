@@ -56,6 +56,8 @@ jobs:
           # https://github.com/taiki-e/install-action/pull/518#issuecomment-2160736760
           - os: windows-2022
             bash: msys64
+          - os: windows-2022
+            bash: cygwin
     runs-on: ${{ matrix.os }}
     timeout-minutes: 60
     steps:
@@ -70,6 +72,13 @@ jobs:
           echo "C:\msys64\mingw32\bin" >> $GITHUB_PATH
           echo "C:\msys64\usr\bin" >> $GITHUB_PATH
         if: matrix.bash == 'msys64'
+      - run: |
+          set -eEuxo pipefail
+          choco install --no-progress --requirechecksums cygwin
+          echo "C:\tools\cygwin\bin" >> $GITHUB_PATH
+          echo "C:\tools\cygwin\usr\bin" >> $GITHUB_PATH
+        if: matrix.bash == 'cygwin'
+      - run: env
       - uses: ./
         with:
           tool: ${{ steps.tool-list.outputs.tool }}
@@ -100,6 +109,7 @@ jobs:
           if [[ "$(cargo binstall -V)" != "$(jq -r '.latest.version' manifests/cargo-binstall.json)" ]]; then
             exit 1
           fi
+        if: matrix.bash != 'cygwin'
 
   test-container:
     strategy:

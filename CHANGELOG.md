@@ -10,9 +10,16 @@ Note: In this file, do not use the hard wrap in the middle of a sentence for com
 
 ## [Unreleased]
 
+- Workaround Cygwin bash's buggy behavior. ([#534](https://github.com/taiki-e/install-action/pull/534))
+  This fixes an installation issue when default bash was overridden like the following:
+
+  ```sh
+  echo "C:\tools\cygwin\bin" >> $GITHUB_PATH
+  ```
+
 ## [2.38.3] - 2024-06-11
 
-- Workaround msys64 bash's buggy behavior. ([#533](https://github.com/taiki-e/install-action/pull/533))
+- Workaround MSYS64 bash's buggy behavior. ([#533](https://github.com/taiki-e/install-action/pull/533))
   This fixes an installation issue when default bash was overridden like the following:
 
   ```sh
