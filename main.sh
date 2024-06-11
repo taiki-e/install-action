@@ -515,17 +515,29 @@ case "$(uname -m)" in
 esac
 info "host platform: ${host_arch}_${host_os}"
 
-install_action_dir="${HOME}/.install-action"
+home="${HOME}"
+if [[ "${host_os}" == "windows" ]]; then
+    # https://github.com/taiki-e/install-action/pull/518#issuecomment-2160736760
+    home="${home/\/home\//\/c\/Users\/}"
+fi
+install_action_dir="${home}/.install-action"
 tmp_dir="${install_action_dir}/tmp"
-cargo_bin="${CARGO_HOME:-"${HOME}/.cargo"}/bin"
+cargo_bin="${CARGO_HOME:-"${home}/.cargo"}/bin"
 # If $CARGO_HOME does not exist, or cargo installed outside of $CARGO_HOME/bin
 # is used ($CARGO_HOME/bin is most likely not included in the PATH), fallback to
 # /usr/local/bin or $install_action_dir/bin.
-if [[ ! -e "${cargo_bin}" ]] || [[ "$(type -P cargo || true)" != "${cargo_bin}/cargo"* ]]; then
+if [[ "${host_os}" == "windows" ]]; then
+    if type -P cargo &>/dev/null; then
+        info "cargo is located at $(type -P cargo)"
+        cargo_bin=$(dirname "$(type -P cargo)")
+    else
+        cargo_bin="${install_action_dir}/bin"
+    fi
+elif [[ ! -e "${cargo_bin}" ]] || [[ "$(type -P cargo || true)" != "${cargo_bin}/cargo"* ]]; then
     if type -P cargo &>/dev/null; then
         info "cargo is located at $(type -P cargo)"
     fi
-    if [[ "${host_os}" == "windows" ]] || [[ ! -e /usr/local/bin ]]; then
+    if [[ ! -e /usr/local/bin ]]; then
         cargo_bin="${install_action_dir}/bin"
     else
         cargo_bin=/usr/local/bin
@@ -808,7 +820,7 @@ if [[ ${#unsupported_tools[@]} -gt 0 ]]; then
     # min tls version to be 1.2
     cargo-binstall binstall --force --no-confirm --locked "${unsupported_tools[@]}"
     if ! type -P cargo >/dev/null; then
-        _bin_dir=$(canonicalize_windows_path "${HOME}/.cargo/bin")
+        _bin_dir=$(canonicalize_windows_path "${home}/.cargo/bin")
         # TODO: avoid this when already added
         info "adding '${_bin_dir}' to PATH"
         echo "${_bin_dir}" >>"${GITHUB_PATH}"
