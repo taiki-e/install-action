@@ -10,6 +10,8 @@ Note: In this file, do not use the hard wrap in the middle of a sentence for com
 
 ## [Unreleased]
 
+- Update `espup@latest` to 0.12.0.
+
 ## [2.38.4] - 2024-06-11
 
 - Workaround Cygwin bash's buggy behavior. ([#534](https://github.com/taiki-e/install-action/pull/534))
