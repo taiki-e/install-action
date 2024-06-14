@@ -10,6 +10,8 @@ Note: In this file, do not use the hard wrap in the middle of a sentence for com
 
 ## [Unreleased]
 
+- Update `just@latest` to 1.29.1.
+
 - Update `rclone@latest` to 1.67.0.
 
 ## [2.38.6] - 2024-06-14
