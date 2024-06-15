@@ -10,6 +10,8 @@ Note: In this file, do not use the hard wrap in the middle of a sentence for com
 
 ## [Unreleased]
 
+## [2.38.7] - 2024-06-15
+
 - Update `syft@latest` to 1.7.0.
 
 - Update `just@latest` to 1.29.1.
@@ -2334,7 +2336,8 @@ Note: This release is considered a breaking change because installing on version
 
 Initial release
 
-[Unreleased]: https://github.com/taiki-e/install-action/compare/v2.38.6...HEAD
+[Unreleased]: https://github.com/taiki-e/install-action/compare/v2.38.7...HEAD
+[2.38.7]: https://github.com/taiki-e/install-action/compare/v2.38.6...v2.38.7
 [2.38.6]: https://github.com/taiki-e/install-action/compare/v2.38.5...v2.38.6
 [2.38.5]: https://github.com/taiki-e/install-action/compare/v2.38.4...v2.38.5
 [2.38.4]: https://github.com/taiki-e/install-action/compare/v2.38.3...v2.38.4
