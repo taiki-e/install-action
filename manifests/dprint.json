@@ -25,10 +25,27 @@
   },
   "license_markdown": "[MIT](https://github.com/dprint/dprint/blob/main/LICENSE)",
   "latest": {
-    "version": "0.46.2"
+    "version": "0.46.3"
   },
   "0.46": {
-    "version": "0.46.2"
+    "version": "0.46.3"
+  },
+  "0.46.3": {
+    "x86_64_linux_musl": {
+      "checksum": "b3968388c27fcc0853d54e57f8a00c1bd6134395d9657ded3088f365304bf90f"
+    },
+    "x86_64_macos": {
+      "checksum": "a9f4c71f1e32e99152e8278ccbd27c059246dfa1c3d8b3cb1fa0837bdd269b3e"
+    },
+    "x86_64_windows": {
+      "checksum": "4e024b2e626b2eabf923a62703cda3beb90ecacfaf2d737454ed6025779e3811"
+    },
+    "aarch64_linux_musl": {
+      "checksum": "868a478307416f845f11dff9d9d6e94547dc826339fb6d5740f5b7795d9135af"
+    },
+    "aarch64_macos": {
+      "checksum": "f051c3b3bb5e8f936c1b5ad6e3659bf408a8e787b6dca48e6f95baf261f6e84d"
+    }
   },
   "0.46.2": {
     "x86_64_linux_musl": {
