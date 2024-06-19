@@ -13,8 +13,7 @@ This is a list of tools that are installed from manifests managed in this action
 If a tool not included in the list below is specified, this action uses [cargo-binstall] as a fallback.
 
 > If `$CARGO_HOME/bin` is not available, Rust-related binaries will be installed to `$HOME/.cargo/bin`.<br>
-> If `$HOME/.cargo/bin` is not available, Rust-related binaries will be installed to `/usr/local/bin`.<br>
-> If `/usr/local/bin` is not available, binaries will be installed to `$HOME/.install-action/bin`.<br>
+> If `$HOME/.cargo/bin` is not available, Rust-related binaries will be installed to `$HOME/.install-action/bin`.<br>
 
 | Name | Where binaries will be installed | Where will it be installed from | Supported platform | License |
 | ---- | -------------------------------- | ------------------------------- | ------------------ | ------- |
@@ -178,12 +177,10 @@ enum InstalledTo {
 impl fmt::Display for InstalledTo {
     fn fmt(&self, f: &mut fmt::Formatter<'_>) -> fmt::Result {
         match self {
-            InstalledTo::Cargo => f.write_str("`$CARGO_HOME/bin`")?,
-            InstalledTo::Snap => f.write_str("`/snap/bin`")?,
-            InstalledTo::UsrLocal => f.write_str("`/usr/local/bin`")?,
+            InstalledTo::Cargo => f.write_str("`$CARGO_HOME/bin`"),
+            InstalledTo::Snap => f.write_str("`/snap/bin`"),
+            InstalledTo::UsrLocal => f.write_str("`$HOME/.install-action/bin`"),
         }
-
-        Ok(())
     }
 }
 
