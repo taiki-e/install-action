@@ -10,6 +10,8 @@ Note: In this file, do not use the hard wrap in the middle of a sentence for com
 
 ## [Unreleased]
 
+- Fix an installation issue on some container environments. ([#545](https://github.com/taiki-e/install-action/pull/545))
+
 ## [2.39.2] - 2024-06-18
 
 - Update `dprint@latest` to 0.46.3.
