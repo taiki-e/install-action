@@ -7,6 +7,7 @@ use std::{
     ffi::OsStr,
     io::Read,
     path::Path,
+    sync::{LazyLock, RwLock},
     time::Duration,
 };
 
@@ -28,6 +29,7 @@ fn main() -> Result<()> {
         std::process::exit(1);
     }
     let package = &args[0];
+    let version_req = args.get(1);
     let skip_existing_manifest_versions = std::env::var("SKIP_EXISTING_MANIFEST_VERSIONS").is_ok();
 
     let workspace_root = &workspace_root();
@@ -47,22 +49,22 @@ fn main() -> Result<()> {
         .strip_prefix("https://github.com/")
         .context("repository must start with https://github.com/")?;
 
-    eprintln!("downloading metadata from https://github.com/{repo}");
-
+    eprintln!("downloading metadata from https://api.github.com/repos/{repo}");
     let repo_info: github::RepoMetadata =
-        download_github(&format!("https://api.github.com/repos/{repo}"))?.into_json()?;
+        download(&format!("https://api.github.com/repos/{repo}"))?.into_json()?;
 
-    eprintln!("downloading releases of https://github.com/{repo} from https://api.github.com/repos/{repo}/releases");
+    eprintln!("downloading releases from https://api.github.com/repos/{repo}/releases");
     let mut releases: github::Releases = vec![];
     // GitHub API returns up to 100 results at a time. If the number of releases
     // is greater than 100, multiple fetches are needed.
     for page in 1.. {
         let per_page = 100;
-        let mut r: github::Releases = download_github(&format!(
+        let mut r: github::Releases = download(&format!(
             "https://api.github.com/repos/{repo}/releases?per_page={per_page}&page={page}"
         ))?
         .into_json()?;
-        if r.len() < per_page {
+        // If version_req is latest, it is usually sufficient to look at the latest 100 releases.
+        if r.len() < per_page || version_req.map_or(false, |req| req == "latest") {
             releases.append(&mut r);
             break;
         }
@@ -192,7 +194,7 @@ fn main() -> Result<()> {
         panic!("Unable to determine license_markdown; set manually")
     }
 
-    let version_req: Option<semver::VersionReq> = match args.get(1) {
+    let version_req: Option<semver::VersionReq> = match version_req {
         _ if latest_only => {
             let req = format!("={}", releases.first_key_value().unwrap().0 .0).parse()?;
             eprintln!("update manifest for versions '{req}'");
@@ -294,7 +296,7 @@ fn main() -> Result<()> {
                 eprintln!("already downloaded");
                 fs::File::open(download_cache)?.read_to_end(&mut buf)?;
             } else {
-                download_github(&url)?.into_reader().read_to_end(&mut buf)?;
+                download(&url)?.into_reader().read_to_end(&mut buf)?;
                 eprintln!("download complete");
                 fs::write(download_cache, &buf)?;
             }
@@ -316,7 +318,7 @@ fn main() -> Result<()> {
                         eprintln!("already downloaded");
                         minisign_verify::Signature::from_file(sig_download_cache)?
                     } else {
-                        let buf = download_github(&url)?.into_string()?;
+                        let buf = download(&url)?.into_string()?;
                         eprintln!("download complete");
                         fs::write(sig_download_cache, &buf)?;
                         minisign_verify::Signature::decode(&buf)?
@@ -606,82 +608,116 @@ fn replace_vars(
     Ok(s)
 }
 
-/// Download using GITHUB_TOKEN.
-#[allow(clippy::missing_panics_doc)]
-fn download_github(url: &str) -> Result<ureq::Response> {
-    let mut token = env::var("GITHUB_TOKEN").ok().filter(|v| !v.is_empty());
+struct GitHubTokens {
+    // In my experience, only api.github.com have severe rate limit.
+    // https://api.github.com/
+    // Refs: https://docs.github.com/en/rest/using-the-rest-api/rate-limits-for-the-rest-api
+    api: RwLock<Option<String>>,
+    // https://raw.githubusercontent.com/
+    // Refs: https://stackoverflow.com/questions/66522261/does-github-rate-limit-access-to-public-raw-files
+    raw: RwLock<Option<String>>,
+    // https://github.com/*/*/releases/download/
+    other: RwLock<Option<String>>,
+}
+impl GitHubTokens {
+    fn get(&self, url: &str) -> Option<String> {
+        if url.starts_with("https://raw.githubusercontent.com/") {
+            self.raw.read().unwrap().clone()
+        } else if url.starts_with("https://api.github.com/") {
+            self.api.read().unwrap().clone()
+        } else if url.starts_with("https://github.com/") {
+            self.other.read().unwrap().clone()
+        } else {
+            None
+        }
+    }
+    fn clear(&self, url: &str) {
+        if url.starts_with("https://raw.githubusercontent.com/") {
+            *self.raw.write().unwrap() = None;
+        } else if url.starts_with("https://api.github.com/") {
+            *self.api.write().unwrap() = None;
+        } else if url.starts_with("https://github.com/") {
+            *self.other.write().unwrap() = None;
+        }
+    }
+}
+static GITHUB_TOKENS: LazyLock<GitHubTokens> = LazyLock::new(|| {
+    let token = env::var("GITHUB_TOKEN").ok().filter(|v| !v.is_empty());
+    GitHubTokens {
+        raw: RwLock::new(token.clone()),
+        api: RwLock::new(token.clone()),
+        other: RwLock::new(token),
+    }
+});
+
+fn download(url: &str) -> Result<ureq::Response> {
+    let mut token = GITHUB_TOKENS.get(url);
     let mut retry = 0;
-    let max_retry = 6;
+    let mut retry_time = 0;
+    let mut max_retry = 6;
+    if token.is_none() {
+        max_retry /= 2;
+    }
     let mut last_error;
     loop {
         let mut req = ureq::get(url);
         if let Some(token) = &token {
-            req = req.set("Authorization", token);
+            req = req.set("Authorization", &format!("Bearer {token}"));
         }
         match req.call() {
             Ok(res) => return Ok(res),
             Err(e) => last_error = Some(e),
         }
-        if retry == max_retry / 2 && token.is_some() {
+        retry_time += 1;
+        if token.is_some() && retry == max_retry / 2 {
+            retry_time = 0;
             token = None;
+            // rate limit
+            GITHUB_TOKENS.clear(url);
         }
         retry += 1;
         if retry > max_retry {
             break;
         }
-        eprintln!("download failed; retrying after {}s ({retry}/{max_retry})", retry * 2);
-        std::thread::sleep(Duration::from_secs(retry * 2));
+        eprintln!("download failed; retrying after {}s ({retry}/{max_retry})", retry_time * 2);
+        std::thread::sleep(Duration::from_secs(retry_time * 2));
     }
     Err(last_error.unwrap().into())
 }
 
-#[allow(clippy::missing_panics_doc)]
-pub fn github_head(url: &str) -> Result<()> {
+fn github_head(url: &str) -> Result<()> {
     eprintln!("fetching head of {url} ..");
-    let mut token = env::var("GITHUB_TOKEN").ok().filter(|v| !v.is_empty());
+    let mut token = GITHUB_TOKENS.get(url);
     let mut retry = 0;
-    let max_retry = 2;
+    let mut retry_time = 0;
+    let mut max_retry = 2;
+    if token.is_none() {
+        max_retry /= 2;
+    }
     let mut last_error;
     loop {
         let mut req = ureq::head(url);
         if let Some(token) = &token {
-            req = req.set("Authorization", token);
+            req = req.set("Authorization", &format!("Bearer {token}"));
         }
         match req.call() {
             Ok(_) => return Ok(()),
-            Err(e) => last_error = Some(e),
+            // rate limit
+            Err(e @ ureq::Error::Status(403, _)) => last_error = Some(e),
+            Err(e) => return Err(e.into()),
         }
-        if retry == max_retry / 2 && token.is_some() {
+        retry_time += 1;
+        if token.is_some() && retry == max_retry / 2 {
+            retry_time = 0;
             token = None;
+            GITHUB_TOKENS.clear(url);
         }
         retry += 1;
         if retry > max_retry {
             break;
         }
-        eprintln!("head of {url} failed; retrying after {}s ({retry}/{max_retry})", retry * 2);
-        std::thread::sleep(Duration::from_secs(retry * 2));
-    }
-    Err(last_error.unwrap().into())
-}
-
-/// Download without using GITHUB_TOKEN.
-#[allow(clippy::missing_panics_doc)]
-pub fn download(url: &str) -> Result<ureq::Response> {
-    let mut retry = 0;
-    let max_retry = 6;
-    let mut last_error;
-    loop {
-        let req = ureq::get(url);
-        match req.call() {
-            Ok(res) => return Ok(res),
-            Err(e) => last_error = Some(e),
-        }
-        retry += 1;
-        if retry > max_retry {
-            break;
-        }
-        eprintln!("download of {url} failed; retrying after {}s ({retry}/{max_retry})", retry * 2);
-        std::thread::sleep(Duration::from_secs(retry * 2));
+        eprintln!("head of {url} failed; retrying after {}s ({retry}/{max_retry})", retry_time * 2);
+        std::thread::sleep(Duration::from_secs(retry_time * 2));
     }
     Err(last_error.unwrap().into())
 }
