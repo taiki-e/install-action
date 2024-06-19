@@ -299,11 +299,8 @@ read_download_info() {
         fi
     fi
     if [[ "${rust_crate}" == "null" ]]; then
-        if [[ "${host_os}" == "windows" ]] || [[ ! -e /usr/local/bin ]]; then
-            bin_dir="${install_action_dir}/bin"
-        else
-            bin_dir=/usr/local/bin
-        fi
+        # Moving files to /usr/local/bin requires sudo in some environments, so do not use it: https://github.com/taiki-e/install-action/issues/543
+        bin_dir="${install_action_dir}/bin"
     else
         bin_dir="${cargo_bin}"
     fi
@@ -534,7 +531,7 @@ tmp_dir="${install_action_dir}/tmp"
 cargo_bin="${CARGO_HOME:-"${home}/.cargo"}/bin"
 # If $CARGO_HOME does not exist, or cargo installed outside of $CARGO_HOME/bin
 # is used ($CARGO_HOME/bin is most likely not included in the PATH), fallback to
-# /usr/local/bin or $install_action_dir/bin.
+# $install_action_dir/bin.
 if [[ "${host_os}" == "windows" ]]; then
     if type -P cargo &>/dev/null; then
         info "cargo is located at $(type -P cargo)"
@@ -546,11 +543,8 @@ elif [[ ! -e "${cargo_bin}" ]] || [[ "$(type -P cargo || true)" != "${cargo_bin}
     if type -P cargo &>/dev/null; then
         info "cargo is located at $(type -P cargo)"
     fi
-    if [[ ! -e /usr/local/bin ]]; then
-        cargo_bin="${install_action_dir}/bin"
-    else
-        cargo_bin=/usr/local/bin
-    fi
+    # Moving files to /usr/local/bin requires sudo in some environments, so do not use it: https://github.com/taiki-e/install-action/issues/543
+    cargo_bin="${install_action_dir}/bin"
 fi
 
 jq_use_b=''
