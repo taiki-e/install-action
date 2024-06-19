@@ -172,7 +172,7 @@ fn main() -> Result<()> {
         if let Some(license) = detail.license {
             eprintln!("Trying to using license '{license}' from crates.io ...");
             if let Some(license_markdown) =
-                get_license_markdown(&license, &repo.to_string(), &repo_info.default_branch)
+                get_license_markdown(&license, repo, &repo_info.default_branch)
             {
                 manifests.license_markdown = license_markdown;
             }
@@ -181,7 +181,7 @@ fn main() -> Result<()> {
         if let Some(license) = license.spdx_id {
             eprintln!("Trying to using license '{license}' from github.com ...");
             if let Some(license_markdown) =
-                get_license_markdown(&license, &repo.to_string(), &repo_info.default_branch)
+                get_license_markdown(&license, repo, &repo_info.default_branch)
             {
                 manifests.license_markdown = license_markdown;
             }
@@ -687,16 +687,16 @@ pub fn download(url: &str) -> Result<ureq::Response> {
 }
 
 #[must_use]
-fn create_github_raw_link(repository: &String, branch: &String, filename: &String) -> String {
+fn create_github_raw_link(repository: &str, branch: &str, filename: &str) -> String {
     format!("https://raw.githubusercontent.com/{repository}/{branch}/{filename}")
 }
 
 #[must_use]
-fn create_github_link(repository: &String, branch: &String, filename: &String) -> String {
+fn create_github_link(repository: &str, branch: &str, filename: &str) -> String {
     format!("https://github.com/{repository}/blob/{branch}/{filename}")
 }
 #[must_use]
-fn get_license_markdown(spdx_expr: &str, repo: &String, default_branch: &String) -> Option<String> {
+fn get_license_markdown(spdx_expr: &str, repo: &str, default_branch: &str) -> Option<String> {
     // TODO: use https://docs.rs/spdx/latest/spdx/expression/struct.Expression.html#method.canonicalize ?
     let expr = spdx::Expression::parse_mode(spdx_expr, spdx::ParseMode::LAX).unwrap();
 
@@ -740,14 +740,14 @@ fn get_license_markdown(spdx_expr: &str, repo: &String, default_branch: &String)
             let license_name = if let Some(exception_id) = exception_id {
                 format!("{} WITH {}", license_id.name, exception_id.name)
             } else {
-                license_id.name.to_string()
+                license_id.name.to_owned()
             };
             let name = license_id.name.split('-').next().unwrap().to_ascii_uppercase();
             for filename in [
-                "LICENSE".to_string(),
+                "LICENSE".to_owned(),
                 format!("LICENSE-{name}"),
-                "LICENSE.md".to_string(),
-                "COPYING".to_string(),
+                "LICENSE.md".to_owned(),
+                "COPYING".to_owned(),
             ] {
                 let url = create_github_raw_link(repo, default_branch, &filename);
                 if github_head(&url).is_ok() {
@@ -765,7 +765,7 @@ fn get_license_markdown(spdx_expr: &str, repo: &String, default_branch: &String)
                 let license_name = if let Some(exception_id) = exception_id {
                     format!("{} WITH {}", license_id.name, exception_id.name)
                 } else {
-                    license_id.name.to_string()
+                    license_id.name.to_owned()
                 };
                 if github_head(&url).is_ok() {
                     let url = create_github_link(repo, default_branch, &filename);

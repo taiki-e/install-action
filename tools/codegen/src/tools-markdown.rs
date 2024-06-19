@@ -46,16 +46,16 @@ fn main() -> Result<()> {
     paths.sort_by_key(fs_err::DirEntry::path);
 
     let mut tools = vec![MarkdownEntry {
-        name: "valgrind".to_string(),
+        name: "valgrind".to_owned(),
         alias: None,
-        website: "https://valgrind.org/".to_string(),
+        website: "https://valgrind.org/".to_owned(),
         installed_to: InstalledTo::Snap,
         installed_from: InstalledFrom::Snap,
         platforms: Platforms { linux: true, ..Default::default() },
-        repository: "https://sourceware.org/git/valgrind.git".to_string(),
+        repository: "https://sourceware.org/git/valgrind.git".to_owned(),
         license_markdown:
             "[GPL-2.0](https://sourceware.org/git/?p=valgrind.git;a=blob;f=COPYING;hb=HEAD)"
-                .to_string(),
+                .to_owned(),
     }];
 
     for path in paths {
