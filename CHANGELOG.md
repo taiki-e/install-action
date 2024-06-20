@@ -10,6 +10,8 @@ Note: In this file, do not use the hard wrap in the middle of a sentence for com
 
 ## [Unreleased]
 
+- Update `biome@latest` to 1.8.2.
+
 ## [2.40.0] - 2024-06-19
 
 - Fix an installation issue on some container environments. ([#545](https://github.com/taiki-e/install-action/pull/545))
