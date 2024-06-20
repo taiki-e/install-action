@@ -19,7 +19,27 @@
   },
   "license_markdown": "[MIT](https://github.com/rust-cross/cargo-zigbuild/blob/main/LICENSE)",
   "latest": {
-    "version": "0.18.4"
+    "version": "0.19.0"
+  },
+  "0.19": {
+    "version": "0.19.0"
+  },
+  "0.19.0": {
+    "x86_64_linux_musl": {
+      "checksum": "ab2e2f3a22409470ec7d71badc22ab89351a6ddaba5c4785a39689856809404c"
+    },
+    "x86_64_windows": {
+      "checksum": "640b03357f568deb976cd0e0732db04f723498a0d4706d71ebaec05f8fc35db2"
+    },
+    "aarch64_linux_musl": {
+      "checksum": "edc3d0966ed8c80056d36ace8998eb75ed2f3a71342e0825960d98c9eb3398a0"
+    },
+    "aarch64_macos": {
+      "checksum": "9173594204eaacadd62e2f26a3c2365887ec24a4fa15f309023b8d4bbbc09dec"
+    },
+    "aarch64_windows": {
+      "checksum": "6affe535f6d37768cc20be30b8b65a1bcc196ae1efdad71d2a5c44049a081b7e"
+    }
   },
   "0.18": {
     "version": "0.18.4"
