@@ -1,0 +1,14 @@
+{
+  "repository": "https://github.com/knope-dev/knope",
+  "tag_prefix": "knope/v",
+  "rust_crate": "${package}",
+  "asset_name": "${package}-${rust_target}.tgz",
+  "bin": "${package}-${rust_target}/${package}${exe}",
+  "version_range": ">= 0.16.0",
+  "platform": {
+    "x86_64_linux_musl": {},
+    "x86_64_macos": {},
+    "x86_64_windows": {},
+    "aarch64_macos": {}
+  }
+}
