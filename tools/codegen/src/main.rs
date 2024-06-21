@@ -7,7 +7,7 @@ use std::{
     ffi::OsStr,
     io::Read,
     path::Path,
-    sync::{LazyLock, RwLock},
+    sync::RwLock,
     time::Duration,
 };
 
@@ -17,8 +17,10 @@ use install_action_internal_codegen::{
     workspace_root, BaseManifest, HostPlatform, Manifest, ManifestDownloadInfo, ManifestRef,
     ManifestTemplate, ManifestTemplateDownloadInfo, Manifests, Signing, SigningKind, Version,
 };
+use once_cell::sync::Lazy;
 use sha2::{Digest, Sha256};
 use spdx::expression::{ExprNode, ExpressionReq, Operator};
+
 
 fn main() -> Result<()> {
     let args: Vec<_> = env::args().skip(1).collect();
@@ -670,7 +672,8 @@ impl GitHubTokens {
         }
     }
 }
-static GITHUB_TOKENS: LazyLock<GitHubTokens> = LazyLock::new(|| {
+// TODO: Use std::sync::LazyLock once 1.80 is released
+static GITHUB_TOKENS: Lazy<GitHubTokens> = Lazy::new(|| {
     let token = env::var("GITHUB_TOKEN").ok().filter(|v| !v.is_empty());
     GitHubTokens {
         raw: RwLock::new(token.clone()),
