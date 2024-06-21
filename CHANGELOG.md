@@ -10,6 +10,8 @@ Note: In this file, do not use the hard wrap in the middle of a sentence for com
 
 ## [Unreleased]
 
+- Support `knope`. ([#553](https://github.com/taiki-e/install-action/pull/553), thanks @jayvdb)
+
 - Update `osv-scanner@latest` to 1.8.1.
 
 ## [2.40.2] - 2024-06-21
