@@ -1,6 +1,6 @@
 {
   "repository": "https://github.com/knope-dev/knope",
-  "tag_prefix": "v",
+  "tag_prefix": "knope/v",
   "rust_crate": "${package}",
   "asset_name": "${package}-${rust_target}.tgz",
   "bin": "${package}-${rust_target}/${package}${exe}",
