@@ -512,7 +512,7 @@ fn main() -> Result<()> {
     }
 
     let ManifestRef::Ref { version: latest_version } =
-        manifests.map.first_key_value().unwrap().1.clone()
+        manifests.map.first_key_value().expect("no versions found").1.clone()
     else {
         unreachable!()
     };
