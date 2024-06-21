@@ -158,6 +158,8 @@ jobs:
     permissions:
       contents: write
       pull-requests: write
+    env:
+      RUSTFLAGS: -C link-arg=-fuse-ld=lld
     steps:
       - uses: taiki-e/checkout-action@v1
       - name: Install Rust
