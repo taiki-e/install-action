@@ -399,26 +399,23 @@ fn main() -> Result<()> {
                 None => {}
             }
 
-            download_info.insert(
-                platform,
-                ManifestDownloadInfo {
-                    url: Some(url),
-                    etag,
-                    checksum: hash,
-                    bin: base_download_info.bin.as_ref().or(base_info.bin.as_ref()).map(|s| {
-                        s.map(|s| {
-                            replace_vars(
-                                s,
-                                package,
-                                Some(version),
-                                Some(platform),
-                                base_info.rust_crate.as_deref(),
-                            )
-                            .unwrap()
-                        })
-                    }),
-                },
-            );
+            download_info.insert(platform, ManifestDownloadInfo {
+                url: Some(url),
+                etag,
+                checksum: hash,
+                bin: base_download_info.bin.as_ref().or(base_info.bin.as_ref()).map(|s| {
+                    s.map(|s| {
+                        replace_vars(
+                            s,
+                            package,
+                            Some(version),
+                            Some(platform),
+                            base_info.rust_crate.as_deref(),
+                        )
+                        .unwrap()
+                    })
+                }),
+            });
             buf.clear();
         }
         if download_info.is_empty() {
@@ -498,17 +495,17 @@ fn main() -> Result<()> {
                 );
             }
             if version.major != 0 {
-                manifests.map.insert(
-                    Reverse(Version::omitted(version.major, None)),
-                    ManifestRef::Ref { version: version.clone().into() },
-                );
+                manifests
+                    .map
+                    .insert(Reverse(Version::omitted(version.major, None)), ManifestRef::Ref {
+                        version: version.clone().into(),
+                    });
             }
             prev_version = version;
         }
-        manifests.map.insert(
-            Reverse(Version::latest()),
-            ManifestRef::Ref { version: prev_version.clone().into() },
-        );
+        manifests.map.insert(Reverse(Version::latest()), ManifestRef::Ref {
+            version: prev_version.clone().into(),
+        });
     }
 
     let ManifestRef::Ref { version: latest_version } =
@@ -575,10 +572,10 @@ fn main() -> Result<()> {
                     break 'outer;
                 }
             } else {
-                t.download_info.insert(
-                    *platform,
-                    ManifestTemplateDownloadInfo { url: template_url, bin: template_bin },
-                );
+                t.download_info.insert(*platform, ManifestTemplateDownloadInfo {
+                    url: template_url,
+                    bin: template_bin,
+                });
             }
         }
     }
