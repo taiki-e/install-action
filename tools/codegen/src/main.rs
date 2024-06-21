@@ -7,7 +7,7 @@ use std::{
     ffi::OsStr,
     io::Read,
     path::Path,
-    sync::RwLock,
+    sync::{OnceLock, RwLock},
     time::Duration,
 };
 
@@ -17,10 +17,8 @@ use install_action_internal_codegen::{
     workspace_root, BaseManifest, HostPlatform, Manifest, ManifestDownloadInfo, ManifestRef,
     ManifestTemplate, ManifestTemplateDownloadInfo, Manifests, Signing, SigningKind, Version,
 };
-use once_cell::sync::Lazy;
 use sha2::{Digest, Sha256};
 use spdx::expression::{ExprNode, ExpressionReq, Operator};
-
 
 fn main() -> Result<()> {
     let args: Vec<_> = env::args().skip(1).collect();
@@ -401,23 +399,26 @@ fn main() -> Result<()> {
                 None => {}
             }
 
-            download_info.insert(platform, ManifestDownloadInfo {
-                url: Some(url),
-                etag,
-                checksum: hash,
-                bin: base_download_info.bin.as_ref().or(base_info.bin.as_ref()).map(|s| {
-                    s.map(|s| {
-                        replace_vars(
-                            s,
-                            package,
-                            Some(version),
-                            Some(platform),
-                            base_info.rust_crate.as_deref(),
-                        )
-                        .unwrap()
-                    })
-                }),
-            });
+            download_info.insert(
+                platform,
+                ManifestDownloadInfo {
+                    url: Some(url),
+                    etag,
+                    checksum: hash,
+                    bin: base_download_info.bin.as_ref().or(base_info.bin.as_ref()).map(|s| {
+                        s.map(|s| {
+                            replace_vars(
+                                s,
+                                package,
+                                Some(version),
+                                Some(platform),
+                                base_info.rust_crate.as_deref(),
+                            )
+                            .unwrap()
+                        })
+                    }),
+                },
+            );
             buf.clear();
         }
         if download_info.is_empty() {
@@ -497,17 +498,17 @@ fn main() -> Result<()> {
                 );
             }
             if version.major != 0 {
-                manifests
-                    .map
-                    .insert(Reverse(Version::omitted(version.major, None)), ManifestRef::Ref {
-                        version: version.clone().into(),
-                    });
+                manifests.map.insert(
+                    Reverse(Version::omitted(version.major, None)),
+                    ManifestRef::Ref { version: version.clone().into() },
+                );
             }
             prev_version = version;
         }
-        manifests.map.insert(Reverse(Version::latest()), ManifestRef::Ref {
-            version: prev_version.clone().into(),
-        });
+        manifests.map.insert(
+            Reverse(Version::latest()),
+            ManifestRef::Ref { version: prev_version.clone().into() },
+        );
     }
 
     let ManifestRef::Ref { version: latest_version } =
@@ -574,10 +575,10 @@ fn main() -> Result<()> {
                     break 'outer;
                 }
             } else {
-                t.download_info.insert(*platform, ManifestTemplateDownloadInfo {
-                    url: template_url,
-                    bin: template_bin,
-                });
+                t.download_info.insert(
+                    *platform,
+                    ManifestTemplateDownloadInfo { url: template_url, bin: template_bin },
+                );
             }
         }
     }
@@ -651,39 +652,43 @@ struct GitHubTokens {
     other: RwLock<Option<String>>,
 }
 impl GitHubTokens {
-    fn get(&self, url: &str) -> Option<String> {
+    // TODO: Use std::sync::LazyLock once 1.80 is released
+    fn get_github_tokens() -> &'static GitHubTokens {
+        static GITHUB_TOKENS: OnceLock<GitHubTokens> = OnceLock::new();
+        GITHUB_TOKENS.get_or_init(|| {
+            let token = env::var("GITHUB_TOKEN").ok().filter(|v| !v.is_empty());
+            GitHubTokens {
+                raw: RwLock::new(token.clone()),
+                api: RwLock::new(token.clone()),
+                other: RwLock::new(token),
+            }
+        })
+    }
+
+    fn get(url: &str) -> Option<String> {
         if url.starts_with("https://raw.githubusercontent.com/") {
-            self.raw.read().unwrap().clone()
+            Self::get_github_tokens().raw.read().unwrap().clone()
         } else if url.starts_with("https://api.github.com/") {
-            self.api.read().unwrap().clone()
+            Self::get_github_tokens().api.read().unwrap().clone()
         } else if url.starts_with("https://github.com/") {
-            self.other.read().unwrap().clone()
+            Self::get_github_tokens().other.read().unwrap().clone()
         } else {
             None
         }
     }
-    fn clear(&self, url: &str) {
+    fn clear(url: &str) {
         if url.starts_with("https://raw.githubusercontent.com/") {
-            *self.raw.write().unwrap() = None;
+            *Self::get_github_tokens().raw.write().unwrap() = None;
         } else if url.starts_with("https://api.github.com/") {
-            *self.api.write().unwrap() = None;
+            *Self::get_github_tokens().api.write().unwrap() = None;
         } else if url.starts_with("https://github.com/") {
-            *self.other.write().unwrap() = None;
+            *Self::get_github_tokens().other.write().unwrap() = None;
         }
     }
 }
-// TODO: Use std::sync::LazyLock once 1.80 is released
-static GITHUB_TOKENS: Lazy<GitHubTokens> = Lazy::new(|| {
-    let token = env::var("GITHUB_TOKEN").ok().filter(|v| !v.is_empty());
-    GitHubTokens {
-        raw: RwLock::new(token.clone()),
-        api: RwLock::new(token.clone()),
-        other: RwLock::new(token),
-    }
-});
 
 fn download(url: &str) -> Result<ureq::Response> {
-    let mut token = GITHUB_TOKENS.get(url);
+    let mut token = GitHubTokens::get(url);
     let mut retry = 0;
     let mut retry_time = 0;
     let mut max_retry = 6;
@@ -705,7 +710,7 @@ fn download(url: &str) -> Result<ureq::Response> {
             retry_time = 0;
             token = None;
             // rate limit
-            GITHUB_TOKENS.clear(url);
+            GitHubTokens::clear(url);
         }
         retry += 1;
         if retry > max_retry {
@@ -719,7 +724,7 @@ fn download(url: &str) -> Result<ureq::Response> {
 
 fn github_head(url: &str) -> Result<()> {
     eprintln!("fetching head of {url} ..");
-    let mut token = GITHUB_TOKENS.get(url);
+    let mut token = GitHubTokens::get(url);
     let mut retry = 0;
     let mut retry_time = 0;
     let mut max_retry = 2;
@@ -742,7 +747,7 @@ fn github_head(url: &str) -> Result<()> {
         if token.is_some() && retry == max_retry / 2 {
             retry_time = 0;
             token = None;
-            GITHUB_TOKENS.clear(url);
+            GitHubTokens::clear(url);
         }
         retry += 1;
         if retry > max_retry {
