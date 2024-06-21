@@ -10,6 +10,8 @@ Note: In this file, do not use the hard wrap in the middle of a sentence for com
 
 ## [Unreleased]
 
+- Update `typos@latest` to 1.22.8.
+
 ## [2.41.0] - 2024-06-21
 
 - Support `knope`. ([#553](https://github.com/taiki-e/install-action/pull/553), thanks @jayvdb)
