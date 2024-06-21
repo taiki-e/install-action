@@ -30,6 +30,7 @@ fn main() -> Result<()> {
     }
     let package = &args[0];
     let version_req = args.get(1);
+    let version_req_given = version_req.is_some();
     let skip_existing_manifest_versions = std::env::var("SKIP_EXISTING_MANIFEST_VERSIONS").is_ok();
 
     let workspace_root = &workspace_root();
@@ -106,12 +107,7 @@ fn main() -> Result<()> {
         );
 
         if let Some(crate_repository) = info.crate_.repository.clone() {
-            // cargo-dinghy is fixed at https://github.com/sonos/dinghy/pull/231, but not yet released
-            if crate_name != "cargo-dinghy"
-                && !crate_repository
-                    .to_lowercase()
-                    .starts_with(&base_info.repository.to_lowercase())
-            {
+            if !crate_repository.to_lowercase().starts_with(&base_info.repository.to_lowercase()) {
                 panic!("repository {crate_repository} from crates.io differs from base manifest");
             }
         } else if crate_name != "zola" {
@@ -246,7 +242,9 @@ fn main() -> Result<()> {
 
         let reverse_semver = Reverse(semver_version.clone().into());
 
-        if skip_existing_manifest_versions && manifests.map.contains_key(&reverse_semver) {
+        let existing_manifest = manifests.map.get(&reverse_semver).cloned();
+
+        if skip_existing_manifest_versions && existing_manifest.is_some() {
             eprintln!("Skipping {semver_version} already in manifest");
             continue;
         };
@@ -287,19 +285,40 @@ fn main() -> Result<()> {
                 }
             };
 
-            eprint!("downloading {url} for checksum ... ");
+            eprint!("downloading {url} for etag and checksum ... ");
             let download_cache = &download_cache_dir.join(format!(
                 "{version}-{platform:?}-{}",
                 Path::new(&url).file_name().unwrap().to_str().unwrap()
             ));
+            let response = download(&url)?;
+            let etag = response
+                .header("etag")
+                .expect("binary should have an etag")
+                .to_string()
+                .replace('\"', "");
+
+            if let Some(ManifestRef::Real(ref manifest)) = existing_manifest {
+                if let Some(entry) = manifest.download_info.get(&platform) {
+                    if entry.etag == etag {
+                        eprintln!("existing etag matched");
+                        download_info.insert(platform, entry.clone());
+                        continue;
+                    }
+                    eprintln!("warn: existing etag no longer valid.");
+                } else {
+                    eprintln!("existing manifest for {version} is missing platform {platform:?}");
+                }
+            }
+
             if download_cache.is_file() {
                 eprintln!("already downloaded");
                 fs::File::open(download_cache)?.read_to_end(&mut buf)?;
             } else {
-                download(&url)?.into_reader().read_to_end(&mut buf)?;
+                response.into_reader().read_to_end(&mut buf)?;
                 eprintln!("download complete");
                 fs::write(download_cache, &buf)?;
             }
+
             eprintln!("getting sha256 hash for {url}");
             let hash = Sha256::digest(&buf);
             let hash = format!("{hash:x}");
@@ -385,6 +404,7 @@ fn main() -> Result<()> {
 
             download_info.insert(platform, ManifestDownloadInfo {
                 url: Some(url),
+                etag,
                 checksum: hash,
                 bin: base_download_info.bin.as_ref().or(base_info.bin.as_ref()).map(|s| {
                     s.map(|s| {
@@ -435,6 +455,12 @@ fn main() -> Result<()> {
             reverse_semver,
             ManifestRef::Real(Manifest { previous_stable_version: None, download_info }),
         );
+
+        // update an existing manifests.json to avoid discarding work done in the event of a fetch error.
+        if existing_manifest.is_some() && !version_req_given {
+            write_manifests(manifest_path, &manifests.clone())?;
+            eprintln!("wrote {} with incomplete data", manifest_path.display());
+        }
     }
     if base_info.immediate_yank_reflection {
         let mut prev: Option<&Version> = None;
@@ -564,10 +590,16 @@ fn main() -> Result<()> {
 
     manifests.rust_crate = base_info.rust_crate;
 
+    write_manifests(manifest_path, &manifests)?;
+    eprintln!("wrote {}", manifest_path.display());
+
+    Ok(())
+}
+
+fn write_manifests(manifest_path: &Path, manifests: &Manifests) -> Result<()> {
     let mut buf = serde_json::to_vec_pretty(&manifests)?;
     buf.push(b'\n');
     fs::write(manifest_path, buf)?;
-
     Ok(())
 }
 
