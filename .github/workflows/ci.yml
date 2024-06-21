@@ -161,7 +161,7 @@ jobs:
     steps:
       - uses: taiki-e/checkout-action@v1
       - name: Install Rust
-        run: rustup toolchain add stable --no-self-update --profile minimal && rustup default stable
+        run: rustup update stable --no-self-update
       - name: Generate Cargo.lock
         run: cargo update
       - uses: Swatinem/rust-cache@v2
