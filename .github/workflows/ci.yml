@@ -161,7 +161,12 @@ jobs:
     steps:
       - uses: taiki-e/checkout-action@v1
       - name: Install Rust
-        run: rustup toolchain add nightly --no-self-update && rustup default nightly
+        run: rustup toolchain add stable --no-self-update --profile minimal && rustup default stable
+      - name: Generate Cargo.lock
+        run: cargo update
+      - uses: Swatinem/rust-cache@v2
+        with:
+          cache-all-crates: "true"
       - run: tools/manifest.sh
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
