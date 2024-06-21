@@ -166,7 +166,7 @@ jobs:
         run: cargo update
       - uses: Swatinem/rust-cache@v2
         with:
-          cache-all-crates: "true"
+          cache-all-crates: 'true'
       - run: tools/manifest.sh
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
