@@ -291,11 +291,8 @@ fn main() -> Result<()> {
                 Path::new(&url).file_name().unwrap().to_str().unwrap()
             ));
             let response = download(&url)?;
-            let etag = response
-                .header("etag")
-                .expect("binary should have an etag")
-                .to_string()
-                .replace('\"', "");
+            let etag =
+                response.header("etag").expect("binary should have an etag").replace('\"', "");
 
             if let Some(ManifestRef::Real(ref manifest)) = existing_manifest {
                 if let Some(entry) = manifest.download_info.get(&platform) {
