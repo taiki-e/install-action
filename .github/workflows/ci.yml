@@ -83,6 +83,8 @@ jobs:
       - uses: ./
         with:
           tool: ${{ steps.tool-list.outputs.tool }}
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
       # https://docs.github.com/en/actions/using-workflows/workflow-syntax-for-github-actions#jobsjob_idstepsshell
       - name: Test bash
         run: just --version && shfmt --version && protoc --version
@@ -151,6 +153,8 @@ jobs:
       - uses: ./
         with:
           tool: ${{ steps.tool-list.outputs.tool }}
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
 
   manifest:
     runs-on: ubuntu-latest
