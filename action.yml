@@ -27,3 +27,4 @@ runs:
         INPUT_TOOL: ${{ inputs.tool }}
         INPUT_CHECKSUM: ${{ inputs.checksum }}
         INPUT_FALLBACK: ${{ inputs.fallback }}
+        DEFAULT_GITHUB_TOKEN: ${{ github.token }}
