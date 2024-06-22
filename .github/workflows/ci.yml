@@ -83,6 +83,8 @@ jobs:
       - uses: ./
         with:
           tool: ${{ steps.tool-list.outputs.tool }}
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
       # https://docs.github.com/en/actions/using-workflows/workflow-syntax-for-github-actions#jobsjob_idstepsshell
       - name: Test bash
         run: just --version && shfmt --version && protoc --version
@@ -151,6 +153,8 @@ jobs:
       - uses: ./
         with:
           tool: ${{ steps.tool-list.outputs.tool }}
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
 
   manifest:
     runs-on: ubuntu-latest
@@ -161,7 +165,12 @@ jobs:
     steps:
       - uses: taiki-e/checkout-action@v1
       - name: Install Rust
-        run: rustup toolchain add nightly --no-self-update && rustup default nightly
+        run: rustup update stable --no-self-update
+      - name: Generate Cargo.lock
+        run: cargo update
+      - uses: Swatinem/rust-cache@v2
+        with:
+          cache-all-crates: 'true'
       - run: tools/manifest.sh
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
