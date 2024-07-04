@@ -140,6 +140,14 @@ jobs:
     timeout-minutes: 60
     container: ${{ matrix.container }}
     steps:
+      - name: Install requirements (centos)
+        run: |
+          set -eEuxo pipefail
+          # https://github.com/rust-lang/rust/pull/126352
+          sed -i /etc/yum.repos.d/*.repo -e 's!^mirrorlist!#mirrorlist!' \
+          -e 's!^#baseurl=http://mirror.centos.org/!baseurl=https://vault.centos.org/!'
+          sed -i 's/enabled=1/enabled=0/' /etc/yum/pluginconf.d/fastestmirror.conf
+        if: startsWith(matrix.container, 'centos')
       - name: Install requirements (alpine)
         run: apk --no-cache add bash
         shell: sh
