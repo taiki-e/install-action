@@ -10,6 +10,8 @@ Note: In this file, do not use the hard wrap in the middle of a sentence for com
 
 ## [Unreleased]
 
+- Update `wasm-pack@latest` to 0.13.0.
+
 - Update `editorconfig-checker@latest` to 3.0.3.
 
 - Update `cargo-udeps@latest` to 0.1.49.
