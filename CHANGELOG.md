@@ -10,6 +10,8 @@ Note: In this file, do not use the hard wrap in the middle of a sentence for com
 
 ## [Unreleased]
 
+## [2.41.8] - 2024-07-04
+
 - Update `wasm-pack@latest` to 0.13.0.
 
 - Update `editorconfig-checker@latest` to 3.0.3.
@@ -2416,7 +2418,8 @@ Note: This release is considered a breaking change because installing on version
 
 Initial release
 
-[Unreleased]: https://github.com/taiki-e/install-action/compare/v2.41.7...HEAD
+[Unreleased]: https://github.com/taiki-e/install-action/compare/v2.41.8...HEAD
+[2.41.8]: https://github.com/taiki-e/install-action/compare/v2.41.7...v2.41.8
 [2.41.7]: https://github.com/taiki-e/install-action/compare/v2.41.6...v2.41.7
 [2.41.6]: https://github.com/taiki-e/install-action/compare/v2.41.5...v2.41.6
 [2.41.5]: https://github.com/taiki-e/install-action/compare/v2.41.4...v2.41.5
