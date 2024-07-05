@@ -10,6 +10,8 @@ Note: In this file, do not use the hard wrap in the middle of a sentence for com
 
 ## [Unreleased]
 
+- Update `typos@latest` to 1.23.0.
+
 ## [2.41.8] - 2024-07-04
 
 - Update `wasm-pack@latest` to 0.13.0.
