@@ -10,6 +10,8 @@ Note: In this file, do not use the hard wrap in the middle of a sentence for com
 
 ## [Unreleased]
 
+- Update `jaq@latest` to 1.5.1.
+
 - Update `dprint@latest` to 0.47.1.
 
 - Update `cargo-make@latest` to 0.37.13.
