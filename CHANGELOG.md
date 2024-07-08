@@ -10,6 +10,8 @@ Note: In this file, do not use the hard wrap in the middle of a sentence for com
 
 ## [Unreleased]
 
+## [2.41.11] - 2024-07-08
+
 - Update `just@latest` to 1.30.1.
 
 - Update `jaq@latest` to 1.5.1.
@@ -2436,7 +2438,8 @@ Note: This release is considered a breaking change because installing on version
 
 Initial release
 
-[Unreleased]: https://github.com/taiki-e/install-action/compare/v2.41.10...HEAD
+[Unreleased]: https://github.com/taiki-e/install-action/compare/v2.41.11...HEAD
+[2.41.11]: https://github.com/taiki-e/install-action/compare/v2.41.10...v2.41.11
 [2.41.10]: https://github.com/taiki-e/install-action/compare/v2.41.9...v2.41.10
 [2.41.9]: https://github.com/taiki-e/install-action/compare/v2.41.8...v2.41.9
 [2.41.8]: https://github.com/taiki-e/install-action/compare/v2.41.7...v2.41.8
