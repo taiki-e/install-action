@@ -3,13 +3,45 @@
   "template": null,
   "license_markdown": "[Apache-2.0](https://github.com/google/osv-scanner/blob/main/LICENSE)",
   "latest": {
-    "version": "1.8.1"
+    "version": "1.8.2"
   },
   "1": {
-    "version": "1.8.1"
+    "version": "1.8.2"
   },
   "1.8": {
-    "version": "1.8.1"
+    "version": "1.8.2"
+  },
+  "1.8.2": {
+    "x86_64_linux_musl": {
+      "url": "https://github.com/google/osv-scanner/releases/download/v1.8.2/osv-scanner_linux_amd64",
+      "etag": "0x8DCA0A759AE59A6",
+      "checksum": "558dbed2194d05ce00d8f8c27dcb49d763eb9db3bc7e30a1bf9b6b86062ccede"
+    },
+    "x86_64_macos": {
+      "url": "https://github.com/google/osv-scanner/releases/download/v1.8.2/osv-scanner_darwin_amd64",
+      "etag": "0x8DCA0A758AC1607",
+      "checksum": "96b91adf585e91b90cdb61cd915de19a7d0dea5406707a313c015200a74ac123"
+    },
+    "x86_64_windows": {
+      "url": "https://github.com/google/osv-scanner/releases/download/v1.8.2/osv-scanner_windows_amd64.exe",
+      "etag": "0x8DCA0A758CD0D83",
+      "checksum": "11e4b82d8daf7f5f62111c9d4cc50f5b82318d203e817eb566148d5a4fd51cd0"
+    },
+    "aarch64_linux_musl": {
+      "url": "https://github.com/google/osv-scanner/releases/download/v1.8.2/osv-scanner_linux_arm64",
+      "etag": "0x8DCA0A758AD740E",
+      "checksum": "9e72c15c7239d7810f556a97d5a37d4fc9de440404c05393d4ee994e2ccc51f2"
+    },
+    "aarch64_macos": {
+      "url": "https://github.com/google/osv-scanner/releases/download/v1.8.2/osv-scanner_darwin_arm64",
+      "etag": "0x8DCA0A759C791A4",
+      "checksum": "217bf0250af18c6838a2bdc497469a02cc420b22a7b22fcf54d53a6246478427"
+    },
+    "aarch64_windows": {
+      "url": "https://github.com/google/osv-scanner/releases/download/v1.8.2/osv-scanner_windows_arm64.exe",
+      "etag": "0x8DCA0A758A8978E",
+      "checksum": "b7ff8a9026950c368c564ad235fbe48d48ae946a69b7004b1356035ae1a3ebea"
+    }
   },
   "1.8.1": {
     "x86_64_linux_musl": {
