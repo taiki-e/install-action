@@ -19,10 +19,32 @@
   },
   "license_markdown": "[MPL-2.0](https://github.com/earthly/earthly/blob/main/LICENSE)",
   "latest": {
-    "version": "0.8.14"
+    "version": "0.8.15"
   },
   "0.8": {
-    "version": "0.8.14"
+    "version": "0.8.15"
+  },
+  "0.8.15": {
+    "x86_64_linux_gnu": {
+      "etag": "0x8DCA2A154D402F6",
+      "checksum": "2e545a08c17a195ad86d3844df0c3d28064b1231abe05530342138acf3067619"
+    },
+    "x86_64_macos": {
+      "etag": "0x8DCA2A1520484EC",
+      "checksum": "6e17da01a10509398da088dfc6005c726019c08077dd296d42d92ed1799ac76f"
+    },
+    "x86_64_windows": {
+      "etag": "0x8DCA2A1580F5DF5",
+      "checksum": "c64a84df967f4624202c5cdf1b9f8149ef7ee9e2056ffd84954f0587a0787291"
+    },
+    "aarch64_linux_gnu": {
+      "etag": "0x8DCA2A1566C5F46",
+      "checksum": "cc5ea041c6d7e5d019c8fe37c58c5b7b294f7ce1da0e06569056f41b3413d7bf"
+    },
+    "aarch64_macos": {
+      "etag": "0x8DCA2A1536436B9",
+      "checksum": "86c6712f19029f151d3b478bf60906e8731acb2383c5de5e0675fb6a11bd5aaf"
+    }
   },
   "0.8.14": {
     "x86_64_linux_gnu": {
