@@ -10,6 +10,8 @@ Note: In this file, do not use the hard wrap in the middle of a sentence for com
 
 ## [Unreleased]
 
+## [2.41.17] - 2024-07-12
+
 - Update `earthly@latest` to 0.8.15.
 
 ## [2.41.16] - 2024-07-12
@@ -2462,7 +2464,8 @@ Note: This release is considered a breaking change because installing on version
 
 Initial release
 
-[Unreleased]: https://github.com/taiki-e/install-action/compare/v2.41.16...HEAD
+[Unreleased]: https://github.com/taiki-e/install-action/compare/v2.41.17...HEAD
+[2.41.17]: https://github.com/taiki-e/install-action/compare/v2.41.16...v2.41.17
 [2.41.16]: https://github.com/taiki-e/install-action/compare/v2.41.15...v2.41.16
 [2.41.15]: https://github.com/taiki-e/install-action/compare/v2.41.14...v2.41.15
 [2.41.14]: https://github.com/taiki-e/install-action/compare/v2.41.13...v2.41.14
