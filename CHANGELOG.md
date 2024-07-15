@@ -20,8 +20,6 @@ Note: In this file, do not use the hard wrap in the middle of a sentence for com
 
 - Update `just@latest` to 1.31.0.
 
-- Update `cargo-hack@latest` to 0.6.29.
-
 ## [2.41.17] - 2024-07-12
 
 - Update `earthly@latest` to 0.8.15.
