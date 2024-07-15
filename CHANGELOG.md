@@ -10,6 +10,8 @@ Note: In this file, do not use the hard wrap in the middle of a sentence for com
 
 ## [Unreleased]
 
+## [2.41.18] - 2024-07-15
+
 - Update `espup@latest` to 0.12.1.
 
 - Update `cargo-no-dev-deps@latest` to 0.2.13.
@@ -2474,7 +2476,8 @@ Note: This release is considered a breaking change because installing on version
 
 Initial release
 
-[Unreleased]: https://github.com/taiki-e/install-action/compare/v2.41.17...HEAD
+[Unreleased]: https://github.com/taiki-e/install-action/compare/v2.41.18...HEAD
+[2.41.18]: https://github.com/taiki-e/install-action/compare/v2.41.17...v2.41.18
 [2.41.17]: https://github.com/taiki-e/install-action/compare/v2.41.16...v2.41.17
 [2.41.16]: https://github.com/taiki-e/install-action/compare/v2.41.15...v2.41.16
 [2.41.15]: https://github.com/taiki-e/install-action/compare/v2.41.14...v2.41.15
