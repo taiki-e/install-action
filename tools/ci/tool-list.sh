@@ -25,9 +25,12 @@ glibc_pre_2_27_incompat=(
     valgrind
     wasmtime
 )
-musl_incompat=(
+glibc_pre_2_17_incompat=(
     "${glibc_pre_2_27_incompat[@]}"
     deepsource
+)
+musl_incompat=(
+    "${glibc_pre_2_17_incompat[@]}"
 )
 
 incompat_tools=()
@@ -50,16 +53,21 @@ case "$(uname -s)" in
         if grep <<<"${ldd_version}" -q 'musl'; then
             incompat_tools+=("${musl_incompat[@]}")
         else
-            host_glibc_version=$(grep <<<"${ldd_version}" -E "GLIBC|GNU libc" | sed "s/.* //g")
-            higher_glibc_version=$(sort <<<"2.34"$'\n'"${host_glibc_version}" -Vu | tail -1)
+            host_glibc_version=$(grep -E "GLIBC|GNU libc" <<<"${ldd_version}" | sed "s/.* //g")
+            higher_glibc_version=$(sort -Vu <<<"2.34"$'\n'"${host_glibc_version}" | tail -1)
             if [[ "${higher_glibc_version}" != "${host_glibc_version}" ]]; then
-                higher_glibc_version=$(sort <<<"2.31"$'\n'"${host_glibc_version}" -Vu | tail -1)
+                higher_glibc_version=$(sort -Vu <<<"2.31"$'\n'"${host_glibc_version}" | tail -1)
                 if [[ "${higher_glibc_version}" != "${host_glibc_version}" ]]; then
-                    higher_glibc_version=$(sort <<<"2.27"$'\n'"${host_glibc_version}" -Vu | tail -1)
-                    if [[ "${higher_glibc_version}" == "${host_glibc_version}" ]]; then
-                        incompat_tools+=("${glibc_pre_2_31_incompat[@]}")
+                    higher_glibc_version=$(sort -Vu <<<"2.27"$'\n'"${host_glibc_version}" | tail -1)
+                    if [[ "${higher_glibc_version}" != "${host_glibc_version}" ]]; then
+                        higher_glibc_version=$(sort -Vu <<<"2.17"$'\n'"${host_glibc_version}" | tail -1)
+                        if [[ "${higher_glibc_version}" != "${host_glibc_version}" ]]; then
+                            incompat_tools+=("${glibc_pre_2_17_incompat[@]}")
+                        else
+                            incompat_tools+=("${glibc_pre_2_27_incompat[@]}")
+                        fi
                     else
-                        incompat_tools+=("${glibc_pre_2_27_incompat[@]}")
+                        incompat_tools+=("${glibc_pre_2_31_incompat[@]}")
                     fi
                 else
                     incompat_tools+=("${glibc_pre_2_34_incompat[@]}")

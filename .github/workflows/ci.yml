@@ -40,6 +40,7 @@ jobs:
       fail-fast: false
       matrix:
         include:
+          # NB: Sync list with https://github.com/taiki-e/checkout-action/blob/HEAD/.github/workflows/ci.yml
           - os: ubuntu-20.04
           - os: ubuntu-22.04
           - os: ubuntu-24.04
@@ -53,8 +54,11 @@ jobs:
           - os: macos-13
           - os: macos-14
           - os: windows-2019
+          - os: windows-2019
+            bash: msys64
+          - os: windows-2019
+            bash: cygwin
           - os: windows-2022
-          # https://github.com/taiki-e/install-action/pull/518#issuecomment-2160736760
           - os: windows-2022
             bash: msys64
           - os: windows-2022
@@ -62,30 +66,28 @@ jobs:
     runs-on: ${{ matrix.os }}
     timeout-minutes: 60
     steps:
+      - run: |
+          printf 'C:\msys64\mingw32\bin\n' >>"${GITHUB_PATH}"
+          printf 'C:\msys64\usr\bin\n' >>"${GITHUB_PATH}"
+        if: matrix.bash == 'msys64'
+      - run: |
+          choco install --no-progress --requirechecksums cygwin
+          printf 'C:\tools\cygwin\bin\n' >>"${GITHUB_PATH}"
+          printf 'C:\tools\cygwin\usr\bin\n' >>"${GITHUB_PATH}"
+        if: matrix.bash == 'cygwin'
       - uses: taiki-e/checkout-action@v1
       # cross attempts to install rust-src when Cargo.toml is available even if `cross --version`
       - run: rm Cargo.toml
       - name: Generate tool list
         id: tool-list
         run: tools/ci/tool-list.sh "${{ matrix.tool }}" >>"${GITHUB_OUTPUT}"
-      - run: |
-          set -eEuxo pipefail
-          echo "C:\msys64\mingw32\bin" >> $GITHUB_PATH
-          echo "C:\msys64\usr\bin" >> $GITHUB_PATH
-        if: matrix.bash == 'msys64'
-      - run: |
-          set -eEuxo pipefail
-          choco install --no-progress --requirechecksums cygwin
-          echo "C:\tools\cygwin\bin" >> $GITHUB_PATH
-          echo "C:\tools\cygwin\usr\bin" >> $GITHUB_PATH
-        if: matrix.bash == 'cygwin'
       - run: env
       - uses: ./
         with:
           tool: ${{ steps.tool-list.outputs.tool }}
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-      # https://docs.github.com/en/actions/using-workflows/workflow-syntax-for-github-actions#jobsjob_idstepsshell
+      # Test all shells listed in https://docs.github.com/en/actions/using-workflows/workflow-syntax-for-github-actions#jobsjob_idstepsshell
       - name: Test bash
         run: just --version && shfmt --version && protoc --version
         shell: bash
@@ -119,10 +121,14 @@ jobs:
       fail-fast: false
       matrix:
         container:
+          # NB: Sync list with https://github.com/taiki-e/checkout-action/blob/HEAD/.github/workflows/ci.yml
+          - ubuntu:14.04 # glibc 2.19
+          - ubuntu:16.04 # glibc 2.23
           - ubuntu:18.04 # glibc 2.27
           - ubuntu:20.04 # glibc 2.31
           - ubuntu:22.04 # glibc 2.35
           - ubuntu:24.04 # glibc 2.39
+          - debian:9-slim # glibc 2.24
           - debian:10-slim # glibc 2.28
           - debian:11-slim # glibc 2.31
           - debian:12-slim # glibc 2.36
@@ -131,6 +137,7 @@ jobs:
           - almalinux:8-minimal # glibc 2.28
           - almalinux:9 # glibc 2.34
           - almalinux:9-minimal # glibc 2.34
+          - centos:6 # glibc 2.12
           - centos:7 # glibc 2.17
           - opensuse/leap:latest # glibc 2.31 (as of leap 15.5)
           - opensuse/tumbleweed:latest # glibc 2.39 (as of 2024-04-18)
@@ -140,24 +147,63 @@ jobs:
     timeout-minutes: 60
     container: ${{ matrix.container }}
     steps:
+      - name: Install requirements (ubuntu:14.04)
+        run: |
+          set -CeEuxo pipefail
+          # ubuntu 14.04's jq is 1.3
+          # error: syntax error, unexpected QQSTRING_START, expecting $end
+          # https://github.com/jqlang/jq/issues/273
+          apt-get -o Acquire::Retries=10 -qq update
+          apt-get -o Acquire::Retries=10 -o Dpkg::Use-Pty=0 install -y --no-install-recommends ca-certificates curl
+          curl --proto '=https' --tlsv1.2 -fsSL --retry 10 -o /usr/local/bin/jq https://github.com/jqlang/jq/releases/download/jq-1.5/jq-linux64
+          chmod +x /usr/local/bin/jq
+        if: startsWith(matrix.container, 'ubuntu:14.04')
+      - name: Install requirements (debian:9)
+        run: |
+          set -CeEuxo pipefail
+          # In Debian, the old repositories is removed from the main mirrors some time after EoL.
+          sed -i /etc/apt/sources.list -e 's/deb.debian.org/archive.debian.org/g' \
+            -e 's|security.debian.org|archive.debian.org/|g' \
+            -e '/stretch-updates/d'
+        if: startsWith(matrix.container, 'debian:9')
       - name: Install requirements (centos)
         run: |
-          set -eEuxo pipefail
+          set -CeEuxo pipefail
+          # In CentOS, the old repositories is removed from the main mirrors just after EoL.
           # https://github.com/rust-lang/rust/pull/126352
           sed -i /etc/yum.repos.d/*.repo -e 's!^mirrorlist!#mirrorlist!' \
-          -e 's!^#baseurl=http://mirror.centos.org/!baseurl=https://vault.centos.org/!'
+            -e 's!^#baseurl=http://mirror.centos.org/!baseurl=https://vault.centos.org/!'
           sed -i 's/enabled=1/enabled=0/' /etc/yum/pluginconf.d/fastestmirror.conf
+          if [[ "${{ matrix.container }}" == "centos:6" ]]; then
+            # CentOS 6's curl (7.19.7) has no curl has no --proto/--tlsv1.2.
+            yum install -y gcc openssl-devel
+            curl -fsSL --retry 10 https://curl.se/download/curl-7.34.0.tar.gz | tar xzf -
+            cd -- curl-*
+            ./configure --prefix=/usr/local --with-ssl
+            make
+            make install
+            # CentOS 6's jq is 1.3
+            # error: syntax error, unexpected QQSTRING_START, expecting $end
+            # https://github.com/jqlang/jq/issues/273
+            curl --proto '=https' --tlsv1.2 -fsSL --retry 10 -o /usr/local/bin/jq https://github.com/jqlang/jq/releases/download/jq-1.5/jq-linux64
+            chmod +x /usr/local/bin/jq
+            # for checkout-action https://github.com/taiki-e/checkout-action/blob/87380fc33ed8e04e325b05d3576995b2253ab5ba/.github/workflows/ci.yml#L134-L142
+            yum install -y openssh-clients perl perl-Error perl-TermReadKey rsync
+            rpm -i \
+              https://vault.ius.io/el6/x86_64/packages/p/perl-Git18-1.8.5.5-4.ius.el6.noarch.rpm \
+              https://vault.ius.io/el6/x86_64/packages/g/git18-1.8.5.5-4.ius.el6.x86_64.rpm
+          fi
         if: startsWith(matrix.container, 'centos')
-      - name: Install requirements (alpine)
-        run: apk --no-cache add bash
-        shell: sh
-        if: startsWith(matrix.container, 'alpine')
       - uses: taiki-e/checkout-action@v1
       # cross attempts to install rust-src when Cargo.toml is available even if `cross --version`
       - run: rm Cargo.toml
       - name: Generate tool list
         id: tool-list
         run: tools/ci/tool-list.sh >>"${GITHUB_OUTPUT}"
+      # remove bash installed by checkout-action
+      - run: apk --no-cache del bash
+        shell: sh
+        if: startsWith(matrix.container, 'alpine')
       - uses: ./
         with:
           tool: ${{ steps.tool-list.outputs.tool }}

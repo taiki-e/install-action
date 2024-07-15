@@ -455,17 +455,21 @@ case "$(uname -s)" in
             host_env="gnu"
             host_glibc_version=$(grep <<<"${ldd_version}" -E "GLIBC|GNU libc" | sed "s/.* //g")
         fi
-        if grep -q '^ID_LIKE=' /etc/os-release; then
-            base_distro=$(grep '^ID_LIKE=' /etc/os-release | cut -d= -f2)
-            case "${base_distro}" in
-                *debian*) base_distro=debian ;;
-                *fedora*) base_distro=fedora ;;
-                *suse*) base_distro=suse ;;
-                *arch*) base_distro=arch ;;
-                *alpine*) base_distro=alpine ;;
-            esac
-        else
-            base_distro=$(grep '^ID=' /etc/os-release | cut -d= -f2)
+        if [[ -e /etc/os-release ]]; then
+            if grep -Eq '^ID_LIKE=' /etc/os-release; then
+                base_distro=$(grep -E '^ID_LIKE=' /etc/os-release | cut -d= -f2)
+                case "${base_distro}" in
+                    *debian*) base_distro=debian ;;
+                    *fedora*) base_distro=fedora ;;
+                    *suse*) base_distro=suse ;;
+                    *arch*) base_distro=arch ;;
+                    *alpine*) base_distro=alpine ;;
+                esac
+            else
+                base_distro=$(grep -E '^ID=' /etc/os-release | cut -d= -f2)
+            fi
+        elif [[ -e /etc/redhat-release ]]; then
+            base_distro=fedora
         fi
         case "${base_distro}" in
             fedora)

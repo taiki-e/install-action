@@ -10,6 +10,12 @@ Note: In this file, do not use the hard wrap in the middle of a sentence for com
 
 ## [Unreleased]
 
+- Fix "/etc/os-release: No such file or directory" error on CentOS 6.
+
+- Improve support for Alpine based containers/self-hosted runners (no longer need to install bash in advance).
+
+- Improve documentation on platform support.
+
 ## [2.41.18] - 2024-07-15
 
 - Update `espup@latest` to 0.12.1.

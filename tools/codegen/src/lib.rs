@@ -328,6 +328,7 @@ impl StringOrArray {
 ///   Does it seem only armv7l+ is supported?
 ///   https://github.com/actions/runner/blob/v2.315.0/src/Misc/externals.sh#L189
 ///   https://github.com/actions/runner/issues/688
+// TODO: support musl with dynamic linking like wasmtime 22.0.0+'s musl binaries: https://github.com/bytecodealliance/wasmtime/releases/tag/v22.0.0
 #[allow(non_camel_case_types)]
 #[derive(Debug, Clone, Copy, PartialEq, Eq, PartialOrd, Ord, Serialize, Deserialize)]
 pub enum HostPlatform {
