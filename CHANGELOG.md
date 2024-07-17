@@ -10,6 +10,8 @@ Note: In this file, do not use the hard wrap in the middle of a sentence for com
 
 ## [Unreleased]
 
+- Update `cargo-make@latest` to 0.37.14.
+
 ## [2.42.0] - 2024-07-15
 
 - Fix "/etc/os-release: No such file or directory" error on CentOS 6.
