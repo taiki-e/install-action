@@ -10,6 +10,8 @@ Note: In this file, do not use the hard wrap in the middle of a sentence for com
 
 ## [Unreleased]
 
+## [2.42.3] - 2024-07-18
+
 - Update `espup@latest` to 0.12.2.
 
 ## [2.42.2] - 2024-07-18
@@ -2494,7 +2496,8 @@ Note: This release is considered a breaking change because installing on version
 
 Initial release
 
-[Unreleased]: https://github.com/taiki-e/install-action/compare/v2.42.2...HEAD
+[Unreleased]: https://github.com/taiki-e/install-action/compare/v2.42.3...HEAD
+[2.42.3]: https://github.com/taiki-e/install-action/compare/v2.42.2...v2.42.3
 [2.42.2]: https://github.com/taiki-e/install-action/compare/v2.42.1...v2.42.2
 [2.42.1]: https://github.com/taiki-e/install-action/compare/v2.42.0...v2.42.1
 [2.42.0]: https://github.com/taiki-e/install-action/compare/v2.41.18...v2.42.0
