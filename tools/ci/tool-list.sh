@@ -5,26 +5,34 @@ IFS=$'\n\t'
 cd "$(dirname "$0")"/../..
 
 # They don't provide prebuilt binaries for musl or old glibc host.
+# version `GLIBC_2.34' not found
 glibc_pre_2_34_incompat=(
     cargo-cyclonedx
     cargo-spellcheck
     wait-for-them
     xbuild
 )
+# version `GLIBC_2.31' not found
 glibc_pre_2_31_incompat=(
     "${glibc_pre_2_34_incompat[@]}"
     cargo-sort
     espup
     zola
 )
-glibc_pre_2_27_incompat=(
+# version `GLIBC_2.28' not found
+glibc_pre_2_28_incompat=(
     "${glibc_pre_2_31_incompat[@]}"
+    wasmtime
+)
+# version `GLIBC_2.27' not found
+glibc_pre_2_27_incompat=(
+    "${glibc_pre_2_28_incompat[@]}"
     cargo-watch
     mdbook-linkcheck
     protoc
     valgrind
-    wasmtime
 )
+# version `GLIBC_2.17' not found
 glibc_pre_2_17_incompat=(
     "${glibc_pre_2_27_incompat[@]}"
     deepsource
@@ -58,13 +66,18 @@ case "$(uname -s)" in
             if [[ "${higher_glibc_version}" != "${host_glibc_version}" ]]; then
                 higher_glibc_version=$(sort -Vu <<<"2.31"$'\n'"${host_glibc_version}" | tail -1)
                 if [[ "${higher_glibc_version}" != "${host_glibc_version}" ]]; then
-                    higher_glibc_version=$(sort -Vu <<<"2.27"$'\n'"${host_glibc_version}" | tail -1)
+                    higher_glibc_version=$(sort -Vu <<<"2.28"$'\n'"${host_glibc_version}" | tail -1)
                     if [[ "${higher_glibc_version}" != "${host_glibc_version}" ]]; then
-                        higher_glibc_version=$(sort -Vu <<<"2.17"$'\n'"${host_glibc_version}" | tail -1)
+                        higher_glibc_version=$(sort -Vu <<<"2.27"$'\n'"${host_glibc_version}" | tail -1)
                         if [[ "${higher_glibc_version}" != "${host_glibc_version}" ]]; then
-                            incompat_tools+=("${glibc_pre_2_17_incompat[@]}")
+                            higher_glibc_version=$(sort -Vu <<<"2.17"$'\n'"${host_glibc_version}" | tail -1)
+                            if [[ "${higher_glibc_version}" != "${host_glibc_version}" ]]; then
+                                incompat_tools+=("${glibc_pre_2_17_incompat[@]}")
+                            else
+                                incompat_tools+=("${glibc_pre_2_27_incompat[@]}")
+                            fi
                         else
-                            incompat_tools+=("${glibc_pre_2_27_incompat[@]}")
+                            incompat_tools+=("${glibc_pre_2_28_incompat[@]}")
                         fi
                     else
                         incompat_tools+=("${glibc_pre_2_31_incompat[@]}")
