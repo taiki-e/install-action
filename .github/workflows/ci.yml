@@ -139,8 +139,9 @@ jobs:
           - almalinux:9-minimal # glibc 2.34
           - centos:6 # glibc 2.12
           - centos:7 # glibc 2.17
-          - opensuse/leap:latest # glibc 2.31 (as of leap 15.5)
-          - opensuse/tumbleweed:latest # glibc 2.39 (as of 2024-04-18)
+          # TODO: broken: Repository 'Update repository of openSUSE Backports' is invalid.
+          # - opensuse/leap:latest # glibc 2.31 (as of leap 15.5)
+          # - opensuse/tumbleweed:latest # glibc 2.39 (as of 2024-04-18)
           - archlinux:latest # glibc 2.38 (as of 2024-04-18)
           - alpine:latest # musl 1.2.4 (as of alpine 3.19)
     runs-on: ubuntu-latest
