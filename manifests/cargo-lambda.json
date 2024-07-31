@@ -1,0 +1,53 @@
+{
+  "rust_crate": "cargo-lambda",
+  "template": {
+    "x86_64_linux_musl": {
+      "url": "https://github.com/cargo-lambda/cargo-lambda/releases/download/v${version}/cargo-lambda-v${version}.x86_64-unknown-linux-musl.tar.gz"
+    },
+    "x86_64_macos": {
+      "url": "https://github.com/cargo-lambda/cargo-lambda/releases/download/v${version}/cargo-lambda-v${version}.x86_64-apple-darwin.tar.gz"
+    },
+    "x86_64_windows": {
+      "url": "https://github.com/cargo-lambda/cargo-lambda/releases/download/v${version}/cargo-lambda-v${version}.windows-x64.zip",
+      "bin": "cargo-lambda.exe"
+    },
+    "aarch64_linux_musl": {
+      "url": "https://github.com/cargo-lambda/cargo-lambda/releases/download/v${version}/cargo-lambda-v${version}.aarch64-unknown-linux-musl.tar.gz"
+    },
+    "aarch64_macos": {
+      "url": "https://github.com/cargo-lambda/cargo-lambda/releases/download/v${version}/cargo-lambda-v${version}.aarch64-apple-darwin.tar.gz"
+    }
+  },
+  "license_markdown": "[MIT](https://github.com/cargo-lambda/cargo-lambda/blob/main/LICENSE)",
+  "latest": {
+    "version": "1.3.0"
+  },
+  "1": {
+    "version": "1.3.0"
+  },
+  "1.3": {
+    "version": "1.3.0"
+  },
+  "1.3.0": {
+    "x86_64_linux_musl": {
+      "etag": "0x8DC88F48F203CE3",
+      "checksum": "b96973d035b328413fd2a98881f01ab8de8dcaef56c6f826d05dee48925b340f"
+    },
+    "x86_64_macos": {
+      "etag": "0x8DC88F48FB3C08F",
+      "checksum": "49043e568b1d1817b0d7e14b7bd23d0938f37b5a951ad6dbd08e8057a1e2e60b"
+    },
+    "x86_64_windows": {
+      "etag": "0x8DC88F490E653BE",
+      "checksum": "46c19d2c0f977c27f918e24c6e362a080a63cdfbe0c97a79dabe6e375eee72c4"
+    },
+    "aarch64_linux_musl": {
+      "etag": "0x8DC88F4936FA250",
+      "checksum": "6e1f434d70a60180d80f6e61f0fd50272a0e849d5bfa7c64d8df066f85881627"
+    },
+    "aarch64_macos": {
+      "etag": "0x8DC88F493FF59BC",
+      "checksum": "8cd1d176a690d5b3704fae9c58e0e949e481e79eaa24cb5338f5cdfcf564ca05"
+    }
+  }
+}
