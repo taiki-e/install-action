@@ -1,0 +1,21 @@
+{
+  "rust_crate": "cargo-acl",
+  "template": {
+    "x86_64_linux_musl": {
+      "url": "https://github.com/cackle-rs/cackle/releases/download/v${version}/cackle-v${version}-x86_64-unknown-linux-musl.tar.gz"
+    }
+  },
+  "license_markdown": "[Apache-2.0 OR MIT](https://github.com/cackle-rs/cackle/blob/main/LICENSE)",
+  "latest": {
+    "version": "0.8.0"
+  },
+  "0.8": {
+    "version": "0.8.0"
+  },
+  "0.8.0": {
+    "x86_64_linux_musl": {
+      "etag": "0x8DC715A0F356A32",
+      "checksum": "88a08a2f75ca3aa218822c0bae5c581fc3fe5e60469840be42ed00cc6fe42969"
+    }
+  }
+}

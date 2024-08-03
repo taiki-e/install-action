@@ -4,14 +4,13 @@ This is a list of tools that are installed from manifests managed in this action
 
 If a tool not included in the list below is specified, this action uses [cargo-binstall] as a fallback.
 
-See the [Supported tools section in README.md](README.md#supported-tools) for how to ensure that fallback is not used.
-
 > If `$CARGO_HOME/bin` is not available, Rust-related binaries will be installed to `$HOME/.cargo/bin`.<br>
 > If `$HOME/.cargo/bin` is not available, Rust-related binaries will be installed to `$HOME/.install-action/bin`.<br>
 
 | Name | Where binaries will be installed | Where will it be installed from | Supported platform | License |
 | ---- | -------------------------------- | ------------------------------- | ------------------ | ------- |
 | [**biome**](https://biomejs.dev) | `$HOME/.install-action/bin` | [GitHub Releases](https://github.com/biomejs/biome/releases) | Linux, macOS, Windows | [Apache-2.0](https://github.com/biomejs/biome/blob/main/LICENSE-APACHE) OR [MIT](https://github.com/biomejs/biome/blob/main/LICENSE-MIT) |
+| [**cargo-acl**](https://github.com/cackle-rs/cackle) | `$CARGO_HOME/bin` | [GitHub Releases](https://github.com/cackle-rs/cackle/releases) | Linux | [Apache-2.0 OR MIT](https://github.com/cackle-rs/cackle/blob/main/LICENSE) |
 | [**cargo-audit**](https://github.com/rustsec/rustsec/tree/HEAD/cargo-audit) | `$CARGO_HOME/bin` | [GitHub Releases](https://github.com/rustsec/rustsec/releases) | Linux, macOS, Windows | [Apache-2.0](https://github.com/rustsec/rustsec/blob/HEAD/cargo-audit/LICENSE-APACHE) OR [MIT](https://github.com/rustsec/rustsec/blob/HEAD/cargo-audit/LICENSE-MIT) |
 | [**cargo-binstall**](https://github.com/cargo-bins/cargo-binstall) | `$CARGO_HOME/bin` | [GitHub Releases](https://github.com/cargo-bins/cargo-binstall/releases) | Linux, macOS, Windows | [GPL-3.0](https://github.com/cargo-bins/cargo-binstall/blob/HEAD/crates/bin/LICENSE) |
 | [**cargo-careful**](https://github.com/RalfJung/cargo-careful) | `$CARGO_HOME/bin` | [GitHub Releases](https://github.com/RalfJung/cargo-careful/releases) | Linux, macOS, Windows | [MIT](https://github.com/RalfJung/cargo-careful/blob/master/LICENSE-MIT) OR [Apache-2.0](https://github.com/RalfJung/cargo-careful/blob/master/LICENSE-APACHE) |
@@ -45,6 +44,7 @@ See the [Supported tools section in README.md](README.md#supported-tools) for ho
 | [**hyperfine**](https://github.com/sharkdp/hyperfine) | `$CARGO_HOME/bin` | [GitHub Releases](https://github.com/sharkdp/hyperfine/releases) | Linux, macOS, Windows | [MIT](https://github.com/sharkdp/hyperfine/blob/master/LICENSE-MIT) OR [Apache-2.0](https://github.com/sharkdp/hyperfine/blob/master/LICENSE-APACHE) |
 | [**jaq**](https://github.com/01mf02/jaq) | `$CARGO_HOME/bin` | [GitHub Releases](https://github.com/01mf02/jaq/releases) | Linux, macOS, Windows | [MIT](https://github.com/01mf02/jaq/blob/main/LICENSE-MIT) |
 | [**just**](https://github.com/casey/just) | `$CARGO_HOME/bin` | [GitHub Releases](https://github.com/casey/just/releases) | Linux, macOS, Windows | [CC0-1.0](https://github.com/casey/just/blob/master/LICENSE) |
+| [**knope**](https://github.com/knope-dev/knope) | `$CARGO_HOME/bin` | [GitHub Releases](https://github.com/knope-dev/knope/releases) | Linux, macOS, Windows | [MIT](https://github.com/knope-dev/knope/blob/main/LICENSE) |
 | [**mdbook**](https://github.com/rust-lang/mdBook) | `$CARGO_HOME/bin` | [GitHub Releases](https://github.com/rust-lang/mdBook/releases) | Linux, macOS, Windows | [MPL-2.0](https://github.com/rust-lang/mdBook/blob/master/LICENSE) |
 | [**mdbook-linkcheck**](https://github.com/Michael-F-Bryan/mdbook-linkcheck) | `$CARGO_HOME/bin` | [GitHub Releases](https://github.com/Michael-F-Bryan/mdbook-linkcheck/releases) | Linux, macOS, Windows | [MIT](https://github.com/Michael-F-Bryan/mdbook-linkcheck/blob/master/LICENSE) |
 | [**osv-scanner**](https://github.com/google/osv-scanner) | `$HOME/.install-action/bin` | [GitHub Releases](https://github.com/google/osv-scanner/releases) | Linux, macOS, Windows | [Apache-2.0](https://github.com/google/osv-scanner/blob/main/LICENSE) |
