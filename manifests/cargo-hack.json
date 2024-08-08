@@ -3,10 +3,42 @@
   "template": null,
   "license_markdown": "[Apache-2.0](https://github.com/taiki-e/cargo-hack/blob/main/LICENSE-APACHE) OR [MIT](https://github.com/taiki-e/cargo-hack/blob/main/LICENSE-MIT)",
   "latest": {
-    "version": "0.6.30"
+    "version": "0.6.31"
   },
   "0.6": {
-    "version": "0.6.30"
+    "version": "0.6.31"
+  },
+  "0.6.31": {
+    "x86_64_linux_musl": {
+      "url": "https://github.com/taiki-e/cargo-hack/releases/download/v0.6.31/cargo-hack-x86_64-unknown-linux-musl.tar.gz",
+      "etag": "0x8DCB7A9CB75CB85",
+      "checksum": "b5e17ff9ad0224af30af1e1e8d27fef1010c7fda58048a12c704ffb2675b6ad6"
+    },
+    "x86_64_macos": {
+      "url": "https://github.com/taiki-e/cargo-hack/releases/download/v0.6.31/cargo-hack-x86_64-apple-darwin.tar.gz",
+      "etag": "0x8DCB7A9E485B392",
+      "checksum": "2d935eafc5082eb19dc33b123bac7ca898109bb0ca7a8ab7de19c44b4d5317a0"
+    },
+    "x86_64_windows": {
+      "url": "https://github.com/taiki-e/cargo-hack/releases/download/v0.6.31/cargo-hack-x86_64-pc-windows-msvc.tar.gz",
+      "etag": "0x8DCB7AA01F78A70",
+      "checksum": "5f56c408db441437830e6ef91eda64187880821fe54f455a956f9397443ff034"
+    },
+    "aarch64_linux_musl": {
+      "url": "https://github.com/taiki-e/cargo-hack/releases/download/v0.6.31/cargo-hack-aarch64-unknown-linux-musl.tar.gz",
+      "etag": "0x8DCB7A9BA4B08FA",
+      "checksum": "435bb927b1db4d45a4807e1857aa662e1fa0715c8402da7ac56f713cc904aff7"
+    },
+    "aarch64_macos": {
+      "url": "https://github.com/taiki-e/cargo-hack/releases/download/v0.6.31/cargo-hack-aarch64-apple-darwin.tar.gz",
+      "etag": "0x8DCB7A9D355C7A8",
+      "checksum": "ecd866a64c1cd14e90cc4670ec466f0c0408d86aa53cd9ca2d1cae42da4a7ffd"
+    },
+    "aarch64_windows": {
+      "url": "https://github.com/taiki-e/cargo-hack/releases/download/v0.6.31/cargo-hack-aarch64-pc-windows-msvc.tar.gz",
+      "etag": "0x8DCB7AA071F6D09",
+      "checksum": "a986372c14989387dab85aafc55bc36ee1959cec2a270447b132de7f75905802"
+    }
   },
   "0.6.30": {
     "x86_64_linux_musl": {
