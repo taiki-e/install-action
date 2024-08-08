@@ -4,8 +4,6 @@ This is a list of tools that are installed from manifests managed in this action
 
 If a tool not included in the list below is specified, this action uses [cargo-binstall] as a fallback.
 
-See the [Supported tools section in README.md](README.md#supported-tools) for how to ensure that fallback is not used.
-
 > If `$CARGO_HOME/bin` is not available, Rust-related binaries will be installed to `$HOME/.cargo/bin`.<br>
 > If `$HOME/.cargo/bin` is not available, Rust-related binaries will be installed to `$HOME/.install-action/bin`.<br>
 
@@ -20,6 +18,7 @@ See the [Supported tools section in README.md](README.md#supported-tools) for ho
 | [**cargo-dinghy**](https://github.com/sonos/dinghy) | `$CARGO_HOME/bin` | [GitHub Releases](https://github.com/sonos/dinghy/releases) | Linux, macOS | [MIT](https://github.com/sonos/dinghy/blob/main/LICENSE-MIT) OR [Apache-2.0](https://github.com/sonos/dinghy/blob/main/LICENSE-APACHE) |
 | [**cargo-export**](https://github.com/bazhenov/cargo-export) | `$CARGO_HOME/bin` | [GitHub Releases](https://github.com/bazhenov/cargo-export/releases) | Linux, macOS, Windows | [MIT](https://github.com/bazhenov/cargo-export/blob/master/LICENSE) |
 | [**cargo-hack**](https://github.com/taiki-e/cargo-hack) | `$CARGO_HOME/bin` | [GitHub Releases](https://github.com/taiki-e/cargo-hack/releases) | Linux, macOS, Windows | [Apache-2.0](https://github.com/taiki-e/cargo-hack/blob/main/LICENSE-APACHE) OR [MIT](https://github.com/taiki-e/cargo-hack/blob/main/LICENSE-MIT) |
+| [**cargo-lambda**](https://github.com/cargo-lambda/cargo-lambda) | `$CARGO_HOME/bin` | [GitHub Releases](https://github.com/cargo-lambda/cargo-lambda/releases) | Linux, macOS, Windows | [MIT](https://github.com/cargo-lambda/cargo-lambda/blob/main/LICENSE) |
 | [**cargo-llvm-cov**](https://github.com/taiki-e/cargo-llvm-cov) | `$CARGO_HOME/bin` | [GitHub Releases](https://github.com/taiki-e/cargo-llvm-cov/releases) | Linux, macOS, Windows | [Apache-2.0](https://github.com/taiki-e/cargo-llvm-cov/blob/main/LICENSE-APACHE) OR [MIT](https://github.com/taiki-e/cargo-llvm-cov/blob/main/LICENSE-MIT) |
 | [**cargo-machete**](https://github.com/bnjbvr/cargo-machete) | `$CARGO_HOME/bin` | [GitHub Releases](https://github.com/bnjbvr/cargo-machete/releases) | Linux, macOS, Windows | [MIT](https://github.com/bnjbvr/cargo-machete/blob/main/LICENSE.md) |
 | [**cargo-make**](https://github.com/sagiegurari/cargo-make) | `$CARGO_HOME/bin` | [GitHub Releases](https://github.com/sagiegurari/cargo-make/releases) | Linux, macOS, Windows | [Apache-2.0](https://github.com/sagiegurari/cargo-make/blob/master/LICENSE) |
@@ -45,6 +44,7 @@ See the [Supported tools section in README.md](README.md#supported-tools) for ho
 | [**hyperfine**](https://github.com/sharkdp/hyperfine) | `$CARGO_HOME/bin` | [GitHub Releases](https://github.com/sharkdp/hyperfine/releases) | Linux, macOS, Windows | [MIT](https://github.com/sharkdp/hyperfine/blob/master/LICENSE-MIT) OR [Apache-2.0](https://github.com/sharkdp/hyperfine/blob/master/LICENSE-APACHE) |
 | [**jaq**](https://github.com/01mf02/jaq) | `$CARGO_HOME/bin` | [GitHub Releases](https://github.com/01mf02/jaq/releases) | Linux, macOS, Windows | [MIT](https://github.com/01mf02/jaq/blob/main/LICENSE-MIT) |
 | [**just**](https://github.com/casey/just) | `$CARGO_HOME/bin` | [GitHub Releases](https://github.com/casey/just/releases) | Linux, macOS, Windows | [CC0-1.0](https://github.com/casey/just/blob/master/LICENSE) |
+| [**knope**](https://github.com/knope-dev/knope) | `$CARGO_HOME/bin` | [GitHub Releases](https://github.com/knope-dev/knope/releases) | Linux, macOS, Windows | [MIT](https://github.com/knope-dev/knope/blob/main/LICENSE) |
 | [**mdbook**](https://github.com/rust-lang/mdBook) | `$CARGO_HOME/bin` | [GitHub Releases](https://github.com/rust-lang/mdBook/releases) | Linux, macOS, Windows | [MPL-2.0](https://github.com/rust-lang/mdBook/blob/master/LICENSE) |
 | [**mdbook-linkcheck**](https://github.com/Michael-F-Bryan/mdbook-linkcheck) | `$CARGO_HOME/bin` | [GitHub Releases](https://github.com/Michael-F-Bryan/mdbook-linkcheck/releases) | Linux, macOS, Windows | [MIT](https://github.com/Michael-F-Bryan/mdbook-linkcheck/blob/master/LICENSE) |
 | [**osv-scanner**](https://github.com/google/osv-scanner) | `$HOME/.install-action/bin` | [GitHub Releases](https://github.com/google/osv-scanner/releases) | Linux, macOS, Windows | [Apache-2.0](https://github.com/google/osv-scanner/blob/main/LICENSE) |
