@@ -24,10 +24,35 @@
   },
   "license_markdown": "[Apache-2.0](https://github.com/anchore/syft/blob/main/LICENSE)",
   "latest": {
-    "version": "1.10.0"
+    "version": "1.11.0"
   },
   "1": {
-    "version": "1.10.0"
+    "version": "1.11.0"
+  },
+  "1.11": {
+    "version": "1.11.0"
+  },
+  "1.11.0": {
+    "x86_64_linux_musl": {
+      "etag": "0x8DCB89D2402EC9D",
+      "checksum": "0a61e5ef09f88562a35b6ec5dd27fa77f19c8611c26e58d527c4da191736b472"
+    },
+    "x86_64_macos": {
+      "etag": "0x8DCB89D24C1BC37",
+      "checksum": "34532f1b858e0ead13230c78e61158faacac4dbb1ed57f4da4622c738be7a691"
+    },
+    "x86_64_windows": {
+      "etag": "0x8DCB89D24C0ABE8",
+      "checksum": "56a187682873f2644d9b5f9ec07b8476c6257244b5f7a9c23d4c49c1d7f6e11a"
+    },
+    "aarch64_linux_musl": {
+      "etag": "0x8DCB89D24092728",
+      "checksum": "10de71da67132e41dad43a9ceea1f816e5fe3bc19feda2d5b0d33c08abc03668"
+    },
+    "aarch64_macos": {
+      "etag": "0x8DCB89D247D85E6",
+      "checksum": "704904af8325b9ebfb7633b44221e148cb42215718ec64c8f9450fd94354db89"
+    }
   },
   "1.10": {
     "version": "1.10.0"
