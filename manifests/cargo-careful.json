@@ -13,10 +13,24 @@
   },
   "license_markdown": "[MIT](https://github.com/RalfJung/cargo-careful/blob/master/LICENSE-MIT) OR [Apache-2.0](https://github.com/RalfJung/cargo-careful/blob/master/LICENSE-APACHE)",
   "latest": {
-    "version": "0.4.2"
+    "version": "0.4.3"
   },
   "0.4": {
-    "version": "0.4.2"
+    "version": "0.4.3"
+  },
+  "0.4.3": {
+    "x86_64_linux_musl": {
+      "etag": "0x8DCB92F10570A48",
+      "checksum": "8a39c7c88744b7dec49fdedd08588e75343aabd466c9ec811832b65680c64e6d"
+    },
+    "x86_64_macos": {
+      "etag": "0x8DCB92F104F71BD",
+      "checksum": "c4d1b19bc243bd1d8ed5d99413d9a625b852e394e614b7871d71deb9557940e9"
+    },
+    "x86_64_windows": {
+      "etag": "0x8DCB92F104F4AD5",
+      "checksum": "1a3bb682553c48cef478609a377e8f845929efad8c4c903ae4ad66348ac5b0c3"
+    }
   },
   "0.4.2": {
     "x86_64_linux_musl": {
