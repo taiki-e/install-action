@@ -367,11 +367,11 @@ pacman_install() {
 }
 apk_install() {
     if type -P sudo &>/dev/null; then
-        sudo apk --no-cache add "$@"
+        retry sudo apk --no-cache add "$@"
     elif type -P doas &>/dev/null; then
-        doas apk --no-cache add "$@"
+        retry doas apk --no-cache add "$@"
     else
-        apk --no-cache add "$@"
+        retry apk --no-cache add "$@"
     fi
 }
 sys_install() {
