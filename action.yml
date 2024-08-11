@@ -25,7 +25,7 @@ runs:
         set -eu
         if ! command -v bash >/dev/null; then
           if grep -Eq '^ID=alpine' /etc/os-release; then
-            printf '::group::Install packages required for checkout-action (bash)\n'
+            printf '::group::Install packages required for install-action (bash)\n'
             # NB: sync with apk_install in main.sh
             if command -v sudo >/dev/null; then
               sudo apk --no-cache add bash
@@ -36,7 +36,7 @@ runs:
             fi
             printf '::endgroup::\n'
           else
-            printf '::error::checkout-action requires bash\n'
+            printf '::error::install-action requires bash\n'
             exit 1
           fi
         fi
