@@ -49,11 +49,11 @@ download_and_checksum() {
     if [[ -n "${checksum}" ]]; then
         info "verifying sha256 checksum for $(basename "${url}")"
         if type -P sha256sum &>/dev/null; then
-            echo "${checksum} *tmp" | sha256sum -c - >/dev/null
+            sha256sum -c - >/dev/null <<<"${checksum} *tmp"
         elif type -P shasum &>/dev/null; then
             # GitHub-hosted macOS runner does not install GNU Coreutils by default.
             # https://github.com/actions/runner-images/issues/90
-            echo "${checksum} *tmp" | shasum -a 256 -c - >/dev/null
+            shasum -a 256 -c - >/dev/null <<<"${checksum} *tmp"
         else
             bail "checksum requires 'sha256sum' or 'shasum' command; consider installing one of them or setting 'checksum' input option to 'false'"
         fi
