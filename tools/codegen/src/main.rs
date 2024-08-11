@@ -7,7 +7,7 @@ use std::{
     ffi::OsStr,
     io::Read,
     path::Path,
-    sync::{OnceLock, RwLock},
+    sync::{LazyLock, RwLock},
     time::Duration,
 };
 
@@ -649,43 +649,38 @@ struct GitHubTokens {
     other: RwLock<Option<String>>,
 }
 impl GitHubTokens {
-    // TODO: Use std::sync::LazyLock once 1.80 is released
-    fn get_github_tokens() -> &'static GitHubTokens {
-        static GITHUB_TOKENS: OnceLock<GitHubTokens> = OnceLock::new();
-        GITHUB_TOKENS.get_or_init(|| {
-            let token = env::var("GITHUB_TOKEN").ok().filter(|v| !v.is_empty());
-            GitHubTokens {
-                raw: RwLock::new(token.clone()),
-                api: RwLock::new(token.clone()),
-                other: RwLock::new(token),
-            }
-        })
-    }
-
-    fn get(url: &str) -> Option<String> {
+    fn get(&self, url: &str) -> Option<String> {
         if url.starts_with("https://raw.githubusercontent.com/") {
-            Self::get_github_tokens().raw.read().unwrap().clone()
+            self.raw.read().unwrap().clone()
         } else if url.starts_with("https://api.github.com/") {
-            Self::get_github_tokens().api.read().unwrap().clone()
+            self.api.read().unwrap().clone()
         } else if url.starts_with("https://github.com/") {
-            Self::get_github_tokens().other.read().unwrap().clone()
+            self.other.read().unwrap().clone()
         } else {
             None
         }
     }
-    fn clear(url: &str) {
+    fn clear(&self, url: &str) {
         if url.starts_with("https://raw.githubusercontent.com/") {
-            *Self::get_github_tokens().raw.write().unwrap() = None;
+            *self.raw.write().unwrap() = None;
         } else if url.starts_with("https://api.github.com/") {
-            *Self::get_github_tokens().api.write().unwrap() = None;
+            *self.api.write().unwrap() = None;
         } else if url.starts_with("https://github.com/") {
-            *Self::get_github_tokens().other.write().unwrap() = None;
+            *self.other.write().unwrap() = None;
         }
     }
 }
+static GITHUB_TOKENS: LazyLock<GitHubTokens> = LazyLock::new(|| {
+    let token = env::var("GITHUB_TOKEN").ok().filter(|v| !v.is_empty());
+    GitHubTokens {
+        raw: RwLock::new(token.clone()),
+        api: RwLock::new(token.clone()),
+        other: RwLock::new(token),
+    }
+});
 
 fn download(url: &str) -> Result<ureq::Response> {
-    let mut token = GitHubTokens::get(url);
+    let mut token = GITHUB_TOKENS.get(url);
     let mut retry = 0;
     let mut retry_time = 0;
     let mut max_retry = 6;
@@ -707,7 +702,7 @@ fn download(url: &str) -> Result<ureq::Response> {
             retry_time = 0;
             token = None;
             // rate limit
-            GitHubTokens::clear(url);
+            GITHUB_TOKENS.clear(url);
         }
         retry += 1;
         if retry > max_retry {
@@ -721,7 +716,7 @@ fn download(url: &str) -> Result<ureq::Response> {
 
 fn github_head(url: &str) -> Result<()> {
     eprintln!("fetching head of {url} ..");
-    let mut token = GitHubTokens::get(url);
+    let mut token = GITHUB_TOKENS.get(url);
     let mut retry = 0;
     let mut retry_time = 0;
     let mut max_retry = 2;
@@ -744,7 +739,7 @@ fn github_head(url: &str) -> Result<()> {
         if token.is_some() && retry == max_retry / 2 {
             retry_time = 0;
             token = None;
-            GitHubTokens::clear(url);
+            GITHUB_TOKENS.clear(url);
         }
         retry += 1;
         if retry > max_retry {
