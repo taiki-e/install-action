@@ -10,6 +10,8 @@ Note: In this file, do not use the hard wrap in the middle of a sentence for com
 
 ## [Unreleased]
 
+- Update `shfmt@latest` to 3.9.0.
+
 - Update `zola@latest` to 0.19.2.
 
 - Update `cargo-semver-checks@latest` to 0.34.0.
