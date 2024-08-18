@@ -10,6 +10,8 @@ Note: In this file, do not use the hard wrap in the middle of a sentence for com
 
 ## [Unreleased]
 
+## [2.42.26] - 2024-08-18
+
 - Update `knope@latest` to 0.18.0.
 
 ## [2.42.25] - 2024-08-17
@@ -2610,7 +2612,8 @@ Note: This release is considered a breaking change because installing on version
 
 Initial release
 
-[Unreleased]: https://github.com/taiki-e/install-action/compare/v2.42.25...HEAD
+[Unreleased]: https://github.com/taiki-e/install-action/compare/v2.42.26...HEAD
+[2.42.26]: https://github.com/taiki-e/install-action/compare/v2.42.25...v2.42.26
 [2.42.25]: https://github.com/taiki-e/install-action/compare/v2.42.24...v2.42.25
 [2.42.24]: https://github.com/taiki-e/install-action/compare/v2.42.23...v2.42.24
 [2.42.23]: https://github.com/taiki-e/install-action/compare/v2.42.22...v2.42.23
