@@ -10,6 +10,8 @@ Note: In this file, do not use the hard wrap in the middle of a sentence for com
 
 ## [Unreleased]
 
+## [2.42.32] - 2024-08-24
+
 - Update `cargo-nextest@latest` to 0.9.75.
 
 ## [2.42.31] - 2024-08-23
@@ -2638,7 +2640,8 @@ Note: This release is considered a breaking change because installing on version
 
 Initial release
 
-[Unreleased]: https://github.com/taiki-e/install-action/compare/v2.42.31...HEAD
+[Unreleased]: https://github.com/taiki-e/install-action/compare/v2.42.32...HEAD
+[2.42.32]: https://github.com/taiki-e/install-action/compare/v2.42.31...v2.42.32
 [2.42.31]: https://github.com/taiki-e/install-action/compare/v2.42.30...v2.42.31
 [2.42.30]: https://github.com/taiki-e/install-action/compare/v2.42.29...v2.42.30
 [2.42.29]: https://github.com/taiki-e/install-action/compare/v2.42.28...v2.42.29
