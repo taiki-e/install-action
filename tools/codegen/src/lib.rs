@@ -1,5 +1,7 @@
 // SPDX-License-Identifier: Apache-2.0 OR MIT
 
+#![allow(clippy::missing_panics_doc, clippy::too_long_first_doc_paragraph)]
+
 use std::{
     cmp::{self, Reverse},
     collections::BTreeMap,
@@ -244,8 +246,6 @@ pub struct BaseManifest {
 }
 impl BaseManifest {
     /// Validate the manifest.
-    // The panic is an assert
-    #[allow(clippy::missing_panics_doc)]
     pub fn validate(&self) {
         for bin in self.bin.iter().chain(self.platform.values().flat_map(|m| &m.bin)) {
             assert!(!bin.as_slice().is_empty());
