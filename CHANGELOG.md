@@ -10,6 +10,8 @@ Note: In this file, do not use the hard wrap in the middle of a sentence for com
 
 ## [Unreleased]
 
+## [2.42.39] - 2024-09-03
+
 - Update `cargo-llvm-cov@latest` to 0.6.12.
 
 ## [2.42.38] - 2024-09-03
@@ -2674,7 +2676,8 @@ Note: This release is considered a breaking change because installing on version
 
 Initial release
 
-[Unreleased]: https://github.com/taiki-e/install-action/compare/v2.42.38...HEAD
+[Unreleased]: https://github.com/taiki-e/install-action/compare/v2.42.39...HEAD
+[2.42.39]: https://github.com/taiki-e/install-action/compare/v2.42.38...v2.42.39
 [2.42.38]: https://github.com/taiki-e/install-action/compare/v2.42.37...v2.42.38
 [2.42.37]: https://github.com/taiki-e/install-action/compare/v2.42.36...v2.42.37
 [2.42.36]: https://github.com/taiki-e/install-action/compare/v2.42.35...v2.42.36
