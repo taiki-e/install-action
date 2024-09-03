@@ -10,6 +10,8 @@ Note: In this file, do not use the hard wrap in the middle of a sentence for com
 
 ## [Unreleased]
 
+## [2.42.40] - 2024-09-03
+
 - Update `typos@latest` to 1.24.4.
 
 - Update `cargo-semver-checks@latest` to 0.35.0.
@@ -2680,7 +2682,8 @@ Note: This release is considered a breaking change because installing on version
 
 Initial release
 
-[Unreleased]: https://github.com/taiki-e/install-action/compare/v2.42.39...HEAD
+[Unreleased]: https://github.com/taiki-e/install-action/compare/v2.42.40...HEAD
+[2.42.40]: https://github.com/taiki-e/install-action/compare/v2.42.39...v2.42.40
 [2.42.39]: https://github.com/taiki-e/install-action/compare/v2.42.38...v2.42.39
 [2.42.38]: https://github.com/taiki-e/install-action/compare/v2.42.37...v2.42.38
 [2.42.37]: https://github.com/taiki-e/install-action/compare/v2.42.36...v2.42.37
