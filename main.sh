@@ -187,7 +187,7 @@ read_manifest() {
     local version="$2"
     local manifest
     rust_crate=$(call_jq -r ".rust_crate" "${manifest_dir}/${tool}.json")
-    manifest=$(call_jq -r ".\"${version}\"" "${manifest_dir}/${tool}.json")
+    manifest=$(call_jq -r ".[\"${version}\"]" "${manifest_dir}/${tool}.json")
     if [[ "${manifest}" == "null" ]]; then
         download_info="null"
         return 0
@@ -196,7 +196,7 @@ read_manifest() {
     if [[ "${exact_version}" == "null" ]]; then
         exact_version="${version}"
     else
-        manifest=$(call_jq -r ".\"${exact_version}\"" "${manifest_dir}/${tool}.json")
+        manifest=$(call_jq -r ".[\"${exact_version}\"]" "${manifest_dir}/${tool}.json")
         if [[ "${rust_crate}" != "null" ]]; then
             # TODO: don't hardcode tool name and use 'immediate_yank_reflection' field in base manifest.
             case "${tool}" in
@@ -213,7 +213,7 @@ read_manifest() {
                         fi
                         info "${tool}@${exact_version} is yanked; downgrade to ${previous_stable_version}"
                         exact_version="${previous_stable_version}"
-                        manifest=$(jq -r ".\"${exact_version}\"" "${manifest_dir}/${tool}.json")
+                        manifest=$(jq -r ".[\"${exact_version}\"]" "${manifest_dir}/${tool}.json")
                     done
                     ;;
             esac

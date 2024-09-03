@@ -116,10 +116,10 @@ On Linux, if any required tools are missing, this action will attempt to install
 On other platforms, at least the following tools are required:
 
 - bash 3.2+
-- jq 1.5+
+- jq 1.3+
 - curl 7.34+ (or RHEL7/CentOS7's patched curl 7.29)
 
-Known environments affected by the above version requirements are CentOS 6 (EoL on 2020-11) using curl 7.19 and jq 1.3, and Ubuntu 14.04 (EoL on 2019-04) using jq 1.3 (see "Install requirements" in [our CI config](https://github.com/taiki-e/install-action/blob/HEAD/.github/workflows/ci.yml) for example of workaround).
+Known environments affected by the above version requirements are CentOS 6 (EoL on 2020-11) using curl 7.19, and Ubuntu 12.04 (EoL on 2017-04) using curl 7.22 (see "Install requirements" in [our CI config](https://github.com/taiki-e/install-action/blob/HEAD/.github/workflows/ci.yml) for example of workaround).
 
 ## Related Projects
 

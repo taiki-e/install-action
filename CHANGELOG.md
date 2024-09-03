@@ -12,6 +12,8 @@ Note: In this file, do not use the hard wrap in the middle of a sentence for com
 
 - Update `typos@latest` to 1.24.3.
 
+- Relax jq version requirement for containers and self-hosted runners to 1.3 (no longer need to install the newer version of jq when using this action on Ubuntu 14.04/CentOS 6).
+
 ## [2.42.37] - 2024-08-30
 
 - Update `cargo-make@latest` to 0.37.16.
