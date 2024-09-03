@@ -10,6 +10,8 @@ Note: In this file, do not use the hard wrap in the middle of a sentence for com
 
 ## [Unreleased]
 
+## [2.42.38] - 2024-09-03
+
 - Update `typos@latest` to 1.24.3.
 
 - Relax jq version requirement for containers and self-hosted runners to 1.3 (no longer need to install the newer version of jq when using this action on Ubuntu 14.04/CentOS 6).
@@ -2670,7 +2672,8 @@ Note: This release is considered a breaking change because installing on version
 
 Initial release
 
-[Unreleased]: https://github.com/taiki-e/install-action/compare/v2.42.37...HEAD
+[Unreleased]: https://github.com/taiki-e/install-action/compare/v2.42.38...HEAD
+[2.42.38]: https://github.com/taiki-e/install-action/compare/v2.42.37...v2.42.38
 [2.42.37]: https://github.com/taiki-e/install-action/compare/v2.42.36...v2.42.37
 [2.42.36]: https://github.com/taiki-e/install-action/compare/v2.42.35...v2.42.36
 [2.42.35]: https://github.com/taiki-e/install-action/compare/v2.42.34...v2.42.35
