@@ -16,7 +16,28 @@
   },
   "license_markdown": "[Apache-2.0](https://github.com/obi1kenobi/cargo-semver-checks/blob/main/LICENSE-APACHE) OR [MIT](https://github.com/obi1kenobi/cargo-semver-checks/blob/main/LICENSE-MIT)",
   "latest": {
-    "version": "0.34.0"
+    "version": "0.35.0"
+  },
+  "0.35": {
+    "version": "0.35.0"
+  },
+  "0.35.0": {
+    "x86_64_linux_musl": {
+      "etag": "0x8DCCC35A9455766",
+      "checksum": "f97cf94cf14500a88217135b7cbde5e0cc11ba274670211f7cd7d26b7f41c254"
+    },
+    "x86_64_macos": {
+      "etag": "0x8DCCC3573F81C49",
+      "checksum": "7208a6b4468128c6942c369c54f2e78f58c8a916cc695f6df4d122e7d9d86efd"
+    },
+    "x86_64_windows": {
+      "etag": "0x8DCCC367877571E",
+      "checksum": "ee3282df02bf183d8c44bc6a72f3c7c80e9ee2626766dc759105910f100f2393"
+    },
+    "aarch64_macos": {
+      "etag": "0x8DCCC35714A58DA",
+      "checksum": "2b7c74bdf8f3e87b8076ab5bb9d6d9754bbd3d420c5ac7e14e44e08af4e9f924"
+    }
   },
   "0.34": {
     "version": "0.34.0"
