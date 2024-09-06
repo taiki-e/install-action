@@ -10,6 +10,8 @@ Note: In this file, do not use the hard wrap in the middle of a sentence for com
 
 ## [Unreleased]
 
+- Support `cargo-lambda`. ([#601](https://github.com/taiki-e/install-action/pull/601), thanks @jayvdb)
+
 ## [2.42.42] - 2024-09-06
 
 - Update `cargo-nextest@latest` to 0.9.78.
