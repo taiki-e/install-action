@@ -10,6 +10,8 @@ Note: In this file, do not use the hard wrap in the middle of a sentence for com
 
 ## [Unreleased]
 
+- Update `cargo-binstall@latest` to 1.10.5.
+
 - Update `osv-scanner@latest` to 1.8.5.
 
 ## [2.43.2] - 2024-09-09
