@@ -10,6 +10,8 @@ Note: In this file, do not use the hard wrap in the middle of a sentence for com
 
 ## [Unreleased]
 
+## [2.43.6] - 2024-09-14
+
 - Update `parse-changelog@latest` to 0.6.9.
 
 ## [2.43.5] - 2024-09-12
@@ -2722,7 +2724,8 @@ Note: This release is considered a breaking change because installing on version
 
 Initial release
 
-[Unreleased]: https://github.com/taiki-e/install-action/compare/v2.43.5...HEAD
+[Unreleased]: https://github.com/taiki-e/install-action/compare/v2.43.6...HEAD
+[2.43.6]: https://github.com/taiki-e/install-action/compare/v2.43.5...v2.43.6
 [2.43.5]: https://github.com/taiki-e/install-action/compare/v2.43.4...v2.43.5
 [2.43.4]: https://github.com/taiki-e/install-action/compare/v2.43.3...v2.43.4
 [2.43.3]: https://github.com/taiki-e/install-action/compare/v2.43.2...v2.43.3
