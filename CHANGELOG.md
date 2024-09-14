@@ -10,6 +10,8 @@ Note: In this file, do not use the hard wrap in the middle of a sentence for com
 
 ## [Unreleased]
 
+- Update `parse-changelog@latest` to 0.6.9.
+
 ## [2.43.5] - 2024-09-12
 
 - Update `biome@latest` to 1.9.0.
