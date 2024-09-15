@@ -1,0 +1,15 @@
+{
+  "repository": "https://github.com/MarcoIeni/release-plz",
+  "website": "https://release-plz.ieni.dev/",
+  "tag_prefix": "release-plz-v",
+  "rust_crate": "${package}",
+  "asset_name": "${package}-${rust_target}.tar.gz",
+  "platform": {
+    "aarch64_macos": {},
+    "aarch64_windows": {},
+    "aarch64_linux_musl": {},
+    "x86_64_macos": {},
+    "x86_64_windows": {},
+    "x86_64_linux_gnu": {}
+  }
+}
