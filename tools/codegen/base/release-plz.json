@@ -4,6 +4,7 @@
   "tag_prefix": "release-plz-v",
   "rust_crate": "${package}",
   "asset_name": "${package}-${rust_target}.tar.gz",
+  "version_range": ">= 0.3.20",
   "platform": {
     "aarch64_macos": {},
     "aarch64_windows": {},
