@@ -10,6 +10,8 @@ Note: In this file, do not use the hard wrap in the middle of a sentence for com
 
 ## [Unreleased]
 
+- Update `biome@latest` to 1.9.1.
+
 ## [2.44.0] - 2024-09-15
 
 - Support `release-plz`. ([#649](https://github.com/taiki-e/install-action/pull/649), thanks @Veetaha)
