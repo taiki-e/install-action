@@ -10,6 +10,8 @@ Note: In this file, do not use the hard wrap in the middle of a sentence for com
 
 ## [Unreleased]
 
+- Support `release-plz`. ([#649](https://github.com/taiki-e/install-action/pull/649), thanks @Veetaha)
+
 ## [2.43.7] - 2024-09-15
 
 - Update `knope@latest` to 0.18.1.
@@ -609,7 +611,7 @@ Note: In this file, do not use the hard wrap in the middle of a sentence for com
 
 - Update `cargo-deny@latest` to 0.14.23.
 
-- Support `cargo-deny` on aarch64 Linux.
+- Support `cargo-deny` on AArch64 Linux.
 
 ## [2.33.13] - 2024-05-03
 
@@ -911,9 +913,9 @@ Note: In this file, do not use the hard wrap in the middle of a sentence for com
 
 ## [2.27.15] - 2024-03-02
 
-- Support `biome` on x86_64/aarch64 Linux (musl).
+- Support `biome` on x86_64/AArch64 Linux (musl).
 
-- Support `zola` on aarch64 macOS. (Previously x86_64 macOS binary is used as fallback.)
+- Support `zola` on AArch64 macOS. (Previously x86_64 macOS binary is used as fallback.)
 
 ## [2.27.14] - 2024-03-01
 
@@ -1347,7 +1349,7 @@ Note: In this file, do not use the hard wrap in the middle of a sentence for com
 
 - Update `biome@latest` to 1.3.3.
 
-- Support `dprint` on aarch64 Linux (musl).
+- Support `dprint` on AArch64 Linux (musl).
 
 ## [2.21.5] - 2023-10-30
 
@@ -1963,7 +1965,7 @@ Note: In this file, do not use the hard wrap in the middle of a sentence for com
 
 - Update `cargo-nextest@latest` to 0.9.52.
 
-- Support `cargo-udeps` on x86_64 Linux (musl) and aarch64 Linux/macOS/Windows.
+- Support `cargo-udeps` on x86_64 Linux (musl) and AArch64 Linux/macOS/Windows.
 
 ## [2.8.0] - 2023-05-03
 
@@ -2195,7 +2197,7 @@ Note: In this file, do not use the hard wrap in the middle of a sentence for com
 
 - Update `cargo-binstall@latest` to 0.19.1.
 
-- Support `cargo-binstall` on aarch64 Windows.
+- Support `cargo-binstall` on AArch64 Windows.
 
 ## [2.2.0] - 2023-01-11
 
@@ -2296,7 +2298,7 @@ Note: This release is considered a breaking change because installing on version
 ## [1.17.0] - 2022-12-14
 
 - Update `protoc@latest` to 3.21.12.
-- Support aarch64 self-hosted runners (Linux, macOS, Windows).
+- Support AArch64 self-hosted runners (Linux, macOS, Windows).
 - Improve support for Fedora/RHEL based containers/self-hosted runners.
 
 ## [1.16.0] - 2022-12-14
