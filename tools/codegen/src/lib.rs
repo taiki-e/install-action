@@ -4,7 +4,7 @@
 
 use std::{env, path::PathBuf};
 
-pub use taiki_e_install_action_manifest_schema::*;
+pub use install_action_manifest_schema::*;
 
 #[must_use]
 pub fn workspace_root() -> PathBuf {

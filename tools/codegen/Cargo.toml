@@ -5,7 +5,7 @@ default-run = "generate-manifest"
 publish = false
 
 [dependencies]
-taiki-e-install-action-manifest-schema = { version = "0.1.0", path = "../manifest-schema" }
+install-action-manifest-schema = { version = "0.1.0", path = "../manifest-schema" }
 anyhow = "1"
 flate2 = "1"
 fs-err = "3"
