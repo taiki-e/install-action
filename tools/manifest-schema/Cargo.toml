@@ -1,0 +1,13 @@
+[package]
+name = "taiki-e-install-action-manifest-schema"
+version = "0.1.0"
+edition = "2021"
+
+[dependencies]
+anyhow = "1"
+semver = { version = "1", features = ["serde"] }
+serde = "1"
+serde_derive = "1"
+
+[lints]
+workspace = true
