@@ -4,6 +4,7 @@ edition = "2021"
 default-run = "generate-manifest"
 
 [dependencies]
+taiki-e-install-action-manifest-schema = { version = "0.1.0", path = "../manifest-schema" }
 anyhow = "1"
 flate2 = "1"
 fs-err = "3"
