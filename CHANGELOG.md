@@ -10,6 +10,8 @@ Note: In this file, do not use the hard wrap in the middle of a sentence for com
 
 ## [Unreleased]
 
+## [2.44.7] - 2024-09-22
+
 - Update `cargo-binstall@latest` to 1.10.6.
 
 - Update `git-cliff@latest` to 2.6.0.
@@ -2766,7 +2768,8 @@ Note: This release is considered a breaking change because installing on version
 
 Initial release
 
-[Unreleased]: https://github.com/taiki-e/install-action/compare/v2.44.6...HEAD
+[Unreleased]: https://github.com/taiki-e/install-action/compare/v2.44.7...HEAD
+[2.44.7]: https://github.com/taiki-e/install-action/compare/v2.44.6...v2.44.7
 [2.44.6]: https://github.com/taiki-e/install-action/compare/v2.44.5...v2.44.6
 [2.44.5]: https://github.com/taiki-e/install-action/compare/v2.44.4...v2.44.5
 [2.44.4]: https://github.com/taiki-e/install-action/compare/v2.44.3...v2.44.4
