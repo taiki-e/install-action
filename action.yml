@@ -46,3 +46,11 @@ runs:
         INPUT_TOOL: ${{ inputs.tool }}
         INPUT_CHECKSUM: ${{ inputs.checksum }}
         INPUT_FALLBACK: ${{ inputs.fallback }}
+      if: runner.os	!= 'Windows'
+    - run: bash --noprofile --norc "${GITHUB_ACTION_PATH:?}/main.sh"
+      shell: bash
+      env:
+        INPUT_TOOL: ${{ inputs.tool }}
+        INPUT_CHECKSUM: ${{ inputs.checksum }}
+        INPUT_FALLBACK: ${{ inputs.fallback }}
+      if: runner.os	== 'Windows'

@@ -63,24 +63,30 @@ jobs:
             bash: msys64
           - os: windows-2022
             bash: cygwin
+          - os: windows-2022
+            tool: major.minor.patch
+          - os: windows-2022
+            tool: major.minor
+          - os: windows-2022
+            tool: major
     runs-on: ${{ matrix.os }}
     timeout-minutes: 60
     steps:
       - run: |
-          printf 'C:\msys64\mingw32\bin\n' >>"${GITHUB_PATH}"
-          printf 'C:\msys64\usr\bin\n' >>"${GITHUB_PATH}"
+          printf '%s\n' 'C:\msys64\mingw32\bin' >>"${GITHUB_PATH}"
+          printf '%s\n' 'C:\msys64\usr\bin' >>"${GITHUB_PATH}"
         if: matrix.bash == 'msys64'
       - run: |
           choco install --no-progress --requirechecksums cygwin
-          printf 'C:\tools\cygwin\bin\n' >>"${GITHUB_PATH}"
-          printf 'C:\tools\cygwin\usr\bin\n' >>"${GITHUB_PATH}"
+          printf '%s\n' 'C:\tools\cygwin\bin' >>"${GITHUB_PATH}"
+          printf '%s\n' 'C:\tools\cygwin\usr\bin' >>"${GITHUB_PATH}"
         if: matrix.bash == 'cygwin'
       - uses: taiki-e/checkout-action@v1
       # cross attempts to install rust-src when Cargo.toml is available even if `cross --version`
       - run: rm Cargo.toml
       - name: Generate tool list
         id: tool-list
-        run: tools/ci/tool-list.sh "${{ matrix.tool }}" >>"${GITHUB_OUTPUT}"
+        run: tools/ci/tool-list.sh "${{ matrix.tool }}" "${{ matrix.os }}" "${{ matrix.bash }}" >>"${GITHUB_OUTPUT}"
       - run: env
       - uses: ./
         with:

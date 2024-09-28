@@ -40,6 +40,9 @@ glibc_pre_2_17_incompat=(
 musl_incompat=(
     "${glibc_pre_2_17_incompat[@]}"
 )
+win2019_gnu_incompat=(
+    cargo-spellcheck
+)
 
 incompat_tools=()
 case "${1:-}" in
@@ -51,9 +54,11 @@ case "${1:-}" in
         ;;
     *)
         echo "tool=$1"
-        exit 0
+        exit 1
         ;;
 esac
+runner="${2:-}"
+bash="${3:-}"
 case "$(uname -s)" in
     Linux)
         host_os=linux
@@ -92,7 +97,16 @@ case "$(uname -s)" in
         fi
         ;;
     Darwin) host_os=macos ;;
-    MINGW* | MSYS* | CYGWIN* | Windows_NT) host_os=windows ;;
+    MINGW* | MSYS* | CYGWIN* | Windows_NT)
+        host_os=windows
+        case "${bash}" in
+            msys64 | cygwin)
+                if [[ "${runner}" == "windows-2019" ]]; then
+                    incompat_tools+=("${win2019_gnu_incompat[@]}")
+                fi
+                ;;
+        esac
+        ;;
     *) bail "unrecognized OS type '$(uname -s)'" ;;
 esac
 
@@ -104,20 +118,19 @@ for manifest in tools/codegen/base/*.json; do
         continue
     fi
     case "${host_os}" in
-        linux*)
-            for incompat in ${incompat_tools[@]+"${incompat_tools[@]}"}; do
-                if [[ "${incompat}" == "${tool_name}" ]]; then
-                    tool_name=''
-                    break
-                fi
-            done
-            ;;
+        linux*) ;;
         *)
             if [[ "$(jq -r ".platform.x86_64_${host_os}" "${manifest}")" == "null" ]]; then
                 continue
             fi
             ;;
     esac
+    for incompat in ${incompat_tools[@]+"${incompat_tools[@]}"}; do
+        if [[ "${incompat}" == "${tool_name}" ]]; then
+            tool_name=''
+            break
+        fi
+    done
     if [[ -n "${tool_name}" ]]; then
         if [[ "${version}" != "latest" ]]; then
             latest_version=$(jq -r ".latest.version" "manifests/${tool_name}.json")
