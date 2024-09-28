@@ -10,6 +10,8 @@ Note: In this file, do not use the hard wrap in the middle of a sentence for com
 
 ## [Unreleased]
 
+- Fix compatibility issue with Cygwin `sh`. This fixes a regression introduced in 2.42.0.
+
 ## [2.44.11] - 2024-09-28
 
 - Update `git-cliff@latest` to 2.6.1.
