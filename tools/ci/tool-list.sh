@@ -167,9 +167,9 @@ esac
 # cargo-watch/watchexec-cli is supported by cargo-binstall (through quickinstall)
 case "${version}" in
     latest) tools+=(cargo-watch watchexec-cli) ;;
-    major.minor.patch) tools+=(cargo-watch@8.1.1 watchexec-cli@1.20.5) ;;
-    major.minor) tools+=(cargo-watch@8.1 watchexec-cli@1.20) ;;
-    major) tools+=(cargo-watch@8 watchexec-cli@1) ;;
+    major.minor.patch) tools+=(cargo-watch@8.5.2 watchexec-cli@2.1.2) ;;
+    major.minor) tools+=(cargo-watch@8.5 watchexec-cli@2.1) ;;
+    major) tools+=(cargo-watch@8 watchexec-cli@2) ;;
     *) exit 1 ;;
 esac
 
