@@ -16,8 +16,6 @@ Note: In this file, do not use the hard wrap in the middle of a sentence for com
 
 - Update `cargo-make@latest` to 0.37.18.
 
-- Update `cargo-make@latest` to 0.37.17.
-
 ## [2.44.13] - 2024-09-28
 
 - Update `sccache@latest` to 0.8.2.
