@@ -31,7 +31,7 @@ jobs:
 
       - name: Show diff
         working-directory: ${{ env.WORKTREE_PATH }}
-        run: git diff
+        run: git diff HEAD
 
       - name: Detect changes
         id: changes
