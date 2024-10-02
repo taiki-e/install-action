@@ -18,6 +18,9 @@ use serde::{
 };
 use serde_derive::{Deserialize, Serialize};
 
+pub const MANIFEST_SCHEMA_BRANCH_NAME: &str =
+    concat!("manifest-schema-", env!("CARGO_PKG_VERSION_MINOR"));
+
 #[derive(Debug, Clone, PartialEq, Eq)]
 pub struct Version {
     pub major: Option<u64>,
