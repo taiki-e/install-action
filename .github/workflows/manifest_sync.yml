@@ -1,0 +1,51 @@
+name: manifest synchronisation
+
+on:
+  workflow_call:
+  push:
+    branches:
+      - main
+
+concurrency:
+  group: ${{ github.workflow }}-${{ github.ref || github.event.pull_request.number || github.sha }}-${{ inputs.additional_key }}
+  cancel-in-progress: true
+
+env:
+  WORKTREE_PATH: /tmp/workspace
+
+jobs:
+  sync:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Checkout manifest-schema branch
+        run: ./tools/checkout-manifest-schema-branch.sh $WORKTREE_PATH
+
+      - name: Copy over schema
+        run: cp ./manifests/* $WORKTREE_PATH
+
+      - name: Stage changes
+        working-directory: ${{ env.WORKTREE_PATH }}
+        run: git add .
+
+      - name: Show diff
+        working-directory: ${{ env.WORKTREE_PATH }}
+        run: git diff
+
+      - name: Detect changes
+        id: changes
+        working-directory: ${{ env.WORKTREE_PATH }}
+        run: |
+          # This output boolean tells us if the dependencies have actually changed
+          echo "count=$(git status --porcelain=v1 | wc -l)" >> $GITHUB_OUTPUT
+
+      - name: Commit and push
+        # Only push if changes exist
+        if: steps.changes.outputs.count > 0
+        working-directory: ${{ env.WORKTREE_PATH }}
+        run: |
+          git config user.name github-actions
+          git config user.email github-actions@github.com
+          git commit -m "Update manifest schema"
+          git push origin HEAD
