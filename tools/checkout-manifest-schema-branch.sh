@@ -16,5 +16,7 @@ elif ! git checkout "$branch"; then
     # New branch with no history. Credit: https://stackoverflow.com/a/13969482
     git checkout --orphan "${branch}"
     git rm -rf . || true
+    git config --local user.name github-actions
+    git config --local user.email github-actions@github.com
     git commit -m 'Initial commit' --allow-empty
 fi
