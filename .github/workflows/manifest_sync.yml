@@ -2,9 +2,8 @@ name: manifest synchronisation
 
 on:
   workflow_call:
-  push:
-    branches:
-      - main
+  release:
+    types: [released]
 
 concurrency:
   group: ${{ github.workflow }}-${{ github.ref || github.event.pull_request.number || github.sha }}
