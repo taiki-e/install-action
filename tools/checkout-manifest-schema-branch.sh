@@ -4,7 +4,7 @@ set -exuo pipefail
 
 cd "$(dirname "$0")"
 
-schema_version="$(grep 'version = "0.*.0"' ./manifest-schema/Cargo.toml | cut -d '.' -f 2)"
+schema_version="$(cargo metadata 2>/dev/null | jq -r '.packages[] | select(.name == "install-action-manifest-schema") | .version')"
 branch="manifest-schema-${schema_version}"
 
 git worktree add --force "${1?}"
