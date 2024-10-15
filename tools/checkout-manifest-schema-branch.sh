@@ -1,6 +1,6 @@
 #!/bin/bash
 
-set -exuo pipefail
+set -euxo pipefail
 
 cd "$(dirname "$0")"
 
