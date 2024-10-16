@@ -22,10 +22,36 @@
   },
   "license_markdown": "[MIT](https://github.com/MarcoIeni/release-plz/blob/main/LICENSE-MIT) OR [Apache-2.0](https://github.com/MarcoIeni/release-plz/blob/main/LICENSE-APACHE)",
   "latest": {
-    "version": "0.3.100"
+    "version": "0.3.101"
   },
   "0.3": {
-    "version": "0.3.100"
+    "version": "0.3.101"
+  },
+  "0.3.101": {
+    "x86_64_linux_musl": {
+      "etag": "0x8DCEDC8B2FD001E",
+      "checksum": "7fe4f435a9ca929ac4c55ffb9cb3d42072f493d27347d7f145ede53de7d007f4"
+    },
+    "x86_64_macos": {
+      "etag": "0x8DCEDC9194C588B",
+      "checksum": "ca61bcc6bb40ad89f002dce2fb1d2b591c4078c904ee78af95550d861794bf36"
+    },
+    "x86_64_windows": {
+      "etag": "0x8DCEDC9CC5F3F41",
+      "checksum": "fd97f63ec05121d35cd08fb76e6ad6236cd03e49425a452e6a020b41f7d29de0"
+    },
+    "aarch64_linux_musl": {
+      "etag": "0x8DCEDC8C30A6BC8",
+      "checksum": "3e66388484bb9b9102a9835c710665e16301f8dcb4097bed46c7024d35ea6820"
+    },
+    "aarch64_macos": {
+      "etag": "0x8DCEDC95296587E",
+      "checksum": "18412fd835e9e0d019bf1c98c3ddcfd8299cd1def9afd135ada5f5d269ea9e91"
+    },
+    "aarch64_windows": {
+      "etag": "0x8DCEDC95B3595E5",
+      "checksum": "2c819af99030aace38b1de6191c9e2c42f464350b484c11c1f6f06b254a6dea1"
+    }
   },
   "0.3.100": {
     "x86_64_linux_musl": {
