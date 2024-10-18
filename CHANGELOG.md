@@ -12,6 +12,8 @@ Note: In this file, do not use the hard wrap in the middle of a sentence for com
 
 ## [Unreleased]
 
+- Update `cargo-semver-checks@latest` to 0.36.0.
+
 ## [2.44.40] - 2024-10-17
 
 - Update `biome@latest` to 1.9.4.
