@@ -12,6 +12,8 @@ Note: In this file, do not use the hard wrap in the middle of a sentence for com
 
 ## [Unreleased]
 
+## [2.44.41] - 2024-10-19
+
 - Update `release-plz@latest` to 0.3.103.
 
 - Update `cargo-semver-checks@latest` to 0.36.0.
@@ -2926,7 +2928,8 @@ Note: This release is considered a breaking change because installing on version
 
 Initial release
 
-[Unreleased]: https://github.com/taiki-e/install-action/compare/v2.44.40...HEAD
+[Unreleased]: https://github.com/taiki-e/install-action/compare/v2.44.41...HEAD
+[2.44.41]: https://github.com/taiki-e/install-action/compare/v2.44.40...v2.44.41
 [2.44.40]: https://github.com/taiki-e/install-action/compare/v2.44.39...v2.44.40
 [2.44.39]: https://github.com/taiki-e/install-action/compare/v2.44.38...v2.44.39
 [2.44.38]: https://github.com/taiki-e/install-action/compare/v2.44.37...v2.44.38
