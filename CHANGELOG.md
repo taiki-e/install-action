@@ -12,6 +12,8 @@ Note: In this file, do not use the hard wrap in the middle of a sentence for com
 
 ## [Unreleased]
 
+- Update `grcov@latest` to 0.8.20.
+
 - Update `cargo-make@latest` to 0.37.23.
 
 ## [2.44.41] - 2024-10-19
