@@ -12,6 +12,8 @@ Note: In this file, do not use the hard wrap in the middle of a sentence for com
 
 ## [Unreleased]
 
+## [2.44.42] - 2024-10-19
+
 - Update `grcov@latest` to 0.8.20.
 
 - Update `cargo-make@latest` to 0.37.23.
@@ -2932,7 +2934,8 @@ Note: This release is considered a breaking change because installing on version
 
 Initial release
 
-[Unreleased]: https://github.com/taiki-e/install-action/compare/v2.44.41...HEAD
+[Unreleased]: https://github.com/taiki-e/install-action/compare/v2.44.42...HEAD
+[2.44.42]: https://github.com/taiki-e/install-action/compare/v2.44.41...v2.44.42
 [2.44.41]: https://github.com/taiki-e/install-action/compare/v2.44.40...v2.44.41
 [2.44.40]: https://github.com/taiki-e/install-action/compare/v2.44.39...v2.44.40
 [2.44.39]: https://github.com/taiki-e/install-action/compare/v2.44.38...v2.44.39
