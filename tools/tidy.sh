@@ -418,8 +418,10 @@ EOF
         if [[ -n "${dependencies_words:-}" ]]; then
             echo $'\n'"${dependencies_words}" >>.github/.cspell/rust-dependencies.txt
         fi
-        check_diff .github/.cspell/rust-dependencies.txt
-        if ! grep -Eq "^\.github/\.cspell/rust-dependencies.txt linguist-generated" .gitattributes; then
+        if [[ -z "${REMOVE_UNUSED_WORDS:-}" ]]; then
+            check_diff .github/.cspell/rust-dependencies.txt
+        fi
+        if ! grep -Fq '.github/.cspell/rust-dependencies.txt linguist-generated' .gitattributes; then
             error "you may want to mark .github/.cspell/rust-dependencies.txt linguist-generated"
         fi
 
@@ -443,17 +445,31 @@ EOF
         done
 
         # Make sure the project-specific dictionary does not contain unused words.
-        unused=''
-        for word in $(grep -v '//.*' "${project_dictionary}" || true); do
-            if ! grep <<<"${all_words}" -Eq -i "^${word}$"; then
-                unused+="${word}"$'\n'
+        if [[ -n "${REMOVE_UNUSED_WORDS:-}" ]]; then
+            grep_args=()
+            for word in $(grep -Ev '^//.*' "${project_dictionary}" || true); do
+                if ! grep -Eqi "^${word}$" <<<"${all_words}"; then
+                    grep_args+=(-e "^${word}$")
+                fi
+            done
+            if [[ ${#grep_args[@]} -gt 0 ]]; then
+                info "removing unused words from ${project_dictionary}"
+                res=$(grep -Ev "${grep_args[@]}" "${project_dictionary}")
+                printf '%s\n' "${res}" >|"${project_dictionary}"
             fi
-        done
-        if [[ -n "${unused}" ]]; then
-            error "unused words in dictionaries; please remove the following words from ${project_dictionary}"
-            echo "======================================="
-            echo -n "${unused}"
-            echo "======================================="
+        else
+            unused=''
+            for word in $(grep -Ev '^//.*' "${project_dictionary}" || true); do
+                if ! grep -Eqi "^${word}$" <<<"${all_words}"; then
+                    unused+="${word}"$'\n'
+                fi
+            done
+            if [[ -n "${unused}" ]]; then
+                error "unused words in dictionaries; please remove the following words from ${project_dictionary} or run ${0##*/} with REMOVE_UNUSED_WORDS=1"
+                printf '=======================================\n'
+                printf '%s' "${unused}"
+                printf '=======================================\n'
+            fi
         fi
     fi
 fi
