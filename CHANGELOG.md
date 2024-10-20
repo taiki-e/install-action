@@ -12,6 +12,8 @@ Note: In this file, do not use the hard wrap in the middle of a sentence for com
 
 ## [Unreleased]
 
+- Update `shfmt@latest` to 3.10.0.
+
 ## [2.44.43] - 2024-10-19
 
 - Update `dprint@latest` to 0.47.4.
