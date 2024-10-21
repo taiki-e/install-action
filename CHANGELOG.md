@@ -12,6 +12,8 @@ Note: In this file, do not use the hard wrap in the middle of a sentence for com
 
 ## [Unreleased]
 
+## [2.44.44] - 2024-10-21
+
 - Update `shfmt@latest` to 3.10.0.
 
 ## [2.44.43] - 2024-10-19
@@ -2940,7 +2942,8 @@ Note: This release is considered a breaking change because installing on version
 
 Initial release
 
-[Unreleased]: https://github.com/taiki-e/install-action/compare/v2.44.43...HEAD
+[Unreleased]: https://github.com/taiki-e/install-action/compare/v2.44.44...HEAD
+[2.44.44]: https://github.com/taiki-e/install-action/compare/v2.44.43...v2.44.44
 [2.44.43]: https://github.com/taiki-e/install-action/compare/v2.44.42...v2.44.43
 [2.44.42]: https://github.com/taiki-e/install-action/compare/v2.44.41...v2.44.42
 [2.44.41]: https://github.com/taiki-e/install-action/compare/v2.44.40...v2.44.41
