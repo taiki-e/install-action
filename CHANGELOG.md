@@ -12,6 +12,8 @@ Note: In this file, do not use the hard wrap in the middle of a sentence for com
 
 ## [Unreleased]
 
+## [2.44.46] - 2024-10-22
+
 - Update `wasmtime@latest` to 26.0.0.
 
 ## [2.44.45] - 2024-10-22
@@ -2948,7 +2950,8 @@ Note: This release is considered a breaking change because installing on version
 
 Initial release
 
-[Unreleased]: https://github.com/taiki-e/install-action/compare/v2.44.45...HEAD
+[Unreleased]: https://github.com/taiki-e/install-action/compare/v2.44.46...HEAD
+[2.44.46]: https://github.com/taiki-e/install-action/compare/v2.44.45...v2.44.46
 [2.44.45]: https://github.com/taiki-e/install-action/compare/v2.44.44...v2.44.45
 [2.44.44]: https://github.com/taiki-e/install-action/compare/v2.44.43...v2.44.44
 [2.44.43]: https://github.com/taiki-e/install-action/compare/v2.44.42...v2.44.43
