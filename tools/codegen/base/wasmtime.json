@@ -11,6 +11,9 @@
       "asset_name": "${package}-v${version}-${rust_target_arch}-${rust_target_os}.zip"
     },
     "aarch64_linux_gnu": {},
-    "aarch64_macos": {}
+    "aarch64_macos": {},
+    "aarch64_windows": {
+      "asset_name": "${package}-v${version}-${rust_target_arch}-${rust_target_os}.zip"
+    }
   }
 }

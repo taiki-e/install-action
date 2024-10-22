@@ -20,6 +20,10 @@
     "aarch64_macos": {
       "url": "https://github.com/bytecodealliance/wasmtime/releases/download/v${version}/wasmtime-v${version}-aarch64-macos.tar.xz",
       "bin": "wasmtime-v${version}-aarch64-macos/wasmtime"
+    },
+    "aarch64_windows": {
+      "url": "https://github.com/bytecodealliance/wasmtime/releases/download/v${version}/wasmtime-v${version}-aarch64-windows.zip",
+      "bin": "wasmtime-v${version}-aarch64-windows/wasmtime.exe"
     }
   },
   "license_markdown": "[Apache-2.0 WITH LLVM-exception](https://github.com/bytecodealliance/wasmtime/blob/main/LICENSE)",
@@ -52,6 +56,10 @@
     "aarch64_macos": {
       "etag": "0x8DCF2AD7B1152B6",
       "checksum": "0c98207e181ac2e256aec5e46e8c71f1bf5f38be9472c98d73d7dbb1ff38d6d0"
+    },
+    "aarch64_windows": {
+      "etag": "0x8DCF2AD81EA559A",
+      "checksum": "af88a82d1af8b63291ae9b92412363e132d9b15b56a4be17022c3728d50728e0"
     }
   },
   "25": {
