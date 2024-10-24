@@ -6,7 +6,7 @@ default-run = "generate-manifest"
 [dependencies]
 anyhow = "1"
 flate2 = "1"
-fs-err = "2"
+fs-err = "3"
 minisign-verify = "0.2"
 semver = { version = "1", features = ["serde"] }
 serde = "1"
