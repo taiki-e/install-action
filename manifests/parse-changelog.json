@@ -3,10 +3,42 @@
   "template": null,
   "license_markdown": "[Apache-2.0](https://github.com/taiki-e/parse-changelog/blob/main/LICENSE-APACHE) OR [MIT](https://github.com/taiki-e/parse-changelog/blob/main/LICENSE-MIT)",
   "latest": {
-    "version": "0.6.9"
+    "version": "0.6.10"
   },
   "0.6": {
-    "version": "0.6.9"
+    "version": "0.6.10"
+  },
+  "0.6.10": {
+    "x86_64_linux_musl": {
+      "url": "https://github.com/taiki-e/parse-changelog/releases/download/v0.6.10/parse-changelog-x86_64-unknown-linux-musl.tar.gz",
+      "etag": "0x8DCF5D67AA4A176",
+      "checksum": "9868ce309083557683a9091fcfeaa106d1f08a504f2a9c9c9b9437562a7f4291"
+    },
+    "x86_64_macos": {
+      "url": "https://github.com/taiki-e/parse-changelog/releases/download/v0.6.10/parse-changelog-x86_64-apple-darwin.tar.gz",
+      "etag": "0x8DCF5D696875BD4",
+      "checksum": "3db852258cf4319a87d84905ce1a31f09890631a806cf8d3a69fc2fab1a1bf9f"
+    },
+    "x86_64_windows": {
+      "url": "https://github.com/taiki-e/parse-changelog/releases/download/v0.6.10/parse-changelog-x86_64-pc-windows-msvc.tar.gz",
+      "etag": "0x8DCF5D6B26F8E17",
+      "checksum": "2fb33affc3c7d59061ade35372804af1d1c310b8bb3cce09e73646e854e8fc6b"
+    },
+    "aarch64_linux_musl": {
+      "url": "https://github.com/taiki-e/parse-changelog/releases/download/v0.6.10/parse-changelog-aarch64-unknown-linux-musl.tar.gz",
+      "etag": "0x8DCF5D6799D337C",
+      "checksum": "1ec4a711a2cc4933861c15eb9c7597588cbb168d194f31a1a5c36baf4e151879"
+    },
+    "aarch64_macos": {
+      "url": "https://github.com/taiki-e/parse-changelog/releases/download/v0.6.10/parse-changelog-aarch64-apple-darwin.tar.gz",
+      "etag": "0x8DCF5D68151BB8A",
+      "checksum": "eab58102d2d3aaeff5ff38c7b529948e9955d3ec1f6a4b5033dc72cf1d1883ee"
+    },
+    "aarch64_windows": {
+      "url": "https://github.com/taiki-e/parse-changelog/releases/download/v0.6.10/parse-changelog-aarch64-pc-windows-msvc.tar.gz",
+      "etag": "0x8DCF5D6A993D7DE",
+      "checksum": "09a618dc129b35668cbb5c8d305611670a2b7ab8bab8dc217c1677fb4b29525c"
+    }
   },
   "0.6.9": {
     "x86_64_linux_musl": {
