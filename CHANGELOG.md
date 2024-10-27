@@ -12,6 +12,8 @@ Note: In this file, do not use the hard wrap in the middle of a sentence for com
 
 ## [Unreleased]
 
+- Update `cargo-udeps@latest` to 0.1.52.
+
 - Update `parse-changelog@latest` to 0.6.10.
 
 - Update `cargo-no-dev-deps@latest` to 0.2.14.
