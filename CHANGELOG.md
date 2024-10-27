@@ -12,6 +12,8 @@ Note: In this file, do not use the hard wrap in the middle of a sentence for com
 
 ## [Unreleased]
 
+- Update `dprint@latest` to 0.47.5.
+
 - Update `cargo-udeps@latest` to 0.1.52.
 
 - Update `parse-changelog@latest` to 0.6.10.
