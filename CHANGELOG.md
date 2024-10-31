@@ -10,6 +10,8 @@ Note: In this file, do not use the hard wrap in the middle of a sentence for com
 
 ## [Unreleased]
 
+## [2.44.58] - 2024-10-31
+
 - Update `osv-scanner@latest` to 1.9.1.
 
 ## [2.44.57] - 2024-10-30
@@ -3012,7 +3014,8 @@ Note: This release is considered a breaking change because installing on version
 
 Initial release
 
-[Unreleased]: https://github.com/taiki-e/install-action/compare/v2.44.57...HEAD
+[Unreleased]: https://github.com/taiki-e/install-action/compare/v2.44.58...HEAD
+[2.44.58]: https://github.com/taiki-e/install-action/compare/v2.44.57...v2.44.58
 [2.44.57]: https://github.com/taiki-e/install-action/compare/v2.44.56...v2.44.57
 [2.44.56]: https://github.com/taiki-e/install-action/compare/v2.44.55...v2.44.56
 [2.44.55]: https://github.com/taiki-e/install-action/compare/v2.44.54...v2.44.55
