@@ -10,6 +10,8 @@ Note: In this file, do not use the hard wrap in the middle of a sentence for com
 
 ## [Unreleased]
 
+## [2.44.62] - 2024-11-06
+
 - Update `typos@latest` to 1.27.1.
 
 - Update `cargo-binstall@latest` to 1.10.11.
@@ -3034,7 +3036,8 @@ Note: This release is considered a breaking change because installing on version
 
 Initial release
 
-[Unreleased]: https://github.com/taiki-e/install-action/compare/v2.44.61...HEAD
+[Unreleased]: https://github.com/taiki-e/install-action/compare/v2.44.62...HEAD
+[2.44.62]: https://github.com/taiki-e/install-action/compare/v2.44.61...v2.44.62
 [2.44.61]: https://github.com/taiki-e/install-action/compare/v2.44.60...v2.44.61
 [2.44.60]: https://github.com/taiki-e/install-action/compare/v2.44.59...v2.44.60
 [2.44.59]: https://github.com/taiki-e/install-action/compare/v2.44.58...v2.44.59
