@@ -787,12 +787,16 @@ for tool in "${tools[@]}"; do
         case "${tool_bin_stem}" in
             # biome up to 1.2.2 exits with 1 on both --version and --help flags.
             # cargo-machete up to 0.6.0 does not support --version flag.
-            # wait-for-them 0.4.0 exits with 1 on both --version and --help flags.
+            # wait-for-them up to 0.4.0 does not support --version flag.
             biome | cargo-machete | wait-for-them) rx "${tool_bin_stem}" --version || true ;;
             # these packages support neither --version nor --help flag.
             cargo-careful | wasm-bindgen-test-runner) ;;
             # wasm2es6js does not support --version flag and --help flag doesn't contains version info.
             wasm2es6js) ;;
+            # cargo-zigbuild has no --version flag on `cargo zigbuild` subcommand.
+            cargo-zigbuild) rx "${tool_bin_stem}" --version ;;
+            # deepsource has version command instead of --version flag.
+            deepsource) rx "${tool_bin_stem}" version ;;
             cargo-*)
                 case "${tool_bin_stem}" in
                     # cargo-valgrind 2.1.0's --version flag just calls cargo's --version flag
