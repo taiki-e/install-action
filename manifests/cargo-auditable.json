@@ -12,6 +12,10 @@
     "x86_64_windows": {
       "url": "https://github.com/rust-secure-code/cargo-auditable/releases/download/v${version}/cargo-auditable-x86_64-pc-windows-msvc.zip",
       "bin": "cargo-auditable-x86_64-pc-windows-msvc/cargo-auditable.exe"
+    },
+    "aarch64_macos": {
+      "url": "https://github.com/rust-secure-code/cargo-auditable/releases/download/v${version}/cargo-auditable-aarch64-apple-darwin.tar.xz",
+      "bin": "cargo-auditable-aarch64-apple-darwin/cargo-auditable"
     }
   },
   "license_markdown": "[Apache-2.0](https://github.com/rust-secure-code/cargo-auditable/blob/HEAD/LICENSE-APACHE) OR [MIT](https://github.com/rust-secure-code/cargo-auditable/blob/HEAD/LICENSE-MIT)",
@@ -33,6 +37,10 @@
     "x86_64_windows": {
       "etag": "0x8DC7C39FB1638FE",
       "checksum": "ea452ae7d3dbc2dd1f747861245be8fd6740da12b351f65c59a212df370b144c"
+    },
+    "aarch64_macos": {
+      "etag": "0x8DC7C39FC410D14",
+      "checksum": "02e0faa19a9e9ceee43f83b2b557c536624a0c868307b9b2b3a5f617ef3b7cfb"
     }
   }
 }
