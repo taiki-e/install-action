@@ -10,6 +10,8 @@ Note: In this file, do not use the hard wrap in the middle of a sentence for com
 
 ## [Unreleased]
 
+- Update `hyperfine@latest` to 1.19.0.
+
 - Update `cargo-binstall@latest` to 1.10.12.
 
 ## [2.44.67] - 2024-11-08
