@@ -10,6 +10,8 @@ Note: In this file, do not use the hard wrap in the middle of a sentence for com
 
 ## [Unreleased]
 
+## [2.44.69] - 2024-11-14
+
 - Update `release-plz@latest` to 0.3.108.
 
 ## [2.44.68] - 2024-11-12
@@ -3066,7 +3068,8 @@ Note: This release is considered a breaking change because installing on version
 
 Initial release
 
-[Unreleased]: https://github.com/taiki-e/install-action/compare/v2.44.68...HEAD
+[Unreleased]: https://github.com/taiki-e/install-action/compare/v2.44.69...HEAD
+[2.44.69]: https://github.com/taiki-e/install-action/compare/v2.44.68...v2.44.69
 [2.44.68]: https://github.com/taiki-e/install-action/compare/v2.44.67...v2.44.68
 [2.44.67]: https://github.com/taiki-e/install-action/compare/v2.44.66...v2.44.67
 [2.44.66]: https://github.com/taiki-e/install-action/compare/v2.44.65...v2.44.66
