@@ -10,6 +10,8 @@ Note: In this file, do not use the hard wrap in the middle of a sentence for com
 
 ## [Unreleased]
 
+## [2.44.71] - 2024-11-16
+
 - Update `cargo-nextest@latest` to 0.9.84.
 
 - Update `rclone@latest` to 1.68.2.
@@ -3076,7 +3078,8 @@ Note: This release is considered a breaking change because installing on version
 
 Initial release
 
-[Unreleased]: https://github.com/taiki-e/install-action/compare/v2.44.70...HEAD
+[Unreleased]: https://github.com/taiki-e/install-action/compare/v2.44.71...HEAD
+[2.44.71]: https://github.com/taiki-e/install-action/compare/v2.44.70...v2.44.71
 [2.44.70]: https://github.com/taiki-e/install-action/compare/v2.44.69...v2.44.70
 [2.44.69]: https://github.com/taiki-e/install-action/compare/v2.44.68...v2.44.69
 [2.44.68]: https://github.com/taiki-e/install-action/compare/v2.44.67...v2.44.68
