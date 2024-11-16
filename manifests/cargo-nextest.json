@@ -19,10 +19,56 @@
   },
   "license_markdown": "[Apache-2.0](https://github.com/nextest-rs/nextest/blob/main/LICENSE-APACHE) OR [MIT](https://github.com/nextest-rs/nextest/blob/main/LICENSE-MIT)",
   "latest": {
-    "version": "0.9.82"
+    "version": "0.9.84"
   },
   "0.9": {
-    "version": "0.9.82"
+    "version": "0.9.84"
+  },
+  "0.9.84": {
+    "previous_stable_version": "0.9.83",
+    "x86_64_linux_gnu": {
+      "etag": "0x8DD05D0FD9A94E8",
+      "checksum": "b83e4ea328b527b472ff20d0e42d5b57a795efc2dcaed277e827961a2098eaba"
+    },
+    "x86_64_linux_musl": {
+      "etag": "0x8DD05D10B4107F4",
+      "checksum": "d226756196eb4e380ba5f3f342589232d167af87c5c5d8e8d857c789927ed878"
+    },
+    "x86_64_macos": {
+      "etag": "0x8DD05D0CC9A227B",
+      "checksum": "8f77b62f85ebc1100ac27a66b7e3d62f20f138401bfe83de2164908ce170c901"
+    },
+    "x86_64_windows": {
+      "etag": "0x8DD05D1793D9794",
+      "checksum": "1da3e1db0493baa81a957078d3fafea79238ccfd3d43c0eef70b5ad09df51a8f"
+    },
+    "aarch64_linux_gnu": {
+      "etag": "0x8DD05D0D812BD49",
+      "checksum": "12f8b320b66d60fe531793912fcb16c91fcf58ed3f4a2e6b863777558b2dfb65"
+    }
+  },
+  "0.9.83": {
+    "previous_stable_version": "0.9.82",
+    "x86_64_linux_gnu": {
+      "etag": "0x8DD05C75DC4381C",
+      "checksum": "7ed56b34502b8d32714d6d2b68fd8ff6043be7a1a7bb456b8c4cc0b3f156dea4"
+    },
+    "x86_64_linux_musl": {
+      "etag": "0x8DD05C7827D4BCB",
+      "checksum": "d781624777a96b5356867d5d1bcc2809049711dd44b64d8cd50899cd1ecbd2af"
+    },
+    "x86_64_macos": {
+      "etag": "0x8DD05C7840F1F5D",
+      "checksum": "b4bc7b59bff480ca8ee598ef232622066a5c8141f7a86c98e59496c80d2515c9"
+    },
+    "x86_64_windows": {
+      "etag": "0x8DD05C7F8E76944",
+      "checksum": "cb46f150337e91b934a5f0b62a3b0d669b8c9c1e0557d33747b2857d4f1a777a"
+    },
+    "aarch64_linux_gnu": {
+      "etag": "0x8DD05C75DDE0B9A",
+      "checksum": "c3e60cefc775777141aec51e3d5316b4d91446c278b9dad66ca6f66c8ca2fb13"
+    }
   },
   "0.9.82": {
     "previous_stable_version": "0.9.81",
