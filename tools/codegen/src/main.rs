@@ -65,7 +65,7 @@ fn main() -> Result<()> {
         ))?
         .into_json()?;
         // If version_req is latest, it is usually sufficient to look at the latest 100 releases.
-        if r.len() < per_page || version_req.map_or(false, |req| req == "latest") {
+        if r.len() < per_page || version_req.is_some_and(|req| req == "latest") {
             releases.append(&mut r);
             break;
         }
