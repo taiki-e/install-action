@@ -10,6 +10,8 @@ Note: In this file, do not use the hard wrap in the middle of a sentence for com
 
 ## [Unreleased]
 
+- Support `cargo-auditable`. ([#741](https://github.com/taiki-e/install-action/pull/741), thanks @simonsan)
+
 ## [2.44.72] - 2024-11-19
 
 - Update `cargo-dinghy@latest` to 0.8.0.
