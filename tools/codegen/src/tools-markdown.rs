@@ -43,8 +43,7 @@ fn main() -> Result<()> {
     base_info_dir.push("codegen");
     base_info_dir.push("base");
 
-    let mut paths: Vec<_> =
-        fs::read_dir(manifest_dir.clone()).unwrap().map(|r| r.unwrap()).collect();
+    let mut paths: Vec<_> = fs::read_dir(&manifest_dir).unwrap().map(|r| r.unwrap()).collect();
     paths.sort_by_key(fs_err::DirEntry::path);
 
     let mut tools = vec![MarkdownEntry {
@@ -88,7 +87,7 @@ fn main() -> Result<()> {
                 "linux" => platforms.linux = true,
                 "macos" => platforms.macos = true,
                 "windows" => platforms.windows = true,
-                &_ => todo!(),
+                _ => todo!(),
             }
         }
 
