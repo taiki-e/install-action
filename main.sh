@@ -790,7 +790,7 @@ for tool in "${tools[@]}"; do
             # wait-for-them up to 0.4.0 does not support --version flag.
             biome | cargo-machete | wait-for-them) rx "${tool_bin_stem}" --version || true ;;
             # these packages support neither --version nor --help flag.
-            cargo-careful | wasm-bindgen-test-runner) ;;
+            cargo-auditable | cargo-careful | wasm-bindgen-test-runner) ;;
             # wasm2es6js does not support --version flag and --help flag doesn't contains version info.
             wasm2es6js) ;;
             # cargo-zigbuild has no --version flag on `cargo zigbuild` subcommand.
