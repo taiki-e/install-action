@@ -311,22 +311,22 @@ impl StringOrArray {
     }
 }
 
-/// GitHub Actions Runner supports Linux (x86_64, aarch64, arm), Windows (x86_64, aarch64),
-/// and macOS (x86_64, aarch64).
-/// https://github.com/actions/runner/blob/v2.315.0/.github/workflows/build.yml#L21
+/// GitHub Actions Runner supports Linux (x86_64, AArch64, Arm), Windows (x86_64, AArch64),
+/// and macOS (x86_64, AArch64).
+/// https://github.com/actions/runner/blob/v2.321.0/.github/workflows/build.yml#L21
 /// https://docs.github.com/en/actions/hosting-your-own-runners/about-self-hosted-runners#supported-architectures-and-operating-systems-for-self-hosted-runners
 ///
 /// Note:
 /// - Static-linked binaries compiled for linux-musl will also work on linux-gnu systems and are
 ///   usually preferred over linux-gnu binaries because they can avoid glibc version issues.
 ///   (rustc enables statically linking for linux-musl by default, except for mips.)
-/// - Binaries compiled for x86_64 macOS will usually also work on aarch64 macOS.
-/// - Binaries compiled for x86_64 Windows will usually also work on aarch64 Windows 11+.
-/// - Ignore arm for now, as we need to consider the version and whether hard-float is supported.
+/// - Binaries compiled for x86_64 macOS will usually also work on AArch64 macOS.
+/// - Binaries compiled for x86_64 Windows will usually also work on AArch64 Windows 11+.
+/// - Ignore Arm for now, as we need to consider the version and whether hard-float is supported.
 ///   https://github.com/rust-lang/rustup/pull/593
 ///   https://github.com/cross-rs/cross/pull/1018
 ///   Does it seem only armv7l+ is supported?
-///   https://github.com/actions/runner/blob/v2.315.0/src/Misc/externals.sh#L189
+///   https://github.com/actions/runner/blob/v2.321.0/src/Misc/externals.sh#L178
 ///   https://github.com/actions/runner/issues/688
 // TODO: support musl with dynamic linking like wasmtime 22.0.0+'s musl binaries: https://github.com/bytecodealliance/wasmtime/releases/tag/v22.0.0
 #[allow(non_camel_case_types)]

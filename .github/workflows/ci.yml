@@ -77,6 +77,12 @@ jobs:
     runs-on: ${{ matrix.os }}
     timeout-minutes: 60
     steps:
+      - uses: taiki-e/checkout-action@v1
+      # cross attempts to install rust-src when Cargo.toml is available even if `cross --version`
+      - run: rm Cargo.toml
+      - name: Generate tool list
+        id: tool-list
+        run: tools/ci/tool-list.sh "${{ matrix.tool }}" "${{ matrix.os }}" "${{ matrix.bash }}" >>"${GITHUB_OUTPUT}"
       - run: |
           printf '%s\n' 'C:\msys64\mingw32\bin' >>"${GITHUB_PATH}"
           printf '%s\n' 'C:\msys64\usr\bin' >>"${GITHUB_PATH}"
@@ -86,12 +92,6 @@ jobs:
           printf '%s\n' 'C:\tools\cygwin\bin' >>"${GITHUB_PATH}"
           printf '%s\n' 'C:\tools\cygwin\usr\bin' >>"${GITHUB_PATH}"
         if: matrix.bash == 'cygwin'
-      - uses: taiki-e/checkout-action@v1
-      # cross attempts to install rust-src when Cargo.toml is available even if `cross --version`
-      - run: rm Cargo.toml
-      - name: Generate tool list
-        id: tool-list
-        run: tools/ci/tool-list.sh "${{ matrix.tool }}" "${{ matrix.os }}" "${{ matrix.bash }}" >>"${GITHUB_OUTPUT}"
       - run: env
       - uses: ./
         with:

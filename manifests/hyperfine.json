@@ -16,6 +16,10 @@
     "aarch64_linux_gnu": {
       "url": "https://github.com/sharkdp/hyperfine/releases/download/v${version}/hyperfine-v${version}-aarch64-unknown-linux-gnu.tar.gz",
       "bin": "hyperfine-v${version}-aarch64-unknown-linux-gnu/hyperfine"
+    },
+    "aarch64_macos": {
+      "url": "https://github.com/sharkdp/hyperfine/releases/download/v${version}/hyperfine-v${version}-aarch64-apple-darwin.tar.gz",
+      "bin": "hyperfine-v${version}-aarch64-apple-darwin/hyperfine"
     }
   },
   "license_markdown": "[MIT](https://github.com/sharkdp/hyperfine/blob/master/LICENSE-MIT) OR [Apache-2.0](https://github.com/sharkdp/hyperfine/blob/master/LICENSE-APACHE)",
@@ -44,6 +48,10 @@
     "aarch64_linux_gnu": {
       "etag": "0x8DD029A11BFB41C",
       "checksum": "7f9c0522e1acf869e0558e085c43f2cea3e30e4f7a4b7bc3d5540cbdee7b4273"
+    },
+    "aarch64_macos": {
+      "etag": "0x8DD029A033B40F5",
+      "checksum": "502e7c7f99e7e1919321eaa23a4a694c34b1b92d99cbd773a4a2497e100e088f"
     }
   },
   "1.18": {

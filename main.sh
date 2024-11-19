@@ -252,8 +252,8 @@ read_manifest() {
             fi
             ;;
         macos | windows)
-            # Binaries compiled for x86_64 macOS will usually also work on aarch64 macOS.
-            # Binaries compiled for x86_64 Windows will usually also work on aarch64 Windows 11+.
+            # Binaries compiled for x86_64 macOS will usually also work on AArch64 macOS.
+            # Binaries compiled for x86_64 Windows will usually also work on AArch64 Windows 11+.
             host_platform="${host_arch}_${host_os}"
             download_info=$(call_jq <<<"${manifest}" -r ".${host_platform}")
             if [[ "${download_info}" == "null" ]] && [[ "${host_arch}" != "x86_64" ]]; then
@@ -499,19 +499,19 @@ esac
 case "$(uname -m)" in
     aarch64 | arm64) host_arch="aarch64" ;;
     xscale | arm | armv*l)
-        # Ignore arm for now, as we need to consider the version and whether hard-float is supported.
+        # Ignore Arm for now, as we need to consider the version and whether hard-float is supported.
         # https://github.com/rust-lang/rustup/pull/593
         # https://github.com/cross-rs/cross/pull/1018
         # Does it seem only armv7l+ is supported?
-        # https://github.com/actions/runner/blob/v2.315.0/src/Misc/externals.sh#L189
+        # https://github.com/actions/runner/blob/v2.321.0/src/Misc/externals.sh#L178
         # https://github.com/actions/runner/issues/688
-        bail "32-bit ARM runner is not supported yet by this action; if you need support for this platform, please submit an issue at <https://github.com/taiki-e/install-action>"
+        bail "32-bit Arm runner is not supported yet by this action; if you need support for this platform, please submit an issue at <https://github.com/taiki-e/install-action>"
         ;;
-    # GitHub Actions Runner supports Linux (x86_64, aarch64, arm), Windows (x86_64, aarch64),
-    # and macOS (x86_64, aarch64).
-    # https://github.com/actions/runner/blob/v2.315.0/.github/workflows/build.yml#L21
+    # GitHub Actions Runner supports Linux (x86_64, AArch64, Arm), Windows (x86_64, AArch64),
+    # and macOS (x86_64, AArch64).
+    # https://github.com/actions/runner/blob/v2.321.0/.github/workflows/build.yml#L21
     # https://docs.github.com/en/actions/hosting-your-own-runners/about-self-hosted-runners#supported-architectures-and-operating-systems-for-self-hosted-runners
-    # So we can assume x86_64 unless it is aarch64 or arm.
+    # So we can assume x86_64 unless it is AArch64 or Arm.
     *) host_arch="x86_64" ;;
 esac
 info "host platform: ${host_arch}_${host_os}"
