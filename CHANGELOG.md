@@ -10,6 +10,8 @@ Note: In this file, do not use the hard wrap in the middle of a sentence for com
 
 ## [Unreleased]
 
+- Update `git-cliff@latest` to 2.7.0.
+
 ## [2.45.0] - 2024-11-19
 
 - Support `cargo-auditable`. ([#741](https://github.com/taiki-e/install-action/pull/741), thanks @simonsan)
