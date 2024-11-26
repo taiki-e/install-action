@@ -2,7 +2,7 @@
   "repository": "https://github.com/orium/cargo-rdme",
   "tag_prefix": "v",
   "rust_crate": "${package}",
-  "broken": ["1.4.3", "1.4.4", "1.4.5", "1.4.6", "1.4.7"],
+  "broken": ["1.4.3", "1.4.4", "1.4.5", "1.4.6", "1.4.7", "1.4.8"],
   "platform": {
     "x86_64_linux_musl": {
       "asset_name": "${package}_v${version}_${rust_target}.tar.bz2"
