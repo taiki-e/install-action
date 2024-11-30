@@ -19,10 +19,32 @@
   },
   "license_markdown": "[MIT](https://github.com/rust-cross/cargo-zigbuild/blob/main/LICENSE)",
   "latest": {
-    "version": "0.19.4"
+    "version": "0.19.5"
   },
   "0.19": {
-    "version": "0.19.4"
+    "version": "0.19.5"
+  },
+  "0.19.5": {
+    "x86_64_linux_musl": {
+      "etag": "0x8DD10EB499E98B9",
+      "checksum": "3d4baf2a9067e13577a31623f9fa628c6415caea188591dca48aa378783e3913"
+    },
+    "x86_64_windows": {
+      "etag": "0x8DD10EAE6228CF5",
+      "checksum": "589254e208526d901d2193f4470a14241ad636a35df60bfeb35058e93e2e0d1c"
+    },
+    "aarch64_linux_musl": {
+      "etag": "0x8DD10EA7C976517",
+      "checksum": "0715fcfb3881a51e2e663f176c4ba6ba8c3f9a7a346668cc5b957d237ad4d401"
+    },
+    "aarch64_macos": {
+      "etag": "0x8DD10EC07B2E36C",
+      "checksum": "ecc421030d2db57d4e4bd2a29904243c9f59920e2634a0d2e9480ea4dedb00e5"
+    },
+    "aarch64_windows": {
+      "etag": "0x8DD10EAF12FE9A3",
+      "checksum": "abd4b87c1b22ed02df55b166fc86ab5269a16c3186f99786c4663fb64dfeea7e"
+    }
   },
   "0.19.4": {
     "x86_64_linux_musl": {
