@@ -10,6 +10,8 @@ Note: In this file, do not use the hard wrap in the middle of a sentence for com
 
 ## [Unreleased]
 
+- Improve robustness of `cargo-binstall` fallback. ([#556](https://github.com/taiki-e/install-action/pull/556))
+
 ## [2.45.15] - 2024-12-03
 
 - Update `typos@latest` to 1.28.2.
