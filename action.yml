@@ -46,6 +46,7 @@ runs:
         INPUT_TOOL: ${{ inputs.tool }}
         INPUT_CHECKSUM: ${{ inputs.checksum }}
         INPUT_FALLBACK: ${{ inputs.fallback }}
+        DEFAULT_GITHUB_TOKEN: ${{ github.token }}
       if: runner.os	!= 'Windows'
     - run: bash --noprofile --norc "${GITHUB_ACTION_PATH:?}/main.sh"
       shell: bash
@@ -53,4 +54,5 @@ runs:
         INPUT_TOOL: ${{ inputs.tool }}
         INPUT_CHECKSUM: ${{ inputs.checksum }}
         INPUT_FALLBACK: ${{ inputs.fallback }}
+        DEFAULT_GITHUB_TOKEN: ${{ github.token }}
       if: runner.os	== 'Windows'

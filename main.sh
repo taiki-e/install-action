@@ -826,6 +826,9 @@ if [[ ${#unsupported_tools[@]} -gt 0 ]]; then
     info "install-action does not support ${unsupported_tools[*]}; fallback to cargo-binstall"
     IFS=$'\n\t'
     install_cargo_binstall
+    if [[ -z "${GITHUB_TOKEN:-}" ]] && [[ -n "${DEFAULT_GITHUB_TOKEN:-}" ]]; then
+        export GITHUB_TOKEN="${DEFAULT_GITHUB_TOKEN}"
+    fi
     # By default, cargo-binstall enforce downloads over secure transports only.
     # As a result, http will be disabled, and it will also set
     # min tls version to be 1.2
