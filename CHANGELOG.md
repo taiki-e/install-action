@@ -10,6 +10,8 @@ Note: In this file, do not use the hard wrap in the middle of a sentence for com
 
 ## [Unreleased]
 
+- Update `protoc@latest` to 3.29.1.
+
 ## [2.46.0] - 2024-12-04
 
 - Improve robustness of `cargo-binstall` fallback. ([#556](https://github.com/taiki-e/install-action/pull/556))
