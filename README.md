@@ -110,9 +110,16 @@ See the [Supported tools section](#supported-tools) for how to ensure that fallb
 ## Compatibility
 
 This action has been tested for GitHub-hosted runners (Ubuntu, macOS, Windows) and containers (Ubuntu, Debian, Fedora, CentOS, Alma, openSUSE, Arch, Alpine).
-To use this action in self-hosted runners or in containers, at least the following tools are required:
 
-- bash
+On Linux, if any required tools are missing, this action will attempt to install them from distro's package manager, so no pre-setup is usually required (except for CentOS or Debian 9 (or older) or very old distro described below, which was already EoL and needs to use vault/archive repos -- see "Install requirements" in [our CI config](https://github.com/taiki-e/install-action/blob/HEAD/.github/workflows/ci.yml) for example of setup).
+
+On other platforms, at least the following tools are required:
+
+- bash 3.2+
+- jq 1.3+
+- curl 7.34+ (or RHEL7/CentOS7's patched curl 7.29)
+
+Known environments affected by the above version requirements are CentOS 6 (EoL on 2020-11) using curl 7.19, and Ubuntu 12.04 (EoL on 2017-04) using curl 7.22 (see "Install requirements" in [our CI config](https://github.com/taiki-e/install-action/blob/HEAD/.github/workflows/ci.yml) for example of workaround).
 
 ## Related Projects
 
@@ -120,9 +127,11 @@ To use this action in self-hosted runners or in containers, at least the followi
 - [create-gh-release-action]: GitHub Action for creating GitHub Releases based on changelog.
 - [upload-rust-binary-action]: GitHub Action for building and uploading Rust binary to GitHub Releases.
 - [setup-cross-toolchain-action]: GitHub Action for setup toolchains for cross compilation and cross testing for Rust.
+- [checkout-action]: GitHub Action for checking out a repository. (Simplified actions/checkout alternative that does not depend on Node.js.)
 
 [cache-cargo-install-action]: https://github.com/taiki-e/cache-cargo-install-action
 [cargo-binstall]: https://github.com/cargo-bins/cargo-binstall
+[checkout-action]: https://github.com/taiki-e/checkout-action
 [create-gh-release-action]: https://github.com/taiki-e/create-gh-release-action
 [setup-cross-toolchain-action]: https://github.com/taiki-e/setup-cross-toolchain-action
 [upload-rust-binary-action]: https://github.com/taiki-e/upload-rust-binary-action

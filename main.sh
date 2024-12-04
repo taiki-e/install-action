@@ -49,11 +49,11 @@ download_and_checksum() {
     if [[ -n "${checksum}" ]]; then
         info "verifying sha256 checksum for $(basename "${url}")"
         if type -P sha256sum &>/dev/null; then
-            echo "${checksum} *tmp" | sha256sum -c - >/dev/null
+            sha256sum -c - >/dev/null <<<"${checksum} *tmp"
         elif type -P shasum &>/dev/null; then
             # GitHub-hosted macOS runner does not install GNU Coreutils by default.
             # https://github.com/actions/runner-images/issues/90
-            echo "${checksum} *tmp" | shasum -a 256 -c - >/dev/null
+            shasum -a 256 -c - >/dev/null <<<"${checksum} *tmp"
         else
             bail "checksum requires 'sha256sum' or 'shasum' command; consider installing one of them or setting 'checksum' input option to 'false'"
         fi
@@ -187,7 +187,7 @@ read_manifest() {
     local version="$2"
     local manifest
     rust_crate=$(call_jq -r ".rust_crate" "${manifest_dir}/${tool}.json")
-    manifest=$(call_jq -r ".\"${version}\"" "${manifest_dir}/${tool}.json")
+    manifest=$(call_jq -r ".[\"${version}\"]" "${manifest_dir}/${tool}.json")
     if [[ "${manifest}" == "null" ]]; then
         download_info="null"
         return 0
@@ -196,7 +196,7 @@ read_manifest() {
     if [[ "${exact_version}" == "null" ]]; then
         exact_version="${version}"
     else
-        manifest=$(call_jq -r ".\"${exact_version}\"" "${manifest_dir}/${tool}.json")
+        manifest=$(call_jq -r ".[\"${exact_version}\"]" "${manifest_dir}/${tool}.json")
         if [[ "${rust_crate}" != "null" ]]; then
             # TODO: don't hardcode tool name and use 'immediate_yank_reflection' field in base manifest.
             case "${tool}" in
@@ -213,7 +213,7 @@ read_manifest() {
                         fi
                         info "${tool}@${exact_version} is yanked; downgrade to ${previous_stable_version}"
                         exact_version="${previous_stable_version}"
-                        manifest=$(jq -r ".\"${exact_version}\"" "${manifest_dir}/${tool}.json")
+                        manifest=$(jq -r ".[\"${exact_version}\"]" "${manifest_dir}/${tool}.json")
                     done
                     ;;
             esac
@@ -252,8 +252,8 @@ read_manifest() {
             fi
             ;;
         macos | windows)
-            # Binaries compiled for x86_64 macOS will usually also work on aarch64 macOS.
-            # Binaries compiled for x86_64 Windows will usually also work on aarch64 Windows 11+.
+            # Binaries compiled for x86_64 macOS will usually also work on AArch64 macOS.
+            # Binaries compiled for x86_64 Windows will usually also work on AArch64 Windows 11+.
             host_platform="${host_arch}_${host_os}"
             download_info=$(call_jq <<<"${manifest}" -r ".${host_platform}")
             if [[ "${download_info}" == "null" ]] && [[ "${host_arch}" != "x86_64" ]]; then
@@ -367,11 +367,11 @@ pacman_install() {
 }
 apk_install() {
     if type -P sudo &>/dev/null; then
-        sudo apk --no-cache add "$@"
+        retry sudo apk --no-cache add "$@"
     elif type -P doas &>/dev/null; then
-        doas apk --no-cache add "$@"
+        retry doas apk --no-cache add "$@"
     else
-        apk --no-cache add "$@"
+        retry apk --no-cache add "$@"
     fi
 }
 sys_install() {
@@ -455,17 +455,21 @@ case "$(uname -s)" in
             host_env="gnu"
             host_glibc_version=$(grep <<<"${ldd_version}" -E "GLIBC|GNU libc" | sed "s/.* //g")
         fi
-        if grep -q '^ID_LIKE=' /etc/os-release; then
-            base_distro=$(grep '^ID_LIKE=' /etc/os-release | cut -d= -f2)
-            case "${base_distro}" in
-                *debian*) base_distro=debian ;;
-                *fedora*) base_distro=fedora ;;
-                *suse*) base_distro=suse ;;
-                *arch*) base_distro=arch ;;
-                *alpine*) base_distro=alpine ;;
-            esac
-        else
-            base_distro=$(grep '^ID=' /etc/os-release | cut -d= -f2)
+        if [[ -e /etc/os-release ]]; then
+            if grep -Eq '^ID_LIKE=' /etc/os-release; then
+                base_distro=$(grep -E '^ID_LIKE=' /etc/os-release | cut -d= -f2)
+                case "${base_distro}" in
+                    *debian*) base_distro=debian ;;
+                    *fedora*) base_distro=fedora ;;
+                    *suse*) base_distro=suse ;;
+                    *arch*) base_distro=arch ;;
+                    *alpine*) base_distro=alpine ;;
+                esac
+            else
+                base_distro=$(grep -E '^ID=' /etc/os-release | cut -d= -f2)
+            fi
+        elif [[ -e /etc/redhat-release ]]; then
+            base_distro=fedora
         fi
         case "${base_distro}" in
             fedora)
@@ -495,19 +499,19 @@ esac
 case "$(uname -m)" in
     aarch64 | arm64) host_arch="aarch64" ;;
     xscale | arm | armv*l)
-        # Ignore arm for now, as we need to consider the version and whether hard-float is supported.
+        # Ignore Arm for now, as we need to consider the version and whether hard-float is supported.
         # https://github.com/rust-lang/rustup/pull/593
         # https://github.com/cross-rs/cross/pull/1018
         # Does it seem only armv7l+ is supported?
-        # https://github.com/actions/runner/blob/v2.315.0/src/Misc/externals.sh#L189
+        # https://github.com/actions/runner/blob/v2.321.0/src/Misc/externals.sh#L178
         # https://github.com/actions/runner/issues/688
-        bail "32-bit ARM runner is not supported yet by this action; if you need support for this platform, please submit an issue at <https://github.com/taiki-e/install-action>"
+        bail "32-bit Arm runner is not supported yet by this action; if you need support for this platform, please submit an issue at <https://github.com/taiki-e/install-action>"
         ;;
-    # GitHub Actions Runner supports Linux (x86_64, aarch64, arm), Windows (x86_64, aarch64),
-    # and macOS (x86_64, aarch64).
-    # https://github.com/actions/runner/blob/v2.315.0/.github/workflows/build.yml#L21
+    # GitHub Actions Runner supports Linux (x86_64, AArch64, Arm), Windows (x86_64, AArch64),
+    # and macOS (x86_64, AArch64).
+    # https://github.com/actions/runner/blob/v2.321.0/.github/workflows/build.yml#L21
     # https://docs.github.com/en/actions/hosting-your-own-runners/about-self-hosted-runners#supported-architectures-and-operating-systems-for-self-hosted-runners
-    # So we can assume x86_64 unless it is aarch64 or arm.
+    # So we can assume x86_64 unless it is AArch64 or Arm.
     *) host_arch="x86_64" ;;
 esac
 info "host platform: ${host_arch}_${host_os}"
@@ -783,12 +787,16 @@ for tool in "${tools[@]}"; do
         case "${tool_bin_stem}" in
             # biome up to 1.2.2 exits with 1 on both --version and --help flags.
             # cargo-machete up to 0.6.0 does not support --version flag.
-            # wait-for-them 0.4.0 exits with 1 on both --version and --help flags.
+            # wait-for-them up to 0.4.0 does not support --version flag.
             biome | cargo-machete | wait-for-them) rx "${tool_bin_stem}" --version || true ;;
             # these packages support neither --version nor --help flag.
-            cargo-careful | wasm-bindgen-test-runner) ;;
+            cargo-auditable | cargo-careful | wasm-bindgen-test-runner) ;;
             # wasm2es6js does not support --version flag and --help flag doesn't contains version info.
             wasm2es6js) ;;
+            # cargo-zigbuild has no --version flag on `cargo zigbuild` subcommand.
+            cargo-zigbuild) rx "${tool_bin_stem}" --version ;;
+            # deepsource has version command instead of --version flag.
+            deepsource) rx "${tool_bin_stem}" version ;;
             cargo-*)
                 case "${tool_bin_stem}" in
                     # cargo-valgrind 2.1.0's --version flag just calls cargo's --version flag

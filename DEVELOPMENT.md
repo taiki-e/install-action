@@ -17,8 +17,8 @@ See JSON files in `tools/codegen/base` directory for examples of the manifest.
 > If you're having problem with github api rate limit, you can use your GITHUB_TOKEN to increase the rate limit.
 > If you have `Github CLI` installed (the command `gh`), you can:
 >
-> ```shell
-> GITHUB_TOKEN=$(gh auth status --show-token 2>&1 | sed -n 's/^.*Token: \(.*\)$/\1/p') ./tools/manifest.sh <tool>
+> ```sh
+> GITHUB_TOKEN=$(gh auth status --show-token 2>&1 | sed -n 's/^.*Token: //p') ./tools/manifest.sh <tool>
 > ```
 
 ## Refresh TOOLS.md

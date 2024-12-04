@@ -28,10 +28,91 @@
   },
   "license_markdown": "[MIT](https://github.com/rclone/rclone/blob/master/COPYING)",
   "latest": {
-    "version": "1.67.0"
+    "version": "1.68.2"
   },
   "1": {
-    "version": "1.67.0"
+    "version": "1.68.2"
+  },
+  "1.68": {
+    "version": "1.68.2"
+  },
+  "1.68.2": {
+    "x86_64_linux_musl": {
+      "etag": "0x8DD057C3F2AF2A5",
+      "checksum": "0e6fa18051e67fc600d803a2dcb10ddedb092247fc6eee61be97f64ec080a13c"
+    },
+    "x86_64_macos": {
+      "etag": "0x8DD057CFB984BD5",
+      "checksum": "cdc685e16abbf35b6f47c95b2a5b4ad73a73921ff6842e5f4136c8b461756188"
+    },
+    "x86_64_windows": {
+      "etag": "0x8DD057D34187E1A",
+      "checksum": "812bf76cc02c04cf6327f3683f3d5a88e47d36c39db84c1a745777496be7d993"
+    },
+    "aarch64_linux_musl": {
+      "etag": "0x8DD057C544627A4",
+      "checksum": "c6e9d4cf9c88b279f6ad80cd5675daebc068e404890fa7e191412c1bc7a4ac5f"
+    },
+    "aarch64_macos": {
+      "etag": "0x8DD057D0613D1D3",
+      "checksum": "323f387b32bcf9ddfc3874f01879a0b2689dbd91309beb8c3a4410db04d0c41f"
+    },
+    "aarch64_windows": {
+      "etag": "0x8DD057D3B291B15",
+      "checksum": "cbc6584266cf62bb9f4df912cb00d566c1cbc50ce2748f5e433f1937209e807e"
+    }
+  },
+  "1.68.1": {
+    "x86_64_linux_musl": {
+      "etag": "0x8DCDCB2BE40EEB1",
+      "checksum": "34f34743b1831523cd2e0aff74447b717e2d62fe1b598e91703899e0c0689568"
+    },
+    "x86_64_macos": {
+      "etag": "0x8DCDCB37928251B",
+      "checksum": "d81e091571bc040282dab39d0cdee6b3215774de389469cd850c9803d6191de3"
+    },
+    "x86_64_windows": {
+      "etag": "0x8DCDCB3ACDFDD3A",
+      "checksum": "35e550ea373d90ed65ac1e2202420923584ec0501cf143ae27bdcff580a7c51f"
+    },
+    "aarch64_linux_musl": {
+      "etag": "0x8DCDCB2D43CFABB",
+      "checksum": "bd8b4e0923239f80d3a25fe37bea09050038fa8fdbadacd44b8cef2a3944777d"
+    },
+    "aarch64_macos": {
+      "etag": "0x8DCDCB380FC47C9",
+      "checksum": "38e7588e13c93ee710daa44bb798437eca7fd583d4e98d0bce6c685ff11f4152"
+    },
+    "aarch64_windows": {
+      "etag": "0x8DCDCB3B3D39CE3",
+      "checksum": "89fab75effaf3b921b76ac4f70367680be0ae1c5e1f12d767cc4be768603e511"
+    }
+  },
+  "1.68.0": {
+    "x86_64_linux_musl": {
+      "etag": "0x8DCD021695DFEC9",
+      "checksum": "2462de3234dc581db6ed8353625926bfabdfa7286b37f99cd733a84eba70c17c"
+    },
+    "x86_64_macos": {
+      "etag": "0x8DCD02224137B7F",
+      "checksum": "3a7ac232883e1e90e9c2c72c327f6a73d4701c23b94f4dba4b09aed3ee5038fe"
+    },
+    "x86_64_windows": {
+      "etag": "0x8DCD0225941B88D",
+      "checksum": "b16769a2f839d0322db6d80d2bf7f7f0c13174a9482d2163384783a60113521c"
+    },
+    "aarch64_linux_musl": {
+      "etag": "0x8DCD0217EBFA66E",
+      "checksum": "1ff887245f07ce722b9245c9aa984a841b6ba47d719842b1ada6be85e08695dc"
+    },
+    "aarch64_macos": {
+      "etag": "0x8DCD0222BEF1202",
+      "checksum": "c037225f85a2fa7a78cc77a241de0a6a3d62dc6ea2b0a2fd668d50511244f559"
+    },
+    "aarch64_windows": {
+      "etag": "0x8DCD0226038A92C",
+      "checksum": "f0a29169078a443413e67d9decec3c468be7295ae84fe3313864fd4148f83ece"
+    }
   },
   "1.67": {
     "version": "1.67.0"

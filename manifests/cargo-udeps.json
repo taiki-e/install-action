@@ -32,10 +32,114 @@
   },
   "license_markdown": "[Apache-2.0 OR MIT](https://github.com/est31/cargo-udeps/blob/HEAD/LICENSE)",
   "latest": {
-    "version": "0.1.47"
+    "version": "0.1.53"
   },
   "0.1": {
-    "version": "0.1.47"
+    "version": "0.1.53"
+  },
+  "0.1.53": {
+    "x86_64_linux_musl": {
+      "etag": "0x8DD114D5A5A8296",
+      "checksum": "e2c63bf95583a772160eca65192cd128964e1e52f9d5b4a2fd13dd15f76c6e54"
+    },
+    "x86_64_macos": {
+      "etag": "0x8DD114CF9424905",
+      "checksum": "06f44833a4194a7b833e60dda9d7b874c1298bb82d42e2bbbd3ee995fbac31ff"
+    },
+    "x86_64_windows": {
+      "etag": "0x8DD114DBAF20DB1",
+      "checksum": "83bfad645d73ae39260cc9db70796a7295bebf05958b727355c008db3ae642fd"
+    },
+    "aarch64_linux_musl": {
+      "etag": "0x8DD114D575FB734",
+      "checksum": "d7b68b0f65afbb708870549bf5b8688b15d24c9804f4d54650ec91c92e841208"
+    },
+    "aarch64_macos": {
+      "etag": "0x8DD114CFAC8B8CC",
+      "checksum": "2f260756a44e603d72e2e68fcc41f0337ca284218b7efbe3862f5c73ba1a15fc"
+    },
+    "aarch64_windows": {
+      "etag": "0x8DD114DBBC22F55",
+      "checksum": "714b4b76b0dd950c3b42a472d2b11de744118636bbde46f8587aed3dcab20809"
+    }
+  },
+  "0.1.52": {
+    "x86_64_linux_musl": {
+      "etag": "0x8DCF62B151CCB34",
+      "checksum": "3ea2d7ad7470d4c0d67c8ffb897faf79baaa26d708146285243e43855bb133b1"
+    },
+    "x86_64_macos": {
+      "etag": "0x8DCF62ABBBA5092",
+      "checksum": "36ef3dd823e230247b42ab2c514f55a65ab831805f127d230005a47157fceb95"
+    },
+    "x86_64_windows": {
+      "etag": "0x8DCF62B67486994",
+      "checksum": "d3765154cae292e6f9ace271cecd87a6158024667c2f7317eb399737e236fe3f"
+    },
+    "aarch64_linux_musl": {
+      "etag": "0x8DCF62B10DCBE13",
+      "checksum": "8015ebda2fed2d6346ec49961e2476fce7460c383ead182e12d4b86a5fe45b4d"
+    },
+    "aarch64_macos": {
+      "etag": "0x8DCF62ABA382277",
+      "checksum": "cb9c24c11ff1d4e9e954b53ccfa954312e4e81ba9b043a7bbb6059418eb839b0"
+    },
+    "aarch64_windows": {
+      "etag": "0x8DCF62BA3359AE4",
+      "checksum": "636828aac4a212af88f97afda0e69825771a938302ffc15a2dfcabfd20f80acd"
+    }
+  },
+  "0.1.50": {
+    "x86_64_linux_musl": {
+      "etag": "0x8DCAF766C1BDE03",
+      "checksum": "ad725b83890d99c86a5c7720baff88e881618c3ce020f90543e27209f3515325"
+    },
+    "x86_64_macos": {
+      "etag": "0x8DCAF762BC6FE97",
+      "checksum": "d2588f3bf4e58f42efe57193f5c84cb6e5291627ec85df3ad6052c7f384d1157"
+    },
+    "x86_64_windows": {
+      "etag": "0x8DCAF76B68F3AF1",
+      "checksum": "3d7aff9808536f882be392be4e4c1b45066af358043d2374d67981d99d5ece41"
+    },
+    "aarch64_linux_musl": {
+      "etag": "0x8DCAF766BEF33F8",
+      "checksum": "7316837a3c38e77d1b424a7ee672ebdfd6c839caef0996c67224c4a9fa1b9752"
+    },
+    "aarch64_macos": {
+      "etag": "0x8DCAF762DE11870",
+      "checksum": "e34d0571650e64a9e57958aa9100315b6570cb38f46fc55d3bad264cf98951c5"
+    },
+    "aarch64_windows": {
+      "etag": "0x8DCAF76DDFDCF79",
+      "checksum": "bab779c1382ee831221182cf57a26f23166f38ff0db9085c70759b232c481273"
+    }
+  },
+  "0.1.49": {
+    "x86_64_linux_musl": {
+      "etag": "0x8DC99D41E6DD27F",
+      "checksum": "6560e6c3552aad9e0fc8f22e5da037dda9bf59679b24ac356e52ca3a39643cf9"
+    },
+    "x86_64_macos": {
+      "etag": "0x8DC99D3C31AF8EA",
+      "checksum": "e003456220751afe3fa41becaeacbbcc5616351be94873100c2c11a784e1e9a6"
+    },
+    "x86_64_windows": {
+      "etag": "0x8DC99D4A352D0EF",
+      "checksum": "f6b592e436d862b51a52ff0a7ecd91057d54495682cce8db1efe9711e60f122b"
+    },
+    "aarch64_linux_musl": {
+      "etag": "0x8DC99D423CED395",
+      "checksum": "060fa3900ec5b6644351887b7fd649dcf89e425cb0926f704b24914474d760ce"
+    },
+    "aarch64_macos": {
+      "etag": "0x8DC99D436444D90",
+      "checksum": "1a66df7bae93dba126f0027fab1b92124e9302f65a3c56184c5a1e5134817136"
+    },
+    "aarch64_windows": {
+      "etag": "0x8DC99D4CEF35FB2",
+      "checksum": "9c84272c91c516b305bb6d9e6c342b8b30e28f05d476e86b052baad4a330f676"
+    }
   },
   "0.1.47": {
     "x86_64_linux_musl": {

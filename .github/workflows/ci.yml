@@ -34,12 +34,18 @@ concurrency:
 jobs:
   tidy:
     uses: taiki-e/github-actions/.github/workflows/tidy.yml@main
+    permissions:
+      contents: read
+      pull-requests: write # for gh pr edit --add-assignee
+      repository-projects: read # for gh pr edit --add-assignee
+    secrets: inherit
 
   test:
     strategy:
       fail-fast: false
       matrix:
         include:
+          # NB: Sync list with https://github.com/taiki-e/checkout-action/blob/HEAD/.github/workflows/ci.yml
           - os: ubuntu-20.04
           - os: ubuntu-22.04
           - os: ubuntu-24.04
@@ -49,16 +55,25 @@ jobs:
             tool: major.minor
           - os: ubuntu-22.04
             tool: major
-          - os: macos-12
           - os: macos-13
           - os: macos-14
+          - os: macos-15
           - os: windows-2019
+          - os: windows-2019
+            bash: msys64
+          - os: windows-2019
+            bash: cygwin
           - os: windows-2022
-          # https://github.com/taiki-e/install-action/pull/518#issuecomment-2160736760
           - os: windows-2022
             bash: msys64
           - os: windows-2022
             bash: cygwin
+          - os: windows-2022
+            tool: major.minor.patch
+          - os: windows-2022
+            tool: major.minor
+          - os: windows-2022
+            tool: major
     runs-on: ${{ matrix.os }}
     timeout-minutes: 60
     steps:
@@ -67,23 +82,23 @@ jobs:
       - run: rm Cargo.toml
       - name: Generate tool list
         id: tool-list
-        run: tools/ci/tool-list.sh "${{ matrix.tool }}" >>"${GITHUB_OUTPUT}"
+        run: tools/ci/tool-list.sh "${{ matrix.tool }}" "${{ matrix.os }}" "${{ matrix.bash }}" >>"${GITHUB_OUTPUT}"
       - run: |
-          set -eEuxo pipefail
-          echo "C:\msys64\mingw32\bin" >> $GITHUB_PATH
-          echo "C:\msys64\usr\bin" >> $GITHUB_PATH
+          printf '%s\n' 'C:\msys64\mingw32\bin' >>"${GITHUB_PATH}"
+          printf '%s\n' 'C:\msys64\usr\bin' >>"${GITHUB_PATH}"
         if: matrix.bash == 'msys64'
       - run: |
-          set -eEuxo pipefail
           choco install --no-progress --requirechecksums cygwin
-          echo "C:\tools\cygwin\bin" >> $GITHUB_PATH
-          echo "C:\tools\cygwin\usr\bin" >> $GITHUB_PATH
+          printf '%s\n' 'C:\tools\cygwin\bin' >>"${GITHUB_PATH}"
+          printf '%s\n' 'C:\tools\cygwin\usr\bin' >>"${GITHUB_PATH}"
         if: matrix.bash == 'cygwin'
       - run: env
       - uses: ./
         with:
           tool: ${{ steps.tool-list.outputs.tool }}
-      # https://docs.github.com/en/actions/using-workflows/workflow-syntax-for-github-actions#jobsjob_idstepsshell
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+      # Test all shells listed in https://docs.github.com/en/actions/using-workflows/workflow-syntax-for-github-actions#jobsjob_idstepsshell
       - name: Test bash
         run: just --version && shfmt --version && protoc --version
         shell: bash
@@ -117,64 +132,105 @@ jobs:
       fail-fast: false
       matrix:
         container:
+          # NB: Sync list with https://github.com/taiki-e/checkout-action/blob/HEAD/.github/workflows/ci.yml
+          - ubuntu:14.04 # glibc 2.19
+          - ubuntu:16.04 # glibc 2.23
           - ubuntu:18.04 # glibc 2.27
           - ubuntu:20.04 # glibc 2.31
           - ubuntu:22.04 # glibc 2.35
           - ubuntu:24.04 # glibc 2.39
+          - debian:9-slim # glibc 2.24
           - debian:10-slim # glibc 2.28
           - debian:11-slim # glibc 2.31
           - debian:12-slim # glibc 2.36
-          - fedora:latest # glibc 2.38 (as of fedora 39)
+          - fedora:latest # glibc 2.39 (as of fedora 40)
           - almalinux:8 # glibc 2.28
           - almalinux:8-minimal # glibc 2.28
           - almalinux:9 # glibc 2.34
           - almalinux:9-minimal # glibc 2.34
+          - centos:6 # glibc 2.12
           - centos:7 # glibc 2.17
-          - opensuse/leap:latest # glibc 2.31 (as of leap 15.5)
-          - opensuse/tumbleweed:latest # glibc 2.39 (as of 2024-04-18)
-          - archlinux:latest # glibc 2.38 (as of 2024-04-18)
-          - alpine:latest # musl 1.2.4 (as of alpine 3.19)
+          - opensuse/leap:latest # glibc 2.38 (as of leap 15.6)
+          - opensuse/tumbleweed:latest # glibc 2.39 (as of 2024-07-19)
+          - archlinux:latest # glibc 2.39 (as of 2024-07-19)
+          - alpine:latest # musl 1.2.5 (as of alpine 3.20)
     runs-on: ubuntu-latest
     timeout-minutes: 60
     container: ${{ matrix.container }}
     steps:
-      - name: Install requirements (alpine)
-        run: apk --no-cache add bash
-        shell: sh
-        if: startsWith(matrix.container, 'alpine')
+      - name: Install requirements (old debian)
+        run: |
+          set -CeEuxo pipefail
+          # In Debian, the old repositories is removed from the main mirrors some time after EoL.
+          sed -i /etc/apt/sources.list -e 's/deb.debian.org/archive.debian.org/g' \
+            -e 's|security.debian.org|archive.debian.org/|g' \
+            -e '/stretch-updates/d'
+        if: startsWith(matrix.container, 'debian:9')
+      - name: Install requirements (centos)
+        run: |
+          set -CeEuxo pipefail
+          # In CentOS, the old repositories is removed from the main mirrors just after EoL.
+          # https://github.com/rust-lang/rust/pull/126352
+          sed -i /etc/yum.repos.d/*.repo -e 's!^mirrorlist!#mirrorlist!' \
+            -e 's!^#baseurl=http://mirror.centos.org/!baseurl=https://vault.centos.org/!'
+          sed -i 's/enabled=1/enabled=0/' /etc/yum/pluginconf.d/fastestmirror.conf
+          if [[ "${{ matrix.container }}" == "centos:6" ]]; then
+            # CentOS 6's curl (7.19.7) has no curl has no --proto/--tlsv1.2.
+            yum install -y gcc openssl-devel
+            curl -fsSL --retry 10 https://curl.se/download/curl-7.34.0.tar.gz | tar xzf -
+            cd -- curl-*
+            ./configure --prefix=/usr/local --with-ssl
+            make
+            make install
+            # for checkout-action https://github.com/taiki-e/checkout-action/blob/v1.3.0/.github/workflows/ci.yml#L135-L143
+            yum install -y openssh-clients perl perl-Error perl-TermReadKey rsync
+            rpm -i \
+              https://vault.ius.io/el6/x86_64/packages/p/perl-Git18-1.8.5.5-4.ius.el6.noarch.rpm \
+              https://vault.ius.io/el6/x86_64/packages/g/git18-1.8.5.5-4.ius.el6.x86_64.rpm
+          fi
+        if: startsWith(matrix.container, 'centos')
       - uses: taiki-e/checkout-action@v1
       # cross attempts to install rust-src when Cargo.toml is available even if `cross --version`
       - run: rm Cargo.toml
       - name: Generate tool list
         id: tool-list
         run: tools/ci/tool-list.sh >>"${GITHUB_OUTPUT}"
+      # remove bash installed by checkout-action
+      - run: apk --no-cache del bash
+        shell: sh
+        if: startsWith(matrix.container, 'alpine')
       - uses: ./
         with:
           tool: ${{ steps.tool-list.outputs.tool }}
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
 
   manifest:
     runs-on: ubuntu-latest
     timeout-minutes: 60
     permissions:
-      contents: write
-      pull-requests: write
+      contents: read
+      pull-requests: write # for gh pr review --approve
     steps:
       - uses: taiki-e/checkout-action@v1
-      - name: Install Rust
-        run: rustup toolchain add nightly --no-self-update && rustup default nightly
+      - uses: taiki-e/github-actions/install-rust@stable
+      - name: Generate Cargo.lock
+        run: cargo update
+      - uses: Swatinem/rust-cache@v2
+        with:
+          cache-all-crates: 'true'
       - run: tools/manifest.sh
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
       - id: diff
         run: tools/ci/manifest.sh
         if: github.repository_owner == 'taiki-e' && (github.event_name == 'schedule' || github.event_name == 'push' && github.ref == 'refs/heads/main')
-      - name: Create PR
-        id: create-pull-request
-        uses: peter-evans/create-pull-request@v6
+      - id: create-pull-request
+        uses: peter-evans/create-pull-request@v7
         with:
           title: Update manifest
           body: |
-            Auto-generated by [create-pull-request](https://github.com/peter-evans/create-pull-request).
+            Auto-generated by CI using [create-pull-request](https://github.com/peter-evans/create-pull-request).
 
             This will be auto-merged when CI has passed because this is an auto-generated PR in a defined format and is usually considered no additional review is required.
           branch: update-manifest
@@ -191,5 +247,5 @@ jobs:
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
           PR_NUMBER: ${{ steps.create-pull-request.outputs.pull-request-number }}
-        if: github.repository_owner == 'taiki-e' && (github.event_name == 'schedule' || github.event_name == 'push' && github.ref == 'refs/heads/main') && steps.diff.outputs.success == 'false' && steps.create-pull-request.outputs.pull-request-operation == 'created'
+        if: github.repository_owner == 'taiki-e' && (github.event_name == 'schedule' || github.event_name == 'push' && github.ref == 'refs/heads/main') && steps.diff.outputs.success == 'false' && (steps.create-pull-request.outputs.pull-request-operation == 'created' || steps.create-pull-request.outputs.pull-request-operation == 'updated')
       - run: git add -N . && git diff --exit-code

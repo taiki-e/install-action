@@ -44,10 +44,120 @@
   },
   "license_markdown": "[MIT](https://github.com/rustwasm/wasm-bindgen/blob/main/LICENSE-MIT) OR [Apache-2.0](https://github.com/rustwasm/wasm-bindgen/blob/main/LICENSE-APACHE)",
   "latest": {
-    "version": "0.2.92"
+    "version": "0.2.97"
   },
   "0.2": {
-    "version": "0.2.92"
+    "version": "0.2.97"
+  },
+  "0.2.97": {
+    "x86_64_linux_musl": {
+      "etag": "0x8DD11196AD36110",
+      "checksum": "673526c9068e9bb077aead57da8343fc6d9c352b47ab6143d0b22d1756645a5a"
+    },
+    "x86_64_macos": {
+      "etag": "0x8DD11196AC7D54F",
+      "checksum": "f7d4b442775b73901939f771a9cba10a146d3cfb2a57162b00232d742c5febbf"
+    },
+    "x86_64_windows": {
+      "etag": "0x8DD11196AC95A39",
+      "checksum": "821d9c05123c136eb05aab269fd53ff3a6b9458e93f76e5ade43ca4815f6de1c"
+    },
+    "aarch64_linux_gnu": {
+      "etag": "0x8DD11196AD5CF56",
+      "checksum": "b2a52ac554e13d731a5d3ff93e6b3d1e080f96d6984da4132b461bea62bb6914"
+    },
+    "aarch64_macos": {
+      "etag": "0x8DD11196AD90003",
+      "checksum": "2219ad5dbb6277ebf55bcf5a9e62de203ca875d4b743d1c10160e801a3dcaf69"
+    }
+  },
+  "0.2.96": {
+    "x86_64_linux_musl": {
+      "etag": "0x8DD1096BF3F0AA9",
+      "checksum": "02c8b95c9fa05d2d8352cfecc8ad4d1c6fbe360b1c9675c61c8980e44d6b4eee"
+    },
+    "x86_64_macos": {
+      "etag": "0x8DD1096BF3AF095",
+      "checksum": "7176d206acaaee0461f40ca766418dc8bbdf5f8f025c2befcee92bb56d19db19"
+    },
+    "x86_64_windows": {
+      "etag": "0x8DD1096BF42D6F4",
+      "checksum": "c80991f93427a46d43fc540a6e1ecf318f563f2e2d9b28bd57322997fbb16bc4"
+    },
+    "aarch64_linux_gnu": {
+      "etag": "0x8DD1096BF4041CE",
+      "checksum": "53e9990a3fdfc9d2f146a2006c09a312d7f9445a6b838c61db9fc037f9cbb840"
+    },
+    "aarch64_macos": {
+      "etag": "0x8DD1096BF426248",
+      "checksum": "56a40291db5ec946be91ca4dd9ecd3b0f35e090a251359407e219d12c2083f5c"
+    }
+  },
+  "0.2.95": {
+    "x86_64_linux_musl": {
+      "etag": "0x8DCE978CDFDBF30",
+      "checksum": "9b968263a372a6708bb5a7784053ea1b86aa9e93d17ec4d9b1dff9fc996bc53d"
+    },
+    "x86_64_macos": {
+      "etag": "0x8DCE978CDFADC3A",
+      "checksum": "2ec693ed5a10a721b916aebd3aecd296d0d4a907600a3ec41750fee67cc20942"
+    },
+    "x86_64_windows": {
+      "etag": "0x8DCE978CDF82031",
+      "checksum": "d751fddd2b6b64ee72897d090c1c1a31d4cdc13fda003b4e525792b9d1eba550"
+    },
+    "aarch64_linux_gnu": {
+      "etag": "0x8DCE978CDFEF650",
+      "checksum": "78c8a6100d1bc26f5a7ccc64f0c2ce22d6ed69d5aab97584b57b264a9498ccd4"
+    },
+    "aarch64_macos": {
+      "etag": "0x8DCE978CDE9FF39",
+      "checksum": "7d924ae562494e7bbdd81ce673ebdcfd1b343d0b00850587035a85bbbaf0ab7c"
+    }
+  },
+  "0.2.94": {
+    "x86_64_linux_musl": {
+      "etag": "0x8DCE89E98E70C1E",
+      "checksum": "2adfb39543b933a4bac737a70056078d5fff27977310c19bebc161ce56e7cd06"
+    },
+    "x86_64_macos": {
+      "etag": "0x8DCE89E98C5C6D5",
+      "checksum": "5c1b2987c0c9ef4c0913c66bcac6ac8342e1579c61c18c5b5d3a925d40d2256e"
+    },
+    "x86_64_windows": {
+      "etag": "0x8DCE89E98D60842",
+      "checksum": "8f7a6fe535a4373087d43f62288769a28ff07d9725f9b54c47a4f690d9278037"
+    },
+    "aarch64_linux_gnu": {
+      "etag": "0x8DCE89E98CC015F",
+      "checksum": "fdc0bb886b30b93b6e1a27c8f21de1e3b2f74fbbfd99d7bed67132c282658e92"
+    },
+    "aarch64_macos": {
+      "etag": "0x8DCE89E98E16D17",
+      "checksum": "cfd3dd6485a9ff84797bbe5dbcfd9a276eacdd6b2926be0d1e004b9e2d43a367"
+    }
+  },
+  "0.2.93": {
+    "x86_64_linux_musl": {
+      "etag": "0x8DCBB2A6E8E759C",
+      "checksum": "61f3ae807f402dfe5fbfe1250e97e802cbb7ca35172843286a26bb1149e38b7a"
+    },
+    "x86_64_macos": {
+      "etag": "0x8DCBB73A832BA2F",
+      "checksum": "840cabd18d734c8ccfa75f7dc83a5fab6530101dfa712c4ee0f785b76bcac1c7"
+    },
+    "x86_64_windows": {
+      "etag": "0x8DCBB2A6E8CA2DF",
+      "checksum": "99f02b203b973fb737fbca66c6791350eee7ee5aa7ad4e340c1f92bf4965c81c"
+    },
+    "aarch64_linux_gnu": {
+      "etag": "0x8DCBB2A6EAB2C00",
+      "checksum": "050479b30456a77e1f4a891ed99f989870f488097f5d78b13a216cf2953f7a03"
+    },
+    "aarch64_macos": {
+      "etag": "0x8DCBB2A6E811726",
+      "checksum": "a10193139082886d773f635a3144494eb5934a5a15a98fea18bcc154c6b80dd5"
+    }
   },
   "0.2.92": {
     "x86_64_linux_musl": {

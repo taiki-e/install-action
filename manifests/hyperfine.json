@@ -16,14 +16,43 @@
     "aarch64_linux_gnu": {
       "url": "https://github.com/sharkdp/hyperfine/releases/download/v${version}/hyperfine-v${version}-aarch64-unknown-linux-gnu.tar.gz",
       "bin": "hyperfine-v${version}-aarch64-unknown-linux-gnu/hyperfine"
+    },
+    "aarch64_macos": {
+      "url": "https://github.com/sharkdp/hyperfine/releases/download/v${version}/hyperfine-v${version}-aarch64-apple-darwin.tar.gz",
+      "bin": "hyperfine-v${version}-aarch64-apple-darwin/hyperfine"
     }
   },
   "license_markdown": "[MIT](https://github.com/sharkdp/hyperfine/blob/master/LICENSE-MIT) OR [Apache-2.0](https://github.com/sharkdp/hyperfine/blob/master/LICENSE-APACHE)",
   "latest": {
-    "version": "1.18.0"
+    "version": "1.19.0"
   },
   "1": {
-    "version": "1.18.0"
+    "version": "1.19.0"
+  },
+  "1.19": {
+    "version": "1.19.0"
+  },
+  "1.19.0": {
+    "x86_64_linux_musl": {
+      "etag": "0x8DD029A2506B538",
+      "checksum": "825287143f397774093539ca2458854ab3735c0e8a1aaf075c22edce7d261556"
+    },
+    "x86_64_macos": {
+      "etag": "0x8DD029A168794A5",
+      "checksum": "80ad420c0a9a5d090f6ca0ddc9305a139d57ba6b6e8e7adf22c800389baf3ab6"
+    },
+    "x86_64_windows": {
+      "etag": "0x8DD029A718B5FF6",
+      "checksum": "3e488eea6d930f54a43b1b2c8c01226286c7c01b5ba7211d7beb9029918a616c"
+    },
+    "aarch64_linux_gnu": {
+      "etag": "0x8DD029A11BFB41C",
+      "checksum": "7f9c0522e1acf869e0558e085c43f2cea3e30e4f7a4b7bc3d5540cbdee7b4273"
+    },
+    "aarch64_macos": {
+      "etag": "0x8DD029A033B40F5",
+      "checksum": "502e7c7f99e7e1919321eaa23a4a694c34b1b92d99cbd773a4a2497e100e088f"
+    }
   },
   "1.18": {
     "version": "1.18.0"

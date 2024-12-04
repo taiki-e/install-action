@@ -1,0 +1,82 @@
+{
+  "rust_crate": "cargo-auditable",
+  "template": {
+    "x86_64_linux_musl": {
+      "url": "https://github.com/rust-secure-code/cargo-auditable/releases/download/v${version}/cargo-auditable-x86_64-unknown-linux-musl.tar.xz",
+      "bin": "cargo-auditable-x86_64-unknown-linux-musl/cargo-auditable"
+    },
+    "x86_64_macos": {
+      "url": "https://github.com/rust-secure-code/cargo-auditable/releases/download/v${version}/cargo-auditable-x86_64-apple-darwin.tar.xz",
+      "bin": "cargo-auditable-x86_64-apple-darwin/cargo-auditable"
+    },
+    "x86_64_windows": {
+      "url": "https://github.com/rust-secure-code/cargo-auditable/releases/download/v${version}/cargo-auditable-x86_64-pc-windows-msvc.zip",
+      "bin": "cargo-auditable.exe"
+    },
+    "aarch64_macos": {
+      "url": "https://github.com/rust-secure-code/cargo-auditable/releases/download/v${version}/cargo-auditable-aarch64-apple-darwin.tar.xz",
+      "bin": "cargo-auditable-aarch64-apple-darwin/cargo-auditable"
+    }
+  },
+  "license_markdown": "[Apache-2.0](https://github.com/rust-secure-code/cargo-auditable/blob/HEAD/LICENSE-APACHE) OR [MIT](https://github.com/rust-secure-code/cargo-auditable/blob/HEAD/LICENSE-MIT)",
+  "latest": {
+    "version": "0.6.6"
+  },
+  "0.6": {
+    "version": "0.6.6"
+  },
+  "0.6.6": {
+    "x86_64_linux_musl": {
+      "etag": "0x8DD0C3D4484F0AE",
+      "checksum": "ccbec5ea7b120b27da34e267065110cc208a19d5e7bc15b41ef545a25e0e52c2"
+    },
+    "x86_64_macos": {
+      "etag": "0x8DD0C3D45AF01FA",
+      "checksum": "6da9ff7263e2cc96c20400e34e2131ebce3610451e52cdfa1ae86b49211b03da"
+    },
+    "x86_64_windows": {
+      "etag": "0x8DD0C3D454FE855",
+      "checksum": "cc9fedabae5097a755fab5c435cd616a0458894e01b8c5de6eceb189e784299b"
+    },
+    "aarch64_macos": {
+      "etag": "0x8DD0C3D4664DB40",
+      "checksum": "fe7351c3fe4070da48901aee6d2661c2df1c6068dfef4b0b44a353d537e9cc66"
+    }
+  },
+  "0.6.5": {
+    "x86_64_linux_musl": {
+      "etag": "0x8DD026635663221",
+      "checksum": "1c8f1079d49ec7d29c134ed5e833c56552391db2eb8968a5a8e3cffebb160454"
+    },
+    "x86_64_macos": {
+      "etag": "0x8DD0266371D1878",
+      "checksum": "6b7f9ae0eb0a70ab01fe37f776e901f86f22a270491944db1f169b6cc2a6162c"
+    },
+    "x86_64_windows": {
+      "etag": "0x8DD026636A97BCE",
+      "checksum": "4aa3d953cb90c177a46e5c70cbb4050e2e06d756cfd14a0d6fd28daf7d38967b"
+    },
+    "aarch64_macos": {
+      "etag": "0x8DD02663824ADB8",
+      "checksum": "635fe55a50e6dbb65caa1e45b5703c75a1a00a5dadddf40862c7e91012b06f94"
+    }
+  },
+  "0.6.4": {
+    "x86_64_linux_musl": {
+      "etag": "0x8DC7C39FA3B2719",
+      "checksum": "e75d161e101be7f501e71e9dddd3f0c823e6776a45f884340ad42ec268321ea3"
+    },
+    "x86_64_macos": {
+      "etag": "0x8DC7C39FB75C7E7",
+      "checksum": "02572f75d434ea03da5eac8b82230e4b3b9e2974549e22092bccb1ef92ac28ef"
+    },
+    "x86_64_windows": {
+      "etag": "0x8DC7C39FB1638FE",
+      "checksum": "ea452ae7d3dbc2dd1f747861245be8fd6740da12b351f65c59a212df370b144c"
+    },
+    "aarch64_macos": {
+      "etag": "0x8DC7C39FC410D14",
+      "checksum": "02e0faa19a9e9ceee43f83b2b557c536624a0c868307b9b2b3a5f617ef3b7cfb"
+    }
+  }
+}

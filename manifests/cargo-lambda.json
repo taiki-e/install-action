@@ -1,0 +1,103 @@
+{
+  "rust_crate": "cargo-lambda",
+  "template": {
+    "x86_64_linux_musl": {
+      "url": "https://github.com/cargo-lambda/cargo-lambda/releases/download/v${version}/cargo-lambda-v${version}.x86_64-unknown-linux-musl.tar.gz"
+    },
+    "x86_64_macos": {
+      "url": "https://github.com/cargo-lambda/cargo-lambda/releases/download/v${version}/cargo-lambda-v${version}.x86_64-apple-darwin.tar.gz"
+    },
+    "x86_64_windows": {
+      "url": "https://github.com/cargo-lambda/cargo-lambda/releases/download/v${version}/cargo-lambda-v${version}.windows-x64.zip",
+      "bin": "cargo-lambda.exe"
+    },
+    "aarch64_linux_musl": {
+      "url": "https://github.com/cargo-lambda/cargo-lambda/releases/download/v${version}/cargo-lambda-v${version}.aarch64-unknown-linux-musl.tar.gz"
+    },
+    "aarch64_macos": {
+      "url": "https://github.com/cargo-lambda/cargo-lambda/releases/download/v${version}/cargo-lambda-v${version}.aarch64-apple-darwin.tar.gz"
+    }
+  },
+  "license_markdown": "[MIT](https://github.com/cargo-lambda/cargo-lambda/blob/main/LICENSE)",
+  "latest": {
+    "version": "1.5.0"
+  },
+  "1": {
+    "version": "1.5.0"
+  },
+  "1.5": {
+    "version": "1.5.0"
+  },
+  "1.5.0": {
+    "x86_64_linux_musl": {
+      "etag": "0x8DCFF7CBD1DC45E",
+      "checksum": "c23a50b7f53bcfee090e514e38d4e76d9fa9d68a92e72163dd017589f0a2da01"
+    },
+    "x86_64_macos": {
+      "etag": "0x8DCFF7CBDBCAD25",
+      "checksum": "f5d25ae304efeb4ef6a625274532ee17606b8ab6007096790e598d8d9de35b55"
+    },
+    "x86_64_windows": {
+      "etag": "0x8DCFF7CBEDDA14B",
+      "checksum": "98a354009332ceb6696299a01f9322695df56d71620a21701f8ca6783504de2e"
+    },
+    "aarch64_linux_musl": {
+      "etag": "0x8DCFF7CC148B532",
+      "checksum": "e3497a2980ac8f9cf2ae3868cb8998e5c0af8236e69dda06649fe7f6fefed407"
+    },
+    "aarch64_macos": {
+      "etag": "0x8DCFF7CC1E1B11D",
+      "checksum": "720515d6b8922bf9c05d396851590e845b880e6cc3f02f4f6904b5e9eda6e095"
+    }
+  },
+  "1.4": {
+    "version": "1.4.0"
+  },
+  "1.4.0": {
+    "x86_64_linux_musl": {
+      "etag": "0x8DCCF7559ED57D5",
+      "checksum": "9ce70414d822e3b901403d63598581d2a35b7e16b1e2009308da0b120cb2f280"
+    },
+    "x86_64_macos": {
+      "etag": "0x8DCCF755A871607",
+      "checksum": "9c2a9e5427c1de759970d8d51efd50ec2a435ae348804cb4a660f1c3b9b43b16"
+    },
+    "x86_64_windows": {
+      "etag": "0x8DCCF755B9D1989",
+      "checksum": "a5ff21d73d42b89973c1d7d7d19ed119561dd98b6d784386d064b9807956a71a"
+    },
+    "aarch64_linux_musl": {
+      "etag": "0x8DCCF755DDBF6FB",
+      "checksum": "5cbb3e1291d4c20a5e988eb690a5153f86be44a2fd6bec6485d00ef1e1aa13aa"
+    },
+    "aarch64_macos": {
+      "etag": "0x8DCCF755E70162A",
+      "checksum": "ef1a8f5521d1d4d0f08b3de6149c48455395aec7328d7587abcdab83f80d736b"
+    }
+  },
+  "1.3": {
+    "version": "1.3.0"
+  },
+  "1.3.0": {
+    "x86_64_linux_musl": {
+      "etag": "0x8DC88F48F203CE3",
+      "checksum": "b96973d035b328413fd2a98881f01ab8de8dcaef56c6f826d05dee48925b340f"
+    },
+    "x86_64_macos": {
+      "etag": "0x8DC88F48FB3C08F",
+      "checksum": "49043e568b1d1817b0d7e14b7bd23d0938f37b5a951ad6dbd08e8057a1e2e60b"
+    },
+    "x86_64_windows": {
+      "etag": "0x8DC88F490E653BE",
+      "checksum": "46c19d2c0f977c27f918e24c6e362a080a63cdfbe0c97a79dabe6e375eee72c4"
+    },
+    "aarch64_linux_musl": {
+      "etag": "0x8DC88F4936FA250",
+      "checksum": "6e1f434d70a60180d80f6e61f0fd50272a0e849d5bfa7c64d8df066f85881627"
+    },
+    "aarch64_macos": {
+      "etag": "0x8DC88F493FF59BC",
+      "checksum": "8cd1d176a690d5b3704fae9c58e0e949e481e79eaa24cb5338f5cdfcf564ca05"
+    }
+  }
+}

@@ -12,6 +12,8 @@ This is a list of tools that are installed from manifests managed in this action
 
 If a tool not included in the list below is specified, this action uses [cargo-binstall] as a fallback.
 
+See the [Supported tools section in README.md](README.md#supported-tools) for how to ensure that fallback is not used.
+
 > If `$CARGO_HOME/bin` is not available, Rust-related binaries will be installed to `$HOME/.cargo/bin`.<br>
 > If `$HOME/.cargo/bin` is not available, Rust-related binaries will be installed to `$HOME/.install-action/bin`.<br>
 
@@ -41,8 +43,7 @@ fn main() -> Result<()> {
     base_info_dir.push("codegen");
     base_info_dir.push("base");
 
-    let mut paths: Vec<_> =
-        fs::read_dir(manifest_dir.clone()).unwrap().map(|r| r.unwrap()).collect();
+    let mut paths: Vec<_> = fs::read_dir(&manifest_dir).unwrap().map(|r| r.unwrap()).collect();
     paths.sort_by_key(fs_err::DirEntry::path);
 
     let mut tools = vec![MarkdownEntry {
@@ -86,7 +87,7 @@ fn main() -> Result<()> {
                 "linux" => platforms.linux = true,
                 "macos" => platforms.macos = true,
                 "windows" => platforms.windows = true,
-                &_ => todo!(),
+                _ => todo!(),
             }
         }
 

@@ -65,7 +65,7 @@ fn main() -> Result<()> {
         ))?
         .into_json()?;
         // If version_req is latest, it is usually sufficient to look at the latest 100 releases.
-        if r.len() < per_page || version_req.map_or(false, |req| req == "latest") {
+        if r.len() < per_page || version_req.is_some_and(|req| req == "latest") {
             releases.append(&mut r);
             break;
         }
@@ -441,7 +441,7 @@ fn main() -> Result<()> {
             && download_info[&HostPlatform::x86_64_macos].url
                 == download_info[&HostPlatform::aarch64_macos].url
         {
-            // macOS universal binary or x86_64 binary that works on both x86_64 and aarch64 (rosetta).
+            // macOS universal binary or x86_64 binary that works on both x86_64 and AArch64 (rosetta).
             download_info.remove(&HostPlatform::aarch64_macos);
         }
         has_build_metadata |= !semver_version.build.is_empty();
