@@ -10,6 +10,8 @@ Note: In this file, do not use the hard wrap in the middle of a sentence for com
 
 ## [Unreleased]
 
+## [2.46.5] - 2024-12-10
+
 - Update `syft@latest` to 1.18.0.
 
 - Update `sccache@latest` to 0.9.0.
@@ -3186,7 +3188,8 @@ Note: This release is considered a breaking change because installing on version
 
 Initial release
 
-[Unreleased]: https://github.com/taiki-e/install-action/compare/v2.46.4...HEAD
+[Unreleased]: https://github.com/taiki-e/install-action/compare/v2.46.5...HEAD
+[2.46.5]: https://github.com/taiki-e/install-action/compare/v2.46.4...v2.46.5
 [2.46.4]: https://github.com/taiki-e/install-action/compare/v2.46.3...v2.46.4
 [2.46.3]: https://github.com/taiki-e/install-action/compare/v2.46.2...v2.46.3
 [2.46.2]: https://github.com/taiki-e/install-action/compare/v2.46.1...v2.46.2
