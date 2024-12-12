@@ -10,6 +10,8 @@ Note: In this file, do not use the hard wrap in the middle of a sentence for com
 
 ## [Unreleased]
 
+- Update `typos@latest` to 1.28.3.
+
 - Update `cargo-nextest@latest` to 0.9.86.
 
 - Update `cargo-lambda@latest` to 1.6.0.
