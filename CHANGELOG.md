@@ -10,6 +10,8 @@ Note: In this file, do not use the hard wrap in the middle of a sentence for com
 
 ## [Unreleased]
 
+## [2.46.8] - 2024-12-13
+
 - Update `typos@latest` to 1.28.3.
 
 - Update `cargo-nextest@latest` to 0.9.86.
@@ -3202,7 +3204,8 @@ Note: This release is considered a breaking change because installing on version
 
 Initial release
 
-[Unreleased]: https://github.com/taiki-e/install-action/compare/v2.46.7...HEAD
+[Unreleased]: https://github.com/taiki-e/install-action/compare/v2.46.8...HEAD
+[2.46.8]: https://github.com/taiki-e/install-action/compare/v2.46.7...v2.46.8
 [2.46.7]: https://github.com/taiki-e/install-action/compare/v2.46.6...v2.46.7
 [2.46.6]: https://github.com/taiki-e/install-action/compare/v2.46.5...v2.46.6
 [2.46.5]: https://github.com/taiki-e/install-action/compare/v2.46.4...v2.46.5
