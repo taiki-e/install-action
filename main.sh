@@ -76,6 +76,8 @@ download_and_extract() {
     case "${tool}" in
         # xbuild's binary name is "x", as opposed to the usual crate name
         xbuild) installed_bin=("${bin_dir}/x${exe}") ;;
+        # cargo-acl's binary includes ${version} & ${rust_target}
+        cargo-acl) installed_bin=("${bin_dir}/${bin_dir}") ;;
         # editorconfig-checker's binary name is renamed below
         editorconfig-checker) installed_bin=("${bin_dir}/${tool}${exe}") ;;
         *)
