@@ -199,7 +199,7 @@ if [[ -n "$(git ls-files '*.rs')" ]]; then
             # Top-level hidden files/directories and tools/* are excluded from crates.io (ensured by the above check).
             # TODO: fully respect exclude field in Cargo.toml.
             case "${p}" in
-                .* | tools/* | target-specs/*) continue ;;
+                .* | tools/* | target-specs/* | main.sh) continue ;;
             esac
             if [[ -x "${p}" ]]; then
                 executables+="${p}"$'\n'
