@@ -10,6 +10,8 @@ Note: In this file, do not use the hard wrap in the middle of a sentence for com
 
 ## [Unreleased]
 
+## [2.47.0] - 2024-12-27
+
 - Support `wash`. ([#794](https://github.com/taiki-e/install-action/pull/794), thanks @joonas)
 
 - Support `trunk`. ([#795](https://github.com/taiki-e/install-action/pull/795), thanks @azzamsa)
@@ -3262,7 +3264,8 @@ Note: This release is considered a breaking change because installing on version
 
 Initial release
 
-[Unreleased]: https://github.com/taiki-e/install-action/compare/v2.46.20...HEAD
+[Unreleased]: https://github.com/taiki-e/install-action/compare/v2.47.0...HEAD
+[2.47.0]: https://github.com/taiki-e/install-action/compare/v2.46.20...v2.47.0
 [2.46.20]: https://github.com/taiki-e/install-action/compare/v2.46.19...v2.46.20
 [2.46.19]: https://github.com/taiki-e/install-action/compare/v2.46.18...v2.46.19
 [2.46.18]: https://github.com/taiki-e/install-action/compare/v2.46.17...v2.46.18
