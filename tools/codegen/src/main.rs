@@ -137,6 +137,7 @@ fn main() -> Result<()> {
                     };
                     let version = &*k.0.to_string();
                     if let Some(template) = &manifests.template {
+                        #[allow(clippy::literal_string_with_formatting_args)]
                         for (platform, d) in &mut manifest.download_info {
                             let template = &template.download_info[platform];
                             d.url = Some(template.url.replace("${version}", version));
@@ -563,6 +564,7 @@ fn main() -> Result<()> {
         };
         let version = &*version.0.to_string();
         let t = template.as_mut().unwrap();
+        #[allow(clippy::literal_string_with_formatting_args)]
         for (platform, d) in &mut manifest.download_info {
             let template_url = d.url.take().unwrap().replace(version, "${version}");
             let template_bin = d.bin.take().map(|s| s.map(|s| s.replace(version, "${version}")));
@@ -600,6 +602,7 @@ fn write_manifests(manifest_path: &Path, manifests: &Manifests) -> Result<()> {
     Ok(())
 }
 
+#[allow(clippy::literal_string_with_formatting_args)]
 fn replace_vars(
     s: &str,
     package: &str,
