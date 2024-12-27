@@ -1,0 +1,13 @@
+{
+  "repository": "https://github.com/cackle-rs/cackle",
+  "license_markdown": "[Apache-2.0 OR MIT](https://github.com/cackle-rs/cackle/blob/main/LICENSE)",
+  "tag_prefix": "v",
+  "rust_crate": "${package}",
+  "version_range": ">= 0.8.0",
+  "platform": {
+    "x86_64_linux_musl": {
+      "asset_name": "cackle-v${version}-${rust_target}.tar.gz",
+      "bin": "cackle-v${version}-${rust_target}"
+    }
+  }
+}
