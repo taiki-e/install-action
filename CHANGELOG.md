@@ -10,6 +10,10 @@ Note: In this file, do not use the hard wrap in the middle of a sentence for com
 
 ## [Unreleased]
 
+- Support `wash`. ([#794](https://github.com/taiki-e/install-action/pull/794), thanks @joonas)
+
+- Support `trunk`. ([#795](https://github.com/taiki-e/install-action/pull/795), thanks @azzamsa)
+
 - Update `cargo-lambda@latest` to 1.6.2.
 
 ## [2.46.20] - 2024-12-22
