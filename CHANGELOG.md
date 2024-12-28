@@ -10,6 +10,8 @@ Note: In this file, do not use the hard wrap in the middle of a sentence for com
 
 ## [Unreleased]
 
+- Update `cargo-binstall@latest` to 1.10.18.
+
 ## [2.47.0] - 2024-12-27
 
 - Support `wash`. ([#794](https://github.com/taiki-e/install-action/pull/794), thanks @joonas)
