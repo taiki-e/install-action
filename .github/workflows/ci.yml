@@ -25,7 +25,7 @@ env:
 
 defaults:
   run:
-    shell: bash
+    shell: bash --noprofile --norc -CeEuxo pipefail {0}
 
 concurrency:
   group: ${{ github.workflow }}-${{ github.event.pull_request.number || github.sha }}
@@ -84,7 +84,7 @@ jobs:
     steps:
       - uses: taiki-e/checkout-action@v1
       # cross attempts to install rust-src when Cargo.toml is available even if `cross --version`
-      - run: rm Cargo.toml
+      - run: rm -- Cargo.toml
       - name: Generate tool list
         id: tool-list
         run: tools/ci/tool-list.sh "${{ matrix.tool }}" "${{ matrix.os }}" "${{ matrix.bash }}" >>"${GITHUB_OUTPUT}"
@@ -159,13 +159,13 @@ jobs:
           - opensuse/tumbleweed:latest # glibc 2.39 (as of 2024-07-19)
           - archlinux:latest # glibc 2.39 (as of 2024-07-19)
           - alpine:latest # musl 1.2.5 (as of alpine 3.20)
+          # - openwrt/rootfs:x86-64-openwrt-24.10 # musl 1.2.5
     runs-on: ubuntu-latest
     timeout-minutes: 60
     container: ${{ matrix.container }}
     steps:
       - name: Install requirements (old debian)
         run: |
-          set -CeEuxo pipefail
           # In Debian, the old repositories is removed from the main mirrors some time after EoL.
           sed -i /etc/apt/sources.list -e 's/deb.debian.org/archive.debian.org/g' \
             -e 's|security.debian.org|archive.debian.org/|g' \
@@ -173,7 +173,6 @@ jobs:
         if: startsWith(matrix.container, 'debian:9')
       - name: Install requirements (centos)
         run: |
-          set -CeEuxo pipefail
           # In CentOS, the old repositories is removed from the main mirrors just after EoL.
           # https://github.com/rust-lang/rust/pull/126352
           sed -i /etc/yum.repos.d/*.repo -e 's!^mirrorlist!#mirrorlist!' \
@@ -196,7 +195,7 @@ jobs:
         if: startsWith(matrix.container, 'centos')
       - uses: taiki-e/checkout-action@v1
       # cross attempts to install rust-src when Cargo.toml is available even if `cross --version`
-      - run: rm Cargo.toml
+      - run: rm -- Cargo.toml
       - name: Generate tool list
         id: tool-list
         run: tools/ci/tool-list.sh >>"${GITHUB_OUTPUT}"
@@ -209,6 +208,16 @@ jobs:
           tool: ${{ steps.tool-list.outputs.tool }}
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+      - name: Test bash
+        run: just --version && shfmt --version
+        shell: bash
+        # TODO: OCI runtime exec failed: exec failed: unable to start container process: exec: "bash": executable file not found in $PATH: unknown
+        if: (!startsWith(matrix.container, 'opensuse'))
+      - name: Test sh
+        run: just --version && shfmt --version
+        shell: sh
+        # TODO: OCI runtime exec failed: exec failed: unable to start container process: exec: "sh": executable file not found in $PATH: unknown
+        if: (!startsWith(matrix.container, 'opensuse'))
 
   manifest:
     runs-on: ubuntu-latest

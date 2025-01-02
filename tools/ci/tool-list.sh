@@ -1,8 +1,9 @@
 #!/usr/bin/env bash
 # SPDX-License-Identifier: Apache-2.0 OR MIT
-set -eEuo pipefail
+set -CeEuo pipefail
 IFS=$'\n\t'
-cd "$(dirname "$0")"/../..
+trap -- 's=$?; printf >&2 "%s\n" "${0##*/}:${LINENO}: \`${BASH_COMMAND}\` exit with ${s}"; exit ${s}' ERR
+cd -- "$(dirname -- "$0")"/../..
 
 # They don't provide prebuilt binaries for musl or old glibc host.
 # version `GLIBC_2.34' not found
@@ -53,7 +54,7 @@ case "${1:-}" in
         incompat_tools+=(valgrind cargo-binstall)
         ;;
     *)
-        echo "tool=$1"
+        printf 'tool=%s\n', "$1"
         exit 1
         ;;
 esac
@@ -63,7 +64,7 @@ case "$(uname -s)" in
     Linux)
         host_os=linux
         ldd_version=$(ldd --version 2>&1 || true)
-        if grep <<<"${ldd_version}" -q 'musl'; then
+        if grep -Fq musl <<<"${ldd_version}"; then
             incompat_tools+=("${musl_incompat[@]}")
         else
             host_glibc_version=$(grep -E "GLIBC|GNU libc" <<<"${ldd_version}" | sed "s/.* //g")
@@ -92,7 +93,7 @@ case "$(uname -s)" in
                 fi
             fi
         fi
-        if ! type -P snap &>/dev/null; then
+        if ! type -P snap >/dev/null; then
             incompat_tools+=(valgrind)
         fi
         ;;
@@ -112,9 +113,10 @@ esac
 
 tools=()
 for manifest in tools/codegen/base/*.json; do
-    tool_name=$(basename "${manifest%.*}")
+    tool_name="${manifest##*/}"
+    tool_name="${tool_name%.*}"
     # cross -V requires rustc
-    if [[ "${tool_name}" == "cross" ]] && ! type -P rustc &>/dev/null; then
+    if [[ "${tool_name}" == "cross" ]] && ! type -P rustc >/dev/null; then
         continue
     fi
     case "${host_os}" in
@@ -133,7 +135,7 @@ for manifest in tools/codegen/base/*.json; do
     done
     if [[ -n "${tool_name}" ]]; then
         if [[ "${version}" != "latest" ]]; then
-            latest_version=$(jq -r ".latest.version" "manifests/${tool_name}.json")
+            latest_version=$(jq -r '.latest.version' "manifests/${tool_name}.json")
             case "${version}" in
                 major.minor.patch) tool_name+="@${latest_version}" ;;
                 major.minor) tool_name+="@${latest_version%.*}" ;;
@@ -159,7 +161,7 @@ case "${host_os}" in
     linux*)
         # Installing snap to container is difficult...
         # Specifying the version of valgrind is not supported.
-        if type -P snap &>/dev/null && [[ "${version}" == "latest" ]]; then
+        if type -P snap >/dev/null && [[ "${version}" == "latest" ]]; then
             tools+=(valgrind)
         fi
         ;;
@@ -181,5 +183,5 @@ IFS=$'\n\t'
 
 # TODO: inject random space before/after of tool name for testing https://github.com/taiki-e/install-action/issues/115.
 IFS=','
-echo "tool=${tools[*]}"
+printf 'tool=%s\n' "${tools[*]}"
 IFS=$'\n\t'
