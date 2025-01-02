@@ -68,6 +68,11 @@ jobs:
             bash: msys64
           - os: windows-2022
             bash: cygwin
+          - os: windows-2025
+          - os: windows-2025
+            bash: msys64
+          - os: windows-2025
+            bash: cygwin
           - os: windows-2022
             tool: major.minor.patch
           - os: windows-2022
