@@ -16,13 +16,31 @@
   },
   "license_markdown": "[MIT](https://github.com/crate-ci/typos/blob/master/LICENSE-MIT) OR [Apache-2.0](https://github.com/crate-ci/typos/blob/master/LICENSE-APACHE)",
   "latest": {
-    "version": "1.29.3"
+    "version": "1.29.4"
   },
   "1": {
-    "version": "1.29.3"
+    "version": "1.29.4"
   },
   "1.29": {
-    "version": "1.29.3"
+    "version": "1.29.4"
+  },
+  "1.29.4": {
+    "x86_64_linux_musl": {
+      "etag": "0x8DD2BFEF497C99A",
+      "checksum": "5eebaff491e2d503b225751e461bcba849efc19c6075f780b45887920a2e3506"
+    },
+    "x86_64_macos": {
+      "etag": "0x8DD2BFF38DE029E",
+      "checksum": "8f4b7d97ea6bf5ed1e9f4545cab39886373b07766a00edbef10de2f567d3762e"
+    },
+    "x86_64_windows": {
+      "etag": "0x8DD2BFF400FE29A",
+      "checksum": "bac4aef428259aca9c99286d99921dc09da6032afc6d54ba0334615991adbb26"
+    },
+    "aarch64_macos": {
+      "etag": "0x8DD2BFF45584668",
+      "checksum": "8701cd7ed32c61dda3fe5fbd5516d63d5daeecb377ac0d1cc149d9e88ff87975"
+    }
   },
   "1.29.3": {
     "x86_64_linux_musl": {
