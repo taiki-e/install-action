@@ -155,6 +155,7 @@ if [[ -n "$(git ls-files '*.rs')" ]]; then
     binaries=''
     metadata=$(cargo metadata --format-version=1 --no-deps)
     has_public_crate=''
+    has_root_crate=''
     venv_install_yq
     for id in $(jq <<<"${metadata}" '.workspace_members[]'); do
         pkg=$(jq <<<"${metadata}" ".packages[] | select(.id == ${id})")
@@ -178,6 +179,7 @@ if [[ -n "$(git ls-files '*.rs')" ]]; then
                 publish=$(jq <<<"${root_pkg}" -r '.publish')
                 # Publishing is unrestricted if null, and forbidden if an empty array.
                 if [[ "${publish}" != "[]" ]]; then
+                    has_root_crate=1
                     exclude=$(venv tomlq -r '.package.exclude[]' Cargo.toml)
                     if ! grep <<<"${exclude}" -Eq '^/\.\*$'; then
                         error "top-level Cargo.toml of non-virtual workspace should have 'exclude' field with \"/.*\""
@@ -200,6 +202,13 @@ if [[ -n "$(git ls-files '*.rs')" ]]; then
             # TODO: fully respect exclude field in Cargo.toml.
             case "${p}" in
                 .* | tools/* | target-specs/*) continue ;;
+                */*) ;;
+                *)
+                    # If there is no crate at root, executables at the repository root directory if always okay.
+                    if [[ -z "${has_root_crate}" ]]; then
+                        continue
+                    fi
+                    ;;
             esac
             if [[ -x "${p}" ]]; then
                 executables+="${p}"$'\n'

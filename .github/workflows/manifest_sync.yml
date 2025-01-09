@@ -1,19 +1,18 @@
-name: manifest synchronization
+name: Manifest Synchronization
 
 permissions:
   contents: read
 
 on:
-  workflow_call:
   release:
     types: [released]
 
-concurrency:
-  group: ${{ github.workflow }}-${{ github.ref || github.event.pull_request.number || github.sha }}
-  cancel-in-progress: true
-
 env:
   WORKSPACE: /tmp/workspace
+
+defaults:
+  run:
+    shell: bash --noprofile --norc -CeEuxo pipefail {0}
 
 jobs:
   sync:
