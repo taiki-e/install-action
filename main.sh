@@ -159,7 +159,10 @@ download_and_extract() {
                 *.zip)
                     unzip -q tmp "${bin_in_archive#\./}"
                     for tmp in "${bin_in_archive[@]}"; do
-                        mv "${tmp}" "${bin_dir}/"
+                        case "${tool}" in
+                            editorconfig-checker) mv "${tmp}" "${bin_dir}/${tool}${exe}" ;;
+                            *) mv "${tmp}" "${bin_dir}/" ;;
+                        esac
                     done
                     ;;
                 *)
