@@ -23,7 +23,7 @@ jobs:
           persist-credentials: true
 
       - name: Checkout manifest-schema branch
-        run: ./tools/checkout-manifest-schema-branch.sh $WORKSPACE
+        run: ./tools/ci/checkout-manifest-schema-branch.sh $WORKSPACE
 
       - name: Copy over schema
         run: cp ./manifests/* $WORKSPACE
