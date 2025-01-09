@@ -1,8 +1,9 @@
 #!/usr/bin/env bash
 # SPDX-License-Identifier: Apache-2.0 OR MIT
-set -eEuo pipefail
+set -CeEuo pipefail
 IFS=$'\n\t'
-cd "$(dirname "$0")"/..
+trap -- 's=$?; printf >&2 "%s\n" "${0##*/}:${LINENO}: \`${BASH_COMMAND}\` exit with ${s}"; exit ${s}' ERR
+cd -- "$(dirname -- "$0")"/..
 
 # Update manifests
 #
@@ -15,6 +16,7 @@ if [[ $# -gt 0 ]]; then
 fi
 
 for manifest in tools/codegen/base/*.json; do
-    package=$(basename "${manifest%.*}")
+    package="${manifest##*/}"
+    package="${package%.*}"
     cargo run --manifest-path tools/codegen/Cargo.toml --release -- "${package}" latest
 done
