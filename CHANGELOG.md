@@ -10,6 +10,8 @@ Note: In this file, do not use the hard wrap in the middle of a sentence for com
 
 ## [Unreleased]
 
+## [2.47.10] - 2025-01-10
+
 - Update `cargo-udeps@latest` to 0.1.54.
 
 ## [2.47.9] - 2025-01-09
@@ -3308,7 +3310,8 @@ Note: This release is considered a breaking change because installing on version
 
 Initial release
 
-[Unreleased]: https://github.com/taiki-e/install-action/compare/v2.47.9...HEAD
+[Unreleased]: https://github.com/taiki-e/install-action/compare/v2.47.10...HEAD
+[2.47.10]: https://github.com/taiki-e/install-action/compare/v2.47.9...v2.47.10
 [2.47.9]: https://github.com/taiki-e/install-action/compare/v2.47.8...v2.47.9
 [2.47.8]: https://github.com/taiki-e/install-action/compare/v2.47.7...v2.47.8
 [2.47.7]: https://github.com/taiki-e/install-action/compare/v2.47.6...v2.47.7
