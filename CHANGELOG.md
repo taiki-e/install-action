@@ -10,6 +10,8 @@ Note: In this file, do not use the hard wrap in the middle of a sentence for com
 
 ## [Unreleased]
 
+## [2.47.11] - 2025-01-11
+
 - Update `editorconfig-checker@latest` to 3.1.2.
 
 ## [2.47.10] - 2025-01-10
@@ -3312,7 +3314,8 @@ Note: This release is considered a breaking change because installing on version
 
 Initial release
 
-[Unreleased]: https://github.com/taiki-e/install-action/compare/v2.47.10...HEAD
+[Unreleased]: https://github.com/taiki-e/install-action/compare/v2.47.11...HEAD
+[2.47.11]: https://github.com/taiki-e/install-action/compare/v2.47.10...v2.47.11
 [2.47.10]: https://github.com/taiki-e/install-action/compare/v2.47.9...v2.47.10
 [2.47.9]: https://github.com/taiki-e/install-action/compare/v2.47.8...v2.47.9
 [2.47.8]: https://github.com/taiki-e/install-action/compare/v2.47.7...v2.47.8
