@@ -9,6 +9,7 @@ use std::{
     path::Path,
     slice,
     str::FromStr,
+    sync::OnceLock,
 };
 
 use anyhow::Result;
@@ -18,8 +19,20 @@ use serde::{
 };
 use serde_derive::{Deserialize, Serialize};
 
-pub const MANIFEST_SCHEMA_BRANCH_NAME: &str =
-    concat!("manifest-schema-", env!("CARGO_PKG_VERSION_MINOR"));
+pub fn get_manifest_schema_branch_name() {
+    if env!("CARGO_PKG_VERSION_MAJOR") == "0" {
+        concat!("manifest-schema-0.", env!("CARGO_PKG_VERSION_MINOR"))
+    } else {
+        concat!(
+            "manifest-schema-",
+            env!("CARGO_PKG_VERSION_MAJOR"),
+            ".",
+            env!("CARGO_PKG_VERSION_MINOR"),
+            ".",
+            env!("CARGO_PKG_VERSION_PATCH"),
+        )
+    }
+}
 
 #[derive(Debug, Clone, PartialEq, Eq)]
 pub struct Version {
