@@ -5,7 +5,12 @@ set -euxo pipefail
 
 cd "$(dirname "$0")"
 
-schema_version="$(cargo metadata --format-version=1 --no-deps | jq -r '.packages[] | select(.name == "install-action-manifest-schema") | .version')"
+version="$(cargo metadata --format-version=1 --no-deps | jq -r '.packages[] | select(.name == "install-action-manifest-schema") | .version')"
+if [[ $version == 0.* ]]; then
+    schema_version="0.$(echo "$version" | cut -d '.' -f 2)"
+else
+    schema_version="$version"
+fi
 branch="manifest-schema-${schema_version}"
 
 git worktree add --force "${1?}"
