@@ -18,6 +18,7 @@ use serde::{
 };
 use serde_derive::{Deserialize, Serialize};
 
+#[must_use]
 pub fn get_manifest_schema_branch_name() -> &'static str {
     if env!("CARGO_PKG_VERSION_MAJOR") == "0" {
         concat!("manifest-schema-0.", env!("CARGO_PKG_VERSION_MINOR"))
@@ -320,8 +321,8 @@ impl StringOrArray {
 
 /// GitHub Actions Runner supports Linux (x86_64, AArch64, Arm), Windows (x86_64, AArch64),
 /// and macOS (x86_64, AArch64).
-/// https://github.com/actions/runner/blob/v2.321.0/.github/workflows/build.yml#L21
-/// https://docs.github.com/en/actions/hosting-your-own-runners/about-self-hosted-runners#supported-architectures-and-operating-systems-for-self-hosted-runners
+/// <https://github.com/actions/runner/blob/v2.321.0/.github/workflows/build.yml#L21>
+/// <https://docs.github.com/en/actions/hosting-your-own-runners/about-self-hosted-runners#supported-architectures-and-operating-systems-for-self-hosted-runners>
 ///
 /// Note:
 /// - Static-linked binaries compiled for linux-musl will also work on linux-gnu systems and are
@@ -330,12 +331,12 @@ impl StringOrArray {
 /// - Binaries compiled for x86_64 macOS will usually also work on AArch64 macOS.
 /// - Binaries compiled for x86_64 Windows will usually also work on AArch64 Windows 11+.
 /// - Ignore Arm for now, as we need to consider the version and whether hard-float is supported.
-///   https://github.com/rust-lang/rustup/pull/593
-///   https://github.com/cross-rs/cross/pull/1018
+///   <https://github.com/rust-lang/rustup/pull/593>
+///   <https://github.com/cross-rs/cross/pull/1018>
 ///   Does it seem only armv7l+ is supported?
-///   https://github.com/actions/runner/blob/v2.321.0/src/Misc/externals.sh#L178
-///   https://github.com/actions/runner/issues/688
-// TODO: support musl with dynamic linking like wasmtime 22.0.0+'s musl binaries: https://github.com/bytecodealliance/wasmtime/releases/tag/v22.0.0
+///   <https://github.com/actions/runner/blob/v2.321.0/src/Misc/externals.sh#L178>
+///   <https://github.com/actions/runner/issues/688>
+// TODO: support musl with dynamic linking like wasmtime 22.0.0+'s musl binaries: <https://github.com/bytecodealliance/wasmtime/releases/tag/v22.0.0>
 #[allow(non_camel_case_types)]
 #[derive(Debug, Clone, Copy, PartialEq, Eq, PartialOrd, Ord, Serialize, Deserialize)]
 pub enum HostPlatform {
