@@ -1,6 +1,6 @@
 // SPDX-License-Identifier: Apache-2.0 OR MIT
 
-use std::{env, fmt, io::Write, path::PathBuf};
+use std::{env, fmt, io::Write as _, path::PathBuf};
 
 use anyhow::Result;
 use fs_err as fs;

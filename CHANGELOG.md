@@ -10,6 +10,24 @@ Note: In this file, do not use the hard wrap in the middle of a sentence for com
 
 ## [Unreleased]
 
+- Update `cargo-binstall@latest` to 1.10.21.
+
+## [2.47.12] - 2025-01-13
+
+- Update `wasm-bindgen@latest` to 0.2.100.
+
+- Update `rclone@latest` to 1.69.0.
+
+- Update `cargo-binstall@latest` to 1.10.20.
+
+## [2.47.11] - 2025-01-11
+
+- Update `editorconfig-checker@latest` to 3.1.2.
+
+## [2.47.10] - 2025-01-10
+
+- Update `cargo-udeps@latest` to 0.1.54.
+
 ## [2.47.9] - 2025-01-09
 
 - Update `editorconfig-checker@latest` to 3.1.1.
@@ -3306,7 +3324,10 @@ Note: This release is considered a breaking change because installing on version
 
 Initial release
 
-[Unreleased]: https://github.com/taiki-e/install-action/compare/v2.47.9...HEAD
+[Unreleased]: https://github.com/taiki-e/install-action/compare/v2.47.12...HEAD
+[2.47.12]: https://github.com/taiki-e/install-action/compare/v2.47.11...v2.47.12
+[2.47.11]: https://github.com/taiki-e/install-action/compare/v2.47.10...v2.47.11
+[2.47.10]: https://github.com/taiki-e/install-action/compare/v2.47.9...v2.47.10
 [2.47.9]: https://github.com/taiki-e/install-action/compare/v2.47.8...v2.47.9
 [2.47.8]: https://github.com/taiki-e/install-action/compare/v2.47.7...v2.47.8
 [2.47.7]: https://github.com/taiki-e/install-action/compare/v2.47.6...v2.47.7

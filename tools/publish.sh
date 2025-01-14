@@ -1,11 +1,9 @@
 #!/usr/bin/env bash
 # SPDX-License-Identifier: Apache-2.0 OR MIT
-set -eEuo pipefail
+set -CeEuo pipefail
 IFS=$'\n\t'
-cd "$(dirname "$0")"/..
-
-# shellcheck disable=SC2154
-trap 's=$?; echo >&2 "$0: error on line "${LINENO}": ${BASH_COMMAND}"; exit ${s}' ERR
+trap -- 's=$?; printf >&2 "%s\n" "${0##*/}:${LINENO}: \`${BASH_COMMAND}\` exit with ${s}"; exit ${s}' ERR
+cd -- "$(dirname -- "$0")"/..
 
 # Publish a new release.
 #
@@ -26,7 +24,7 @@ retry() {
     "$@"
 }
 bail() {
-    echo >&2 "error: $*"
+    printf >&2 'error: %s\n' "$*"
     exit 1
 }
 
@@ -41,6 +39,11 @@ fi
 if [[ $# -gt 1 ]]; then
     bail "invalid argument '$2'"
 fi
+if { sed --help 2>&1 || true; } | grep -Eq -e '-i extension'; then
+    in_place=(-i '')
+else
+    in_place=(-i)
+fi
 
 # Make sure there is no uncommitted change.
 git diff --exit-code
@@ -52,12 +55,15 @@ if gh release view "${tag}" &>/dev/null; then
 fi
 
 # Make sure that the release was created from an allowed branch.
-if ! git branch | grep -q '\* main$'; then
+if ! git branch | grep -Eq '\* main$'; then
     bail "current branch is not 'main'"
+fi
+if ! git remote -v | grep -F origin | grep -Eq 'github\.com[:/]taiki-e/'; then
+    bail "cannot publish a new release from fork repository"
 fi
 
 release_date=$(date -u '+%Y-%m-%d')
-tags=$(git --no-pager tag | (grep -E "^${tag_prefix}[0-9]+" || true))
+tags=$(git --no-pager tag | { grep -E "^${tag_prefix}[0-9]+" || true; })
 if [[ -n "${tags}" ]]; then
     # Make sure the same release does not exist in changelog.
     if grep -Eq "^## \\[${version//./\\.}\\]" "${changelog}"; then
@@ -67,11 +73,12 @@ if [[ -n "${tags}" ]]; then
         bail "link to ${version} already exist in ${changelog}"
     fi
     # Update changelog.
-    remote_url=$(grep -E '^\[Unreleased\]: https://' "${changelog}" | sed 's/^\[Unreleased\]: //; s/\.\.\.HEAD$//')
+    remote_url=$(grep -E '^\[Unreleased\]: https://' "${changelog}" | sed -E 's/^\[Unreleased\]: //; s/\.\.\.HEAD$//')
     prev_tag="${remote_url#*/compare/}"
     remote_url="${remote_url%/compare/*}"
-    sed -i "s/^## \\[Unreleased\\]/## [Unreleased]\\n\\n## [${version}] - ${release_date}/" "${changelog}"
-    sed -i "s#^\[Unreleased\]: https://.*#[Unreleased]: ${remote_url}/compare/${tag}...HEAD\\n[${version}]: ${remote_url}/compare/${prev_tag}...${tag}#" "${changelog}"
+    sed -E "${in_place[@]}" \
+        -e "s/^## \\[Unreleased\\]/## [Unreleased]\\n\\n## [${version}] - ${release_date}/" \
+        -e "s#^\[Unreleased\]: https://.*#[Unreleased]: ${remote_url}/compare/${tag}...HEAD\\n[${version}]: ${remote_url}/compare/${prev_tag}...${tag}#" "${changelog}"
     if ! grep -Eq "^## \\[${version//./\\.}\\] - ${release_date}$" "${changelog}"; then
         bail "failed to update ${changelog}"
     fi
@@ -94,18 +101,9 @@ changes=$(parse-changelog "${changelog}" "${version}")
 if [[ -z "${changes}" ]]; then
     bail "changelog for ${version} has no body"
 fi
-echo "============== CHANGELOG =============="
-echo "${changes}"
-echo "======================================="
-
-tools=()
-for tool in tools/codegen/base/*.json; do
-    tools+=("$(basename "${tool%.*}")")
-done
-# Alias
-tools+=(nextest)
-# Not manifest-based
-tools+=(valgrind)
+printf '============== CHANGELOG ==============\n'
+printf '%s\n' "${changes}"
+printf '=======================================\n'
 
 if [[ -n "${tags}" ]]; then
     # Create a release commit.
@@ -134,10 +132,20 @@ retry git push origin --tags
 git checkout main
 git branch -d "${major_version_tag}"
 
+tools=()
+for tool in tools/codegen/base/*.json; do
+    tool="${tool##*/}"
+    tools+=("${tool%.*}")
+done
+# Alias
+tools+=(nextest)
+# Not manifest-based
+tools+=(valgrind)
+
 for tool in "${tools[@]}"; do
     git checkout -b "${tool}"
-    sed -i -e "s/required: true/required: false/g" action.yml
-    sed -i -e "s/# default: #publish:tool/default: ${tool}/g" action.yml
+    sed -E "${in_place[@]}" "s/required: true/required: false/g" action.yml
+    sed -E "${in_place[@]}" "s/# default: #publish:tool/default: ${tool}/g" action.yml
     git add action.yml
     git commit -m "${tool}"
     retry git push origin -f refs/heads/"${tool}"

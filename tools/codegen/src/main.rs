@@ -5,7 +5,7 @@ use std::{
     collections::{BTreeMap, BTreeSet},
     env,
     ffi::OsStr,
-    io::Read,
+    io::Read as _,
     path::Path,
     sync::{LazyLock, RwLock},
     time::Duration,
@@ -17,7 +17,7 @@ use install_action_internal_codegen::{
     workspace_root, BaseManifest, HostPlatform, Manifest, ManifestDownloadInfo, ManifestRef,
     ManifestTemplate, ManifestTemplateDownloadInfo, Manifests, Signing, SigningKind, Version,
 };
-use sha2::{Digest, Sha256};
+use sha2::{Digest as _, Sha256};
 use spdx::expression::{ExprNode, ExpressionReq, Operator};
 
 fn main() -> Result<()> {

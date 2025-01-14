@@ -3,13 +3,51 @@
   "template": null,
   "license_markdown": "[MIT](https://github.com/editorconfig-checker/editorconfig-checker/blob/main/LICENSE)",
   "latest": {
-    "version": "3.1.1"
+    "version": "3.1.2"
   },
   "3": {
-    "version": "3.1.1"
+    "version": "3.1.2"
   },
   "3.1": {
-    "version": "3.1.1"
+    "version": "3.1.2"
+  },
+  "3.1.2": {
+    "x86_64_linux_gnu": {
+      "url": "https://github.com/editorconfig-checker/editorconfig-checker/releases/download/v3.1.2/ec-linux-amd64.tar.gz",
+      "etag": "0x8DD31C3802BB3A5",
+      "checksum": "3fd4fc81e5077f89faddb71ff05a5d6e2983b8c3953d1b1b6663c7245300e653",
+      "bin": "bin/ec-linux-amd64"
+    },
+    "x86_64_macos": {
+      "url": "https://github.com/editorconfig-checker/editorconfig-checker/releases/download/v3.1.2/ec-darwin-amd64.tar.gz",
+      "etag": "0x8DD31C37FF6AE95",
+      "checksum": "f9077b2bbf93db1e7019cc35a567aa80937cd5680cf8453ed00f3eb47e9feea4",
+      "bin": "bin/ec-darwin-amd64"
+    },
+    "x86_64_windows": {
+      "url": "https://github.com/editorconfig-checker/editorconfig-checker/releases/download/v3.1.2/ec-windows-amd64.zip",
+      "etag": "0x8DD31C380C87BA2",
+      "checksum": "58ced741383e4e8d68aeeda4c2a6c08deb52e45fbb3a5a976c52f161b62b8032",
+      "bin": "bin/ec-windows-amd64.exe"
+    },
+    "aarch64_linux_gnu": {
+      "url": "https://github.com/editorconfig-checker/editorconfig-checker/releases/download/v3.1.2/ec-linux-arm64.tar.gz",
+      "etag": "0x8DD31C38037B40E",
+      "checksum": "1333275ced71f1814db1ae677681a1b8b9d412d7046675594f7cdb1f8c7c47d1",
+      "bin": "bin/ec-linux-arm64"
+    },
+    "aarch64_macos": {
+      "url": "https://github.com/editorconfig-checker/editorconfig-checker/releases/download/v3.1.2/ec-darwin-arm64.tar.gz",
+      "etag": "0x8DD31C37FF9B85E",
+      "checksum": "ca7ad4492a3235d853662dec88485073a01a782e121e308336832a14b95a765d",
+      "bin": "bin/ec-darwin-arm64"
+    },
+    "aarch64_windows": {
+      "url": "https://github.com/editorconfig-checker/editorconfig-checker/releases/download/v3.1.2/ec-windows-arm64.zip",
+      "etag": "0x8DD31C3814F3C50",
+      "checksum": "af97bc69a6f6283818aa32788d8d6d884aafb1a30b939a7e9930a812dd30c75e",
+      "bin": "bin/ec-windows-arm64.exe"
+    }
   },
   "3.1.1": {
     "x86_64_linux_gnu": {
