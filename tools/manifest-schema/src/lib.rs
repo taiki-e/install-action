@@ -19,7 +19,7 @@ use serde::{
 };
 use serde_derive::{Deserialize, Serialize};
 
-pub fn get_manifest_schema_branch_name() {
+pub fn get_manifest_schema_branch_name() -> &'static str {
     if env!("CARGO_PKG_VERSION_MAJOR") == "0" {
         concat!("manifest-schema-0.", env!("CARGO_PKG_VERSION_MINOR"))
     } else {
