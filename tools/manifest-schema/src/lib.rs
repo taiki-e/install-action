@@ -9,7 +9,6 @@ use std::{
     path::Path,
     slice,
     str::FromStr,
-    sync::OnceLock,
 };
 
 use anyhow::Result;
