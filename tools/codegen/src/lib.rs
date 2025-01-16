@@ -251,7 +251,7 @@ impl BaseManifest {
             assert!(!bin.as_slice().is_empty());
             for bin in bin.as_slice() {
                 let file_name = Path::new(bin).file_name().unwrap().to_str().unwrap();
-                if !self.repository.ends_with("/xbuild") {
+                if !self.repository.ends_with("/xbuild") && !self.repository.ends_with("/cackle") {
                     assert!(
                         !(file_name.contains("${version") || file_name.contains("${rust")),
                         "{bin}"
