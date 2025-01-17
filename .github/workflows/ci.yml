@@ -47,7 +47,9 @@ jobs:
         include:
           # NB: Sync list with https://github.com/taiki-e/checkout-action/blob/HEAD/.github/workflows/ci.yml
           - os: ubuntu-22.04
+          - os: ubuntu-22.04-arm
           - os: ubuntu-24.04
+          - os: ubuntu-24.04-arm
           - os: ubuntu-22.04
             tool: major.minor.patch
           - os: ubuntu-22.04

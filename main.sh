@@ -740,9 +740,9 @@ for tool in "${tools[@]}"; do
             read_manifest "${tool}" "${version}"
             if [[ "${download_info}" == "null" ]]; then
                 if [[ "${rust_crate}" == "null" ]]; then
-                    bail "${tool}@${version} for '${host_os}' is not supported"
+                    bail "${tool}@${version} for '${host_arch}_${host_os}' is not supported"
                 fi
-                warn "${tool}@${version} for '${host_os}' is not supported; fallback to cargo-binstall"
+                warn "${tool}@${version} for '${host_arch}_${host_os}' is not supported; fallback to cargo-binstall"
                 case "${version}" in
                     latest) unsupported_tools+=("${rust_crate}") ;;
                     *) unsupported_tools+=("${rust_crate}@${version}") ;;

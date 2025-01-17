@@ -110,6 +110,12 @@ case "$(uname -s)" in
         ;;
     *) bail "unrecognized OS type '$(uname -s)'" ;;
 esac
+# See main.sh
+case "$(uname -m)" in
+    aarch64 | arm64) host_arch=aarch64 ;;
+    xscale | arm | armv*l) bail "32-bit Arm runner is not supported yet by this action; if you need support for this platform, please submit an issue at <https://github.com/taiki-e/install-action>" ;;
+    *) host_arch=x86_64 ;;
+esac
 
 tools=()
 for manifest in tools/codegen/base/*.json; do
@@ -120,9 +126,13 @@ for manifest in tools/codegen/base/*.json; do
         continue
     fi
     case "${host_os}" in
-        linux*) ;;
+        linux*)
+            if [[ "${host_arch}" != "x86_64" ]] && [[ "$(jq -r ".platform.${host_arch}_${host_os}_gnu" "${manifest}")" == "null" ]] && [[ "$(jq -r ".platform.${host_arch}_${host_os}_musl" "${manifest}")" == "null" ]]; then
+                continue
+            fi
+            ;;
         *)
-            if [[ "$(jq -r ".platform.x86_64_${host_os}" "${manifest}")" == "null" ]]; then
+            if [[ "$(jq -r ".platform.x86_64_${host_os}" "${manifest}")" == "null" ]] && [[ "$(jq -r ".platform.${host_arch}_${host_os}" "${manifest}")" == "null" ]]; then
                 continue
             fi
             ;;
