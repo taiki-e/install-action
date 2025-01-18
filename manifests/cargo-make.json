@@ -20,10 +20,28 @@
   },
   "license_markdown": "[Apache-2.0](https://github.com/sagiegurari/cargo-make/blob/master/LICENSE)",
   "latest": {
-    "version": "0.37.23"
+    "version": "0.37.24"
   },
   "0.37": {
-    "version": "0.37.23"
+    "version": "0.37.24"
+  },
+  "0.37.24": {
+    "x86_64_linux_musl": {
+      "etag": "0x8DD37D36A8C5F07",
+      "checksum": "ff76969f0caab39c56d168b94b2540fde34609aa6562d555081818ece387b005"
+    },
+    "x86_64_macos": {
+      "etag": "0x8DD37D2ECB9F67A",
+      "checksum": "afd10db16ce089e0208d4829d46351833d9eb61f3181452a38a2a089bafedc31"
+    },
+    "x86_64_windows": {
+      "etag": "0x8DD37D379E8369F",
+      "checksum": "f7c757c7e147023ac86d80b134e5a59e0ed8ff032e39be3464cc4aad1e5e0f33"
+    },
+    "aarch64_macos": {
+      "etag": "0x8DD37D2EB99C51D",
+      "checksum": "823fe51d2baa5679a5dfd33c703d0176374f8f023a2ee950f2e03dc4f31ee523"
+    }
   },
   "0.37.23": {
     "x86_64_linux_musl": {
