@@ -10,6 +10,8 @@ Note: In this file, do not use the hard wrap in the middle of a sentence for com
 
 ## [Unreleased]
 
+- Update `cargo-deny@latest` to 0.16.4.
+
 - Update `cargo-binstall@latest` to 1.10.22.
 
 ## [2.47.17] - 2025-01-19
