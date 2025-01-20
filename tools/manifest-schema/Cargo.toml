@@ -1,0 +1,17 @@
+[package]
+name = "install-action-manifest-schema"
+version = "0.1.0"
+edition = "2021"
+license = "MIT OR Apache-2.0"
+
+[dependencies]
+anyhow = "1"
+semver = { version = "1", features = ["serde"] }
+serde = "1"
+serde_derive = "1"
+
+[lints]
+workspace = true
+
+[package.metadata.cargo_check_external_types]
+allowed_external_types = ["semver::*", "serde::*"]
