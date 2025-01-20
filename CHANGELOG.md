@@ -10,6 +10,8 @@ Note: In this file, do not use the hard wrap in the middle of a sentence for com
 
 ## [Unreleased]
 
+- Update `trunk@latest` to 0.21.6.
+
 - Update `parse-changelog@latest` to 0.6.11.
 
 ## [2.47.18] - 2025-01-19
