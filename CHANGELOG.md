@@ -10,6 +10,8 @@ Note: In this file, do not use the hard wrap in the middle of a sentence for com
 
 ## [Unreleased]
 
+## [2.47.20] - 2025-01-21
+
 - Update `wasmtime@latest` to 29.0.0.
 
 ## [2.47.19] - 2025-01-20
@@ -3364,7 +3366,8 @@ Note: This release is considered a breaking change because installing on version
 
 Initial release
 
-[Unreleased]: https://github.com/taiki-e/install-action/compare/v2.47.19...HEAD
+[Unreleased]: https://github.com/taiki-e/install-action/compare/v2.47.20...HEAD
+[2.47.20]: https://github.com/taiki-e/install-action/compare/v2.47.19...v2.47.20
 [2.47.19]: https://github.com/taiki-e/install-action/compare/v2.47.18...v2.47.19
 [2.47.18]: https://github.com/taiki-e/install-action/compare/v2.47.17...v2.47.18
 [2.47.17]: https://github.com/taiki-e/install-action/compare/v2.47.16...v2.47.17
