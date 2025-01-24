@@ -10,6 +10,8 @@ Note: In this file, do not use the hard wrap in the middle of a sentence for com
 
 ## [Unreleased]
 
+- Update `git-cliff@latest` to 2.8.0.
+
 ## [2.47.24] - 2025-01-23
 
 - Update `syft@latest` to 1.19.0.
