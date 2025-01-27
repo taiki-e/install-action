@@ -19,7 +19,32 @@
   },
   "license_markdown": "[Apache-2.0](https://github.com/wasmCloud/wasmCloud/blob/main/LICENSE)",
   "latest": {
-    "version": "0.37.0"
+    "version": "0.38.0"
+  },
+  "0.38": {
+    "version": "0.38.0"
+  },
+  "0.38.0": {
+    "x86_64_linux_musl": {
+      "etag": "0x8DD3EEC2CD0065E",
+      "checksum": "8bba2463f4e121fdbbebc4046aabe1ade54aa3bd72ba70a57ad4b0e0e657bec2"
+    },
+    "x86_64_macos": {
+      "etag": "0x8DD3EEC2BF542B2",
+      "checksum": "edec0fa45d5ed437322d2813714b5b268d3882bf5ba93f857eefef26f068037b"
+    },
+    "x86_64_windows": {
+      "etag": "0x8DD3EEC2C069451",
+      "checksum": "befd98782a0ab1081c5f4f9dad770c57126770820feddcc7246fc1fdcad99caa"
+    },
+    "aarch64_linux_musl": {
+      "etag": "0x8DD3EEC2BE7967B",
+      "checksum": "bab4fad652eaa9bb1e890daa0478ec223aaf448fb72eb00e59014034a3bca345"
+    },
+    "aarch64_macos": {
+      "etag": "0x8DD3EEC2BD97591",
+      "checksum": "c2d0443264d064c3f975809e945d19fb4180a3a1d21944e43ea261f7c3050450"
+    }
   },
   "0.37": {
     "version": "0.37.0"
