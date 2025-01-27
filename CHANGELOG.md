@@ -10,6 +10,8 @@ Note: In this file, do not use the hard wrap in the middle of a sentence for com
 
 ## [Unreleased]
 
+## [2.47.26] - 2025-01-27
+
 - Update `wash@latest` to 0.38.0.
 
 ## [2.47.25] - 2025-01-24
@@ -3392,7 +3394,8 @@ Note: This release is considered a breaking change because installing on version
 
 Initial release
 
-[Unreleased]: https://github.com/taiki-e/install-action/compare/v2.47.25...HEAD
+[Unreleased]: https://github.com/taiki-e/install-action/compare/v2.47.26...HEAD
+[2.47.26]: https://github.com/taiki-e/install-action/compare/v2.47.25...v2.47.26
 [2.47.25]: https://github.com/taiki-e/install-action/compare/v2.47.24...v2.47.25
 [2.47.24]: https://github.com/taiki-e/install-action/compare/v2.47.23...v2.47.24
 [2.47.23]: https://github.com/taiki-e/install-action/compare/v2.47.22...v2.47.23
