@@ -12,7 +12,7 @@ Note: In this file, do not use the hard wrap in the middle of a sentence for com
 
 - Support `cargo-semver-checks` on AArch64 Linux.
 
-- Support installing native binary for `mdbook` on AArch64 macOS. (Previously x86_64 macOS binary is used as fallback.)
+- Support installing native binary for `mdbook` and `shellcheck` on AArch64 macOS. (Previously x86_64 macOS binary is used as fallback.)
 
 - Support installing native binary for `just` and `sccache` on AArch64 Windows. (Previously x86_64 Windows binary is used as fallback.)
 
