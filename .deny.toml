@@ -1,2 +1,41 @@
+# https://embarkstudios.github.io/cargo-deny/checks/advisories/cfg.html
+[advisories]
+yanked = "deny"
+git-fetch-with-cli = true
+ignore = [
+]
+
+# https://embarkstudios.github.io/cargo-deny/checks/bans/cfg.html
+[bans]
+multiple-versions = "warn"
+wildcards = "deny"
+allow-wildcard-paths = true
+build.executables = "deny"
+build.interpreted = "deny"
+build.include-dependencies = true
+build.include-workspace = false # covered by tools/tidy.sh
+build.include-archives = true
+build.allow-build-scripts = [
+    { name = "proc-macro2" }, # via serde_derive
+    { name = "semver" },
+    { name = "serde" },
+]
+build.bypass = [
+]
+
+# https://embarkstudios.github.io/cargo-deny/checks/licenses/cfg.html
 [licenses]
-allow = ["MIT", "Apache-2.0", "Unicode-3.0"]
+unused-allowed-license = "deny"
+private.ignore = true
+allow = [
+    "Apache-2.0",
+    "MIT",
+    "Unicode-3.0", # unicode-ident
+]
+
+# https://embarkstudios.github.io/cargo-deny/checks/sources/cfg.html
+[sources]
+unknown-registry = "deny"
+unknown-git = "deny"
+allow-git = [
+]
