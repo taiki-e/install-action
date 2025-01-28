@@ -158,3 +158,44 @@ for tool in "${tools[@]}"; do
   git checkout main
   git branch -D "${tool}"
 done
+
+schema_workspace=/tmp/workspace
+rm -rf -- "${schema_workspace}"
+# Checkout manifest-schema branch
+schema_version="$(cargo metadata --format-version=1 --no-deps | jq -r '.packages[] | select(.name == "install-action-manifest-schema") | .version')"
+if [[ "${schema_version}" == "0."* ]]; then
+  schema_version="0.$(cut -d. -f2 <<<"${schema_version}")"
+else
+  schema_version="$(cut -d. -f1 <<<"${schema_version}")"
+fi
+schema_branch="manifest-schema-${schema_version}"
+
+git worktree add --force "${schema_workspace}"
+(
+  cd -- "${schema_workspace}"
+  if git fetch origin "${schema_branch}"; then
+    git checkout "origin/${schema_branch}" -B "${schema_branch}"
+  elif ! git checkout "${schema_branch}"; then
+    # New branch with no history. Credit: https://stackoverflow.com/a/13969482
+    git checkout --orphan "${schema_branch}"
+    git rm -rf -- . || true
+    git commit -m 'Initial commit' --allow-empty
+  fi
+)
+
+# Copy over schema
+cp -- ./manifests/* "${schema_workspace}"
+
+(
+  cd -- "${schema_workspace}"
+  # Stage changes
+  git add .
+  # Detect changes, then commit and push if changes exist
+  if [[ "$(git status --porcelain=v1 | wc -l)" != "0" ]]; then
+    git commit -m 'Update manifest schema'
+    git push origin HEAD
+  fi
+)
+
+rm -rf -- "${schema_workspace}"
+git worktree prune
