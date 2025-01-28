@@ -10,6 +10,9 @@
     "x86_64_windows": {
       "url": "https://github.com/obi1kenobi/cargo-semver-checks/releases/download/v${version}/cargo-semver-checks-x86_64-pc-windows-msvc.tar.gz"
     },
+    "aarch64_linux_musl": {
+      "url": "https://github.com/obi1kenobi/cargo-semver-checks/releases/download/v${version}/cargo-semver-checks-aarch64-unknown-linux-musl.tar.gz"
+    },
     "aarch64_macos": {
       "url": "https://github.com/obi1kenobi/cargo-semver-checks/releases/download/v${version}/cargo-semver-checks-aarch64-apple-darwin.tar.gz"
     }
@@ -34,6 +37,10 @@
       "etag": "0x8DD3FB69C87970D",
       "checksum": "8308c1fa2ff5c69f99ef22840d3afd69381ff1dbdb7e1641659f423f2b2f2b8b"
     },
+    "aarch64_linux_musl": {
+      "etag": "0x8DD3FB5CFC554D1",
+      "checksum": "e982d2bc0ef2d50f18b8b839b9bb4958b539c69dc109a6d0fb884e27522522f7"
+    },
     "aarch64_macos": {
       "etag": "0x8DD3FB5E4E07CA5",
       "checksum": "4810ea43b6a922fd89fd945d8434c8560b6faf5249b28b4df3bada152b0fe449"
@@ -54,6 +61,10 @@
     "x86_64_windows": {
       "etag": "0x8DD1A0209F8BC7D",
       "checksum": "5924c0d179cd9c4a65bad83c084edbb77abf73b6b080da5b4a7973555d1443ad"
+    },
+    "aarch64_linux_musl": {
+      "etag": "0x8DD1A013E12CB5B",
+      "checksum": "4aa9525fd79bb924691f44f92f8cae56551a349fa2fd2c20444970d14361b693"
     },
     "aarch64_macos": {
       "etag": "0x8DD1A011FCB1234",
@@ -76,6 +87,10 @@
       "etag": "0x8DD14E13C83131B",
       "checksum": "e950eb36af127607fdc05844f116014dda0a2cbe2718a7f85f82fe7b79c2265e"
     },
+    "aarch64_linux_musl": {
+      "etag": "0x8DD14E087A842E5",
+      "checksum": "06155b62e3de53610028a14c87c267548d35a65aae90845d19dcf0336279504d"
+    },
     "aarch64_macos": {
       "etag": "0x8DD14E092AB25AE",
       "checksum": "e20ddfa756eff8eee87cc3b5efe9dd30b1640e0bff94be8808fc5020c921aad1"
@@ -96,6 +111,10 @@
     "x86_64_windows": {
       "etag": "0x8DCEF84E967A078",
       "checksum": "ea9c6c6ecb212843dbd649ce8fc2c323b68c11d99df76fcbfa347a69b606a8aa"
+    },
+    "aarch64_linux_musl": {
+      "etag": "0x8DCEF8444FFBF55",
+      "checksum": "06752a8864b4bf1d5600ffa15dfa7af867b78da92ae1f44e59936d14613153c2"
     },
     "aarch64_macos": {
       "etag": "0x8DCEF83F9D34219",
@@ -118,6 +137,10 @@
       "etag": "0x8DCCC367877571E",
       "checksum": "ee3282df02bf183d8c44bc6a72f3c7c80e9ee2626766dc759105910f100f2393"
     },
+    "aarch64_linux_musl": {
+      "etag": "0x8DCCC35A9D5AA84",
+      "checksum": "1987185a342296d141a1c8f99eb58dfaa7b829ce215b5d51b6c92a65470c10b7"
+    },
     "aarch64_macos": {
       "etag": "0x8DCCC35714A58DA",
       "checksum": "2b7c74bdf8f3e87b8076ab5bb9d6d9754bbd3d420c5ac7e14e44e08af4e9f924"
@@ -138,6 +161,10 @@
     "x86_64_windows": {
       "etag": "0x8DCBC8CA673BA3E",
       "checksum": "5c5ea443dc5a2149b2abcaaa19ab7738932eb81ee6335771bfef4d075465f006"
+    },
+    "aarch64_linux_musl": {
+      "etag": "0x8DCBC8C0C4D4950",
+      "checksum": "9a8e6bfd5b0db6082842ff79934b926b5d1824a4cdef96040f0f49ac1aeea6f1"
     },
     "aarch64_macos": {
       "etag": "0x8DCBC8BED140D01",
@@ -160,6 +187,10 @@
       "etag": "0x8DCAD8018A2BD7D",
       "checksum": "d71523c4a477c9526e56f8056feed9cf5a2cc99eb0f22bf92effd2d3929a965f"
     },
+    "aarch64_linux_musl": {
+      "etag": "0x8DCAD7F7F7A95BD",
+      "checksum": "8b2c478667f2d057564917f119a7bafeb849814f5f1b9c04ac4f72ca89e22610"
+    },
     "aarch64_macos": {
       "etag": "0x8DCAD7F5601BBF5",
       "checksum": "8d746b318ac8b06e473356badcfd0b6d51c7d0fb92778fe13c432214db27e98b"
@@ -181,6 +212,10 @@
       "etag": "0x8DC8EEA5793DCDE",
       "checksum": "cecbbab97c8c0b47070038ba4f585fce79dd397b47e0bca0247bfa2967cc8017"
     },
+    "aarch64_linux_musl": {
+      "etag": "0x8DC8EE9DC80833D",
+      "checksum": "b6a4189419dc627949351a36ed08c2ba4cbb29ca913277a3170aa3bb56ee61be"
+    },
     "aarch64_macos": {
       "etag": "0x8DC8EE9B25D49CD",
       "checksum": "59a9bbf1ae898725085854d4f618a3c958f6fa67a0573f393a42c2ee3990497e"
@@ -201,6 +236,10 @@
     "x86_64_windows": {
       "etag": "0x8DC62EF476E0C5B",
       "checksum": "6a819e7ef26590d78ce6c127b6c0d966bd2c5012ae823455e4370f01e5e22167"
+    },
+    "aarch64_linux_musl": {
+      "etag": "0x8DC62EEAB35E252",
+      "checksum": "0ce628a161f7eaef856a88795e3c4bc77d0a8e9f9dd96a6d4746108bb9c493b8"
     },
     "aarch64_macos": {
       "etag": "0x8DC62EF06876D49",
