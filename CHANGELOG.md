@@ -10,6 +10,8 @@ Note: In this file, do not use the hard wrap in the middle of a sentence for com
 
 ## [Unreleased]
 
+## [2.47.29] - 2025-01-28
+
 - Support `cargo-semver-checks` on AArch64 Linux.
 
 - Support `cargo-zigbuild` on x86_64 macOS.
@@ -3420,7 +3422,8 @@ Note: This release is considered a breaking change because installing on version
 
 Initial release
 
-[Unreleased]: https://github.com/taiki-e/install-action/compare/v2.47.28...HEAD
+[Unreleased]: https://github.com/taiki-e/install-action/compare/v2.47.29...HEAD
+[2.47.29]: https://github.com/taiki-e/install-action/compare/v2.47.28...v2.47.29
 [2.47.28]: https://github.com/taiki-e/install-action/compare/v2.47.27...v2.47.28
 [2.47.27]: https://github.com/taiki-e/install-action/compare/v2.47.26...v2.47.27
 [2.47.26]: https://github.com/taiki-e/install-action/compare/v2.47.25...v2.47.26
