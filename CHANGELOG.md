@@ -10,6 +10,8 @@ Note: In this file, do not use the hard wrap in the middle of a sentence for com
 
 ## [Unreleased]
 
+- Support installing native binary for `mdbook` on AArch64 macOS. (Previously x86_64 macOS binary is used as fallback.)
+
 - Update `mdbook@latest` to 0.4.44.
 
 - Update `cargo-semver-checks@latest` to 0.39.0.
@@ -1595,7 +1597,7 @@ No change on the `install-action` itself.
 
 - Support `biome` on x86_64/AArch64 Linux (musl).
 
-- Support `zola` on AArch64 macOS. (Previously x86_64 macOS binary is used as fallback.)
+- Support installing native binary for `zola` on AArch64 macOS. (Previously x86_64 macOS binary is used as fallback.)
 
 ## [2.27.14] - 2024-03-01
 
