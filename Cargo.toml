@@ -1,6 +1,6 @@
 [workspace]
 resolver = "2"
-members = ["tools/codegen"]
+members = ["tools/codegen", "tools/manifest-schema"]
 
 # This table is shared by projects under github.com/taiki-e.
 # It is not intended for manual editing.
