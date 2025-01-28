@@ -10,6 +10,12 @@ Note: In this file, do not use the hard wrap in the middle of a sentence for com
 
 ## [Unreleased]
 
+No change on the `install-action` itself.
+
+- Provide `install-action-manifest-schema` crate to access to the `install-action` manifests from Rust code. ([#657](https://github.com/taiki-e/install-action/pull/657), thanks @NobodyXu)
+
+  This is being considered for use to speed up `cargo-binstall` in the future.
+
 ## [2.47.27] - 2025-01-28
 
 - Update `editorconfig-checker@latest` to 3.2.0.
