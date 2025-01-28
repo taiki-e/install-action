@@ -2,16 +2,30 @@
   "repository": "https://github.com/CycloneDX/cyclonedx-rust-cargo",
   "tag_prefix": "cargo-cyclonedx-",
   "rust_crate": "${package}",
+  "bin": "${package}-${rust_target}/${package}${exe}",
   "version_range": ">= 0.5.0",
   "platform": {
-    "x86_64_macos": {
-      "asset_name": "${package}-Darwin-x86_64.tar.gz"
-    },
-    "x86_64_windows": {
-      "asset_name": "${package}-Win-x86_64.zip"
-    },
     "x86_64_linux_gnu": {
       "asset_name": "${package}-linux-amd64.tar.gz"
+    },
+    "x86_64_linux_musl": {
+      "asset_name": "${package}-${rust_target}.tar.xz"
+    },
+    "x86_64_macos": {
+      "asset_name": [
+        "${package}-${rust_target}.tar.xz",
+        "${package}-Darwin-x86_64.tar.gz"
+      ]
+    },
+    "x86_64_windows": {
+      "asset_name": [
+        "${package}-${rust_target}.zip",
+        "${package}-Win-x86_64.zip"
+      ],
+      "bin": "${package}${exe}"
+    },
+    "aarch64_macos": {
+      "asset_name": "${package}-${rust_target}.tar.xz"
     }
   }
 }

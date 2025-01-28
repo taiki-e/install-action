@@ -8,7 +8,6 @@ cd -- "$(dirname -- "$0")"/../..
 # They don't provide prebuilt binaries for musl or old glibc host.
 # version `GLIBC_2.34' not found
 glibc_pre_2_34_incompat=(
-  cargo-cyclonedx
   cargo-spellcheck
   wait-for-them
   xbuild
@@ -36,7 +35,7 @@ glibc_pre_2_27_incompat=(
 # version `GLIBC_2.17' not found
 glibc_pre_2_17_incompat=(
   "${glibc_pre_2_27_incompat[@]}"
-  deepsource
+  deepsource # https://github.com/DeepSourceCorp/cli/issues/245
 )
 musl_incompat=(
   "${glibc_pre_2_17_incompat[@]}"
