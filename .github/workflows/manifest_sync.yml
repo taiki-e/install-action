@@ -5,7 +5,7 @@ permissions:
 
 on:
   release:
-    types: [released]
+    types: [published]
 
 env:
   WORKSPACE: /tmp/workspace
