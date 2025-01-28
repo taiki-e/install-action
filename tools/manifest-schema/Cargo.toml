@@ -4,8 +4,8 @@ version = "0.1.0"
 edition = "2021"
 license = "MIT OR Apache-2.0"
 
+# Note: semver and serde are public dependencies.
 [dependencies]
-anyhow = "1"
 semver = { version = "1", features = ["serde"] }
 serde = "1"
 serde_derive = "1"

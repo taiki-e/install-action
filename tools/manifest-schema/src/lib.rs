@@ -11,7 +11,6 @@ use std::{
     str::FromStr,
 };
 
-use anyhow::Result;
 use serde::{
     de::{self, Deserialize, Deserializer},
     ser::{Serialize, Serializer},
