@@ -12,7 +12,7 @@
     "version": "3.2.0"
   },
   "3.2.0": {
-    "x86_64_linux_gnu": {
+    "x86_64_linux_musl": {
       "url": "https://github.com/editorconfig-checker/editorconfig-checker/releases/download/v3.2.0/ec-linux-amd64.tar.gz",
       "etag": "0x8DD3F08FBCBE9E3",
       "checksum": "5e6a63097904be33c8d18e960f54fd8f60ada5464fe0056cd3dbbd0678584d15",
@@ -30,7 +30,7 @@
       "checksum": "af614995342fdf51308895f0df04c40d88d22b345c8df1dc7b5b379c1c54d441",
       "bin": "bin/ec-windows-amd64.exe"
     },
-    "aarch64_linux_gnu": {
+    "aarch64_linux_musl": {
       "url": "https://github.com/editorconfig-checker/editorconfig-checker/releases/download/v3.2.0/ec-linux-arm64.tar.gz",
       "etag": "0x8DD3F08FC1350E7",
       "checksum": "1a49bfff89d0622ccdf81d9a680c7c8bdf5dd80416b7046f66c1822ad0d60f85",
@@ -53,7 +53,7 @@
     "version": "3.1.2"
   },
   "3.1.2": {
-    "x86_64_linux_gnu": {
+    "x86_64_linux_musl": {
       "url": "https://github.com/editorconfig-checker/editorconfig-checker/releases/download/v3.1.2/ec-linux-amd64.tar.gz",
       "etag": "0x8DD31C3802BB3A5",
       "checksum": "3fd4fc81e5077f89faddb71ff05a5d6e2983b8c3953d1b1b6663c7245300e653",
@@ -71,7 +71,7 @@
       "checksum": "58ced741383e4e8d68aeeda4c2a6c08deb52e45fbb3a5a976c52f161b62b8032",
       "bin": "bin/ec-windows-amd64.exe"
     },
-    "aarch64_linux_gnu": {
+    "aarch64_linux_musl": {
       "url": "https://github.com/editorconfig-checker/editorconfig-checker/releases/download/v3.1.2/ec-linux-arm64.tar.gz",
       "etag": "0x8DD31C38037B40E",
       "checksum": "1333275ced71f1814db1ae677681a1b8b9d412d7046675594f7cdb1f8c7c47d1",
@@ -91,7 +91,7 @@
     }
   },
   "3.1.1": {
-    "x86_64_linux_gnu": {
+    "x86_64_linux_musl": {
       "url": "https://github.com/editorconfig-checker/editorconfig-checker/releases/download/v3.1.1/ec-linux-amd64.tar.gz",
       "etag": "0x8DD30098E5600DE",
       "checksum": "d750eebd0b296e1f2aa8e900f4fcc2e248e9638bd1bf9e858203ee236a21de00",
@@ -109,7 +109,7 @@
       "checksum": "a6a7340365f51ab37a665e79d2cfeca46d25065b95ee01061abeb7ef666bc9b8",
       "bin": "bin/ec-windows-amd64.exe"
     },
-    "aarch64_linux_gnu": {
+    "aarch64_linux_musl": {
       "url": "https://github.com/editorconfig-checker/editorconfig-checker/releases/download/v3.1.1/ec-linux-arm64.tar.gz",
       "etag": "0x8DD30098E7918D1",
       "checksum": "f7cbdfd08704b8ab83f5b48ab6c8354d4aef01c408ab8c181c6d571bc1a4e24a",
@@ -129,7 +129,7 @@
     }
   },
   "3.1.0": {
-    "x86_64_linux_gnu": {
+    "x86_64_linux_musl": {
       "url": "https://github.com/editorconfig-checker/editorconfig-checker/releases/download/v3.1.0/ec-linux-amd64.tar.gz",
       "etag": "0x8DD2FEB7A3F6836",
       "checksum": "43158e9de5ff5c22b1e972440d830511621dbd2c3b8a57878896c7bd26032dde",
@@ -147,7 +147,7 @@
       "checksum": "98570ba73976e756e8312530fed2d6caa0a1510d9552530a0e18f127df1ed186",
       "bin": "bin/ec-windows-amd64.exe"
     },
-    "aarch64_linux_gnu": {
+    "aarch64_linux_musl": {
       "url": "https://github.com/editorconfig-checker/editorconfig-checker/releases/download/v3.1.0/ec-linux-arm64.tar.gz",
       "etag": "0x8DD2FEB796602D4",
       "checksum": "3ac92a540367ccc24c07fd0cfcf00128d93f47c22efcd504bbbcbf5df5040686",
@@ -170,7 +170,7 @@
     "version": "3.0.3"
   },
   "3.0.3": {
-    "x86_64_linux_gnu": {
+    "x86_64_linux_musl": {
       "url": "https://github.com/editorconfig-checker/editorconfig-checker/releases/download/v3.0.3/ec-linux-amd64.tar.gz",
       "etag": "0x8DC9B4F6F214767",
       "checksum": "fc698b0bf5bca0d42e28dd59d72e25487a51f645ca242c5f74bae975369f16aa",
@@ -188,7 +188,7 @@
       "checksum": "97d7b0530a172e49310010408286176665bbeedf6b38058ac3f125409c3a3b82",
       "bin": "bin/ec-windows-amd64.exe"
     },
-    "aarch64_linux_gnu": {
+    "aarch64_linux_musl": {
       "url": "https://github.com/editorconfig-checker/editorconfig-checker/releases/download/v3.0.3/ec-linux-arm64.tar.gz",
       "etag": "0x8DC9B4F74C548E5",
       "checksum": "d5991ae92170af79ec2052840176bf155d00eaf6eb5a2c8ffbf46f6378c21776",
@@ -208,7 +208,7 @@
     }
   },
   "3.0.2": {
-    "x86_64_linux_gnu": {
+    "x86_64_linux_musl": {
       "url": "https://github.com/editorconfig-checker/editorconfig-checker/releases/download/v3.0.2/ec-linux-amd64.tar.gz",
       "etag": "0x8DC9A9036E834A7",
       "checksum": "2f11b26b34d97f07120038bf517af029b99f90fe96b77369fd66a301ab7a557e",
@@ -226,7 +226,7 @@
       "checksum": "74ecb356917a55ad4276b09ae2cd0fe28ab8878121c5173a35b5acadd50e7bf1",
       "bin": "bin/ec-windows-amd64.exe"
     },
-    "aarch64_linux_gnu": {
+    "aarch64_linux_musl": {
       "url": "https://github.com/editorconfig-checker/editorconfig-checker/releases/download/v3.0.2/ec-linux-arm64.tar.gz",
       "etag": "0x8DC9A903C7370B0",
       "checksum": "8836eabc57daf4717b55ae2ce002469f8a14123c2129b7a9cf0597c98acfe928",
@@ -246,7 +246,7 @@
     }
   },
   "3.0.1": {
-    "x86_64_linux_gnu": {
+    "x86_64_linux_musl": {
       "url": "https://github.com/editorconfig-checker/editorconfig-checker/releases/download/v3.0.1/ec-linux-amd64.tar.gz",
       "etag": "0x8DC54967F3BEFBA",
       "checksum": "debda88bcf5048280101b743b3104732650c8b49a2a017ed815481c817cfe13f",
@@ -264,7 +264,7 @@
       "checksum": "902556a8558108f910834f3e116f778e4a6710dbc74f79a065039ea52abe4d25",
       "bin": "bin/ec-windows-amd64.exe"
     },
-    "aarch64_linux_gnu": {
+    "aarch64_linux_musl": {
       "url": "https://github.com/editorconfig-checker/editorconfig-checker/releases/download/v3.0.1/ec-linux-arm64.tar.gz",
       "etag": "0x8DC549684C470C1",
       "checksum": "59de9965c7b2629112b158bedff3f132115bd53fd14e3b477cc3a5fc77233e6b",
@@ -284,7 +284,7 @@
     }
   },
   "3.0.0": {
-    "x86_64_linux_gnu": {
+    "x86_64_linux_musl": {
       "url": "https://github.com/editorconfig-checker/editorconfig-checker/releases/download/v3.0.0/ec-linux-amd64.tar.gz",
       "etag": "0x8DC3C3FCCBF9621",
       "checksum": "8e2f3c5fa4891542535185a4859c5f92832bc11821eb03a081bc6bd87af5a829",
@@ -302,7 +302,7 @@
       "checksum": "ff171ef63361bbd783622ba778a83e6fe5d6615e8b9e9e9c2f2c177e89dba499",
       "bin": "bin/ec-windows-amd64.exe"
     },
-    "aarch64_linux_gnu": {
+    "aarch64_linux_musl": {
       "url": "https://github.com/editorconfig-checker/editorconfig-checker/releases/download/v3.0.0/ec-linux-arm64.tar.gz",
       "etag": "0x8DC3C3FD0E61D19",
       "checksum": "edf1d12ba1e6ff70090f063e7937081b49ba6007cd02e45f8329bbf965ed609e",
