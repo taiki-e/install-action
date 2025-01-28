@@ -1,0 +1,53 @@
+{
+  "rust_crate": "cargo-binstall",
+  "template": {
+    "x86_64_linux_musl": {
+      "url": "https://github.com/cargo-bins/cargo-binstall/releases/download/v${version}/cargo-binstall-x86_64-unknown-linux-musl.tgz"
+    },
+    "x86_64_macos": {
+      "url": "https://github.com/cargo-bins/cargo-binstall/releases/download/v${version}/cargo-binstall-x86_64-apple-darwin.zip"
+    },
+    "x86_64_windows": {
+      "url": "https://github.com/cargo-bins/cargo-binstall/releases/download/v${version}/cargo-binstall-x86_64-pc-windows-msvc.zip"
+    },
+    "aarch64_linux_musl": {
+      "url": "https://github.com/cargo-bins/cargo-binstall/releases/download/v${version}/cargo-binstall-aarch64-unknown-linux-musl.tgz"
+    },
+    "aarch64_macos": {
+      "url": "https://github.com/cargo-bins/cargo-binstall/releases/download/v${version}/cargo-binstall-aarch64-apple-darwin.zip"
+    },
+    "aarch64_windows": {
+      "url": "https://github.com/cargo-bins/cargo-binstall/releases/download/v${version}/cargo-binstall-aarch64-pc-windows-msvc.zip"
+    }
+  },
+  "license_markdown": "[GPL-3.0](https://github.com/cargo-bins/cargo-binstall/blob/HEAD/crates/bin/LICENSE)",
+  "latest": {
+    "version": "1.10.22"
+  },
+  "1.10.22": {
+    "x86_64_linux_musl": {
+      "etag": "0x8DD38568770C382",
+      "checksum": "74d7c647c7e60bb8464fa551702fdd38a7241f5cedb2c4edc3b11639cd1dae47"
+    },
+    "x86_64_macos": {
+      "etag": "0x8DD38560D10F1DA",
+      "checksum": "0abaad286197df9e5a3d25bfdca682fa91fef65fef13f42e20ec24a98165c71a"
+    },
+    "x86_64_windows": {
+      "etag": "0x8DD3857BFED715A",
+      "checksum": "36d6ea24db049a36d0eab33003e6ee007955f01a8ce89fef46d4026adb86db96"
+    },
+    "aarch64_linux_musl": {
+      "etag": "0x8DD38563219A538",
+      "checksum": "b8c32b1b007482f42f6c4b5f8cfeb168f9674ec6448bfa29ae0c4ba01b7a370b"
+    },
+    "aarch64_macos": {
+      "etag": "0x8DD3856413081F7",
+      "checksum": "97ce4a2f18181f052dda266b042d8bb220e48ffe40ca75e796ae4c5e418b9e01"
+    },
+    "aarch64_windows": {
+      "etag": "0x8DD3857931A5667",
+      "checksum": "d86dfba0c13f7c84724e1d21fcec35b8a42633733215a61d1ee183455b12db5e"
+    }
+  }
+}

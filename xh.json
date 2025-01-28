@@ -1,0 +1,123 @@
+{
+  "rust_crate": "xh",
+  "template": {
+    "x86_64_linux_musl": {
+      "url": "https://github.com/ducaale/xh/releases/download/v${version}/xh-v${version}-x86_64-unknown-linux-musl.tar.gz",
+      "bin": "xh-v${version}-x86_64-unknown-linux-musl/xh"
+    },
+    "x86_64_macos": {
+      "url": "https://github.com/ducaale/xh/releases/download/v${version}/xh-v${version}-x86_64-apple-darwin.tar.gz",
+      "bin": "xh-v${version}-x86_64-apple-darwin/xh"
+    },
+    "x86_64_windows": {
+      "url": "https://github.com/ducaale/xh/releases/download/v${version}/xh-v${version}-x86_64-pc-windows-msvc.zip",
+      "bin": "xh-v${version}-x86_64-pc-windows-msvc/xh.exe"
+    },
+    "aarch64_linux_musl": {
+      "url": "https://github.com/ducaale/xh/releases/download/v${version}/xh-v${version}-aarch64-unknown-linux-musl.tar.gz",
+      "bin": "xh-v${version}-aarch64-unknown-linux-musl/xh"
+    },
+    "aarch64_macos": {
+      "url": "https://github.com/ducaale/xh/releases/download/v${version}/xh-v${version}-aarch64-apple-darwin.tar.gz",
+      "bin": "xh-v${version}-aarch64-apple-darwin/xh"
+    }
+  },
+  "license_markdown": "[MIT](https://github.com/ducaale/xh/blob/master/LICENSE)",
+  "latest": {
+    "version": "0.23.1"
+  },
+  "0.23": {
+    "version": "0.23.1"
+  },
+  "0.23.1": {
+    "x86_64_linux_musl": {
+      "etag": "0x8DD2B233BDE1B21",
+      "checksum": "a29ed6afcabf2c575c24499397fa3a840047dffc4a68e4a1a886f22584712946"
+    },
+    "x86_64_macos": {
+      "etag": "0x8DD2B2368C2662C",
+      "checksum": "e9e0f97e16095d2afb7e9247e6d250c95673dc3305a05539aafc2506ab59ad0a"
+    },
+    "x86_64_windows": {
+      "etag": "0x8DD2B2378B25C5D",
+      "checksum": "ea2da950b69c1093c1c2f7293fa1bc75cd7ae5719ff23397ee985bf1995a8014"
+    },
+    "aarch64_linux_musl": {
+      "etag": "0x8DD2B2336F9AF21",
+      "checksum": "52654b727a7a9dd712afaa40f4b6d3127079b9d95c24ee7a96e477941e5ca751"
+    },
+    "aarch64_macos": {
+      "etag": "0x8DD2B230558D457",
+      "checksum": "849841ce3c05cd64405d6282298869185a806b4f008ab5c6809fb8700e985f01"
+    }
+  },
+  "0.23.0": {
+    "x86_64_linux_musl": {
+      "etag": "0x8DCEB0514501529",
+      "checksum": "79fb00506a53ae2bbc490e4690c75d488ff029e06f8e7835095d1c680103488a"
+    },
+    "x86_64_macos": {
+      "etag": "0x8DCEB0504807C07",
+      "checksum": "cedfb95e23ff56f40e481a3431c5a7e37e4e4d53d43fb3e3cdf2d75b23c26376"
+    },
+    "x86_64_windows": {
+      "etag": "0x8DCEB062C0639CE",
+      "checksum": "e871e25ad91c78c6a944bf993cd71cf845f2dc4cac649d1b2fa337ec1acc2caf"
+    },
+    "aarch64_linux_musl": {
+      "etag": "0x8DCEB050333C7BB",
+      "checksum": "c3e7d0d019b0423241c9e4d367811f68f68a38cb003190c9bbe6f4c024c70eeb"
+    },
+    "aarch64_macos": {
+      "etag": "0x8DCEB04D7763AAA",
+      "checksum": "2ee3e65c109297edb06e69d7e2254cad3bf44c1a81a3a6ed62d96006eb3d355b"
+    }
+  },
+  "0.22": {
+    "version": "0.22.2"
+  },
+  "0.22.2": {
+    "x86_64_linux_musl": {
+      "etag": "0x8DC9F9C8C4294B1",
+      "checksum": "4d789ef0b85fb77188d6d101591e8f5a0e3819c08c200eb1aa997492bc932436"
+    },
+    "x86_64_macos": {
+      "etag": "0x8DC9F9C9518FBD2",
+      "checksum": "b85929f4b7feb5e46091cf30b034b4f87fe04aed62e0d2a79cb36f14d0ec97ec"
+    },
+    "x86_64_windows": {
+      "etag": "0x8DC9F9C9A51E2C4",
+      "checksum": "677ac0932b4ad8db51df5101650a6a50683e23228a0b510684aa1aaa7e1ae686"
+    },
+    "aarch64_linux_musl": {
+      "etag": "0x8DC9F9C7B4895E8",
+      "checksum": "ce4ea710d40b89908949e0d08aaface1d13d0813fcf919e70bde79a023cf1155"
+    },
+    "aarch64_macos": {
+      "etag": "0x8DC9F9C51AC8364",
+      "checksum": "cea6f77bf7fe9f63eabbb4a9b12543b1141183cbcf616473e5e51304258030fa"
+    }
+  },
+  "0.22.0": {
+    "x86_64_linux_musl": {
+      "etag": "0x8DC5B4261C54E83",
+      "checksum": "270a4ece43a44f4c270417b50ddea430029b98cc5103e264bf65f64fac5b60a8"
+    },
+    "x86_64_macos": {
+      "etag": "0x8DC5B42A43612BA",
+      "checksum": "891a015ac04fda2a27df82991b9495213ce38d97827192c771da798bf10c875b"
+    },
+    "x86_64_windows": {
+      "etag": "0x8DC5B428229FD84",
+      "checksum": "cbaeabbfece018e05f1ef0e380b5b797c61524b11662598bc444402bcb0607d0"
+    },
+    "aarch64_linux_musl": {
+      "etag": "0x8DC5B4250843E65",
+      "checksum": "e4feb4a463183c3cc139f906a2cfe84dd3790d277f2915271a9a2ef3a0978ffb"
+    },
+    "aarch64_macos": {
+      "etag": "0x8DC5B4219955A94",
+      "checksum": "48fdabeedd42b2638a9e79bbb2506eaea7371e381dbf3cebf62e5cd40a39cc64"
+    }
+  }
+}

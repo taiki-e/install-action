@@ -1,0 +1,38 @@
+{
+  "rust_crate": "cargo-valgrind",
+  "template": {
+    "x86_64_linux_musl": {
+      "url": "https://github.com/jfrimmel/cargo-valgrind/releases/download/v${version}/cargo-valgrind-${version}-x86_64-unknown-linux-musl.tar.gz"
+    },
+    "x86_64_macos": {
+      "url": "https://github.com/jfrimmel/cargo-valgrind/releases/download/v${version}/cargo-valgrind-${version}-x86_64-apple-darwin.tar.gz"
+    },
+    "x86_64_windows": {
+      "url": "https://github.com/jfrimmel/cargo-valgrind/releases/download/v${version}/cargo-valgrind-${version}-x86_64-pc-windows-msvc.zip"
+    }
+  },
+  "license_markdown": "[MIT](https://github.com/jfrimmel/cargo-valgrind/blob/master/LICENSE-MIT) OR [Apache-2.0](https://github.com/jfrimmel/cargo-valgrind/blob/master/LICENSE-APACHE)",
+  "latest": {
+    "version": "2.1.0"
+  },
+  "2": {
+    "version": "2.1.0"
+  },
+  "2.1": {
+    "version": "2.1.0"
+  },
+  "2.1.0": {
+    "x86_64_linux_musl": {
+      "etag": "0x8DA70B724C7F3AF",
+      "checksum": "eaca63383f6efd2532fd1708d0de9e0bad3bebec53d6a2fd106924277a870bf1"
+    },
+    "x86_64_macos": {
+      "etag": "0x8DA70B724C66D4B",
+      "checksum": "654578f72d1224876a276780fd96c9cca28b2432d2485dc3871dca46966d2359"
+    },
+    "x86_64_windows": {
+      "etag": "0x8DA70B724D33CA8",
+      "checksum": "43c3cc0472e4b3887db06cbd042706fc193eec6d274590b1c6d5e1aaf274f3ab"
+    }
+  }
+}

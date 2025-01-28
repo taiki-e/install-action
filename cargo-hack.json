@@ -1,0 +1,1979 @@
+{
+  "rust_crate": "cargo-hack",
+  "template": null,
+  "license_markdown": "[Apache-2.0](https://github.com/taiki-e/cargo-hack/blob/main/LICENSE-APACHE) OR [MIT](https://github.com/taiki-e/cargo-hack/blob/main/LICENSE-MIT)",
+  "latest": {
+    "version": "0.6.34"
+  },
+  "0.6": {
+    "version": "0.6.34"
+  },
+  "0.6.34": {
+    "x86_64_linux_musl": {
+      "url": "https://github.com/taiki-e/cargo-hack/releases/download/v0.6.34/cargo-hack-x86_64-unknown-linux-musl.tar.gz",
+      "etag": "0x8DD364BF6437B65",
+      "checksum": "7b58e29544ae7b357deda5118a17053e4929f94f8d8595215d27cbbb415c47a5"
+    },
+    "x86_64_macos": {
+      "url": "https://github.com/taiki-e/cargo-hack/releases/download/v0.6.34/cargo-hack-x86_64-apple-darwin.tar.gz",
+      "etag": "0x8DD364C545B2CF1",
+      "checksum": "4fc72e4b3e1d7c7063efeddd4ebc196b4ee062e9b772dad24bebf8cb15749e21"
+    },
+    "x86_64_windows": {
+      "url": "https://github.com/taiki-e/cargo-hack/releases/download/v0.6.34/cargo-hack-x86_64-pc-windows-msvc.tar.gz",
+      "etag": "0x8DD364C4A143D6D",
+      "checksum": "6206ca07f99945f58765d1669fb2a995d96d809424ff7424257ce5f0fad23401"
+    },
+    "aarch64_linux_musl": {
+      "url": "https://github.com/taiki-e/cargo-hack/releases/download/v0.6.34/cargo-hack-aarch64-unknown-linux-musl.tar.gz",
+      "etag": "0x8DD364BFC48B3B7",
+      "checksum": "2b30401f9eb7664affdda7ce13b5d8421e2ea5ea74a854a71679ff68bf766761"
+    },
+    "aarch64_macos": {
+      "url": "https://github.com/taiki-e/cargo-hack/releases/download/v0.6.34/cargo-hack-aarch64-apple-darwin.tar.gz",
+      "etag": "0x8DD364C24072F24",
+      "checksum": "f2e88526e44b5934b5a0a2aa10fbf621ec44fe509c6ac6a82e1d49fa41d70943"
+    },
+    "aarch64_windows": {
+      "url": "https://github.com/taiki-e/cargo-hack/releases/download/v0.6.34/cargo-hack-aarch64-pc-windows-msvc.tar.gz",
+      "etag": "0x8DD364C3F0E09C1",
+      "checksum": "9c9903aa9ae2caaf38c37a0375e18afc50da1c1ca69c3f89b4219b530ab59a0c"
+    }
+  },
+  "0.6.33": {
+    "x86_64_linux_musl": {
+      "url": "https://github.com/taiki-e/cargo-hack/releases/download/v0.6.33/cargo-hack-x86_64-unknown-linux-musl.tar.gz",
+      "etag": "0x8DCFB02EE9D2B21",
+      "checksum": "c19104537314c02e84b175b4b9365a558293be0c1590b48f3c2cea1c88ab6637"
+    },
+    "x86_64_macos": {
+      "url": "https://github.com/taiki-e/cargo-hack/releases/download/v0.6.33/cargo-hack-x86_64-apple-darwin.tar.gz",
+      "etag": "0x8DCFB03136D31A1",
+      "checksum": "a7fe972fb0372f22f30325d35feb627b9e1f399d58ade88de6952d75ad09cb2f"
+    },
+    "x86_64_windows": {
+      "url": "https://github.com/taiki-e/cargo-hack/releases/download/v0.6.33/cargo-hack-x86_64-pc-windows-msvc.tar.gz",
+      "etag": "0x8DCFB031FF74102",
+      "checksum": "5e16c1aebf8f1e8911faa12e14cf684d5e2b98cd5b578118e7026499887a8584"
+    },
+    "aarch64_linux_musl": {
+      "url": "https://github.com/taiki-e/cargo-hack/releases/download/v0.6.33/cargo-hack-aarch64-unknown-linux-musl.tar.gz",
+      "etag": "0x8DCFB02F4611126",
+      "checksum": "7e97c8c6a80a0f77b81359c631330ba4faaa5e29008f05ebbeeceffce9ae1cde"
+    },
+    "aarch64_macos": {
+      "url": "https://github.com/taiki-e/cargo-hack/releases/download/v0.6.33/cargo-hack-aarch64-apple-darwin.tar.gz",
+      "etag": "0x8DCFB02FA6B0017",
+      "checksum": "91dc5a07348a99bf9222cc520d2a1a2e5f3f5d19ff8e5e96c6e4241275661ccf"
+    },
+    "aarch64_windows": {
+      "url": "https://github.com/taiki-e/cargo-hack/releases/download/v0.6.33/cargo-hack-aarch64-pc-windows-msvc.tar.gz",
+      "etag": "0x8DCFB0343B00D15",
+      "checksum": "101b2a23cc560ccbc19b8ab6d6f68897b4e3e5780b26216f2bfa4f0c5d0b61bf"
+    }
+  },
+  "0.6.32": {
+    "x86_64_linux_musl": {
+      "url": "https://github.com/taiki-e/cargo-hack/releases/download/v0.6.32/cargo-hack-x86_64-unknown-linux-musl.tar.gz",
+      "etag": "0x8DCF5D594974259",
+      "checksum": "f25ed304ed4fb86baab8dc18233d7df962c4287d944f8d8a7400bec111296b9c"
+    },
+    "x86_64_macos": {
+      "url": "https://github.com/taiki-e/cargo-hack/releases/download/v0.6.32/cargo-hack-x86_64-apple-darwin.tar.gz",
+      "etag": "0x8DCF5D598E96228",
+      "checksum": "f4c88566057f33b2bd630240ad96fbc2e2a58c836f1446c758d1ba55588a71e4"
+    },
+    "x86_64_windows": {
+      "url": "https://github.com/taiki-e/cargo-hack/releases/download/v0.6.32/cargo-hack-x86_64-pc-windows-msvc.tar.gz",
+      "etag": "0x8DCF5D58ACEDEC8",
+      "checksum": "da33aa9044eb5e50611a7f2843fde289bb792b2554f479a012838537af880abf"
+    },
+    "aarch64_linux_musl": {
+      "url": "https://github.com/taiki-e/cargo-hack/releases/download/v0.6.32/cargo-hack-aarch64-unknown-linux-musl.tar.gz",
+      "etag": "0x8DCF5D579E74C5E",
+      "checksum": "4a74e22f8db380e57fe3f6c393f1caa5b22bacbcffa425df79a81115e92d8079"
+    },
+    "aarch64_macos": {
+      "url": "https://github.com/taiki-e/cargo-hack/releases/download/v0.6.32/cargo-hack-aarch64-apple-darwin.tar.gz",
+      "etag": "0x8DCF5D57FE5D5AF",
+      "checksum": "ce0194964f7c1ead05cfdebb7223ae8848f04385e23ff7377821a28bada4047e"
+    },
+    "aarch64_windows": {
+      "url": "https://github.com/taiki-e/cargo-hack/releases/download/v0.6.32/cargo-hack-aarch64-pc-windows-msvc.tar.gz",
+      "etag": "0x8DCF5D5A60DC982",
+      "checksum": "029f8675c18ffbaf365175e55a383859ef013a97041e05b7e2738df5258696d0"
+    }
+  },
+  "0.6.31": {
+    "x86_64_linux_musl": {
+      "url": "https://github.com/taiki-e/cargo-hack/releases/download/v0.6.31/cargo-hack-x86_64-unknown-linux-musl.tar.gz",
+      "etag": "0x8DCB7A9CB75CB85",
+      "checksum": "b5e17ff9ad0224af30af1e1e8d27fef1010c7fda58048a12c704ffb2675b6ad6"
+    },
+    "x86_64_macos": {
+      "url": "https://github.com/taiki-e/cargo-hack/releases/download/v0.6.31/cargo-hack-x86_64-apple-darwin.tar.gz",
+      "etag": "0x8DCB7A9E485B392",
+      "checksum": "2d935eafc5082eb19dc33b123bac7ca898109bb0ca7a8ab7de19c44b4d5317a0"
+    },
+    "x86_64_windows": {
+      "url": "https://github.com/taiki-e/cargo-hack/releases/download/v0.6.31/cargo-hack-x86_64-pc-windows-msvc.tar.gz",
+      "etag": "0x8DCB7AA01F78A70",
+      "checksum": "5f56c408db441437830e6ef91eda64187880821fe54f455a956f9397443ff034"
+    },
+    "aarch64_linux_musl": {
+      "url": "https://github.com/taiki-e/cargo-hack/releases/download/v0.6.31/cargo-hack-aarch64-unknown-linux-musl.tar.gz",
+      "etag": "0x8DCB7A9BA4B08FA",
+      "checksum": "435bb927b1db4d45a4807e1857aa662e1fa0715c8402da7ac56f713cc904aff7"
+    },
+    "aarch64_macos": {
+      "url": "https://github.com/taiki-e/cargo-hack/releases/download/v0.6.31/cargo-hack-aarch64-apple-darwin.tar.gz",
+      "etag": "0x8DCB7A9D355C7A8",
+      "checksum": "ecd866a64c1cd14e90cc4670ec466f0c0408d86aa53cd9ca2d1cae42da4a7ffd"
+    },
+    "aarch64_windows": {
+      "url": "https://github.com/taiki-e/cargo-hack/releases/download/v0.6.31/cargo-hack-aarch64-pc-windows-msvc.tar.gz",
+      "etag": "0x8DCB7AA071F6D09",
+      "checksum": "a986372c14989387dab85aafc55bc36ee1959cec2a270447b132de7f75905802"
+    }
+  },
+  "0.6.30": {
+    "x86_64_linux_musl": {
+      "url": "https://github.com/taiki-e/cargo-hack/releases/download/v0.6.30/cargo-hack-x86_64-unknown-linux-musl.tar.gz",
+      "etag": "0x8DCA4ABE5CD20E8",
+      "checksum": "11afbe81bc9f8fa4be2e794afcc30e3067328f06c80388f0ac4129ecf577efc0"
+    },
+    "x86_64_macos": {
+      "url": "https://github.com/taiki-e/cargo-hack/releases/download/v0.6.30/cargo-hack-x86_64-apple-darwin.tar.gz",
+      "etag": "0x8DCA4AC10AD8390",
+      "checksum": "f82ba7dfda5229991483b825a52d71e6508798c97a1bd72df1663043dac823fe"
+    },
+    "x86_64_windows": {
+      "url": "https://github.com/taiki-e/cargo-hack/releases/download/v0.6.30/cargo-hack-x86_64-pc-windows-msvc.tar.gz",
+      "etag": "0x8DCA4ABF9E28FEB",
+      "checksum": "95047f9a961fcbb541ec684f82d933702e5aa0a4df06436a3cad2242e759d1be"
+    },
+    "aarch64_linux_musl": {
+      "url": "https://github.com/taiki-e/cargo-hack/releases/download/v0.6.30/cargo-hack-aarch64-unknown-linux-musl.tar.gz",
+      "etag": "0x8DCA4ABD9EC2493",
+      "checksum": "7a53bf67557782cc09d31ae7189517ac1609f34e3d540e34a328a863d1e480a6"
+    },
+    "aarch64_macos": {
+      "url": "https://github.com/taiki-e/cargo-hack/releases/download/v0.6.30/cargo-hack-aarch64-apple-darwin.tar.gz",
+      "etag": "0x8DCA4ABDFA8C145",
+      "checksum": "a8a6ef740f95c72ebe326c482a3cd296aacc21b6968997e9afe41b8cee647b2c"
+    },
+    "aarch64_windows": {
+      "url": "https://github.com/taiki-e/cargo-hack/releases/download/v0.6.30/cargo-hack-aarch64-pc-windows-msvc.tar.gz",
+      "etag": "0x8DCA4AC0C4B94EA",
+      "checksum": "15033f23af5b124ba8cdf656bdb1dbbd915387b5af18a7aee7c8e2a875393467"
+    }
+  },
+  "0.6.29": {
+    "x86_64_linux_musl": {
+      "url": "https://github.com/taiki-e/cargo-hack/releases/download/v0.6.29/cargo-hack-x86_64-unknown-linux-musl.tar.gz",
+      "etag": "0x8DCA2BE8E46AF95",
+      "checksum": "eab6cb8e3baf77c1c64157c19ff44d650ebf8ecea3f53c701fc7c512bf0367a2"
+    },
+    "x86_64_macos": {
+      "url": "https://github.com/taiki-e/cargo-hack/releases/download/v0.6.29/cargo-hack-x86_64-apple-darwin.tar.gz",
+      "etag": "0x8DCA2BEB6E7DDD2",
+      "checksum": "36645c70d8c8f1f7c071c0d05e0225ef0f940821951f0f3f74f51185e7f5747e"
+    },
+    "x86_64_windows": {
+      "url": "https://github.com/taiki-e/cargo-hack/releases/download/v0.6.29/cargo-hack-x86_64-pc-windows-msvc.tar.gz",
+      "etag": "0x8DCA2BEA91FAF21",
+      "checksum": "d41d67a5a3e5d438e54bbf0707b5b8143e7491d0f1cb6cd67f728051c07c0d74"
+    },
+    "aarch64_linux_musl": {
+      "url": "https://github.com/taiki-e/cargo-hack/releases/download/v0.6.29/cargo-hack-aarch64-unknown-linux-musl.tar.gz",
+      "etag": "0x8DCA2BE9519278C",
+      "checksum": "4215699894e43d6620e4619442a3bc8e6a76dee06980690fd90e09a5e13539a4"
+    },
+    "aarch64_macos": {
+      "url": "https://github.com/taiki-e/cargo-hack/releases/download/v0.6.29/cargo-hack-aarch64-apple-darwin.tar.gz",
+      "etag": "0x8DCA2BE9AD3C973",
+      "checksum": "ee00750378126c7e14402a45c34f95ed1ba4be2ae505b0c0020bb39b5b3467a4"
+    },
+    "aarch64_windows": {
+      "url": "https://github.com/taiki-e/cargo-hack/releases/download/v0.6.29/cargo-hack-aarch64-pc-windows-msvc.tar.gz",
+      "etag": "0x8DCA2BEB38D3768",
+      "checksum": "eb60047af7e69b6b12f7c9c53e787a855e16b1812b1cecbbe976b84718a707e9"
+    }
+  },
+  "0.6.28": {
+    "x86_64_linux_musl": {
+      "url": "https://github.com/taiki-e/cargo-hack/releases/download/v0.6.28/cargo-hack-x86_64-unknown-linux-musl.tar.gz",
+      "etag": "0x8DC5EEBED8FBC1D",
+      "checksum": "ddc2c14d114c26e21d1cfb2703a736e6ad3d85acee77cdd2df0c701e3115d778"
+    },
+    "x86_64_macos": {
+      "url": "https://github.com/taiki-e/cargo-hack/releases/download/v0.6.28/cargo-hack-x86_64-apple-darwin.tar.gz",
+      "etag": "0x8DC5EEC3E74A4E5",
+      "checksum": "d4ed122da3a1fd43c2ae97386d945e007e9793e1bc4833703827b59166d414ed"
+    },
+    "x86_64_windows": {
+      "url": "https://github.com/taiki-e/cargo-hack/releases/download/v0.6.28/cargo-hack-x86_64-pc-windows-msvc.tar.gz",
+      "etag": "0x8DC5EEC0D487CBB",
+      "checksum": "e4ee6550969fb4499f6df12f472ac68562668a9e02a5ba320d0abc44a1da66e3"
+    },
+    "aarch64_linux_musl": {
+      "url": "https://github.com/taiki-e/cargo-hack/releases/download/v0.6.28/cargo-hack-aarch64-unknown-linux-musl.tar.gz",
+      "etag": "0x8DC5EEBEB31B955",
+      "checksum": "f2b9f9e2fd587b8bc32c5db0bc18a6e40be6fe70c83d43c1f1a5fbc69a3237a8"
+    },
+    "aarch64_macos": {
+      "url": "https://github.com/taiki-e/cargo-hack/releases/download/v0.6.28/cargo-hack-aarch64-apple-darwin.tar.gz",
+      "etag": "0x8DC5EEC2B2DF25A",
+      "checksum": "309b23964961cb78ebb47344ede27d06a8c6c1b7b7acb051208769dda7e7661e"
+    },
+    "aarch64_windows": {
+      "url": "https://github.com/taiki-e/cargo-hack/releases/download/v0.6.28/cargo-hack-aarch64-pc-windows-msvc.tar.gz",
+      "etag": "0x8DC5EEBFC723429",
+      "checksum": "d1c21607a2f052dd14bfefd29c382f196fde6dae120e73cfb0054a457223fdbd"
+    }
+  },
+  "0.6.27": {
+    "x86_64_linux_musl": {
+      "url": "https://github.com/taiki-e/cargo-hack/releases/download/v0.6.27/cargo-hack-x86_64-unknown-linux-musl.tar.gz",
+      "etag": "0x8DC5301E0457807",
+      "checksum": "7713f063bdb52abf23e8a121664bba62144c54068e746a7c5904c9f396884db2"
+    },
+    "x86_64_macos": {
+      "url": "https://github.com/taiki-e/cargo-hack/releases/download/v0.6.27/cargo-hack-x86_64-apple-darwin.tar.gz",
+      "etag": "0x8DC530247B0EED0",
+      "checksum": "75e807f5c763a3d7a44dab7e13158299f9b9adf14247e41ded97e45ca38b799d"
+    },
+    "x86_64_windows": {
+      "url": "https://github.com/taiki-e/cargo-hack/releases/download/v0.6.27/cargo-hack-x86_64-pc-windows-msvc.tar.gz",
+      "etag": "0x8DC530220AD491D",
+      "checksum": "695b1a6bc887e07a52710670bbb13237276f6898446bfe2104b38df690f2d556"
+    },
+    "aarch64_linux_musl": {
+      "url": "https://github.com/taiki-e/cargo-hack/releases/download/v0.6.27/cargo-hack-aarch64-unknown-linux-musl.tar.gz",
+      "etag": "0x8DC5301DE923878",
+      "checksum": "904aff3154e3a981e138935f44296c007e84f464cc3da1fc96ee0a11b0511631"
+    },
+    "aarch64_macos": {
+      "url": "https://github.com/taiki-e/cargo-hack/releases/download/v0.6.27/cargo-hack-aarch64-apple-darwin.tar.gz",
+      "etag": "0x8DC530207094B51",
+      "checksum": "3a52aaa620296e0213e7e3fdd95e70f2c5677882c74a6c0a0ac8b8bae604e65f"
+    },
+    "aarch64_windows": {
+      "url": "https://github.com/taiki-e/cargo-hack/releases/download/v0.6.27/cargo-hack-aarch64-pc-windows-msvc.tar.gz",
+      "etag": "0x8DC53020146275D",
+      "checksum": "aedeb5aeb5bc7d01ce3f854dbd5bf6e5230c0c44ffd5d527a9ee85a60ccaafdf"
+    }
+  },
+  "0.6.26": {
+    "x86_64_linux_musl": {
+      "url": "https://github.com/taiki-e/cargo-hack/releases/download/v0.6.26/cargo-hack-x86_64-unknown-linux-musl.tar.gz",
+      "etag": "0x8DC5251975F51A2",
+      "checksum": "722bc8269e30ff75cfa260a3ba3a94f46fd3ad8de47a158fa2bde1d07ba3eb53"
+    },
+    "x86_64_macos": {
+      "url": "https://github.com/taiki-e/cargo-hack/releases/download/v0.6.26/cargo-hack-x86_64-apple-darwin.tar.gz",
+      "etag": "0x8DC52521591590F",
+      "checksum": "ea2b014cf60d6fcf3d85d277fe88a7f4ec1db7238077463f56f8093acaefccaf"
+    },
+    "x86_64_windows": {
+      "url": "https://github.com/taiki-e/cargo-hack/releases/download/v0.6.26/cargo-hack-x86_64-pc-windows-msvc.tar.gz",
+      "etag": "0x8DC5251B7783355",
+      "checksum": "9497dcecb1f09ca2f2f0a6a2c91a1152ba56c386981315461edeba4914da6433"
+    },
+    "aarch64_linux_musl": {
+      "url": "https://github.com/taiki-e/cargo-hack/releases/download/v0.6.26/cargo-hack-aarch64-unknown-linux-musl.tar.gz",
+      "etag": "0x8DC52519EEF6241",
+      "checksum": "77e63cf8c52718c12a0a46749464375c992ec2b7d524f8723a32623560612fce"
+    },
+    "aarch64_macos": {
+      "url": "https://github.com/taiki-e/cargo-hack/releases/download/v0.6.26/cargo-hack-aarch64-apple-darwin.tar.gz",
+      "etag": "0x8DC52520A1BA079",
+      "checksum": "8e896ca939c669d951acf98f2493f8a8b7a7beb3e808cb5af764c8f66a1c58e8"
+    },
+    "aarch64_windows": {
+      "url": "https://github.com/taiki-e/cargo-hack/releases/download/v0.6.26/cargo-hack-aarch64-pc-windows-msvc.tar.gz",
+      "etag": "0x8DC5251BA54C1E6",
+      "checksum": "9084bad2063b00d96237582b8623c4e13ed476585aa8461defe751fc134c77ea"
+    }
+  },
+  "0.6.25": {
+    "x86_64_linux_musl": {
+      "url": "https://github.com/taiki-e/cargo-hack/releases/download/v0.6.25/cargo-hack-x86_64-unknown-linux-musl.tar.gz",
+      "etag": "0x8DC524FCCB048BD",
+      "checksum": "e90bdb19108c308af9be1104d93209ce03aa6d91f5c54b5678682d970ba1660a"
+    },
+    "x86_64_macos": {
+      "url": "https://github.com/taiki-e/cargo-hack/releases/download/v0.6.25/cargo-hack-x86_64-apple-darwin.tar.gz",
+      "etag": "0x8DC5250452ADE16",
+      "checksum": "59636ba9a2452ebf030c654718392c950f4d0478a87c5b70a2a0cb55b6d283b5"
+    },
+    "x86_64_windows": {
+      "url": "https://github.com/taiki-e/cargo-hack/releases/download/v0.6.25/cargo-hack-x86_64-pc-windows-msvc.tar.gz",
+      "etag": "0x8DC524FDC2D3C72",
+      "checksum": "001102a8b6965dad68be41db1058b7e7abad4d8e9dd375912ae43ccebca7696c"
+    },
+    "aarch64_linux_musl": {
+      "url": "https://github.com/taiki-e/cargo-hack/releases/download/v0.6.25/cargo-hack-aarch64-unknown-linux-musl.tar.gz",
+      "etag": "0x8DC524FBD4ED463",
+      "checksum": "1307ce8db78fdf7616fb025893348eaf7e9ed77a3a3fe3fd348076a41a18f570"
+    },
+    "aarch64_macos": {
+      "url": "https://github.com/taiki-e/cargo-hack/releases/download/v0.6.25/cargo-hack-aarch64-apple-darwin.tar.gz",
+      "etag": "0x8DC5250450D8C0C",
+      "checksum": "29488347b36ee0a2d48b2d32d7b5b24addcdb2f42a52784de41de6353c62fd43"
+    },
+    "aarch64_windows": {
+      "url": "https://github.com/taiki-e/cargo-hack/releases/download/v0.6.25/cargo-hack-aarch64-pc-windows-msvc.tar.gz",
+      "etag": "0x8DC524FD60B4C50",
+      "checksum": "5f5bbe4a544e7b923365db6c3af05bdeed865952b6cc15c9ec30b7487b4cb52d"
+    }
+  },
+  "0.6.24": {
+    "x86_64_linux_musl": {
+      "url": "https://github.com/taiki-e/cargo-hack/releases/download/v0.6.24/cargo-hack-x86_64-unknown-linux-musl.tar.gz",
+      "etag": "0x8DC51E2FE61465C",
+      "checksum": "82a4a2cc134b5712df98fe36bb3b66652094f7e7c815c3559fc249671c5f0eca"
+    },
+    "x86_64_macos": {
+      "url": "https://github.com/taiki-e/cargo-hack/releases/download/v0.6.24/cargo-hack-x86_64-apple-darwin.tar.gz",
+      "etag": "0x8DC51E368979052",
+      "checksum": "9a95d8613269ff9543bdc1f5462518375aec4a3602c3283b3e6b1ff30c43fb2a"
+    },
+    "x86_64_windows": {
+      "url": "https://github.com/taiki-e/cargo-hack/releases/download/v0.6.24/cargo-hack-x86_64-pc-windows-msvc.tar.gz",
+      "etag": "0x8DC51E3182F811D",
+      "checksum": "12da431e0c2775bf7b187c26d14fb4e8af7d0e38887635bdbe5d458c131a7717"
+    },
+    "aarch64_linux_musl": {
+      "url": "https://github.com/taiki-e/cargo-hack/releases/download/v0.6.24/cargo-hack-aarch64-unknown-linux-musl.tar.gz",
+      "etag": "0x8DC51E302BBE8F4",
+      "checksum": "73e1e998a31a96ec692044f2fc7291d6a0f5e4259515b09f25541f1e497b12b8"
+    },
+    "aarch64_macos": {
+      "url": "https://github.com/taiki-e/cargo-hack/releases/download/v0.6.24/cargo-hack-aarch64-apple-darwin.tar.gz",
+      "etag": "0x8DC51E322A2F662",
+      "checksum": "e4fccd7a5eadc80c536dcfcadb608cbd0682bfd6ebe5dfe7580e781106213e54"
+    },
+    "aarch64_windows": {
+      "url": "https://github.com/taiki-e/cargo-hack/releases/download/v0.6.24/cargo-hack-aarch64-pc-windows-msvc.tar.gz",
+      "etag": "0x8DC51E3256563E6",
+      "checksum": "dcaf75eb059939fa8c8f942bba25b706a991af249672d6155cbae8dd15b70bfe"
+    }
+  },
+  "0.6.23": {
+    "x86_64_linux_musl": {
+      "url": "https://github.com/taiki-e/cargo-hack/releases/download/v0.6.23/cargo-hack-x86_64-unknown-linux-musl.tar.gz",
+      "etag": "0x8DC4E59758F51B1",
+      "checksum": "93769457e869d0bd5ae322666cc04f2515d558bc10c7d5da872eac6aaef25c43"
+    },
+    "x86_64_macos": {
+      "url": "https://github.com/taiki-e/cargo-hack/releases/download/v0.6.23/cargo-hack-x86_64-apple-darwin.tar.gz",
+      "etag": "0x8DC4E59F5DE2774",
+      "checksum": "c47a23a2a4e71d0a6f74344a87a38872e0b6dbc68ee86cc6c5df4d872080ef09"
+    },
+    "x86_64_windows": {
+      "url": "https://github.com/taiki-e/cargo-hack/releases/download/v0.6.23/cargo-hack-x86_64-pc-windows-msvc.tar.gz",
+      "etag": "0x8DC4E59E9B98EF5",
+      "checksum": "90edc889f244a17bdc1a74944b751d2a9176ae86eb40917ccc0ca24fe69192b3"
+    },
+    "aarch64_linux_musl": {
+      "url": "https://github.com/taiki-e/cargo-hack/releases/download/v0.6.23/cargo-hack-aarch64-unknown-linux-musl.tar.gz",
+      "etag": "0x8DC4E5968C0BB56",
+      "checksum": "82ce9c3262e5c948555c3097562ffc6c16aa284d3aabf7d6b221fada37b25f9c"
+    },
+    "aarch64_macos": {
+      "url": "https://github.com/taiki-e/cargo-hack/releases/download/v0.6.23/cargo-hack-aarch64-apple-darwin.tar.gz",
+      "etag": "0x8DC4E59BE00F6F9",
+      "checksum": "54fdf9c43aaeb5b1d40154fddc84769a78c2c8854939cd5b174c9fe1eff4f5ec"
+    },
+    "aarch64_windows": {
+      "url": "https://github.com/taiki-e/cargo-hack/releases/download/v0.6.23/cargo-hack-aarch64-pc-windows-msvc.tar.gz",
+      "etag": "0x8DC4E597338E7E1",
+      "checksum": "11e559db60945df66521b39f3168d0381ab97d5eeb0bc6b9acd16635b1ec342b"
+    }
+  },
+  "0.6.22": {
+    "x86_64_linux_musl": {
+      "url": "https://github.com/taiki-e/cargo-hack/releases/download/v0.6.22/cargo-hack-x86_64-unknown-linux-musl.tar.gz",
+      "etag": "0x8DC40C8A160BB28",
+      "checksum": "25d19166c2e3be108d815bfb15624b2ff82909a0b92bfbf56f5c3e2e44db4eb6"
+    },
+    "x86_64_macos": {
+      "url": "https://github.com/taiki-e/cargo-hack/releases/download/v0.6.22/cargo-hack-x86_64-apple-darwin.tar.gz",
+      "etag": "0x8DC40C9799680B1",
+      "checksum": "eff3116e6c9f0ac543d3ad02960a626f1e1a82aebb0d1d5377ed1cf3c923a746"
+    },
+    "x86_64_windows": {
+      "url": "https://github.com/taiki-e/cargo-hack/releases/download/v0.6.22/cargo-hack-x86_64-pc-windows-msvc.tar.gz",
+      "etag": "0x8DC40C8CA74C8CD",
+      "checksum": "d4d6482e55ca7c08cddde24eb9539c0642392eef3c79a3abde26bee9a0308735"
+    },
+    "aarch64_linux_musl": {
+      "url": "https://github.com/taiki-e/cargo-hack/releases/download/v0.6.22/cargo-hack-aarch64-unknown-linux-musl.tar.gz",
+      "etag": "0x8DC40C8A83B8F19",
+      "checksum": "5e025b0a806ee48440dbc858f9239e45dc823ea178a1c8953eb6b36209f212e2"
+    },
+    "aarch64_macos": {
+      "url": "https://github.com/taiki-e/cargo-hack/releases/download/v0.6.22/cargo-hack-aarch64-apple-darwin.tar.gz",
+      "etag": "0x8DC40C8F033A7B3",
+      "checksum": "e0a30429c822453c0557defcffc3bb33146bf211489e6848024f60023446e897"
+    },
+    "aarch64_windows": {
+      "url": "https://github.com/taiki-e/cargo-hack/releases/download/v0.6.22/cargo-hack-aarch64-pc-windows-msvc.tar.gz",
+      "etag": "0x8DC40C8B670ACDD",
+      "checksum": "fdd599e2327e54422b7288bc5385e1e0353a60e48376107f9bc8e659b082abc2"
+    }
+  },
+  "0.6.21": {
+    "x86_64_linux_musl": {
+      "url": "https://github.com/taiki-e/cargo-hack/releases/download/v0.6.21/cargo-hack-x86_64-unknown-linux-musl.tar.gz",
+      "etag": "0x8DC3DFBBE8EC9A0",
+      "checksum": "4d1cc13c72ac620df9265506ad8dd03f84117c8c653586be3d73590e013fe9a8"
+    },
+    "x86_64_macos": {
+      "url": "https://github.com/taiki-e/cargo-hack/releases/download/v0.6.21/cargo-hack-x86_64-apple-darwin.tar.gz",
+      "etag": "0x8DC3DFC76CA00CE",
+      "checksum": "675e3a63d6e741a53363e71b29f7babd1f685cfa14168b8914116cdb176f38e0"
+    },
+    "x86_64_windows": {
+      "url": "https://github.com/taiki-e/cargo-hack/releases/download/v0.6.21/cargo-hack-x86_64-pc-windows-msvc.tar.gz",
+      "etag": "0x8DC3DFBE0BEB690",
+      "checksum": "f57ea407c7a2a11c6e31102087b8689c44ecdd8f8eb7c76fe98002cc7efd2f84"
+    },
+    "aarch64_linux_musl": {
+      "url": "https://github.com/taiki-e/cargo-hack/releases/download/v0.6.21/cargo-hack-aarch64-unknown-linux-musl.tar.gz",
+      "etag": "0x8DC3DFBB092A772",
+      "checksum": "52159eb4d6b03441d6a696dc52dd3c46ff06b4983df8524c5d908bcd53c9425d"
+    },
+    "aarch64_macos": {
+      "url": "https://github.com/taiki-e/cargo-hack/releases/download/v0.6.21/cargo-hack-aarch64-apple-darwin.tar.gz",
+      "etag": "0x8DC3DFC1A0CA7F9",
+      "checksum": "e37a2eaa79cb04d8868d8c23f45af296433d60b75181bed0be49650cfd7c0c6e"
+    },
+    "aarch64_windows": {
+      "url": "https://github.com/taiki-e/cargo-hack/releases/download/v0.6.21/cargo-hack-aarch64-pc-windows-msvc.tar.gz",
+      "etag": "0x8DC3DFBB8E94630",
+      "checksum": "faa6323ebb18e54038b19c61d138793c9b1e31dd64e337cbc64cc283faa62a3c"
+    }
+  },
+  "0.6.20": {
+    "x86_64_linux_musl": {
+      "url": "https://github.com/taiki-e/cargo-hack/releases/download/v0.6.20/cargo-hack-x86_64-unknown-linux-musl.tar.gz",
+      "etag": "0x8DC32811BAA42AF",
+      "checksum": "dc3a790ba52a824f3faeb45bf630b35ed4cfe2ef5de24e169bd1672c40ca0ad0"
+    },
+    "x86_64_macos": {
+      "url": "https://github.com/taiki-e/cargo-hack/releases/download/v0.6.20/cargo-hack-x86_64-apple-darwin.tar.gz",
+      "etag": "0x8DC32815493C274",
+      "checksum": "c8a6bcf8f48761da905dbb476a2c276f1b3beb4e601d895734196a7f33cb20fc"
+    },
+    "x86_64_windows": {
+      "url": "https://github.com/taiki-e/cargo-hack/releases/download/v0.6.20/cargo-hack-x86_64-pc-windows-msvc.tar.gz",
+      "etag": "0x8DC3281527CB356",
+      "checksum": "c49e18fbf868c2abbd86ed5f17ff1254479c79ea788dc757edd69cdfe390cdc4"
+    },
+    "aarch64_linux_musl": {
+      "url": "https://github.com/taiki-e/cargo-hack/releases/download/v0.6.20/cargo-hack-aarch64-unknown-linux-musl.tar.gz",
+      "etag": "0x8DC328100F4132B",
+      "checksum": "3ac4d20c14d73c5ec87ac6132f3083f419340f4f124b31f55594a9d364f1eb11"
+    },
+    "aarch64_macos": {
+      "url": "https://github.com/taiki-e/cargo-hack/releases/download/v0.6.20/cargo-hack-aarch64-apple-darwin.tar.gz",
+      "etag": "0x8DC32814F86C6B2",
+      "checksum": "59ac8f0227168a05a758e6fcdaa7fb7b91bf9d206fcf19644f4a15b864842c13"
+    },
+    "aarch64_windows": {
+      "url": "https://github.com/taiki-e/cargo-hack/releases/download/v0.6.20/cargo-hack-aarch64-pc-windows-msvc.tar.gz",
+      "etag": "0x8DC3281210B1A87",
+      "checksum": "113c67634a4d34ff8c15d28d241f611144c55cc57dd11f28aa0d336d548813a1"
+    }
+  },
+  "0.6.19": {
+    "x86_64_linux_musl": {
+      "url": "https://github.com/taiki-e/cargo-hack/releases/download/v0.6.19/cargo-hack-x86_64-unknown-linux-musl.tar.gz",
+      "etag": "0x8DC2F490DDB2C6A",
+      "checksum": "c96cbde6b2eed3ba5c3a62911bd729362dad11ee2363cefb79e7d8b44c034b25"
+    },
+    "x86_64_macos": {
+      "url": "https://github.com/taiki-e/cargo-hack/releases/download/v0.6.19/cargo-hack-x86_64-apple-darwin.tar.gz",
+      "etag": "0x8DC2F492AF1643E",
+      "checksum": "277fdb2c362fad398cc858581cf06b1d3706cbbf883005285f3794ba5aa2f1f1"
+    },
+    "x86_64_windows": {
+      "url": "https://github.com/taiki-e/cargo-hack/releases/download/v0.6.19/cargo-hack-x86_64-pc-windows-msvc.tar.gz",
+      "etag": "0x8DC2F498AE3D810",
+      "checksum": "d5c86549d83d7147e1fe7de468c375a0f28c5aa45c9f8a02b819d13ee9a85e37"
+    },
+    "aarch64_linux_musl": {
+      "url": "https://github.com/taiki-e/cargo-hack/releases/download/v0.6.19/cargo-hack-aarch64-unknown-linux-musl.tar.gz",
+      "etag": "0x8DC2F490D340FAA",
+      "checksum": "aa24c54f97b43685979ee15f2a03b0a249cc035449a3a1955e64c61e725a9e8c"
+    },
+    "aarch64_macos": {
+      "url": "https://github.com/taiki-e/cargo-hack/releases/download/v0.6.19/cargo-hack-aarch64-apple-darwin.tar.gz",
+      "etag": "0x8DC2F492FD33D24",
+      "checksum": "5d2e027a34ab26949534e5e9a764c49130515bb4eaff7e4b1e824ace6ba10617"
+    },
+    "aarch64_windows": {
+      "url": "https://github.com/taiki-e/cargo-hack/releases/download/v0.6.19/cargo-hack-aarch64-pc-windows-msvc.tar.gz",
+      "etag": "0x8DC2F495E409000",
+      "checksum": "8e36f556db4aef01066fc26b1d10ad9440d78b5ce9c8ff4fe68c3ffbf84e7ada"
+    }
+  },
+  "0.6.18": {
+    "x86_64_linux_musl": {
+      "url": "https://github.com/taiki-e/cargo-hack/releases/download/v0.6.18/cargo-hack-x86_64-unknown-linux-musl.tar.gz",
+      "etag": "0x8DC2A44C272823B",
+      "checksum": "6833fc01b5e4fd199055b31b2fc6ec83bfc19dc78d8548716ace6211f7fbb716"
+    },
+    "x86_64_macos": {
+      "url": "https://github.com/taiki-e/cargo-hack/releases/download/v0.6.18/cargo-hack-x86_64-apple-darwin.tar.gz",
+      "etag": "0x8DC2A4511C9A4D1",
+      "checksum": "05e85f5cfda4e7497a86eddb5d08b6ac1c4253bad03e2a648b43275db9928113"
+    },
+    "x86_64_windows": {
+      "url": "https://github.com/taiki-e/cargo-hack/releases/download/v0.6.18/cargo-hack-x86_64-pc-windows-msvc.tar.gz",
+      "etag": "0x8DC2A44E1882D3B",
+      "checksum": "f165300d83f0bc3c069355d89b31494496eb3058184b83f9b99fddd5363424ea"
+    },
+    "aarch64_linux_musl": {
+      "url": "https://github.com/taiki-e/cargo-hack/releases/download/v0.6.18/cargo-hack-aarch64-unknown-linux-musl.tar.gz",
+      "etag": "0x8DC2A44C330DCF9",
+      "checksum": "de5e9045a5c3ba3f45cfb8f8fd74ed7c6397c4b3ac2f6a6d58687e5c6a5bf8c6"
+    },
+    "aarch64_macos": {
+      "url": "https://github.com/taiki-e/cargo-hack/releases/download/v0.6.18/cargo-hack-aarch64-apple-darwin.tar.gz",
+      "etag": "0x8DC2A44DBD8089E",
+      "checksum": "6a52f6213fb3b5222fee6c33571a50dc702cbb1ef28e1c0b8c6f18ae5dcda6a3"
+    },
+    "aarch64_windows": {
+      "url": "https://github.com/taiki-e/cargo-hack/releases/download/v0.6.18/cargo-hack-aarch64-pc-windows-msvc.tar.gz",
+      "etag": "0x8DC2A44EDD9B5D9",
+      "checksum": "09b5273f9304fa3881a4b745174e54bed6c836345b2a782dedf7e3ba7d4805e1"
+    }
+  },
+  "0.6.17": {
+    "x86_64_linux_musl": {
+      "url": "https://github.com/taiki-e/cargo-hack/releases/download/v0.6.17/cargo-hack-x86_64-unknown-linux-musl.tar.gz",
+      "etag": "0x8DC24BA299A2F82",
+      "checksum": "139e31f95ee122cc6937386758491d15668c3c4e54ef7de1055e3b1b0a53be8e"
+    },
+    "x86_64_macos": {
+      "url": "https://github.com/taiki-e/cargo-hack/releases/download/v0.6.17/cargo-hack-x86_64-apple-darwin.tar.gz",
+      "etag": "0x8DC24BA66B61AAF",
+      "checksum": "57cfa14d6de673828c03df95adf8c25a23cd3ac4f586466e09661049175dad02"
+    },
+    "x86_64_windows": {
+      "url": "https://github.com/taiki-e/cargo-hack/releases/download/v0.6.17/cargo-hack-x86_64-pc-windows-msvc.tar.gz",
+      "etag": "0x8DC24BA64712A16",
+      "checksum": "c0c279c240359b18d05619d5ec1cb0bec0c834c3f1700d9676675977a33b183e"
+    },
+    "aarch64_linux_musl": {
+      "url": "https://github.com/taiki-e/cargo-hack/releases/download/v0.6.17/cargo-hack-aarch64-unknown-linux-musl.tar.gz",
+      "etag": "0x8DC24BA2D02A88D",
+      "checksum": "b9a6a1d12e2967885276be7a548bfd00508b12648a3f1cfae08b0516b917f417"
+    },
+    "aarch64_macos": {
+      "url": "https://github.com/taiki-e/cargo-hack/releases/download/v0.6.17/cargo-hack-aarch64-apple-darwin.tar.gz",
+      "etag": "0x8DC24BA3F863F9A",
+      "checksum": "e9fe200729ceab30c30ae45104356caf867821477669270d2499ab8ea54d5770"
+    },
+    "aarch64_windows": {
+      "url": "https://github.com/taiki-e/cargo-hack/releases/download/v0.6.17/cargo-hack-aarch64-pc-windows-msvc.tar.gz",
+      "etag": "0x8DC24BA747A2DE4",
+      "checksum": "5deff267fa443016285ca9d8846b033af089f0a49f211eaa16bcdd9e5cb65395"
+    }
+  },
+  "0.6.16": {
+    "x86_64_linux_musl": {
+      "url": "https://github.com/taiki-e/cargo-hack/releases/download/v0.6.16/cargo-hack-x86_64-unknown-linux-musl.tar.gz",
+      "etag": "0x8DC1CEAB02612B0",
+      "checksum": "d41485c9c9c83ce9bedb4200ad539a716ff4759da5d960b9a4372fa5d9e49957"
+    },
+    "x86_64_macos": {
+      "url": "https://github.com/taiki-e/cargo-hack/releases/download/v0.6.16/cargo-hack-x86_64-apple-darwin.tar.gz",
+      "etag": "0x8DC1CEB0A6693AD",
+      "checksum": "41e19b4c8c2378673c7c2845fb8aaa43f9efa99e60de60c4349487d5c9ffa346"
+    },
+    "x86_64_windows": {
+      "url": "https://github.com/taiki-e/cargo-hack/releases/download/v0.6.16/cargo-hack-x86_64-pc-windows-msvc.tar.gz",
+      "etag": "0x8DC1CEB2F6B10C4",
+      "checksum": "0ed75e30ad5bf9e660667d04d6d80deefc1a303454da6af5e6bca61d98ca080e"
+    },
+    "aarch64_linux_musl": {
+      "url": "https://github.com/taiki-e/cargo-hack/releases/download/v0.6.16/cargo-hack-aarch64-unknown-linux-musl.tar.gz",
+      "etag": "0x8DC1CEAB5F696AA",
+      "checksum": "acc1b9d1c2f8a40d7326ad6b3f3d3a278a2f76e4213dda01f7b9b79dcc78ea12"
+    },
+    "aarch64_macos": {
+      "url": "https://github.com/taiki-e/cargo-hack/releases/download/v0.6.16/cargo-hack-aarch64-apple-darwin.tar.gz",
+      "etag": "0x8DC1CEACBC4BFDF",
+      "checksum": "ff4530c90b0173ade83a34f0426cc8c50d9315b81adaaa27f210a18312e4da1a"
+    },
+    "aarch64_windows": {
+      "url": "https://github.com/taiki-e/cargo-hack/releases/download/v0.6.16/cargo-hack-aarch64-pc-windows-msvc.tar.gz",
+      "etag": "0x8DC1CEB0E294BC6",
+      "checksum": "3dfd112824f7c80b7e82a9d53dd1133ae502618012048acbb3399cb334f5c9d3"
+    }
+  },
+  "0.6.15": {
+    "x86_64_linux_musl": {
+      "url": "https://github.com/taiki-e/cargo-hack/releases/download/v0.6.15/cargo-hack-x86_64-unknown-linux-musl.tar.gz",
+      "etag": "0x8DBFE369A7B8BC7",
+      "checksum": "1d012b9239b8aaf427f217fee25aa4d18525d0bc9061db37e636f03a1fd1fee7"
+    },
+    "x86_64_macos": {
+      "url": "https://github.com/taiki-e/cargo-hack/releases/download/v0.6.15/cargo-hack-x86_64-apple-darwin.tar.gz",
+      "etag": "0x8DBFE37631E57B9",
+      "checksum": "b4b834bf4029640272e9476b97f12fc987c8066163757e5a3e45397a10133cbb"
+    },
+    "x86_64_windows": {
+      "url": "https://github.com/taiki-e/cargo-hack/releases/download/v0.6.15/cargo-hack-x86_64-pc-windows-msvc.tar.gz",
+      "etag": "0x8DBFE36B5B7C3DB",
+      "checksum": "3c008dff15f81bc99a58c1b3bd436c5421cecf8260840c3865c7b705e484d48a"
+    },
+    "aarch64_linux_musl": {
+      "url": "https://github.com/taiki-e/cargo-hack/releases/download/v0.6.15/cargo-hack-aarch64-unknown-linux-musl.tar.gz",
+      "etag": "0x8DBFE368174512C",
+      "checksum": "71aed71dbb3260b379d4857aa6b879e6b9953d3b19c6994b42a6df6eaa3cc2c3"
+    },
+    "aarch64_macos": {
+      "url": "https://github.com/taiki-e/cargo-hack/releases/download/v0.6.15/cargo-hack-aarch64-apple-darwin.tar.gz",
+      "etag": "0x8DBFE373C9E87F2",
+      "checksum": "b9095579a25142170de956e48efa984186332ec9d957b8a6f9858eabecb444b3"
+    },
+    "aarch64_windows": {
+      "url": "https://github.com/taiki-e/cargo-hack/releases/download/v0.6.15/cargo-hack-aarch64-pc-windows-msvc.tar.gz",
+      "etag": "0x8DBFE369CF9C31C",
+      "checksum": "d46438ac02e154c9de8ec2dc5537951ef1c1c1dfb99c4f52dee3c7f2eca2e034"
+    }
+  },
+  "0.6.14": {
+    "x86_64_linux_musl": {
+      "url": "https://github.com/taiki-e/cargo-hack/releases/download/v0.6.14/cargo-hack-x86_64-unknown-linux-musl.tar.gz",
+      "etag": "0x8DBF597DFDB326B",
+      "checksum": "d07d7e98951ff243b8ab47f45b17b1b54a7cae50e39d95f55d0fc3eb98dee1ff"
+    },
+    "x86_64_macos": {
+      "url": "https://github.com/taiki-e/cargo-hack/releases/download/v0.6.14/cargo-hack-x86_64-apple-darwin.tar.gz",
+      "etag": "0x8DBF5984B5F9AB4",
+      "checksum": "9df554f62bbf62635829940668d10280d726da86d8eba03a57c6b2fbd9680f11"
+    },
+    "x86_64_windows": {
+      "url": "https://github.com/taiki-e/cargo-hack/releases/download/v0.6.14/cargo-hack-x86_64-pc-windows-msvc.tar.gz",
+      "etag": "0x8DBF59825CB94B5",
+      "checksum": "fc71362f47361f4079b12960caebf8a58aae499420ab49234a7e9250a8a0d1ca"
+    },
+    "aarch64_linux_musl": {
+      "url": "https://github.com/taiki-e/cargo-hack/releases/download/v0.6.14/cargo-hack-aarch64-unknown-linux-musl.tar.gz",
+      "etag": "0x8DBF597E30A6679",
+      "checksum": "2e55ca53580b30c6b674eeb0bfb1e7c6648cbc4289f8c52e720ebaabb93b0fd9"
+    },
+    "aarch64_macos": {
+      "url": "https://github.com/taiki-e/cargo-hack/releases/download/v0.6.14/cargo-hack-aarch64-apple-darwin.tar.gz",
+      "etag": "0x8DBF5980F0165F5",
+      "checksum": "273c15582d811d4040bd85246bf89eed75a01d04542e409f04b25e1060cd128e"
+    },
+    "aarch64_windows": {
+      "url": "https://github.com/taiki-e/cargo-hack/releases/download/v0.6.14/cargo-hack-aarch64-pc-windows-msvc.tar.gz",
+      "etag": "0x8DBF5981F21F9CF",
+      "checksum": "47aeb67c6f4335e343d4f71a09d09c85e921fe9e49484dd603e168d482a93a1d"
+    }
+  },
+  "0.6.13": {
+    "x86_64_linux_musl": {
+      "url": "https://github.com/taiki-e/cargo-hack/releases/download/v0.6.13/cargo-hack-x86_64-unknown-linux-musl.tar.gz",
+      "etag": "0x8DBD2BB0B25C4D1",
+      "checksum": "35f66efdefe9c598e7a12a9db3904d3e78032b84005f04b51ab5d5c5ba3c9405"
+    },
+    "x86_64_macos": {
+      "url": "https://github.com/taiki-e/cargo-hack/releases/download/v0.6.13/cargo-hack-x86_64-apple-darwin.tar.gz",
+      "etag": "0x8DBD2BB5A81850B",
+      "checksum": "57d606eea43182e86f2958f13a04d806968fcf56f0bc46b0d1a5e0fd7dd3b426"
+    },
+    "x86_64_windows": {
+      "url": "https://github.com/taiki-e/cargo-hack/releases/download/v0.6.13/cargo-hack-x86_64-pc-windows-msvc.tar.gz",
+      "etag": "0x8DBD2BB57BB24F4",
+      "checksum": "a85f4ca5b79fb166a81c4332b80f5b771d2811afbefef713cf4687ce93a9ddab"
+    },
+    "aarch64_linux_musl": {
+      "url": "https://github.com/taiki-e/cargo-hack/releases/download/v0.6.13/cargo-hack-aarch64-unknown-linux-musl.tar.gz",
+      "etag": "0x8DBD2BB06C1B6D5",
+      "checksum": "2422d0fec3cfb0cecb4208e67489a500f00a4ca368838747355845ae95a85406"
+    },
+    "aarch64_macos": {
+      "url": "https://github.com/taiki-e/cargo-hack/releases/download/v0.6.13/cargo-hack-aarch64-apple-darwin.tar.gz",
+      "etag": "0x8DBD2BB17D77BE7",
+      "checksum": "47350212d5b80855958ae7354c48f7c7a69c6ff14652f07ddc1d00ef859a3eb2"
+    },
+    "aarch64_windows": {
+      "url": "https://github.com/taiki-e/cargo-hack/releases/download/v0.6.13/cargo-hack-aarch64-pc-windows-msvc.tar.gz",
+      "etag": "0x8DBD2BB613D3295",
+      "checksum": "e1c2c3e155f60b6c4ccc98f027ee29da0352a61dceb53294dc57e32e49856c91"
+    }
+  },
+  "0.6.12": {
+    "x86_64_linux_musl": {
+      "url": "https://github.com/taiki-e/cargo-hack/releases/download/v0.6.12/cargo-hack-x86_64-unknown-linux-musl.tar.gz",
+      "etag": "0x8DBD01558341915",
+      "checksum": "e5eacdd5e420ec79c9490c8e4b8868ff84c3818cd9f7c93795dae8ac88fa60ba"
+    },
+    "x86_64_macos": {
+      "url": "https://github.com/taiki-e/cargo-hack/releases/download/v0.6.12/cargo-hack-x86_64-apple-darwin.tar.gz",
+      "etag": "0x8DBD015A43B0A4E",
+      "checksum": "9558afab9b0c311635e27acc86e21e791ee5cedb44292ce5a7261082aef1d1d2"
+    },
+    "x86_64_windows": {
+      "url": "https://github.com/taiki-e/cargo-hack/releases/download/v0.6.12/cargo-hack-x86_64-pc-windows-msvc.tar.gz",
+      "etag": "0x8DBD015C7627BFA",
+      "checksum": "8817a2fcb5442d84001a18c615c37162d89b539005ebc1497df263c39a450592"
+    },
+    "aarch64_linux_musl": {
+      "url": "https://github.com/taiki-e/cargo-hack/releases/download/v0.6.12/cargo-hack-aarch64-unknown-linux-musl.tar.gz",
+      "etag": "0x8DBD01559A67AB4",
+      "checksum": "466382fabb571dd71d4229eee35e4da2ecb3b3a3c2e28a05972f27129a472bab"
+    },
+    "aarch64_macos": {
+      "url": "https://github.com/taiki-e/cargo-hack/releases/download/v0.6.12/cargo-hack-aarch64-apple-darwin.tar.gz",
+      "etag": "0x8DBD0156EFC769E",
+      "checksum": "2c03d4418382599670772df4b8063ce9d0882c7fbf03a9d7eff68cc172b1b88a"
+    },
+    "aarch64_windows": {
+      "url": "https://github.com/taiki-e/cargo-hack/releases/download/v0.6.12/cargo-hack-aarch64-pc-windows-msvc.tar.gz",
+      "etag": "0x8DBD015ADFFF2FC",
+      "checksum": "9e15a18977c5f71a8162282f1b5dd9a7ae4c9ba8222640a567ef757bb8e317e8"
+    }
+  },
+  "0.6.11": {
+    "x86_64_linux_musl": {
+      "url": "https://github.com/taiki-e/cargo-hack/releases/download/v0.6.11/cargo-hack-x86_64-unknown-linux-musl.tar.gz",
+      "etag": "0x8DBCFCDC182ACB0",
+      "checksum": "b1caecd3cdb0aa2ecf5981bd3ca7736fc9931fa8500674b49ca9d816e416cf7a"
+    },
+    "x86_64_macos": {
+      "url": "https://github.com/taiki-e/cargo-hack/releases/download/v0.6.11/cargo-hack-x86_64-apple-darwin.tar.gz",
+      "etag": "0x8DBCFCDFDEA2AF0",
+      "checksum": "6819242f22bb219b9955dccc2075b4edf3b11b28b362e9c219789ff829878524"
+    },
+    "x86_64_windows": {
+      "url": "https://github.com/taiki-e/cargo-hack/releases/download/v0.6.11/cargo-hack-x86_64-pc-windows-msvc.tar.gz",
+      "etag": "0x8DBCFCE037CD979",
+      "checksum": "8cb102297aecad58454ac6f70773908ab68e89a0585c2fbf23bb103c44466bdb"
+    },
+    "aarch64_linux_musl": {
+      "url": "https://github.com/taiki-e/cargo-hack/releases/download/v0.6.11/cargo-hack-aarch64-unknown-linux-musl.tar.gz",
+      "etag": "0x8DBCFCDCE607463",
+      "checksum": "dcd8d5b7e8baa1a449beef0dd43c6c9fb724c950febb5a3f0ffa3bb326f18918"
+    },
+    "aarch64_macos": {
+      "url": "https://github.com/taiki-e/cargo-hack/releases/download/v0.6.11/cargo-hack-aarch64-apple-darwin.tar.gz",
+      "etag": "0x8DBCFCDD6DC9BC5",
+      "checksum": "c30a4842af20ff8edff34a5d72e1f8b193156f6625840e0a8451af2a6995ffaf"
+    },
+    "aarch64_windows": {
+      "url": "https://github.com/taiki-e/cargo-hack/releases/download/v0.6.11/cargo-hack-aarch64-pc-windows-msvc.tar.gz",
+      "etag": "0x8DBCFCE4480E9ED",
+      "checksum": "a8ff741f14968ec74f518b9ce427c3c3ae78e97b87f7d5ef3d76bb61aefd8cd3"
+    }
+  },
+  "0.6.10": {
+    "x86_64_linux_musl": {
+      "url": "https://github.com/taiki-e/cargo-hack/releases/download/v0.6.10/cargo-hack-x86_64-unknown-linux-musl.tar.gz",
+      "etag": "0x8DBCF34E540849D",
+      "checksum": "61396b1c1b96faecccdf2af78e91a0f015c161573debbd3a92f36452cf0736bf"
+    },
+    "x86_64_macos": {
+      "url": "https://github.com/taiki-e/cargo-hack/releases/download/v0.6.10/cargo-hack-x86_64-apple-darwin.tar.gz",
+      "etag": "0x8DBCF352BB709DC",
+      "checksum": "44564f6deec6e514d30e6b18e0c5ac5d8c444a5cfce6216d747ef0b1ca57fea1"
+    },
+    "x86_64_windows": {
+      "url": "https://github.com/taiki-e/cargo-hack/releases/download/v0.6.10/cargo-hack-x86_64-pc-windows-msvc.tar.gz",
+      "etag": "0x8DBCF352992E94B",
+      "checksum": "ac37e52f6bd0e55a34386d57f96f3b1e5ef72e2f844d701c128ec14dab64ea6a"
+    },
+    "aarch64_linux_musl": {
+      "url": "https://github.com/taiki-e/cargo-hack/releases/download/v0.6.10/cargo-hack-aarch64-unknown-linux-musl.tar.gz",
+      "etag": "0x8DBCF34FA1E5417",
+      "checksum": "872fffcdb7cbb1e66c5d7c9e292bb28458a8e575b400d768842a46a181fc76f1"
+    },
+    "aarch64_macos": {
+      "url": "https://github.com/taiki-e/cargo-hack/releases/download/v0.6.10/cargo-hack-aarch64-apple-darwin.tar.gz",
+      "etag": "0x8DBCF34F619121B",
+      "checksum": "e3d9a5cbee1f0a91e07721ac483525f98e0887ed9ba8058de55449cf71b9aa2f"
+    },
+    "aarch64_windows": {
+      "url": "https://github.com/taiki-e/cargo-hack/releases/download/v0.6.10/cargo-hack-aarch64-pc-windows-msvc.tar.gz",
+      "etag": "0x8DBCF3528193CFB",
+      "checksum": "e77a9ddcc0df20f254354d7cc3c2992908e1621a471e1c43df55b47867153582"
+    }
+  },
+  "0.6.9": {
+    "x86_64_linux_musl": {
+      "url": "https://github.com/taiki-e/cargo-hack/releases/download/v0.6.9/cargo-hack-x86_64-unknown-linux-musl.tar.gz",
+      "etag": "0x8DBCF1687929206",
+      "checksum": "4be65b3c79683d4846ef16bf7b3d53f585076ab708f53a5ec0698f7c8f690ceb"
+    },
+    "x86_64_macos": {
+      "url": "https://github.com/taiki-e/cargo-hack/releases/download/v0.6.9/cargo-hack-x86_64-apple-darwin.tar.gz",
+      "etag": "0x8DBCF16F28CC5FB",
+      "checksum": "e478a9ebccf092e7590647f2d8deb80089c46fa2023d00c22cd569add98f017f"
+    },
+    "x86_64_windows": {
+      "url": "https://github.com/taiki-e/cargo-hack/releases/download/v0.6.9/cargo-hack-x86_64-pc-windows-msvc.tar.gz",
+      "etag": "0x8DBCF16CACCFF3A",
+      "checksum": "d53025b3b46fa2b67a192bc63508a3efc81011799bd107790615bded974fe2fd"
+    },
+    "aarch64_linux_musl": {
+      "url": "https://github.com/taiki-e/cargo-hack/releases/download/v0.6.9/cargo-hack-aarch64-unknown-linux-musl.tar.gz",
+      "etag": "0x8DBCF165444C7CA",
+      "checksum": "8843746d9edc9ec342c7e23cabff801ba6e9bb3f5fb7019d75a82b05fce566f9"
+    },
+    "aarch64_macos": {
+      "url": "https://github.com/taiki-e/cargo-hack/releases/download/v0.6.9/cargo-hack-aarch64-apple-darwin.tar.gz",
+      "etag": "0x8DBCF16ACD9201A",
+      "checksum": "af11df14efd96bc28621ae89019ac9fff48daa80c526d2cb8ccd7e4a748bf882"
+    },
+    "aarch64_windows": {
+      "url": "https://github.com/taiki-e/cargo-hack/releases/download/v0.6.9/cargo-hack-aarch64-pc-windows-msvc.tar.gz",
+      "etag": "0x8DBCF168AB8F659",
+      "checksum": "5bb0b04244ed9a621ce76148103de1e9e25d5db77744391cddeefa5860f45cf2"
+    }
+  },
+  "0.6.8": {
+    "x86_64_linux_musl": {
+      "url": "https://github.com/taiki-e/cargo-hack/releases/download/v0.6.8/cargo-hack-x86_64-unknown-linux-musl.tar.gz",
+      "etag": "0x8DBB612391D018E",
+      "checksum": "0e99e6ecf6f04cfeb7bd126559f94c7d54c891cd6609fc2d5e6b327da9178069"
+    },
+    "x86_64_macos": {
+      "url": "https://github.com/taiki-e/cargo-hack/releases/download/v0.6.8/cargo-hack-x86_64-apple-darwin.tar.gz",
+      "etag": "0x8DBB61246738BC9",
+      "checksum": "f21d6c824bc9cac5c174fa61b8375df35f3c022a19eeefd7156dcaf99c18cb94"
+    },
+    "x86_64_windows": {
+      "url": "https://github.com/taiki-e/cargo-hack/releases/download/v0.6.8/cargo-hack-x86_64-pc-windows-msvc.tar.gz",
+      "etag": "0x8DBB6127003372C",
+      "checksum": "60e272a5f154bff33b8f24f4e47890e7267ed1f583c87f1c425737debec00a5d"
+    },
+    "aarch64_linux_musl": {
+      "url": "https://github.com/taiki-e/cargo-hack/releases/download/v0.6.8/cargo-hack-aarch64-unknown-linux-musl.tar.gz",
+      "etag": "0x8DBB612364B15CB",
+      "checksum": "ea6e74180776d0908b21d938515e4a04fcdcb02d564bf08e397dc7191cbce524"
+    },
+    "aarch64_macos": {
+      "url": "https://github.com/taiki-e/cargo-hack/releases/download/v0.6.8/cargo-hack-aarch64-apple-darwin.tar.gz",
+      "etag": "0x8DBB6125203D8B4",
+      "checksum": "9486a0e12919c667e17b9fd22e43c6449369ebeca0e705ed372090e87610e8fc"
+    },
+    "aarch64_windows": {
+      "url": "https://github.com/taiki-e/cargo-hack/releases/download/v0.6.8/cargo-hack-aarch64-pc-windows-msvc.tar.gz",
+      "etag": "0x8DBB6128BEC2154",
+      "checksum": "946a28154a087ee4c1835327973e3e914d90d9e4840bf67b22422f2b634aa214"
+    }
+  },
+  "0.6.7": {
+    "x86_64_linux_musl": {
+      "url": "https://github.com/taiki-e/cargo-hack/releases/download/v0.6.7/cargo-hack-x86_64-unknown-linux-musl.tar.gz",
+      "etag": "0x8DBB2D75D468954",
+      "checksum": "af3f992ce3bc2f766e1dedd91777b00839760d2571abc3d85f6c6b8a8c743ef8"
+    },
+    "x86_64_macos": {
+      "url": "https://github.com/taiki-e/cargo-hack/releases/download/v0.6.7/cargo-hack-x86_64-apple-darwin.tar.gz",
+      "etag": "0x8DBB2D78B129DD0",
+      "checksum": "c92a155df6839a17e8b167c6a1d0e5adb55a21623186f9401a151b3b478c041b"
+    },
+    "x86_64_windows": {
+      "url": "https://github.com/taiki-e/cargo-hack/releases/download/v0.6.7/cargo-hack-x86_64-pc-windows-msvc.tar.gz",
+      "etag": "0x8DBB2D7B15DFA2A",
+      "checksum": "973a0daf4f09d8b22bbdefcb5ff194b0225682ad1127648e445cad0d2ee30ce0"
+    },
+    "aarch64_linux_musl": {
+      "url": "https://github.com/taiki-e/cargo-hack/releases/download/v0.6.7/cargo-hack-aarch64-unknown-linux-musl.tar.gz",
+      "etag": "0x8DBB2D769D6373E",
+      "checksum": "decd3237e11fef4d4b30052405905d549d05b9b09c3efe87d45a6f96abbcd460"
+    },
+    "aarch64_macos": {
+      "url": "https://github.com/taiki-e/cargo-hack/releases/download/v0.6.7/cargo-hack-aarch64-apple-darwin.tar.gz",
+      "etag": "0x8DBB2D77A4C0176",
+      "checksum": "e36fdcdf6b5064f84837acf3616cac1f191ba7af8f4c6bb599d3eb541cc712fb"
+    },
+    "aarch64_windows": {
+      "url": "https://github.com/taiki-e/cargo-hack/releases/download/v0.6.7/cargo-hack-aarch64-pc-windows-msvc.tar.gz",
+      "etag": "0x8DBB2D7F7413AC5",
+      "checksum": "0aac8f8cb2b3a0e6158f42318b429bd2720ae55f15ca05477e4268bd3a8c16ea"
+    }
+  },
+  "0.6.6": {
+    "x86_64_linux_musl": {
+      "url": "https://github.com/taiki-e/cargo-hack/releases/download/v0.6.6/cargo-hack-x86_64-unknown-linux-musl.tar.gz",
+      "etag": "0x8DBB1080F6A6E63",
+      "checksum": "c706770f61c4dcf3dfc0c87125b443306787032c50bf61d30724bac620846a48"
+    },
+    "x86_64_macos": {
+      "url": "https://github.com/taiki-e/cargo-hack/releases/download/v0.6.6/cargo-hack-x86_64-apple-darwin.tar.gz",
+      "etag": "0x8DBB108482653E5",
+      "checksum": "d5a619778858d18d4ef3b291012b709b509a79ec66dad41590c692d5f35a30c8"
+    },
+    "x86_64_windows": {
+      "url": "https://github.com/taiki-e/cargo-hack/releases/download/v0.6.6/cargo-hack-x86_64-pc-windows-msvc.tar.gz",
+      "etag": "0x8DBB1083BAB982F",
+      "checksum": "1cba2531361ece88f62f826725bb609f17b05baab8da29bbac8bb44fe7e44008"
+    },
+    "aarch64_linux_musl": {
+      "url": "https://github.com/taiki-e/cargo-hack/releases/download/v0.6.6/cargo-hack-aarch64-unknown-linux-musl.tar.gz",
+      "etag": "0x8DBB10810418CF8",
+      "checksum": "a5d8a424c30bc3b3b6b9e44aa3810d5995dca7e648bfe2f139ef0af14ad8662e"
+    },
+    "aarch64_macos": {
+      "url": "https://github.com/taiki-e/cargo-hack/releases/download/v0.6.6/cargo-hack-aarch64-apple-darwin.tar.gz",
+      "etag": "0x8DBB10820B23436",
+      "checksum": "aacf5cebfe7523ba1a610192bd76dcccfbea1b16aa8e8bd3ed8356abd5809980"
+    },
+    "aarch64_windows": {
+      "url": "https://github.com/taiki-e/cargo-hack/releases/download/v0.6.6/cargo-hack-aarch64-pc-windows-msvc.tar.gz",
+      "etag": "0x8DBB1085918B763",
+      "checksum": "329f030f530bb65290150e4bf282065ecfe4f988aee6763fb87720e0dc60b4c9"
+    }
+  },
+  "0.6.5": {
+    "x86_64_linux_musl": {
+      "url": "https://github.com/taiki-e/cargo-hack/releases/download/v0.6.5/cargo-hack-x86_64-unknown-linux-musl.tar.gz",
+      "etag": "0x8DBAD41A7539534",
+      "checksum": "767c91d80cacf9568576d9263b8801d4c38a245c472ac3c58320b15824539a74"
+    },
+    "x86_64_macos": {
+      "url": "https://github.com/taiki-e/cargo-hack/releases/download/v0.6.5/cargo-hack-x86_64-apple-darwin.tar.gz",
+      "etag": "0x8DBAD41C5EBD48C",
+      "checksum": "20530649af2bfa2620368b6a111e5538f9306c4f64a65a1e6dbbb32a7a291b8a"
+    },
+    "x86_64_windows": {
+      "url": "https://github.com/taiki-e/cargo-hack/releases/download/v0.6.5/cargo-hack-x86_64-pc-windows-msvc.tar.gz",
+      "etag": "0x8DBAD41C38F301D",
+      "checksum": "15d7daaad73e7d76acb4d562138709fdda2d077bef426835a77dd7d362eeb13e"
+    },
+    "aarch64_linux_musl": {
+      "url": "https://github.com/taiki-e/cargo-hack/releases/download/v0.6.5/cargo-hack-aarch64-unknown-linux-musl.tar.gz",
+      "etag": "0x8DBAD418A5DDF3F",
+      "checksum": "743fe76f2115bedf6f5a86784ea254c105f171aeeb75e5f2845d6aa83be7319c"
+    },
+    "aarch64_macos": {
+      "url": "https://github.com/taiki-e/cargo-hack/releases/download/v0.6.5/cargo-hack-aarch64-apple-darwin.tar.gz",
+      "etag": "0x8DBAD439CB06B3D",
+      "checksum": "3a9ab29db73449b779656199ae645d7b4a3e055e22ee6fa056c7ec61cd57cb87"
+    },
+    "aarch64_windows": {
+      "url": "https://github.com/taiki-e/cargo-hack/releases/download/v0.6.5/cargo-hack-aarch64-pc-windows-msvc.tar.gz",
+      "etag": "0x8DBAD41B1B8EBFB",
+      "checksum": "2bf9b10a41ce7585fa60b1be8424283433eb000c542652145d89d95be7a6fc99"
+    }
+  },
+  "0.6.4": {
+    "x86_64_linux_musl": {
+      "url": "https://github.com/taiki-e/cargo-hack/releases/download/v0.6.4/cargo-hack-x86_64-unknown-linux-musl.tar.gz",
+      "etag": "0x8DBA89443E071EF",
+      "checksum": "f50d28b566a270c49cd5d44fca3badfc0279bd681e9788872c875f81f2125ca0"
+    },
+    "x86_64_macos": {
+      "url": "https://github.com/taiki-e/cargo-hack/releases/download/v0.6.4/cargo-hack-x86_64-apple-darwin.tar.gz",
+      "etag": "0x8DBA8945D6B170A",
+      "checksum": "09502a5e1e66457cc98f114e3ab80ace837c42ca20d12439b45ca09febeada05"
+    },
+    "x86_64_windows": {
+      "url": "https://github.com/taiki-e/cargo-hack/releases/download/v0.6.4/cargo-hack-x86_64-pc-windows-msvc.tar.gz",
+      "etag": "0x8DBA89463DE0175",
+      "checksum": "b54bdf9b1968a352644e9d7faead9a3832e0a2c5f8f89f2c513f258dd3423216"
+    },
+    "aarch64_linux_musl": {
+      "url": "https://github.com/taiki-e/cargo-hack/releases/download/v0.6.4/cargo-hack-aarch64-unknown-linux-musl.tar.gz",
+      "etag": "0x8DBA894301BACE2",
+      "checksum": "0b3cf069d1e433882f800129b288e76f8b0f4972e2f5d2746a43f5976b3f234d"
+    },
+    "aarch64_macos": {
+      "url": "https://github.com/taiki-e/cargo-hack/releases/download/v0.6.4/cargo-hack-aarch64-apple-darwin.tar.gz",
+      "etag": "0x8DBA8943C8D71E6",
+      "checksum": "01e237e764b098d1a482e4fc31c2aa1a64d6756e885421a95faa5578cfdd2a50"
+    },
+    "aarch64_windows": {
+      "url": "https://github.com/taiki-e/cargo-hack/releases/download/v0.6.4/cargo-hack-aarch64-pc-windows-msvc.tar.gz",
+      "etag": "0x8DBA89459AF3568",
+      "checksum": "af68ead95d98a18750da188259678ce53f8cecae8fb7109ae0c631161da8406e"
+    }
+  },
+  "0.6.3": {
+    "x86_64_linux_musl": {
+      "url": "https://github.com/taiki-e/cargo-hack/releases/download/v0.6.3/cargo-hack-x86_64-unknown-linux-musl.tar.gz",
+      "etag": "0x8DBA8067CC27438",
+      "checksum": "b9515accb2c8984841a152f860d6c7c827ab4f91c4e5012d86ef7c44f319bd41"
+    },
+    "x86_64_macos": {
+      "url": "https://github.com/taiki-e/cargo-hack/releases/download/v0.6.3/cargo-hack-x86_64-apple-darwin.tar.gz",
+      "etag": "0x8DBA806CBC5B545",
+      "checksum": "c144b7912bbc9089c116d7c4610c4fc221705af93d6994c31314663bba47785f"
+    },
+    "x86_64_windows": {
+      "url": "https://github.com/taiki-e/cargo-hack/releases/download/v0.6.3/cargo-hack-x86_64-pc-windows-msvc.tar.gz",
+      "etag": "0x8DBA8068EBDA43D",
+      "checksum": "3a4d6958e616ebb6d446adeb7cf42674e4d4e9315c10c8cbfa5a00758e7e277b"
+    },
+    "aarch64_linux_musl": {
+      "url": "https://github.com/taiki-e/cargo-hack/releases/download/v0.6.3/cargo-hack-aarch64-unknown-linux-musl.tar.gz",
+      "etag": "0x8DBA80675645C63",
+      "checksum": "c8ee443bb05cd8551b2d9d93befbe7a8f0994a128bc33125cf97da443077b579"
+    },
+    "aarch64_macos": {
+      "url": "https://github.com/taiki-e/cargo-hack/releases/download/v0.6.3/cargo-hack-aarch64-apple-darwin.tar.gz",
+      "etag": "0x8DBA80693B4E90B",
+      "checksum": "279e5cbbcbbe607ac5c81f204f0ae83a62132476fa1ff53f0d8ec24d879bf7f2"
+    },
+    "aarch64_windows": {
+      "url": "https://github.com/taiki-e/cargo-hack/releases/download/v0.6.3/cargo-hack-aarch64-pc-windows-msvc.tar.gz",
+      "etag": "0x8DBA8065B266D8E",
+      "checksum": "63a9df0cdad068b3124a858aa3d47c93513caaaea0efc61befdb0091efefb64d"
+    }
+  },
+  "0.6.2": {
+    "x86_64_linux_musl": {
+      "url": "https://github.com/taiki-e/cargo-hack/releases/download/v0.6.2/cargo-hack-x86_64-unknown-linux-musl.tar.gz",
+      "etag": "0x8DBA7F53642ACE5",
+      "checksum": "322d1a965c94656e7b766dbdf4f5726372fdd8ac3b98b7aa3fe0b50dd4892be9"
+    },
+    "x86_64_macos": {
+      "url": "https://github.com/taiki-e/cargo-hack/releases/download/v0.6.2/cargo-hack-x86_64-apple-darwin.tar.gz",
+      "etag": "0x8DBA7F57E26EC9C",
+      "checksum": "a6713d40d955691b0efc48d77f42a9c58f740e9036eb052a4c5b8843477054d3"
+    },
+    "x86_64_windows": {
+      "url": "https://github.com/taiki-e/cargo-hack/releases/download/v0.6.2/cargo-hack-x86_64-pc-windows-msvc.tar.gz",
+      "etag": "0x8DBA7F591F27D6B",
+      "checksum": "a6078aef3cc7bbc5992519909229b074bf802dcc3693e5d90405790e1927060d"
+    },
+    "aarch64_linux_musl": {
+      "url": "https://github.com/taiki-e/cargo-hack/releases/download/v0.6.2/cargo-hack-aarch64-unknown-linux-musl.tar.gz",
+      "etag": "0x8DBA7F536E7F6A4",
+      "checksum": "305b59c9d89fa76ea91002894cea58e296c062da896a2784c04a39305221079b"
+    },
+    "aarch64_macos": {
+      "url": "https://github.com/taiki-e/cargo-hack/releases/download/v0.6.2/cargo-hack-aarch64-apple-darwin.tar.gz",
+      "etag": "0x8DBA7F5485ECB68",
+      "checksum": "860b867a047c8d89aa2b0adb12d6ff085190bde80516a49be6e2cad4cc298bc5"
+    },
+    "aarch64_windows": {
+      "url": "https://github.com/taiki-e/cargo-hack/releases/download/v0.6.2/cargo-hack-aarch64-pc-windows-msvc.tar.gz",
+      "etag": "0x8DBA7F574B0B9D6",
+      "checksum": "73c04e1670b7d7d7696b81ccdc1ea27f7ddcc8028883cf5b5df8edcda61b899c"
+    }
+  },
+  "0.6.1": {
+    "x86_64_linux_musl": {
+      "url": "https://github.com/taiki-e/cargo-hack/releases/download/v0.6.1/cargo-hack-x86_64-unknown-linux-musl.tar.gz",
+      "etag": "0x8DBA7ED7F322469",
+      "checksum": "85f79339499995238287591c86b9ddc9aedf6c4c03f771f9aa7ed0b97dc6da0e"
+    },
+    "x86_64_macos": {
+      "url": "https://github.com/taiki-e/cargo-hack/releases/download/v0.6.1/cargo-hack-x86_64-apple-darwin.tar.gz",
+      "etag": "0x8DBA7EDB8C3947A",
+      "checksum": "c92fb2bd0351e4ac6ea087e5169b5fc56bc03c9afc3c8a299c21aae8ecda8067"
+    },
+    "x86_64_windows": {
+      "url": "https://github.com/taiki-e/cargo-hack/releases/download/v0.6.1/cargo-hack-x86_64-pc-windows-msvc.tar.gz",
+      "etag": "0x8DBA7EDB9058359",
+      "checksum": "ddb32fb03864dace5cd42bf563b8ea459f58620c28379abbc527888370b1775c"
+    },
+    "aarch64_linux_musl": {
+      "url": "https://github.com/taiki-e/cargo-hack/releases/download/v0.6.1/cargo-hack-aarch64-unknown-linux-musl.tar.gz",
+      "etag": "0x8DBA7ED85AD42A3",
+      "checksum": "4855ea417b54abca02d0fd076fa1cfffd2068ac2f4abbafc52261a7fa2a9ebfa"
+    },
+    "aarch64_macos": {
+      "url": "https://github.com/taiki-e/cargo-hack/releases/download/v0.6.1/cargo-hack-aarch64-apple-darwin.tar.gz",
+      "etag": "0x8DBA7ED93ECB49C",
+      "checksum": "fe3c9126fa64f7ef60a9a4e78c77f9741f9848221cc44c43f9346a7f9b268bca"
+    },
+    "aarch64_windows": {
+      "url": "https://github.com/taiki-e/cargo-hack/releases/download/v0.6.1/cargo-hack-aarch64-pc-windows-msvc.tar.gz",
+      "etag": "0x8DBA7EDBB41F231",
+      "checksum": "0c6c21cc1e11c7f2794a4e7c800d2459148a7db33dc162af7c2ccd057ca38ee9"
+    }
+  },
+  "0.6.0": {
+    "x86_64_linux_musl": {
+      "url": "https://github.com/taiki-e/cargo-hack/releases/download/v0.6.0/cargo-hack-x86_64-unknown-linux-musl.tar.gz",
+      "etag": "0x8DBA7E5AAEEACF1",
+      "checksum": "c1a539de7f0890527d6ecd87c0ac73097921a0cf071ded9a3cf60e6c387ba69d"
+    },
+    "x86_64_macos": {
+      "url": "https://github.com/taiki-e/cargo-hack/releases/download/v0.6.0/cargo-hack-x86_64-apple-darwin.tar.gz",
+      "etag": "0x8DBA7E5E110F2C7",
+      "checksum": "41fd4566cf743ab06a46ee556be251e8948b1ecc316b2e61bc25ecc818cfaf91"
+    },
+    "x86_64_windows": {
+      "url": "https://github.com/taiki-e/cargo-hack/releases/download/v0.6.0/cargo-hack-x86_64-pc-windows-msvc.tar.gz",
+      "etag": "0x8DBA7E5CF2F69B0",
+      "checksum": "e2e80b5a7c6588a6e8af4b3ceb460e1c859951c51066514727a9434dfff5b07d"
+    },
+    "aarch64_linux_musl": {
+      "url": "https://github.com/taiki-e/cargo-hack/releases/download/v0.6.0/cargo-hack-aarch64-unknown-linux-musl.tar.gz",
+      "etag": "0x8DBA7E5B664BDCD",
+      "checksum": "f5156e8522abd9c2545425ed251da6411bf824b5d94cb0000e0a90153c78b8a2"
+    },
+    "aarch64_macos": {
+      "url": "https://github.com/taiki-e/cargo-hack/releases/download/v0.6.0/cargo-hack-aarch64-apple-darwin.tar.gz",
+      "etag": "0x8DBA7E5C2399A1D",
+      "checksum": "c8292ab17351307d71fcbe68dad39e0019227b89c3a73dc4a0d6db8ca0b2663e"
+    },
+    "aarch64_windows": {
+      "url": "https://github.com/taiki-e/cargo-hack/releases/download/v0.6.0/cargo-hack-aarch64-pc-windows-msvc.tar.gz",
+      "etag": "0x8DBA7E5DFBAD287",
+      "checksum": "9d7ca4e2c0530ad966662a56dd7b8b211cfe1067c4e46813ff82f18476dd24f8"
+    }
+  },
+  "0.5": {
+    "version": "0.5.29"
+  },
+  "0.5.29": {
+    "x86_64_linux_musl": {
+      "url": "https://github.com/taiki-e/cargo-hack/releases/download/v0.5.29/cargo-hack-x86_64-unknown-linux-musl.tar.gz",
+      "etag": "0x8DB96604C0C07BE",
+      "checksum": "97be81fba9a94970d9984ea6a02028d9c6a83d53071456aa7c7cf35b9a150405"
+    },
+    "x86_64_macos": {
+      "url": "https://github.com/taiki-e/cargo-hack/releases/download/v0.5.29/cargo-hack-x86_64-apple-darwin.tar.gz",
+      "etag": "0x8DB96607C3CA448",
+      "checksum": "1388d51e994673f30380f709f3a8bacbc7f2981c3b294f34945b9612977ae6dd"
+    },
+    "x86_64_windows": {
+      "url": "https://github.com/taiki-e/cargo-hack/releases/download/v0.5.29/cargo-hack-x86_64-pc-windows-msvc.tar.gz",
+      "etag": "0x8DB96607223BC28",
+      "checksum": "5de11259c7bb37506c6c6ff1427d0afddc5fc7e35688e1e6a43255d6903f1063"
+    },
+    "aarch64_linux_musl": {
+      "url": "https://github.com/taiki-e/cargo-hack/releases/download/v0.5.29/cargo-hack-aarch64-unknown-linux-musl.tar.gz",
+      "etag": "0x8DB966041F651A8",
+      "checksum": "e8729bd85be2c4efc3c72c8a7c995758f4b531334144cb7376557d44492c102e"
+    },
+    "aarch64_macos": {
+      "url": "https://github.com/taiki-e/cargo-hack/releases/download/v0.5.29/cargo-hack-aarch64-apple-darwin.tar.gz",
+      "etag": "0x8DB9660630CE1CD",
+      "checksum": "3a024f71643a0cb137b28c7da9530c417f2c64dfa5f78d5e615b7f7376b43558"
+    },
+    "aarch64_windows": {
+      "url": "https://github.com/taiki-e/cargo-hack/releases/download/v0.5.29/cargo-hack-aarch64-pc-windows-msvc.tar.gz",
+      "etag": "0x8DB966066F5E0E4",
+      "checksum": "79261291cadb00feb75f70d50ba33ff8fb6c68d7ab9c66614423610dd840d23f"
+    }
+  },
+  "0.5.28": {
+    "x86_64_linux_musl": {
+      "url": "https://github.com/taiki-e/cargo-hack/releases/download/v0.5.28/cargo-hack-x86_64-unknown-linux-musl.tar.gz",
+      "etag": "0x8DB19AC8CA53298",
+      "checksum": "87fb6dbb3e8272ec912f85b80366d0c4784fbcf0fe4e5981bf442efaf29dfe48"
+    },
+    "x86_64_macos": {
+      "url": "https://github.com/taiki-e/cargo-hack/releases/download/v0.5.28/cargo-hack-x86_64-apple-darwin.tar.gz",
+      "etag": "0x8DB19AC5EBF713B",
+      "checksum": "e926dbb2921544835c5e38cd4e3ac3ef5be4b4ab752528f45d805b652df11ee4"
+    },
+    "x86_64_windows": {
+      "url": "https://github.com/taiki-e/cargo-hack/releases/download/v0.5.28/cargo-hack-x86_64-pc-windows-msvc.tar.gz",
+      "etag": "0x8DB19ACA033CF41",
+      "checksum": "688c5febcd440da377af72dc66933b03c70a7393981cefe3fb40b719504900db"
+    },
+    "aarch64_linux_musl": {
+      "url": "https://github.com/taiki-e/cargo-hack/releases/download/v0.5.28/cargo-hack-aarch64-unknown-linux-musl.tar.gz",
+      "etag": "0x8DB19AC4E8DD9D5",
+      "checksum": "788308e4504a2676d97847fcc3993f47e8c93c4b43b46b8566b7b18cef01093f"
+    },
+    "aarch64_macos": {
+      "url": "https://github.com/taiki-e/cargo-hack/releases/download/v0.5.28/cargo-hack-aarch64-apple-darwin.tar.gz",
+      "etag": "0x8DB19AC4C833ABD",
+      "checksum": "47c3390818b5f434a4697aeff0f71f4f69b7e7c2df946b74cce45e2bb0fc8dfd"
+    },
+    "aarch64_windows": {
+      "url": "https://github.com/taiki-e/cargo-hack/releases/download/v0.5.28/cargo-hack-aarch64-pc-windows-msvc.tar.gz",
+      "etag": "0x8DB19AC8D2DAFAB",
+      "checksum": "c38da73a61a3600aed98d4ee00bce0c64bca4b4e2200112f55011872d420ead5"
+    }
+  },
+  "0.5.27": {
+    "x86_64_linux_musl": {
+      "url": "https://github.com/taiki-e/cargo-hack/releases/download/v0.5.27/cargo-hack-x86_64-unknown-linux-musl.tar.gz",
+      "etag": "0x8DAFE7AF864E9C9",
+      "checksum": "a57248a36e5f95b88eda8fbbfd1f1170992abe7d126c7778aa2bd0508625592f"
+    },
+    "x86_64_macos": {
+      "url": "https://github.com/taiki-e/cargo-hack/releases/download/v0.5.27/cargo-hack-x86_64-apple-darwin.tar.gz",
+      "etag": "0x8DAFE7AEA505944",
+      "checksum": "8c3f574813316c74f8f6871eea60af1e9f161ffe598e5ee49029929eb48dadd2"
+    },
+    "x86_64_windows": {
+      "url": "https://github.com/taiki-e/cargo-hack/releases/download/v0.5.27/cargo-hack-x86_64-pc-windows-msvc.tar.gz",
+      "etag": "0x8DAFE7AFA51A14A",
+      "checksum": "f9510e9e84e4911feea8038d4358d0fc6c5aeea266508cdc4ef58d0a547fdad1"
+    },
+    "aarch64_linux_musl": {
+      "url": "https://github.com/taiki-e/cargo-hack/releases/download/v0.5.27/cargo-hack-aarch64-unknown-linux-musl.tar.gz",
+      "etag": "0x8DAFE7AAD8D134B",
+      "checksum": "14deb7e0772fd0090ca3b04117f70cc10b20a370edf56b9255d24e84e755f7ac"
+    },
+    "aarch64_macos": {
+      "url": "https://github.com/taiki-e/cargo-hack/releases/download/v0.5.27/cargo-hack-aarch64-apple-darwin.tar.gz",
+      "etag": "0x8DAFE7AAB7D48B8",
+      "checksum": "c16b74d87ad26f5d8147bf3c0b17bd04c77b0bdeff836c7ae2c0a02959e761ed"
+    },
+    "aarch64_windows": {
+      "url": "https://github.com/taiki-e/cargo-hack/releases/download/v0.5.27/cargo-hack-aarch64-pc-windows-msvc.tar.gz",
+      "etag": "0x8DAFE7AE7EC3A12",
+      "checksum": "d2694b937d0c8fed71c1a0d3aabd9d9923a808d7196b15fd6d2eacde6755d57c"
+    }
+  },
+  "0.5.26": {
+    "x86_64_linux_musl": {
+      "url": "https://github.com/taiki-e/cargo-hack/releases/download/v0.5.26/cargo-hack-x86_64-unknown-linux-musl.tar.gz",
+      "etag": "0x8DAF3DA27133671",
+      "checksum": "e4bf3b5ee4be1d7e324c625f18ad85db22ab7bab9bb76988e3901358bc6b6e23"
+    },
+    "x86_64_macos": {
+      "url": "https://github.com/taiki-e/cargo-hack/releases/download/v0.5.26/cargo-hack-x86_64-apple-darwin.tar.gz",
+      "etag": "0x8DAF3DA5832973C",
+      "checksum": "697b11ef5f79c9976424c46be7a7f6a7f8efa94b587deb41fa37a2aa0fbcc28b"
+    },
+    "x86_64_windows": {
+      "url": "https://github.com/taiki-e/cargo-hack/releases/download/v0.5.26/cargo-hack-x86_64-pc-windows-msvc.tar.gz",
+      "etag": "0x8DAF3D9F862CB91",
+      "checksum": "f959bcd911be619c24c627a3ccaca36424215f5dcfdbc3e6443508f8c9d8bc50"
+    },
+    "aarch64_linux_musl": {
+      "url": "https://github.com/taiki-e/cargo-hack/releases/download/v0.5.26/cargo-hack-aarch64-unknown-linux-musl.tar.gz",
+      "etag": "0x8DAF3D9C2D430E1",
+      "checksum": "50814c9e1bff259816e03508aac9ac06be18bea4bf220928fac10b1de9494abc"
+    },
+    "aarch64_macos": {
+      "url": "https://github.com/taiki-e/cargo-hack/releases/download/v0.5.26/cargo-hack-aarch64-apple-darwin.tar.gz",
+      "etag": "0x8DAF3D9C47E4722",
+      "checksum": "fb4a1d38ce5edc5eccc3ecdc2aa27dcd58b0984ec76316f52d9c8a3c97679a4f"
+    },
+    "aarch64_windows": {
+      "url": "https://github.com/taiki-e/cargo-hack/releases/download/v0.5.26/cargo-hack-aarch64-pc-windows-msvc.tar.gz",
+      "etag": "0x8DAF3D9D4AE56B1",
+      "checksum": "abb797d5794ea0456b323e5074b452c798dd5b5a94135d91f38494e829c8bbff"
+    }
+  },
+  "0.5.25": {
+    "x86_64_linux_musl": {
+      "url": "https://github.com/taiki-e/cargo-hack/releases/download/v0.5.25/cargo-hack-x86_64-unknown-linux-musl.tar.gz",
+      "etag": "0x8DAE689D09C3DFE",
+      "checksum": "174ac9958cc93a197821012ab74a7b96836f0792ba031c3edfec3b81e7cacb93"
+    },
+    "x86_64_macos": {
+      "url": "https://github.com/taiki-e/cargo-hack/releases/download/v0.5.25/cargo-hack-x86_64-apple-darwin.tar.gz",
+      "etag": "0x8DAE6898EA902E6",
+      "checksum": "db2c58207e0e8682e8c0a8785bfa221bf54fe7bf4806c39bbc4358bc97c1a146"
+    },
+    "x86_64_windows": {
+      "url": "https://github.com/taiki-e/cargo-hack/releases/download/v0.5.25/cargo-hack-x86_64-pc-windows-msvc.tar.gz",
+      "etag": "0x8DAE689C752C0AD",
+      "checksum": "1462f59293c111ed61bdad6ea8783635c22e9b2bd0ebeffdaa95f7587ede6c80"
+    },
+    "aarch64_linux_musl": {
+      "url": "https://github.com/taiki-e/cargo-hack/releases/download/v0.5.25/cargo-hack-aarch64-unknown-linux-musl.tar.gz",
+      "etag": "0x8DAE68996F559C6",
+      "checksum": "e955398f465f2152b1c4717a2c3ff4dd9525d7a25f01c4b1d85e4e2db4b57ac0"
+    },
+    "aarch64_macos": {
+      "url": "https://github.com/taiki-e/cargo-hack/releases/download/v0.5.25/cargo-hack-aarch64-apple-darwin.tar.gz",
+      "etag": "0x8DAE689823C730E",
+      "checksum": "69bdd8c7c31434c7ef76addc44fa70b873f637ff2a1b245fdf0ee85f1f278f28"
+    },
+    "aarch64_windows": {
+      "url": "https://github.com/taiki-e/cargo-hack/releases/download/v0.5.25/cargo-hack-aarch64-pc-windows-msvc.tar.gz",
+      "etag": "0x8DAE689B61D9C24",
+      "checksum": "2a8ad14a57a373529b1bbdee10a07b27012b4a0e4506df09d16c949f2c0b1429"
+    }
+  },
+  "0.5.24": {
+    "x86_64_linux_musl": {
+      "url": "https://github.com/taiki-e/cargo-hack/releases/download/v0.5.24/cargo-hack-x86_64-unknown-linux-musl.tar.gz",
+      "etag": "0x8DAD578F233DDF9",
+      "checksum": "645eaa98b5f582a2668ac38f139d5476ee605a6de3adaa4937d4ee84f1cce209"
+    },
+    "x86_64_macos": {
+      "url": "https://github.com/taiki-e/cargo-hack/releases/download/v0.5.24/cargo-hack-x86_64-apple-darwin.tar.gz",
+      "etag": "0x8DAD57964C8778F",
+      "checksum": "976bb3fc5eccfff7a6bd4ca0b520cec731bf73dec7a2150328cfe8e139afdabb"
+    },
+    "x86_64_windows": {
+      "url": "https://github.com/taiki-e/cargo-hack/releases/download/v0.5.24/cargo-hack-x86_64-pc-windows-msvc.tar.gz",
+      "etag": "0x8DAD57905F2C686",
+      "checksum": "63cf751b00d7a44cd612fbbd2c45d16f3d0577710ddb0cd0b599f05748b5ea43"
+    },
+    "aarch64_linux_musl": {
+      "url": "https://github.com/taiki-e/cargo-hack/releases/download/v0.5.24/cargo-hack-aarch64-unknown-linux-musl.tar.gz",
+      "etag": "0x8DAD5789C8EBB37",
+      "checksum": "245caa8882423682945815e5ac98efc45aa78b15f57f9df3ffc71d0cc40d6a46"
+    },
+    "aarch64_macos": {
+      "url": "https://github.com/taiki-e/cargo-hack/releases/download/v0.5.24/cargo-hack-aarch64-apple-darwin.tar.gz",
+      "etag": "0x8DAD579048BA377",
+      "checksum": "61195f2409284f59ef7aeac792e29c545c770f263942197fffa6c5a6ec17145b"
+    },
+    "aarch64_windows": {
+      "url": "https://github.com/taiki-e/cargo-hack/releases/download/v0.5.24/cargo-hack-aarch64-pc-windows-msvc.tar.gz",
+      "etag": "0x8DAD578D3C36A51",
+      "checksum": "5f4423598a1007957b399250c12723a88ffa9d38b2bd4d1ac5ecfdd33edfdb94"
+    }
+  },
+  "0.5.23": {
+    "x86_64_linux_musl": {
+      "url": "https://github.com/taiki-e/cargo-hack/releases/download/v0.5.23/cargo-hack-x86_64-unknown-linux-musl.tar.gz",
+      "etag": "0x8DAD0722A73B7D3",
+      "checksum": "47d0b7f906395c39c249bb9be71541ca16bdaf7a6476ad20072ff9d7bc934664"
+    },
+    "x86_64_macos": {
+      "url": "https://github.com/taiki-e/cargo-hack/releases/download/v0.5.23/cargo-hack-x86_64-apple-darwin.tar.gz",
+      "etag": "0x8DAD072957C01E4",
+      "checksum": "45861be5b6d6501294ed81fbfbb59f93b758f963fe3d818d46d17317ec934371"
+    },
+    "x86_64_windows": {
+      "url": "https://github.com/taiki-e/cargo-hack/releases/download/v0.5.23/cargo-hack-x86_64-pc-windows-msvc.tar.gz",
+      "etag": "0x8DAD07209DB055F",
+      "checksum": "91b1a929add1e301807a1cfe37f840616c0a5154063078910df487065830b9ee"
+    },
+    "aarch64_linux_musl": {
+      "url": "https://github.com/taiki-e/cargo-hack/releases/download/v0.5.23/cargo-hack-aarch64-unknown-linux-musl.tar.gz",
+      "etag": "0x8DAD071FA2AE8B4",
+      "checksum": "a81d682a88470f6ba761d4cee18cfaafe63113e3131772feb6dbf8efd5ccfd65"
+    },
+    "aarch64_macos": {
+      "url": "https://github.com/taiki-e/cargo-hack/releases/download/v0.5.23/cargo-hack-aarch64-apple-darwin.tar.gz",
+      "etag": "0x8DAD072714D6905",
+      "checksum": "f0f73073144deefa790ebe50e9fa60ddd694df043f6461df8afd40623efb52ab"
+    },
+    "aarch64_windows": {
+      "url": "https://github.com/taiki-e/cargo-hack/releases/download/v0.5.23/cargo-hack-aarch64-pc-windows-msvc.tar.gz",
+      "etag": "0x8DAD0720C3BF504",
+      "checksum": "d080aa704dfdfa51f7151c10fafc6fde5ee3d9f2e4485cc244fa5024160a16e9"
+    }
+  },
+  "0.5.22": {
+    "x86_64_linux_musl": {
+      "url": "https://github.com/taiki-e/cargo-hack/releases/download/v0.5.22/cargo-hack-x86_64-unknown-linux-musl.tar.gz",
+      "etag": "0x8DAB69B0407B3E6",
+      "checksum": "39fb5278e5a5782c92e13c134c2826dc9a9b2ed37f1df354c3c82dae705eb464"
+    },
+    "x86_64_macos": {
+      "url": "https://github.com/taiki-e/cargo-hack/releases/download/v0.5.22/cargo-hack-x86_64-apple-darwin.tar.gz",
+      "etag": "0x8DAB69AEA202B03",
+      "checksum": "a33d6fe8a132385975a3dcde955152095807d7d5d70fd821c10bd973b58591ea"
+    },
+    "x86_64_windows": {
+      "url": "https://github.com/taiki-e/cargo-hack/releases/download/v0.5.22/cargo-hack-x86_64-pc-windows-msvc.tar.gz",
+      "etag": "0x8DAB69B12684EDD",
+      "checksum": "4a8f1d2405cc51002af163de3d5799b6f38f4168314848fa6da7b0cc09f218ae"
+    },
+    "aarch64_linux_musl": {
+      "url": "https://github.com/taiki-e/cargo-hack/releases/download/v0.5.22/cargo-hack-aarch64-unknown-linux-musl.tar.gz",
+      "etag": "0x8DAB69B04D1740D",
+      "checksum": "57d08f3caec65e90af45114108902cef88e01ea6200ccec7fa94b3ada397fba6"
+    },
+    "aarch64_macos": {
+      "url": "https://github.com/taiki-e/cargo-hack/releases/download/v0.5.22/cargo-hack-aarch64-apple-darwin.tar.gz",
+      "etag": "0x8DAB69B4356F5D0",
+      "checksum": "124d25e71cdf840ef7a1c34829822bddc4305ea2e3e4abd6f5dce40b447301cf"
+    },
+    "aarch64_windows": {
+      "url": "https://github.com/taiki-e/cargo-hack/releases/download/v0.5.22/cargo-hack-aarch64-pc-windows-msvc.tar.gz",
+      "etag": "0x8DAB69B4C1C4A2D",
+      "checksum": "10e81e47097c6126ab10dadfc12d2b15fce10ed00cd89e9b39a1938c9567ea38"
+    }
+  },
+  "0.5.21": {
+    "x86_64_linux_musl": {
+      "url": "https://github.com/taiki-e/cargo-hack/releases/download/v0.5.21/cargo-hack-x86_64-unknown-linux-musl.tar.gz",
+      "etag": "0x8DA9FCBCB2D607D",
+      "checksum": "eae32e44290f06e69ac2220c8d1e448c2a6f08f8672d2eee6e879ea4f7690457"
+    },
+    "x86_64_macos": {
+      "url": "https://github.com/taiki-e/cargo-hack/releases/download/v0.5.21/cargo-hack-x86_64-apple-darwin.tar.gz",
+      "etag": "0x8DA9FCBDFD15C24",
+      "checksum": "9c176fe69e36ba2fbc7f4858b62f4997456b4b4d7162a0ed3fd234ea8413a476"
+    },
+    "x86_64_windows": {
+      "url": "https://github.com/taiki-e/cargo-hack/releases/download/v0.5.21/cargo-hack-x86_64-pc-windows-msvc.tar.gz",
+      "etag": "0x8DA9FCBECD3F76F",
+      "checksum": "72e3574450eda59ddaa75eba5b0ff58e1434f9e3447aed492191fa00ff6b0ea5"
+    },
+    "aarch64_linux_musl": {
+      "url": "https://github.com/taiki-e/cargo-hack/releases/download/v0.5.21/cargo-hack-aarch64-unknown-linux-musl.tar.gz",
+      "etag": "0x8DA9FCBD4521AA3",
+      "checksum": "a0f92a1ead13504cf872665e70d2aa53d25138a3eb22b398f8038051dbd12d8e"
+    },
+    "aarch64_macos": {
+      "url": "https://github.com/taiki-e/cargo-hack/releases/download/v0.5.21/cargo-hack-aarch64-apple-darwin.tar.gz",
+      "etag": "0x8DA9FCC4FCD6F31",
+      "checksum": "090af158dc4f8c6a5f41259d4756d77e82de4db9430822fe84d9dd293fcb595f"
+    },
+    "aarch64_windows": {
+      "url": "https://github.com/taiki-e/cargo-hack/releases/download/v0.5.21/cargo-hack-aarch64-pc-windows-msvc.tar.gz",
+      "etag": "0x8DA9FCBFD80C147",
+      "checksum": "01b463955386daa9330ac23ce873409f11695e9fd39e4d9db27099f128de192a"
+    }
+  },
+  "0.5.20": {
+    "x86_64_linux_musl": {
+      "url": "https://github.com/taiki-e/cargo-hack/releases/download/v0.5.20/cargo-hack-x86_64-unknown-linux-musl.tar.gz",
+      "etag": "0x8DA9DE9938731B1",
+      "checksum": "82f2383ff38f26b4b12f9fc7c9bd43608a30eb6aea5b103795828c327a26af94"
+    },
+    "x86_64_macos": {
+      "url": "https://github.com/taiki-e/cargo-hack/releases/download/v0.5.20/cargo-hack-x86_64-apple-darwin.tar.gz",
+      "etag": "0x8DA9DE9A151BE13",
+      "checksum": "07c6d081ee4860b513ea85449b26db5a398bba24fe0b163885fd3964cffec9f5"
+    },
+    "x86_64_windows": {
+      "url": "https://github.com/taiki-e/cargo-hack/releases/download/v0.5.20/cargo-hack-x86_64-pc-windows-msvc.tar.gz",
+      "etag": "0x8DA9DE9B98744E7",
+      "checksum": "45c22dcdd736ba2b7ab9a33a0e1e00186ee2d34b97e65a0e72f715511c339e96"
+    },
+    "aarch64_linux_musl": {
+      "url": "https://github.com/taiki-e/cargo-hack/releases/download/v0.5.20/cargo-hack-aarch64-unknown-linux-musl.tar.gz",
+      "etag": "0x8DA9DE9919F5D6F",
+      "checksum": "43f7236015a0d1f6047f7ffe784109d90966ed7a0cb2551a334047bc339761b9"
+    },
+    "aarch64_macos": {
+      "url": "https://github.com/taiki-e/cargo-hack/releases/download/v0.5.20/cargo-hack-aarch64-apple-darwin.tar.gz",
+      "etag": "0x8DA9DE998A593D5",
+      "checksum": "87d75808cc9453a9887c588fe8e62c18fce659aa2e871e75febf2f51bfabd62c"
+    },
+    "aarch64_windows": {
+      "url": "https://github.com/taiki-e/cargo-hack/releases/download/v0.5.20/cargo-hack-aarch64-pc-windows-msvc.tar.gz",
+      "etag": "0x8DA9DE9A9A3A1B5",
+      "checksum": "e1e712c3768a5dbcb0aba4bd146f8fdfcf95c0c6a4e9d6f69a320db3f3f79cf6"
+    }
+  },
+  "0.5.19": {
+    "x86_64_linux_musl": {
+      "url": "https://github.com/taiki-e/cargo-hack/releases/download/v0.5.19/cargo-hack-x86_64-unknown-linux-musl.tar.gz",
+      "etag": "0x8DA9CAF21A7907A",
+      "checksum": "3c54b469fc5f57499468d3c1fe262d6a15b6829e43eb3c5070a9115bfb667a0c"
+    },
+    "x86_64_macos": {
+      "url": "https://github.com/taiki-e/cargo-hack/releases/download/v0.5.19/cargo-hack-x86_64-apple-darwin.tar.gz",
+      "etag": "0x8DA9CAF42387AF5",
+      "checksum": "d2a0cddf9d40185269d353446adeb6fdaad5420966ec4743545a0953e72f4b0e"
+    },
+    "x86_64_windows": {
+      "url": "https://github.com/taiki-e/cargo-hack/releases/download/v0.5.19/cargo-hack-x86_64-pc-windows-msvc.tar.gz",
+      "etag": "0x8DA9CAF303AE26B",
+      "checksum": "32a60932193443947ddde4fae1f3235fa947826eaf1135a33a4a1d7e8e07d71c"
+    },
+    "aarch64_linux_musl": {
+      "url": "https://github.com/taiki-e/cargo-hack/releases/download/v0.5.19/cargo-hack-aarch64-unknown-linux-musl.tar.gz",
+      "etag": "0x8DA9CAF0F9F9BFB",
+      "checksum": "51c3e9d4e1f31f2cdd9b3af4d6f657bc721452b9aba76640366fb4ef7541d446"
+    },
+    "aarch64_macos": {
+      "url": "https://github.com/taiki-e/cargo-hack/releases/download/v0.5.19/cargo-hack-aarch64-apple-darwin.tar.gz",
+      "etag": "0x8DA9CAF1EA59A4F",
+      "checksum": "fa096d27cc1a1098866884537810247f756ca0f00401cf7b300b0a4e8b6ae7d9"
+    },
+    "aarch64_windows": {
+      "url": "https://github.com/taiki-e/cargo-hack/releases/download/v0.5.19/cargo-hack-aarch64-pc-windows-msvc.tar.gz",
+      "etag": "0x8DA9CAF33C1372D",
+      "checksum": "40a2edaf536eb9afc151140d8dd2c5812ea2b5377e1c55dabfe5b9168ad25c3e"
+    }
+  },
+  "0.5.18": {
+    "x86_64_linux_musl": {
+      "url": "https://github.com/taiki-e/cargo-hack/releases/download/v0.5.18/cargo-hack-x86_64-unknown-linux-musl.tar.gz",
+      "etag": "0x8DA8E7CAB8D3A1D",
+      "checksum": "38f923c7b3ec904536efe319534120307b76418ac4b9c4fe0a40b01f600e4041"
+    },
+    "x86_64_macos": {
+      "url": "https://github.com/taiki-e/cargo-hack/releases/download/v0.5.18/cargo-hack-x86_64-apple-darwin.tar.gz",
+      "etag": "0x8DA8E7D11C9D75A",
+      "checksum": "cf61951503813e1c631f02f4d7791d116b6dd1a5207dd91537ad5d3c205c67ac"
+    },
+    "x86_64_windows": {
+      "url": "https://github.com/taiki-e/cargo-hack/releases/download/v0.5.18/cargo-hack-x86_64-pc-windows-msvc.tar.gz",
+      "etag": "0x8DA8E7CBDE5A9D7",
+      "checksum": "3cb6901d0af50811f6d16c38ce4a1c5b423455817939d565fe15fdfdb6610d21"
+    },
+    "aarch64_linux_musl": {
+      "url": "https://github.com/taiki-e/cargo-hack/releases/download/v0.5.18/cargo-hack-aarch64-unknown-linux-musl.tar.gz",
+      "etag": "0x8DA8E7C9E9126D7",
+      "checksum": "e28da2bd22a06c99f9d310289fe3777e8dc531ebc3b3f5beb84053006e471622"
+    },
+    "aarch64_macos": {
+      "url": "https://github.com/taiki-e/cargo-hack/releases/download/v0.5.18/cargo-hack-aarch64-apple-darwin.tar.gz",
+      "etag": "0x8DA8E7CDB0353D0",
+      "checksum": "ef1a07f247d3845bcfba3e297585d670f19f8366f83489a0f5169b31418d338c"
+    },
+    "aarch64_windows": {
+      "url": "https://github.com/taiki-e/cargo-hack/releases/download/v0.5.18/cargo-hack-aarch64-pc-windows-msvc.tar.gz",
+      "etag": "0x8DA8E7CCE40E5CC",
+      "checksum": "fdf4e1db83736ce02cdaab359622b144a79be0de18db9a838418bb8953e942d9"
+    }
+  },
+  "0.5.17": {
+    "x86_64_linux_musl": {
+      "url": "https://github.com/taiki-e/cargo-hack/releases/download/v0.5.17/cargo-hack-x86_64-unknown-linux-musl.tar.gz",
+      "etag": "0x8DA7CA86B6928AE",
+      "checksum": "2f7a0ea5a704e9d1ed171063fcad50be47ff8d2a130e5ff97bd8c0fad6a581dd"
+    },
+    "x86_64_macos": {
+      "url": "https://github.com/taiki-e/cargo-hack/releases/download/v0.5.17/cargo-hack-x86_64-apple-darwin.tar.gz",
+      "etag": "0x8DA7CA8B0D4443F",
+      "checksum": "d3e467a6e8f3e8a9a2cdd63c2fe19a8ef6d576dfa3f0fefa5e862b4a5e68273b"
+    },
+    "x86_64_windows": {
+      "url": "https://github.com/taiki-e/cargo-hack/releases/download/v0.5.17/cargo-hack-x86_64-pc-windows-msvc.tar.gz",
+      "etag": "0x8DA7CA889E5673A",
+      "checksum": "1fa54dcbbd9e6a60c2d8c36f92f8d026199a54f70eeeac8231a568c2e52fc18e"
+    },
+    "aarch64_linux_musl": {
+      "url": "https://github.com/taiki-e/cargo-hack/releases/download/v0.5.17/cargo-hack-aarch64-unknown-linux-musl.tar.gz",
+      "etag": "0x8DA7CA86396AA9B",
+      "checksum": "cd7605c23fdd631c110dfe8c47bb2331ca699a4dc49c129b8b7e679bbb3ef52b"
+    },
+    "aarch64_macos": {
+      "url": "https://github.com/taiki-e/cargo-hack/releases/download/v0.5.17/cargo-hack-aarch64-apple-darwin.tar.gz",
+      "etag": "0x8DA7CA85A3E8898",
+      "checksum": "d4f69cb5f137c74ba4af8696e1c5c06ef2c7d972935548daeca8d0f902ccb6b9"
+    }
+  },
+  "0.5.16": {
+    "x86_64_linux_musl": {
+      "url": "https://github.com/taiki-e/cargo-hack/releases/download/v0.5.16/cargo-hack-x86_64-unknown-linux-musl.tar.gz",
+      "etag": "0x8DA71F41DE35B82",
+      "checksum": "7625df89cf4689bdffb9616c5debf0afab3708478c81d882f911dc854507e2a6"
+    },
+    "x86_64_macos": {
+      "url": "https://github.com/taiki-e/cargo-hack/releases/download/v0.5.16/cargo-hack-x86_64-apple-darwin.tar.gz",
+      "etag": "0x8DA71F415B44D93",
+      "checksum": "fdb6fcab82da1e18578ac9ac8d7c06e1fb00e019f8ffb741f8bd7ea21f9f9565"
+    },
+    "x86_64_windows": {
+      "url": "https://github.com/taiki-e/cargo-hack/releases/download/v0.5.16/cargo-hack-x86_64-pc-windows-msvc.tar.gz",
+      "etag": "0x8DA71F3EB311785",
+      "checksum": "43aa43b41fb1accebeee1dc3d1033031a08a711b295e1801fe62da2b4c8a9d54"
+    },
+    "aarch64_linux_musl": {
+      "url": "https://github.com/taiki-e/cargo-hack/releases/download/v0.5.16/cargo-hack-aarch64-unknown-linux-musl.tar.gz",
+      "etag": "0x8DA71F40F0BF494",
+      "checksum": "83a901acf9f92f3ce9353f76b326f1c56b4a7c19dbc2d914f067a723916cf585"
+    },
+    "aarch64_macos": {
+      "url": "https://github.com/taiki-e/cargo-hack/releases/download/v0.5.16/cargo-hack-aarch64-apple-darwin.tar.gz",
+      "etag": "0x8DA71F3D866EA51",
+      "checksum": "731a2c7e0afc0a8b7ac99f6e5e7476dc95705b5ca01c223919a1cbce7f9a7309"
+    }
+  },
+  "0.5.15": {
+    "x86_64_linux_musl": {
+      "url": "https://github.com/taiki-e/cargo-hack/releases/download/v0.5.15/cargo-hack-x86_64-unknown-linux-musl.tar.gz",
+      "etag": "0x8DA687D59437BE1",
+      "checksum": "85a183ee312ecc579be266388fd203886d56704e2468d4a1c98ee1057e7289f0"
+    },
+    "x86_64_macos": {
+      "url": "https://github.com/taiki-e/cargo-hack/releases/download/v0.5.15/cargo-hack-x86_64-apple-darwin.tar.gz",
+      "etag": "0x8DA687D3C0075C4",
+      "checksum": "e8c5e359fc9dc50046b88c6cf08bee876de0952a31f6e6c39ea7bfba71d08193"
+    },
+    "x86_64_windows": {
+      "url": "https://github.com/taiki-e/cargo-hack/releases/download/v0.5.15/cargo-hack-x86_64-pc-windows-msvc.tar.gz",
+      "etag": "0x8DA687D5AE57577",
+      "checksum": "b8da9f656b921406302f2468d13abb3a43a5b39535a8b5e9294fae8f5c78b972"
+    },
+    "aarch64_linux_musl": {
+      "url": "https://github.com/taiki-e/cargo-hack/releases/download/v0.5.15/cargo-hack-aarch64-unknown-linux-musl.tar.gz",
+      "etag": "0x8DA687DA32EF323",
+      "checksum": "48933088a1feb1776aa7feb35f6aca84b0593ab7602c8197b5d64274f0b4b688"
+    },
+    "aarch64_macos": {
+      "url": "https://github.com/taiki-e/cargo-hack/releases/download/v0.5.15/cargo-hack-aarch64-apple-darwin.tar.gz",
+      "etag": "0x8DA687D4FD89F53",
+      "checksum": "7c0ba9b4f9194c85dcd344affb77873ceea90aad0b3506ceb45d04528bd82926"
+    }
+  },
+  "0.5.14": {
+    "x86_64_linux_musl": {
+      "url": "https://github.com/taiki-e/cargo-hack/releases/download/v0.5.14/cargo-hack-x86_64-unknown-linux-musl.tar.gz",
+      "etag": "0x8DA449A18F5A66B",
+      "checksum": "11e05d350cf1be6fe95e757f08708122a4ad4e39cbafddbe1baab2c58a547784"
+    },
+    "x86_64_macos": {
+      "url": "https://github.com/taiki-e/cargo-hack/releases/download/v0.5.14/cargo-hack-x86_64-apple-darwin.tar.gz",
+      "etag": "0x8DA449A9C2B6B63",
+      "checksum": "1c0891a71480d25aa2d8da56275be9a7eb378fcdbd318c39b17a3615daeae08d"
+    },
+    "x86_64_windows": {
+      "url": "https://github.com/taiki-e/cargo-hack/releases/download/v0.5.14/cargo-hack-x86_64-pc-windows-msvc.tar.gz",
+      "etag": "0x8DA449A1B4AAB64",
+      "checksum": "5f2f6d60cfbe6323a44ab3631f0a7f65bab87f08f58d4645883bfca35ece0354"
+    },
+    "aarch64_linux_musl": {
+      "url": "https://github.com/taiki-e/cargo-hack/releases/download/v0.5.14/cargo-hack-aarch64-unknown-linux-musl.tar.gz",
+      "etag": "0x8DA449A18ECA71F",
+      "checksum": "95b599c3e576932b9147b80e2ced64e823b96fc5e2c93d2797df9e16b9bb2974"
+    },
+    "aarch64_macos": {
+      "url": "https://github.com/taiki-e/cargo-hack/releases/download/v0.5.14/cargo-hack-aarch64-apple-darwin.tar.gz",
+      "etag": "0x8DA449A11B33081",
+      "checksum": "cce95ceef5a56e0c0f7448c7724a9aebbd2fa1fb5a5f77b332393fec65138666"
+    }
+  },
+  "0.5.13": {
+    "x86_64_linux_musl": {
+      "url": "https://github.com/taiki-e/cargo-hack/releases/download/v0.5.13/cargo-hack-x86_64-unknown-linux-musl.tar.gz",
+      "etag": "0x8DA33B25B525DAD",
+      "checksum": "a6e8952a3e1084b28d4968dd2ee28d6777a64c1975d5572e6b081c403d7db996"
+    },
+    "x86_64_macos": {
+      "url": "https://github.com/taiki-e/cargo-hack/releases/download/v0.5.13/cargo-hack-x86_64-apple-darwin.tar.gz",
+      "etag": "0x8DA33B2484E6560",
+      "checksum": "2bb4a3863dc6f1e106b2a325666e51abec8bad18539cd84ed82f05138c931a51"
+    },
+    "x86_64_windows": {
+      "url": "https://github.com/taiki-e/cargo-hack/releases/download/v0.5.13/cargo-hack-x86_64-pc-windows-msvc.tar.gz",
+      "etag": "0x8DA33B25EADDBE8",
+      "checksum": "227c006ae2aa272d6c561322962f92fe384d0a53f99be790e06752bf04b41349"
+    },
+    "aarch64_linux_musl": {
+      "url": "https://github.com/taiki-e/cargo-hack/releases/download/v0.5.13/cargo-hack-aarch64-unknown-linux-musl.tar.gz",
+      "etag": "0x8DA33B2608FE9CA",
+      "checksum": "08d14b9f380c7ab0408cc3b95913b3c4e464698848af5027be01f1c2dcf97f56"
+    }
+  },
+  "0.5.12": {
+    "x86_64_linux_musl": {
+      "url": "https://github.com/taiki-e/cargo-hack/releases/download/v0.5.12/cargo-hack-x86_64-unknown-linux-musl.tar.gz",
+      "etag": "0x8D9DCF18B554544",
+      "checksum": "04d33084d6ef8e44f5832205932763c18ad38f61ac8dbb48b31f0585d48641a0"
+    },
+    "x86_64_macos": {
+      "url": "https://github.com/taiki-e/cargo-hack/releases/download/v0.5.12/cargo-hack-x86_64-apple-darwin.tar.gz",
+      "etag": "0x8D9DCF17AAC6504",
+      "checksum": "88f0e75955a8192b2b44d7864224dbfe0c35c22e0130aa0944e690d00370f30a"
+    },
+    "x86_64_windows": {
+      "url": "https://github.com/taiki-e/cargo-hack/releases/download/v0.5.12/cargo-hack-x86_64-pc-windows-msvc.tar.gz",
+      "etag": "0x8D9DCF25C0041C7",
+      "checksum": "96b04eac7fe6f4263670bd593828d8b2f69a5342b1d7a89de272cde617437251"
+    },
+    "aarch64_linux_musl": {
+      "url": "https://github.com/taiki-e/cargo-hack/releases/download/v0.5.12/cargo-hack-aarch64-unknown-linux-musl.tar.gz",
+      "etag": "0x8D9DCF17C56ED93",
+      "checksum": "984533e3d8aad2e7923986015ce0cce9c172cd94c21e4e718ddb141fe5698bde"
+    }
+  },
+  "0.5.11": {
+    "x86_64_linux_musl": {
+      "url": "https://github.com/taiki-e/cargo-hack/releases/download/v0.5.11/cargo-hack-x86_64-unknown-linux-musl.tar.gz",
+      "etag": "0x8D9DC9F1AA898D8",
+      "checksum": "c41ec44f641cb380f180ca03691e8410387bce2d91f3eecadbd09941124aa7f1"
+    },
+    "x86_64_macos": {
+      "url": "https://github.com/taiki-e/cargo-hack/releases/download/v0.5.11/cargo-hack-x86_64-apple-darwin.tar.gz",
+      "etag": "0x8D9DC9F14144F94",
+      "checksum": "5d9c4f4d1b125cc7b3f8b3d823f04e4909741b9c657303eb2a03b5c79b0792a2"
+    },
+    "x86_64_windows": {
+      "url": "https://github.com/taiki-e/cargo-hack/releases/download/v0.5.11/cargo-hack-x86_64-pc-windows-msvc.tar.gz",
+      "etag": "0x8D9DC9F29393677",
+      "checksum": "b8c9eaea1e872b209777ac112b39cb483c7dc229e48c780526ab9f6ac2532876"
+    }
+  },
+  "0.5.10": {
+    "x86_64_linux_musl": {
+      "url": "https://github.com/taiki-e/cargo-hack/releases/download/v0.5.10/cargo-hack-x86_64-unknown-linux-musl.tar.gz",
+      "etag": "0x8D9D0C8113F863A",
+      "checksum": "06e413c02196e3b5affe363d89c538bc947b24d4dc9678acfd5bc91d94e06868"
+    },
+    "x86_64_macos": {
+      "url": "https://github.com/taiki-e/cargo-hack/releases/download/v0.5.10/cargo-hack-x86_64-apple-darwin.tar.gz",
+      "etag": "0x8D9D0BC9DAD69AC",
+      "checksum": "c1459c80d2dfac359189e4ea1f97da9a2576a09a9315f7db751b419239568820"
+    },
+    "x86_64_windows": {
+      "url": "https://github.com/taiki-e/cargo-hack/releases/download/v0.5.10/cargo-hack-x86_64-pc-windows-msvc.tar.gz",
+      "etag": "0x8D9D0C80DD64FD6",
+      "checksum": "d9d0387e66b15acf89dc8fedfb026c1184736b348800b58e1a2c242eda4374aa"
+    }
+  },
+  "0.5.9": {
+    "x86_64_linux_musl": {
+      "url": "https://github.com/taiki-e/cargo-hack/releases/download/v0.5.9/cargo-hack-x86_64-unknown-linux-musl.tar.gz",
+      "etag": "0x8D9CAA0BE47596E",
+      "checksum": "98f4010e94700ad342be575156b642be6669afc04ae62eec438d06bd1dd87b4d"
+    },
+    "x86_64_macos": {
+      "url": "https://github.com/taiki-e/cargo-hack/releases/download/v0.5.9/cargo-hack-x86_64-apple-darwin.tar.gz",
+      "etag": "0x8D9CAA09475B78A",
+      "checksum": "38edacefb163c8f6b701c31a984fa6b1053747faf988354a7a0e2ef200618701"
+    },
+    "x86_64_windows": {
+      "url": "https://github.com/taiki-e/cargo-hack/releases/download/v0.5.9/cargo-hack-x86_64-pc-windows-msvc.tar.gz",
+      "etag": "0x8D9CAA0C6DD2D69",
+      "checksum": "27aeaee6a0827e17c3ba3df4a63043e6f66962d5383ef4aec642696c5c680404"
+    }
+  },
+  "0.5.8": {
+    "x86_64_linux_musl": {
+      "url": "https://github.com/taiki-e/cargo-hack/releases/download/v0.5.8/cargo-hack-x86_64-unknown-linux-musl.tar.gz",
+      "etag": "0x8D9B955B1E77D0D",
+      "checksum": "9ad5d16806deaf4255cd559c2c5411c09383d7c408ef4c8a4e491d0d416f8881"
+    },
+    "x86_64_macos": {
+      "url": "https://github.com/taiki-e/cargo-hack/releases/download/v0.5.8/cargo-hack-x86_64-apple-darwin.tar.gz",
+      "etag": "0x8D9B955B390804D",
+      "checksum": "5351954f5e8cf65497e9240735a8bcfd69067e2e94a26f4be41d16e98fc54965"
+    },
+    "x86_64_windows": {
+      "url": "https://github.com/taiki-e/cargo-hack/releases/download/v0.5.8/cargo-hack-x86_64-pc-windows-msvc.tar.gz",
+      "etag": "0x8D9B955B0EE2760",
+      "checksum": "28e5ddb8fd8f245280131d0dcee6668d8a96994494136325cceacc243dd3bd82"
+    }
+  },
+  "0.5.7": {
+    "x86_64_linux_musl": {
+      "url": "https://github.com/taiki-e/cargo-hack/releases/download/v0.5.7/cargo-hack-x86_64-unknown-linux-musl.tar.gz",
+      "etag": "0x8D9B955B17285B3",
+      "checksum": "7235b068f65e8d4c14787aa3695984e3fbbcbd7f0c97537872e3c8391eca1db1"
+    },
+    "x86_64_macos": {
+      "url": "https://github.com/taiki-e/cargo-hack/releases/download/v0.5.7/cargo-hack-x86_64-apple-darwin.tar.gz",
+      "etag": "0x8D9B955A7BEC847",
+      "checksum": "7ac464b8a3c147949474c49cc89782ecfde2098f42259a59c673579663c8cc55"
+    },
+    "x86_64_windows": {
+      "url": "https://github.com/taiki-e/cargo-hack/releases/download/v0.5.7/cargo-hack-x86_64-pc-windows-msvc.tar.gz",
+      "etag": "0x8D9B955A90C4BD2",
+      "checksum": "2a198c9506a75a8dc56e23c37c4e4a2bc25573a3c3879bbdfc05d476d57ac042"
+    }
+  },
+  "0.5.6": {
+    "x86_64_linux_musl": {
+      "url": "https://github.com/taiki-e/cargo-hack/releases/download/v0.5.6/cargo-hack-x86_64-unknown-linux-musl.tar.gz",
+      "etag": "0x8D9B955A6614198",
+      "checksum": "f0d616d878a674b01ff3eaad459bf93e9a424bf54ac12c0e131f70c9f4d98bdb"
+    },
+    "x86_64_macos": {
+      "url": "https://github.com/taiki-e/cargo-hack/releases/download/v0.5.6/cargo-hack-x86_64-apple-darwin.tar.gz",
+      "etag": "0x8D9B955B2AC0F09",
+      "checksum": "26ceb577099fb9b7a6128527e666c6737e4eb563c553496a83af347be32fc692"
+    },
+    "x86_64_windows": {
+      "url": "https://github.com/taiki-e/cargo-hack/releases/download/v0.5.6/cargo-hack-x86_64-pc-windows-msvc.tar.gz",
+      "etag": "0x8D9B955A98A427A",
+      "checksum": "68f2fad33d3ca995c8b540ccd022f22eafdadace2ea507ad2cc7ae57ee630bd9"
+    }
+  },
+  "0.5.5": {
+    "x86_64_linux_musl": {
+      "url": "https://github.com/taiki-e/cargo-hack/releases/download/v0.5.5/cargo-hack-x86_64-unknown-linux-musl.tar.gz",
+      "etag": "0x8D9B955AFA7F5B1",
+      "checksum": "632f228655646f75a6fb237cd18d11b6aabf9b4814297eda65d3f354bf8c9268"
+    },
+    "x86_64_macos": {
+      "url": "https://github.com/taiki-e/cargo-hack/releases/download/v0.5.5/cargo-hack-x86_64-apple-darwin.tar.gz",
+      "etag": "0x8D9B955AE9C7A55",
+      "checksum": "8a802f72e7b746cbfa3988ba0a8e8a4eb3ddc0ae83d44bf7eb982588e3df2bcc"
+    },
+    "x86_64_windows": {
+      "url": "https://github.com/taiki-e/cargo-hack/releases/download/v0.5.5/cargo-hack-x86_64-pc-windows-msvc.tar.gz",
+      "etag": "0x8D9B955B5E6245F",
+      "checksum": "f690eda799ab3afa94f3ecfe9e786c83a6447e93cb57fb7d5d0d766326fddf2a"
+    }
+  },
+  "0.5.4": {
+    "x86_64_linux_musl": {
+      "url": "https://github.com/taiki-e/cargo-hack/releases/download/v0.5.4/cargo-hack-x86_64-unknown-linux-musl.tar.gz",
+      "etag": "0x8D9B955B1124BB9",
+      "checksum": "9d90d56dc1c7a1f7747b8b0c27a85c7f630c60cbc7403f986711c275f1265d11"
+    },
+    "x86_64_macos": {
+      "url": "https://github.com/taiki-e/cargo-hack/releases/download/v0.5.4/cargo-hack-x86_64-apple-darwin.tar.gz",
+      "etag": "0x8D9B955B35861BF",
+      "checksum": "cf364b6aea436a6751f12b804b7ff2ca6d37ce8ff9090f77255afd2ee4268685"
+    },
+    "x86_64_windows": {
+      "url": "https://github.com/taiki-e/cargo-hack/releases/download/v0.5.4/cargo-hack-x86_64-pc-windows-msvc.tar.gz",
+      "etag": "0x8D9B955AE9A09B0",
+      "checksum": "f6f89330bb459ffdf1105fdde3e6e9a07335d202dcdda42c160dd560f43163dd"
+    }
+  },
+  "0.5.3": {
+    "x86_64_linux_musl": {
+      "url": "https://github.com/taiki-e/cargo-hack/releases/download/v0.5.3/cargo-hack-x86_64-unknown-linux-musl.tar.gz",
+      "etag": "0x8D9B955A657A619",
+      "checksum": "4c298cb156f1561e9e84e9ed0f2924d4265234e52ca15aefd743b114b5d161ca"
+    },
+    "x86_64_macos": {
+      "url": "https://github.com/taiki-e/cargo-hack/releases/download/v0.5.3/cargo-hack-x86_64-apple-darwin.tar.gz",
+      "etag": "0x8D9B955A8A5350F",
+      "checksum": "6135616c0612e13163e61c08e5134df1c6ab13574e4b0635892ddac92af726c0"
+    },
+    "x86_64_windows": {
+      "url": "https://github.com/taiki-e/cargo-hack/releases/download/v0.5.3/cargo-hack-x86_64-pc-windows-msvc.tar.gz",
+      "etag": "0x8D9B955B4BE72A7",
+      "checksum": "9ed458229ff9fae3bd8eb4d3e676d866037baa114d05f69b1a72411e81e3d36b"
+    }
+  },
+  "0.5.2": {
+    "x86_64_linux_musl": {
+      "url": "https://github.com/taiki-e/cargo-hack/releases/download/v0.5.2/cargo-hack-x86_64-unknown-linux-musl.tar.gz",
+      "etag": "0x8D9B955AD9E6A65",
+      "checksum": "d5b37eb22afca1ad817020ec52e776ee0c14c7bb0e9317381c63922d7c2514c9"
+    },
+    "x86_64_macos": {
+      "url": "https://github.com/taiki-e/cargo-hack/releases/download/v0.5.2/cargo-hack-x86_64-apple-darwin.tar.gz",
+      "etag": "0x8D9B955A7B505BB",
+      "checksum": "e87fde5b6a606358e47444d8fc24e4b40c857194a209d13d6440ee0b1fc53d71"
+    },
+    "x86_64_windows": {
+      "url": "https://github.com/taiki-e/cargo-hack/releases/download/v0.5.2/cargo-hack-x86_64-pc-windows-msvc.tar.gz",
+      "etag": "0x8D9B955B4C13160",
+      "checksum": "be8bad1ad9bca2a7c2420357859458c57d9224c96cbd3f7ed809804ce267fd4f"
+    }
+  },
+  "0.5.1": {
+    "x86_64_linux_musl": {
+      "url": "https://github.com/taiki-e/cargo-hack/releases/download/v0.5.1/cargo-hack-x86_64-unknown-linux-musl.tar.gz",
+      "etag": "0x8D9B955AB51508E",
+      "checksum": "f152cdc7c256d3432e4dbc5d5fb4e3a26a44faa809e1451cd752b7364861d84e"
+    },
+    "x86_64_macos": {
+      "url": "https://github.com/taiki-e/cargo-hack/releases/download/v0.5.1/cargo-hack-x86_64-apple-darwin.tar.gz",
+      "etag": "0x8D9B955AA34C0BD",
+      "checksum": "30045b01f7a42ce7d9bed1ac24e5b142d120ea94c4969309bea45583a5a39e63"
+    },
+    "x86_64_windows": {
+      "url": "https://github.com/taiki-e/cargo-hack/releases/download/v0.5.1/cargo-hack-x86_64-pc-windows-msvc.tar.gz",
+      "etag": "0x8D9B955AC045902",
+      "checksum": "b98c3aca93daf2259859c8aadfdbd0cd776683b7b758145403212af9b0d7f938"
+    }
+  },
+  "0.5.0": {
+    "x86_64_linux_musl": {
+      "url": "https://github.com/taiki-e/cargo-hack/releases/download/v0.5.0/cargo-hack-x86_64-unknown-linux-musl.tar.gz",
+      "etag": "0x8D9B955B2FFEED0",
+      "checksum": "903be266e25b87511234f8f39a84f0a9ebd40b52ccc2299d4eda4c8da8bfd9d9"
+    },
+    "x86_64_macos": {
+      "url": "https://github.com/taiki-e/cargo-hack/releases/download/v0.5.0/cargo-hack-x86_64-apple-darwin.tar.gz",
+      "etag": "0x8D9B955B250B65A",
+      "checksum": "856920064d777168fb9c42e193683632ac6a478ce2887eeb6573722be46eeb25"
+    },
+    "x86_64_windows": {
+      "url": "https://github.com/taiki-e/cargo-hack/releases/download/v0.5.0/cargo-hack-x86_64-pc-windows-msvc.tar.gz",
+      "etag": "0x8D9B955A8A6BB79",
+      "checksum": "8e1b45402516a1c1a91c23c8e79f5874f10da74563d8f0a816898e49b079ca61"
+    }
+  },
+  "0.4": {
+    "version": "0.4.8"
+  },
+  "0.4.8": {
+    "x86_64_linux_musl": {
+      "url": "https://github.com/taiki-e/cargo-hack/releases/download/v0.4.8/cargo-hack-x86_64-unknown-linux-musl.tar.gz",
+      "etag": "0x8D9B955B4939886",
+      "checksum": "3c2728ec5f7e67014bb1eb4099f7fbe6962b7e13c35988d7316e3d00efc455b8"
+    },
+    "x86_64_macos": {
+      "url": "https://github.com/taiki-e/cargo-hack/releases/download/v0.4.8/cargo-hack-x86_64-apple-darwin.tar.gz",
+      "etag": "0x8D9B955B3DFF3EB",
+      "checksum": "dea0f5995bda29ba410cd6dcfa6c5b7889df80589df3d43e1ca27879789706f5"
+    },
+    "x86_64_windows": {
+      "url": "https://github.com/taiki-e/cargo-hack/releases/download/v0.4.8/cargo-hack-x86_64-pc-windows-msvc.tar.gz",
+      "etag": "0x8D9B955ADE7EB76",
+      "checksum": "bcfa7e8b9b8fa0310f0a5833302cd641fdb922fb94512390f00a9511cfcebcfc"
+    }
+  },
+  "0.4.7": {
+    "x86_64_linux_musl": {
+      "url": "https://github.com/taiki-e/cargo-hack/releases/download/v0.4.7/cargo-hack-x86_64-unknown-linux-musl.tar.gz",
+      "etag": "0x8D9B955B5698D0B",
+      "checksum": "7bd068ded6cb4f7671b309a04c73c8d24826d2ee92432e280cfbe9bd6620264b"
+    },
+    "x86_64_macos": {
+      "url": "https://github.com/taiki-e/cargo-hack/releases/download/v0.4.7/cargo-hack-x86_64-apple-darwin.tar.gz",
+      "etag": "0x8D9B955B3A1E2E5",
+      "checksum": "cabd94401dfbee35df5335ffbdae891dcf5f329824cc254ddca3252dacd7d61e"
+    },
+    "x86_64_windows": {
+      "url": "https://github.com/taiki-e/cargo-hack/releases/download/v0.4.7/cargo-hack-x86_64-pc-windows-msvc.tar.gz",
+      "etag": "0x8D9B955AE21DE84",
+      "checksum": "dbfd2bf26b9287acd9733af4b07f9333477eedd1ee8921483ad342662c20f4f1"
+    }
+  },
+  "0.4.6": {
+    "x86_64_linux_gnu": {
+      "url": "https://github.com/taiki-e/cargo-hack/releases/download/v0.4.6/cargo-hack-x86_64-unknown-linux-gnu.tar.gz",
+      "etag": "0x8D9B955AD86A03B",
+      "checksum": "cff0ba4789bffe84fd03204fd4f0adb92bc59eedb64b934e4016d68f2c7cd16a"
+    },
+    "x86_64_macos": {
+      "url": "https://github.com/taiki-e/cargo-hack/releases/download/v0.4.6/cargo-hack-x86_64-apple-darwin.tar.gz",
+      "etag": "0x8D9B955B433ACA5",
+      "checksum": "dca132bd72719ccbd690e6ee30747bf8d8be416c4bb534e05df32fe5e12ad3d9"
+    },
+    "x86_64_windows": {
+      "url": "https://github.com/taiki-e/cargo-hack/releases/download/v0.4.6/cargo-hack-x86_64-pc-windows-msvc.zip",
+      "etag": "0x8D9B955AFE14C98",
+      "checksum": "4ae216e95d9e41f274fb542c19dc9232e52a848503bf82fb414f74bc42e035a3"
+    }
+  },
+  "0.4.5": {
+    "x86_64_linux_gnu": {
+      "url": "https://github.com/taiki-e/cargo-hack/releases/download/v0.4.5/cargo-hack-x86_64-unknown-linux-gnu.tar.gz",
+      "etag": "0x8D9B955AB4607B3",
+      "checksum": "a6fbf921254a74a043b7b565ea1a1e3cdab4eaef828a637160a4847aca18f27c"
+    },
+    "x86_64_macos": {
+      "url": "https://github.com/taiki-e/cargo-hack/releases/download/v0.4.5/cargo-hack-x86_64-apple-darwin.tar.gz",
+      "etag": "0x8D9B955B54DCBD8",
+      "checksum": "a4e72599ccded2ba11ec201ec56b719bf1430cdb4d24a2ae9ba96918ea920473"
+    },
+    "x86_64_windows": {
+      "url": "https://github.com/taiki-e/cargo-hack/releases/download/v0.4.5/cargo-hack-x86_64-pc-windows-msvc.zip",
+      "etag": "0x8D9B955B17DF5AB",
+      "checksum": "304f5db88a9ca0374ed46fd0b1d3b2184f3ecb8b2db17ef9fff435f9d906a764"
+    }
+  },
+  "0.4.4": {
+    "x86_64_linux_gnu": {
+      "url": "https://github.com/taiki-e/cargo-hack/releases/download/v0.4.4/cargo-hack-x86_64-unknown-linux-gnu.tar.gz",
+      "etag": "0x8D9B955B01C9EFA",
+      "checksum": "9e72fd36e5ab4c17225a9b42db87b9bc5886b1b3b298f774d68565318ccde021"
+    },
+    "x86_64_macos": {
+      "url": "https://github.com/taiki-e/cargo-hack/releases/download/v0.4.4/cargo-hack-x86_64-apple-darwin.tar.gz",
+      "etag": "0x8D9B955A83AEA7B",
+      "checksum": "c52bb179a26ee8bcfd954632a1272de0cac5ac7fe964dd6a28cf10995b89fe83"
+    },
+    "x86_64_windows": {
+      "url": "https://github.com/taiki-e/cargo-hack/releases/download/v0.4.4/cargo-hack-x86_64-pc-windows-msvc.zip",
+      "etag": "0x8D9B955A971DC29",
+      "checksum": "3241bf9058bb996087b7deabe6f6b527b8ac9097507ca333428e8e4db3d6af83"
+    }
+  },
+  "0.4.3": {
+    "x86_64_linux_gnu": {
+      "url": "https://github.com/taiki-e/cargo-hack/releases/download/v0.4.3/cargo-hack-v0.4.3-x86_64-unknown-linux-gnu.tar.gz",
+      "etag": "0x8D9B955ADE15CC8",
+      "checksum": "dde36c57020c23b267e20f6f62b13d4541d219a2156fbef926d24eeee1fa2f2a"
+    },
+    "x86_64_macos": {
+      "url": "https://github.com/taiki-e/cargo-hack/releases/download/v0.4.3/cargo-hack-v0.4.3-x86_64-apple-darwin.tar.gz",
+      "etag": "0x8D9B955A89C35BA",
+      "checksum": "cb490261e4982becbd2ff49f1b9a0208a843a83e2617264a6767ab66931163a5"
+    },
+    "x86_64_windows": {
+      "url": "https://github.com/taiki-e/cargo-hack/releases/download/v0.4.3/cargo-hack-v0.4.3-x86_64-pc-windows-msvc.zip",
+      "etag": "0x8D9B955B49B8696",
+      "checksum": "5dd0ad3df93242af2f2f7e06423c732e9f86c665b5e38fd3153a2244bd7cde2b"
+    }
+  }
+}
