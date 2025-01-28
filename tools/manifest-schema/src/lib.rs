@@ -1,5 +1,28 @@
 // SPDX-License-Identifier: Apache-2.0 OR MIT
 
+/*!
+Structured access to the install-action manifests.
+*/
+
+#![doc(test(
+    no_crate_inject,
+    attr(
+        deny(warnings, rust_2018_idioms, single_use_lifetimes),
+        allow(dead_code, unused_variables)
+    )
+))]
+#![warn(
+    // Lints that may help when writing public library.
+    missing_debug_implementations,
+    // missing_docs,
+    clippy::alloc_instead_of_core,
+    // clippy::exhaustive_enums,
+    // clippy::exhaustive_structs,
+    clippy::impl_trait_in_params,
+    // clippy::missing_inline_in_public_items,
+    // clippy::std_instead_of_alloc,
+    // clippy::std_instead_of_core,
+)]
 #![allow(clippy::missing_panics_doc, clippy::too_long_first_doc_paragraph)]
 
 use std::{
@@ -303,7 +326,7 @@ impl StringOrArray {
         }
     }
     #[must_use]
-    pub fn map(&self, mut f: impl FnMut(&String) -> String) -> Self {
+    pub fn map<F: FnMut(&String) -> String>(&self, mut f: F) -> Self {
         match self {
             Self::String(s) => Self::String(f(s)),
             Self::Array(v) => Self::Array(v.iter().map(f).collect()),

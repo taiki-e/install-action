@@ -22,6 +22,8 @@ env:
   RUST_BACKTRACE: 1
   RUSTFLAGS: -D warnings
   RUSTUP_MAX_RETRIES: 10
+  # NB: sync with miri job's --exclude option
+  EXCLUDE: --exclude install-action-internal-codegen
 
 defaults:
   run:
@@ -32,6 +34,16 @@ concurrency:
   cancel-in-progress: true
 
 jobs:
+  miri:
+    uses: taiki-e/github-actions/.github/workflows/miri.yml@main
+    with:
+      event_name: ${{ github.event_name }}
+      # NB: sync with env.EXCLUDE
+      args: --exclude install-action-internal-codegen
+  msrv:
+    uses: taiki-e/github-actions/.github/workflows/msrv.yml@main
+    with:
+      event_name: ${{ github.event_name }}
   tidy:
     uses: taiki-e/github-actions/.github/workflows/tidy.yml@main
     permissions:
@@ -265,3 +277,25 @@ jobs:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
           PR_NUMBER: ${{ steps.create-pull-request.outputs.pull-request-number }}
         if: github.repository_owner == 'taiki-e' && (github.event_name == 'schedule' || github.event_name == 'push' && github.ref == 'refs/heads/main') && steps.diff.outputs.success == 'false' && (steps.create-pull-request.outputs.pull-request-operation == 'created' || steps.create-pull-request.outputs.pull-request-operation == 'updated')
+
+  manifest-schema:
+    strategy:
+      fail-fast: false
+      matrix:
+        rust:
+          - stable
+          - beta
+          - nightly
+    runs-on: ubuntu-latest
+    timeout-minutes: 60
+    steps:
+      - uses: taiki-e/checkout-action@v1
+      - uses: taiki-e/github-actions/install-rust@main
+        with:
+          toolchain: ${{ matrix.rust }}
+      - uses: taiki-e/install-action@cargo-hack
+      - uses: taiki-e/install-action@cargo-minimal-versions
+      - run: cargo test --workspace --all-features ${EXCLUDE}
+      - run: cargo hack build --workspace --no-private --feature-powerset --no-dev-deps
+      - run: cargo minimal-versions build --workspace --no-private --detach-path-deps=skip-exact --all-features
+      - run: cargo minimal-versions build --workspace --no-private --detach-path-deps=skip-exact --all-features --direct

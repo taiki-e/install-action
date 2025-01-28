@@ -2,16 +2,33 @@
 name = "install-action-manifest-schema"
 version = "0.1.0"
 edition = "2021"
-license = "MIT OR Apache-2.0"
+rust-version = "1.79" # Align to cargo-binstall: https://crates.io/crates/cargo-binstall
+license = "Apache-2.0 OR MIT"
+repository = "https://github.com/taiki-e/install-action"
+keywords = []
+categories = []
+description = """
+Structured access to the install-action manifests.
+"""
+
+[package.metadata.docs.rs]
+targets = ["x86_64-unknown-linux-gnu"]
+
+[package.metadata.cargo_check_external_types]
+# The following are external types that are allowed to be exposed in our public API.
+allowed_external_types = [
+    "semver::*",
+    "serde::*",
+]
+
+[lib]
+doc-scrape-examples = false
 
 # Note: semver and serde are public dependencies.
 [dependencies]
 semver = { version = "1", features = ["serde"] }
-serde = "1"
-serde_derive = "1"
+serde = "1.0.165"
+serde_derive = "1.0.165"
 
 [lints]
 workspace = true
-
-[package.metadata.cargo_check_external_types]
-allowed_external_types = ["semver::*", "serde::*"]
