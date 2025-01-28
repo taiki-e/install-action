@@ -10,6 +10,8 @@ Note: In this file, do not use the hard wrap in the middle of a sentence for com
 
 ## [Unreleased]
 
+## [2.47.28] - 2025-01-28
+
 No change on the `install-action` itself.
 
 - Provide `install-action-manifest-schema` crate to access to the `install-action` manifests from Rust code. ([#657](https://github.com/taiki-e/install-action/pull/657), thanks @NobodyXu)
@@ -3406,7 +3408,8 @@ Note: This release is considered a breaking change because installing on version
 
 Initial release
 
-[Unreleased]: https://github.com/taiki-e/install-action/compare/v2.47.27...HEAD
+[Unreleased]: https://github.com/taiki-e/install-action/compare/v2.47.28...HEAD
+[2.47.28]: https://github.com/taiki-e/install-action/compare/v2.47.27...v2.47.28
 [2.47.27]: https://github.com/taiki-e/install-action/compare/v2.47.26...v2.47.27
 [2.47.26]: https://github.com/taiki-e/install-action/compare/v2.47.25...v2.47.26
 [2.47.25]: https://github.com/taiki-e/install-action/compare/v2.47.24...v2.47.25
