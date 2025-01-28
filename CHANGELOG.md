@@ -10,6 +10,8 @@ Note: In this file, do not use the hard wrap in the middle of a sentence for com
 
 ## [Unreleased]
 
+- Update `cargo-semver-checks@latest` to 0.39.0.
+
 ## [2.47.28] - 2025-01-28
 
 No change on the `install-action` itself.
