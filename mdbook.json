@@ -15,14 +15,39 @@
     },
     "aarch64_linux_musl": {
       "url": "https://github.com/rust-lang/mdBook/releases/download/v${version}/mdbook-v${version}-aarch64-unknown-linux-musl.tar.gz"
+    },
+    "aarch64_macos": {
+      "url": "https://github.com/rust-lang/mdBook/releases/download/v${version}/mdbook-v${version}-aarch64-apple-darwin.tar.gz"
     }
   },
   "license_markdown": "[MPL-2.0](https://github.com/rust-lang/mdBook/blob/master/LICENSE)",
   "latest": {
-    "version": "0.4.43"
+    "version": "0.4.44"
   },
   "0.4": {
-    "version": "0.4.43"
+    "version": "0.4.44"
+  },
+  "0.4.44": {
+    "x86_64_linux_musl": {
+      "etag": "0x8DD3FC815F2410B",
+      "checksum": "518577082a4e97ed990aa7f5a89dc65bbc1a57960449cb227eb0bf5becdefa06"
+    },
+    "x86_64_macos": {
+      "etag": "0x8DD3FC80CCC435E",
+      "checksum": "416cd7f2d83194259a103746c2f35aef87427d9e48541397695929162e9d0557"
+    },
+    "x86_64_windows": {
+      "etag": "0x8DD3FC86BDA4648",
+      "checksum": "fcbe65273c7d7760a98c03ab5ecc7ca44cd3a170eb8d0925e44fd8149fea6c2d"
+    },
+    "aarch64_linux_musl": {
+      "etag": "0x8DD3FC81411BB91",
+      "checksum": "6e03ca8a5e72518128cd86a9b99bf8e1b29fa90dcfbd6bf5d9bcffd2e34cb4d7"
+    },
+    "aarch64_macos": {
+      "etag": "0x8DD3FC81343BADA",
+      "checksum": "a7e203a9b131ba045d6e4aff27f1a817059af9fe8174d86d78f79153da2e2b61"
+    }
   },
   "0.4.43": {
     "x86_64_linux_musl": {
