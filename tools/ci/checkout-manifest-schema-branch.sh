@@ -9,7 +9,7 @@ version="$(cargo metadata --format-version=1 --no-deps | jq -r '.packages[] | se
 if [[ ${version} == 0.* ]]; then
     schema_version="0.$(echo "${version}" | cut -d '.' -f 2)"
 else
-    schema_version="${version}"
+    schema_version="$(echo "${version}" | cut -d '.' -f 2)"
 fi
 branch="manifest-schema-${schema_version}"
 

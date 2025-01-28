@@ -23,14 +23,7 @@ pub fn get_manifest_schema_branch_name() -> &'static str {
     if env!("CARGO_PKG_VERSION_MAJOR") == "0" {
         concat!("manifest-schema-0.", env!("CARGO_PKG_VERSION_MINOR"))
     } else {
-        concat!(
-            "manifest-schema-",
-            env!("CARGO_PKG_VERSION_MAJOR"),
-            ".",
-            env!("CARGO_PKG_VERSION_MINOR"),
-            ".",
-            env!("CARGO_PKG_VERSION_PATCH"),
-        )
+        concat!("manifest-schema-", env!("CARGO_PKG_VERSION_MAJOR"))
     }
 }
 
