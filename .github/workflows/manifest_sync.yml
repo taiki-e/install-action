@@ -23,10 +23,10 @@ jobs:
           persist-credentials: true
 
       - name: Checkout manifest-schema branch
-        run: ./tools/ci/checkout-manifest-schema-branch.sh $WORKSPACE
+        run: ./tools/ci/checkout-manifest-schema-branch.sh "${WORKSPACE}"
 
       - name: Copy over schema
-        run: cp ./manifests/* $WORKSPACE
+        run: cp -- ./manifests/* "${WORKSPACE}"
 
       - name: Stage changes
         working-directory: ${{ env.WORKSPACE }}
@@ -41,7 +41,7 @@ jobs:
         working-directory: ${{ env.WORKSPACE }}
         run: |
           # This output boolean tells us if the dependencies have actually changed
-          echo "count=$(git status --porcelain=v1 | wc -l)" >> $GITHUB_OUTPUT
+          printf "count=%s\n" "$(git status --porcelain=v1 | wc -l)" >>"${GITHUB_OUTPUT}"
 
       - name: Commit and push
         # Only push if changes exist
