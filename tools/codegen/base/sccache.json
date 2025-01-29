@@ -7,10 +7,9 @@
   "platform": {
     "x86_64_linux_musl": {},
     "x86_64_macos": {},
-    "x86_64_windows": {
-      "asset_name": "${package}-v${version}-${rust_target}.tar.gz"
-    },
+    "x86_64_windows": {},
     "aarch64_linux_musl": {},
-    "aarch64_macos": {}
+    "aarch64_macos": {},
+    "aarch64_windows": {}
   }
 }

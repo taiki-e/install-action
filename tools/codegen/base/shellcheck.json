@@ -16,6 +16,9 @@
     },
     "aarch64_linux_musl": {
       "asset_name": "${package}-v${version}.linux.aarch64.tar.xz"
+    },
+    "aarch64_macos": {
+      "asset_name": "${package}-v${version}.darwin.aarch64.tar.xz"
     }
   }
 }

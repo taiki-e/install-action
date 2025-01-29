@@ -3,25 +3,25 @@
   "tag_prefix": "v",
   "version_range": ">= 3.0.0",
   "platform": {
-    "x86_64_linux_gnu": {
+    "x86_64_linux_musl": {
       "asset_name": "ec-linux-amd64.tar.gz",
       "bin": "bin/ec-linux-amd64"
-    },
-    "aarch64_linux_gnu": {
-      "asset_name": "ec-linux-arm64.tar.gz",
-      "bin": "bin/ec-linux-arm64"
     },
     "x86_64_macos": {
       "asset_name": "ec-darwin-amd64.tar.gz",
       "bin": "bin/ec-darwin-amd64"
     },
-    "aarch64_macos": {
-      "asset_name": "ec-darwin-arm64.tar.gz",
-      "bin": "bin/ec-darwin-arm64"
-    },
     "x86_64_windows": {
       "asset_name": ["ec-windows-amd64.zip", "ec-windows-amd64${exe}.tar.gz"],
       "bin": "bin/ec-windows-amd64${exe}"
+    },
+    "aarch64_linux_musl": {
+      "asset_name": "ec-linux-arm64.tar.gz",
+      "bin": "bin/ec-linux-arm64"
+    },
+    "aarch64_macos": {
+      "asset_name": "ec-darwin-arm64.tar.gz",
+      "bin": "bin/ec-darwin-arm64"
     },
     "aarch64_windows": {
       "asset_name": ["ec-windows-arm64.zip", "ec-windows-arm64${exe}.tar.gz"],

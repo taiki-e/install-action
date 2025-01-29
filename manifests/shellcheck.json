@@ -16,6 +16,10 @@
     "aarch64_linux_musl": {
       "url": "https://github.com/koalaman/shellcheck/releases/download/v${version}/shellcheck-v${version}.linux.aarch64.tar.xz",
       "bin": "shellcheck-v${version}/shellcheck"
+    },
+    "aarch64_macos": {
+      "url": "https://github.com/koalaman/shellcheck/releases/download/v${version}/shellcheck-v${version}.darwin.aarch64.tar.xz",
+      "bin": "shellcheck-v${version}/shellcheck"
     }
   },
   "license_markdown": "[GPL-3.0](https://github.com/koalaman/shellcheck/blob/master/LICENSE)",
@@ -41,6 +45,10 @@
     "aarch64_linux_musl": {
       "etag": "0x8DC3F18BC550818",
       "checksum": "324a7e89de8fa2aed0d0c28f3dab59cf84c6d74264022c00c22af665ed1a09bb"
+    },
+    "aarch64_macos": {
+      "etag": "0x8DC3F18BC8509B7",
+      "checksum": "bbd2f14826328eee7679da7221f2bc3afb011f6a928b848c80c321f6046ddf81"
     }
   },
   "0.9": {

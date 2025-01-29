@@ -6,9 +6,9 @@
   "asset_name": "${package}-v${version}-${rust_target}",
   "version_range": ">= 0.13",
   "platform": {
+    "x86_64_linux_gnu": {},
     "x86_64_windows": {
       "asset_name": "${package}-v${version}-x86_64-pc-windows-gnu.exe"
-    },
-    "x86_64_linux_gnu": {}
+    }
   }
 }

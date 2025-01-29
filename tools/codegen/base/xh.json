@@ -6,12 +6,12 @@
   "bin": "${package}-v${version}-${rust_target}/${package}${exe}",
   "version_range": ">= 0.22.0",
   "platform": {
+    "x86_64_linux_musl": {},
     "x86_64_macos": {},
     "x86_64_windows": {
       "asset_name": "${package}-v${version}-${rust_target}.zip"
     },
-    "x86_64_linux_musl": {},
-    "aarch64_macos": {},
-    "aarch64_linux_musl": {}
+    "aarch64_linux_musl": {},
+    "aarch64_macos": {}
   }
 }

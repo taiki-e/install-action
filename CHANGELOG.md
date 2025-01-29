@@ -10,6 +10,44 @@ Note: In this file, do not use the hard wrap in the middle of a sentence for com
 
 ## [Unreleased]
 
+## [2.47.30] - 2025-01-28
+
+- Support `cargo-cyclonedx` on x86_64 Linux (musl).
+
+- Support installing native binary for `cargo-cyclonedx` on AArch64 macOS. (Previously x86_64 macOS binary is used as fallback.)
+
+- Update `cargo-cyclonedx@latest` to 0.5.7.
+
+## [2.47.29] - 2025-01-28
+
+- Support `cargo-semver-checks` on AArch64 Linux.
+
+- Support `cargo-zigbuild` on x86_64 macOS.
+
+- Support installing native binary for `mdbook` and `shellcheck` on AArch64 macOS. (Previously x86_64 macOS binary is used as fallback.)
+
+- Support installing native binary for `just` and `sccache` on AArch64 Windows. (Previously x86_64 Windows binary is used as fallback.)
+
+- Update `mdbook@latest` to 0.4.44.
+
+- Update `cargo-semver-checks@latest` to 0.39.0.
+
+## [2.47.28] - 2025-01-28
+
+No change on the `install-action` itself.
+
+- Provide `install-action-manifest-schema` crate to access to the `install-action` manifests from Rust code. ([#657](https://github.com/taiki-e/install-action/pull/657), thanks @NobodyXu)
+
+  This is being considered for use to speed up `cargo-binstall` in the future.
+
+## [2.47.27] - 2025-01-28
+
+- Update `editorconfig-checker@latest` to 3.2.0.
+
+- Update `cargo-lambda@latest` to 1.6.3.
+
+## [2.47.26] - 2025-01-27
+
 - Update `wash@latest` to 0.38.0.
 
 ## [2.47.25] - 2025-01-24
@@ -1575,7 +1613,7 @@ Note: In this file, do not use the hard wrap in the middle of a sentence for com
 
 - Support `biome` on x86_64/AArch64 Linux (musl).
 
-- Support `zola` on AArch64 macOS. (Previously x86_64 macOS binary is used as fallback.)
+- Support installing native binary for `zola` on AArch64 macOS. (Previously x86_64 macOS binary is used as fallback.)
 
 ## [2.27.14] - 2024-03-01
 
@@ -3392,7 +3430,12 @@ Note: This release is considered a breaking change because installing on version
 
 Initial release
 
-[Unreleased]: https://github.com/taiki-e/install-action/compare/v2.47.25...HEAD
+[Unreleased]: https://github.com/taiki-e/install-action/compare/v2.47.30...HEAD
+[2.47.30]: https://github.com/taiki-e/install-action/compare/v2.47.29...v2.47.30
+[2.47.29]: https://github.com/taiki-e/install-action/compare/v2.47.28...v2.47.29
+[2.47.28]: https://github.com/taiki-e/install-action/compare/v2.47.27...v2.47.28
+[2.47.27]: https://github.com/taiki-e/install-action/compare/v2.47.26...v2.47.27
+[2.47.26]: https://github.com/taiki-e/install-action/compare/v2.47.25...v2.47.26
 [2.47.25]: https://github.com/taiki-e/install-action/compare/v2.47.24...v2.47.25
 [2.47.24]: https://github.com/taiki-e/install-action/compare/v2.47.23...v2.47.24
 [2.47.23]: https://github.com/taiki-e/install-action/compare/v2.47.22...v2.47.23

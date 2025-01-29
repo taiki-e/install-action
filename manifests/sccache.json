@@ -20,6 +20,10 @@
     "aarch64_macos": {
       "url": "https://github.com/mozilla/sccache/releases/download/v${version}/sccache-v${version}-aarch64-apple-darwin.tar.gz",
       "bin": "sccache-v${version}-aarch64-apple-darwin/sccache"
+    },
+    "aarch64_windows": {
+      "url": "https://github.com/mozilla/sccache/releases/download/v${version}/sccache-v${version}-aarch64-pc-windows-msvc.tar.gz",
+      "bin": "sccache-v${version}-aarch64-pc-windows-msvc/sccache.exe"
     }
   },
   "license_markdown": "[Apache-2.0](https://github.com/mozilla/sccache/blob/main/LICENSE)",
@@ -49,6 +53,10 @@
     "aarch64_macos": {
       "etag": "0x8DD2EF9DFE5C27C",
       "checksum": "a2725e27c12961301834fe4c56ab982af6e8eb86fd51b82179369f1682776800"
+    },
+    "aarch64_windows": {
+      "etag": "0x8DD2EF9E07AF1EF",
+      "checksum": "99bd024919430de3c741658adc60334305a61c0a109f7a334c030f0bb56007a6"
     }
   },
   "0.9.0": {
@@ -71,6 +79,10 @@
     "aarch64_macos": {
       "etag": "0x8DD18952CD41AB6",
       "checksum": "f75b5b3d6046cac60a9eef362d86e6eeebdb4cc3c5dfd2e483f14f03ce4b94cf"
+    },
+    "aarch64_windows": {
+      "etag": "0x8DD18952D6CA1F0",
+      "checksum": "2fcd156a9d4dda1c72edb3a008fb5def43179c614fafe51cd53a79d1a4e793fa"
     }
   },
   "0.8": {
@@ -96,6 +108,10 @@
     "aarch64_macos": {
       "etag": "0x8DCDF9C8E16337F",
       "checksum": "32604da614ce679623a8de0d38eab91b87431d59f3344c5523c82e1b6e85ffc4"
+    },
+    "aarch64_windows": {
+      "etag": "0x8DCDF9C8F030B2A",
+      "checksum": "9db7522aab473c3dbd588fd0424de4c0e5dc012ce3bffec8c2ef65fc8d315645"
     }
   },
   "0.8.1": {

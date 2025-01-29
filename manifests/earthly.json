@@ -1,7 +1,7 @@
 {
   "rust_crate": null,
   "template": {
-    "x86_64_linux_gnu": {
+    "x86_64_linux_musl": {
       "url": "https://github.com/earthly/earthly/releases/download/v${version}/earthly-linux-amd64"
     },
     "x86_64_macos": {
@@ -10,7 +10,7 @@
     "x86_64_windows": {
       "url": "https://github.com/earthly/earthly/releases/download/v${version}/earthly-windows-amd64.exe"
     },
-    "aarch64_linux_gnu": {
+    "aarch64_linux_musl": {
       "url": "https://github.com/earthly/earthly/releases/download/v${version}/earthly-linux-arm64"
     },
     "aarch64_macos": {
@@ -25,7 +25,7 @@
     "version": "0.8.15"
   },
   "0.8.15": {
-    "x86_64_linux_gnu": {
+    "x86_64_linux_musl": {
       "etag": "0x8DCA2A154D402F6",
       "checksum": "2e545a08c17a195ad86d3844df0c3d28064b1231abe05530342138acf3067619"
     },
@@ -37,7 +37,7 @@
       "etag": "0x8DCA2A1580F5DF5",
       "checksum": "c64a84df967f4624202c5cdf1b9f8149ef7ee9e2056ffd84954f0587a0787291"
     },
-    "aarch64_linux_gnu": {
+    "aarch64_linux_musl": {
       "etag": "0x8DCA2A1566C5F46",
       "checksum": "cc5ea041c6d7e5d019c8fe37c58c5b7b294f7ce1da0e06569056f41b3413d7bf"
     },
@@ -47,7 +47,7 @@
     }
   },
   "0.8.14": {
-    "x86_64_linux_gnu": {
+    "x86_64_linux_musl": {
       "etag": "0x8DC898036907B4D",
       "checksum": "9c184536faccf2e16e92ad06d2a2579e4b3ff6aaf6bf4c2f72b21228a6903bc2"
     },
@@ -59,7 +59,7 @@
       "etag": "0x8DC89807141A969",
       "checksum": "3244284dc9648d7cd3af350ab4a8bfd4c63b0e0e16e656c3e249fc1d58fe7e5f"
     },
-    "aarch64_linux_gnu": {
+    "aarch64_linux_musl": {
       "etag": "0x8DC8980535E3770",
       "checksum": "a88786778964eb74b6b5db44734a4630dcedab49c4ed21fe432e9e6d08ff116c"
     },
@@ -69,7 +69,7 @@
     }
   },
   "0.8.13": {
-    "x86_64_linux_gnu": {
+    "x86_64_linux_musl": {
       "etag": "0x8DC7F5FF4E42C3C",
       "checksum": "5e1d7a41cd7a5c22f7c5c71f08e99cab3964eb604ca223b36312c755fbbce4f8"
     },
@@ -81,7 +81,7 @@
       "etag": "0x8DC7F603050FEFF",
       "checksum": "8201bcdd20272e4e68c56ce3b070fd488e410aef6be1e75b3b1992b4cdd0caaa"
     },
-    "aarch64_linux_gnu": {
+    "aarch64_linux_musl": {
       "etag": "0x8DC7F6012229473",
       "checksum": "6b33bb767f34a94c49fc5db668b3f5936daa01777f3083a217f73b8aefdd7859"
     },

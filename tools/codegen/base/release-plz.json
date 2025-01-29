@@ -6,11 +6,11 @@
   "asset_name": "${package}-${rust_target}.tar.gz",
   "version_range": ">= 0.3.20",
   "platform": {
-    "aarch64_macos": {},
-    "aarch64_windows": {},
-    "aarch64_linux_musl": {},
+    "x86_64_linux_musl": {},
     "x86_64_macos": {},
     "x86_64_windows": {},
-    "x86_64_linux_musl": {}
+    "aarch64_linux_musl": {},
+    "aarch64_macos": {},
+    "aarch64_windows": {}
   }
 }
