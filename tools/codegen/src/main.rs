@@ -248,7 +248,7 @@ fn main() -> Result<()> {
         if skip_existing_manifest_versions && existing_manifest.is_some() {
             eprintln!("Skipping {semver_version} already in manifest");
             continue;
-        };
+        }
 
         let mut download_info = BTreeMap::new();
         let mut pubkey = None;
