@@ -10,6 +10,8 @@ Note: In this file, do not use the hard wrap in the middle of a sentence for com
 
 ## [Unreleased]
 
+## [2.47.31] - 2025-01-30
+
 - Fix checksum error with `wash@0.38.0` on macOS. (They rebuilt binaries for some reason.)
 
 ## [2.47.30] - 2025-01-28
@@ -3432,7 +3434,8 @@ Note: This release is considered a breaking change because installing on version
 
 Initial release
 
-[Unreleased]: https://github.com/taiki-e/install-action/compare/v2.47.30...HEAD
+[Unreleased]: https://github.com/taiki-e/install-action/compare/v2.47.31...HEAD
+[2.47.31]: https://github.com/taiki-e/install-action/compare/v2.47.30...v2.47.31
 [2.47.30]: https://github.com/taiki-e/install-action/compare/v2.47.29...v2.47.30
 [2.47.29]: https://github.com/taiki-e/install-action/compare/v2.47.28...v2.47.29
 [2.47.28]: https://github.com/taiki-e/install-action/compare/v2.47.27...v2.47.28
