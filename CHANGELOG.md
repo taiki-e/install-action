@@ -10,6 +10,8 @@ Note: In this file, do not use the hard wrap in the middle of a sentence for com
 
 ## [Unreleased]
 
+- Fix checksum error with `wash@0.38.0` on macOS. (They rebuilt binaries for some reason.)
+
 ## [2.47.30] - 2025-01-28
 
 - Support `cargo-cyclonedx` on x86_64 Linux (musl).
