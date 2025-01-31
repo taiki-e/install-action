@@ -10,6 +10,8 @@ Note: In this file, do not use the hard wrap in the middle of a sentence for com
 
 ## [Unreleased]
 
+- Update `typos@latest` to 1.29.5.
+
 ## [2.47.31] - 2025-01-30
 
 - Fix checksum error with `wash@0.38.0` on macOS. (They rebuilt binaries for some reason.)
