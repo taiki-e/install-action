@@ -35,13 +35,10 @@ jobs:
   miri:
     uses: taiki-e/github-actions/.github/workflows/miri.yml@main
     with:
-      event_name: ${{ github.event_name }}
       # NB: sync with test job's --exclude option
       args: --exclude install-action-internal-codegen
   msrv:
     uses: taiki-e/github-actions/.github/workflows/msrv.yml@main
-    with:
-      event_name: ${{ github.event_name }}
   test-manifest-schema:
     uses: taiki-e/github-actions/.github/workflows/test.yml@main
     with:
