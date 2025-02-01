@@ -1,0 +1,56 @@
+{
+  "rust_crate": "parse-dockerfile",
+  "template": {
+    "x86_64_linux_musl": {
+      "url": "https://github.com/taiki-e/parse-dockerfile/releases/download/v${version}/parse-dockerfile-x86_64-unknown-linux-musl.tar.gz"
+    },
+    "x86_64_macos": {
+      "url": "https://github.com/taiki-e/parse-dockerfile/releases/download/v${version}/parse-dockerfile-x86_64-apple-darwin.tar.gz"
+    },
+    "x86_64_windows": {
+      "url": "https://github.com/taiki-e/parse-dockerfile/releases/download/v${version}/parse-dockerfile-x86_64-pc-windows-msvc.tar.gz"
+    },
+    "aarch64_linux_musl": {
+      "url": "https://github.com/taiki-e/parse-dockerfile/releases/download/v${version}/parse-dockerfile-aarch64-unknown-linux-musl.tar.gz"
+    },
+    "aarch64_macos": {
+      "url": "https://github.com/taiki-e/parse-dockerfile/releases/download/v${version}/parse-dockerfile-aarch64-apple-darwin.tar.gz"
+    },
+    "aarch64_windows": {
+      "url": "https://github.com/taiki-e/parse-dockerfile/releases/download/v${version}/parse-dockerfile-aarch64-pc-windows-msvc.tar.gz"
+    }
+  },
+  "license_markdown": "[Apache-2.0](https://github.com/taiki-e/parse-dockerfile/blob/main/LICENSE-APACHE) OR [MIT](https://github.com/taiki-e/parse-dockerfile/blob/main/LICENSE-MIT)",
+  "latest": {
+    "version": "0.1.0"
+  },
+  "0.1": {
+    "version": "0.1.0"
+  },
+  "0.1.0": {
+    "x86_64_linux_musl": {
+      "etag": "0x8DD42FBF89625FB",
+      "checksum": "9619a5811b9cc3cfa109135860469f4557de42cef776bc4b22b9459121ec6149"
+    },
+    "x86_64_macos": {
+      "etag": "0x8DD42FBFE2FF6FD",
+      "checksum": "b50e59f1e232d64ae568bac1bf5ddd8f80bcd783b1d322373b5d603d63bce66c"
+    },
+    "x86_64_windows": {
+      "etag": "0x8DD42FC0E0FA8E5",
+      "checksum": "265d4ca8a6c268177dd2e25472247be6b1cf5294005cfa16250bcaf2be9d0d84"
+    },
+    "aarch64_linux_musl": {
+      "etag": "0x8DD42FBFD9C4C90",
+      "checksum": "68b4822d75300feab0a56d52a3a798ac447319a015e4c2e2de0d353979a109da"
+    },
+    "aarch64_macos": {
+      "etag": "0x8DD42FC022D9F9B",
+      "checksum": "c4eaff6be100426f2c36a08bc2aa0e3c323880b03fdf88e94c469eedcc9a276d"
+    },
+    "aarch64_windows": {
+      "etag": "0x8DD42FC11EF8AB9",
+      "checksum": "e8fa1b845c79fa3b478c0c19e34d508ad73b6924ab6ba84c83139d0d318efdf2"
+    }
+  }
+}
