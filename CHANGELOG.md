@@ -10,6 +10,8 @@ Note: In this file, do not use the hard wrap in the middle of a sentence for com
 
 ## [Unreleased]
 
+- Support `parse-dockerfile`. ([#838](https://github.com/taiki-e/install-action/pull/838))
+
 - Update `release-plz@latest` to 0.3.116.
 
 ## [2.47.32] - 2025-01-31
