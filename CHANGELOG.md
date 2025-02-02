@@ -10,6 +10,8 @@ Note: In this file, do not use the hard wrap in the middle of a sentence for com
 
 ## [Unreleased]
 
+- Update `dprint@latest` to 0.49.0.
+
 ## [2.48.0] - 2025-02-01
 
 - Support `parse-dockerfile`. ([#838](https://github.com/taiki-e/install-action/pull/838))
