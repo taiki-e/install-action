@@ -1,14 +1,12 @@
 #!/usr/bin/env bash
 # SPDX-License-Identifier: Apache-2.0 OR MIT
-set -eEuo pipefail
+set -CeEuo pipefail
 IFS=$'\n\t'
 
 rx() {
-  local cmd="$1"
-  shift
   (
     set -x
-    "${cmd}" "$@"
+    "$@"
   )
 }
 retry() {
@@ -22,17 +20,17 @@ retry() {
   "$@"
 }
 bail() {
-  echo "::error::$*"
+  printf '::error::%s\n' "$*"
   exit 1
 }
 warn() {
-  echo "::warning::$*"
+  printf '::warning::%s\n' "$*"
 }
 info() {
-  echo "info: $*"
+  printf >&2 'info: %s\n' "$*"
 }
 _sudo() {
-  if type -P sudo &>/dev/null; then
+  if type -P sudo >/dev/null; then
     sudo "$@"
   else
     "$@"
@@ -42,15 +40,15 @@ download_and_checksum() {
   local url="$1"
   local checksum="$2"
   if [[ -z "${enable_checksum}" ]]; then
-    checksum=""
+    checksum=''
   fi
   info "downloading ${url}"
   retry curl --proto '=https' --tlsv1.2 -fsSL --retry 10 "${url}" -o tmp
   if [[ -n "${checksum}" ]]; then
-    info "verifying sha256 checksum for $(basename "${url}")"
-    if type -P sha256sum &>/dev/null; then
+    info "verifying sha256 checksum for $(basename -- "${url}")"
+    if type -P sha256sum >/dev/null; then
       sha256sum -c - >/dev/null <<<"${checksum} *tmp"
-    elif type -P shasum &>/dev/null; then
+    elif type -P shasum >/dev/null; then
       # GitHub-hosted macOS runner does not install GNU Coreutils by default.
       # https://github.com/actions/runner-images/issues/90
       shasum -a 256 -c - >/dev/null <<<"${checksum} *tmp"
@@ -80,7 +78,7 @@ download_and_extract() {
     editorconfig-checker) installed_bin=("${bin_dir}/${tool}${exe}") ;;
     *)
       for tmp in "${bin_in_archive[@]}"; do
-        installed_bin+=("${bin_dir}/$(basename "${tmp}")")
+        installed_bin+=("${bin_dir}/$(basename -- "${tmp}")")
       done
       ;;
   esac
@@ -88,70 +86,70 @@ download_and_extract() {
   local tar_args=()
   case "${url}" in
     *.tar.gz | *.tgz)
-      tar_args+=("xzf")
-      if ! type -P gzip &>/dev/null; then
+      tar_args+=('xzf')
+      if ! type -P gzip >/dev/null; then
         case "${base_distro}" in
           debian | fedora | suse | arch | alpine)
-            echo "::group::Install packages required for installation (gzip)"
+            printf '::group::Install packages required for installation (gzip)\n'
             sys_install gzip
-            echo "::endgroup::"
+            printf '::endgroup::\n'
             ;;
         esac
       fi
       ;;
     *.tar.bz2 | *.tbz2)
-      tar_args+=("xjf")
-      if ! type -P bzip2 &>/dev/null; then
+      tar_args+=('xjf')
+      if ! type -P bzip2 >/dev/null; then
         case "${base_distro}" in
           debian | fedora | suse | arch | alpine)
-            echo "::group::Install packages required for installation (bzip2)"
+            printf '::group::Install packages required for installation (bzip2)\n'
             sys_install bzip2
-            echo "::endgroup::"
+            printf '::endgroup::\n'
             ;;
         esac
       fi
       ;;
     *.tar.xz | *.txz)
-      tar_args+=("xJf")
-      if ! type -P xz &>/dev/null; then
+      tar_args+=('xJf')
+      if ! type -P xz >/dev/null; then
         case "${base_distro}" in
           debian)
-            echo "::group::Install packages required for installation (xz-utils)"
+            printf '::group::Install packages required for installation (xz-utils)\n'
             sys_install xz-utils
-            echo "::endgroup::"
+            printf '::endgroup::\n'
             ;;
           fedora | suse | arch | alpine)
-            echo "::group::Install packages required for installation (xz)"
+            printf '::group::Install packages required for installation (xz)\n'
             sys_install xz
-            echo "::endgroup::"
+            printf '::endgroup::\n'
             ;;
         esac
       fi
       ;;
     *.zip)
-      if ! type -P unzip &>/dev/null; then
+      if ! type -P unzip >/dev/null; then
         case "${base_distro}" in
           debian | fedora | suse | arch | alpine)
-            echo "::group::Install packages required for installation (unzip)"
+            printf '::group::Install packages required for installation (unzip)\n'
             sys_install unzip
-            echo "::endgroup::"
+            printf '::endgroup::\n'
             ;;
         esac
       fi
       ;;
   esac
 
-  mkdir -p "${tmp_dir}"
+  mkdir -p -- "${tmp_dir}"
   (
-    cd "${tmp_dir}"
+    cd -- "${tmp_dir}"
     download_and_checksum "${url}" "${checksum}"
     if [[ ${#tar_args[@]} -gt 0 ]]; then
       tar_args+=("tmp")
       tar "${tar_args[@]}"
       for tmp in "${bin_in_archive[@]}"; do
         case "${tool}" in
-          editorconfig-checker) mv "${tmp}" "${bin_dir}/${tool}${exe}" ;;
-          *) mv "${tmp}" "${bin_dir}/" ;;
+          editorconfig-checker) mv -- "${tmp}" "${bin_dir}/${tool}${exe}" ;;
+          *) mv -- "${tmp}" "${bin_dir}/" ;;
         esac
       done
     else
@@ -160,20 +158,20 @@ download_and_extract() {
           unzip -q tmp "${bin_in_archive#\./}"
           for tmp in "${bin_in_archive[@]}"; do
             case "${tool}" in
-              editorconfig-checker) mv "${tmp}" "${bin_dir}/${tool}${exe}" ;;
-              *) mv "${tmp}" "${bin_dir}/" ;;
+              editorconfig-checker) mv -- "${tmp}" "${bin_dir}/${tool}${exe}" ;;
+              *) mv -- "${tmp}" "${bin_dir}/" ;;
             esac
           done
           ;;
         *)
           for tmp in "${installed_bin[@]}"; do
-            mv tmp "${tmp}"
+            mv -- tmp "${tmp}"
           done
           ;;
       esac
     fi
   )
-  rm -rf "${tmp_dir}"
+  rm -rf -- "${tmp_dir}"
 
   case "${host_os}" in
     linux | macos)
@@ -189,28 +187,28 @@ read_manifest() {
   local tool="$1"
   local version="$2"
   local manifest
-  rust_crate=$(call_jq -r ".rust_crate" "${manifest_dir}/${tool}.json")
-  manifest=$(call_jq -r ".[\"${version}\"]" "${manifest_dir}/${tool}.json")
+  rust_crate=$(jq -r '.rust_crate' "${manifest_dir}/${tool}.json")
+  manifest=$(jq -r ".[\"${version}\"]" "${manifest_dir}/${tool}.json")
   if [[ "${manifest}" == "null" ]]; then
     download_info="null"
     return 0
   fi
-  exact_version=$(call_jq <<<"${manifest}" -r '.version')
+  exact_version=$(jq -r '.version' <<<"${manifest}")
   if [[ "${exact_version}" == "null" ]]; then
     exact_version="${version}"
   else
-    manifest=$(call_jq -r ".[\"${exact_version}\"]" "${manifest_dir}/${tool}.json")
+    manifest=$(jq -r ".[\"${exact_version}\"]" "${manifest_dir}/${tool}.json")
     if [[ "${rust_crate}" != "null" ]]; then
       # TODO: don't hardcode tool name and use 'immediate_yank_reflection' field in base manifest.
       case "${tool}" in
         cargo-nextest | nextest)
           crate_info=$(retry curl --proto '=https' --tlsv1.2 -fsSL --retry 10 "https://crates.io/api/v1/crates/${rust_crate}")
           while true; do
-            yanked=$(jq <<<"${crate_info}" -r ".versions[] | select(.num == \"${exact_version}\") | .yanked")
+            yanked=$(jq -r ".versions[] | select(.num == \"${exact_version}\") | .yanked" <<<"${crate_info}")
             if [[ "${yanked}" != "true" ]]; then
               break
             fi
-            previous_stable_version=$(jq <<<"${manifest}" -r '.previous_stable_version')
+            previous_stable_version=$(jq -r '.previous_stable_version' <<<"${manifest}")
             if [[ "${previous_stable_version}" == "null" ]]; then
               break
             fi
@@ -229,26 +227,26 @@ read_manifest() {
       # usually preferred over linux-gnu binaries because they can avoid glibc version issues.
       # (rustc enables statically linking for linux-musl by default, except for mips.)
       host_platform="${host_arch}_linux_musl"
-      download_info=$(call_jq <<<"${manifest}" -r ".${host_platform}")
+      download_info=$(jq -r ".${host_platform}" <<<"${manifest}")
       if [[ "${download_info}" == "null" ]]; then
         # Even if host_env is musl, we won't issue an error here because it seems that in
         # some cases linux-gnu binaries will work on linux-musl hosts.
         # https://wiki.alpinelinux.org/wiki/Running_glibc_programs
         # TODO: However, a warning may make sense.
         host_platform="${host_arch}_linux_gnu"
-        download_info=$(call_jq <<<"${manifest}" -r ".${host_platform}")
+        download_info=$(jq -r ".${host_platform}" <<<"${manifest}")
       elif [[ "${host_env}" == "gnu" ]]; then
         # TODO: don't hardcode tool name and use 'prefer_linux_gnu' field in base manifest.
         case "${tool}" in
           cargo-nextest | nextest)
             # TODO: don't hardcode required glibc version
             required_glibc_version=2.27
-            higher_glibc_version=$(sort <<<"${required_glibc_version}"$'\n'"${host_glibc_version}" -Vu | tail -1)
+            higher_glibc_version=$(LC_ALL=C sort -Vu <<<"${required_glibc_version}"$'\n'"${host_glibc_version}" | tail -1)
             if [[ "${higher_glibc_version}" == "${host_glibc_version}" ]]; then
               # musl build of nextest is slow, so use glibc build if host_env is gnu.
               # https://github.com/taiki-e/install-action/issues/13
               host_platform="${host_arch}_linux_gnu"
-              download_info=$(jq <<<"${manifest}" -r ".${host_platform}")
+              download_info=$(jq -r ".${host_platform}" <<<"${manifest}")
             fi
             ;;
         esac
@@ -258,10 +256,10 @@ read_manifest() {
       # Binaries compiled for x86_64 macOS will usually also work on AArch64 macOS.
       # Binaries compiled for x86_64 Windows will usually also work on AArch64 Windows 11+.
       host_platform="${host_arch}_${host_os}"
-      download_info=$(call_jq <<<"${manifest}" -r ".${host_platform}")
+      download_info=$(jq -r ".${host_platform}" <<<"${manifest}")
       if [[ "${download_info}" == "null" ]] && [[ "${host_arch}" != "x86_64" ]]; then
         host_platform="x86_64_${host_os}"
-        download_info=$(call_jq <<<"${manifest}" -r ".${host_platform}")
+        download_info=$(jq -r ".${host_platform}" <<<"${manifest}")
       fi
       ;;
     *) bail "unsupported OS type '${host_os}' for ${tool}" ;;
@@ -273,25 +271,25 @@ read_download_info() {
   if [[ "${download_info}" == "null" ]]; then
     bail "${tool}@${version} for '${host_os}' is not supported"
   fi
-  checksum=$(call_jq <<<"${download_info}" -r '.checksum')
-  url=$(call_jq <<<"${download_info}" -r '.url')
+  checksum=$(jq -r '.checksum' <<<"${download_info}")
+  url=$(jq -r '.url' <<<"${download_info}")
   local tmp
   bin_in_archive=()
   if [[ "${url}" == "null" ]]; then
     local template
-    template=$(call_jq -r ".template.${host_platform}" "${manifest_dir}/${tool}.json")
-    url=$(call_jq <<<"${template}" -r '.url')
+    template=$(jq -r ".template.${host_platform}" "${manifest_dir}/${tool}.json")
+    url=$(jq -r '.url' <<<"${template}")
     url="${url//\$\{version\}/${exact_version}}"
-    tmp=$(call_jq <<<"${template}" -r '.bin' | sed -E "s/\\$\\{version\\}/${exact_version}/g")
+    tmp=$(jq -r '.bin' <<<"${template}" | sed -E "s/\\$\\{version\\}/${exact_version}/g")
     if [[ "${tmp}" == *"["* ]]; then
       # shellcheck disable=SC2207
-      bin_in_archive=($(call_jq <<<"${template}" -r '.bin[]' | sed -E "s/\\$\\{version\\}/${exact_version}/g"))
+      bin_in_archive=($(jq -r '.bin[]' <<<"${template}" | sed -E "s/\\$\\{version\\}/${exact_version}/g"))
     fi
   else
-    tmp=$(call_jq <<<"${download_info}" -r '.bin')
+    tmp=$(jq -r '.bin' <<<"${download_info}")
     if [[ "${tmp}" == *"["* ]]; then
       # shellcheck disable=SC2207
-      bin_in_archive=($(call_jq <<<"${download_info}" -r '.bin[]'))
+      bin_in_archive=($(jq -r '.bin[]' <<<"${download_info}"))
     fi
   fi
   if [[ ${#bin_in_archive[@]} -eq 0 ]]; then
@@ -318,23 +316,23 @@ download_from_download_info() {
 }
 install_cargo_binstall() {
   local binstall_version
-  binstall_version=$(call_jq -r '.latest.version' "${manifest_dir}/cargo-binstall.json")
-  local install_binstall='1'
-  _binstall_version=$("cargo-binstall${exe}" binstall -V 2>/dev/null || echo "")
+  binstall_version=$(jq -r '.latest.version' "${manifest_dir}/cargo-binstall.json")
+  local install_binstall=1
+  _binstall_version=$("cargo-binstall${exe}" binstall -V 2>/dev/null || true)
   if [[ -n "${_binstall_version}" ]]; then
     if [[ "${_binstall_version}" == "${binstall_version}" ]]; then
       info "cargo-binstall already installed at ${cargo_bin}/cargo-binstall${exe}"
       install_binstall=''
     else
       info "cargo-binstall already installed at ${cargo_bin}/cargo-binstall${exe}, but is not compatible version with install-action, upgrading"
-      rm "${cargo_bin}/cargo-binstall${exe}"
+      rm -- "${cargo_bin}/cargo-binstall${exe}"
     fi
   fi
 
   if [[ -n "${install_binstall}" ]]; then
     info "installing cargo-binstall@latest (${binstall_version})"
     download_from_manifest "cargo-binstall" "latest"
-    installed_at=$(type -P "cargo-binstall${exe}" || echo "")
+    installed_at=$(type -P "cargo-binstall${exe}" || true)
     if [[ -n "${installed_at}" ]]; then
       info "cargo-binstall installed at ${installed_at}"
     else
@@ -369,9 +367,9 @@ pacman_install() {
   retry _sudo pacman -Sy --noconfirm "$@"
 }
 apk_install() {
-  if type -P sudo &>/dev/null; then
+  if type -P sudo >/dev/null; then
     retry sudo apk --no-cache add "$@"
-  elif type -P doas &>/dev/null; then
+  elif type -P doas >/dev/null; then
     retry doas apk --no-cache add "$@"
   else
     retry apk --no-cache add "$@"
@@ -389,19 +387,19 @@ sys_install() {
 init_install_action_bin_dir() {
   if [[ -z "${init_install_action_bin:-}" ]]; then
     init_install_action_bin=1
-    mkdir -p "${bin_dir}"
+    mkdir -p -- "${bin_dir}"
     export PATH="${PATH}:${bin_dir}"
     local _bin_dir
     _bin_dir=$(canonicalize_windows_path "${bin_dir}")
     # TODO: avoid this when already added
     info "adding '${_bin_dir}' to PATH"
-    echo "${_bin_dir}" >>"${GITHUB_PATH}"
+    printf '%s\n' "${_bin_dir}" >>"${GITHUB_PATH}"
   fi
 }
 canonicalize_windows_path() {
   case "${host_os}" in
-    windows) sed <<<"$1" 's/^\/cygdrive\//\//; s/^\/c\//C:\\/; s/\//\\/g' ;;
-    *) echo "$1" ;;
+    windows) sed -E 's/^\/cygdrive\//\//; s/^\/c\//C:\\/; s/\//\\/g' <<<"$1" ;;
+    *) printf '%s\n' "$1" ;;
   esac
 }
 
@@ -415,7 +413,7 @@ if [[ $# -gt 0 ]]; then
 fi
 
 export DEBIAN_FRONTEND=noninteractive
-manifest_dir="$(dirname "$0")/manifests"
+manifest_dir="$(dirname -- "$0")/manifests"
 
 # Inputs
 tool="${INPUT_TOOL:-}"
@@ -446,17 +444,17 @@ case "${fallback}" in
 esac
 
 # Refs: https://github.com/rust-lang/rustup/blob/HEAD/rustup-init.sh
-base_distro=""
-exe=""
+base_distro=''
+exe=''
 case "$(uname -s)" in
   Linux)
     host_os=linux
     ldd_version=$(ldd --version 2>&1 || true)
-    if grep <<<"${ldd_version}" -q 'musl'; then
-      host_env="musl"
+    if grep -Fq musl <<<"${ldd_version}"; then
+      host_env=musl
     else
-      host_env="gnu"
-      host_glibc_version=$(grep <<<"${ldd_version}" -E "GLIBC|GNU libc" | sed "s/.* //g")
+      host_env=gnu
+      host_glibc_version=$(grep -E "GLIBC|GNU libc" <<<"${ldd_version}" | sed -E "s/.* //g")
     fi
     if [[ -e /etc/os-release ]]; then
       if grep -Eq '^ID_LIKE=' /etc/os-release; then
@@ -471,14 +469,19 @@ case "$(uname -s)" in
       else
         base_distro=$(grep -E '^ID=' /etc/os-release | cut -d= -f2)
       fi
+      base_distro="${base_distro//\"/}"
     elif [[ -e /etc/redhat-release ]]; then
+      # /etc/os-release is available on RHEL/CentOS 7+
       base_distro=fedora
+    elif [[ -e /etc/debian_version ]]; then
+      # /etc/os-release is available on Debian 7+
+      base_distro=debian
     fi
     case "${base_distro}" in
       fedora)
         dnf=dnf
-        if ! type -P dnf &>/dev/null; then
-          if type -P microdnf &>/dev/null; then
+        if ! type -P dnf >/dev/null; then
+          if type -P microdnf >/dev/null; then
             # fedora-based distributions have "minimal" images that
             # use microdnf instead of dnf.
             dnf=microdnf
@@ -495,12 +498,12 @@ case "$(uname -s)" in
   Darwin) host_os=macos ;;
   MINGW* | MSYS* | CYGWIN* | Windows_NT)
     host_os=windows
-    exe=".exe"
+    exe=.exe
     ;;
   *) bail "unrecognized OS type '$(uname -s)'" ;;
 esac
 case "$(uname -m)" in
-  aarch64 | arm64) host_arch="aarch64" ;;
+  aarch64 | arm64) host_arch=aarch64 ;;
   xscale | arm | armv*l)
     # Ignore Arm for now, as we need to consider the version and whether hard-float is supported.
     # https://github.com/rust-lang/rustup/pull/593
@@ -515,7 +518,7 @@ case "$(uname -m)" in
   # https://github.com/actions/runner/blob/v2.321.0/.github/workflows/build.yml#L21
   # https://docs.github.com/en/actions/hosting-your-own-runners/about-self-hosted-runners#supported-architectures-and-operating-systems-for-self-hosted-runners
   # So we can assume x86_64 unless it is AArch64 or Arm.
-  *) host_arch="x86_64" ;;
+  *) host_arch=x86_64 ;;
 esac
 info "host platform: ${host_arch}_${host_os}"
 
@@ -540,37 +543,36 @@ cargo_bin="${CARGO_HOME:-"${home}/.cargo"}/bin"
 # is used ($CARGO_HOME/bin is most likely not included in the PATH), fallback to
 # $install_action_dir/bin.
 if [[ "${host_os}" == "windows" ]]; then
-  if type -P cargo &>/dev/null; then
+  if type -P cargo >/dev/null; then
     info "cargo is located at $(type -P cargo)"
-    cargo_bin=$(dirname "$(type -P cargo)")
+    cargo_bin=$(dirname -- "$(type -P cargo)")
   else
     cargo_bin="${install_action_dir}/bin"
   fi
 elif [[ ! -e "${cargo_bin}" ]] || [[ "$(type -P cargo || true)" != "${cargo_bin}/cargo"* ]]; then
-  if type -P cargo &>/dev/null; then
+  if type -P cargo >/dev/null; then
     info "cargo is located at $(type -P cargo)"
   fi
   # Moving files to /usr/local/bin requires sudo in some environments, so do not use it: https://github.com/taiki-e/install-action/issues/543
   cargo_bin="${install_action_dir}/bin"
 fi
 
-jq_use_b=''
 case "${host_os}" in
   linux)
-    if ! type -P jq &>/dev/null || ! type -P curl &>/dev/null || ! type -P tar &>/dev/null; then
+    if ! type -P jq >/dev/null || ! type -P curl >/dev/null || ! type -P tar >/dev/null; then
       case "${base_distro}" in
         debian | fedora | suse | arch | alpine)
-          echo "::group::Install packages required for installation (jq, curl, and/or tar)"
+          printf '::group::Install packages required for installation (jq, curl, and/or tar)\n'
           sys_packages=()
-          if ! type -P curl &>/dev/null; then
+          if ! type -P curl >/dev/null; then
             sys_packages+=(ca-certificates curl)
           fi
-          if ! type -P tar &>/dev/null; then
+          if ! type -P tar >/dev/null; then
             sys_packages+=(tar)
           fi
           if [[ "${dnf:-}" == "yum" ]]; then
             # On RHEL7-based distribution jq requires EPEL
-            if ! type -P jq &>/dev/null; then
+            if ! type -P jq >/dev/null; then
               sys_packages+=(epel-release)
               sys_install "${sys_packages[@]}"
               sys_install jq --enablerepo=epel
@@ -578,7 +580,7 @@ case "${host_os}" in
               sys_install "${sys_packages[@]}"
             fi
           else
-            if ! type -P jq &>/dev/null; then
+            if ! type -P jq >/dev/null; then
               # https://github.com/taiki-e/install-action/issues/521
               if [[ "${base_distro}" == "arch" ]]; then
                 sys_packages+=(glibc)
@@ -587,59 +589,48 @@ case "${host_os}" in
             fi
             sys_install "${sys_packages[@]}"
           fi
-          echo "::endgroup::"
+          printf '::endgroup::\n'
           ;;
         *) warn "install-action requires at least jq and curl on non-Debian/Fedora/SUSE/Arch/Alpine-based Linux" ;;
       esac
     fi
     ;;
   macos)
-    if ! type -P jq &>/dev/null || ! type -P curl &>/dev/null; then
+    if ! type -P jq >/dev/null || ! type -P curl >/dev/null; then
       warn "install-action requires at least jq and curl on macOS"
     fi
     ;;
   windows)
-    if ! type -P curl &>/dev/null; then
+    if ! type -P curl >/dev/null; then
       warn "install-action requires at least curl on Windows"
     fi
-    # https://github.com/jqlang/jq/issues/1854
-    jq_use_b=1
-    jq="${install_action_dir}/jq/bin/jq.exe"
-    if [[ ! -f "${jq}" ]]; then
-      jq_version=$(jq --version || echo "")
-      case "${jq_version}" in
-        jq-1.[7-9]* | jq-1.[1-9][0-9]*) jq='' ;;
-        *)
-          _tmp=$(jq <<<"{}" -r .a || echo "")
-          if [[ "${_tmp}" == "null" ]]; then
-            jq=''
-            jq_use_b=''
-          else
-            info "old jq (${jq_version}) has bug on Windows; downloading jq 1.7 (will not be added to PATH)"
-            mkdir -p "${install_action_dir}/jq/bin"
-            url='https://github.com/jqlang/jq/releases/download/jq-1.7.1/jq-windows-amd64.exe'
-            checksum='7451fbbf37feffb9bf262bd97c54f0da558c63f0748e64152dd87b0a07b6d6ab'
-            (
-              cd "${install_action_dir}/jq/bin"
-              download_and_checksum "${url}" "${checksum}"
-              mv tmp jq.exe
-            )
-            echo
-          fi
-          ;;
-      esac
+    if type -P jq >/dev/null; then
+      # https://github.com/jqlang/jq/issues/1854
+      _tmp=$(jq -r .a <<<'{}')
+      if [[ "${_tmp}" != "null" ]]; then
+        _tmp=$(jq -b -r .a 2>/dev/null <<<'{}' || true)
+        if [[ "${_tmp}" == "null" ]]; then
+          jq() { command jq -b "$@"; }
+        else
+          jq() { command jq "$@" | tr -d '\r'; }
+        fi
+      else
+        printf '::group::Install packages required for installation (jq)\n'
+        mkdir -p -- "${install_action_dir}/jq/bin"
+        url='https://github.com/jqlang/jq/releases/download/jq-1.7.1/jq-windows-amd64.exe'
+        checksum='7451fbbf37feffb9bf262bd97c54f0da558c63f0748e64152dd87b0a07b6d6ab'
+        (
+          cd -- "${install_action_dir}/jq/bin"
+          download_and_checksum "${url}" "${checksum}"
+          mv -- tmp jq.exe
+        )
+        printf '::endgroup::\n'
+        jq() { "${install_action_dir}/jq/bin/jq.exe" -b "$@"; }
+      fi
     fi
     ;;
   *) bail "unsupported host OS '${host_os}'" ;;
 esac
-call_jq() {
-  # https://github.com/jqlang/jq/issues/1854
-  if [[ -n "${jq_use_b}" ]]; then
-    "${jq:-jq}" -b "$@"
-  else
-    "${jq:-jq}" "$@"
-  fi
-}
 
 unsupported_tools=()
 for tool in "${tools[@]}"; do
@@ -653,7 +644,7 @@ for tool in "${tools[@]}"; do
       bail "install-action v2 does not support semver pre-release and build-metadata: '${version}'; if you need these supports again, please submit an issue at <https://github.com/taiki-e/install-action>"
     fi
   else
-    version="latest"
+    version=latest
   fi
   installed_bin=()
   case "${tool}" in
@@ -666,32 +657,32 @@ for tool in "${tools[@]}"; do
       include_dir="${install_action_dir}/include"
       init_install_action_bin_dir
       if [[ ! -e "${include_dir}" ]]; then
-        mkdir -p "${include_dir}"
+        mkdir -p -- "${include_dir}"
       fi
-      if ! type -P unzip &>/dev/null; then
+      if ! type -P unzip >/dev/null; then
         case "${base_distro}" in
           debian | fedora | suse | arch | alpine)
-            echo "::group::Install packages required for installation (unzip)"
+            printf '::group::Install packages required for installation (unzip)\n'
             sys_install unzip
-            echo "::endgroup::"
+            printf '::endgroup::\n'
             ;;
         esac
       fi
-      mkdir -p "${tmp_dir}"
+      mkdir -p -- "${tmp_dir}"
       (
-        cd "${tmp_dir}"
+        cd -- "${tmp_dir}"
         download_and_checksum "${url}" "${checksum}"
         unzip -q tmp
-        mv "bin/protoc${exe}" "${bin_dir}/"
-        mkdir -p "${include_dir}/"
-        cp -r include/. "${include_dir}/"
+        mv -- "bin/protoc${exe}" "${bin_dir}/"
+        mkdir -p -- "${include_dir}/"
+        cp -r -- include/. "${include_dir}/"
         if [[ -z "${PROTOC:-}" ]]; then
           _bin_dir=$(canonicalize_windows_path "${bin_dir}")
           info "setting PROTOC environment variable to '${_bin_dir}/protoc${exe}'"
-          echo "PROTOC=${_bin_dir}/protoc${exe}" >>"${GITHUB_ENV}"
+          printf '%s\n' "PROTOC=${_bin_dir}/protoc${exe}" >>"${GITHUB_ENV}"
         fi
       )
-      rm -rf "${tmp_dir}"
+      rm -rf -- "${tmp_dir}"
       installed_bin=("${tool}${exe}")
       ;;
     valgrind)
@@ -702,7 +693,7 @@ for tool in "${tools[@]}"; do
       esac
       case "${host_os}" in
         linux) ;;
-        macos | windows) bail "${tool} for non-linux is not supported yet by this action" ;;
+        macos | windows) bail "${tool} for non-Linux is not supported yet by this action" ;;
         *) bail "unsupported host OS '${host_os}' for ${tool}" ;;
       esac
       # libc6-dbg is needed to run Valgrind
@@ -718,13 +709,13 @@ for tool in "${tools[@]}"; do
         *) warn "specifying the version of ${tool} is not supported by this action" ;;
       esac
       install_cargo_binstall
-      echo
+      printf '\n'
       continue
       ;;
     *)
       # Handle aliases
       case "${tool}" in
-        cargo-nextest | nextest) tool="cargo-nextest" ;;
+        cargo-nextest | nextest) tool=cargo-nextest ;;
       esac
 
       # Use cargo-binstall fallback if tool is not available.
@@ -757,7 +748,7 @@ for tool in "${tools[@]}"; do
         shellcheck)
           case "${host_os}" in
             linux)
-              if type -P shellcheck &>/dev/null; then
+              if type -P shellcheck >/dev/null; then
                 apt_remove -y shellcheck
               fi
               ;;
@@ -771,12 +762,12 @@ for tool in "${tools[@]}"; do
 
   tool_bin_stems=()
   for tool_bin in "${installed_bin[@]}"; do
-    tool_bin=$(basename "${tool_bin}")
+    tool_bin=$(basename -- "${tool_bin}")
     tool_bin_stem="${tool_bin%.exe}"
-    installed_at=$(type -P "${tool_bin}" || echo "")
+    installed_at=$(type -P "${tool_bin}" || true)
     if [[ -z "${installed_at}" ]]; then
       tool_bin="${tool_bin_stem}"
-      installed_at=$(type -P "${tool_bin}" || echo "")
+      installed_at=$(type -P "${tool_bin}" || true)
     fi
     if [[ -n "${installed_at}" ]]; then
       info "${tool_bin_stem} installed at ${installed_at}"
@@ -818,7 +809,7 @@ for tool in "${tools[@]}"; do
         ;;
     esac
   done
-  echo
+  printf '\n'
 done
 
 if [[ ${#unsupported_tools[@]} -gt 0 ]]; then
@@ -840,6 +831,6 @@ if [[ ${#unsupported_tools[@]} -gt 0 ]]; then
     _bin_dir=$(canonicalize_windows_path "${home}/.cargo/bin")
     # TODO: avoid this when already added
     info "adding '${_bin_dir}' to PATH"
-    echo "${_bin_dir}" >>"${GITHUB_PATH}"
+    printf '%s\n' "${_bin_dir}" >>"${GITHUB_PATH}"
   fi
 fi

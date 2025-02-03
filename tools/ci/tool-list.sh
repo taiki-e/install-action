@@ -67,15 +67,15 @@ case "$(uname -s)" in
       incompat_tools+=("${musl_incompat[@]}")
     else
       host_glibc_version=$(grep -E "GLIBC|GNU libc" <<<"${ldd_version}" | sed "s/.* //g")
-      higher_glibc_version=$(sort -Vu <<<"2.34"$'\n'"${host_glibc_version}" | tail -1)
+      higher_glibc_version=$(LC_ALL=C sort -Vu <<<"2.34"$'\n'"${host_glibc_version}" | tail -1)
       if [[ "${higher_glibc_version}" != "${host_glibc_version}" ]]; then
-        higher_glibc_version=$(sort -Vu <<<"2.31"$'\n'"${host_glibc_version}" | tail -1)
+        higher_glibc_version=$(LC_ALL=C sort -Vu <<<"2.31"$'\n'"${host_glibc_version}" | tail -1)
         if [[ "${higher_glibc_version}" != "${host_glibc_version}" ]]; then
-          higher_glibc_version=$(sort -Vu <<<"2.28"$'\n'"${host_glibc_version}" | tail -1)
+          higher_glibc_version=$(LC_ALL=C sort -Vu <<<"2.28"$'\n'"${host_glibc_version}" | tail -1)
           if [[ "${higher_glibc_version}" != "${host_glibc_version}" ]]; then
-            higher_glibc_version=$(sort -Vu <<<"2.27"$'\n'"${host_glibc_version}" | tail -1)
+            higher_glibc_version=$(LC_ALL=C sort -Vu <<<"2.27"$'\n'"${host_glibc_version}" | tail -1)
             if [[ "${higher_glibc_version}" != "${host_glibc_version}" ]]; then
-              higher_glibc_version=$(sort -Vu <<<"2.17"$'\n'"${host_glibc_version}" | tail -1)
+              higher_glibc_version=$(LC_ALL=C sort -Vu <<<"2.17"$'\n'"${host_glibc_version}" | tail -1)
               if [[ "${higher_glibc_version}" != "${host_glibc_version}" ]]; then
                 incompat_tools+=("${glibc_pre_2_17_incompat[@]}")
               else
