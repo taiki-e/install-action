@@ -40,14 +40,8 @@ runs:
             exit 1
           fi
         fi
-        bash --noprofile --norc "${GITHUB_ACTION_PATH:?}/main.sh"
       shell: sh
-      env:
-        INPUT_TOOL: ${{ inputs.tool }}
-        INPUT_CHECKSUM: ${{ inputs.checksum }}
-        INPUT_FALLBACK: ${{ inputs.fallback }}
-        DEFAULT_GITHUB_TOKEN: ${{ github.token }}
-      if: runner.os	!= 'Windows'
+      if: runner.os	== 'Linux'
     - run: bash --noprofile --norc "${GITHUB_ACTION_PATH:?}/main.sh"
       shell: bash
       env:
@@ -55,4 +49,3 @@ runs:
         INPUT_CHECKSUM: ${{ inputs.checksum }}
         INPUT_FALLBACK: ${{ inputs.fallback }}
         DEFAULT_GITHUB_TOKEN: ${{ github.token }}
-      if: runner.os	== 'Windows'
