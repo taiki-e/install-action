@@ -604,7 +604,9 @@ case "${host_os}" in
     if ! type -P curl >/dev/null; then
       warn "install-action requires at least curl on Windows"
     fi
-    if type -P jq >/dev/null; then
+    if [[ -f "${install_action_dir}/jq/bin/jq.exe" ]]; then
+      jq() { "${install_action_dir}/jq/bin/jq.exe" -b "$@"; }
+    elif type -P jq >/dev/null; then
       # https://github.com/jqlang/jq/issues/1854
       _tmp=$(jq -r .a <<<'{}')
       if [[ "${_tmp}" != "null" ]]; then
@@ -614,19 +616,19 @@ case "${host_os}" in
         else
           jq() { command jq "$@" | tr -d '\r'; }
         fi
-      else
-        printf '::group::Install packages required for installation (jq)\n'
-        mkdir -p -- "${install_action_dir}/jq/bin"
-        url='https://github.com/jqlang/jq/releases/download/jq-1.7.1/jq-windows-amd64.exe'
-        checksum='7451fbbf37feffb9bf262bd97c54f0da558c63f0748e64152dd87b0a07b6d6ab'
-        (
-          cd -- "${install_action_dir}/jq/bin"
-          download_and_checksum "${url}" "${checksum}"
-          mv -- tmp jq.exe
-        )
-        printf '::endgroup::\n'
-        jq() { "${install_action_dir}/jq/bin/jq.exe" -b "$@"; }
       fi
+    else
+      printf '::group::Install packages required for installation (jq)\n'
+      mkdir -p -- "${install_action_dir}/jq/bin"
+      url='https://github.com/jqlang/jq/releases/download/jq-1.7.1/jq-windows-amd64.exe'
+      checksum='7451fbbf37feffb9bf262bd97c54f0da558c63f0748e64152dd87b0a07b6d6ab'
+      (
+        cd -- "${install_action_dir}/jq/bin"
+        download_and_checksum "${url}" "${checksum}"
+        mv -- tmp jq.exe
+      )
+      printf '::endgroup::\n'
+      jq() { "${install_action_dir}/jq/bin/jq.exe" -b "$@"; }
     fi
     ;;
   *) bail "unsupported host OS '${host_os}'" ;;
