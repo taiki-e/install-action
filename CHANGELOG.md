@@ -10,6 +10,8 @@ Note: In this file, do not use the hard wrap in the middle of a sentence for com
 
 ## [Unreleased]
 
+- Update `parse-changelog@latest` to 0.6.12.
+
 ## [2.48.1] - 2025-02-02
 
 - Update `dprint@latest` to 0.49.0.
