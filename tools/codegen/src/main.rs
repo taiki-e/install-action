@@ -19,6 +19,7 @@ use install_action_internal_codegen::{
 };
 use sha2::{Digest as _, Sha256};
 use spdx::expression::{ExprNode, ExpressionReq, Operator};
+use ureq::http::header;
 
 fn main() -> Result<()> {
     let args: Vec<_> = env::args().skip(1).collect();
@@ -52,7 +53,7 @@ fn main() -> Result<()> {
 
     eprintln!("downloading metadata from https://api.github.com/repos/{repo}");
     let repo_info: github::RepoMetadata =
-        download(&format!("https://api.github.com/repos/{repo}"))?.into_json()?;
+        download(&format!("https://api.github.com/repos/{repo}"))?.body_mut().read_json()?;
 
     eprintln!("downloading releases from https://api.github.com/repos/{repo}/releases");
     let mut releases: github::Releases = vec![];
@@ -63,7 +64,8 @@ fn main() -> Result<()> {
         let mut r: github::Releases = download(&format!(
             "https://api.github.com/repos/{repo}/releases?per_page={per_page}&page={page}"
         ))?
-        .into_json()?;
+        .body_mut()
+        .read_json()?;
         // If version_req is latest, it is usually sufficient to look at the latest 100 releases.
         if r.len() < per_page || version_req.is_some_and(|req| req == "latest") {
             releases.append(&mut r);
@@ -98,11 +100,13 @@ fn main() -> Result<()> {
     if let Some(crate_name) = &base_info.rust_crate {
         eprintln!("downloading crate info from https://crates.io/api/v1/crates/{crate_name}");
         let info = download(&format!("https://crates.io/api/v1/crates/{crate_name}"))?
-            .into_json::<crates_io::Crate>()?;
+            .body_mut()
+            .read_json::<crates_io::Crate>()?;
         let latest_version = &info.versions[0].num;
         crates_io_version_detail = Some(
             download(&format!("https://crates.io/api/v1/crates/{crate_name}/{latest_version}"))?
-                .into_json::<crates_io::VersionMetadata>()?
+                .body_mut()
+                .read_json::<crates_io::VersionMetadata>()?
                 .version,
         );
 
@@ -292,8 +296,13 @@ fn main() -> Result<()> {
                 Path::new(&url).file_name().unwrap().to_str().unwrap()
             ));
             let response = download(&url)?;
-            let etag =
-                response.header("etag").expect("binary should have an etag").replace('\"', "");
+            let etag = response
+                .headers()
+                .get("etag")
+                .expect("binary should have an etag")
+                .to_str()
+                .unwrap()
+                .replace('\"', "");
 
             if let Some(ManifestRef::Real(ref manifest)) = existing_manifest {
                 if let Some(entry) = manifest.download_info.get(&platform) {
@@ -312,7 +321,7 @@ fn main() -> Result<()> {
                 eprintln!("already downloaded");
                 fs::File::open(download_cache)?.read_to_end(&mut buf)?;
             } else {
-                response.into_reader().read_to_end(&mut buf)?;
+                response.into_body().into_reader().read_to_end(&mut buf)?;
                 eprintln!("download complete");
                 fs::write(download_cache, &buf)?;
             }
@@ -335,7 +344,7 @@ fn main() -> Result<()> {
                         eprintln!("already downloaded");
                         minisign_verify::Signature::from_file(sig_download_cache)?
                     } else {
-                        let buf = download(&url)?.into_string()?;
+                        let buf = download(&url)?.body_mut().read_to_string()?;
                         eprintln!("download complete");
                         fs::write(sig_download_cache, &buf)?;
                         minisign_verify::Signature::decode(&buf)?
@@ -353,7 +362,7 @@ fn main() -> Result<()> {
                     if crate_download_cache.is_file() {
                         eprintln!("already downloaded");
                     } else {
-                        download(&url)?.into_reader().read_to_end(&mut buf2)?;
+                        download(&url)?.into_body().into_reader().read_to_end(&mut buf2)?;
                         let hash = Sha256::digest(&buf2);
                         if format!("{hash:x}") != v.checksum {
                             bail!("checksum mismatch for {url}");
@@ -682,7 +691,7 @@ static GITHUB_TOKENS: LazyLock<GitHubTokens> = LazyLock::new(|| {
     }
 });
 
-fn download(url: &str) -> Result<ureq::Response> {
+fn download(url: &str) -> Result<ureq::http::Response<ureq::Body>> {
     let mut token = GITHUB_TOKENS.get(url);
     let mut retry = 0;
     let mut retry_time = 0;
@@ -694,7 +703,7 @@ fn download(url: &str) -> Result<ureq::Response> {
     loop {
         let mut req = ureq::get(url);
         if let Some(token) = &token {
-            req = req.set("Authorization", &format!("Bearer {token}"));
+            req = req.header(header::AUTHORIZATION, &format!("Bearer {token}"));
         }
         match req.call() {
             Ok(res) => return Ok(res),
@@ -730,12 +739,12 @@ fn github_head(url: &str) -> Result<()> {
     loop {
         let mut req = ureq::head(url);
         if let Some(token) = &token {
-            req = req.set("Authorization", &format!("Bearer {token}"));
+            req = req.header(header::AUTHORIZATION, &format!("Bearer {token}"));
         }
         match req.call() {
             Ok(_) => return Ok(()),
             // rate limit
-            Err(e @ ureq::Error::Status(403, _)) => last_error = Some(e),
+            Err(e @ ureq::Error::StatusCode(403)) => last_error = Some(e),
             Err(e) => return Err(e.into()),
         }
         retry_time += 1;
