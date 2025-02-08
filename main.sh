@@ -525,12 +525,12 @@ info "host platform: ${host_arch}_${host_os}"
 home="${HOME}"
 if [[ "${host_os}" == "windows" ]]; then
   if [[ "${home}" == "/home/"* ]]; then
-    if [[ -d "${home/\/home\//\/c\/Users\/}" ]]; then
+    if [[ -d "${home/\/home\///c/Users/}" ]]; then
       # MSYS2 https://github.com/taiki-e/install-action/pull/518#issuecomment-2160736760
-      home="${home/\/home\//\/c\/Users\/}"
-    elif [[ -d "${home/\/home\//\/cygdrive\/c\/Users\/}" ]]; then
+      home="${home/\/home\///c/Users/}"
+    elif [[ -d "${home/\/home\///cygdrive/c/Users/}" ]]; then
       # Cygwin https://github.com/taiki-e/install-action/issues/224#issuecomment-1720196288
-      home="${home/\/home\//\/cygdrive\/c\/Users\/}"
+      home="${home/\/home\///cygdrive/c/Users/}"
     else
       warn "\$HOME starting /home/ (${home}) on Windows bash is usually fake path, this may cause installation issue"
     fi
