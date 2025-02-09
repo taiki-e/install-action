@@ -22,10 +22,62 @@
   },
   "license_markdown": "[MIT](https://github.com/release-plz/release-plz/blob/main/LICENSE-MIT) OR [Apache-2.0](https://github.com/release-plz/release-plz/blob/main/LICENSE-APACHE)",
   "latest": {
-    "version": "0.3.116"
+    "version": "0.3.118"
   },
   "0.3": {
-    "version": "0.3.116"
+    "version": "0.3.118"
+  },
+  "0.3.118": {
+    "x86_64_linux_musl": {
+      "etag": "0x8DD488F61EDB29B",
+      "checksum": "f751266da808ec38b0426abce0e68387221f3dc323b96400113e040fff0bb130"
+    },
+    "x86_64_macos": {
+      "etag": "0x8DD4890279C0CCC",
+      "checksum": "2f1ea887591575c3c6e73f9697f030c54d2ba2c90cfc19e7989f16d77e2df010"
+    },
+    "x86_64_windows": {
+      "etag": "0x8DD489048364449",
+      "checksum": "bcdcb79e2015c1cb73634b8ea797b7e9124332630fda096f5a924c203adb351f"
+    },
+    "aarch64_linux_musl": {
+      "etag": "0x8DD488F7BD66E21",
+      "checksum": "b9ef712f8946d6522f0052bafd769a28e885ff7b20970aa1a8eea5085fecf80e"
+    },
+    "aarch64_macos": {
+      "etag": "0x8DD488FD9BD6C14",
+      "checksum": "7eaffdcfebb772b9bff42af2c53102d19f285307df14b061620cafc32f8ab167"
+    },
+    "aarch64_windows": {
+      "etag": "0x8DD489056222AB7",
+      "checksum": "87850153a0a917c36b6ecf404a952e9a88443872c313a79896131a28e0b56685"
+    }
+  },
+  "0.3.117": {
+    "x86_64_linux_musl": {
+      "etag": "0x8DD48765324E4A3",
+      "checksum": "5cc9089077c1e0f097d9687afacbba241f2ad5a816debf834a45e0f539d6d2ec"
+    },
+    "x86_64_macos": {
+      "etag": "0x8DD48772F752763",
+      "checksum": "162022c86d213f3ec4cf5aba07dfaae3cae84d0cc89baab02e0856f189e3d99a"
+    },
+    "x86_64_windows": {
+      "etag": "0x8DD487743DFFA65",
+      "checksum": "cf221437eaa5248685ed4e1b464300af5f132bbe91889a74986a919ed99acb64"
+    },
+    "aarch64_linux_musl": {
+      "etag": "0x8DD48765BCE51C3",
+      "checksum": "21e4007f9b180fda271ff7ea8f6bd34363b3890eff055fac5cc6b7c0db2db71e"
+    },
+    "aarch64_macos": {
+      "etag": "0x8DD4876A58DECD0",
+      "checksum": "8c0f638037005a7b8e231dec717846324b7e3f8dd7cb0cdc85feeb59746d5254"
+    },
+    "aarch64_windows": {
+      "etag": "0x8DD48770B3846CE",
+      "checksum": "7bd493f496c0b55b68600af36b4b9c2225f75db693665832b943526b8253e38f"
+    }
   },
   "0.3.116": {
     "x86_64_linux_musl": {
