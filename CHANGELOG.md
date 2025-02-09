@@ -10,6 +10,8 @@ Note: In this file, do not use the hard wrap in the middle of a sentence for com
 
 ## [Unreleased]
 
+- Update `release-plz@latest` to 0.3.118.
+
 - Update `parse-dockerfile@latest` to 0.1.1.
 
 - Update `parse-changelog@latest` to 0.6.12.
