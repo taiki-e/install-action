@@ -277,13 +277,13 @@ read_download_info() {
   bin_in_archive=()
   if [[ "${url}" == "null" ]]; then
     local template
-    template=$(jq -r ".template.${host_platform}" "${manifest_dir}/${tool}.json")
+    template=$(jq -c ".template.${host_platform}" "${manifest_dir}/${tool}.json")
+    template="${template//\$\{version\}/${exact_version}}"
     url=$(jq -r '.url' <<<"${template}")
-    url="${url//\$\{version\}/${exact_version}}"
-    tmp=$(jq -r '.bin' <<<"${template}" | sed -E "s/\\$\\{version\\}/${exact_version}/g")
+    tmp=$(jq -r '.bin' <<<"${template}")
     if [[ "${tmp}" == *"["* ]]; then
       # shellcheck disable=SC2207
-      bin_in_archive=($(jq -r '.bin[]' <<<"${template}" | sed -E "s/\\$\\{version\\}/${exact_version}/g"))
+      bin_in_archive=($(jq -r '.bin[]' <<<"${template}"))
     fi
   else
     tmp=$(jq -r '.bin' <<<"${download_info}")
