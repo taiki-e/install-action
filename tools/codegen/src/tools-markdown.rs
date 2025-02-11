@@ -1,6 +1,10 @@
 // SPDX-License-Identifier: Apache-2.0 OR MIT
 
-use std::{env, fmt, io::Write as _, path::PathBuf};
+use std::{
+    env, fmt,
+    io::{BufWriter, Write as _},
+    path::PathBuf,
+};
 
 use anyhow::Result;
 use fs_err as fs;
@@ -111,8 +115,7 @@ fn main() -> Result<()> {
     let mut markdown_file = workspace_root.clone();
     markdown_file.push("TOOLS.md");
 
-    let file = std::fs::File::create(markdown_file).expect("Unable to create file");
-    let mut file = std::io::BufWriter::new(file);
+    let mut file = BufWriter::new(fs::File::create(markdown_file).unwrap()); // Buffered because it is written many times.
 
     file.write_all(HEADER.as_bytes()).expect("Unable to write header");
 
@@ -121,6 +124,7 @@ fn main() -> Result<()> {
     }
 
     file.write_all(FOOTER.as_bytes()).expect("Unable to write footer");
+    file.flush()?;
 
     Ok(())
 }

@@ -319,7 +319,7 @@ fn main() -> Result<()> {
 
             if download_cache.is_file() {
                 eprintln!("already downloaded");
-                fs::File::open(download_cache)?.read_to_end(&mut buf)?;
+                fs::File::open(download_cache)?.read_to_end(&mut buf)?; // Not buffered because it is read at once.
             } else {
                 response.into_body().into_reader().read_to_end(&mut buf)?;
                 eprintln!("download complete");
