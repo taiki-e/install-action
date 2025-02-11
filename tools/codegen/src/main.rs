@@ -454,6 +454,14 @@ fn main() -> Result<()> {
             // macOS universal binary or x86_64 binary that works on both x86_64 and AArch64 (rosetta).
             download_info.remove(&HostPlatform::aarch64_macos);
         }
+        if download_info.contains_key(&HostPlatform::x86_64_windows)
+            && download_info.contains_key(&HostPlatform::aarch64_windows)
+            && download_info[&HostPlatform::x86_64_windows].url
+                == download_info[&HostPlatform::aarch64_windows].url
+        {
+            // x86_64 Windows binary that works on both x86_64 and AArch64.
+            download_info.remove(&HostPlatform::aarch64_windows);
+        }
         has_build_metadata |= !semver_version.build.is_empty();
         if semver_version.pre.is_empty() {
             semver_versions.insert(semver_version.clone());
