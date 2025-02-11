@@ -18,7 +18,7 @@ spdx = "0.10"
 tar = "0.4"
 toml_edit = { version = "0.22", default-features = false, features = ["parse", "serde"] }
 # TODO: call curl command instead of using ureq?
-ureq = { version = "3", features = ["json"] }
+ureq = { version = "2", features = ["json"] }
 
 [lints]
 workspace = true
