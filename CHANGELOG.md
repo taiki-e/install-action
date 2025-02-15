@@ -10,6 +10,8 @@ Note: In this file, do not use the hard wrap in the middle of a sentence for com
 
 ## [Unreleased]
 
+- Update `zola@latest` to 0.20.0.
+
 - Update `cargo-binstall@latest` to 1.11.0.
 
 ## [2.48.12] - 2025-02-14
