@@ -6,8 +6,13 @@ trap -- 's=$?; printf >&2 "%s\n" "${0##*/}:${LINENO}: \`${BASH_COMMAND}\` exit w
 cd -- "$(dirname -- "$0")"/../..
 
 # They don't provide prebuilt binaries for musl or old glibc host.
+# version `GLIBC_2.35' not found
+glibc_pre_2_35_incompat=(
+  zola
+)
 # version `GLIBC_2.34' not found
 glibc_pre_2_34_incompat=(
+  "${glibc_pre_2_35_incompat[@]}"
   cargo-spellcheck
   wait-for-them
   xbuild
@@ -17,7 +22,6 @@ glibc_pre_2_31_incompat=(
   "${glibc_pre_2_34_incompat[@]}"
   cargo-sort
   espup
-  zola
 )
 # version `GLIBC_2.28' not found
 glibc_pre_2_28_incompat=(
@@ -67,28 +71,33 @@ case "$(uname -s)" in
       incompat_tools+=("${musl_incompat[@]}")
     else
       host_glibc_version=$(grep -E "GLIBC|GNU libc" <<<"${ldd_version}" | sed "s/.* //g")
-      higher_glibc_version=$(LC_ALL=C sort -Vu <<<"2.34"$'\n'"${host_glibc_version}" | tail -1)
+      higher_glibc_version=$(LC_ALL=C sort -Vu <<<"2.35"$'\n'"${host_glibc_version}" | tail -1)
       if [[ "${higher_glibc_version}" != "${host_glibc_version}" ]]; then
-        higher_glibc_version=$(LC_ALL=C sort -Vu <<<"2.31"$'\n'"${host_glibc_version}" | tail -1)
+        higher_glibc_version=$(LC_ALL=C sort -Vu <<<"2.34"$'\n'"${host_glibc_version}" | tail -1)
         if [[ "${higher_glibc_version}" != "${host_glibc_version}" ]]; then
-          higher_glibc_version=$(LC_ALL=C sort -Vu <<<"2.28"$'\n'"${host_glibc_version}" | tail -1)
+          higher_glibc_version=$(LC_ALL=C sort -Vu <<<"2.31"$'\n'"${host_glibc_version}" | tail -1)
           if [[ "${higher_glibc_version}" != "${host_glibc_version}" ]]; then
-            higher_glibc_version=$(LC_ALL=C sort -Vu <<<"2.27"$'\n'"${host_glibc_version}" | tail -1)
+            higher_glibc_version=$(LC_ALL=C sort -Vu <<<"2.28"$'\n'"${host_glibc_version}" | tail -1)
             if [[ "${higher_glibc_version}" != "${host_glibc_version}" ]]; then
-              higher_glibc_version=$(LC_ALL=C sort -Vu <<<"2.17"$'\n'"${host_glibc_version}" | tail -1)
+              higher_glibc_version=$(LC_ALL=C sort -Vu <<<"2.27"$'\n'"${host_glibc_version}" | tail -1)
               if [[ "${higher_glibc_version}" != "${host_glibc_version}" ]]; then
-                incompat_tools+=("${glibc_pre_2_17_incompat[@]}")
+                higher_glibc_version=$(LC_ALL=C sort -Vu <<<"2.17"$'\n'"${host_glibc_version}" | tail -1)
+                if [[ "${higher_glibc_version}" != "${host_glibc_version}" ]]; then
+                  incompat_tools+=("${glibc_pre_2_17_incompat[@]}")
+                else
+                  incompat_tools+=("${glibc_pre_2_27_incompat[@]}")
+                fi
               else
-                incompat_tools+=("${glibc_pre_2_27_incompat[@]}")
+                incompat_tools+=("${glibc_pre_2_28_incompat[@]}")
               fi
             else
-              incompat_tools+=("${glibc_pre_2_28_incompat[@]}")
+              incompat_tools+=("${glibc_pre_2_31_incompat[@]}")
             fi
           else
-            incompat_tools+=("${glibc_pre_2_31_incompat[@]}")
+            incompat_tools+=("${glibc_pre_2_34_incompat[@]}")
           fi
         else
-          incompat_tools+=("${glibc_pre_2_34_incompat[@]}")
+          incompat_tools+=("${glibc_pre_2_35_incompat[@]}")
         fi
       fi
     fi
