@@ -144,8 +144,9 @@ tools+=(valgrind)
 
 for tool in "${tools[@]}"; do
   git checkout -b "${tool}"
-  sed -E "${in_place[@]}" "s/required: true/required: false/g" action.yml
-  sed -E "${in_place[@]}" "s/# default: #publish:tool/default: ${tool}/g" action.yml
+  sed -E "${in_place[@]}" action.yml \
+    -e "s/required: true/required: false/g" \
+    -e "s/# default: #publish:tool/default: ${tool}/g"
   git add action.yml
   git commit -m "${tool}"
   retry git push origin -f refs/heads/"${tool}"
@@ -193,9 +194,11 @@ cp -- ./manifests/* "${schema_workspace}"
   # Detect changes, then commit and push if changes exist
   if [[ "$(git status --porcelain=v1 | wc -l)" != "0" ]]; then
     git commit -m 'Update manifest schema'
-    git push origin HEAD
+    retry git push origin HEAD
   fi
 )
 
 rm -rf -- "${schema_workspace}"
 git worktree prune
+# TODO: get branch in schema_workspace dir instead
+git branch -D "${schema_branch}" "${schema_workspace##*/}"
