@@ -10,6 +10,8 @@ Note: In this file, do not use the hard wrap in the middle of a sentence for com
 
 ## [Unreleased]
 
+- Support `zola` on AArch64 Linux.
+
 - Update `zola@latest` to 0.20.0.
 
 - Update `cargo-binstall@latest` to 1.11.0.
