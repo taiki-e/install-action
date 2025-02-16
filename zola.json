@@ -10,13 +10,41 @@
     "x86_64_windows": {
       "url": "https://github.com/getzola/zola/releases/download/v${version}/zola-v${version}-x86_64-pc-windows-msvc.zip"
     },
+    "aarch64_linux_gnu": {
+      "url": "https://github.com/getzola/zola/releases/download/v${version}/zola-v${version}-aarch64-unknown-linux-gnu.tar.gz"
+    },
     "aarch64_macos": {
       "url": "https://github.com/getzola/zola/releases/download/v${version}/zola-v${version}-aarch64-apple-darwin.tar.gz"
     }
   },
   "license_markdown": "[MIT](https://github.com/getzola/zola/blob/master/LICENSE)",
   "latest": {
-    "version": "0.19.2"
+    "version": "0.20.0"
+  },
+  "0.20": {
+    "version": "0.20.0"
+  },
+  "0.20.0": {
+    "x86_64_linux_gnu": {
+      "etag": "0x8DD4D41F3D3509F",
+      "checksum": "ca7ed5b33a739c5b5b35a0e207e5c3578a652cd12b61c675763b3ff34c322d08"
+    },
+    "x86_64_macos": {
+      "etag": "0x8DD4D41F3E3B8E8",
+      "checksum": "23f1d5e117c7a01aa1c452cd1ffd3da1af533cf74a93762d9e4e1459fb029646"
+    },
+    "x86_64_windows": {
+      "etag": "0x8DD4D41F41345F4",
+      "checksum": "25cd5082b6717fe50fd1351a4867ece6d898211a9bf37b58180c7b4013f9e061"
+    },
+    "aarch64_linux_gnu": {
+      "etag": "0x8DD4D41F41ADE85",
+      "checksum": "91b428514d1c6b5674ed0e7ec244152b98c0a3eb6b63bb2c887e5966f185f7fa"
+    },
+    "aarch64_macos": {
+      "etag": "0x8DD4D41F4283CF9",
+      "checksum": "6dd8a3c77baef359df00916709e954e415c5acc1fa99fcd754bb600627fb4935"
+    }
   },
   "0.19": {
     "version": "0.19.2"
