@@ -10,6 +10,8 @@ Note: In this file, do not use the hard wrap in the middle of a sentence for com
 
 ## [Unreleased]
 
+- Update `mdbook@latest` to 0.4.45.
+
 ## [2.48.13] - 2025-02-16
 
 - Support `zola` on AArch64 Linux.
