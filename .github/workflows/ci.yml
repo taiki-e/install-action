@@ -62,7 +62,7 @@ jobs:
           - os: ubuntu-22.04
           - os: ubuntu-22.04-arm
           - os: ubuntu-24.04
-          # - os: ubuntu-24.04-arm # TODO: re-enable when https://github.com/rust-lang/rust/issues/135867 solved
+          - os: ubuntu-24.04-arm
           - os: ubuntu-22.04
             tool: major.minor.patch
           - os: ubuntu-22.04
