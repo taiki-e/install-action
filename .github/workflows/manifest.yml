@@ -53,7 +53,7 @@ jobs:
         id: diff
         run: tools/ci/manifest.sh
         if: github.repository_owner == 'taiki-e' && (github.event_name == 'schedule' || github.event_name == 'push' && github.ref == 'refs/heads/main')
-      - run: git add -N . && git diff --exit-code
+      - run: git add -N . && git -c color.ui=always diff --exit-code
       - id: create-pull-request
         uses: peter-evans/create-pull-request@v7
         with:

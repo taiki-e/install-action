@@ -22,7 +22,7 @@ set -x
 has_update=''
 for manifest in manifests/*.json; do
   git add -N "${manifest}"
-  if ! git diff --exit-code -- "${manifest}"; then
+  if ! git diff --exit-code -- "${manifest}" &>/dev/null; then
     name="${manifest##*/}"
     name="${name%.*}"
     git stash
