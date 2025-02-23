@@ -10,6 +10,8 @@ Note: In this file, do not use the hard wrap in the middle of a sentence for com
 
 ## [Unreleased]
 
+## [2.49.0] - 2025-02-23
+
 - Allow installing pre-release versions using binstall. ([#868](https://github.com/taiki-e/install-action/pull/868))
 
 ## [2.48.22] - 2025-02-23
@@ -3556,7 +3558,8 @@ Note: This release is considered a breaking change because installing on version
 
 Initial release
 
-[Unreleased]: https://github.com/taiki-e/install-action/compare/v2.48.22...HEAD
+[Unreleased]: https://github.com/taiki-e/install-action/compare/v2.49.0...HEAD
+[2.49.0]: https://github.com/taiki-e/install-action/compare/v2.48.22...v2.49.0
 [2.48.22]: https://github.com/taiki-e/install-action/compare/v2.48.21...v2.48.22
 [2.48.21]: https://github.com/taiki-e/install-action/compare/v2.48.20...v2.48.21
 [2.48.20]: https://github.com/taiki-e/install-action/compare/v2.48.19...v2.48.20
