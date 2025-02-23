@@ -10,6 +10,8 @@ Note: In this file, do not use the hard wrap in the middle of a sentence for com
 
 ## [Unreleased]
 
+- Allow installing pre-release versions using binstall. ([#868](https://github.com/taiki-e/install-action/pull/868))
+
 ## [2.48.22] - 2025-02-23
 
 - Update `cargo-binstall@latest` to 1.11.1.
