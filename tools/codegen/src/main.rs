@@ -11,11 +11,11 @@ use std::{
     time::Duration,
 };
 
-use anyhow::{bail, Context as _, Result};
+use anyhow::{Context as _, Result, bail};
 use fs_err as fs;
 use install_action_internal_codegen::{
-    workspace_root, BaseManifest, HostPlatform, Manifest, ManifestDownloadInfo, ManifestRef,
-    ManifestTemplate, ManifestTemplateDownloadInfo, Manifests, Signing, SigningKind, Version,
+    BaseManifest, HostPlatform, Manifest, ManifestDownloadInfo, ManifestRef, ManifestTemplate,
+    ManifestTemplateDownloadInfo, Manifests, Signing, SigningKind, Version, workspace_root,
 };
 use sha2::{Digest as _, Sha256};
 use spdx::expression::{ExprNode, ExpressionReq, Operator};
@@ -193,7 +193,7 @@ fn main() -> Result<()> {
 
     let version_req: Option<semver::VersionReq> = match version_req {
         _ if latest_only => {
-            let req = format!("={}", releases.first_key_value().unwrap().0 .0).parse()?;
+            let req = format!("={}", releases.first_key_value().unwrap().0.0).parse()?;
             eprintln!("update manifest for versions '{req}'");
             Some(req)
         }
@@ -215,7 +215,7 @@ fn main() -> Result<()> {
             let req = if version_req == "latest" {
                 // TODO: this should check all missing versions
                 if manifests.map.is_empty() {
-                    format!("={}", releases.first_key_value().unwrap().0 .0).parse()?
+                    format!("={}", releases.first_key_value().unwrap().0.0).parse()?
                 } else {
                     format!(">={}", semver_versions.last().unwrap()).parse()?
                 }
@@ -852,7 +852,9 @@ fn get_license_markdown(spdx_expr: &str, repo: &str, default_branch: &str) -> Op
                 panic!("Unable to find any license files in the repo for licenses {license_ids:?}");
             }
             if license_markdowns.len() != len {
-                panic!("Unable to find license files in the repo for all licenses {license_ids:?}; found {license_markdowns:?}");
+                panic!(
+                    "Unable to find license files in the repo for all licenses {license_ids:?}; found {license_markdowns:?}"
+                );
             }
             match op {
                 None => panic!("op expected"),

@@ -8,7 +8,7 @@ use std::{
 
 use anyhow::Result;
 use fs_err as fs;
-use install_action_internal_codegen::{workspace_root, BaseManifest, Manifests};
+use install_action_internal_codegen::{BaseManifest, Manifests, workspace_root};
 
 const HEADER: &str = "# Tools
 
