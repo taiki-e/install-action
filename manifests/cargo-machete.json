@@ -3,7 +3,36 @@
   "template": null,
   "license_markdown": "[MIT](https://github.com/bnjbvr/cargo-machete/blob/main/LICENSE.md)",
   "latest": {
-    "version": "0.7.0"
+    "version": "0.8.0"
+  },
+  "0.8": {
+    "version": "0.8.0"
+  },
+  "0.8.0": {
+    "x86_64_linux_musl": {
+      "url": "https://github.com/bnjbvr/cargo-machete/releases/download/v0.8.0/cargo-machete-v0.8.0-x86_64-unknown-linux-musl.tar.gz",
+      "etag": "0x8DD550F01B09F95",
+      "checksum": "020f6608f9be1562d1fb601e5808e541ccb8806e7e4dfde27d48bc22254a002c",
+      "bin": "cargo-machete-v0.8.0-x86_64-unknown-linux-musl/cargo-machete"
+    },
+    "x86_64_macos": {
+      "url": "https://github.com/bnjbvr/cargo-machete/releases/download/v0.8.0/cargo-machete-v0.8.0-x86_64-apple-darwin.tar.gz",
+      "etag": "0x8DD550F074262C8",
+      "checksum": "f1304100fef4012e6b3f4b74fa7d6a71ff0de3cc3d8a3e67773a434f2854a0d8",
+      "bin": "cargo-machete-v0.8.0-x86_64-apple-darwin/cargo-machete"
+    },
+    "x86_64_windows": {
+      "url": "https://github.com/bnjbvr/cargo-machete/releases/download/v0.8.0/cargo-machete-v0.8.0-x86_64-pc-windows-msvc.tar.gz",
+      "etag": "0x8DD550F250F5178",
+      "checksum": "19f15db89529f0e01fa0afb56d1d3c3d54bfb709086479bd190a0f4a3e2efd8c",
+      "bin": "cargo-machete-v0.8.0-x86_64-pc-windows-msvc/cargo-machete.exe"
+    },
+    "aarch64_macos": {
+      "url": "https://github.com/bnjbvr/cargo-machete/releases/download/v0.8.0/cargo-machete-v0.8.0-aarch64-apple-darwin.tar.gz",
+      "etag": "0x8DD550F00F685B8",
+      "checksum": "9047eacf791e23ff2b3b7b3489a9537c34df02dbdbbfe46541720e9ed3308adf",
+      "bin": "cargo-machete-v0.8.0-aarch64-apple-darwin/cargo-machete"
+    }
   },
   "0.7": {
     "version": "0.7.0"
