@@ -28,7 +28,36 @@
   },
   "license_markdown": "[Apache-2.0](https://github.com/mozilla/sccache/blob/main/LICENSE)",
   "latest": {
-    "version": "0.9.1"
+    "version": "0.10.0"
+  },
+  "0.10": {
+    "version": "0.10.0"
+  },
+  "0.10.0": {
+    "x86_64_linux_musl": {
+      "etag": "0x8DD55012416929F",
+      "checksum": "1fbb35e135660d04a2d5e42b59c7874d39b3deb17de56330b25b713ec59f849b"
+    },
+    "x86_64_macos": {
+      "etag": "0x8DD550122EF3D9A",
+      "checksum": "6d4a77802ec83607478df7b6338be28171e65e58a38a49497ebec1fbb300fce4"
+    },
+    "x86_64_windows": {
+      "etag": "0x8DD550123829A62",
+      "checksum": "0d499d0f73fa575f805df014af6ece49b840195fb7de0c552230899d77186ceb"
+    },
+    "aarch64_linux_musl": {
+      "etag": "0x8DD5501211A9151",
+      "checksum": "d6a1ce4acd02b937cd61bc675a8be029a60f7bc167594c33d75732bbc0a07400"
+    },
+    "aarch64_macos": {
+      "etag": "0x8DD55011FE604AA",
+      "checksum": "5aba39252e2efa26bd76144f87ac59787d60fe567ab785e27e2a8c8190892eac"
+    },
+    "aarch64_windows": {
+      "etag": "0x8DD5501207F9BF4",
+      "checksum": "5fd6cd6dd474e91c37510719bf27cfe1826f929e40dd383c22a7b96da9a5458d"
+    }
   },
   "0.9": {
     "version": "0.9.1"
