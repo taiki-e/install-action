@@ -10,6 +10,8 @@ Note: In this file, do not use the hard wrap in the middle of a sentence for com
 
 ## [Unreleased]
 
+- Update `cargo-deny@latest` to 0.18.0.
+
 ## [2.49.0] - 2025-02-23
 
 - Allow installing pre-release versions using binstall. ([#868](https://github.com/taiki-e/install-action/pull/868))
