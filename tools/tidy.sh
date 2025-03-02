@@ -666,7 +666,7 @@ elif check_install shellcheck; then
   if [[ ${#docker_files[@]} -gt 0 ]]; then
     # Exclude SC2096 due to the way the temporary script is created.
     shellcheck_exclude=SC2096
-    info "running \`shellcheck --exclude ${shellcheck_exclude}\` for scripts in \$(git ls-files '*Dockerfile*')\`"
+    info "running \`shellcheck --exclude ${shellcheck_exclude}\` for scripts in \`\$(git ls-files '*Dockerfile*')\`"
     if check_install jq python3 parse-dockerfile; then
       shellcheck_for_dockerfile() {
         local text=$1
