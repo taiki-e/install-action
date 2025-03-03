@@ -19,10 +19,32 @@
   },
   "license_markdown": "[MIT](https://github.com/xd009642/tarpaulin/blob/develop/LICENSE-MIT) OR [Apache-2.0](https://github.com/xd009642/tarpaulin/blob/develop/LICENSE-APACHE)",
   "latest": {
-    "version": "0.32.0"
+    "version": "0.32.1"
   },
   "0.32": {
-    "version": "0.32.0"
+    "version": "0.32.1"
+  },
+  "0.32.1": {
+    "x86_64_linux_musl": {
+      "etag": "0x8DD5A4E0A079E5A",
+      "checksum": "e899247e778c611d3448a42f87b2cf116444ed7ab1c69032cf0ead69a8b9f712"
+    },
+    "x86_64_macos": {
+      "etag": "0x8DD5A4DD8DC704A",
+      "checksum": "1c34f7fb55eda4d9a5d69c26b760d88985d14e2fbb0eb3cf8ad447751926e361"
+    },
+    "x86_64_windows": {
+      "etag": "0x8DD5A4E29586F6B",
+      "checksum": "510d6824da926ba6a476cd7ab72918852cc6ecd75efaf91ff5f239881147b444"
+    },
+    "aarch64_linux_musl": {
+      "etag": "0x8DD5A4DC29EA205",
+      "checksum": "6b68979758c5092d2d0b309429236e0eb2040327f3ea71a08eeb9e9a2fda7444"
+    },
+    "aarch64_macos": {
+      "etag": "0x8DD5A4DA0D5FC6D",
+      "checksum": "c799620344870afb73f653b361302e4419c74fc1191dda4a37ae9fb7c94b1fab"
+    }
   },
   "0.32.0": {
     "x86_64_linux_musl": {
