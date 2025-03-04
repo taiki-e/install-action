@@ -19,10 +19,32 @@
   },
   "license_markdown": "[MIT](https://github.com/esp-rs/espup/blob/main/LICENSE-MIT) OR [Apache-2.0](https://github.com/esp-rs/espup/blob/main/LICENSE-APACHE)",
   "latest": {
-    "version": "0.14.0"
+    "version": "0.14.1"
   },
   "0.14": {
-    "version": "0.14.0"
+    "version": "0.14.1"
+  },
+  "0.14.1": {
+    "x86_64_linux_gnu": {
+      "etag": "0x8DD5B2E6ED160EF",
+      "checksum": "4ff88de902f2e7fea90bc2413f37ed6664f7fe6eb1e22008258e2c2fcda1193f"
+    },
+    "x86_64_macos": {
+      "etag": "0x8DD5B2E3AC70EF0",
+      "checksum": "8009e8769f8ce5a34363191af8577967e61b7fb1efdc7a12d69b0d7a9861313c"
+    },
+    "x86_64_windows": {
+      "etag": "0x8DD5B2E66D2424A",
+      "checksum": "89345763a85db96a660e28d4e5c4e210f478776902b3f1030b5798998d83934e"
+    },
+    "aarch64_linux_gnu": {
+      "etag": "0x8DD5B2E4CF0E0C6",
+      "checksum": "8dbff145143259dbb1f1b2928008be6e0d9b5ada7d7969579f08132a521d9526"
+    },
+    "aarch64_macos": {
+      "etag": "0x8DD5B2E310B430A",
+      "checksum": "3cd9664e8c04b0c444b118633453b2387584c9fa6f24b96fb4c7fcaedda8309f"
+    }
   },
   "0.14.0": {
     "x86_64_linux_gnu": {
