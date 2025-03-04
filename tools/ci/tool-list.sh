@@ -14,6 +14,7 @@ glibc_pre_2_35_incompat=(
 glibc_pre_2_34_incompat=(
   "${glibc_pre_2_35_incompat[@]}"
   cargo-spellcheck
+  espup
   wait-for-them
   xbuild
 )
@@ -21,7 +22,6 @@ glibc_pre_2_34_incompat=(
 glibc_pre_2_31_incompat=(
   "${glibc_pre_2_34_incompat[@]}"
   cargo-sort
-  espup
 )
 # version `GLIBC_2.28' not found
 glibc_pre_2_28_incompat=(
