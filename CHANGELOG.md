@@ -10,6 +10,8 @@ Note: In this file, do not use the hard wrap in the middle of a sentence for com
 
 ## [Unreleased]
 
+- Update `shfmt@latest` to 3.11.0.
+
 - Update `cargo-lambda@latest` to 1.7.1.
 
 ## [2.49.15] - 2025-03-05
