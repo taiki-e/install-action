@@ -19,10 +19,35 @@
   },
   "license_markdown": "[BSD-3-Clause](https://github.com/mvdan/sh/blob/master/LICENSE)",
   "latest": {
-    "version": "3.10.0"
+    "version": "3.11.0"
   },
   "3": {
-    "version": "3.10.0"
+    "version": "3.11.0"
+  },
+  "3.11": {
+    "version": "3.11.0"
+  },
+  "3.11.0": {
+    "x86_64_linux_musl": {
+      "etag": "0x8DD5C354A62268C",
+      "checksum": "1904ec6bac715c1d05cd7f6612eec8f67a625c3749cb327e5bfb4127d09035ff"
+    },
+    "x86_64_macos": {
+      "etag": "0x8DD5C354AF61EFC",
+      "checksum": "810a76cb7c78351e021c8025f344b12149d8426ce51609a179af68109ed5698e"
+    },
+    "x86_64_windows": {
+      "etag": "0x8DD5C3549C5F9EE",
+      "checksum": "d11a0880588304496065110cb67ce2375cfcd5433e76dec505ce1fa21adf47cc"
+    },
+    "aarch64_linux_musl": {
+      "etag": "0x8DD5C354AAB605E",
+      "checksum": "b3976121710fd4b12bf641b0a7fb2686da598fb0da9f148c641b61b54cfa3407"
+    },
+    "aarch64_macos": {
+      "etag": "0x8DD5C354B3C9CBF",
+      "checksum": "af206d234dff5d05d9ac355529b2b33a7a78e13fab9b59db777746aab3e72530"
+    }
   },
   "3.10": {
     "version": "3.10.0"
