@@ -10,6 +10,8 @@ Note: In this file, do not use the hard wrap in the middle of a sentence for com
 
 ## [Unreleased]
 
+- Update `mdbook@latest` to 0.4.46.
+
 - Update `knope@latest` to 0.18.4.
 
 - Update `cargo-semver-checks@latest` to 0.40.0.
