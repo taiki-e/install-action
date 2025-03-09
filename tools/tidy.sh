@@ -14,7 +14,7 @@ cd -- "$(dirname -- "$0")"/..
 # - git 1.8+
 # - jq 1.6+
 # - npm (node 18+)
-# - python 3.6+
+# - python 3.5.3+
 # - shfmt
 # - shellcheck
 # - cargo, rustfmt (if Rust code exists)
