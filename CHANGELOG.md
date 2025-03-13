@@ -10,6 +10,8 @@ Note: In this file, do not use the hard wrap in the middle of a sentence for com
 
 ## [Unreleased]
 
+- Update `knope@latest` to 0.18.5.
+
 ## [2.49.22] - 2025-03-12
 
 - Update `wash@latest` to 0.40.0. ([#895](https://github.com/taiki-e/install-action/pull/895), thanks @brooksmtownsend)
