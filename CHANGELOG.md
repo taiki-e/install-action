@@ -10,6 +10,8 @@ Note: In this file, do not use the hard wrap in the middle of a sentence for com
 
 ## [Unreleased]
 
+## [2.49.24] - 2025-03-14
+
 - Update `protoc@latest` to 3.30.1.
 
 ## [2.49.23] - 2025-03-13
@@ -3674,7 +3676,8 @@ Note: This release is considered a breaking change because installing on version
 
 Initial release
 
-[Unreleased]: https://github.com/taiki-e/install-action/compare/v2.49.23...HEAD
+[Unreleased]: https://github.com/taiki-e/install-action/compare/v2.49.24...HEAD
+[2.49.24]: https://github.com/taiki-e/install-action/compare/v2.49.23...v2.49.24
 [2.49.23]: https://github.com/taiki-e/install-action/compare/v2.49.22...v2.49.23
 [2.49.22]: https://github.com/taiki-e/install-action/compare/v2.49.21...v2.49.22
 [2.49.21]: https://github.com/taiki-e/install-action/compare/v2.49.20...v2.49.21
