@@ -978,9 +978,9 @@ if [[ -f .cspell.json ]]; then
     printf '%s\n' "${config_new}" >|.cspell.json
     dependencies_words=''
     if [[ -n "${has_rust}" ]]; then
-      dependencies_words=$(npx -y cspell stdin --no-progress --no-summary --words-only --unique <<<"${dependencies}" || true)
+      dependencies_words=$(npx -y cspell@8.17.5 stdin --no-progress --no-summary --words-only --unique <<<"${dependencies}" || true)
     fi
-    all_words=$(ls_files | { grep -Fv "${project_dictionary}" || true; } | npx -y cspell --file-list stdin --no-progress --no-summary --words-only --unique || true)
+    all_words=$(ls_files | { grep -Fv "${project_dictionary}" || true; } | npx -y cspell@8.17.5 --file-list stdin --no-progress --no-summary --words-only --unique || true)
     printf '%s\n' "${config_old}" >|.cspell.json
     trap -- 'printf >&2 "%s\n" "${0##*/}: trapped SIGINT"; exit 1' SIGINT
     cat >|.github/.cspell/rust-dependencies.txt <<EOF
@@ -1000,11 +1000,11 @@ EOF
       error "you may want to mark .github/.cspell/rust-dependencies.txt linguist-generated"
     fi
 
-    info "running \`git ls-files | npx -y cspell --file-list stdin --no-progress --no-summary\`"
-    if ! ls_files | npx -y cspell --file-list stdin --no-progress --no-summary; then
+    info "running \`git ls-files | npx -y cspell@8.17.5 --file-list stdin --no-progress --no-summary\`"
+    if ! ls_files | npx -y cspell@8.17.5 --file-list stdin --no-progress --no-summary; then
       error "spellcheck failed: please fix uses of below words or add to ${project_dictionary} if correct"
       printf '=======================================\n'
-      { ls_files | npx -y cspell --file-list stdin --no-progress --no-summary --words-only || true; } | sed "s/'s$//g" | LC_ALL=C sort -f -u
+      { ls_files | npx -y cspell@8.17.5 --file-list stdin --no-progress --no-summary --words-only || true; } | sed "s/'s$//g" | LC_ALL=C sort -f -u
       printf '=======================================\n\n'
     fi
 
