@@ -22,10 +22,36 @@
   },
   "license_markdown": "[MIT](https://github.com/release-plz/release-plz/blob/main/LICENSE-MIT) OR [Apache-2.0](https://github.com/release-plz/release-plz/blob/main/LICENSE-APACHE)",
   "latest": {
-    "version": "0.3.128"
+    "version": "0.3.129"
   },
   "0.3": {
-    "version": "0.3.128"
+    "version": "0.3.129"
+  },
+  "0.3.129": {
+    "x86_64_linux_musl": {
+      "etag": "0x8DD6CB3D6A8F77C",
+      "checksum": "db20ca18ff51fbfd285c3041bfe6abc419c38d627148608c4c5b5c946be393a9"
+    },
+    "x86_64_macos": {
+      "etag": "0x8DD6CB4B35B631A",
+      "checksum": "285ceffc25bb456f348e603765dfa989c9d049458871c24bf5c6bf9c5af57ed6"
+    },
+    "x86_64_windows": {
+      "etag": "0x8DD6CB490E93459",
+      "checksum": "92df17cb9096ff77f17228318779f1cd40a6dc612c4256f67a550213e6605f43"
+    },
+    "aarch64_linux_musl": {
+      "etag": "0x8DD6CB3D74A004F",
+      "checksum": "f218f3ad62984bf3bc97cb355cffa0476c29215bb2801ee3c3732c5da9576707"
+    },
+    "aarch64_macos": {
+      "etag": "0x8DD6CB4DA5D1065",
+      "checksum": "a4657585f204df6d148379c8689a521eb1bf2683cec75d67c1aa18efe23f7ee0"
+    },
+    "aarch64_windows": {
+      "etag": "0x8DD6CB4973E7E2D",
+      "checksum": "f1670266002bf5aa2567cf2866357ba443f570e57e1e12577d94d28b6ecf6d0d"
+    }
   },
   "0.3.128": {
     "x86_64_linux_musl": {
