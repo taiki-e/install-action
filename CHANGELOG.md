@@ -10,6 +10,8 @@ Note: In this file, do not use the hard wrap in the middle of a sentence for com
 
 ## [Unreleased]
 
+## [2.49.40] - 2025-03-31
+
 - Update `typos@latest` to 1.31.1.
 
 ## [2.49.39] - 2025-03-30
@@ -3756,7 +3758,8 @@ Note: This release is considered a breaking change because installing on version
 
 Initial release
 
-[Unreleased]: https://github.com/taiki-e/install-action/compare/v2.49.39...HEAD
+[Unreleased]: https://github.com/taiki-e/install-action/compare/v2.49.40...HEAD
+[2.49.40]: https://github.com/taiki-e/install-action/compare/v2.49.39...v2.49.40
 [2.49.39]: https://github.com/taiki-e/install-action/compare/v2.49.38...v2.49.39
 [2.49.38]: https://github.com/taiki-e/install-action/compare/v2.49.37...v2.49.38
 [2.49.37]: https://github.com/taiki-e/install-action/compare/v2.49.36...v2.49.37
