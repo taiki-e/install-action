@@ -10,6 +10,8 @@ Note: In this file, do not use the hard wrap in the middle of a sentence for com
 
 ## [Unreleased]
 
+- Update `typos@latest` to 1.31.1.
+
 ## [2.49.39] - 2025-03-30
 
 - Downgrade `cargo-lambda@latest` to 1.8.0. ([#923](https://github.com/taiki-e/install-action/pull/923))
