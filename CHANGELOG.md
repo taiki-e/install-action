@@ -10,6 +10,8 @@ Note: In this file, do not use the hard wrap in the middle of a sentence for com
 
 ## [Unreleased]
 
+- Update `release-plz@latest` to 0.3.130.
+
 - Update `cargo-lambda@latest` to 1.8.2.
 
 ## [2.49.43] - 2025-04-01
