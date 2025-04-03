@@ -490,12 +490,14 @@ fn main() -> Result<()> {
             if let Some(crates_io_info) = &crates_io_info {
                 if let Some(v) = crates_io_info.versions.iter().find(|v| v.num == *version) {
                     if v.yanked {
-                        continue;
+                        continue; // Exclude yanked version from candidate for "latest".
                     }
+                } else {
+                    continue; // Exclude version not released on crates.io from candidate for "latest".
                 }
             }
             if base_info.broken.contains(version) {
-                continue;
+                continue; // Exclude version marked as broken from candidate for "latest".
             }
             if !(version.major == 0 && version.minor == 0) {
                 manifests.map.insert(
@@ -618,15 +620,17 @@ fn replace_vars(
     platform: Option<HostPlatform>,
     rust_crate: Option<&str>,
 ) -> Result<String> {
-    const RUST_SPECIFIC: &[(&str, fn(HostPlatform) -> &'static str)] = &[
+    static RUST_SPECIFIC: &[(&str, fn(HostPlatform) -> &'static str)] = &[
         ("${rust_target}", HostPlatform::rust_target),
         ("${rust_target_arch}", HostPlatform::rust_target_arch),
         ("${rust_target_os}", HostPlatform::rust_target_os),
     ];
+    // zola is Rust crate, but is not released on crates.io.
+    static KNOWN_RUST_CRATE_NOT_IN_CRATES_IO: &[&str] = &["zola"];
     let mut s = s.replace("${package}", package).replace("${tool}", package);
     if let Some(platform) = platform {
         s = s.replace("${exe}", platform.exe_suffix());
-        if rust_crate.is_some() {
+        if rust_crate.is_some() || KNOWN_RUST_CRATE_NOT_IN_CRATES_IO.contains(&package) {
             for &(var, f) in RUST_SPECIFIC {
                 s = s.replace(var, f(platform));
             }

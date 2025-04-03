@@ -16,7 +16,9 @@ Note: In this file, do not use the hard wrap in the middle of a sentence for com
 
 - Update `release-plz@latest` to 0.3.130.
 
-- Update `cargo-lambda@latest` to 1.8.2.
+- Update `cargo-lambda@latest` to 1.8.1.
+
+- Downgrade `cargo-spellcheck@latest` to 0.15.1. ([#932](https://github.com/taiki-e/install-action/pull/932))
 
 ## [2.49.43] - 2025-04-01
 
