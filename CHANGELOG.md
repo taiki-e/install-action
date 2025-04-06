@@ -10,6 +10,8 @@ Note: In this file, do not use the hard wrap in the middle of a sentence for com
 
 ## [Unreleased]
 
+## [2.49.45] - 2025-04-06
+
 - Update `knope@latest` to 0.19.2.
 
 - Update `cargo-binstall@latest` to 1.12.3.
@@ -3786,7 +3788,8 @@ Note: This release is considered a breaking change because installing on version
 
 Initial release
 
-[Unreleased]: https://github.com/taiki-e/install-action/compare/v2.49.44...HEAD
+[Unreleased]: https://github.com/taiki-e/install-action/compare/v2.49.45...HEAD
+[2.49.45]: https://github.com/taiki-e/install-action/compare/v2.49.44...v2.49.45
 [2.49.44]: https://github.com/taiki-e/install-action/compare/v2.49.43...v2.49.44
 [2.49.43]: https://github.com/taiki-e/install-action/compare/v2.49.42...v2.49.43
 [2.49.42]: https://github.com/taiki-e/install-action/compare/v2.49.41...v2.49.42
