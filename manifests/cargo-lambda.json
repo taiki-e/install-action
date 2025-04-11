@@ -20,34 +20,56 @@
   },
   "license_markdown": "[MIT](https://github.com/cargo-lambda/cargo-lambda/blob/main/LICENSE)",
   "latest": {
-    "version": "1.8.1"
+    "version": "1.8.3"
   },
   "1": {
-    "version": "1.8.1"
+    "version": "1.8.3"
   },
   "1.8": {
-    "version": "1.8.1"
+    "version": "1.8.3"
+  },
+  "1.8.3": {
+    "x86_64_linux_musl": {
+      "etag": "0x8DD7876D660C99E",
+      "checksum": "9ffe7b8f6ffaad73484be4fd2e5c4365e3992a0ff074d11df9c0d2895a28cff4"
+    },
+    "x86_64_macos": {
+      "etag": "0x8DD7876D714A96D",
+      "checksum": "1155e540037549ee98dc2e065563895fbefa92135bffc8be305bd26a7dd31704"
+    },
+    "x86_64_windows": {
+      "etag": "0x8DD7876D7BCAFA7",
+      "checksum": "1e0e1373b64452c2047372fd532d7375f7df12689e7d8372fd36a37908cdf852"
+    },
+    "aarch64_linux_musl": {
+      "etag": "0x8DD7876D854E929",
+      "checksum": "c4b808f777a7bffe7a7851ef98a609576a621c7fecea690fd2077eb25c3f01ee"
+    },
+    "aarch64_macos": {
+      "etag": "0x8DD7876D908A206",
+      "checksum": "83edbbba7e7bd2cd2d4a255fb6a356f70e1dc3d80c073a9ea1895d771838a35e"
+    }
   },
   "1.8.2": {
     "x86_64_linux_musl": {
-      "etag": "0x8DD72477E803414",
-      "checksum": "ab8f9c195247e6a2b0c08914935717cecae051e0f968e3ba4619cbfb514fb80c"
+      "etag": "0x8DD786E204FA990",
+      "checksum": "d2a83aa4c055fd50c69c010e6bb7c02fbe0c3f63ca0e00d6e30b4e21706f46fc"
     },
     "x86_64_macos": {
-      "etag": "0x8DD72477F2B6AA0",
-      "checksum": "be195b446a7ffbfad4fd35da8cf50e0d5427d4a29ca5a724cee8565a34b65f66"
+      "etag": "0x8DD786E21180BC0",
+      "checksum": "fe84a7c215aeee70e5df1c8ae9bb9e531674f1a29b8678367f06522c48316f72"
     },
     "x86_64_windows": {
-      "etag": "0x8DD72477FCA79EF",
-      "checksum": "21b45fa237d65e8ee8948b6da0f5c2494d5c838d5c6bb874a28a15b32dd72d7a"
+      "etag": "0x8DD786E21CD7069",
+      "checksum": "553b1cf92ae0420ad68a4bca36df074c329f63d88bcbca9fa76ab80b2b2d256e"
     },
     "aarch64_linux_musl": {
-      "etag": "0x8DD72478060B98B",
-      "checksum": "f050e4df9e8bf7edb6d375672c80a9ee9ffb1bd6129ff9c5fbfb08d0318b1c0c"
+      "etag": "0x8DD786E226E0500",
+      "checksum": "3a2c5d2ebaebc701e288a108e877bf1f3affe30baf8d37509cba2cf0d20f4f6d"
     },
     "aarch64_macos": {
-      "etag": "0x8DD724780F96761",
-      "checksum": "08f2fb15270ca9e7ed80635d8ec96c5dcf63cc7322c23b9bbeb417690fb83495"
+      "etag": "0x8DD786E23117C75",
+      "checksum": "778eccaaf22ed974bceeb2dec06ec23cbb8c66225d428ff4e09b655bc440c105"
     }
   },
   "1.8.1": {
