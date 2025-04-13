@@ -10,6 +10,8 @@ Note: In this file, do not use the hard wrap in the middle of a sentence for com
 
 ## [Unreleased]
 
+- Update `release-plz@latest` to 0.3.132.
+
 ## [2.49.48] - 2025-04-11
 
 - Update `release-plz@latest` to 0.3.131.
