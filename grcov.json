@@ -19,10 +19,32 @@
   },
   "license_markdown": "[MPL-2.0](https://github.com/mozilla/grcov/blob/HEAD/LICENSE-MPL-2.0)",
   "latest": {
-    "version": "0.9.0"
+    "version": "0.9.1"
   },
   "0.9": {
-    "version": "0.9.0"
+    "version": "0.9.1"
+  },
+  "0.9.1": {
+    "x86_64_linux_musl": {
+      "etag": "0x8DD791AF48C21CF",
+      "checksum": "db92c0c1c461dc0ccb56d6129edec140f60467c4021e44943bd32e88534e4bbe"
+    },
+    "x86_64_macos": {
+      "etag": "0x8DD791AF38E4616",
+      "checksum": "9324b4349e346121d624976d35abf229715dede0b9687d78b70976594f65e0d6"
+    },
+    "x86_64_windows": {
+      "etag": "0x8DD791AF3E028A6",
+      "checksum": "7589e77e2a1ee399acb07872d6c4cd258938a4bbb933e9521e85e2e0e62f804f"
+    },
+    "aarch64_linux_musl": {
+      "etag": "0x8DD791AF33E3649",
+      "checksum": "21a14aca42f20ecd1f9f6a1a8c7b70c00459c159d8885eadedd3a662be2932ea"
+    },
+    "aarch64_macos": {
+      "etag": "0x8DD791AF239AB50",
+      "checksum": "c896c7773d91445f63f6cfb840c14b2ba49eeee75da534270d261ab9f01bb7e9"
+    }
   },
   "0.9.0": {
     "x86_64_linux_musl": {
