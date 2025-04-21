@@ -1,0 +1,123 @@
+{
+  "rust_crate": "taplo-cli",
+  "template": {
+    "x86_64_linux_gnu": {
+      "url": "https://github.com/tamasfe/taplo/releases/download/${version}/taplo-linux-x86_64.gz",
+      "bin": "taplo"
+    },
+    "x86_64_macos": {
+      "url": "https://github.com/tamasfe/taplo/releases/download/${version}/taplo-darwin-x86_64.gz",
+      "bin": "taplo"
+    },
+    "x86_64_windows": {
+      "url": "https://github.com/tamasfe/taplo/releases/download/${version}/taplo-windows-x86_64.zip",
+      "bin": "taplo.exe"
+    },
+    "aarch64_linux_gnu": {
+      "url": "https://github.com/tamasfe/taplo/releases/download/${version}/taplo-linux-aarch64.gz",
+      "bin": "taplo"
+    },
+    "aarch64_macos": {
+      "url": "https://github.com/tamasfe/taplo/releases/download/${version}/taplo-darwin-aarch64.gz",
+      "bin": "taplo"
+    }
+  },
+  "license_markdown": "[MIT](https://github.com/tamasfe/taplo/blob/master/LICENSE)",
+  "latest": {
+    "version": "0.9.3"
+  },
+  "0.9": {
+    "version": "0.9.3"
+  },
+  "0.9.3": {
+    "x86_64_linux_gnu": {
+      "etag": "0x8DCB153D820EFDD",
+      "checksum": "889efcfa067b179fda488427d3b13ce2d679537da8b9ed8138ba415db7da2a5e"
+    },
+    "x86_64_macos": {
+      "etag": "0x8DCB153D786BCC6",
+      "checksum": "6b4180fe0518e3e68b9a421dbe50f62ede308767972c4c70c6bbe6651ea98641"
+    },
+    "x86_64_windows": {
+      "etag": "0x8DCB153D75F63D4",
+      "checksum": "f87edcbd6853ad37d7b9e4d8ba336d282529fddf54912b01530e09c2872fdbbd"
+    },
+    "aarch64_linux_gnu": {
+      "etag": "0x8DCB153D7CD616F",
+      "checksum": "7c07379d3288fb5c26b1c29bbedec4f8d8f602d776bcc3a1578176733b6a857c"
+    },
+    "aarch64_macos": {
+      "etag": "0x8DCB153D76CC254",
+      "checksum": "39b84d62d6a47855b2c64148cde9c9ca5721bf422b8c9fe9c92776860badde5f"
+    }
+  },
+  "0.9.2": {
+    "x86_64_linux_gnu": {
+      "etag": "0x8DCA26384E2731C",
+      "checksum": "e9a6717cca87e51b6c75d8fba037bd1d015c71f0227d1933f890ec96bf07d00a"
+    },
+    "x86_64_macos": {
+      "etag": "0x8DCA263846CB65A",
+      "checksum": "1a80106e2efe9d4fd9276c855db4213742097247e50ced98fcb7e571a3ed9353"
+    },
+    "x86_64_windows": {
+      "etag": "0x8DCA26384337055",
+      "checksum": "1ed58e3a087a14a51ca8688380c3949ee3b285a4779535c2d6020bd98c385fb4"
+    },
+    "aarch64_linux_gnu": {
+      "etag": "0x8DCA26384AC100F",
+      "checksum": "f2b2964ce3a7e1d72cd52685eceb5e6b155275a79c80a6d9ebdd4f4e6a4586e3"
+    },
+    "aarch64_macos": {
+      "etag": "0x8DCA2638466F07F",
+      "checksum": "fc4a259eeca27354302710c8c3d87b96ebd645c989de128ab49a5eccdb09ed80"
+    }
+  },
+  "0.8": {
+    "version": "0.8.1"
+  },
+  "0.8.1": {
+    "x86_64_linux_gnu": {
+      "etag": "0x8DB817304E8B59E",
+      "checksum": "1edd58e05ca7c560b953c5023bd185939b3c65e83e2e1bb1d488bb66063ebad8"
+    },
+    "x86_64_macos": {
+      "etag": "0x8DB817304043904",
+      "checksum": "23a1ddc9517766eb7f00538eb65e2d491cfe3baa64e6d86a7dd953c07af4c11b"
+    },
+    "x86_64_windows": {
+      "etag": "0x8DB8173044A8FB7",
+      "checksum": "a3a4250d79ba6d354a0fe30f6aa3e6ecffd163dc234673d364419df2b083ab5b"
+    },
+    "aarch64_linux_gnu": {
+      "etag": "0x8DB817304339F22",
+      "checksum": "fbd6fb9b4726f12498d3c3cae6bbf37a50ae8dff471a7e8dd01f1f9b21389d9c"
+    },
+    "aarch64_macos": {
+      "etag": "0x8DB8173037323D1",
+      "checksum": "689413b4c8eb887e42fc1ded5cc42cd496176e01385d8250cdcd4c57d70b1b07"
+    }
+  },
+  "0.8.0": {
+    "x86_64_linux_gnu": {
+      "etag": "0x8DABB625C626C8D",
+      "checksum": "3703294fac37ca9a9f76308f9f98c3939ccb7588f8972acec68a48d7a10d8ee5"
+    },
+    "x86_64_macos": {
+      "etag": "0x8DABB625AF6DCCB",
+      "checksum": "a1917f1b9168cb4f7d579422dcdf9c733028d873963d8fa3a6f499e41719c502"
+    },
+    "x86_64_windows": {
+      "etag": "0x8DABB625AA2608C",
+      "checksum": "f2f2fc49659c30e4bf504c5b821db1cbf4bcf2fd7196e9f559a6cb0efab5af80"
+    },
+    "aarch64_linux_gnu": {
+      "etag": "0x8DABB625B843B06",
+      "checksum": "a6a94482f125c21090593f94cad23df099c4924f5b9620cda4a8653527c097a1"
+    },
+    "aarch64_macos": {
+      "etag": "0x8DABB625C7D91B3",
+      "checksum": "79c1691c3c46be981fa0cec930ec9a6d6c4ffd27272d37d1885514ce59bd8ccf"
+    }
+  }
+}
