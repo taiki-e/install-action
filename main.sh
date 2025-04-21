@@ -97,6 +97,17 @@ download_and_extract() {
         esac
       fi
       ;;
+    *.gz)
+      if ! type -P gzip >/dev/null; then
+        case "${base_distro}" in
+          debian | fedora | suse | arch | alpine)
+            printf '::group::Install packages required for installation (gzip)\n'
+            sys_install gzip
+            printf '::endgroup::\n'
+            ;;
+        esac
+      fi
+      ;;
     *.tar.bz2 | *.tbz2)
       tar_args+=('xjf')
       if ! type -P bzip2 >/dev/null; then
@@ -156,6 +167,16 @@ download_and_extract() {
       case "${url}" in
         *.zip)
           unzip -q tmp "${bin_in_archive#\./}"
+          for tmp in "${bin_in_archive[@]}"; do
+            case "${tool}" in
+              editorconfig-checker) mv -- "${tmp}" "${bin_dir}/${tool}${exe}" ;;
+              *) mv -- "${tmp}" "${bin_dir}/" ;;
+            esac
+          done
+          ;;
+        *.gz)
+          mv -- tmp "${bin_in_archive#\./}.gz"
+          gzip -d "${bin_in_archive#\./}.gz"
           for tmp in "${bin_in_archive[@]}"; do
             case "${tool}" in
               editorconfig-checker) mv -- "${tmp}" "${bin_dir}/${tool}${exe}" ;;
