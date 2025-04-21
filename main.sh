@@ -178,10 +178,7 @@ download_and_extract() {
           mv -- tmp "${bin_in_archive#\./}.gz"
           gzip -d "${bin_in_archive#\./}.gz"
           for tmp in "${bin_in_archive[@]}"; do
-            case "${tool}" in
-              editorconfig-checker) mv -- "${tmp}" "${bin_dir}/${tool}${exe}" ;;
-              *) mv -- "${tmp}" "${bin_dir}/" ;;
-            esac
+            mv -- "${tmp}" "${bin_dir}/"
           done
           ;;
         *)
