@@ -10,6 +10,8 @@ Note: In this file, do not use the hard wrap in the middle of a sentence for com
 
 ## [Unreleased]
 
+- Support `taplo`. ([#944](https://github.com/taiki-e/install-action/pull/944), thanks @vivienm)
+
 - Update `wasmtime@latest` to 32.0.0.
 
 - Update `release-plz@latest` to 0.3.133.
