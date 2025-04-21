@@ -10,6 +10,8 @@ Note: In this file, do not use the hard wrap in the middle of a sentence for com
 
 ## [Unreleased]
 
+## [2.50.0] - 2025-04-21
+
 - Support `taplo`. ([#944](https://github.com/taiki-e/install-action/pull/944), thanks @vivienm)
 
 - Update `wasmtime@latest` to 32.0.0.
@@ -3820,7 +3822,8 @@ Note: This release is considered a breaking change because installing on version
 
 Initial release
 
-[Unreleased]: https://github.com/taiki-e/install-action/compare/v2.49.50...HEAD
+[Unreleased]: https://github.com/taiki-e/install-action/compare/v2.50.0...HEAD
+[2.50.0]: https://github.com/taiki-e/install-action/compare/v2.49.50...v2.50.0
 [2.49.50]: https://github.com/taiki-e/install-action/compare/v2.49.49...v2.49.50
 [2.49.49]: https://github.com/taiki-e/install-action/compare/v2.49.48...v2.49.49
 [2.49.48]: https://github.com/taiki-e/install-action/compare/v2.49.47...v2.49.48
