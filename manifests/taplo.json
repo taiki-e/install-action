@@ -9,6 +9,10 @@
       "url": "https://github.com/tamasfe/taplo/releases/download/${version}/taplo-darwin-x86_64.gz",
       "bin": "taplo"
     },
+    "x86_64_windows": {
+      "url": "https://github.com/tamasfe/taplo/releases/download/${version}/taplo-windows-x86_64.zip",
+      "bin": "taplo.exe"
+    },
     "aarch64_linux_gnu": {
       "url": "https://github.com/tamasfe/taplo/releases/download/${version}/taplo-linux-aarch64.gz",
       "bin": "taplo"
@@ -34,6 +38,10 @@
       "etag": "0x8DCB153D786BCC6",
       "checksum": "6b4180fe0518e3e68b9a421dbe50f62ede308767972c4c70c6bbe6651ea98641"
     },
+    "x86_64_windows": {
+      "etag": "0x8DCB153D75F63D4",
+      "checksum": "f87edcbd6853ad37d7b9e4d8ba336d282529fddf54912b01530e09c2872fdbbd"
+    },
     "aarch64_linux_gnu": {
       "etag": "0x8DCB153D7CD616F",
       "checksum": "7c07379d3288fb5c26b1c29bbedec4f8d8f602d776bcc3a1578176733b6a857c"
@@ -51,6 +59,10 @@
     "x86_64_macos": {
       "etag": "0x8DCA263846CB65A",
       "checksum": "1a80106e2efe9d4fd9276c855db4213742097247e50ced98fcb7e571a3ed9353"
+    },
+    "x86_64_windows": {
+      "etag": "0x8DCA26384337055",
+      "checksum": "1ed58e3a087a14a51ca8688380c3949ee3b285a4779535c2d6020bd98c385fb4"
     },
     "aarch64_linux_gnu": {
       "etag": "0x8DCA26384AC100F",
@@ -73,6 +85,10 @@
       "etag": "0x8DB817304043904",
       "checksum": "23a1ddc9517766eb7f00538eb65e2d491cfe3baa64e6d86a7dd953c07af4c11b"
     },
+    "x86_64_windows": {
+      "etag": "0x8DB8173044A8FB7",
+      "checksum": "a3a4250d79ba6d354a0fe30f6aa3e6ecffd163dc234673d364419df2b083ab5b"
+    },
     "aarch64_linux_gnu": {
       "etag": "0x8DB817304339F22",
       "checksum": "fbd6fb9b4726f12498d3c3cae6bbf37a50ae8dff471a7e8dd01f1f9b21389d9c"
@@ -90,6 +106,10 @@
     "x86_64_macos": {
       "etag": "0x8DABB625AF6DCCB",
       "checksum": "a1917f1b9168cb4f7d579422dcdf9c733028d873963d8fa3a6f499e41719c502"
+    },
+    "x86_64_windows": {
+      "etag": "0x8DABB625AA2608C",
+      "checksum": "f2f2fc49659c30e4bf504c5b821db1cbf4bcf2fd7196e9f559a6cb0efab5af80"
     },
     "aarch64_linux_gnu": {
       "etag": "0x8DABB625B843B06",
