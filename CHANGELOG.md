@@ -10,6 +10,8 @@ Note: In this file, do not use the hard wrap in the middle of a sentence for com
 
 ## [Unreleased]
 
+- Update `cargo-semver-checks@latest` to 0.41.0.
+
 ## [2.50.0] - 2025-04-21
 
 - Support `taplo`. ([#944](https://github.com/taiki-e/install-action/pull/944), thanks @vivienm)
