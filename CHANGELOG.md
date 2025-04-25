@@ -10,6 +10,8 @@ Note: In this file, do not use the hard wrap in the middle of a sentence for com
 
 ## [Unreleased]
 
+## [2.50.1] - 2025-04-25
+
 - Update `syft@latest` to 1.23.0.
 
 - Update `cargo-semver-checks@latest` to 0.41.0.
@@ -3826,7 +3828,8 @@ Note: This release is considered a breaking change because installing on version
 
 Initial release
 
-[Unreleased]: https://github.com/taiki-e/install-action/compare/v2.50.0...HEAD
+[Unreleased]: https://github.com/taiki-e/install-action/compare/v2.50.1...HEAD
+[2.50.1]: https://github.com/taiki-e/install-action/compare/v2.50.0...v2.50.1
 [2.50.0]: https://github.com/taiki-e/install-action/compare/v2.49.50...v2.50.0
 [2.49.50]: https://github.com/taiki-e/install-action/compare/v2.49.49...v2.49.50
 [2.49.49]: https://github.com/taiki-e/install-action/compare/v2.49.48...v2.49.49
