@@ -10,6 +10,8 @@ Note: In this file, do not use the hard wrap in the middle of a sentence for com
 
 ## [Unreleased]
 
+## [2.50.2] - 2025-04-26
+
 - Update `cargo-lambda@latest` to 1.8.4.
 
 - Update `syft@latest` to 1.23.1.
@@ -3832,7 +3834,8 @@ Note: This release is considered a breaking change because installing on version
 
 Initial release
 
-[Unreleased]: https://github.com/taiki-e/install-action/compare/v2.50.1...HEAD
+[Unreleased]: https://github.com/taiki-e/install-action/compare/v2.50.2...HEAD
+[2.50.2]: https://github.com/taiki-e/install-action/compare/v2.50.1...v2.50.2
 [2.50.1]: https://github.com/taiki-e/install-action/compare/v2.50.0...v2.50.1
 [2.50.0]: https://github.com/taiki-e/install-action/compare/v2.49.50...v2.50.0
 [2.49.50]: https://github.com/taiki-e/install-action/compare/v2.49.49...v2.49.50
