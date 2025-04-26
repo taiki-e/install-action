@@ -10,6 +10,8 @@ Note: In this file, do not use the hard wrap in the middle of a sentence for com
 
 ## [Unreleased]
 
+## [2.50.3] - 2025-04-26
+
 - Update `cargo-zigbuild@latest` to 0.20.0.
 
 ## [2.50.2] - 2025-04-26
@@ -3836,7 +3838,8 @@ Note: This release is considered a breaking change because installing on version
 
 Initial release
 
-[Unreleased]: https://github.com/taiki-e/install-action/compare/v2.50.2...HEAD
+[Unreleased]: https://github.com/taiki-e/install-action/compare/v2.50.3...HEAD
+[2.50.3]: https://github.com/taiki-e/install-action/compare/v2.50.2...v2.50.3
 [2.50.2]: https://github.com/taiki-e/install-action/compare/v2.50.1...v2.50.2
 [2.50.1]: https://github.com/taiki-e/install-action/compare/v2.50.0...v2.50.1
 [2.50.0]: https://github.com/taiki-e/install-action/compare/v2.49.50...v2.50.0
