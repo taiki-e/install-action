@@ -10,6 +10,8 @@ Note: In this file, do not use the hard wrap in the middle of a sentence for com
 
 ## [Unreleased]
 
+- Update `typos@latest` to 1.31.2.
+
 - Update `osv-scanner@latest` to 2.0.2.
 
 - Update `cargo-nextest@latest` to 0.9.95.
