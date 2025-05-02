@@ -10,6 +10,8 @@ Note: In this file, do not use the hard wrap in the middle of a sentence for com
 
 ## [Unreleased]
 
+- Update `typos@latest` to 1.32.0.
+
 - Update `rclone@latest` to 1.69.2.
 
 ## [2.50.4] - 2025-05-01
