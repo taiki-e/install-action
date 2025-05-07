@@ -10,6 +10,8 @@ Note: In this file, do not use the hard wrap in the middle of a sentence for com
 
 ## [Unreleased]
 
+## [2.50.9] - 2025-05-07
+
 - Update `editorconfig-checker@latest` to 3.3.0.
 
 - Update `cargo-lambda@latest` to 1.8.5.
@@ -3872,7 +3874,8 @@ Note: This release is considered a breaking change because installing on version
 
 Initial release
 
-[Unreleased]: https://github.com/taiki-e/install-action/compare/v2.50.8...HEAD
+[Unreleased]: https://github.com/taiki-e/install-action/compare/v2.50.9...HEAD
+[2.50.9]: https://github.com/taiki-e/install-action/compare/v2.50.8...v2.50.9
 [2.50.8]: https://github.com/taiki-e/install-action/compare/v2.50.7...v2.50.8
 [2.50.7]: https://github.com/taiki-e/install-action/compare/v2.50.6...v2.50.7
 [2.50.6]: https://github.com/taiki-e/install-action/compare/v2.50.5...v2.50.6
