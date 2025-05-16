@@ -10,6 +10,8 @@ Note: In this file, do not use the hard wrap in the middle of a sentence for com
 
 ## [Unreleased]
 
+- Update `cargo-binstall@latest` to 1.12.5.
+
 ## [2.51.0] - 2025-05-16
 
 - Support `cargo-shear`. ([#962](https://github.com/taiki-e/install-action/pull/962), thanks @vivienm)
