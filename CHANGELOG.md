@@ -10,6 +10,8 @@ Note: In this file, do not use the hard wrap in the middle of a sentence for com
 
 ## [Unreleased]
 
+## [2.51.0] - 2025-05-16
+
 - Support `cargo-shear`. ([#962](https://github.com/taiki-e/install-action/pull/962), thanks @vivienm)
 
 - Update `grcov@latest` to 0.10.0.
@@ -3892,7 +3894,8 @@ Note: This release is considered a breaking change because installing on version
 
 Initial release
 
-[Unreleased]: https://github.com/taiki-e/install-action/compare/v2.50.10...HEAD
+[Unreleased]: https://github.com/taiki-e/install-action/compare/v2.51.0...HEAD
+[2.51.0]: https://github.com/taiki-e/install-action/compare/v2.50.10...v2.51.0
 [2.50.10]: https://github.com/taiki-e/install-action/compare/v2.50.9...v2.50.10
 [2.50.9]: https://github.com/taiki-e/install-action/compare/v2.50.8...v2.50.9
 [2.50.8]: https://github.com/taiki-e/install-action/compare/v2.50.7...v2.50.8
