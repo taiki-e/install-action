@@ -3,10 +3,40 @@
   "template": null,
   "license_markdown": "[BSD-3-Clause](https://github.com/protocolbuffers/protobuf/blob/HEAD/LICENSE)",
   "latest": {
-    "version": "3.30.2"
+    "version": "3.31.0"
   },
   "3": {
-    "version": "3.30.2"
+    "version": "3.31.0"
+  },
+  "3.31": {
+    "version": "3.31.0"
+  },
+  "3.31.0": {
+    "x86_64_linux_gnu": {
+      "url": "https://github.com/protocolbuffers/protobuf/releases/download/v31.0/protoc-31.0-linux-x86_64.zip",
+      "etag": "0x8DD930B84B6845D",
+      "checksum": "24e2ed32060b7c990d5eb00d642fde04869d7f77c6d443f609353f097799dd42"
+    },
+    "x86_64_macos": {
+      "url": "https://github.com/protocolbuffers/protobuf/releases/download/v31.0/protoc-31.0-osx-x86_64.zip",
+      "etag": "0x8DD930B84FC3F7E",
+      "checksum": "0360d9b6d9e3d66958cf6274d8514da49e76d475fd0d712181dcc7e9e056f2c8"
+    },
+    "x86_64_windows": {
+      "url": "https://github.com/protocolbuffers/protobuf/releases/download/v31.0/protoc-31.0-win64.zip",
+      "etag": "0x8DD930B852FBFAF",
+      "checksum": "d7edee5d0d5d6786c92e77a4f511e4698a5aa922c6390b6d08c3a79935a651b0"
+    },
+    "aarch64_linux_gnu": {
+      "url": "https://github.com/protocolbuffers/protobuf/releases/download/v31.0/protoc-31.0-linux-aarch_64.zip",
+      "etag": "0x8DD930B843FDE1A",
+      "checksum": "999f4c023366b0b68c5c65272ead7877e47a2670245a79904b83450575da7e19"
+    },
+    "aarch64_macos": {
+      "url": "https://github.com/protocolbuffers/protobuf/releases/download/v31.0/protoc-31.0-osx-aarch_64.zip",
+      "etag": "0x8DD930B84BBAEA3",
+      "checksum": "1fbe70a8d646875f91b6fd57294f763145292b2c9e1374ab09d6e2124afdd950"
+    }
   },
   "3.30": {
     "version": "3.30.2"
