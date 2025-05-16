@@ -10,6 +10,8 @@ Note: In this file, do not use the hard wrap in the middle of a sentence for com
 
 ## [Unreleased]
 
+- Support `cargo-shear`. ([#962](https://github.com/taiki-e/install-action/pull/962), thanks @vivienm)
+
 - Update `grcov@latest` to 0.10.0.
 
 - Update `cargo-nextest@latest` to 0.9.96.
