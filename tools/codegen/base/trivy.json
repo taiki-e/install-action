@@ -1,0 +1,23 @@
+{
+  "repository": "https://github.com/aquasecurity/trivy",
+  "tag_prefix": "v",
+  "bin": "${package}${exe}",
+  "version_range": ">= 0.62.0",
+  "platform": {
+    "x86_64_linux_gnu": {
+      "asset_name": "${package}_${version}_Linux-64bit.tar.gz"
+    },
+    "x86_64_macos": {
+      "asset_name": "${package}_${version}_macOS-64bit.tar.gz"
+    },
+    "x86_64_windows": {
+      "asset_name": "${package}_${version}_windows-64bit.zip"
+    },
+    "aarch64_linux_gnu": {
+      "asset_name": "${package}_${version}_Linux-ARM64.tar.gz"
+    },
+    "aarch64_macos": {
+      "asset_name": "${package}_${version}_macOS-ARM64.tar.gz"
+    }
+  }
+}
