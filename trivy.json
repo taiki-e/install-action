@@ -1,0 +1,76 @@
+{
+  "rust_crate": null,
+  "template": {
+    "x86_64_linux_gnu": {
+      "url": "https://github.com/aquasecurity/trivy/releases/download/v${version}/trivy_${version}_Linux-64bit.tar.gz",
+      "bin": "trivy"
+    },
+    "x86_64_macos": {
+      "url": "https://github.com/aquasecurity/trivy/releases/download/v${version}/trivy_${version}_macOS-64bit.tar.gz",
+      "bin": "trivy"
+    },
+    "x86_64_windows": {
+      "url": "https://github.com/aquasecurity/trivy/releases/download/v${version}/trivy_${version}_windows-64bit.zip",
+      "bin": "trivy.exe"
+    },
+    "aarch64_linux_gnu": {
+      "url": "https://github.com/aquasecurity/trivy/releases/download/v${version}/trivy_${version}_Linux-ARM64.tar.gz",
+      "bin": "trivy"
+    },
+    "aarch64_macos": {
+      "url": "https://github.com/aquasecurity/trivy/releases/download/v${version}/trivy_${version}_macOS-ARM64.tar.gz",
+      "bin": "trivy"
+    }
+  },
+  "license_markdown": "[Apache-2.0](https://github.com/aquasecurity/trivy/blob/main/LICENSE)",
+  "latest": {
+    "version": "0.62.1"
+  },
+  "0.62": {
+    "version": "0.62.1"
+  },
+  "0.62.1": {
+    "x86_64_linux_gnu": {
+      "etag": "0x8DD8CD66B2C973F",
+      "checksum": "7da92b2ca503d08eb15e717585fa4ffb95ef2c5dc4c554204882d7d26d386a6a"
+    },
+    "x86_64_macos": {
+      "etag": "0x8DD8CD66B02A920",
+      "checksum": "819bf4dad9c3bb4e78bbd11d08b61bdc4663b33777121b3f43372986f7cb3d3e"
+    },
+    "x86_64_windows": {
+      "etag": "0x8DD8CD66CA4E62B",
+      "checksum": "f6d9b422f10af2d7a21b4924d36400d8a76932c9159b5feefaa8aee3e45a82bd"
+    },
+    "aarch64_linux_gnu": {
+      "etag": "0x8DD8CD669AB51A2",
+      "checksum": "50e13c5cdd3e3b610e0dc554e3bc58bc6f58eabe3e42a6b28961a23ac6eff0df"
+    },
+    "aarch64_macos": {
+      "etag": "0x8DD8CD66C735F7B",
+      "checksum": "0bbfa581a4139c6fef21f4129233ae6f02a9f4b53039327e62eccd7956af2ba1"
+    }
+  },
+  "0.62.0": {
+    "x86_64_linux_gnu": {
+      "etag": "0x8DD880CCF3EE84C",
+      "checksum": "1be4420999ffde59b9a6900f2c2481a2f4e50fd2e0ac738ad028944563ee6c60"
+    },
+    "x86_64_macos": {
+      "etag": "0x8DD880CCD4C9C5F",
+      "checksum": "8f6d54c7de5c7247bb92b51d29d2542be8006111515ceaf50fe8185adb59ad89"
+    },
+    "x86_64_windows": {
+      "etag": "0x8DD880CCD7359BB",
+      "checksum": "b30da5d15587824335cbb88a62585f00a3aac18f3f754d3ad74d68327e2efc46"
+    },
+    "aarch64_linux_gnu": {
+      "etag": "0x8DD880CCF085E40",
+      "checksum": "82c8acca00390bf5e014b26abb03e24ba754824c4f87ead5564cd56375df07c1"
+    },
+    "aarch64_macos": {
+      "etag": "0x8DD880CCF853F18",
+      "checksum": "727a8865c2caf6841a1f4668fd7702f442ae088fd08e3c3719e4f731c1f11333"
+    }
+  }
+}
