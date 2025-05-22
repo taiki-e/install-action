@@ -127,7 +127,9 @@ fn main() -> Result<()> {
             latest_only = true;
         }
     }
+
     if manifest_path.is_file() {
+        println!("loading pre-existing manifest {}", manifest_path.display());
         match serde_json::from_slice(&fs::read(manifest_path)?) {
             Ok(m) => {
                 manifests = m;
@@ -161,34 +163,57 @@ fn main() -> Result<()> {
         }
     }
 
-    // Populate license_markdown
+    // Populate license_markdown from the base manifest if present.
     if let Some(license_markdown) = base_info.license_markdown {
         if license_markdown.is_empty() {
             panic!("license_markdown can not be an empty value");
         }
         manifests.license_markdown = license_markdown;
-    } else if let Some(detail) = crates_io_version_detail {
-        if let Some(license) = detail.license {
-            eprintln!("Trying to using license '{license}' from crates.io ...");
-            if let Some(license_markdown) =
-                get_license_markdown(&license, repo, &repo_info.default_branch)
-            {
-                manifests.license_markdown = license_markdown;
-            }
+    }
+
+    // Check if the license_markdown is valid.
+    if !manifests.license_markdown.is_empty() {
+        let urls = get_license_markdown_urls(&manifests.license_markdown);
+        if urls.is_empty() {
+            bail!("Could not find URLs in license_markdown: {}.", manifests.license_markdown);
         }
-    } else if let Some(license) = repo_info.license {
-        if let Some(license) = license.spdx_id {
-            eprintln!("Trying to using license '{license}' from github.com ...");
-            if let Some(license_markdown) =
-                get_license_markdown(&license, repo, &repo_info.default_branch)
-            {
-                manifests.license_markdown = license_markdown;
+        for url in urls {
+            if let Err(err) = github_head(&url) {
+                eprintln!("Failed to fetch pre-existing license_markdown {url}: {err}");
+                manifests.license_markdown = String::new();
+                break;
             }
         }
     }
 
+    // Try to detect license_markdown from crates.io or GitHub.
     if manifests.license_markdown.is_empty() {
-        panic!("Unable to determine license_markdown; set manually")
+        let license = match (crates_io_version_detail, repo_info.license) {
+            (Some(crates_io::VersionMetadataDetail { license: Some(license) }), _) => {
+                eprintln!("Trying to verify license '{license}' obtained from crates.io ...");
+                license
+            }
+            (_, Some(github::RepoLicense { spdx_id: Some(spdx_id) })) => {
+                eprintln!("Trying to verify license '{spdx_id}' obtained from github.com ...");
+                spdx_id
+            }
+            _ => {
+                bail!(
+                    "No license SPDX found in crates.io or GitHub metadata.\n\
+                    Please set license_markdown in the base manifest"
+                );
+            }
+        };
+        if let Some(license_markdown) =
+            get_license_markdown(&license, repo, &repo_info.default_branch)
+        {
+            manifests.license_markdown = license_markdown;
+        } else {
+            bail!(
+                "Unable to verify license file(s) in the repo for license {license}.\n\
+                Please set license_markdown in the base manifest"
+            );
+        }
     }
 
     let version_req: Option<semver::VersionReq> = match version_req {
@@ -766,9 +791,16 @@ fn github_head(url: &str) -> Result<()> {
     Err(last_error.unwrap().into())
 }
 
+#[allow(dead_code)]
 #[must_use]
 fn create_github_raw_link(repository: &str, branch: &str, filename: &str) -> String {
     format!("https://raw.githubusercontent.com/{repository}/{branch}/{filename}")
+}
+
+/// Create URLs for https://docs.github.com/en/rest/repos/contents
+#[must_use]
+fn github_content_api_url(repository: &str, branch: &str, filename: &str) -> String {
+    format!("https://api.github.com/repos/{repository}/contents/{filename}?ref={branch}")
 }
 
 #[must_use]
@@ -814,7 +846,7 @@ fn get_license_markdown(spdx_expr: &str, repo: &str, default_branch: &str) -> Op
     }
 
     match license_ids.len() {
-        0 => panic!("No licenses"),
+        0 => panic!("No licenses detected in SPDX expression: {expr}"),
         1 => {
             let (license_id, exception_id) = license_ids.first().unwrap();
             let license_name = if let Some(exception_id) = exception_id {
@@ -829,10 +861,15 @@ fn get_license_markdown(spdx_expr: &str, repo: &str, default_branch: &str) -> Op
                 "LICENSE.md".to_owned(),
                 "COPYING".to_owned(),
             ] {
-                let url = create_github_raw_link(repo, default_branch, &filename);
-                if github_head(&url).is_ok() {
-                    let url = create_github_link(repo, default_branch, &filename);
-                    return Some(format!("[{license_name}]({url})"));
+                let url = github_content_api_url(repo, default_branch, &filename);
+                match download(&url) {
+                    Ok(_) => {
+                        let url = create_github_link(repo, default_branch, &filename);
+                        return Some(format!("[{license_name}]({url})"));
+                    }
+                    Err(e) => {
+                        eprintln!("Failed to fetch {url}: {e}");
+                    }
                 }
             }
         }
@@ -841,15 +878,20 @@ fn get_license_markdown(spdx_expr: &str, repo: &str, default_branch: &str) -> Op
             for (license_id, exception_id) in &license_ids {
                 let name = license_id.name.split('-').next().unwrap().to_ascii_uppercase();
                 let filename = format!("LICENSE-{name}");
-                let url = create_github_raw_link(repo, default_branch, &filename);
+                let url = github_content_api_url(repo, default_branch, &filename);
                 let license_name = if let Some(exception_id) = exception_id {
                     format!("{} WITH {}", license_id.name, exception_id.name)
                 } else {
                     license_id.name.to_owned()
                 };
-                if github_head(&url).is_ok() {
-                    let url = create_github_link(repo, default_branch, &filename);
-                    license_markdowns.push(format!("[{license_name}]({url})"));
+                match download(&url) {
+                    Ok(_) => {
+                        let url = create_github_link(repo, default_branch, &filename);
+                        license_markdowns.push(format!("[{license_name}]({url})"));
+                    }
+                    Err(e) => {
+                        eprintln!("Failed to fetch {url}: {e}");
+                    }
                 }
             }
             if license_markdowns.is_empty() {
@@ -872,6 +914,14 @@ fn get_license_markdown(spdx_expr: &str, repo: &str, default_branch: &str) -> Op
         }
     }
     None
+}
+
+fn get_license_markdown_urls(license_markdown: &str) -> Vec<String> {
+    license_markdown
+        .split(['(', ')'])
+        .filter(|s| s.starts_with("http"))
+        .map(|s| s.trim().to_string())
+        .collect::<Vec<_>>()
 }
 
 mod github {
