@@ -10,13 +10,13 @@ Note: In this file, do not use the hard wrap in the middle of a sentence for com
 
 ## [Unreleased]
 
+- Support `trivy`. ([#970](https://github.com/taiki-e/install-action/pull/970), thanks @jayvdb)
+
 - Update `syft@latest` to 1.26.1.
 
 - Update `rclone@latest` to 1.69.3.
 
 - Update `cargo-shear@latest` to 1.2.8.
-
-- Update `syft@latest` to 1.26.0.
 
 ## [2.51.3] - 2025-05-20
 
