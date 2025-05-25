@@ -10,6 +10,8 @@ Note: In this file, do not use the hard wrap in the middle of a sentence for com
 
 ## [Unreleased]
 
+- Update `taplo@latest` to 0.10.0.
+
 - Update `mdbook@latest` to 0.4.50.
 
 - Update `deepsource@latest` to 0.9.0.
