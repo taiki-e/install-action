@@ -24,7 +24,32 @@
   },
   "license_markdown": "[Apache-2.0](https://github.com/aquasecurity/trivy/blob/main/LICENSE)",
   "latest": {
-    "version": "0.62.1"
+    "version": "0.63.0"
+  },
+  "0.63": {
+    "version": "0.63.0"
+  },
+  "0.63.0": {
+    "x86_64_linux_gnu": {
+      "etag": "0x8DD9EDB240EAE38",
+      "checksum": "ea91fa393cfcb802da22832c96e99a4c8a295a8ba8faefd824c7168b7f0a741e"
+    },
+    "x86_64_macos": {
+      "etag": "0x8DD9EDB25C39AD1",
+      "checksum": "01659b540a885ee9bd1273c8c75ade1ce046fc9d6e5933d5978d9125a6a1cf6c"
+    },
+    "x86_64_windows": {
+      "etag": "0x8DD9EDB25D2CBF6",
+      "checksum": "33ba726ec9c37f15490efa1d51044c21f0db6acb9be56492d5e1429f404b602f"
+    },
+    "aarch64_linux_gnu": {
+      "etag": "0x8DD9EDB26DF8B6D",
+      "checksum": "9aeecf81e8a1dc5625dd96a1a6fbea92a1f8e51c4160cfc0e412ef5f641ea1ac"
+    },
+    "aarch64_macos": {
+      "etag": "0x8DD9EDB26DD1D32",
+      "checksum": "784f687759c647ffad54e4d7f55ed953647e4fff5ea1e38dbaf877a135254972"
+    }
   },
   "0.62": {
     "version": "0.62.1"
