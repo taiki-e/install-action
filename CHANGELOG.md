@@ -10,6 +10,8 @@ Note: In this file, do not use the hard wrap in the middle of a sentence for com
 
 ## [Unreleased]
 
+## [2.52.5] - 2025-06-03
+
 - Update `typos@latest` to 1.33.1.
 
 - Update `git-cliff@latest` to 2.9.0.
@@ -3960,7 +3962,8 @@ Note: This release is considered a breaking change because installing on version
 
 Initial release
 
-[Unreleased]: https://github.com/taiki-e/install-action/compare/v2.52.4...HEAD
+[Unreleased]: https://github.com/taiki-e/install-action/compare/v2.52.5...HEAD
+[2.52.5]: https://github.com/taiki-e/install-action/compare/v2.52.4...v2.52.5
 [2.52.4]: https://github.com/taiki-e/install-action/compare/v2.52.3...v2.52.4
 [2.52.3]: https://github.com/taiki-e/install-action/compare/v2.52.2...v2.52.3
 [2.52.2]: https://github.com/taiki-e/install-action/compare/v2.52.1...v2.52.2
