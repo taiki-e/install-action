@@ -9,6 +9,7 @@ cd -- "$(dirname -- "$0")"/../..
 # version `GLIBC_2.35' not found
 glibc_pre_2_35_incompat=(
   zola
+  cargo-sort
 )
 # version `GLIBC_2.34' not found
 glibc_pre_2_34_incompat=(
