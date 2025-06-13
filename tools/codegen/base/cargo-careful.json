@@ -2,12 +2,12 @@
   "repository": "https://github.com/RalfJung/cargo-careful",
   "tag_prefix": "v",
   "rust_crate": "${package}",
-  "asset_name": "${package}.${rust_target}",
+  "asset_name": "${package}-${rust_target}",
   "platform": {
     "x86_64_linux_musl": {},
     "x86_64_macos": {},
     "x86_64_windows": {
-      "asset_name": "${package}${exe}"
+      "asset_name": "${package}-windows${exe}"
     }
   }
 }
