@@ -16,8 +16,6 @@ Note: In this file, do not use the hard wrap in the middle of a sentence for com
 
 - Update `cargo-binstall@latest` to 1.13.0.
 
-- Update `syft@latest` to 1.27.0.
-
 ## [2.52.7] - 2025-06-07
 
 - Update `cargo-nextest@latest` to 0.9.98.
