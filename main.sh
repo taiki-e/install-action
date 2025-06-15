@@ -823,6 +823,8 @@ for tool in "${tools[@]}"; do
         esac
         ;;
       *)
+        rx file `which "${tool_bin_stem}"`
+        rx ldd `which "${tool_bin_stem}"` ||:
         if ! rx "${tool_bin_stem}" --version; then
           rx "${tool_bin_stem}" --help
         fi
