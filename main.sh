@@ -774,6 +774,13 @@ for tool in "${tools[@]}"; do
               ;;
           esac
           ;;
+        cyclonedx)
+          case "${host_os}" in
+            linux)
+              apt_install libicu-dev
+              ;;
+          esac
+          ;;
       esac
 
       download_from_download_info "${tool}" "${version}"

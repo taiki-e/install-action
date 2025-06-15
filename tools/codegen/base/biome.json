@@ -5,9 +5,6 @@
   "tag_prefix": "cli/v",
   "bin": "${package}${exe}",
   "platform": {
-    "x86_64_linux_gnu": {
-      "asset_name": "${package}-linux-x64"
-    },
     "x86_64_linux_musl": {
       "asset_name": "${package}-linux-x64-musl"
     },

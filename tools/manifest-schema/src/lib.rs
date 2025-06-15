@@ -282,6 +282,17 @@ impl BaseManifest {
                 }
             }
         }
+        if self.platform.is_empty() {
+            panic!("At least one platform must be specified");
+        }
+        if !self.prefer_linux_gnu
+            && self.platform.contains_key(&HostPlatform::x86_64_linux_gnu)
+            && self.platform.contains_key(&HostPlatform::x86_64_linux_musl)
+        {
+            panic!(
+                "When x86_64-linux-musl platform is specified, x86_64-linux-gnu will never be used and should not be specified"
+            );
+        }
     }
 }
 
