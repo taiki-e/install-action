@@ -3,8 +3,8 @@
   "tag_prefix": "v",
   "version_range": ">= 0.27.2",
   "platform": {
-    "x86_64_linux_musl": {
-      "asset_name": "${package}-linux-musl-x64"
+    "x86_64_linux_gnu": {
+      "asset_name": "${package}-linux-x64"
     },
     "x86_64_macos": {
       "asset_name": "${package}-osx-x64"

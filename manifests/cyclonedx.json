@@ -1,8 +1,8 @@
 {
   "rust_crate": null,
   "template": {
-    "x86_64_linux_musl": {
-      "url": "https://github.com/CycloneDX/cyclonedx-cli/releases/download/v${version}/cyclonedx-linux-musl-x64"
+    "x86_64_linux_gnu": {
+      "url": "https://github.com/CycloneDX/cyclonedx-cli/releases/download/v${version}/cyclonedx-linux-x64"
     },
     "x86_64_macos": {
       "url": "https://github.com/CycloneDX/cyclonedx-cli/releases/download/v${version}/cyclonedx-osx-x64"
@@ -28,9 +28,9 @@
     "version": "0.27.2"
   },
   "0.27.2": {
-    "x86_64_linux_musl": {
-      "etag": "0x8DD0C1D0982EBCA",
-      "checksum": "78545e050d3c37fbc7704df2c86be29eca2ad41f6db7bb4fcbb1fcf812a764fc"
+    "x86_64_linux_gnu": {
+      "etag": "0x8DD0C1D089A2E0C",
+      "checksum": "5e1595542a6367378a3944bbd3008caab3de65d572345361d3b9597b1dbbaaa0"
     },
     "x86_64_macos": {
       "etag": "0x8DD0C1D112585AB",
