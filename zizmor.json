@@ -1,0 +1,52 @@
+{
+  "rust_crate": "zizmor",
+  "template": {
+    "x86_64_linux_gnu": {
+      "url": "https://github.com/zizmorcore/zizmor/releases/download/v${version}/zizmor-x86_64-unknown-linux-gnu.tar.gz"
+    },
+    "x86_64_macos": {
+      "url": "https://github.com/zizmorcore/zizmor/releases/download/v${version}/zizmor-x86_64-apple-darwin.tar.gz"
+    },
+    "x86_64_windows": {
+      "url": "https://github.com/zizmorcore/zizmor/releases/download/v${version}/zizmor-x86_64-pc-windows-msvc.zip"
+    },
+    "aarch64_linux_gnu": {
+      "url": "https://github.com/zizmorcore/zizmor/releases/download/v${version}/zizmor-aarch64-unknown-linux-gnu.tar.gz"
+    },
+    "aarch64_macos": {
+      "url": "https://github.com/zizmorcore/zizmor/releases/download/v${version}/zizmor-aarch64-apple-darwin.tar.gz"
+    }
+  },
+  "license_markdown": "[MIT](https://github.com/zizmorcore/zizmor/blob/main/LICENSE)",
+  "latest": {
+    "version": "1.9.0"
+  },
+  "1": {
+    "version": "1.9.0"
+  },
+  "1.9": {
+    "version": "1.9.0"
+  },
+  "1.9.0": {
+    "x86_64_linux_gnu": {
+      "etag": "0x8DD9FC256DC942D",
+      "checksum": "7ec3b5d0796324245eab6acf9223cc04b01ab5357e32bc89f5f42972082bb955"
+    },
+    "x86_64_macos": {
+      "etag": "0x8DD9FC25670B70E",
+      "checksum": "bcdded3b6692a7030d59bfff58c20548b2ac9ec9ac34ed975645bd7cac6d3cb4"
+    },
+    "x86_64_windows": {
+      "etag": "0x8DD9FC2566AA363",
+      "checksum": "8012a860749c7ebb76a4bed1c039759d05fd898b1e5b41eedb540583833ca4d1"
+    },
+    "aarch64_linux_gnu": {
+      "etag": "0x8DD9FC2566FF49D",
+      "checksum": "4dec6688af284fff10d84846771999df00085d107e8cb8dc8d6a1c6cdc4a9640"
+    },
+    "aarch64_macos": {
+      "etag": "0x8DD9FC2566C284B",
+      "checksum": "dd9233c82889e37c271fd9f615aeed670c4c3bdac014fb58ce64552468ac3afb"
+    }
+  }
+}
