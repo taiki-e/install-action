@@ -73,6 +73,7 @@ See the [Supported tools section in README.md](README.md#supported-tools) for ho
 | [**wasmtime**](https://github.com/bytecodealliance/wasmtime) | `$CARGO_HOME/bin` | [GitHub Releases](https://github.com/bytecodealliance/wasmtime/releases) | Linux, macOS, Windows | [Apache-2.0 WITH LLVM-exception](https://github.com/bytecodealliance/wasmtime/blob/main/LICENSE) |
 | [**xbuild**](https://github.com/rust-mobile/xbuild) | `$CARGO_HOME/bin` | [GitHub Releases](https://github.com/rust-mobile/xbuild/releases) | Linux, macOS, Windows | [Apache-2.0 OR MIT](https://github.com/rust-mobile/xbuild/blob/v0.2.0/xbuild/Cargo.toml#L7) |
 | [**xh**](https://github.com/ducaale/xh) | `$CARGO_HOME/bin` | [GitHub Releases](https://github.com/ducaale/xh/releases) | Linux, macOS, Windows | [MIT](https://github.com/ducaale/xh/blob/master/LICENSE) |
+| [**zizmor**](https://github.com/zizmorcore/zizmor) | `$CARGO_HOME/bin` | [GitHub Releases](https://github.com/zizmorcore/zizmor/releases) | Linux, macOS, Windows | [MIT](https://github.com/zizmorcore/zizmor/blob/main/LICENSE) |
 | [**zola**](https://github.com/getzola/zola) | `$CARGO_HOME/bin` | [GitHub Releases](https://github.com/getzola/zola/releases) | Linux, macOS, Windows | [MIT](https://github.com/getzola/zola/blob/master/LICENSE) |
 
 [cargo-binstall]: https://github.com/cargo-bins/cargo-binstall
