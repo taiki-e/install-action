@@ -10,6 +10,8 @@ Note: In this file, do not use the hard wrap in the middle of a sentence for com
 
 ## [Unreleased]
 
+- Support `zizmor`. ([#1002](https://github.com/taiki-e/install-action/pull/1002), thanks @jayvdb)
+
 - Update `osv-scanner@latest` to 2.0.3.
 
 ## [2.52.8] - 2025-06-13
