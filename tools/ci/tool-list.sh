@@ -48,9 +48,6 @@ glibc_pre_2_17_incompat=(
 musl_incompat=(
   "${glibc_pre_2_17_incompat[@]}"
 )
-win2019_gnu_incompat=(
-  cargo-spellcheck
-)
 
 incompat_tools=()
 case "${1:-}" in
@@ -65,8 +62,6 @@ case "${1:-}" in
     exit 1
     ;;
 esac
-runner="${2:-}"
-bash="${3:-}"
 case "$(uname -s)" in
   Linux)
     host_os=linux
@@ -115,16 +110,7 @@ case "$(uname -s)" in
     fi
     ;;
   Darwin) host_os=macos ;;
-  MINGW* | MSYS* | CYGWIN* | Windows_NT)
-    host_os=windows
-    case "${bash}" in
-      msys64 | cygwin)
-        if [[ "${runner}" == "windows-2019" ]]; then
-          incompat_tools+=("${win2019_gnu_incompat[@]}")
-        fi
-        ;;
-    esac
-    ;;
+  MINGW* | MSYS* | CYGWIN* | Windows_NT) host_os=windows ;;
   *) bail "unrecognized OS type '$(uname -s)'" ;;
 esac
 # See main.sh
