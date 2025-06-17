@@ -10,6 +10,8 @@ Note: In this file, do not use the hard wrap in the middle of a sentence for com
 
 ## [Unreleased]
 
+- Update `cargo-nextest@latest` to 0.9.99.
+
 ## [2.53.0] - 2025-06-16
 
 - Support `zizmor`. ([#1002](https://github.com/taiki-e/install-action/pull/1002), thanks @jayvdb)
