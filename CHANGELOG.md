@@ -10,6 +10,8 @@ Note: In this file, do not use the hard wrap in the middle of a sentence for com
 
 ## [Unreleased]
 
+- Fix `cargo-nextest` installation failure on Ubuntu 24.04 due to HTTP 403 error on requests to crates.io. ([#1007](https://github.com/taiki-e/install-action/pull/1007))
+
 - Update `rclone@latest` to 1.70.0.
 
 ## [2.53.1] - 2025-06-17
