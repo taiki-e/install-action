@@ -220,20 +220,22 @@ read_manifest() {
       # TODO: don't hardcode tool name and use 'immediate_yank_reflection' field in base manifest.
       case "${tool}" in
         cargo-nextest | nextest)
-          crate_info=$(retry curl --proto '=https' --tlsv1.2 -fsSL --retry 10 "https://crates.io/api/v1/crates/${rust_crate}")
-          while true; do
-            yanked=$(jq -r ".versions[] | select(.num == \"${exact_version}\") | .yanked" <<<"${crate_info}")
-            if [[ "${yanked}" != "true" ]]; then
-              break
-            fi
-            previous_stable_version=$(jq -r '.previous_stable_version' <<<"${manifest}")
-            if [[ "${previous_stable_version}" == "null" ]]; then
-              break
-            fi
-            info "${tool}@${exact_version} is yanked; downgrade to ${previous_stable_version}"
-            exact_version="${previous_stable_version}"
-            manifest=$(jq -r ".[\"${exact_version}\"]" "${manifest_dir}/${tool}.json")
-          done
+          crate_info=$(curl --proto '=https' --tlsv1.2 -fsSL --retry 10 "https://crates.io/api/v1/crates/${rust_crate}" || true)
+          if [[ -n "${crate_info}" ]]; then
+            while true; do
+              yanked=$(jq -r ".versions[] | select(.num == \"${exact_version}\") | .yanked" <<<"${crate_info}")
+              if [[ "${yanked}" != "true" ]]; then
+                break
+              fi
+              previous_stable_version=$(jq -r '.previous_stable_version' <<<"${manifest}")
+              if [[ "${previous_stable_version}" == "null" ]]; then
+                break
+              fi
+              info "${tool}@${exact_version} is yanked; downgrade to ${previous_stable_version}"
+              exact_version="${previous_stable_version}"
+              manifest=$(jq -r ".[\"${exact_version}\"]" "${manifest_dir}/${tool}.json")
+            done
+          fi
           ;;
       esac
     fi
