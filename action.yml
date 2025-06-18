@@ -49,3 +49,4 @@ runs:
         INPUT_CHECKSUM: ${{ inputs.checksum }}
         INPUT_FALLBACK: ${{ inputs.fallback }}
         DEFAULT_GITHUB_TOKEN: ${{ github.token }}
+        ACTION_USER_AGENT: ${{ github.action_repository }} (${{ github.action_ref }})

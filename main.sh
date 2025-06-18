@@ -220,7 +220,7 @@ read_manifest() {
       # TODO: don't hardcode tool name and use 'immediate_yank_reflection' field in base manifest.
       case "${tool}" in
         cargo-nextest | nextest)
-          crate_info=$(curl --proto '=https' --tlsv1.2 -fsSL --retry 10 "https://crates.io/api/v1/crates/${rust_crate}" || true)
+          crate_info=$(curl -v --user-agent "${ACTION_USER_AGENT}" --proto '=https' --tlsv1.2 -fsSL --retry 10 "https://crates.io/api/v1/crates/${rust_crate}" || true)
           if [[ -n "${crate_info}" ]]; then
             while true; do
               yanked=$(jq -r ".versions[] | select(.num == \"${exact_version}\") | .yanked" <<<"${crate_info}")
