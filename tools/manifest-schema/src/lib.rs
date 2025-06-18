@@ -292,7 +292,7 @@ impl BaseManifest {
                 && self.platform.contains_key(&HostPlatform::aarch64_linux_musl))
         {
             panic!(
-                "When x86_64-linux-musl platform is specified, x86_64-linux-gnu will never be used and should not be specified"
+                "When *-linux-musl platform is specified, *-linux-gnu for the same architecture will never be used and should not be specified"
             );
         }
     }
