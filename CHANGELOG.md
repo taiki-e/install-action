@@ -10,6 +10,8 @@ Note: In this file, do not use the hard wrap in the middle of a sentence for com
 
 ## [Unreleased]
 
+- Update `rclone@latest` to 1.70.0.
+
 ## [2.53.1] - 2025-06-17
 
 - Support `typos` on AArch64 Linux. ([#1004](https://github.com/taiki-e/install-action/pull/1004), thanks @vivienm)
