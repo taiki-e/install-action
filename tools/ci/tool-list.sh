@@ -13,6 +13,7 @@ glibc_pre_2_39_incompat=(
 glibc_pre_2_35_incompat=(
   "${glibc_pre_2_39_incompat[@]}"
   zola
+  cargo-sort
 )
 # version `GLIBC_2.34' not found
 glibc_pre_2_34_incompat=(
