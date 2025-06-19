@@ -108,6 +108,9 @@ case "$(uname -s)" in
     if ! type -P snap >/dev/null; then
       incompat_tools+=(valgrind)
     fi
+    if ! type -P apt-get >/dev/null; then
+      incompat_tools+=(cyclonedx)
+    fi
     ;;
   Darwin) host_os=macos ;;
   MINGW* | MSYS* | CYGWIN* | Windows_NT) host_os=windows ;;

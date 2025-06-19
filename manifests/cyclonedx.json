@@ -1,0 +1,56 @@
+{
+  "rust_crate": null,
+  "template": {
+    "x86_64_linux_gnu": {
+      "url": "https://github.com/CycloneDX/cyclonedx-cli/releases/download/v${version}/cyclonedx-linux-x64"
+    },
+    "x86_64_macos": {
+      "url": "https://github.com/CycloneDX/cyclonedx-cli/releases/download/v${version}/cyclonedx-osx-x64"
+    },
+    "x86_64_windows": {
+      "url": "https://github.com/CycloneDX/cyclonedx-cli/releases/download/v${version}/cyclonedx-win-x64.exe"
+    },
+    "aarch64_linux_gnu": {
+      "url": "https://github.com/CycloneDX/cyclonedx-cli/releases/download/v${version}/cyclonedx-linux-arm64"
+    },
+    "aarch64_macos": {
+      "url": "https://github.com/CycloneDX/cyclonedx-cli/releases/download/v${version}/cyclonedx-osx-arm64"
+    },
+    "aarch64_windows": {
+      "url": "https://github.com/CycloneDX/cyclonedx-cli/releases/download/v${version}/cyclonedx-win-arm64.exe"
+    }
+  },
+  "license_markdown": "[Apache-2.0](https://github.com/CycloneDX/cyclonedx-cli/blob/main/LICENSE)",
+  "latest": {
+    "version": "0.27.2"
+  },
+  "0.27": {
+    "version": "0.27.2"
+  },
+  "0.27.2": {
+    "x86_64_linux_gnu": {
+      "etag": "0x8DD0C1D089A2E0C",
+      "checksum": "5e1595542a6367378a3944bbd3008caab3de65d572345361d3b9597b1dbbaaa0"
+    },
+    "x86_64_macos": {
+      "etag": "0x8DD0C1D112585AB",
+      "checksum": "331c2245ef7dadf09fa3d2710a2aaab071ff6bea2ba3e5df8f95a4f3f6e825e9"
+    },
+    "x86_64_windows": {
+      "etag": "0x8DD0C1D0CEB17DF",
+      "checksum": "bb26bb56293ebe6f08fa63d2bf50653fc6b180174fded975c81ac96ac192a7db"
+    },
+    "aarch64_linux_gnu": {
+      "etag": "0x8DD0C1D0BAFB51E",
+      "checksum": "5b4181f6fd4d8fbe54e55c1b3983d9af66ce2910a263814b290cbd5e351e68a4"
+    },
+    "aarch64_macos": {
+      "etag": "0x8DD0C1D488DD343",
+      "checksum": "2d24c331c2ccc5e4061722bd4780c8b295041b2569d130bbe80cf7da95b97171"
+    },
+    "aarch64_windows": {
+      "etag": "0x8DD0C1D10099579",
+      "checksum": "35762d3e1979576f474ffc1c5b2273e19c33cdca44e5f1994c3de5d9cd0e9c1d"
+    }
+  }
+}

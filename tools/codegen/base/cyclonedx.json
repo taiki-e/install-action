@@ -1,0 +1,25 @@
+{
+  "repository": "https://github.com/CycloneDX/cyclonedx-cli",
+  "tag_prefix": "v",
+  "version_range": ">= 0.27.2",
+  "platform": {
+    "x86_64_linux_gnu": {
+      "asset_name": "${package}-linux-x64"
+    },
+    "x86_64_macos": {
+      "asset_name": "${package}-osx-x64"
+    },
+    "x86_64_windows": {
+      "asset_name": "${package}-win-x64${exe}"
+    },
+    "aarch64_linux_gnu": {
+      "asset_name": "${package}-linux-arm64"
+    },
+    "aarch64_macos": {
+      "asset_name": "${package}-osx-arm64"
+    },
+    "aarch64_windows": {
+      "asset_name": "${package}-win-arm64${exe}"
+    }
+  }
+}
