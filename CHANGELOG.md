@@ -10,6 +10,8 @@ Note: In this file, do not use the hard wrap in the middle of a sentence for com
 
 ## [Unreleased]
 
+- Update `cyclonedx@latest` to 0.28.2.
+
 - Update `cargo-binstall@latest` to 1.14.1.
 
 - Update `release-plz@latest` to 0.3.136.
