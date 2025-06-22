@@ -1,0 +1,125 @@
+{
+  "rust_crate": null,
+  "template": {
+    "x86_64_linux_gnu": {
+      "url": "https://github.com/CycloneDX/cyclonedx-cli/releases/download/v${version}/cyclonedx-linux-x64"
+    },
+    "x86_64_macos": {
+      "url": "https://github.com/CycloneDX/cyclonedx-cli/releases/download/v${version}/cyclonedx-osx-x64"
+    },
+    "x86_64_windows": {
+      "url": "https://github.com/CycloneDX/cyclonedx-cli/releases/download/v${version}/cyclonedx-win-x64.exe"
+    },
+    "aarch64_linux_gnu": {
+      "url": "https://github.com/CycloneDX/cyclonedx-cli/releases/download/v${version}/cyclonedx-linux-arm64"
+    },
+    "aarch64_macos": {
+      "url": "https://github.com/CycloneDX/cyclonedx-cli/releases/download/v${version}/cyclonedx-osx-arm64"
+    },
+    "aarch64_windows": {
+      "url": "https://github.com/CycloneDX/cyclonedx-cli/releases/download/v${version}/cyclonedx-win-arm64.exe"
+    }
+  },
+  "license_markdown": "[Apache-2.0](https://github.com/CycloneDX/cyclonedx-cli/blob/main/LICENSE)",
+  "latest": {
+    "version": "0.28.2"
+  },
+  "0.28": {
+    "version": "0.28.2"
+  },
+  "0.28.2": {
+    "x86_64_linux_gnu": {
+      "etag": "0x8DDAF3FC19823E2",
+      "checksum": "839d11fbfbc903dceacc529be2d24fb2b984fffe95b0a7f36e4457c6cb066e8b"
+    },
+    "x86_64_macos": {
+      "etag": "0x8DDAF3FD4B6B18F",
+      "checksum": "0de1b0c768923d7446d18b71682b0b0a81492f0b894ce2529ed6ad18dd2c4112"
+    },
+    "x86_64_windows": {
+      "etag": "0x8DDAF3FC9F635D1",
+      "checksum": "f3df3c0481e8335bd096efbba1a1ea79b5262e122053e83b7b7e5201828b03f5"
+    },
+    "aarch64_linux_gnu": {
+      "etag": "0x8DDAF3FC7E1E215",
+      "checksum": "581663dfa422ac5d73d59cdfb08299eb3429dce921175ccb42b5711509305da1"
+    },
+    "aarch64_macos": {
+      "etag": "0x8DDAF3FE94F3883",
+      "checksum": "92cb1bcb348b11570995e2a96c1a3406f37305acfcb131830e8e99ff9adbc591"
+    },
+    "aarch64_windows": {
+      "etag": "0x8DDAF3FCDE4D4BE",
+      "checksum": "6c48aba7ef5c933127cdd97a4e0800b96882db35b547b896093d716b3617028d"
+    }
+  },
+  "0.28.1": {
+    "x86_64_linux_gnu": {
+      "etag": "0x8DDAF2153E394A3",
+      "checksum": "3447125ff2ef3c78571cf92fa914efed49c89685eb2054c7250f7e58853a8b1a"
+    },
+    "x86_64_macos": {
+      "etag": "0x8DDAF2162CA2046",
+      "checksum": "c7984ab1744b592fb0778c9965212cf45f523e81f4463b7e6b1b2c3c412a8934"
+    },
+    "x86_64_windows": {
+      "etag": "0x8DDAF215C402033",
+      "checksum": "db5ec1d69776d973713ce1e351cdcd89c8db48080b4980def605d77cd4acd4d7"
+    },
+    "aarch64_linux_gnu": {
+      "etag": "0x8DDAF2159D0F3C5",
+      "checksum": "70fac8f881e277bbc33ce30fb4470e20876c6f9a897de9a89e0f3f2e32d69e2c"
+    },
+    "aarch64_macos": {
+      "etag": "0x8DDAF217863898B",
+      "checksum": "eff9acf9cc5ce271d66f9a8eb8cdcbbbb99ca7d266d4c4b34d4e95e582f112ac"
+    },
+    "aarch64_windows": {
+      "etag": "0x8DDAF2160D93299",
+      "checksum": "83bfcf7f23bb8f3d6fa47cd825a7a4e8ca89c9d47ace76c0499c51a8e7ee7329"
+    }
+  },
+  "0.28.0": {
+    "x86_64_linux_gnu": {
+      "etag": "0x8DDAF1FDB45782D",
+      "checksum": "f1b8ee23ca90643a996ffee764434d5893017c18bf6a2acf3eb1a69b378c33e6"
+    },
+    "x86_64_windows": {
+      "etag": "0x8DDAF1FE135E13D",
+      "checksum": "1ab6f28777739568b895c5f64c75d3ab8eb0b0642a924f4cdae45e2e73343581"
+    },
+    "aarch64_linux_gnu": {
+      "etag": "0x8DDAF1FDFD9874A",
+      "checksum": "5389fc6b10eb76500d1e830990a4184d84d6cbde9e8b883691432339e899b9c0"
+    }
+  },
+  "0.27": {
+    "version": "0.27.2"
+  },
+  "0.27.2": {
+    "x86_64_linux_gnu": {
+      "etag": "0x8DD0C1D089A2E0C",
+      "checksum": "5e1595542a6367378a3944bbd3008caab3de65d572345361d3b9597b1dbbaaa0"
+    },
+    "x86_64_macos": {
+      "etag": "0x8DD0C1D112585AB",
+      "checksum": "331c2245ef7dadf09fa3d2710a2aaab071ff6bea2ba3e5df8f95a4f3f6e825e9"
+    },
+    "x86_64_windows": {
+      "etag": "0x8DD0C1D0CEB17DF",
+      "checksum": "bb26bb56293ebe6f08fa63d2bf50653fc6b180174fded975c81ac96ac192a7db"
+    },
+    "aarch64_linux_gnu": {
+      "etag": "0x8DD0C1D0BAFB51E",
+      "checksum": "5b4181f6fd4d8fbe54e55c1b3983d9af66ce2910a263814b290cbd5e351e68a4"
+    },
+    "aarch64_macos": {
+      "etag": "0x8DD0C1D488DD343",
+      "checksum": "2d24c331c2ccc5e4061722bd4780c8b295041b2569d130bbe80cf7da95b97171"
+    },
+    "aarch64_windows": {
+      "etag": "0x8DD0C1D10099579",
+      "checksum": "35762d3e1979576f474ffc1c5b2273e19c33cdca44e5f1994c3de5d9cd0e9c1d"
+    }
+  }
+}
