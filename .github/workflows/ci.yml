@@ -207,7 +207,7 @@ jobs:
       - run: rm -- Cargo.toml
       - name: Generate tool list
         id: tool-list
-        run: tools/ci/tool-list.sh >>"${GITHUB_OUTPUT}"
+        run: tools/ci/tool-list.sh "" "${{ matrix.container }}" >>"${GITHUB_OUTPUT}"
       # remove bash installed by checkout-action
       - run: apk --no-cache del bash
         shell: sh

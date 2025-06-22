@@ -62,6 +62,7 @@ case "${1:-}" in
     exit 1
     ;;
 esac
+runner="${2:-}"
 case "$(uname -s)" in
   Linux)
     host_os=linux
@@ -109,6 +110,9 @@ case "$(uname -s)" in
       incompat_tools+=(valgrind)
     fi
     if ! type -P apt-get >/dev/null; then
+      incompat_tools+=(cyclonedx)
+    fi
+    if [[ "${runner}" == "ubuntu:14.04" ]]; then
       incompat_tools+=(cyclonedx)
     fi
     ;;
