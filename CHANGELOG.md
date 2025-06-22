@@ -10,11 +10,11 @@ Note: In this file, do not use the hard wrap in the middle of a sentence for com
 
 ## [Unreleased]
 
+- Add `cyclonedx` ([#1000](https://github.com/taiki-e/install-action/pull/1000), thanks @jayvdb)
+
 - Update `wasmtime@latest` to 34.0.0.
 
 - Update `rclone@latest` to 1.70.1.
-
-- Update `cyclonedx@latest` to 0.28.2.
 
 - Update `cargo-binstall@latest` to 1.14.1.
 
