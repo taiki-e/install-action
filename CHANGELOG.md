@@ -10,6 +10,8 @@ Note: In this file, do not use the hard wrap in the middle of a sentence for com
 
 ## [Unreleased]
 
+- Update `knope@latest` to 0.21.0.
+
 ## [2.54.0] - 2025-06-22
 
 - Add `cyclonedx` ([#1000](https://github.com/taiki-e/install-action/pull/1000), thanks @jayvdb)
