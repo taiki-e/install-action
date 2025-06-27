@@ -10,6 +10,8 @@ Note: In this file, do not use the hard wrap in the middle of a sentence for com
 
 ## [Unreleased]
 
+## [2.54.2] - 2025-06-27
+
 - Update `rclone@latest` to 1.70.2.
 
 - Update `zizmor@latest` to 1.10.0.
@@ -4026,7 +4028,8 @@ Note: This release is considered a breaking change because installing on version
 
 Initial release
 
-[Unreleased]: https://github.com/taiki-e/install-action/compare/v2.54.1...HEAD
+[Unreleased]: https://github.com/taiki-e/install-action/compare/v2.54.2...HEAD
+[2.54.2]: https://github.com/taiki-e/install-action/compare/v2.54.1...v2.54.2
 [2.54.1]: https://github.com/taiki-e/install-action/compare/v2.54.0...v2.54.1
 [2.54.0]: https://github.com/taiki-e/install-action/compare/v2.53.2...v2.54.0
 [2.53.2]: https://github.com/taiki-e/install-action/compare/v2.53.1...v2.53.2
