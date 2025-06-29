@@ -82,6 +82,7 @@ jobs:
             bash: msys64
           - os: windows-2025
             bash: cygwin
+          - os: windows-11-arm
           - os: windows-2022
             tool: major.minor.patch
           - os: windows-2022
@@ -139,7 +140,7 @@ jobs:
           if [[ "$(cargo binstall -V)" != "$(jq -r '.latest.version' manifests/cargo-binstall.json)" ]]; then
             exit 1
           fi
-        if: matrix.bash != 'cygwin'
+        if: matrix.bash != 'cygwin' && matrix.os != 'windows-11-arm'
 
   test-container:
     strategy:

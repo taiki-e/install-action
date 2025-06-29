@@ -124,7 +124,10 @@ esac
 case "$(uname -m)" in
   aarch64 | arm64) host_arch=aarch64 ;;
   xscale | arm | armv*l) bail "32-bit Arm runner is not supported yet by this action; if you need support for this platform, please submit an issue at <https://github.com/taiki-e/install-action>" ;;
-  *) host_arch=x86_64 ;;
+  *)
+    # TODO: uname -m on windows-11-arm returns "x86_64"
+    host_arch=x86_64
+    ;;
 esac
 
 tools=()
