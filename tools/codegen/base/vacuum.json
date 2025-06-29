@@ -1,0 +1,25 @@
+{
+  "repository": "https://github.com/daveshanley/vacuum",
+  "tag_prefix": "v",
+  "version_range": ">= 0.17.0",
+  "platform": {
+    "x86_64_linux_musl": {
+      "asset_name": "${package}_${version}_linux_x86_64.tar.gz"
+    },
+    "x86_64_macos": {
+      "asset_name": "${package}_${version}_darwin_x86_64.tar.gz"
+    },
+    "x86_64_windows": {
+      "asset_name": "${package}_${version}_windows_x86_64.tar.gz"
+    },
+    "aarch64_linux_musl": {
+      "asset_name": "${package}_${version}_linux_arm64.tar.gz"
+    },
+    "aarch64_macos": {
+      "asset_name": "${package}_${version}_darwin_arm64.tar.gz"
+    },
+    "aarch64_windows": {
+      "asset_name": "${package}_${version}_windows_arm64.tar.gz"
+    }
+  }
+}

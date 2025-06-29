@@ -822,7 +822,7 @@ for tool in "${tools[@]}"; do
       # cargo-zigbuild has no --version flag on `cargo zigbuild` subcommand.
       cargo-zigbuild) rx "${tool_bin_stem}" --version ;;
       # deepsource has version command instead of --version flag.
-      deepsource) rx "${tool_bin_stem}" version ;;
+      deepsource | vacuum) rx "${tool_bin_stem}" version ;;
       cargo-*)
         case "${tool_bin_stem}" in
           # cargo-valgrind 2.1.0's --version flag just calls cargo's --version flag
