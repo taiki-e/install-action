@@ -1,0 +1,56 @@
+{
+  "rust_crate": null,
+  "template": {
+    "x86_64_linux_musl": {
+      "url": "https://github.com/daveshanley/vacuum/releases/download/v${version}/vacuum_${version}_linux_x86_64.tar.gz"
+    },
+    "x86_64_macos": {
+      "url": "https://github.com/daveshanley/vacuum/releases/download/v${version}/vacuum_${version}_darwin_x86_64.tar.gz"
+    },
+    "x86_64_windows": {
+      "url": "https://github.com/daveshanley/vacuum/releases/download/v${version}/vacuum_${version}_windows_x86_64.tar.gz"
+    },
+    "aarch64_linux_musl": {
+      "url": "https://github.com/daveshanley/vacuum/releases/download/v${version}/vacuum_${version}_linux_arm64.tar.gz"
+    },
+    "aarch64_macos": {
+      "url": "https://github.com/daveshanley/vacuum/releases/download/v${version}/vacuum_${version}_darwin_arm64.tar.gz"
+    },
+    "aarch64_windows": {
+      "url": "https://github.com/daveshanley/vacuum/releases/download/v${version}/vacuum_${version}_windows_arm64.tar.gz"
+    }
+  },
+  "license_markdown": "[MIT](https://github.com/daveshanley/vacuum/blob/main/LICENSE)",
+  "latest": {
+    "version": "0.17.0"
+  },
+  "0.17": {
+    "version": "0.17.0"
+  },
+  "0.17.0": {
+    "x86_64_linux_musl": {
+      "etag": "0x8DDA6B83F4D30AC",
+      "checksum": "8f0361fbe9e2d7442782e98edecdb19b2e75d56ac45f4bb192588d03f57b64f9"
+    },
+    "x86_64_macos": {
+      "etag": "0x8DDA6B83FD942AE",
+      "checksum": "11019c1e93b8c95f51126e1af28d2cc62c5fc90ba7e10846973c876a27612352"
+    },
+    "x86_64_windows": {
+      "etag": "0x8DDA6B83F525AFD",
+      "checksum": "4514ab364f376cb93f4cff23126271b0798b857ece23dd7bc76dac867b8246a0"
+    },
+    "aarch64_linux_musl": {
+      "etag": "0x8DDA6B83F471D03",
+      "checksum": "deb21f4d4db3675c51bc770ae01d6603ea0bdc01fc1fb94f894db3f34bdc9264"
+    },
+    "aarch64_macos": {
+      "etag": "0x8DDA6B83FEDC506",
+      "checksum": "dd3b43fa596345ef63c762d1abaae15ecb5b6cec3d721fcfced260f7e6793178"
+    },
+    "aarch64_windows": {
+      "etag": "0x8DDA6B83FD85952",
+      "checksum": "2696849761308517cfa1ee6e5ab37459d99af05dce0f02f8f539ed67dcabfa55"
+    }
+  }
+}
