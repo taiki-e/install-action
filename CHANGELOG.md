@@ -10,6 +10,8 @@ Note: In this file, do not use the hard wrap in the middle of a sentence for com
 
 ## [Unreleased]
 
+## [2.55.1] - 2025-06-30
+
 - Update `vacuum@latest` to 0.17.1.
 
 - Update `typos@latest` to 1.34.0.
@@ -4042,7 +4044,8 @@ Note: This release is considered a breaking change because installing on version
 
 Initial release
 
-[Unreleased]: https://github.com/taiki-e/install-action/compare/v2.55.0...HEAD
+[Unreleased]: https://github.com/taiki-e/install-action/compare/v2.55.1...HEAD
+[2.55.1]: https://github.com/taiki-e/install-action/compare/v2.55.0...v2.55.1
 [2.55.0]: https://github.com/taiki-e/install-action/compare/v2.54.3...v2.55.0
 [2.54.3]: https://github.com/taiki-e/install-action/compare/v2.54.2...v2.54.3
 [2.54.2]: https://github.com/taiki-e/install-action/compare/v2.54.1...v2.54.2
