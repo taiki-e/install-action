@@ -10,6 +10,8 @@ Note: In this file, do not use the hard wrap in the middle of a sentence for com
 
 ## [Unreleased]
 
+- Support `vacuum`. ([#1016](https://github.com/taiki-e/install-action/pull/1016), thanks @jayvdb)
+
 - Update `cargo-shear@latest` to 1.3.2.
 
 ## [2.54.3] - 2025-06-28
@@ -32,7 +34,7 @@ Note: In this file, do not use the hard wrap in the middle of a sentence for com
 
 ## [2.54.0] - 2025-06-22
 
-- Add `cyclonedx` ([#1000](https://github.com/taiki-e/install-action/pull/1000), thanks @jayvdb)
+- Support `cyclonedx`. ([#1000](https://github.com/taiki-e/install-action/pull/1000), thanks @jayvdb)
 
 - Update `wasmtime@latest` to 34.0.0.
 
