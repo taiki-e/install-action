@@ -10,6 +10,8 @@ Note: In this file, do not use the hard wrap in the middle of a sentence for com
 
 ## [Unreleased]
 
+- Support `coreutils`. ([#1017](https://github.com/taiki-e/install-action/pull/1017), thanks @jayvdb)
+
 ## [2.55.4] - 2025-07-01
 
 - Update `trivy@latest` to 0.64.0.
