@@ -10,6 +10,8 @@ Note: In this file, do not use the hard wrap in the middle of a sentence for com
 
 ## [Unreleased]
 
+- Update `release-plz@latest` to 0.3.137.
+
 ## [2.56.0] - 2025-07-01
 
 - Support `coreutils`. ([#1017](https://github.com/taiki-e/install-action/pull/1017), thanks @jayvdb)
