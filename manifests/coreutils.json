@@ -1,0 +1,62 @@
+{
+  "rust_crate": "coreutils",
+  "template": {
+    "x86_64_linux_musl": {
+      "url": "https://github.com/uutils/coreutils/releases/download/${version}/coreutils-${version}-x86_64-unknown-linux-musl.tar.gz",
+      "bin": "coreutils-${version}-x86_64-unknown-linux-musl/coreutils"
+    },
+    "x86_64_macos": {
+      "url": "https://github.com/uutils/coreutils/releases/download/${version}/coreutils-${version}-x86_64-apple-darwin.tar.gz",
+      "bin": "coreutils-${version}-x86_64-apple-darwin/coreutils"
+    },
+    "x86_64_windows": {
+      "url": "https://github.com/uutils/coreutils/releases/download/${version}/coreutils-${version}-x86_64-pc-windows-msvc.zip",
+      "bin": "coreutils-${version}-x86_64-pc-windows-msvc/coreutils.exe"
+    },
+    "aarch64_linux_musl": {
+      "url": "https://github.com/uutils/coreutils/releases/download/${version}/coreutils-${version}-aarch64-unknown-linux-musl.tar.gz",
+      "bin": "coreutils-${version}-aarch64-unknown-linux-musl/coreutils"
+    },
+    "aarch64_macos": {
+      "url": "https://github.com/uutils/coreutils/releases/download/${version}/coreutils-${version}-aarch64-apple-darwin.tar.gz",
+      "bin": "coreutils-${version}-aarch64-apple-darwin/coreutils"
+    },
+    "aarch64_windows": {
+      "url": "https://github.com/uutils/coreutils/releases/download/${version}/coreutils-${version}-aarch64-pc-windows-msvc.zip",
+      "bin": "coreutils-${version}-aarch64-pc-windows-msvc/coreutils.exe"
+    }
+  },
+  "license_markdown": "[MIT](https://github.com/uutils/coreutils/blob/main/LICENSE)",
+  "latest": {
+    "version": "0.1.0"
+  },
+  "0.1": {
+    "version": "0.1.0"
+  },
+  "0.1.0": {
+    "x86_64_linux_musl": {
+      "etag": "0x8DD9B07C650D18D",
+      "checksum": "463648347b1fc337414a864bda960c9cbd1bd4a540f344c010ff5bb35199e6d7"
+    },
+    "x86_64_macos": {
+      "etag": "0x8DD9B0837D94459",
+      "checksum": "0a27f09f03811289b9ddcff8c6b7c1bf6e971b5eac3dd536208a40e2c1ea9cd9"
+    },
+    "x86_64_windows": {
+      "etag": "0x8DD9B07EF1F3F84",
+      "checksum": "4ff3c7e5149ade20a342487d1c09cc6cc63599af6dfb28d2558b925780a72d82"
+    },
+    "aarch64_linux_musl": {
+      "etag": "0x8DD9B0770F0F163",
+      "checksum": "6572292ee74bb6a7efa88f05d0d0a7a5c696bae0ae341a438b983ae7775c9d47"
+    },
+    "aarch64_macos": {
+      "etag": "0x8DD9B0840DF335A",
+      "checksum": "7d8068f3d11278d96f78eb42b67d240bb8fb2386724ea597481e97ec75265d9c"
+    },
+    "aarch64_windows": {
+      "etag": "0x8DD9B078E16C3DB",
+      "checksum": "9faa0ec0f3df47cafa0a09fcead46da28e2640b5fe1316ad9cb7e11f19050bd4"
+    }
+  }
+}
