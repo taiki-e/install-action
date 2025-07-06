@@ -41,7 +41,7 @@ runs:
           fi
         fi
       shell: sh
-      if: runner.os	== 'Linux'
+      if: runner.os == 'Linux'
     - run: bash --noprofile --norc "${GITHUB_ACTION_PATH:?}/main.sh"
       shell: bash
       env:
