@@ -10,6 +10,8 @@ Note: In this file, do not use the hard wrap in the middle of a sentence for com
 
 ## [Unreleased]
 
+- Update `vacuum@latest` to 0.17.5.
+
 ## [2.56.9] - 2025-07-09
 
 - Update `vacuum@latest` to 0.17.4.
