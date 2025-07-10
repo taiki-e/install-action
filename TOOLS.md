@@ -11,6 +11,7 @@ See the [Supported tools section in README.md](README.md#supported-tools) for ho
 
 | Name | Where binaries will be installed | Where will it be installed from | Supported platform | License |
 | ---- | -------------------------------- | ------------------------------- | ------------------ | ------- |
+| [**agave**](https://github.com/anza-xyz/agave) | `$CARGO_HOME/bin` | [GitHub Releases](https://github.com/anza-xyz/agave/releases) | Linux, macOS | [Apache-2.0](https://github.com/anza-xyz/agave/blob/master/LICENSE) |
 | [**biome**](https://biomejs.dev) | `$HOME/.install-action/bin` | [GitHub Releases](https://github.com/biomejs/biome/releases) | Linux, macOS, Windows | [Apache-2.0](https://github.com/biomejs/biome/blob/main/LICENSE-APACHE) OR [MIT](https://github.com/biomejs/biome/blob/main/LICENSE-MIT) |
 | [**cargo-audit**](https://github.com/rustsec/rustsec/tree/HEAD/cargo-audit) | `$CARGO_HOME/bin` | [GitHub Releases](https://github.com/rustsec/rustsec/releases) | Linux, macOS, Windows | [Apache-2.0](https://github.com/rustsec/rustsec/blob/HEAD/cargo-audit/LICENSE-APACHE) OR [MIT](https://github.com/rustsec/rustsec/blob/HEAD/cargo-audit/LICENSE-MIT) |
 | [**cargo-auditable**](https://github.com/rust-secure-code/cargo-auditable) | `$CARGO_HOME/bin` | [GitHub Releases](https://github.com/rust-secure-code/cargo-auditable/releases) | Linux, macOS, Windows | [Apache-2.0](https://github.com/rust-secure-code/cargo-auditable/blob/HEAD/LICENSE-APACHE) OR [MIT](https://github.com/rust-secure-code/cargo-auditable/blob/HEAD/LICENSE-MIT) |

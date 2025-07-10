@@ -1,0 +1,17 @@
+{
+  "repository": "https://github.com/anza-xyz/agave",
+  "tag_prefix": "v",
+  "rust_crate": "solana-cli",
+  "asset_name": "solana-release-${rust_target}.tar.bz2",
+  "version_range": ">= 2.2.18",
+  "bin": [
+    "solana-release/bin/solana",
+    "solana-release/bin/cargo-test-sbf",
+    "solana-release/bin/cargo-build-sbf"
+  ],
+  "platform": {
+    "x86_64_linux_gnu": {},
+    "x86_64_macos": {},
+    "aarch64_macos": {}
+  }
+}

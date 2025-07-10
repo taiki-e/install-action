@@ -1,0 +1,126 @@
+{
+  "rust_crate": "solana-cli",
+  "template": {
+    "x86_64_linux_gnu": {
+      "url": "https://github.com/anza-xyz/agave/releases/download/v${version}/solana-release-x86_64-unknown-linux-gnu.tar.bz2",
+      "bin": [
+        "solana-release/bin/solana",
+        "solana-release/bin/cargo-test-sbf",
+        "solana-release/bin/cargo-build-sbf"
+      ]
+    },
+    "x86_64_macos": {
+      "url": "https://github.com/anza-xyz/agave/releases/download/v${version}/solana-release-x86_64-apple-darwin.tar.bz2",
+      "bin": [
+        "solana-release/bin/solana",
+        "solana-release/bin/cargo-test-sbf",
+        "solana-release/bin/cargo-build-sbf"
+      ]
+    },
+    "aarch64_macos": {
+      "url": "https://github.com/anza-xyz/agave/releases/download/v${version}/solana-release-aarch64-apple-darwin.tar.bz2",
+      "bin": [
+        "solana-release/bin/solana",
+        "solana-release/bin/cargo-test-sbf",
+        "solana-release/bin/cargo-build-sbf"
+      ]
+    }
+  },
+  "license_markdown": "[Apache-2.0](https://github.com/anza-xyz/agave/blob/master/LICENSE)",
+  "latest": {
+    "version": "2.3.3"
+  },
+  "2": {
+    "version": "2.3.3"
+  },
+  "2.3": {
+    "version": "2.3.3"
+  },
+  "2.3.3": {
+    "x86_64_linux_gnu": {
+      "etag": "0x8DDBA77C7A8E7DF",
+      "checksum": "1a66f91b7dd0e17cb5e792061a068711a98e9ad72aa42dee374b0af0914383ee"
+    },
+    "x86_64_macos": {
+      "etag": "0x8DDBA7C26372FDD",
+      "checksum": "ccabee063d0ef6c0d3d05e032993a88e3e798b4dfec14a908c3ce0de1d098558"
+    },
+    "aarch64_macos": {
+      "etag": "0x8DDBA7AA3FF7467",
+      "checksum": "0de6e171a9f77efeae0c19333330882d06962471fe66c0e2505123d5914ff6a1"
+    }
+  },
+  "2.3.2": {
+    "x86_64_linux_gnu": {
+      "etag": "0x8DDB59D071321F4",
+      "checksum": "c00c965828315fe9ee19a50c427f75af784902e89462e0881c1235fc023e88df"
+    },
+    "x86_64_macos": {
+      "etag": "0x8DDB5A5C2B61A52",
+      "checksum": "683158277177f694a6a899aea883edd61baa72c52509a402c79ef8405b74f64a"
+    },
+    "aarch64_macos": {
+      "etag": "0x8DDB5A10C9D4D84",
+      "checksum": "69bddccc8dff890e9514a9d02829e1c44683f6762fa45a0c8a442fedcbf707d2"
+    }
+  },
+  "2.3.1": {
+    "x86_64_linux_gnu": {
+      "etag": "0x8DDB0357AACD98B",
+      "checksum": "f8c10a835582b2c8dfcc0c42c3f15c13c6dbf477e4150bb5874d615a82446638"
+    },
+    "x86_64_macos": {
+      "etag": "0x8DDB039EEEC6B1F",
+      "checksum": "1a9a94374e50f3c2cecc270d2b8912664a3abb814c8e786d522d1c728c8d4f5f"
+    },
+    "aarch64_macos": {
+      "etag": "0x8DDB0385B0CE4AE",
+      "checksum": "692761c3d46f9e0159ced53c39ee626d85d37d8f2a105ffb6b7a35884444e2bb"
+    }
+  },
+  "2.3.0": {
+    "x86_64_linux_gnu": {
+      "etag": "0x8DDAA33B911A8F0",
+      "checksum": "56241fbe862495ff01b2b875195e44f94c22e9f2a504591a3ade1b9d82862730"
+    },
+    "x86_64_macos": {
+      "etag": "0x8DDAA3A657BD806",
+      "checksum": "646e8e0b70f2b4f985f763b353bd73567b476f371ed26aad680a0491d3695a11"
+    },
+    "aarch64_macos": {
+      "etag": "0x8DDAA36A01FE0CA",
+      "checksum": "dad301dc7b77a93093efc921c602b05397ec8f8c35195940417b3dcc28124d74"
+    }
+  },
+  "2.2": {
+    "version": "2.2.19"
+  },
+  "2.2.19": {
+    "x86_64_linux_gnu": {
+      "etag": "0x8DDBA686EE75F0F",
+      "checksum": "21b8c766d39236abd78c8af26f259da07cfbb6dba95dc5814566a74dcdc118a8"
+    },
+    "x86_64_macos": {
+      "etag": "0x8DDBA6CD0F93A93",
+      "checksum": "c97cf2bf7c1652ad6fa71d7d2f82197eef7574b9a7d78070e055b71e1de8b3cb"
+    },
+    "aarch64_macos": {
+      "etag": "0x8DDBA6B5E892FA6",
+      "checksum": "f48ec5295e1e79759c75851d1169d24515831645776304086d2e5966d393c244"
+    }
+  },
+  "2.2.18": {
+    "x86_64_linux_gnu": {
+      "etag": "0x8DDB4F280DCABC2",
+      "checksum": "e93e34952ad761a2cb28cfa463723c434ed46c947e2996ae724934e988809abf"
+    },
+    "x86_64_macos": {
+      "etag": "0x8DDB4F89663A7EB",
+      "checksum": "c8d191511c41ee3ad84cee8f864edfd9abde2cd108fc40016c1ec90a726b6303"
+    },
+    "aarch64_macos": {
+      "etag": "0x8DDB4F5B2492186",
+      "checksum": "f854402bc017e86378e387a4684d9c461b92a72332f8679ec005f6263e1f6fa2"
+    }
+  }
+}
