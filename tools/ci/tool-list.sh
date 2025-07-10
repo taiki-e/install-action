@@ -21,6 +21,7 @@ glibc_pre_2_34_incompat=(
   espup
   wait-for-them
   xbuild
+  agave
 )
 # version `GLIBC_2.31' not found
 glibc_pre_2_31_incompat=(
