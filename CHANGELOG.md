@@ -10,6 +10,8 @@ Note: In this file, do not use the hard wrap in the middle of a sentence for com
 
 ## [Unreleased]
 
+- Update `wait-for-them@latest` to 0.5.1.
+
 - Update `mdbook@latest` to 0.4.52.
 
 - Update `just@latest` to 1.42.1.
