@@ -180,7 +180,7 @@ jobs:
           sed -i /etc/apt/sources.list -e 's/deb.debian.org/archive.debian.org/g' \
             -e 's|security.debian.org|archive.debian.org/|g' \
             -e '/stretch-updates/d'
-        if: startsWith(matrix.container, 'debian:9')
+        if: startsWith(matrix.container, 'debian:9') || startsWith(matrix.container, 'debian:10')
       - name: Install requirements (centos)
         run: |
           # In CentOS, the old repositories is removed from the main mirrors just after EoL.
