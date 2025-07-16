@@ -10,6 +10,8 @@ Note: In this file, do not use the hard wrap in the middle of a sentence for com
 
 ## [Unreleased]
 
+## [2.56.15] - 2025-07-16
+
 - Fix `cargo-valgrind` installation error due to their tag rename.
 
 - Update `cargo-valgrind@latest` to 2.3.2.
@@ -4150,7 +4152,8 @@ Note: This release is considered a breaking change because installing on version
 
 Initial release
 
-[Unreleased]: https://github.com/taiki-e/install-action/compare/v2.56.14...HEAD
+[Unreleased]: https://github.com/taiki-e/install-action/compare/v2.56.15...HEAD
+[2.56.15]: https://github.com/taiki-e/install-action/compare/v2.56.14...v2.56.15
 [2.56.14]: https://github.com/taiki-e/install-action/compare/v2.56.13...v2.56.14
 [2.56.13]: https://github.com/taiki-e/install-action/compare/v2.56.12...v2.56.13
 [2.56.12]: https://github.com/taiki-e/install-action/compare/v2.56.11...v2.56.12
