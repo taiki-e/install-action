@@ -2,21 +2,83 @@
   "rust_crate": "cargo-valgrind",
   "template": {
     "x86_64_linux_musl": {
-      "url": "https://github.com/jfrimmel/cargo-valgrind/releases/download/v${version}/cargo-valgrind-${version}-x86_64-unknown-linux-musl.tar.gz"
+      "url": "https://github.com/jfrimmel/cargo-valgrind/releases/download/${version}/cargo-valgrind-${version}-x86_64-unknown-linux-musl.tar.gz"
     },
     "x86_64_macos": {
-      "url": "https://github.com/jfrimmel/cargo-valgrind/releases/download/v${version}/cargo-valgrind-${version}-x86_64-apple-darwin.tar.gz"
+      "url": "https://github.com/jfrimmel/cargo-valgrind/releases/download/${version}/cargo-valgrind-${version}-x86_64-apple-darwin.tar.gz"
     },
     "x86_64_windows": {
-      "url": "https://github.com/jfrimmel/cargo-valgrind/releases/download/v${version}/cargo-valgrind-${version}-x86_64-pc-windows-msvc.zip"
+      "url": "https://github.com/jfrimmel/cargo-valgrind/releases/download/${version}/cargo-valgrind-${version}-x86_64-pc-windows-msvc.zip"
     }
   },
   "license_markdown": "[MIT](https://github.com/jfrimmel/cargo-valgrind/blob/master/LICENSE-MIT) OR [Apache-2.0](https://github.com/jfrimmel/cargo-valgrind/blob/master/LICENSE-APACHE)",
   "latest": {
-    "version": "2.1.0"
+    "version": "2.3.2"
   },
   "2": {
-    "version": "2.1.0"
+    "version": "2.3.2"
+  },
+  "2.3": {
+    "version": "2.3.2"
+  },
+  "2.3.2": {
+    "x86_64_linux_musl": {
+      "etag": "0x8DDC3D1A6EC3934",
+      "checksum": "7a21c6f6b9999db31e95d1310a1e3a2090207a648edf9b46d177d4f93259c26a"
+    },
+    "x86_64_macos": {
+      "etag": "0x8DDC3D1A6F35D12",
+      "checksum": "6a07300581be81ee50de9f88febf347a8c213656f125a8c89ee4b2146400f996"
+    },
+    "x86_64_windows": {
+      "etag": "0x8DDC3D1A6EE0BD9",
+      "checksum": "53a99412f32fa18902a0665cf1254716b9b817eed2281872e2b297fbd2db3f25"
+    }
+  },
+  "2.3.1": {
+    "x86_64_linux_musl": {
+      "etag": "0x8DD74F2025E7479",
+      "checksum": "e5953facbdf3532d86f0423852a4035ef8cfd9202e508770011e68a0905eb137"
+    },
+    "x86_64_macos": {
+      "etag": "0x8DD74F20262DC55",
+      "checksum": "466432f2eeaaede71a31c7633254440bc160ccf85a3e12da1d8bd950da86b524"
+    },
+    "x86_64_windows": {
+      "etag": "0x8DD74F2025DD8EC",
+      "checksum": "55d505346951fcefd9ff9c190533c315d60d053f0313f7086b4db17a7a764275"
+    }
+  },
+  "2.3.0": {
+    "x86_64_linux_musl": {
+      "etag": "0x8DD703D825CACA0",
+      "checksum": "d18eef45da5bfabe727e5b4528dfdd1a4998f758583fdc7b2d5867eb9ec998d0"
+    },
+    "x86_64_macos": {
+      "etag": "0x8DD703D8253DCF1",
+      "checksum": "cc2ee6c9c92fdb76eb7d72bb20ec42b749776fdeecd6b2ae06ff1048aa9170d4"
+    },
+    "x86_64_windows": {
+      "etag": "0x8DD703D825B00CF",
+      "checksum": "bf8b48d213adc1e3298dc3d6d78b070790a7c424ca5e7f13674409187e164e00"
+    }
+  },
+  "2.2": {
+    "version": "2.2.1"
+  },
+  "2.2.1": {
+    "x86_64_linux_musl": {
+      "etag": "0x8DCD72C8A619D28",
+      "checksum": "063edb8e26cf9166ff61b5d339844d7ab86264e9f898c99d3cd65ab463725ca6"
+    },
+    "x86_64_macos": {
+      "etag": "0x8DCD72C8A636FDE",
+      "checksum": "b18b1930624d085889b6725d998d15dbaacda634ecf2e15e71079382a84fae6b"
+    },
+    "x86_64_windows": {
+      "etag": "0x8DCD72C8A6A6CD4",
+      "checksum": "7bc3892f31913cc943986fbf4a7fb98c7a0b16cbf5ddd9d3d71f0741c2843fff"
+    }
   },
   "2.1": {
     "version": "2.1.0"
