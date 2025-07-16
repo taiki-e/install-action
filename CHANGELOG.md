@@ -12,7 +12,7 @@ Note: In this file, do not use the hard wrap in the middle of a sentence for com
 
 - Fix `cargo-valgrind` installation error due to their tag rename.
 
-- Update `cargo-valgrind@latest` to 1.42.2.
+- Update `cargo-valgrind@latest` to 2.3.2.
 
 - Update `just@latest` to 1.42.2.
 
