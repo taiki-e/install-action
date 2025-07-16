@@ -10,6 +10,10 @@ Note: In this file, do not use the hard wrap in the middle of a sentence for com
 
 ## [Unreleased]
 
+- Fix `cargo-valgrind` installation error due to their tag rename.
+
+- Update `cargo-valgrind@latest` to 1.42.2.
+
 - Update `just@latest` to 1.42.2.
 
 ## [2.56.14] - 2025-07-15
