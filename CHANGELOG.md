@@ -10,6 +10,8 @@ Note: In this file, do not use the hard wrap in the middle of a sentence for com
 
 ## [Unreleased]
 
+- Update `earthly@latest` to 0.8.16.
+
 ## [2.56.15] - 2025-07-16
 
 - Fix `cargo-valgrind` installation error due to their tag rename.
