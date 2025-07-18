@@ -177,9 +177,10 @@ jobs:
       - name: Install requirements (old debian)
         run: |
           # In Debian, the old repositories is removed from the main mirrors some time after EoL.
+          codename=$(grep -E '^VERSION_CODENAME=' /etc/os-release | cut -d= -f2)
           sed -i /etc/apt/sources.list -e 's/deb.debian.org/archive.debian.org/g' \
             -e 's|security.debian.org|archive.debian.org/|g' \
-            -e '/stretch-updates/d'
+            -e "/${codename}-updates/d"
         if: startsWith(matrix.container, 'debian:9') || startsWith(matrix.container, 'debian:10')
       - name: Install requirements (centos)
         run: |
