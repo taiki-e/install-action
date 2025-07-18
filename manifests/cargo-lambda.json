@@ -20,13 +20,35 @@
   },
   "license_markdown": "[MIT](https://github.com/cargo-lambda/cargo-lambda/blob/main/LICENSE)",
   "latest": {
-    "version": "1.8.5"
+    "version": "1.8.6"
   },
   "1": {
-    "version": "1.8.5"
+    "version": "1.8.6"
   },
   "1.8": {
-    "version": "1.8.5"
+    "version": "1.8.6"
+  },
+  "1.8.6": {
+    "x86_64_linux_musl": {
+      "etag": "0x8DDC59AF749F746",
+      "checksum": "717261a71adad7fdae3056882d2422fc9ecf9232eea9e5aaf8130d1cbb9c76e6"
+    },
+    "x86_64_macos": {
+      "etag": "0x8DDC59AF805BD3F",
+      "checksum": "a43e2dd0d3626d7c7253978801104b6fc8688d27dd2f743d19ba769168014fd6"
+    },
+    "x86_64_windows": {
+      "etag": "0x8DDC59AF8B0F3FF",
+      "checksum": "0cc779c3536ee95305122d687832b27ebeda5df094f8611fb121682a20227b07"
+    },
+    "aarch64_linux_musl": {
+      "etag": "0x8DDC59AF9786CB8",
+      "checksum": "796f96196f3ba14a4a2542cf7f7dd480eb556f9fa5f04653a1ad4dffc5044567"
+    },
+    "aarch64_macos": {
+      "etag": "0x8DDC59AFA2C732D",
+      "checksum": "bc73b657c0cdfe15badca1b2cb485df742dd9d16440dbff17ba0a29655c27c79"
+    }
   },
   "1.8.5": {
     "x86_64_linux_musl": {
