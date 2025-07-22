@@ -533,6 +533,11 @@ case "$(uname -m)" in
     # https://github.com/actions/runner/issues/688
     bail "32-bit Arm runner is not supported yet by this action; if you need support for this platform, please submit an issue at <https://github.com/taiki-e/install-action>"
     ;;
+  loongarch64 | mips | mips64 | ppc | ppc64 | ppc64le | riscv64 | s390x | sun4v)
+    # Very few tools provide prebuilt binaries for these.
+    # TODO: fallback to `cargo install`? (binstall fallback is not good idea here as cargo-binstall doesn't provide prebuilt binaries for these.)
+    bail "$(uname -m) runner is not supported yet by this action; if you need support for this platform, please submit an issue at <https://github.com/taiki-e/install-action>"
+    ;;
   # GitHub Actions Runner supports Linux (x86_64, AArch64, Arm), Windows (x86_64, AArch64),
   # and macOS (x86_64, AArch64).
   # https://github.com/actions/runner/blob/v2.321.0/.github/workflows/build.yml#L21
