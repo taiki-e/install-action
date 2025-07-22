@@ -10,6 +10,8 @@ Note: In this file, do not use the hard wrap in the middle of a sentence for com
 
 ## [Unreleased]
 
+- Update `wasmtime@latest` to 35.0.0.
+
 ## [2.56.21] - 2025-07-22
 
 - Improve error message for unsupported host architectures.
