@@ -10,6 +10,8 @@ Note: In this file, do not use the hard wrap in the middle of a sentence for com
 
 ## [Unreleased]
 
+- Improve error message for unsupported host architectures.
+
 ## [2.56.20] - 2025-07-22
 
 - Update `syft@latest` to 1.29.0.
