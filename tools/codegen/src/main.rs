@@ -50,18 +50,18 @@ fn main() -> Result<()> {
         .strip_prefix("https://github.com/")
         .context("repository must start with https://github.com/")?;
 
-    eprintln!("downloading metadata from https://api.github.com/repos/{repo}");
+    eprintln!("downloading metadata from {GITHUB_API_START}repos/{repo}");
     let repo_info: github::RepoMetadata =
-        download(&format!("https://api.github.com/repos/{repo}"))?.into_json()?;
+        download(&format!("{GITHUB_API_START}repos/{repo}"))?.into_json()?;
 
-    eprintln!("downloading releases from https://api.github.com/repos/{repo}/releases");
+    eprintln!("downloading releases from {GITHUB_API_START}repos/{repo}/releases");
     let mut releases: github::Releases = vec![];
     // GitHub API returns up to 100 results at a time. If the number of releases
     // is greater than 100, multiple fetches are needed.
     for page in 1.. {
         let per_page = 100;
         let mut r: github::Releases = download(&format!(
-            "https://api.github.com/repos/{repo}/releases?per_page={per_page}&page={page}"
+            "{GITHUB_API_START}repos/{repo}/releases?per_page={per_page}&page={page}"
         ))?
         .into_json()?;
         // If version_req is latest, it is usually sufficient to look at the latest 100 releases.
@@ -295,7 +295,7 @@ fn main() -> Result<()> {
                     )
                 })
                 .collect::<Result<Vec<_>>>()?;
-            let (url, asset_name) = match asset_names.iter().find_map(|asset_name| {
+            let (url, digest, asset_name) = match asset_names.iter().find_map(|asset_name| {
                 release
                     .assets
                     .iter()
@@ -303,7 +303,7 @@ fn main() -> Result<()> {
                     .map(|asset| (asset, asset_name))
             }) {
                 Some((asset, asset_name)) => {
-                    (asset.browser_download_url.clone(), asset_name.clone())
+                    (asset.browser_download_url.clone(), &asset.digest, asset_name.clone())
                 }
                 None => {
                     eprintln!("no asset '{asset_names:?}' for host platform '{platform:?}'");
@@ -345,6 +345,13 @@ fn main() -> Result<()> {
             eprintln!("getting sha256 hash for {url}");
             let hash = Sha256::digest(&buf);
             let hash = format!("{hash:x}");
+            if let Some(digest) = digest {
+                if hash != digest.strip_prefix("sha256:").unwrap() {
+                    bail!(
+                        "digest mismatch between GitHub release page and actually downloaded file"
+                    );
+                }
+            }
             eprintln!("{hash} *{asset_name}");
             let bin_url = &url;
 
@@ -687,11 +694,13 @@ struct GitHubTokens {
     // https://github.com/*/*/releases/download/
     other: RwLock<Option<String>>,
 }
+const GITHUB_API_START: &str = "https://api.github.com/";
+const GITHUB_RAW_START: &str = "https://raw.githubusercontent.com/";
 impl GitHubTokens {
     fn get(&self, url: &str) -> Option<String> {
-        if url.starts_with("https://raw.githubusercontent.com/") {
+        if url.starts_with(GITHUB_RAW_START) {
             self.raw.read().unwrap().clone()
-        } else if url.starts_with("https://api.github.com/") {
+        } else if url.starts_with(GITHUB_API_START) {
             self.api.read().unwrap().clone()
         } else if url.starts_with("https://github.com/") {
             self.other.read().unwrap().clone()
@@ -700,9 +709,9 @@ impl GitHubTokens {
         }
     }
     fn clear(&self, url: &str) {
-        if url.starts_with("https://raw.githubusercontent.com/") {
+        if url.starts_with(GITHUB_RAW_START) {
             *self.raw.write().unwrap() = None;
-        } else if url.starts_with("https://api.github.com/") {
+        } else if url.starts_with(GITHUB_API_START) {
             *self.api.write().unwrap() = None;
         } else if url.starts_with("https://github.com/") {
             *self.other.write().unwrap() = None;
@@ -723,6 +732,7 @@ fn download(url: &str) -> Result<ureq::Response> {
     let mut retry = 0;
     let mut retry_time = 0;
     let mut max_retry = 6;
+    let is_github_api = url.starts_with(GITHUB_API_START);
     if token.is_none() {
         max_retry /= 2;
     }
@@ -731,6 +741,11 @@ fn download(url: &str) -> Result<ureq::Response> {
         let mut req = ureq::get(url);
         if let Some(token) = &token {
             req = req.set("Authorization", &format!("Bearer {token}"));
+        }
+        if is_github_api {
+            req = req
+                .set("Accept", "application/vnd.github+json")
+                .set("X-GitHub-Api-Version", "2022-11-28");
         }
         match req.call() {
             Ok(res) => return Ok(res),
@@ -793,13 +808,13 @@ fn github_head(url: &str) -> Result<()> {
 #[allow(dead_code)]
 #[must_use]
 fn create_github_raw_link(repository: &str, branch: &str, filename: &str) -> String {
-    format!("https://raw.githubusercontent.com/{repository}/{branch}/{filename}")
+    format!("{GITHUB_RAW_START}{repository}/{branch}/{filename}")
 }
 
 /// Create URLs for https://docs.github.com/en/rest/repos/contents
 #[must_use]
 fn github_content_api_url(repository: &str, branch: &str, filename: &str) -> String {
-    format!("https://api.github.com/repos/{repository}/contents/{filename}?ref={branch}")
+    format!("{GITHUB_API_START}repos/{repository}/contents/{filename}?ref={branch}")
 }
 
 #[must_use]
@@ -958,6 +973,8 @@ mod github {
     pub(crate) struct ReleaseAsset {
         pub(crate) name: String,
         // pub(crate) content_type: String,
+        // Note that this field is null if the release is old.
+        pub(crate) digest: Option<String>,
         pub(crate) browser_download_url: String,
     }
 }
