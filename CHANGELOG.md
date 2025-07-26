@@ -10,6 +10,8 @@ Note: In this file, do not use the hard wrap in the middle of a sentence for com
 
 ## [Unreleased]
 
+- Support `mdbook-alerts`. ([#1060](https://github.com/taiki-e/install-action/pull/1060), thanks @CommanderStorm)
+
 ## [2.56.24] - 2025-07-25
 
 - Update `just@latest` to 1.42.4.
