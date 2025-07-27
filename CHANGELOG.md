@@ -10,6 +10,8 @@ Note: In this file, do not use the hard wrap in the middle of a sentence for com
 
 ## [Unreleased]
 
+- Update `cargo-binstall@latest` to 1.14.2.
+
 ## [2.57.0] - 2025-07-26
 
 - Support `mdbook-alerts`. ([#1060](https://github.com/taiki-e/install-action/pull/1060), thanks @CommanderStorm)
