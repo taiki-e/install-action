@@ -10,6 +10,8 @@ Note: In this file, do not use the hard wrap in the middle of a sentence for com
 
 ## [Unreleased]
 
+## [2.57.4] - 2025-07-31
+
 - Update `trivy@latest` to 0.65.0.
 
 ## [2.57.3] - 2025-07-31
@@ -4216,7 +4218,8 @@ Note: This release is considered a breaking change because installing on version
 
 Initial release
 
-[Unreleased]: https://github.com/taiki-e/install-action/compare/v2.57.3...HEAD
+[Unreleased]: https://github.com/taiki-e/install-action/compare/v2.57.4...HEAD
+[2.57.4]: https://github.com/taiki-e/install-action/compare/v2.57.3...v2.57.4
 [2.57.3]: https://github.com/taiki-e/install-action/compare/v2.57.2...v2.57.3
 [2.57.2]: https://github.com/taiki-e/install-action/compare/v2.57.1...v2.57.2
 [2.57.1]: https://github.com/taiki-e/install-action/compare/v2.57.0...v2.57.1
