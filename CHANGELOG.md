@@ -10,6 +10,8 @@ Note: In this file, do not use the hard wrap in the middle of a sentence for com
 
 ## [Unreleased]
 
+- Update `shellcheck@latest` to 0.11.0.
+
 - Update `cargo-nextest@latest` to 0.9.102.
 
 - Update `cargo-binstall@latest` to 1.14.3.
