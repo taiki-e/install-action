@@ -824,6 +824,8 @@ for tool in "${tools[@]}"; do
       cargo-auditable | cargo-careful | wasm-bindgen-test-runner) ;;
       # wasm2es6js does not support --version flag and --help flag doesn't contains version info.
       wasm2es6js) ;;
+      # iai-callgrind-runner --version works only with iai-callgrind in nearby Cargo.toml.
+      iai-callgrind-runner) ;;
       # cargo-zigbuild has no --version flag on `cargo zigbuild` subcommand.
       cargo-zigbuild) rx "${tool_bin_stem}" --version ;;
       # deepsource has version command instead of --version flag.
