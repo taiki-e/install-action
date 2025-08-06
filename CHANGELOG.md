@@ -10,6 +10,8 @@ Note: In this file, do not use the hard wrap in the middle of a sentence for com
 
 ## [Unreleased]
 
+- Support `iai-callgrind-runner`. ([#1073](https://github.com/taiki-e/install-action/pull/1073), thanks @niklasf)
+
 - Update `vacuum@latest` to 0.17.8.
 
 ## [2.57.8] - 2025-08-05
