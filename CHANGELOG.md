@@ -10,6 +10,8 @@ Note: In this file, do not use the hard wrap in the middle of a sentence for com
 
 ## [Unreleased]
 
+- Update `grcov@latest` to 0.10.5.
+
 ## [2.58.0] - 2025-08-06
 
 - Support `iai-callgrind-runner`. ([#1073](https://github.com/taiki-e/install-action/pull/1073), thanks @niklasf)
