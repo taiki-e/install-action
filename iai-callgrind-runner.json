@@ -1,0 +1,327 @@
+{
+  "rust_crate": "iai-callgrind-runner",
+  "template": {
+    "x86_64_linux_musl": {
+      "url": "https://github.com/iai-callgrind/iai-callgrind/releases/download/v${version}/iai-callgrind-runner-v${version}-x86_64-unknown-linux-musl.tar.gz",
+      "bin": "iai-callgrind-runner-v${version}-x86_64-unknown-linux-musl/iai-callgrind-runner"
+    },
+    "aarch64_linux_gnu": {
+      "url": "https://github.com/iai-callgrind/iai-callgrind/releases/download/v${version}/iai-callgrind-runner-v${version}-aarch64-unknown-linux-gnu.tar.gz",
+      "bin": "iai-callgrind-runner-v${version}-aarch64-unknown-linux-gnu/iai-callgrind-runner"
+    }
+  },
+  "license_markdown": "[Apache-2.0](https://github.com/iai-callgrind/iai-callgrind/blob/main/LICENSE-APACHE) OR [MIT](https://github.com/iai-callgrind/iai-callgrind/blob/main/LICENSE-MIT)",
+  "latest": {
+    "version": "0.16.1"
+  },
+  "0.16": {
+    "version": "0.16.1"
+  },
+  "0.16.1": {
+    "x86_64_linux_musl": {
+      "etag": "0x8DDCF39A96F72FB",
+      "checksum": "91eb9b72dc906a7e65a881975ad05d3847293c264380734b67a81fe0869d6add"
+    },
+    "aarch64_linux_gnu": {
+      "etag": "0x8DDCF39AA603DBD",
+      "checksum": "046c854014745a7d26ecc58cd8b8ca99ef39d856a3ab6b933f34503845d5bfe4"
+    }
+  },
+  "0.16.0": {
+    "x86_64_linux_musl": {
+      "etag": "0x8DDC727676B88D7",
+      "checksum": "a42342bee47d346ebd07fcc9d38c2361562e0257f8ef818b0a4b0b3da8825403"
+    },
+    "aarch64_linux_gnu": {
+      "etag": "0x8DDC7276074BEF9",
+      "checksum": "2fd52785c84ac7ffcc58fb3823a5a41259d79652b38e9be2ff27acdb9669f4f2"
+    }
+  },
+  "0.15": {
+    "version": "0.15.2"
+  },
+  "0.15.2": {
+    "x86_64_linux_musl": {
+      "etag": "0x8DDBA9FA7C7F5BC",
+      "checksum": "17cc4f476dbe80421f083b8f8dc9cfc87536f928f0df989e3495e867fe0e85b2"
+    },
+    "aarch64_linux_gnu": {
+      "etag": "0x8DDBA9FC030E9CE",
+      "checksum": "001a74159bb8e1df71c7e869e5affbf03dd2d04973aa78f80f08284f6cd76729"
+    }
+  },
+  "0.15.1": {
+    "x86_64_linux_musl": {
+      "etag": "0x8DDB28A3F64BA80",
+      "checksum": "642dcfdc7cf177b533e6b256625821534f9c3fbec4b82cdf4801deef127983f7"
+    },
+    "aarch64_linux_gnu": {
+      "etag": "0x8DDB28A3C2E3BDA",
+      "checksum": "d13a9b47a43c52250bb7d20f067d794cc334de72e3eff1f4c0d0e11729e36ee0"
+    }
+  },
+  "0.15.0": {
+    "x86_64_linux_musl": {
+      "etag": "0x8DDB1AA679CFD40",
+      "checksum": "e29236e32ecc336769a3e2bfd21767a9dcc4731923f3e4109a1eb6cdc3bc853b"
+    },
+    "aarch64_linux_gnu": {
+      "etag": "0x8DDB1AA663BED65",
+      "checksum": "75f202448236cf3f84b708bbd89d6419759b844fea32a2178c2d06be4d23efcd"
+    }
+  },
+  "0.14": {
+    "version": "0.14.2"
+  },
+  "0.14.2": {
+    "x86_64_linux_musl": {
+      "etag": "0x8DDA3994FB0B23E",
+      "checksum": "93ac74ad73d177dafd9a5f92fb966e127d6ef6e56bed21e0938385144884d774"
+    },
+    "aarch64_linux_gnu": {
+      "etag": "0x8DDA3994786E21F",
+      "checksum": "0a4c7173b19d1cc3af291c1079eabb0d5adaa0447a2f449fc51cb42895dfc5a0"
+    }
+  },
+  "0.14.1": {
+    "x86_64_linux_musl": {
+      "etag": "0x8DDA0279190DA6D",
+      "checksum": "11eedc86af052931909067b374f48a67819c31c18d98f5e16fb1ac51ccf0c856"
+    },
+    "aarch64_linux_gnu": {
+      "etag": "0x8DDA0278DE4516B",
+      "checksum": "04e5dcd9cfabb790e76ecb85334242e1e4b85bc6c7b476c5ba4f26da23d95d77"
+    }
+  },
+  "0.14.0": {
+    "x86_64_linux_musl": {
+      "etag": "0x8DCE544C78A74A1",
+      "checksum": "d29f7c123ea0bcd7881c4e8bf0866a884c095e8427198cd78c0f78df26126d80"
+    },
+    "aarch64_linux_gnu": {
+      "etag": "0x8DCE544C50F4680",
+      "checksum": "fa5d97f4d0c65ed166f481ff6860999bab3f631b3ce6e5b7c3effb83083c49e8"
+    }
+  },
+  "0.13": {
+    "version": "0.13.4"
+  },
+  "0.13.4": {
+    "x86_64_linux_musl": {
+      "etag": "0x8DCD3059119E097",
+      "checksum": "7be1c839519c19ca060f0464d184f709c98fc1cc0765224b5594c692677fc2f4"
+    },
+    "aarch64_linux_gnu": {
+      "etag": "0x8DCD305930DFEF0",
+      "checksum": "c8ceb777d684757ef72a3efa1b2d096aee7d609d8355286c5d7807df21a7ccd9"
+    }
+  },
+  "0.13.3": {
+    "x86_64_linux_musl": {
+      "etag": "0x8DCCDC74D8786B9",
+      "checksum": "3651c79c8c9b2854beba6e2b8141b1a5fce711ba5956eef0d0066b38d1466bce"
+    },
+    "aarch64_linux_gnu": {
+      "etag": "0x8DCCDC74D0F0DD1",
+      "checksum": "cfe93bef2b61b2d3c0c79951931989afb912dd74ecf25045322b80ce94b75c35"
+    }
+  },
+  "0.13.2": {
+    "x86_64_linux_musl": {
+      "etag": "0x8DCCC252EFEEEA2",
+      "checksum": "03e6e73078a01edaae6c9c13b8bf120b9019aaa086f2caf47d44540040a97055"
+    },
+    "aarch64_linux_gnu": {
+      "etag": "0x8DCCC252BB6F730",
+      "checksum": "6286a7f442a839810b7922fc85b1d6404efa4916ec7fc6f4b11b5ffe7f9444aa"
+    }
+  },
+  "0.13.1": {
+    "x86_64_linux_musl": {
+      "etag": "0x8DCC77938FF531B",
+      "checksum": "41ad61dacc9538a016bc17d6ee0e30876548dfdf48a9df7121aa236f157922c6"
+    },
+    "aarch64_linux_gnu": {
+      "etag": "0x8DCC77940910E9A",
+      "checksum": "5b291f2b091361fcbcd8e5e9c51f90bd92d3b946121377cf9005bd92a150ff18"
+    }
+  },
+  "0.13.0": {
+    "x86_64_linux_musl": {
+      "etag": "0x8DCC07B97C53D24",
+      "checksum": "e755d87f103a6e045b94e718749f38cacc584a9e063c4c291f8e3766809e82c8"
+    },
+    "aarch64_linux_gnu": {
+      "etag": "0x8DCC07B8D13CF3C",
+      "checksum": "dda5153b19254bff0e57d54570f9c3aa2b15f5c90cdc403ac3be839fc254a3dd"
+    }
+  },
+  "0.12": {
+    "version": "0.12.3"
+  },
+  "0.12.3": {
+    "x86_64_linux_musl": {
+      "etag": "0x8DCB82A5C3EA864",
+      "checksum": "68b4330521496aa53fc4d65b102d0099553fcd03cafaffb9f50ff393d52e5431"
+    },
+    "aarch64_linux_gnu": {
+      "etag": "0x8DCB82A4FEA14A0",
+      "checksum": "96085a1e5c76ca31f8263bbbb21aaba8683e64f4fc7a44bddd3e317c6d5ad12b"
+    }
+  },
+  "0.12.2": {
+    "x86_64_linux_musl": {
+      "etag": "0x8DCB5DBD772DCFD",
+      "checksum": "86c483c5108ea0edd168468e2ebcec5a470f84aedea6a896ea438bcfefb9cc3a"
+    },
+    "aarch64_linux_gnu": {
+      "etag": "0x8DCB5DBB4D125A9",
+      "checksum": "c44f3d696da89290a661ed8a9377f657eeefeaf74196bf9cc9bae5085d8ec034"
+    }
+  },
+  "0.12.1": {
+    "x86_64_linux_musl": {
+      "etag": "0x8DCB18132513D20",
+      "checksum": "d049f05f15431ebe57c1e99d523d0989f08a3c5b36e11c22bc997c9e54d772b8"
+    },
+    "aarch64_linux_gnu": {
+      "etag": "0x8DCB181313A4FC1",
+      "checksum": "f1362fb0878f14efa5d21c9f90d345a62f1d0902936efeaf2ee8f7e6b65aa06e"
+    }
+  },
+  "0.12.0": {
+    "x86_64_linux_musl": {
+      "etag": "0x8DCABCE0E6283EC",
+      "checksum": "61ab6c736eb336d058915c7144af780cc189e07c197d657f3d6b443d6cad66dc"
+    },
+    "aarch64_linux_gnu": {
+      "etag": "0x8DCABCE1A20665B",
+      "checksum": "b8cfec969772d28d99bd55dc5668ad2ac209952b6f02e0842ad03c28cb7c7c1c"
+    }
+  },
+  "0.11": {
+    "version": "0.11.1"
+  },
+  "0.11.1": {
+    "x86_64_linux_musl": {
+      "etag": "0x8DC9CB3B1D1333B",
+      "checksum": "6897123450f7858ff0d88ae29c99c06192d396c6e988a2ba0a210fabe4c8aa03"
+    },
+    "aarch64_linux_gnu": {
+      "etag": "0x8DC9CB3AD358999",
+      "checksum": "fffeca96947fb4ffa87c59cb7d0d6718fc04507c2e5bcf9c1f7308789fd31a93"
+    }
+  },
+  "0.11.0": {
+    "x86_64_linux_musl": {
+      "etag": "0x8DC6FEE950D7202",
+      "checksum": "239e656ef935557e0fb2420bbbc946eac5959fd0cb6c77eb10e606b32c9e8319"
+    },
+    "aarch64_linux_gnu": {
+      "etag": "0x8DC6FEE79B1CAC3",
+      "checksum": "449bbaba10870700c23156379f863c22cf7da2d55bb7bf2605d2fe9ca3d0bf33"
+    }
+  },
+  "0.10": {
+    "version": "0.10.2"
+  },
+  "0.10.2": {
+    "x86_64_linux_musl": {
+      "etag": "0x8DC1E6F97883B93",
+      "checksum": "2c4c6999cddb64786028350ea3e6d0514b1091b52acd9ac5bfa9bc500486ebaa"
+    },
+    "aarch64_linux_gnu": {
+      "etag": "0x8DC1E6F90A8B28B",
+      "checksum": "a048881f1ff66a75a0a790fbc7298f5c428faaac7183dfc9f6276e300e291028"
+    }
+  },
+  "0.10.1": {
+    "x86_64_linux_musl": {
+      "etag": "0x8DC1BBCBC50A298",
+      "checksum": "18e9e3e43353b730e7ab94f74b48c79a6adf69612afecde8ab1b1b319defe4a2"
+    },
+    "aarch64_linux_gnu": {
+      "etag": "0x8DC1BBCB6A61B61",
+      "checksum": "dd4f7fc4a4c60f997842767df0b76b8f9a21681fca27afe5708facdaac5570c7"
+    }
+  },
+  "0.10.0": {
+    "x86_64_linux_musl": {
+      "etag": "0x8DC1BC082B47434",
+      "checksum": "af074f4c1d8e391c9e7f272e2430a84e31f5848f170b81d1a1305fe85d0290a6"
+    },
+    "aarch64_linux_gnu": {
+      "etag": "0x8DC1BC080D06FDC",
+      "checksum": "0bce1e6aa80cd3dc4ea101f87248dd8c163b69c1a2f6589100e3e33364cd6794"
+    }
+  },
+  "0.9": {
+    "version": "0.9.0"
+  },
+  "0.9.0": {
+    "x86_64_linux_musl": {
+      "etag": "0x8DC1BC1F881E121",
+      "checksum": "32d283c63c7bae79a89ecf16ba9295b43fc1d67e8b556abafd23c7fa7d289011"
+    },
+    "aarch64_linux_gnu": {
+      "etag": "0x8DC1BC1F0EBBD89",
+      "checksum": "b56c2ff2074473dc3f861bf5db16c5b793d382bd1ac45aa5b2aca5dbd4a58f3a"
+    }
+  },
+  "0.8": {
+    "version": "0.8.0"
+  },
+  "0.8.0": {
+    "x86_64_linux_musl": {
+      "etag": "0x8DC1BC33C9E0B02",
+      "checksum": "f8958c83c4223763a3acde138ad287d6a00e33687bcecc0ac2604ac3a7bd5c70"
+    },
+    "aarch64_linux_gnu": {
+      "etag": "0x8DC1BC3378EED4A",
+      "checksum": "78f1cb4cb76960cb66694f255851300964d2a369d36cd23a8ef13ba0520fb61a"
+    }
+  },
+  "0.7": {
+    "version": "0.7.3"
+  },
+  "0.7.3": {
+    "x86_64_linux_musl": {
+      "etag": "0x8DC1BC4F896188D",
+      "checksum": "5033bfd7f836c255079f2b991af1d24c70807b7b8b8a592485b7d34145275bb1"
+    },
+    "aarch64_linux_gnu": {
+      "etag": "0x8DC1BC4E38A6BBC",
+      "checksum": "ad40bb4434d2c63af1860cac19fa75ee665ddc7e4705b00716250f26f93bef39"
+    }
+  },
+  "0.7.2": {
+    "x86_64_linux_musl": {
+      "etag": "0x8DC1BC57757B741",
+      "checksum": "a91e76652a726957e0d2b4ed839caf32c018c8c316e98d32b2fe72f9d73fbfa6"
+    },
+    "aarch64_linux_gnu": {
+      "etag": "0x8DC1BC56B0981A4",
+      "checksum": "ec42a83f5d96b20b21701cd2926f22dbe7165d11876951e4cdf8e4c42d5fc15e"
+    }
+  },
+  "0.7.1": {
+    "x86_64_linux_musl": {
+      "etag": "0x8DC1BC5E18E9C3A",
+      "checksum": "485ac64e37dd1c5b815d03f461e86473dc2703a12a10209364c994f47837321a"
+    },
+    "aarch64_linux_gnu": {
+      "etag": "0x8DC1BC5E04C3C91",
+      "checksum": "efa92a9150a1e4db738389f625423f7ebd5011216f4dc340826852be34992af8"
+    }
+  },
+  "0.7.0": {
+    "x86_64_linux_musl": {
+      "etag": "0x8DC1BC67B19106F",
+      "checksum": "4787787b730ac704a8199deb0bcf8655247f47d7598f893c168ec53ae2e21bc4"
+    },
+    "aarch64_linux_gnu": {
+      "etag": "0x8DC1BC67BFE9D4D",
+      "checksum": "63a6c14fc5a93b0ccce2a6ceb7855c3688f0296fbf95ee40ed84d6d5f56ccce4"
+    }
+  }
+}
