@@ -2,27 +2,69 @@
   "rust_crate": "martin",
   "template": {
     "x86_64_linux_musl": {
-      "url": "https://github.com/maplibre/martin/releases/download/v${version}/martin-x86_64-unknown-linux-musl.tar.gz"
+      "url": "https://github.com/maplibre/martin/releases/download/v${version}/martin-x86_64-unknown-linux-musl.tar.gz",
+      "bin": [
+        "martin",
+        "martin-cp"
+      ]
     },
     "x86_64_macos": {
-      "url": "https://github.com/maplibre/martin/releases/download/v${version}/martin-x86_64-apple-darwin.tar.gz"
+      "url": "https://github.com/maplibre/martin/releases/download/v${version}/martin-x86_64-apple-darwin.tar.gz",
+      "bin": [
+        "martin",
+        "martin-cp"
+      ]
     },
     "x86_64_windows": {
-      "url": "https://github.com/maplibre/martin/releases/download/v${version}/martin-x86_64-pc-windows-msvc.zip"
+      "url": "https://github.com/maplibre/martin/releases/download/v${version}/martin-x86_64-pc-windows-msvc.zip",
+      "bin": [
+        "martin.exe",
+        "martin-cp.exe"
+      ]
     },
     "aarch64_linux_musl": {
-      "url": "https://github.com/maplibre/martin/releases/download/v${version}/martin-aarch64-unknown-linux-musl.tar.gz"
+      "url": "https://github.com/maplibre/martin/releases/download/v${version}/martin-aarch64-unknown-linux-musl.tar.gz",
+      "bin": [
+        "martin",
+        "martin-cp"
+      ]
     },
     "aarch64_macos": {
-      "url": "https://github.com/maplibre/martin/releases/download/v${version}/martin-aarch64-apple-darwin.tar.gz"
+      "url": "https://github.com/maplibre/martin/releases/download/v${version}/martin-aarch64-apple-darwin.tar.gz",
+      "bin": [
+        "martin",
+        "martin-cp"
+      ]
     }
   },
   "license_markdown": "[MIT](https://github.com/maplibre/martin/blob/main/LICENSE-MIT) OR [Apache-2.0](https://github.com/maplibre/martin/blob/main/LICENSE-APACHE)",
   "latest": {
-    "version": "0.18.0"
+    "version": "0.18.1"
   },
   "0.18": {
-    "version": "0.18.0"
+    "version": "0.18.1"
+  },
+  "0.18.1": {
+    "x86_64_linux_musl": {
+      "etag": "0x8DDD51B0062C124",
+      "checksum": "720e965cb518ba8a7c0b5a05ab8f0710ec87d0747786878fecffddeecd64ce2f"
+    },
+    "x86_64_macos": {
+      "etag": "0x8DDD51B00670215",
+      "checksum": "bcb6539293a424afb6afcc85587b136a1a6ca9e8174e5f7cd4c3c4d897b4f892"
+    },
+    "x86_64_windows": {
+      "etag": "0x8DDD51B0054A056",
+      "checksum": "089b7275e49ccd77e224bfd22d72e970e5a9b578cd1c7befa2526d95052dbe81"
+    },
+    "aarch64_linux_musl": {
+      "etag": "0x8DDD51B00505F51",
+      "checksum": "e00e2d1c5c3313742f937ecdf354a8a686ea70882dfdbc9138d3eda0d8c6f789"
+    },
+    "aarch64_macos": {
+      "etag": "0x8DDD51B003BDCF7",
+      "checksum": "7f422bd3589cc5e9cacf203f685115b462d7b82a33c5150def21f7b11613b6fa"
+    }
   },
   "0.18.0": {
     "x86_64_linux_musl": {
