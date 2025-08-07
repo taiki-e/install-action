@@ -2,24 +2,23 @@
   "repository": "https://github.com/maplibre/martin",
   "tag_prefix": "v",
   "rust_crate": "${package}",
-  "asset_name": "${package}-${rust_target}",
+  "asset_name": "${package}-${rust_target}.tar.gz",
   "version_range": ">= 0.11.0",
-  "bin": ["${asset_name}/martin${exe}", "${asset_name}/martin-cp${exe}"],
+  "bin": [
+    "${package}-${rust_target}/martin${exe}",
+    "${package}-${rust_target}/martin-cp${exe}"
+  ],
   "platform": {
-    "x86_64_linux_musl": {
-      "asset_name": "${package}-${rust_target}.tar.gz"
-    },
-    "x86_64_macos": {
-      "asset_name": "${package}-${rust_target}.tar.gz"
-    },
+    "x86_64_linux_musl": {},
+    "x86_64_macos": {},
     "x86_64_windows": {
-      "asset_name": "${package}-${rust_target}.zip"
+      "asset_name": "${package}-${rust_target}.zip",
+      "bin": [
+        "${package}-${rust_target}/martin${exe}",
+        "${package}-${rust_target}/martin-cp${exe}"
+      ]
     },
-    "aarch64_linux_musl": {
-      "asset_name": "${package}-${rust_target}.tar.gz"
-    },
-    "aarch64_macos": {
-      "asset_name": "${package}-${rust_target}.tar.gz"
-    }
+    "aarch64_linux_musl": {},
+    "aarch64_macos": {}
   }
 }
