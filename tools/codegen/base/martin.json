@@ -4,10 +4,7 @@
   "rust_crate": "${package}",
   "asset_name": "${package}-${rust_target}",
   "version_range": ">= 0.11.0",
-  "bin": [
-    "${package}-${rust_target}/martin${exe}",
-    "${package}-${rust_target}/martin-cp${exe}"
-  ],
+  "bin": ["${asset_name}/martin${exe}", "${asset_name}/martin-cp${exe}"],
   "platform": {
     "x86_64_linux_musl": {
       "asset_name": "${package}-${rust_target}.tar.gz"
