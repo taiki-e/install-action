@@ -10,6 +10,8 @@ Note: In this file, do not use the hard wrap in the middle of a sentence for com
 
 ## [Unreleased]
 
+- Update `knope@latest` to 0.21.2.
+
 - Update `cyclonedx@latest` to 0.29.1.
 
 ## [2.58.6] - 2025-08-10
