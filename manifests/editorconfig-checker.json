@@ -3,10 +3,51 @@
   "template": null,
   "license_markdown": "[MIT](https://github.com/editorconfig-checker/editorconfig-checker/blob/main/LICENSE)",
   "latest": {
-    "version": "3.3.0"
+    "version": "3.4.0"
   },
   "3": {
-    "version": "3.3.0"
+    "version": "3.4.0"
+  },
+  "3.4": {
+    "version": "3.4.0"
+  },
+  "3.4.0": {
+    "x86_64_linux_musl": {
+      "url": "https://github.com/editorconfig-checker/editorconfig-checker/releases/download/v3.4.0/ec-linux-amd64.tar.gz",
+      "etag": "0x8DDD8CE62EC3191",
+      "checksum": "feae0baaf8d55e51fd9b6c9e04497f2fb288b40034110fb9ac83fb1bf0b6011e",
+      "bin": "bin/ec-linux-amd64"
+    },
+    "x86_64_macos": {
+      "url": "https://github.com/editorconfig-checker/editorconfig-checker/releases/download/v3.4.0/ec-darwin-amd64.tar.gz",
+      "etag": "0x8DDD8CE62D6512A",
+      "checksum": "4ca65c73af0a32afdb25f87e0e92defd89a4e02d3d9fc4ea113b59ae8b2fa231",
+      "bin": "bin/ec-darwin-amd64"
+    },
+    "x86_64_windows": {
+      "url": "https://github.com/editorconfig-checker/editorconfig-checker/releases/download/v3.4.0/ec-windows-amd64.zip",
+      "etag": "0x8DDD8CE62A738E7",
+      "checksum": "b984d60742bf9cf0d38bcc53ce09cd106b8c07ab259577e74b12c6f20a3282a5",
+      "bin": "bin/ec-windows-amd64.exe"
+    },
+    "aarch64_linux_musl": {
+      "url": "https://github.com/editorconfig-checker/editorconfig-checker/releases/download/v3.4.0/ec-linux-arm64.tar.gz",
+      "etag": "0x8DDD8CE624B76AB",
+      "checksum": "4c0d8f1737c6978aab1467a8e7bce414a1996ff95f1cbf7470ba99b2d5e62036",
+      "bin": "bin/ec-linux-arm64"
+    },
+    "aarch64_macos": {
+      "url": "https://github.com/editorconfig-checker/editorconfig-checker/releases/download/v3.4.0/ec-darwin-arm64.tar.gz",
+      "etag": "0x8DDD8CE61FFF585",
+      "checksum": "220371cf7cdb09d3334c91683674a932b65015b5679d5d83f83a74e7f2ce7f5a",
+      "bin": "bin/ec-darwin-arm64"
+    },
+    "aarch64_windows": {
+      "url": "https://github.com/editorconfig-checker/editorconfig-checker/releases/download/v3.4.0/ec-windows-arm64.zip",
+      "etag": "0x8DDD8CE6338C2B8",
+      "checksum": "a4e67cdf578df008717d187010a95d80cc502892724e5a3366c6067a25ae0b35",
+      "bin": "bin/ec-windows-arm64.exe"
+    }
   },
   "3.3": {
     "version": "3.3.0"
