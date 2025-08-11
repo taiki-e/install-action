@@ -10,6 +10,8 @@ Note: In this file, do not use the hard wrap in the middle of a sentence for com
 
 ## [Unreleased]
 
+## [2.58.7] - 2025-08-11
+
 - Update `knope@latest` to 0.21.2.
 
 - Update `cyclonedx@latest` to 0.29.1.
@@ -4278,7 +4280,8 @@ Note: This release is considered a breaking change because installing on version
 
 Initial release
 
-[Unreleased]: https://github.com/taiki-e/install-action/compare/v2.58.6...HEAD
+[Unreleased]: https://github.com/taiki-e/install-action/compare/v2.58.7...HEAD
+[2.58.7]: https://github.com/taiki-e/install-action/compare/v2.58.6...v2.58.7
 [2.58.6]: https://github.com/taiki-e/install-action/compare/v2.58.5...v2.58.6
 [2.58.5]: https://github.com/taiki-e/install-action/compare/v2.58.4...v2.58.5
 [2.58.4]: https://github.com/taiki-e/install-action/compare/v2.58.3...v2.58.4
