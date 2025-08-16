@@ -3,10 +3,36 @@
   "template": null,
   "license_markdown": "[MIT](https://github.com/knope-dev/knope/blob/main/LICENSE)",
   "latest": {
-    "version": "0.21.2"
+    "version": "0.21.3"
   },
   "0.21": {
-    "version": "0.21.2"
+    "version": "0.21.3"
+  },
+  "0.21.3": {
+    "x86_64_linux_musl": {
+      "url": "https://github.com/knope-dev/knope/releases/download/knope/v0.21.3/knope-x86_64-unknown-linux-musl.tgz",
+      "etag": "0x8DDDC68A7B5D9B8",
+      "checksum": "42fa7688064e49e9899ce17792da58e4f27a57fa3d0be3d9d5b0bcf32bf1af1f",
+      "bin": "knope-x86_64-unknown-linux-musl/knope"
+    },
+    "x86_64_macos": {
+      "url": "https://github.com/knope-dev/knope/releases/download/knope/v0.21.3/knope-x86_64-apple-darwin.tgz",
+      "etag": "0x8DDDC68A7B344AA",
+      "checksum": "a2dc8718362513279b5dc5aaa0b818e9a9419a201f1a082273087ea5255cef33",
+      "bin": "knope-x86_64-apple-darwin/knope"
+    },
+    "x86_64_windows": {
+      "url": "https://github.com/knope-dev/knope/releases/download/knope/v0.21.3/knope-x86_64-pc-windows-msvc.tgz",
+      "etag": "0x8DDDC68A7BF1E24",
+      "checksum": "8333895fcc0e61eb1153e6fd4cef3f1c143d272239709e3ccbd7eb3f7310a5ea",
+      "bin": "knope-x86_64-pc-windows-msvc/knope.exe"
+    },
+    "aarch64_macos": {
+      "url": "https://github.com/knope-dev/knope/releases/download/knope/v0.21.3/knope-aarch64-apple-darwin.tgz",
+      "etag": "0x8DDDC68A7B69C2B",
+      "checksum": "f564e4cf6ac54f2feeeeda8228f129272f25fe4f881a81aa3d9783b4eafac756",
+      "bin": "knope-aarch64-apple-darwin/knope"
+    }
   },
   "0.21.2": {
     "x86_64_linux_musl": {
