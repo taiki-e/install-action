@@ -834,16 +834,14 @@ fn get_license_markdown(spdx_expr: &str, repo: &str, default_branch: &str) -> Op
             ExprNode::Req(ExpressionReq {
                 req:
                     spdx::LicenseReq {
-                        license: spdx::LicenseItem::Spdx { id, or_later },
-                        exception,
-                        ..
+                        license: spdx::LicenseItem::Spdx { id, or_later }, addition, ..
                     },
                 ..
             }) => {
                 if *or_later {
                     panic!("need to handle or_later");
                 }
-                if let Some(exception_id) = exception {
+                if let Some(spdx::AdditionItem::Spdx(exception_id)) = addition {
                     license_ids.push((id, Some(exception_id)));
                 } else {
                     license_ids.push((id, None));
