@@ -834,9 +834,7 @@ fn get_license_markdown(spdx_expr: &str, repo: &str, default_branch: &str) -> Op
             ExprNode::Req(ExpressionReq {
                 req:
                     spdx::LicenseReq {
-                        license: spdx::LicenseItem::Spdx { id, or_later },
-                        addition,
-                        ..
+                        license: spdx::LicenseItem::Spdx { id, or_later }, addition, ..
                     },
                 ..
             }) => {
