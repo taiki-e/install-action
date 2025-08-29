@@ -157,11 +157,14 @@ jobs:
           - debian:10-slim # glibc 2.28
           - debian:11-slim # glibc 2.31
           - debian:12-slim # glibc 2.36
+          - debian:13-slim # glibc 2.41
           - fedora:latest # glibc 2.39 (as of fedora 40)
           - almalinux:8 # glibc 2.28
           - almalinux:8-minimal # glibc 2.28
           - almalinux:9 # glibc 2.34
           - almalinux:9-minimal # glibc 2.34
+          - almalinux:10 # glibc 2.39
+          - almalinux:10-minimal # glibc 2.39
           - centos:6 # glibc 2.12
           - centos:7 # glibc 2.17
           - opensuse/leap:latest # glibc 2.38 (as of leap 15.6)
