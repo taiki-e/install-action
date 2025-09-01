@@ -10,6 +10,8 @@ Note: In this file, do not use the hard wrap in the middle of a sentence for com
 
 ## [Unreleased]
 
+## [2.58.30] - 2025-09-01
+
 - Update `release-plz@latest` to 0.3.142.
 
 - Update `cargo-binstall@latest` to 1.15.3.
@@ -4386,7 +4388,8 @@ Note: This release is considered a breaking change because installing on version
 
 Initial release
 
-[Unreleased]: https://github.com/taiki-e/install-action/compare/v2.58.29...HEAD
+[Unreleased]: https://github.com/taiki-e/install-action/compare/v2.58.30...HEAD
+[2.58.30]: https://github.com/taiki-e/install-action/compare/v2.58.29...v2.58.30
 [2.58.29]: https://github.com/taiki-e/install-action/compare/v2.58.28...v2.58.29
 [2.58.28]: https://github.com/taiki-e/install-action/compare/v2.58.27...v2.58.28
 [2.58.27]: https://github.com/taiki-e/install-action/compare/v2.58.26...v2.58.27
