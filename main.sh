@@ -219,7 +219,7 @@ read_manifest() {
     if [[ "${rust_crate}" != "null" ]]; then
       # TODO: don't hardcode tool name and use 'immediate_yank_reflection' field in base manifest.
       case "${tool}" in
-        cargo-nextest | nextest)
+        cargo-nextest)
           crate_info=$(curl -v --user-agent "${ACTION_USER_AGENT}" --proto '=https' --tlsv1.2 -fsSL --retry 10 "https://crates.io/api/v1/crates/${rust_crate}" || true)
           if [[ -n "${crate_info}" ]]; then
             while true; do
@@ -258,7 +258,7 @@ read_manifest() {
       elif [[ "${host_env}" == "gnu" ]]; then
         # TODO: don't hardcode tool name and use 'prefer_linux_gnu' field in base manifest.
         case "${tool}" in
-          cargo-nextest | nextest)
+          cargo-nextest)
             # TODO: don't hardcode required glibc version
             required_glibc_version=2.27
             higher_glibc_version=$(LC_ALL=C sort -Vu <<<"${required_glibc_version}"$'\n'"${host_glibc_version}" | tail -1)
@@ -743,10 +743,11 @@ for tool in "${tools[@]}"; do
       continue
       ;;
     *)
-      # Handle aliases
+      # Handle aliases.
+      # NB: Update alias list in tools/publish.rs.
       case "${tool}" in
-        cargo-nextest | nextest) tool=cargo-nextest ;;
-        taplo-cli | taplo) tool=taplo ;;
+        nextest) tool=cargo-nextest ;;
+        taplo-cli) tool=taplo ;;
       esac
 
       # Use cargo-binstall fallback if tool is not available.

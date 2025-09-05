@@ -141,6 +141,26 @@ jobs:
           fi
         if: matrix.bash != 'cygwin' && matrix.os != 'windows-11-arm'
 
+  test-alias:
+    runs-on: ubuntu-latest
+    timeout-minutes: 60
+    steps:
+      - uses: taiki-e/checkout-action@v1
+      # cross attempts to install rust-src when Cargo.toml is available even if `cross --version`
+      - run: rm -- Cargo.toml
+      - run: env
+      - uses: ./
+        with:
+          tool: nextest,taplo-cli
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+      - name: Test bash
+        run: cargo-nextest nextest --version && taplo --version
+        shell: bash
+      - name: Test sh
+        run: cargo-nextest nextest --version && taplo --version
+        shell: sh
+
   test-container:
     strategy:
       fail-fast: false

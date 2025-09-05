@@ -133,9 +133,13 @@ for tool in tools/codegen/base/*.json; do
   tool="${tool##*/}"
   tools+=("${tool%.*}")
 done
-# Alias
-tools+=(nextest)
-# Not manifest-based
+# Aliases.
+# NB: Update case for aliases in main.rs.
+tools+=(
+  nextest
+  taplo-cli
+)
+# Non-manifest-based tools.
 tools+=(valgrind)
 
 for tool in "${tools[@]}"; do
