@@ -10,6 +10,8 @@ Note: In this file, do not use the hard wrap in the middle of a sentence for com
 
 ## [Unreleased]
 
+## [2.58.33] - 2025-09-05
+
 - Update `wasm-bindgen@latest` to 0.2.101.
 
 - Update `typos@latest` to 1.36.2.
@@ -4402,7 +4404,8 @@ Note: This release is considered a breaking change because installing on version
 
 Initial release
 
-[Unreleased]: https://github.com/taiki-e/install-action/compare/v2.58.32...HEAD
+[Unreleased]: https://github.com/taiki-e/install-action/compare/v2.58.33...HEAD
+[2.58.33]: https://github.com/taiki-e/install-action/compare/v2.58.32...v2.58.33
 [2.58.32]: https://github.com/taiki-e/install-action/compare/v2.58.31...v2.58.32
 [2.58.31]: https://github.com/taiki-e/install-action/compare/v2.58.30...v2.58.31
 [2.58.30]: https://github.com/taiki-e/install-action/compare/v2.58.29...v2.58.30
