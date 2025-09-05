@@ -746,6 +746,7 @@ for tool in "${tools[@]}"; do
       # Handle aliases
       case "${tool}" in
         cargo-nextest | nextest) tool=cargo-nextest ;;
+        taplo-cli | taplo) tool=taplo ;;
       esac
 
       # Use cargo-binstall fallback if tool is not available.
