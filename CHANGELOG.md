@@ -10,6 +10,8 @@ Note: In this file, do not use the hard wrap in the middle of a sentence for com
 
 ## [Unreleased]
 
+## [2.59.0] - 2025-09-05
+
 - Accept `taplo-cli` as an alias for `taplo`. ([#1128](https://github.com/taiki-e/install-action/pull/1128), thanks @arctic-alpaca)
 
 ## [2.58.33] - 2025-09-05
@@ -4406,7 +4408,8 @@ Note: This release is considered a breaking change because installing on version
 
 Initial release
 
-[Unreleased]: https://github.com/taiki-e/install-action/compare/v2.58.33...HEAD
+[Unreleased]: https://github.com/taiki-e/install-action/compare/v2.59.0...HEAD
+[2.59.0]: https://github.com/taiki-e/install-action/compare/v2.58.33...v2.59.0
 [2.58.33]: https://github.com/taiki-e/install-action/compare/v2.58.32...v2.58.33
 [2.58.32]: https://github.com/taiki-e/install-action/compare/v2.58.31...v2.58.32
 [2.58.31]: https://github.com/taiki-e/install-action/compare/v2.58.30...v2.58.31
