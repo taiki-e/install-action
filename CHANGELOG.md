@@ -10,6 +10,8 @@ Note: In this file, do not use the hard wrap in the middle of a sentence for com
 
 ## [Unreleased]
 
+- Accept `taplo-cli` as an alias for `taplo`. ([#1128](https://github.com/taiki-e/install-action/pull/1128), thanks @arctic-alpaca)
+
 ## [2.58.33] - 2025-09-05
 
 - Update `wasm-bindgen@latest` to 0.2.101.
