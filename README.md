@@ -86,8 +86,9 @@ If you want to ensure that fallback is not used, use `fallback: none`.
   with:
     tool: cargo-hack
     # Possible values:
-    # - none: disable all fallback
-    # - cargo-binstall (default): cargo-binstall (includes quickinstall)
+    # - none: disable all fallback options
+    # - cargo-binstall (default): use cargo-binstall (includes quickinstall)
+    # - cargo-install: use `cargo install`
     fallback: none
 ```
 

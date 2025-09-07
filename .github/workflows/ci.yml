@@ -162,6 +162,37 @@ jobs:
         run: cargo-nextest nextest --version && taplo --version
         shell: sh
 
+  test-fallback:
+    strategy:
+      fail-fast: false
+      matrix:
+        fallback:
+          - none
+          - cargo-install
+    runs-on: ubuntu-24.04-arm
+    timeout-minutes: 60
+    steps:
+      - uses: taiki-e/checkout-action@v1
+      # cross attempts to install rust-src when Cargo.toml is available even if `cross --version`
+      - run: rm -- Cargo.toml
+      - run: env
+      - uses: ./
+        id: install
+        continue-on-error: ${{ matrix.fallback == 'none' }}
+        with:
+          tool: parse-changelog@0.4.6
+          fallback: ${{ matrix.fallback }}
+      - run: exit 1
+        if: matrix.fallback == 'none' && steps.install.outcome != 'failure'
+      - name: Test bash
+        run: parse-changelog --version
+        shell: bash
+        if: matrix.fallback != 'none'
+      - name: Test sh
+        run: parse-changelog --version
+        shell: sh
+        if: matrix.fallback != 'none'
+
   test-container:
     strategy:
       fail-fast: false

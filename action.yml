@@ -11,7 +11,7 @@ inputs:
     required: false
     default: 'true'
   fallback:
-    description: Whether to use fallback (none or cargo-binstall)
+    description: Whether to use fallback (none, cargo-binstall, cargo-install)
     required: false
     default: 'cargo-binstall'
 
