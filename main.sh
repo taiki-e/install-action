@@ -459,8 +459,8 @@ esac
 
 fallback="${INPUT_FALLBACK:-}"
 case "${fallback}" in
-  none | cargo-binstall) ;;
-  *) bail "'fallback' input option must be 'none' or 'cargo-binstall': '${fallback}'" ;;
+  none | cargo-binstall | cargo-install) ;;
+  *) bail "'fallback' input option must be 'none', 'cargo-binstall', or 'cargo-install': '${fallback}'" ;;
 esac
 
 # Refs: https://github.com/rust-lang/rustup/blob/HEAD/rustup-init.sh
@@ -859,20 +859,30 @@ if [[ ${#unsupported_tools[@]} -gt 0 ]]; then
   case "${fallback}" in
     none) bail "install-action does not support ${unsupported_tools[*]} (fallback is disabled by 'fallback: none' input option)" ;;
   esac
-  info "install-action does not support ${unsupported_tools[*]}; fallback to cargo-binstall"
-  IFS=$'\n\t'
-  install_cargo_binstall
-  if [[ -z "${GITHUB_TOKEN:-}" ]] && [[ -n "${DEFAULT_GITHUB_TOKEN:-}" ]]; then
-    export GITHUB_TOKEN="${DEFAULT_GITHUB_TOKEN}"
-  fi
-  # By default, cargo-binstall enforce downloads over secure transports only.
-  # As a result, http will be disabled, and it will also set
-  # min tls version to be 1.2
-  cargo-binstall binstall --force --no-confirm --locked "${unsupported_tools[@]}"
-  if ! type -P cargo >/dev/null; then
-    _bin_dir=$(canonicalize_windows_path "${home}/.cargo/bin")
-    # TODO: avoid this when already added
-    info "adding '${_bin_dir}' to PATH"
-    printf '%s\n' "${_bin_dir}" >>"${GITHUB_PATH}"
-  fi
+  case "${fallback}" in
+    cargo-binstall)
+      info "install-action does not support ${unsupported_tools[*]}; fallback to cargo-binstall"
+      IFS=$'\n\t'
+      install_cargo_binstall
+      if [[ -z "${GITHUB_TOKEN:-}" ]] && [[ -n "${DEFAULT_GITHUB_TOKEN:-}" ]]; then
+        export GITHUB_TOKEN="${DEFAULT_GITHUB_TOKEN}"
+      fi
+      # By default, cargo-binstall enforce downloads over secure transports only.
+      # As a result, http will be disabled, and it will also set
+      # min tls version to be 1.2
+      cargo-binstall binstall --force --no-confirm --locked "${unsupported_tools[@]}"
+      if ! type -P cargo >/dev/null; then
+        _bin_dir=$(canonicalize_windows_path "${home}/.cargo/bin")
+        # TODO: avoid this when already added
+        info "adding '${_bin_dir}' to PATH"
+        printf '%s\n' "${_bin_dir}" >>"${GITHUB_PATH}"
+      fi
+      ;;
+    cargo-install)
+      info "install-action does not support ${unsupported_tools[*]}; fallback to cargo-install"
+      IFS=$'\n\t'
+      cargo install --locked "${unsupported_tools[@]}"
+      ;;
+    *) bail "unhandled fallback ${fallback}" ;;
+  esac
 fi

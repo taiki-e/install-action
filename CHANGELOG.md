@@ -10,6 +10,8 @@ Note: In this file, do not use the hard wrap in the middle of a sentence for com
 
 ## [Unreleased]
 
+- Add `fallback: cargo-install` input option to use `cargo install` instead of `cargo-binstall` for fallback.
+
 - Accept `typos-cli` as an alias for `typos`.
 
 - Accept `wasm-bindgen-cli` as an alias for `wasm-bindgen`.
