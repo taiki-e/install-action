@@ -10,6 +10,12 @@ Note: In this file, do not use the hard wrap in the middle of a sentence for com
 
 ## [Unreleased]
 
+- Accept `typos-cli` as an alias for `typos`.
+
+- Accept `wasm-bindgen-cli` as an alias for `wasm-bindgen`.
+
+- Accept `wasmtime-cli` as an alias for `wasmtime`.
+
 - Update `parse-dockerfile@latest` to 0.1.2.
 
 - Update `parse-changelog@latest` to 0.6.13.

@@ -744,10 +744,11 @@ for tool in "${tools[@]}"; do
       ;;
     *)
       # Handle aliases.
-      # NB: Update alias list in tools/publish.rs.
+      # NB: Update alias list in tools/publish.rs and tool input option in test-alias in .github/workflows/ci.yml.
+      # TODO(codegen): auto-detect cases where crate name and tool name are different.
       case "${tool}" in
         nextest) tool=cargo-nextest ;;
-        taplo-cli) tool=taplo ;;
+        taplo-cli | typos-cli | wasm-bindgen-cli | wasmtime-cli) tool="${tool%-cli}" ;;
       esac
 
       # Use cargo-binstall fallback if tool is not available.

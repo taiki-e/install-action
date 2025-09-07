@@ -134,10 +134,13 @@ for tool in tools/codegen/base/*.json; do
   tools+=("${tool%.*}")
 done
 # Aliases.
-# NB: Update case for aliases in main.rs.
+# NB: Update case for aliases in main.sh and tool input option in test-alias in .github/workflows/ci.yml.
 tools+=(
   nextest
   taplo-cli
+  typos-cli
+  wasm-bindgen-cli
+  wasmtime-cli
 )
 # Non-manifest-based tools.
 tools+=(valgrind)
