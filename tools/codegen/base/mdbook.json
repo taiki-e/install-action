@@ -5,6 +5,7 @@
   "asset_name": "${package}-v${version}-${rust_target}.tar.gz",
   "version_range": ">= 0.1.0",
   "platform": {
+    "x86_64_linux_gnu": {},
     "x86_64_linux_musl": {},
     "x86_64_macos": {},
     "x86_64_windows": {

@@ -1,7 +1,7 @@
 {
   "repository": "https://github.com/wasm-bindgen/wasm-bindgen",
   "tag_prefix": "",
-  "rust_crate": "wasm-bindgen-cli",
+  "rust_crate": "${package}-cli",
   "version_range": ">= 0.2.88",
   "asset_name": "wasm-bindgen-${version}-${rust_target}.tar.gz",
   "bin": [

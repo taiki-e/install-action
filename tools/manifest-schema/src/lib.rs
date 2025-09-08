@@ -285,16 +285,6 @@ impl BaseManifest {
         if self.platform.is_empty() {
             panic!("At least one platform must be specified");
         }
-        if !self.prefer_linux_gnu
-            && (self.platform.contains_key(&HostPlatform::x86_64_linux_gnu)
-                && self.platform.contains_key(&HostPlatform::x86_64_linux_musl))
-            && (self.platform.contains_key(&HostPlatform::aarch64_linux_gnu)
-                && self.platform.contains_key(&HostPlatform::aarch64_linux_musl))
-        {
-            panic!(
-                "When *-linux-musl platform is specified, *-linux-gnu for the same architecture will never be used and should not be specified"
-            );
-        }
     }
 }
 
@@ -347,10 +337,12 @@ impl StringOrArray {
     }
 }
 
-/// GitHub Actions Runner supports Linux (x86_64, AArch64, Arm), Windows (x86_64, AArch64),
-/// and macOS (x86_64, AArch64).
+/// GitHub Actions Runner supports x86_64/AArch64/Arm Linux, x86_64/AArch64 Windows,
+/// and x86_64/AArch64 macOS.
 /// <https://github.com/actions/runner/blob/v2.321.0/.github/workflows/build.yml#L21>
-/// <https://docs.github.com/en/actions/hosting-your-own-runners/about-self-hosted-runners#supported-architectures-and-operating-systems-for-self-hosted-runners>
+/// <https://docs.github.com/en/actions/reference/runners/self-hosted-runners#supported-processor-architectures>
+/// And IBM provides runners for powerpc64le/s390x Linux.
+/// <https://github.com/IBM/actionspz>
 ///
 /// Note:
 /// - Static-linked binaries compiled for linux-musl will also work on linux-gnu systems and are
@@ -376,6 +368,12 @@ pub enum HostPlatform {
     aarch64_linux_musl,
     aarch64_macos,
     aarch64_windows,
+    powerpc64le_linux_gnu,
+    powerpc64le_linux_musl,
+    riscv64_linux_gnu,
+    riscv64_linux_musl,
+    s390x_linux_gnu,
+    s390x_linux_musl,
 }
 
 impl HostPlatform {
@@ -390,6 +388,12 @@ impl HostPlatform {
             Self::aarch64_linux_musl => "aarch64-unknown-linux-musl",
             Self::aarch64_macos => "aarch64-apple-darwin",
             Self::aarch64_windows => "aarch64-pc-windows-msvc",
+            Self::powerpc64le_linux_gnu => "powerpc64le-unknown-linux-gnu",
+            Self::powerpc64le_linux_musl => "powerpc64le-unknown-linux-musl",
+            Self::riscv64_linux_gnu => "riscv64gc-unknown-linux-gnu",
+            Self::riscv64_linux_musl => "riscv64gc-unknown-linux-musl",
+            Self::s390x_linux_gnu => "s390x-unknown-linux-gnu",
+            Self::s390x_linux_musl => "s390x-unknown-linux-musl",
         }
     }
     #[must_use]
@@ -403,6 +407,9 @@ impl HostPlatform {
             | Self::x86_64_linux_musl
             | Self::x86_64_macos
             | Self::x86_64_windows => "x86_64",
+            Self::powerpc64le_linux_gnu | Self::powerpc64le_linux_musl => "powerpc64",
+            Self::riscv64_linux_gnu | Self::riscv64_linux_musl => "riscv64",
+            Self::s390x_linux_gnu | Self::s390x_linux_musl => "s390x",
         }
     }
     #[must_use]
@@ -411,7 +418,13 @@ impl HostPlatform {
             Self::aarch64_linux_gnu
             | Self::aarch64_linux_musl
             | Self::x86_64_linux_gnu
-            | Self::x86_64_linux_musl => "linux",
+            | Self::x86_64_linux_musl
+            | Self::powerpc64le_linux_gnu
+            | Self::powerpc64le_linux_musl
+            | Self::riscv64_linux_gnu
+            | Self::riscv64_linux_musl
+            | Self::s390x_linux_gnu
+            | Self::s390x_linux_musl => "linux",
             Self::aarch64_macos | Self::x86_64_macos => "macos",
             Self::aarch64_windows | Self::x86_64_windows => "windows",
         }

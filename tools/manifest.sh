@@ -9,6 +9,15 @@ cd -- "$(dirname -- "$0")"/..
 #
 # USAGE:
 #    ./tools/manifest.sh [PACKAGE [VERSION_REQ]]
+#    ./tools/manifest.sh full
+
+if [[ $# -eq 1 ]] && [[ "$1" == "full" ]]; then
+  for manifest in tools/codegen/base/*.json; do
+    package="${manifest##*/}"
+    package="${package%.*}"
+    cargo run --manifest-path tools/codegen/Cargo.toml --release -- "${package}"
+  done
+fi
 
 if [[ $# -gt 0 ]]; then
   cargo run --manifest-path tools/codegen/Cargo.toml --release -- "$@"

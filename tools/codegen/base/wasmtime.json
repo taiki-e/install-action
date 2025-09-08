@@ -1,7 +1,7 @@
 {
   "repository": "https://github.com/bytecodealliance/wasmtime",
   "tag_prefix": "v",
-  "rust_crate": "wasmtime-cli",
+  "rust_crate": "${package}-cli",
   "asset_name": "${package}-v${version}-${rust_target_arch}-${rust_target_os}.tar.xz",
   "bin": "${package}-v${version}-${rust_target_arch}-${rust_target_os}/${package}${exe}",
   "platform": {
@@ -14,6 +14,11 @@
     "aarch64_macos": {},
     "aarch64_windows": {
       "asset_name": "${package}-v${version}-${rust_target_arch}-${rust_target_os}.zip"
-    }
+    },
+    "riscv64_linux_gnu": {
+      "asset_name": "${package}-v${version}-riscv64gc-${rust_target_os}.tar.xz",
+      "bin": "${package}-v${version}-riscv64gc-${rust_target_os}/${package}${exe}"
+    },
+    "s390x_linux_gnu": {}
   }
 }

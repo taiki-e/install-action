@@ -19,6 +19,9 @@
     },
     "aarch64_macos": {
       "asset_name": "${package}-v${version}.darwin.aarch64.tar.xz"
+    },
+    "riscv64_linux_musl": {
+      "asset_name": "${package}-v${version}.linux.riscv64.tar.xz"
     }
   }
 }

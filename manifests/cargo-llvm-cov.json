@@ -15,6 +15,15 @@
     },
     "aarch64_macos": {
       "url": "https://github.com/taiki-e/cargo-llvm-cov/releases/download/v${version}/cargo-llvm-cov-aarch64-apple-darwin.tar.gz"
+    },
+    "powerpc64le_linux_musl": {
+      "url": "https://github.com/taiki-e/cargo-llvm-cov/releases/download/v${version}/cargo-llvm-cov-powerpc64le-unknown-linux-musl.tar.gz"
+    },
+    "riscv64_linux_musl": {
+      "url": "https://github.com/taiki-e/cargo-llvm-cov/releases/download/v${version}/cargo-llvm-cov-riscv64gc-unknown-linux-musl.tar.gz"
+    },
+    "s390x_linux_gnu": {
+      "url": "https://github.com/taiki-e/cargo-llvm-cov/releases/download/v${version}/cargo-llvm-cov-s390x-unknown-linux-gnu.tar.gz"
     }
   },
   "license_markdown": "[Apache-2.0](https://github.com/taiki-e/cargo-llvm-cov/blob/main/LICENSE-APACHE) OR [MIT](https://github.com/taiki-e/cargo-llvm-cov/blob/main/LICENSE-MIT)",
@@ -44,6 +53,18 @@
     "aarch64_macos": {
       "etag": "0x8DDEE14AEBB9845",
       "checksum": "c612fd5b617e0ef8d872f2f9c7b4e88bf42dc3659f0685b36cc77314d132d511"
+    },
+    "powerpc64le_linux_musl": {
+      "etag": "0x8DDEE14745ACD36",
+      "checksum": "eccfc9c149929f7bb29324e2e58736ff2a6e37c59bb92edf393db435d8f3d62c"
+    },
+    "riscv64_linux_musl": {
+      "etag": "0x8DDEE14700DB012",
+      "checksum": "180084851ee5b94fa3c22d9266766dfed9fc85be06d1c1a46ade953ad9dc7bd2"
+    },
+    "s390x_linux_gnu": {
+      "etag": "0x8DDEE147D18E1D6",
+      "checksum": "bc7dfe69816ccd529aac91f99332532e1d95080e112962fa0bf8a445dc1f3202"
     }
   },
   "0.6.18": {

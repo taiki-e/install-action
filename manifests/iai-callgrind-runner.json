@@ -8,6 +8,18 @@
     "aarch64_linux_gnu": {
       "url": "https://github.com/iai-callgrind/iai-callgrind/releases/download/v${version}/iai-callgrind-runner-v${version}-aarch64-unknown-linux-gnu.tar.gz",
       "bin": "iai-callgrind-runner-v${version}-aarch64-unknown-linux-gnu/iai-callgrind-runner"
+    },
+    "powerpc64le_linux_gnu": {
+      "url": "https://github.com/iai-callgrind/iai-callgrind/releases/download/v${version}/iai-callgrind-runner-v${version}-powerpc64le-unknown-linux-gnu.tar.gz",
+      "bin": "iai-callgrind-runner-v${version}-powerpc64le-unknown-linux-gnu/iai-callgrind-runner"
+    },
+    "riscv64_linux_gnu": {
+      "url": "https://github.com/iai-callgrind/iai-callgrind/releases/download/v${version}/iai-callgrind-runner-v${version}-riscv64gc-unknown-linux-gnu.tar.gz",
+      "bin": "iai-callgrind-runner-v${version}-riscv64gc-unknown-linux-gnu/iai-callgrind-runner"
+    },
+    "s390x_linux_gnu": {
+      "url": "https://github.com/iai-callgrind/iai-callgrind/releases/download/v${version}/iai-callgrind-runner-v${version}-s390x-unknown-linux-gnu.tar.gz",
+      "bin": "iai-callgrind-runner-v${version}-s390x-unknown-linux-gnu/iai-callgrind-runner"
     }
   },
   "license_markdown": "[Apache-2.0](https://github.com/iai-callgrind/iai-callgrind/blob/main/LICENSE-APACHE) OR [MIT](https://github.com/iai-callgrind/iai-callgrind/blob/main/LICENSE-MIT)",
@@ -25,6 +37,18 @@
     "aarch64_linux_gnu": {
       "etag": "0x8DDCF39AA603DBD",
       "checksum": "046c854014745a7d26ecc58cd8b8ca99ef39d856a3ab6b933f34503845d5bfe4"
+    },
+    "powerpc64le_linux_gnu": {
+      "etag": "0x8DDCF39D49039EC",
+      "checksum": "0e2e8f3b8179e9c7bafa9004ee292983c7937acc3b4b7ba716cc6d53445f6144"
+    },
+    "riscv64_linux_gnu": {
+      "etag": "0x8DDCF39AD1489B5",
+      "checksum": "284524fc5296a7d2120a716f5f727f6a3166a47ea991a6210e52bb7764b3e83a"
+    },
+    "s390x_linux_gnu": {
+      "etag": "0x8DDCF39D7D7E3A2",
+      "checksum": "7c2e986e7122bc9f63c418b9b64083328a6e6131f93c77c9845a712d1eb83f7a"
     }
   },
   "0.16.0": {
@@ -35,6 +59,18 @@
     "aarch64_linux_gnu": {
       "etag": "0x8DDC7276074BEF9",
       "checksum": "2fd52785c84ac7ffcc58fb3823a5a41259d79652b38e9be2ff27acdb9669f4f2"
+    },
+    "powerpc64le_linux_gnu": {
+      "etag": "0x8DDC7275F1250A6",
+      "checksum": "df60a775e9b4a9c790663044f5c2ff35e25510748b3287d76e4a1eafaf3bc91d"
+    },
+    "riscv64_linux_gnu": {
+      "etag": "0x8DDCC37FF80FE2D",
+      "checksum": "388a03348fe4c67fa95cd74cdeda36d9d8cb5367eb1abd9556288e17bd251cee"
+    },
+    "s390x_linux_gnu": {
+      "etag": "0x8DDC7275F993875",
+      "checksum": "bf2edc4abe642f06f82e94bd9f23baeed128003d7e5d93346d0cc1cb1264477e"
     }
   },
   "0.15": {
@@ -48,6 +84,18 @@
     "aarch64_linux_gnu": {
       "etag": "0x8DDBA9FC030E9CE",
       "checksum": "001a74159bb8e1df71c7e869e5affbf03dd2d04973aa78f80f08284f6cd76729"
+    },
+    "powerpc64le_linux_gnu": {
+      "etag": "0x8DDBA9F9E2A15DE",
+      "checksum": "34daa5aa7241e9abcf627b5548dc0772268e1ddaa956ca956c4e6a49866b0e87"
+    },
+    "riscv64_linux_gnu": {
+      "etag": "0x8DDCCA9F28D0A69",
+      "checksum": "a43463aa0e7198905bc9087f6943bb802a5eab94562e2dcc85e2d4e27217c500"
+    },
+    "s390x_linux_gnu": {
+      "etag": "0x8DDBA9F9FDA25D5",
+      "checksum": "80a3ce040e99c8562de5976bb37c0d4de8dc754f2affedaca31ab4eb005c9a78"
     }
   },
   "0.15.1": {
@@ -58,6 +106,18 @@
     "aarch64_linux_gnu": {
       "etag": "0x8DDB28A3C2E3BDA",
       "checksum": "d13a9b47a43c52250bb7d20f067d794cc334de72e3eff1f4c0d0e11729e36ee0"
+    },
+    "powerpc64le_linux_gnu": {
+      "etag": "0x8DDB28A3E428FAE",
+      "checksum": "4a637bb303993f5b8690f5908e58c1f28d8674cbb6f8e45206198633a4a094a4"
+    },
+    "riscv64_linux_gnu": {
+      "etag": "0x8DDCCA9A031A1A0",
+      "checksum": "ec110904ae2036d874df0a79c180d5aedcdf9e96ae87b608ec9df3d6f79d79e8"
+    },
+    "s390x_linux_gnu": {
+      "etag": "0x8DDB28A488D4F3C",
+      "checksum": "78b230b1a74a214afef90807d95469072acbad7408e4154c7412efe2d4de9ed5"
     }
   },
   "0.15.0": {
@@ -68,6 +128,18 @@
     "aarch64_linux_gnu": {
       "etag": "0x8DDB1AA663BED65",
       "checksum": "75f202448236cf3f84b708bbd89d6419759b844fea32a2178c2d06be4d23efcd"
+    },
+    "powerpc64le_linux_gnu": {
+      "etag": "0x8DDB1AA645160C2",
+      "checksum": "7e96716ee9c1f7e6a28b1a732ec8be6c264c5f44fe7cab913f9b606f77047fe1"
+    },
+    "riscv64_linux_gnu": {
+      "etag": "0x8DDCCA8E20F7C0F",
+      "checksum": "6bfa21b9d8b0b8f71c446ed34d96ba89d6525b506dbaf2f2e73a50efa89c1cd0"
+    },
+    "s390x_linux_gnu": {
+      "etag": "0x8DDB1AA6482999F",
+      "checksum": "893c7623930569c61eefde55c191a12d101734c98f6c5fe1b7b442dff0b02267"
     }
   },
   "0.14": {
@@ -81,6 +153,18 @@
     "aarch64_linux_gnu": {
       "etag": "0x8DDA3994786E21F",
       "checksum": "0a4c7173b19d1cc3af291c1079eabb0d5adaa0447a2f449fc51cb42895dfc5a0"
+    },
+    "powerpc64le_linux_gnu": {
+      "etag": "0x8DDA39947A2FCF4",
+      "checksum": "6d412c559c46eae3cbbb87ebd3549418740b2acc910e26f72821ab649941efda"
+    },
+    "riscv64_linux_gnu": {
+      "etag": "0x8DDCCADE53454ED",
+      "checksum": "8e11f8842e7ecef49660cbf90b5439dbb4093ad719e72f9b3e840e9b158425a0"
+    },
+    "s390x_linux_gnu": {
+      "etag": "0x8DDA3994B85006F",
+      "checksum": "aa2af9a8450ac0d83a7d7f644b1c113dcfbcc59db2c5d1f790ebff01430b2712"
     }
   },
   "0.14.1": {
@@ -91,6 +175,18 @@
     "aarch64_linux_gnu": {
       "etag": "0x8DDA0278DE4516B",
       "checksum": "04e5dcd9cfabb790e76ecb85334242e1e4b85bc6c7b476c5ba4f26da23d95d77"
+    },
+    "powerpc64le_linux_gnu": {
+      "etag": "0x8DDA02790ABE8FE",
+      "checksum": "e870de66abe0f0c09595f3c6188c6dbfc4f53e39297edc7b89dca5ff814e0136"
+    },
+    "riscv64_linux_gnu": {
+      "etag": "0x8DDCCAD823FE5C2",
+      "checksum": "37ea3763068f06a625684909d67313137467d21034dc136a0943781c48980269"
+    },
+    "s390x_linux_gnu": {
+      "etag": "0x8DDA02790B83734",
+      "checksum": "617e28aeb2928c9f73cf8b0f426354939c1ef761ffb9e6f44fab8832d91ee856"
     }
   },
   "0.14.0": {
@@ -101,6 +197,18 @@
     "aarch64_linux_gnu": {
       "etag": "0x8DCE544C50F4680",
       "checksum": "fa5d97f4d0c65ed166f481ff6860999bab3f631b3ce6e5b7c3effb83083c49e8"
+    },
+    "powerpc64le_linux_gnu": {
+      "etag": "0x8DCE544C361092A",
+      "checksum": "7272a9449eb9e07ad3c9c768e5c27e7cf48911cc29883b9cd71a106ce7b41b4b"
+    },
+    "riscv64_linux_gnu": {
+      "etag": "0x8DDCCAC542194CE",
+      "checksum": "0ff3246c4ac6197465543d9cb7d9c61fafbb677290986da881fd25b78a9cb5e0"
+    },
+    "s390x_linux_gnu": {
+      "etag": "0x8DCE544C2F3F4EF",
+      "checksum": "9363eb6a696ccabc1ebee15c929c153cf710ff41ac58fed503fc8d5e01877908"
     }
   },
   "0.13": {
@@ -114,6 +222,18 @@
     "aarch64_linux_gnu": {
       "etag": "0x8DCD305930DFEF0",
       "checksum": "c8ceb777d684757ef72a3efa1b2d096aee7d609d8355286c5d7807df21a7ccd9"
+    },
+    "powerpc64le_linux_gnu": {
+      "etag": "0x8DCD3058E0C6773",
+      "checksum": "97fd730347954fa24c7e97915d92859778b8a27df1a5b52fd4fb07d8c278addb"
+    },
+    "riscv64_linux_gnu": {
+      "etag": "0x8DDCCAE8D455590",
+      "checksum": "a1ef4e5b6bf7f3c24a7ff15be98b587d9e293b1d86af570cf45ad432093e1156"
+    },
+    "s390x_linux_gnu": {
+      "etag": "0x8DCD305922AB995",
+      "checksum": "2516a91d6d92aca282e3785c5a9d3781ee25fb2750801f77c3ba108cb8733bb2"
     }
   },
   "0.13.3": {
@@ -124,6 +244,18 @@
     "aarch64_linux_gnu": {
       "etag": "0x8DCCDC74D0F0DD1",
       "checksum": "cfe93bef2b61b2d3c0c79951931989afb912dd74ecf25045322b80ce94b75c35"
+    },
+    "powerpc64le_linux_gnu": {
+      "etag": "0x8DCCDC74B5BF4BE",
+      "checksum": "ca7bd852ab4ba04cfa02d48f392784d2f1a02eade19733949cdd2ee3ca535431"
+    },
+    "riscv64_linux_gnu": {
+      "etag": "0x8DDCCB0C7E0A4E4",
+      "checksum": "edae90f1ca96ead35894280d986495fd06ef8464b7ab6884a5f683b55ce13ca5"
+    },
+    "s390x_linux_gnu": {
+      "etag": "0x8DCCDC74C3AD27B",
+      "checksum": "8a2b73032ce2890ac6d9b784537a5c3b56153e93a71f15feca751be333f4d12d"
     }
   },
   "0.13.2": {
@@ -134,6 +266,18 @@
     "aarch64_linux_gnu": {
       "etag": "0x8DCCC252BB6F730",
       "checksum": "6286a7f442a839810b7922fc85b1d6404efa4916ec7fc6f4b11b5ffe7f9444aa"
+    },
+    "powerpc64le_linux_gnu": {
+      "etag": "0x8DCCC252AFC6857",
+      "checksum": "0eebc71594dc2cd32d149314a4a1cfbe392fb960e3c2e1aea9b016189784c178"
+    },
+    "riscv64_linux_gnu": {
+      "etag": "0x8DDCCAFC142043D",
+      "checksum": "1f3f0f71cb7691d71d7850e5a03a74a4bff8ab2e1d98e7aa324cc20d5d3c6e17"
+    },
+    "s390x_linux_gnu": {
+      "etag": "0x8DCCC252CEF0275",
+      "checksum": "19891bd6c1580787519f76a79020b1291427346179ec04cc75d4fa1fc46b994d"
     }
   },
   "0.13.1": {
@@ -144,6 +288,18 @@
     "aarch64_linux_gnu": {
       "etag": "0x8DCC77940910E9A",
       "checksum": "5b291f2b091361fcbcd8e5e9c51f90bd92d3b946121377cf9005bd92a150ff18"
+    },
+    "powerpc64le_linux_gnu": {
+      "etag": "0x8DCC77932B6CD43",
+      "checksum": "9491e531389ee1f452de1126842a10067e9d500b30c933f2caf8a07c4ee4df5f"
+    },
+    "riscv64_linux_gnu": {
+      "etag": "0x8DDCCAF2353AF51",
+      "checksum": "24996041afe68d4c9c99c7fea22bbeef75ceaa92ad792f624ff7c0fd67efd040"
+    },
+    "s390x_linux_gnu": {
+      "etag": "0x8DCC779394BE45C",
+      "checksum": "2599cf15319f33a3cdbdb1671bbce365f3f70229b7480f30a31e46ef04325e55"
     }
   },
   "0.13.0": {
@@ -154,6 +310,18 @@
     "aarch64_linux_gnu": {
       "etag": "0x8DCC07B8D13CF3C",
       "checksum": "dda5153b19254bff0e57d54570f9c3aa2b15f5c90cdc403ac3be839fc254a3dd"
+    },
+    "powerpc64le_linux_gnu": {
+      "etag": "0x8DCC07B91BB01BF",
+      "checksum": "1ce8193665ac03584975ad7d808da19735bc36bd31683a40a29f2008bf7fabc1"
+    },
+    "riscv64_linux_gnu": {
+      "etag": "0x8DDCCB10CD3DC49",
+      "checksum": "157ca1c9595e9b7c218fce9a6a8145361643409663c73660114e7a2b0223d4dc"
+    },
+    "s390x_linux_gnu": {
+      "etag": "0x8DCC07B9871AABD",
+      "checksum": "cfad9ae86d26c5dd0eafd25429decba412620fb8de0956e89a463a0e4bda99b7"
     }
   },
   "0.12": {
@@ -167,6 +335,18 @@
     "aarch64_linux_gnu": {
       "etag": "0x8DCB82A4FEA14A0",
       "checksum": "96085a1e5c76ca31f8263bbbb21aaba8683e64f4fc7a44bddd3e317c6d5ad12b"
+    },
+    "powerpc64le_linux_gnu": {
+      "etag": "0x8DCB82A50C10BD2",
+      "checksum": "3c03af9ff807bc83eeb52e134996b57e15257b54d4394f9eea34ad040fb47268"
+    },
+    "riscv64_linux_gnu": {
+      "etag": "0x8DDCCB2524BF2E2",
+      "checksum": "6007bb1d87b2d84f8062c8b46089b392f2c4f3f5993a10caa1aa92e73a0eabb5"
+    },
+    "s390x_linux_gnu": {
+      "etag": "0x8DCB82A5FBC3F22",
+      "checksum": "d56734cab11c66723e53e1922daf1aebb34c42e47bc9cc85ec02095ed11833e6"
     }
   },
   "0.12.2": {
@@ -177,6 +357,18 @@
     "aarch64_linux_gnu": {
       "etag": "0x8DCB5DBB4D125A9",
       "checksum": "c44f3d696da89290a661ed8a9377f657eeefeaf74196bf9cc9bae5085d8ec034"
+    },
+    "powerpc64le_linux_gnu": {
+      "etag": "0x8DCB5DBBBBA1901",
+      "checksum": "c5adccd19cbccc6bd530291db6672f881c8f2d2810d45f3760f0e115a8dac6f8"
+    },
+    "riscv64_linux_gnu": {
+      "etag": "0x8DDCCB202785BBF",
+      "checksum": "ebb8fb9132dd917a34f29d25bda3efe7a48ec315e694b8eee3144e35be591e4d"
+    },
+    "s390x_linux_gnu": {
+      "etag": "0x8DCB5DBC72F34FC",
+      "checksum": "1e5b9a236d5d993ec1a0c190a546d281b35bfa92f3ec81f90f340c0e6adbe0b5"
     }
   },
   "0.12.1": {
@@ -187,6 +379,18 @@
     "aarch64_linux_gnu": {
       "etag": "0x8DCB181313A4FC1",
       "checksum": "f1362fb0878f14efa5d21c9f90d345a62f1d0902936efeaf2ee8f7e6b65aa06e"
+    },
+    "powerpc64le_linux_gnu": {
+      "etag": "0x8DCB18134AB9B31",
+      "checksum": "5aaf437028885651bebb607c597b89c5488cb07784fc32850858fb6f14462045"
+    },
+    "riscv64_linux_gnu": {
+      "etag": "0x8DDCCB1C918FA2F",
+      "checksum": "d406d259dc68f8ec7005d4dfe479eae16e252b013fb9e781942e42784bd45bf5"
+    },
+    "s390x_linux_gnu": {
+      "etag": "0x8DCB18133FD0C79",
+      "checksum": "2544866056e5053e2f6e9d53c9ffea051c9f668623dd53c64f1bda4c7a1322d8"
     }
   },
   "0.12.0": {
@@ -197,6 +401,18 @@
     "aarch64_linux_gnu": {
       "etag": "0x8DCABCE1A20665B",
       "checksum": "b8cfec969772d28d99bd55dc5668ad2ac209952b6f02e0842ad03c28cb7c7c1c"
+    },
+    "powerpc64le_linux_gnu": {
+      "etag": "0x8DCABCE0C1A1480",
+      "checksum": "be1d48fae521dbf1eff291908fdf3f24c1a266ed6baf8265b3b56e5048ce486e"
+    },
+    "riscv64_linux_gnu": {
+      "etag": "0x8DDCCB17BE9BA23",
+      "checksum": "ece1ead522035d29c43ab984122af29ed4d587364cb8d784ff09af878b2ba2dd"
+    },
+    "s390x_linux_gnu": {
+      "etag": "0x8DCABCE0A604C1E",
+      "checksum": "790b29919a432fd0688ffd329bee8abec3a92ec4462e5e3e56323f4226375104"
     }
   },
   "0.11": {
@@ -210,6 +426,14 @@
     "aarch64_linux_gnu": {
       "etag": "0x8DC9CB3AD358999",
       "checksum": "fffeca96947fb4ffa87c59cb7d0d6718fc04507c2e5bcf9c1f7308789fd31a93"
+    },
+    "powerpc64le_linux_gnu": {
+      "etag": "0x8DC9CB3B5E690D2",
+      "checksum": "39f3fdd5568b3926571a1354f6d1495117ed942a833eaf46228dd731b21f0f42"
+    },
+    "s390x_linux_gnu": {
+      "etag": "0x8DC9CB3AFCB26B6",
+      "checksum": "da8016f6b8b638af61c3bd5500c22285649dc115a0f4d6b39adcbf785af6e9d6"
     }
   },
   "0.11.0": {
@@ -220,6 +444,14 @@
     "aarch64_linux_gnu": {
       "etag": "0x8DC6FEE79B1CAC3",
       "checksum": "449bbaba10870700c23156379f863c22cf7da2d55bb7bf2605d2fe9ca3d0bf33"
+    },
+    "powerpc64le_linux_gnu": {
+      "etag": "0x8DC6FEE760FE41D",
+      "checksum": "c5b6f5899671c689b3184ca8ee9b6677c6df2ed4106555fba85bbae291575c89"
+    },
+    "s390x_linux_gnu": {
+      "etag": "0x8DC6FEE7B7745C6",
+      "checksum": "9b71b9520d5aaa5784a594319bd55a44d1f0d1542d15fd1c2cb246b677a90d35"
     }
   },
   "0.10": {
@@ -233,6 +465,14 @@
     "aarch64_linux_gnu": {
       "etag": "0x8DC1E6F90A8B28B",
       "checksum": "a048881f1ff66a75a0a790fbc7298f5c428faaac7183dfc9f6276e300e291028"
+    },
+    "powerpc64le_linux_gnu": {
+      "etag": "0x8DC1E6F90686F7A",
+      "checksum": "d63968067935cb86a3a57d34dd23768a3c228fa48e97a6ba87b1c4f05171cb3c"
+    },
+    "s390x_linux_gnu": {
+      "etag": "0x8DC1E6F930A331C",
+      "checksum": "71c86d918d3898105f869c59560b88dc2aee54935c4ddf9cec619f5b3b544da6"
     }
   },
   "0.10.1": {
@@ -243,6 +483,14 @@
     "aarch64_linux_gnu": {
       "etag": "0x8DC1BBCB6A61B61",
       "checksum": "dd4f7fc4a4c60f997842767df0b76b8f9a21681fca27afe5708facdaac5570c7"
+    },
+    "powerpc64le_linux_gnu": {
+      "etag": "0x8DC1BBCBCE7A4A2",
+      "checksum": "2dc1aead5380370324c72483bb8ea4401b93aa07d4b3ad3074c4f0d2d6d70fad"
+    },
+    "s390x_linux_gnu": {
+      "etag": "0x8DC1BBCB7D46D46",
+      "checksum": "0aee0a3f051d27d2a8acea09ab422e98903a14dd7d78cb473c8c98b1c759b9cd"
     }
   },
   "0.10.0": {
@@ -253,6 +501,14 @@
     "aarch64_linux_gnu": {
       "etag": "0x8DC1BC080D06FDC",
       "checksum": "0bce1e6aa80cd3dc4ea101f87248dd8c163b69c1a2f6589100e3e33364cd6794"
+    },
+    "powerpc64le_linux_gnu": {
+      "etag": "0x8DC1BC082080656",
+      "checksum": "0609cfcba4da56664850700960fb4184c10bcd549cb52999efbb3dff5c01fa69"
+    },
+    "s390x_linux_gnu": {
+      "etag": "0x8DC1BC0840FE524",
+      "checksum": "541c6ba596be2a6d531634aac03c73b9405dbd5db668126970d2be22dfc30ea3"
     }
   },
   "0.9": {
@@ -266,6 +522,14 @@
     "aarch64_linux_gnu": {
       "etag": "0x8DC1BC1F0EBBD89",
       "checksum": "b56c2ff2074473dc3f861bf5db16c5b793d382bd1ac45aa5b2aca5dbd4a58f3a"
+    },
+    "powerpc64le_linux_gnu": {
+      "etag": "0x8DC1BC207F1005D",
+      "checksum": "195fd3ba4d80a2413490f66908682b6448447e21084f421a5b8dbeb935058fd2"
+    },
+    "s390x_linux_gnu": {
+      "etag": "0x8DC1BC1F4126ED5",
+      "checksum": "2be8cd69ae310714281550a47702c39f9dcfab8f7296b79729e7eb76e6bb79c4"
     }
   },
   "0.8": {
@@ -279,6 +543,14 @@
     "aarch64_linux_gnu": {
       "etag": "0x8DC1BC3378EED4A",
       "checksum": "78f1cb4cb76960cb66694f255851300964d2a369d36cd23a8ef13ba0520fb61a"
+    },
+    "powerpc64le_linux_gnu": {
+      "etag": "0x8DC1BC33B978683",
+      "checksum": "4cf3ee8e0eadab81cf858392ed04aeb11a09bfeac09c1b4a012eb2d852434c18"
+    },
+    "s390x_linux_gnu": {
+      "etag": "0x8DC1BC341275132",
+      "checksum": "a687d8a9a01f434ad2d05f949300d4ec7f34bce92630246f32d00850dd53eae9"
     }
   },
   "0.7": {
@@ -292,6 +564,14 @@
     "aarch64_linux_gnu": {
       "etag": "0x8DC1BC4E38A6BBC",
       "checksum": "ad40bb4434d2c63af1860cac19fa75ee665ddc7e4705b00716250f26f93bef39"
+    },
+    "powerpc64le_linux_gnu": {
+      "etag": "0x8DC1BC4E155957A",
+      "checksum": "1e567e69c1a85e9dfd7084d05a70ca85cecf2a9254ae5c57832e39176f596eb4"
+    },
+    "s390x_linux_gnu": {
+      "etag": "0x8DC1BC4E1B13107",
+      "checksum": "62161e2d62f6d0c824a780c6c767901f530f70daa3002dc8fbda06f151939098"
     }
   },
   "0.7.2": {
@@ -302,6 +582,14 @@
     "aarch64_linux_gnu": {
       "etag": "0x8DC1BC56B0981A4",
       "checksum": "ec42a83f5d96b20b21701cd2926f22dbe7165d11876951e4cdf8e4c42d5fc15e"
+    },
+    "powerpc64le_linux_gnu": {
+      "etag": "0x8DC1BC56A1317AB",
+      "checksum": "0ced81c6eb89cd4bcd24ebd5c5f18e6559d4654d789f78b22d3150729a39244d"
+    },
+    "s390x_linux_gnu": {
+      "etag": "0x8DC1BC5715F8DE7",
+      "checksum": "aa2672e1d613e6f634d9e217d17b75ad93ba5971b02dc44069a7c0139f7f5a64"
     }
   },
   "0.7.1": {
@@ -312,6 +600,14 @@
     "aarch64_linux_gnu": {
       "etag": "0x8DC1BC5E04C3C91",
       "checksum": "efa92a9150a1e4db738389f625423f7ebd5011216f4dc340826852be34992af8"
+    },
+    "powerpc64le_linux_gnu": {
+      "etag": "0x8DC1BC5E7193C4A",
+      "checksum": "8e91580e6882a4917a374d8987ee2e28a7a3601e1d1cc2cf0899384c1566cfcf"
+    },
+    "s390x_linux_gnu": {
+      "etag": "0x8DC1BC5DEB3B98A",
+      "checksum": "1a763e7b87b8b74a7a41b1b376e0f59781c033d6e6793f432074298485daf3dd"
     }
   },
   "0.7.0": {
@@ -322,6 +618,14 @@
     "aarch64_linux_gnu": {
       "etag": "0x8DC1BC67BFE9D4D",
       "checksum": "63a6c14fc5a93b0ccce2a6ceb7855c3688f0296fbf95ee40ed84d6d5f56ccce4"
+    },
+    "powerpc64le_linux_gnu": {
+      "etag": "0x8DC1BC6747E80F1",
+      "checksum": "bd7218de9a3fad6ae860681592e98cc317b4c68baa6bf7474eb92c4d102aadc7"
+    },
+    "s390x_linux_gnu": {
+      "etag": "0x8DC1BC6882357F6",
+      "checksum": "9f7866136c752610d86b8bc02deb88032b3824520dd12da113511cb63d94d21f"
     }
   }
 }

@@ -18,6 +18,15 @@
     },
     "aarch64_windows": {
       "url": "https://github.com/taiki-e/cargo-minimal-versions/releases/download/v${version}/cargo-minimal-versions-aarch64-pc-windows-msvc.tar.gz"
+    },
+    "powerpc64le_linux_musl": {
+      "url": "https://github.com/taiki-e/cargo-minimal-versions/releases/download/v${version}/cargo-minimal-versions-powerpc64le-unknown-linux-musl.tar.gz"
+    },
+    "riscv64_linux_musl": {
+      "url": "https://github.com/taiki-e/cargo-minimal-versions/releases/download/v${version}/cargo-minimal-versions-riscv64gc-unknown-linux-musl.tar.gz"
+    },
+    "s390x_linux_gnu": {
+      "url": "https://github.com/taiki-e/cargo-minimal-versions/releases/download/v${version}/cargo-minimal-versions-s390x-unknown-linux-gnu.tar.gz"
     }
   },
   "license_markdown": "[Apache-2.0](https://github.com/taiki-e/cargo-minimal-versions/blob/main/LICENSE-APACHE) OR [MIT](https://github.com/taiki-e/cargo-minimal-versions/blob/main/LICENSE-MIT)",
@@ -51,6 +60,18 @@
     "aarch64_windows": {
       "etag": "0x8DDEE0D87D04734",
       "checksum": "bcae33f1c3a7e03e89f23ad7475d3915a62742a980cd2af1a2a452af68f18db6"
+    },
+    "powerpc64le_linux_musl": {
+      "etag": "0x8DDEE0D8C9C190E",
+      "checksum": "e008e10dedbdf99ecf6f49cb6baa0b7f51de7d1e5eedd977c57afef8bfad09fc"
+    },
+    "riscv64_linux_musl": {
+      "etag": "0x8DDEE0D81019A75",
+      "checksum": "c50b438d98a0856bd0510ad34923227d2ae8c57bf94a0e9cf8660e654ec849f0"
+    },
+    "s390x_linux_gnu": {
+      "etag": "0x8DDEE0D92333178",
+      "checksum": "f49d693e7ac9e55148e12ece649cd34ef117ee322480318b5bfca3fe92a6e1ee"
     }
   },
   "0.1.31": {

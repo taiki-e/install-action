@@ -8,6 +8,9 @@
   "bin": "${package}-v${version}-${rust_target}/${package}",
   "platform": {
     "x86_64_linux_musl": {},
-    "aarch64_linux_gnu": {}
+    "aarch64_linux_gnu": {},
+    "powerpc64le_linux_gnu": {},
+    "riscv64_linux_gnu": {},
+    "s390x_linux_gnu": {}
   }
 }
