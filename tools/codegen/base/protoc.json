@@ -18,6 +18,12 @@
     },
     "aarch64_macos": {
       "asset_name": "${package}-${version}-osx-aarch_64.zip"
+    },
+    "powerpc64le_linux_gnu": {
+      "asset_name": "${package}-${version}-linux-ppcle_64.zip"
+    },
+    "s390x_linux_gnu": {
+      "asset_name": "${package}-${version}-linux-s390_64.zip"
     }
   }
 }

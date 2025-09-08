@@ -468,6 +468,21 @@ fn main() -> Result<()> {
             {
                 download_info.remove(&HostPlatform::aarch64_linux_gnu);
             }
+            if download_info.contains_key(&HostPlatform::powerpc64le_linux_gnu)
+                && download_info.contains_key(&HostPlatform::powerpc64le_linux_musl)
+            {
+                download_info.remove(&HostPlatform::powerpc64le_linux_gnu);
+            }
+            if download_info.contains_key(&HostPlatform::riscv64_linux_gnu)
+                && download_info.contains_key(&HostPlatform::riscv64_linux_musl)
+            {
+                download_info.remove(&HostPlatform::riscv64_linux_gnu);
+            }
+            if download_info.contains_key(&HostPlatform::s390x_linux_gnu)
+                && download_info.contains_key(&HostPlatform::s390x_linux_musl)
+            {
+                download_info.remove(&HostPlatform::s390x_linux_gnu);
+            }
         }
         if download_info.contains_key(&HostPlatform::x86_64_macos)
             && download_info.contains_key(&HostPlatform::aarch64_macos)
@@ -586,6 +601,21 @@ fn main() -> Result<()> {
             }
             if p == HostPlatform::aarch64_linux_gnu
                 && latest_manifest.download_info.contains_key(&HostPlatform::aarch64_linux_musl)
+            {
+                continue;
+            }
+            if p == HostPlatform::powerpc64le_linux_gnu
+                && latest_manifest.download_info.contains_key(&HostPlatform::powerpc64le_linux_musl)
+            {
+                continue;
+            }
+            if p == HostPlatform::riscv64_linux_gnu
+                && latest_manifest.download_info.contains_key(&HostPlatform::riscv64_linux_musl)
+            {
+                continue;
+            }
+            if p == HostPlatform::s390x_linux_gnu
+                && latest_manifest.download_info.contains_key(&HostPlatform::s390x_linux_musl)
             {
                 continue;
             }

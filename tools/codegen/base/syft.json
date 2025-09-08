@@ -18,6 +18,12 @@
     },
     "aarch64_macos": {
       "asset_name": "${package}_${version}_darwin_arm64.tar.gz"
+    },
+    "powerpc64le_linux_musl": {
+      "asset_name": "${package}_${version}_linux_ppc64le.tar.gz"
+    },
+    "s390x_linux_musl": {
+      "asset_name": "${package}_${version}_linux_s390x.tar.gz"
     }
   }
 }

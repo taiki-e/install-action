@@ -4,6 +4,9 @@
     "x86_64_linux_gnu": {
       "url": "https://github.com/getzola/zola/releases/download/v${version}/zola-v${version}-x86_64-unknown-linux-gnu.tar.gz"
     },
+    "x86_64_linux_musl": {
+      "url": "https://github.com/getzola/zola/releases/download/v${version}/zola-v${version}-x86_64-unknown-linux-musl.tar.gz"
+    },
     "x86_64_macos": {
       "url": "https://github.com/getzola/zola/releases/download/v${version}/zola-v${version}-x86_64-apple-darwin.tar.gz"
     },
@@ -25,9 +28,9 @@
     "version": "0.21.0"
   },
   "0.21.0": {
-    "x86_64_linux_gnu": {
-      "etag": "0x8DDC31E0E5DE5E5",
-      "checksum": "5c37a8f706567d6cad3f0dbc0eaebe3b9591cc301bd67089e5ddc0d0401732d6"
+    "x86_64_linux_musl": {
+      "etag": "0x8DDC31E0E84F0F1",
+      "checksum": "78131fce9acf5d7eac4c5bb968a42eab98a47470bea5d9d959b127002750cb40"
     },
     "x86_64_macos": {
       "etag": "0x8DDC31E0E61169C",

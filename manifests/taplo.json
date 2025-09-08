@@ -20,6 +20,10 @@
     "aarch64_macos": {
       "url": "https://github.com/tamasfe/taplo/releases/download/${version}/taplo-darwin-aarch64.gz",
       "bin": "taplo"
+    },
+    "riscv64_linux_gnu": {
+      "url": "https://github.com/tamasfe/taplo/releases/download/${version}/taplo-linux-riscv64.gz",
+      "bin": "taplo"
     }
   },
   "license_markdown": "[MIT](https://github.com/tamasfe/taplo/blob/master/LICENSE)",
@@ -49,6 +53,10 @@
     "aarch64_macos": {
       "etag": "0x8DD99AB3700C1B5",
       "checksum": "713734314c3e71894b9e77513c5349835eefbd52908445a0d73b0c7dc469347d"
+    },
+    "riscv64_linux_gnu": {
+      "etag": "0x8DD99AAB4AAB107",
+      "checksum": "26b2d848183636f291f7e2ea4e5dfd3622ff5f445417333d33a32082fc582914"
     }
   },
   "0.9": {

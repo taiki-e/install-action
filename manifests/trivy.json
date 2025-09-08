@@ -20,6 +20,14 @@
     "aarch64_macos": {
       "url": "https://github.com/aquasecurity/trivy/releases/download/v${version}/trivy_${version}_macOS-ARM64.tar.gz",
       "bin": "trivy"
+    },
+    "powerpc64le_linux_gnu": {
+      "url": "https://github.com/aquasecurity/trivy/releases/download/v${version}/trivy_${version}_Linux-PPC64LE.tar.gz",
+      "bin": "trivy"
+    },
+    "s390x_linux_gnu": {
+      "url": "https://github.com/aquasecurity/trivy/releases/download/v${version}/trivy_${version}_Linux-s390x.tar.gz",
+      "bin": "trivy"
     }
   },
   "license_markdown": "[Apache-2.0](https://github.com/aquasecurity/trivy/blob/main/LICENSE)",
@@ -49,6 +57,14 @@
     "aarch64_macos": {
       "etag": "0x8DDEA4865C5C055",
       "checksum": "964bb69fc0e652891b38514fed4ee31de004a58ac22ea2a23c6891728bb6b6eb"
+    },
+    "powerpc64le_linux_gnu": {
+      "etag": "0x8DDEA486824D2F2",
+      "checksum": "dbcf43998bafcd1adae26fc57ea6128f8a1c66da1523096e37fe29c30c68990f"
+    },
+    "s390x_linux_gnu": {
+      "etag": "0x8DDEA4865B3FA0A",
+      "checksum": "8d5387862cec090d0f4922b3d2969291774097965649624d0d968e241d53a65e"
     }
   },
   "0.65": {
@@ -74,6 +90,14 @@
     "aarch64_macos": {
       "etag": "0x8DDCFFB26795759",
       "checksum": "3076e27024b92d634fe09947934d36dc8b651a8539ff1d69b4cfac008dfb59ce"
+    },
+    "powerpc64le_linux_gnu": {
+      "etag": "0x8DDCFFB236CC627",
+      "checksum": "6c54d2393322e493bd80ed2a208708fcca1d30e5ae9b0bfcbd3acb1c3212627e"
+    },
+    "s390x_linux_gnu": {
+      "etag": "0x8DDCFFB2546EAE0",
+      "checksum": "383c80b9fee80c46d5232da40237fe1886baa76db9275adb5028184bba90adc0"
     }
   },
   "0.64": {
@@ -99,6 +123,14 @@
     "aarch64_macos": {
       "etag": "0x8DDBA3D4C4000C5",
       "checksum": "7489c69948cda032adc2862923222917cd025411abc4bba8517a8d581aed226c"
+    },
+    "powerpc64le_linux_gnu": {
+      "etag": "0x8DDBA3D4DECB971",
+      "checksum": "98a9d625e614d16fbb6e467777282a0a43ab1505fcc1a77c0b97aafab1d9baf8"
+    },
+    "s390x_linux_gnu": {
+      "etag": "0x8DDBA3D4FB6EB18",
+      "checksum": "4a8249d6fc7a9ca80179902923d1988ce4942359cc22c5ee68131b50ebd3a3f7"
     }
   },
   "0.64.0": {
@@ -121,6 +153,14 @@
     "aarch64_macos": {
       "etag": "0x8DDB87C7591EB49",
       "checksum": "77e70dd2fdbac5986cc02a8def382bdaf78777f0050fc37af72916cc47b56a20"
+    },
+    "powerpc64le_linux_gnu": {
+      "etag": "0x8DDB87C7505B2B4",
+      "checksum": "13322bad430380ed58d52cafa706dd68127a20dcba5707ecea24ee00b7ad44ba"
+    },
+    "s390x_linux_gnu": {
+      "etag": "0x8DDB87C7452482B",
+      "checksum": "a13059cf174a0de9c4790bd11e1626d5529265550637474fe8442755bb73062a"
     }
   },
   "0.63": {
@@ -146,6 +186,14 @@
     "aarch64_macos": {
       "etag": "0x8DD9EDB26DD1D32",
       "checksum": "784f687759c647ffad54e4d7f55ed953647e4fff5ea1e38dbaf877a135254972"
+    },
+    "powerpc64le_linux_gnu": {
+      "etag": "0x8DD9EDB25608D60",
+      "checksum": "f810c4fe9b3cf58022ce034db27780db3e64e91834dda23450407f1e6da13dab"
+    },
+    "s390x_linux_gnu": {
+      "etag": "0x8DD9EDB271FA7BE",
+      "checksum": "af14cc441197d862d513926a7610111c8683548efb4c82202bb2d856d4603fc4"
     }
   },
   "0.62": {
@@ -171,6 +219,14 @@
     "aarch64_macos": {
       "etag": "0x8DD8CD66C735F7B",
       "checksum": "0bbfa581a4139c6fef21f4129233ae6f02a9f4b53039327e62eccd7956af2ba1"
+    },
+    "powerpc64le_linux_gnu": {
+      "etag": "0x8DD8CD66C56CFD2",
+      "checksum": "682f1b82e1def454a231f1aef7cadc58cf15aca48b8837caaec49cb41d8b5d2f"
+    },
+    "s390x_linux_gnu": {
+      "etag": "0x8DD8CD66981D82D",
+      "checksum": "e36efe2d7b421960fd58e635e77f850e2a9934001c2033dc48431f5727e1b3b5"
     }
   },
   "0.62.0": {
@@ -193,6 +249,14 @@
     "aarch64_macos": {
       "etag": "0x8DD880CCF853F18",
       "checksum": "727a8865c2caf6841a1f4668fd7702f442ae088fd08e3c3719e4f731c1f11333"
+    },
+    "powerpc64le_linux_gnu": {
+      "etag": "0x8DD880CD0DCBCA1",
+      "checksum": "fba4b69f5d3a792dc21b93e88c9304329e711eec699dd9b2067dca0297ff92b5"
+    },
+    "s390x_linux_gnu": {
+      "etag": "0x8DD880CCD7DD530",
+      "checksum": "a11cbdbb1b72f041f39004610a20a0b7f4b2aad4788dbd735b33b58e58190aca"
     }
   }
 }

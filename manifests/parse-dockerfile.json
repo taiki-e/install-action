@@ -18,6 +18,15 @@
     },
     "aarch64_windows": {
       "url": "https://github.com/taiki-e/parse-dockerfile/releases/download/v${version}/parse-dockerfile-aarch64-pc-windows-msvc.tar.gz"
+    },
+    "powerpc64le_linux_musl": {
+      "url": "https://github.com/taiki-e/parse-dockerfile/releases/download/v${version}/parse-dockerfile-powerpc64le-unknown-linux-musl.tar.gz"
+    },
+    "riscv64_linux_musl": {
+      "url": "https://github.com/taiki-e/parse-dockerfile/releases/download/v${version}/parse-dockerfile-riscv64gc-unknown-linux-musl.tar.gz"
+    },
+    "s390x_linux_gnu": {
+      "url": "https://github.com/taiki-e/parse-dockerfile/releases/download/v${version}/parse-dockerfile-s390x-unknown-linux-gnu.tar.gz"
     }
   },
   "license_markdown": "[Apache-2.0](https://github.com/taiki-e/parse-dockerfile/blob/main/LICENSE-APACHE) OR [MIT](https://github.com/taiki-e/parse-dockerfile/blob/main/LICENSE-MIT)",
@@ -51,6 +60,18 @@
     "aarch64_windows": {
       "etag": "0x8DDEE0E51AA8AB0",
       "checksum": "d7a4d562760174fd898f53793e9d678259d276c0fb553e0e9b72f0d819d5f553"
+    },
+    "powerpc64le_linux_musl": {
+      "etag": "0x8DDEE0E4062940F",
+      "checksum": "e0d6e255e182bb676ff3f6beea27844c2e5a00e64ed272909ccf284cb8db6f88"
+    },
+    "riscv64_linux_musl": {
+      "etag": "0x8DDEE0E432BB32C",
+      "checksum": "2c0b11a59bc60443a34a58043f0b00d127491e292be3036e84c18348faaa44f5"
+    },
+    "s390x_linux_gnu": {
+      "etag": "0x8DDEE0E4EB14313",
+      "checksum": "3b0759a099f977c1049b2c007483d285062ccd036453bdd66d312cd96a441951"
     }
   },
   "0.1.1": {

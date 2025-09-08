@@ -446,7 +446,8 @@ if [[ -n "${tool}" ]]; then
 fi
 if [[ ${#tools[@]} -eq 0 ]]; then
   warn "no tool specified; this could be caused by a dependabot bug where @<tool_name> tags on this action are replaced by @<version> tags"
-  # Exit with 0 for backward compatibility, we want to reject it in the next major release.
+  # Exit with 0 for backward compatibility.
+  # TODO: We want to reject it in the next major release.
   exit 0
 fi
 
@@ -522,35 +523,40 @@ case "$(uname -s)" in
     ;;
   *) bail "unrecognized OS type '$(uname -s)'" ;;
 esac
+# NB: Sync with tools/ci/tool-list.sh.
 case "$(uname -m)" in
   aarch64 | arm64) host_arch=aarch64 ;;
-  xscale | arm | armv*l)
-    # Ignore Arm for now, as we need to consider the version and whether hard-float is supported.
-    # https://github.com/rust-lang/rustup/pull/593
-    # https://github.com/cross-rs/cross/pull/1018
-    # Does it seem only armv7l+ is supported?
-    # https://github.com/actions/runner/blob/v2.321.0/src/Misc/externals.sh#L178
-    # https://github.com/actions/runner/issues/688
-    bail "32-bit Arm runner is not supported yet by this action; if you need support for this platform, please submit an issue at <https://github.com/taiki-e/install-action>"
-    ;;
-  loongarch64 | mips | mips64 | ppc | ppc64 | ppc64le | riscv64 | s390x | sun4v)
-    # Very few tools provide prebuilt binaries for these.
-    # TODO: fallback to `cargo install`? (binstall fallback is not good idea here as cargo-binstall doesn't provide prebuilt binaries for these.)
-    bail "$(uname -m) runner is not supported yet by this action; if you need support for this platform, please submit an issue at <https://github.com/taiki-e/install-action>"
-    ;;
-  # GitHub Actions Runner supports Linux (x86_64, AArch64, Arm), Windows (x86_64, AArch64),
-  # and macOS (x86_64, AArch64).
+  # Ignore Arm for now, as we need to consider the version and whether hard-float is supported.
+  # https://github.com/rust-lang/rustup/pull/593
+  # https://github.com/cross-rs/cross/pull/1018
+  # Does it seem only armv7l+ is supported?
+  # https://github.com/actions/runner/blob/v2.321.0/src/Misc/externals.sh#L178
+  # https://github.com/actions/runner/issues/688
+  xscale | arm | armv*l) bail "32-bit Arm runner is not supported yet by this action; if you need support for this platform, please submit an issue at <https://github.com/taiki-e/install-action>" ;;
+  ppc64le) host_arch=powerpc64le ;;
+  riscv64) host_arch=riscv64 ;;
+  s390x) host_arch=s390x ;;
+  # Very few tools provide prebuilt binaries for these.
+  # TODO: fallback to `cargo install`? (binstall fallback is not good idea here as cargo-binstall doesn't provide prebuilt binaries for these.)
+  loongarch64 | mips | mips64 | ppc | ppc64 | sun4v) bail "$(uname -m) runner is not supported yet by this action; if you need support for this platform, please submit an issue at <https://github.com/taiki-e/install-action>" ;;
+  # GitHub Actions Runner supports x86_64/AArch64/Arm Linux, x86_64/AArch64 Windows,
+  # and x86_64/AArch64 macOS.
   # https://github.com/actions/runner/blob/v2.321.0/.github/workflows/build.yml#L21
-  # https://docs.github.com/en/actions/hosting-your-own-runners/about-self-hosted-runners#supported-architectures-and-operating-systems-for-self-hosted-runners
-  # So we can assume x86_64 unless it is AArch64 or Arm.
-  *)
-    # TODO: uname -m on windows-11-arm returns "x86_64"
-    host_arch=x86_64
-    ;;
+  # https://docs.github.com/en/actions/reference/runners/self-hosted-runners#supported-processor-architectures
+  # And IBM provides runners for powerpc64le/s390x Linux.
+  # https://github.com/IBM/actionspz
+  # So we can assume x86_64 unless it has a known non-x86_64 uname -m result.
+  # TODO: uname -m on windows-11-arm returns "x86_64"
+  *) host_arch=x86_64 ;;
 esac
 info "host platform: ${host_arch}_${host_os}"
 
-home="${HOME}"
+home="${HOME:-}"
+if [[ -z "${home}" ]]; then
+  # https://github.com/IBM/actionspz/issues/30
+  home=$(realpath ~)
+  export HOME="${home}"
+fi
 if [[ "${host_os}" == "windows" ]]; then
   if [[ "${home}" == "/home/"* ]]; then
     if [[ -d "${home/\/home\///c/Users/}" ]]; then
@@ -763,10 +769,10 @@ for tool in "${tools[@]}"; do
       # Use cargo-binstall fallback if tool is available but the specified version not available.
       read_manifest "${tool}" "${version}"
       if [[ "${download_info}" == "null" ]]; then
-        if [[ "${rust_crate}" == "null" ]]; then
+        if [[ "${rust_crate}" == "null" ]] || [[ "${fallback}" == "none" ]]; then
           bail "${tool}@${version} for '${host_arch}_${host_os}' is not supported"
         fi
-        warn "${tool}@${version} for '${host_arch}_${host_os}' is not supported; fallback to cargo-binstall"
+        warn "${tool}@${version} for '${host_arch}_${host_os}' is not supported; fallback to ${fallback}"
         case "${version}" in
           latest) unsupported_tools+=("${rust_crate}") ;;
           *) unsupported_tools+=("${rust_crate}@${version}") ;;
@@ -858,11 +864,20 @@ if [[ ${#unsupported_tools[@]} -gt 0 ]]; then
   IFS=','
   case "${fallback}" in
     none) bail "install-action does not support ${unsupported_tools[*]} (fallback is disabled by 'fallback: none' input option)" ;;
+    cargo-binstall)
+      case "${host_arch}" in
+        x86_64 | aarch64) ;;
+        *)
+          info "cargo-binstall does not provide prebuilt binaries for this platform (${host_arch}); use 'cargo-install' fallback instead"
+          fallback=cargo-install
+          ;;
+      esac
+      ;;
   esac
+  info "install-action does not support ${unsupported_tools[*]}; fallback to ${fallback}"
+  IFS=$'\n\t'
   case "${fallback}" in
     cargo-binstall)
-      info "install-action does not support ${unsupported_tools[*]}; fallback to cargo-binstall"
-      IFS=$'\n\t'
       install_cargo_binstall
       if [[ -z "${GITHUB_TOKEN:-}" ]] && [[ -n "${DEFAULT_GITHUB_TOKEN:-}" ]]; then
         export GITHUB_TOKEN="${DEFAULT_GITHUB_TOKEN}"
@@ -879,8 +894,6 @@ if [[ ${#unsupported_tools[@]} -gt 0 ]]; then
       fi
       ;;
     cargo-install)
-      info "install-action does not support ${unsupported_tools[*]}; fallback to cargo-install"
-      IFS=$'\n\t'
       cargo install --locked "${unsupported_tools[@]}"
       ;;
     *) bail "unhandled fallback ${fallback}" ;;

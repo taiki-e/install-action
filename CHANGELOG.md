@@ -12,6 +12,13 @@ Note: In this file, do not use the hard wrap in the middle of a sentence for com
 
 - Add `fallback: cargo-install` input option to use `cargo install` instead of `cargo-binstall` for fallback.
 
+- Support powerpc64le/riscv64/s390x Linux runners. The following tools are now supported, and for other tools the `cargo install` fallback mentioned above is used for now.
+  - powerpc64le Linux: `cargo-hack`, `cargo-llvm-cov`, `cargo-minimal-versions`, `cargo-no-dev-deps`, `iai-callgrind-runner`, `parse-changelog`, `parse-dockerfile`, `protoc`, `syft`, `trivy`
+  - riscv64 Linux: `cargo-hack`, `cargo-llvm-cov`, `cargo-minimal-versions`, `cargo-no-dev-deps`, `iai-callgrind-runner`, `parse-changelog`, `parse-dockerfile`, `shellcheck`, `wash`, `wasmtime`
+  - s390x Linux: `cargo-hack`, `cargo-llvm-cov`, `cargo-minimal-versions`, `cargo-no-dev-deps`, `iai-callgrind-runner`, `parse-changelog`, `parse-dockerfile`, `protoc`, `syft`, `trivy`, `wasmtime`
+
+- Support `zola` on x86_64 Linux (musl).
+
 - Accept `typos-cli` as an alias for `typos`.
 
 - Accept `wasm-bindgen-cli` as an alias for `wasm-bindgen`.

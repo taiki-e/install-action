@@ -18,6 +18,15 @@
     },
     "aarch64_windows": {
       "url": "https://github.com/taiki-e/cargo-no-dev-deps/releases/download/v${version}/cargo-no-dev-deps-aarch64-pc-windows-msvc.tar.gz"
+    },
+    "powerpc64le_linux_musl": {
+      "url": "https://github.com/taiki-e/cargo-no-dev-deps/releases/download/v${version}/cargo-no-dev-deps-powerpc64le-unknown-linux-musl.tar.gz"
+    },
+    "riscv64_linux_musl": {
+      "url": "https://github.com/taiki-e/cargo-no-dev-deps/releases/download/v${version}/cargo-no-dev-deps-riscv64gc-unknown-linux-musl.tar.gz"
+    },
+    "s390x_linux_gnu": {
+      "url": "https://github.com/taiki-e/cargo-no-dev-deps/releases/download/v${version}/cargo-no-dev-deps-s390x-unknown-linux-gnu.tar.gz"
     }
   },
   "license_markdown": "[Apache-2.0](https://github.com/taiki-e/cargo-no-dev-deps/blob/main/LICENSE-APACHE) OR [MIT](https://github.com/taiki-e/cargo-no-dev-deps/blob/main/LICENSE-MIT)",
@@ -51,6 +60,18 @@
     "aarch64_windows": {
       "etag": "0x8DDEE0D16651878",
       "checksum": "21942c5aa9f938a5f8ff16e323c80934c3fb4435ec2621bb0422b73fa38c9882"
+    },
+    "powerpc64le_linux_musl": {
+      "etag": "0x8DDEE0D2802FEBF",
+      "checksum": "9d7459518b71deb18386815c74408921710215268c62ea92e66e54e8e0b57e76"
+    },
+    "riscv64_linux_musl": {
+      "etag": "0x8DDEE0CFB391FD1",
+      "checksum": "e2c70960d0319cd1c01f3196e03e63653e0c5b6166788511eda284ca44aed1cb"
+    },
+    "s390x_linux_gnu": {
+      "etag": "0x8DDEE0CFDFA56A2",
+      "checksum": "a5e6fc66a1e93dafc51aee9325f5d73010b896eb5328f9a19ed6807ec238bba7"
     }
   },
   "0.2.16": {

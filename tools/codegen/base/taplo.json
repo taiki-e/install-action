@@ -3,22 +3,20 @@
   "tag_prefix": "",
   "rust_crate": "${package}-cli",
   "version_range": ">= 0.8.0",
+  "asset_name": "${package}-${rust_target_os}-${rust_target_arch}.gz",
   "bin": "${package}${exe}",
   "platform": {
-    "x86_64_linux_gnu": {
-      "asset_name": "${package}-linux-x86_64.gz"
-    },
+    "x86_64_linux_gnu": {},
     "x86_64_macos": {
-      "asset_name": "${package}-darwin-x86_64.gz"
+      "asset_name": "${package}-darwin-${rust_target_arch}.gz"
     },
     "x86_64_windows": {
-      "asset_name": "${package}-windows-x86_64.zip"
+      "asset_name": "${package}-${rust_target_os}-${rust_target_arch}.zip"
     },
-    "aarch64_linux_gnu": {
-      "asset_name": "${package}-linux-aarch64.gz"
-    },
+    "aarch64_linux_gnu": {},
     "aarch64_macos": {
-      "asset_name": "${package}-darwin-aarch64.gz"
-    }
+      "asset_name": "${package}-darwin-${rust_target_arch}.gz"
+    },
+    "riscv64_linux_gnu": {}
   }
 }
