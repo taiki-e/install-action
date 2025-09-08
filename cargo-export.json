@@ -1,6 +1,10 @@
 {
   "rust_crate": "cargo-export",
   "template": {
+    "x86_64_linux_gnu": {
+      "url": "https://github.com/bazhenov/cargo-export/releases/download/v${version}/cargo-export-v${version}-x86_64-unknown-linux-gnu.tar.gz",
+      "bin": "cargo-export-v${version}-x86_64-unknown-linux-gnu/bin/cargo-export"
+    },
     "x86_64_linux_musl": {
       "url": "https://github.com/bazhenov/cargo-export/releases/download/v${version}/cargo-export-v${version}-x86_64-unknown-linux-musl.tar.gz",
       "bin": "cargo-export-v${version}-x86_64-unknown-linux-musl/bin/cargo-export"
@@ -44,6 +48,10 @@
     }
   },
   "0.2.4": {
+    "x86_64_linux_gnu": {
+      "etag": "0x8DC0207EC7042AB",
+      "checksum": "d627ea63ea7cff70bbb9443cfa47ff15fc5a2970982ff399daeba021903e0543"
+    },
     "x86_64_macos": {
       "etag": "0x8DC0207F88643EA",
       "checksum": "f0bdca8ae6b8d4168eb3e0852049c94f77baf22a78135391e8a968edab456d95"
@@ -58,6 +66,10 @@
     }
   },
   "0.2.3": {
+    "x86_64_linux_gnu": {
+      "etag": "0x8DC01F9055BD3F3",
+      "checksum": "e96bc6713867ea7bd12123a32bd0ad09a222b5b0c393c53778b690fa88d25bc2"
+    },
     "x86_64_macos": {
       "etag": "0x8DC01F90F5D33A4",
       "checksum": "cccbf3f1df341e7a62521141f295e857ad1fbe8b81406a1666affd1659fa2244"

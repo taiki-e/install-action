@@ -15,14 +15,57 @@
     },
     "aarch64_macos": {
       "url": "https://github.com/taiki-e/cargo-llvm-cov/releases/download/v${version}/cargo-llvm-cov-aarch64-apple-darwin.tar.gz"
+    },
+    "powerpc64le_linux_musl": {
+      "url": "https://github.com/taiki-e/cargo-llvm-cov/releases/download/v${version}/cargo-llvm-cov-powerpc64le-unknown-linux-musl.tar.gz"
+    },
+    "riscv64_linux_musl": {
+      "url": "https://github.com/taiki-e/cargo-llvm-cov/releases/download/v${version}/cargo-llvm-cov-riscv64gc-unknown-linux-musl.tar.gz"
+    },
+    "s390x_linux_gnu": {
+      "url": "https://github.com/taiki-e/cargo-llvm-cov/releases/download/v${version}/cargo-llvm-cov-s390x-unknown-linux-gnu.tar.gz"
     }
   },
   "license_markdown": "[Apache-2.0](https://github.com/taiki-e/cargo-llvm-cov/blob/main/LICENSE-APACHE) OR [MIT](https://github.com/taiki-e/cargo-llvm-cov/blob/main/LICENSE-MIT)",
   "latest": {
-    "version": "0.6.18"
+    "version": "0.6.19"
   },
   "0.6": {
-    "version": "0.6.18"
+    "version": "0.6.19"
+  },
+  "0.6.19": {
+    "x86_64_linux_musl": {
+      "etag": "0x8DDEE14680FA218",
+      "checksum": "35b0f9bbb6d5c8048c0b53084b956552ed1f8f2f447af18008ca8f7ce2639877"
+    },
+    "x86_64_macos": {
+      "etag": "0x8DDEE1487A174BA",
+      "checksum": "afb8acb2d533fc42d054b2de907099d1373b88a6cd7a30c7576a7b28bac4bc2c"
+    },
+    "x86_64_windows": {
+      "etag": "0x8DDEE14999E23AD",
+      "checksum": "dcf8e75e10b07f8348c900a600e429585cccaf4239533b7247a76c7ceaca0b3f"
+    },
+    "aarch64_linux_musl": {
+      "etag": "0x8DDEE14708B2C67",
+      "checksum": "01742b65ef2e9e8f2bc2fb6fa435e6f484d3330302133c722977ab07ebce4f7d"
+    },
+    "aarch64_macos": {
+      "etag": "0x8DDEE14AEBB9845",
+      "checksum": "c612fd5b617e0ef8d872f2f9c7b4e88bf42dc3659f0685b36cc77314d132d511"
+    },
+    "powerpc64le_linux_musl": {
+      "etag": "0x8DDEE14745ACD36",
+      "checksum": "eccfc9c149929f7bb29324e2e58736ff2a6e37c59bb92edf393db435d8f3d62c"
+    },
+    "riscv64_linux_musl": {
+      "etag": "0x8DDEE14700DB012",
+      "checksum": "180084851ee5b94fa3c22d9266766dfed9fc85be06d1c1a46ade953ad9dc7bd2"
+    },
+    "s390x_linux_gnu": {
+      "etag": "0x8DDEE147D18E1D6",
+      "checksum": "bc7dfe69816ccd529aac91f99332532e1d95080e112962fa0bf8a445dc1f3202"
+    }
   },
   "0.6.18": {
     "x86_64_linux_musl": {

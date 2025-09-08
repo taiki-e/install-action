@@ -1,6 +1,9 @@
 {
   "rust_crate": "typos-cli",
   "template": {
+    "x86_64_linux_gnu": {
+      "url": "https://github.com/crate-ci/typos/releases/download/v${version}/typos-v${version}-x86_64-unknown-linux-gnu.tar.gz"
+    },
     "x86_64_linux_musl": {
       "url": "https://github.com/crate-ci/typos/releases/download/v${version}/typos-v${version}-x86_64-unknown-linux-musl.tar.gz"
     },
@@ -3728,6 +3731,10 @@
     "version": "1.0.11"
   },
   "1.0.11": {
+    "x86_64_linux_gnu": {
+      "etag": "0x8D9B938C2710A4B",
+      "checksum": "f7d816ac8963c37b9e3ab90e4521225e57cb67f6b3cb04ffbbcfaa45f80e7c65"
+    },
     "x86_64_macos": {
       "etag": "0x8D9B938B0C73E38",
       "checksum": "2b685d923d69e987ea39c330e15df2d8f194070da6bdc03d8570aa701065315d"
@@ -3738,6 +3745,10 @@
     }
   },
   "1.0.10": {
+    "x86_64_linux_gnu": {
+      "etag": "0x8D9B938AEF99F96",
+      "checksum": "8c6aff0bcf1789ec82692e335bc8fdcdd025e0ed9cacd38deb1a5f4a387f6e2d"
+    },
     "x86_64_macos": {
       "etag": "0x8D9B938BAC2162A",
       "checksum": "f2b72d7a42793bf7f469716575cf7d1b80e66c6ee339d20d63b97cd299faad18"
@@ -3748,6 +3759,10 @@
     }
   },
   "1.0.9": {
+    "x86_64_linux_gnu": {
+      "etag": "0x8D9B938BBBC5714",
+      "checksum": "c061804d7a4d94bd54699ee1d97dfa2ff00ece2f19ca9aed957342df760aea65"
+    },
     "x86_64_macos": {
       "etag": "0x8D9B938B0DA9C4E",
       "checksum": "8a4d9f4d3d11aa6013ea34168ac651bf4e73d29b875b061961b47baf4dc90d30"
@@ -3758,6 +3773,10 @@
     }
   },
   "1.0.8": {
+    "x86_64_linux_gnu": {
+      "etag": "0x8D9B938BFA38648",
+      "checksum": "72519d44f36fcfcd56250aa6b6ab0737116c93f500a5b3e97c6b74c0d75aff64"
+    },
     "x86_64_macos": {
       "etag": "0x8D9B938B82008A1",
       "checksum": "a7a1ab2ac3590de109c4509e216b68948690c5eaf55ab8c8e791dc9393809056"
@@ -3768,6 +3787,10 @@
     }
   },
   "1.0.6": {
+    "x86_64_linux_gnu": {
+      "etag": "0x8D9B938B0DC97D0",
+      "checksum": "88db0cb9b5825d65e1f92004a5662cd2a53c4c4f1167e6c58740a7c96a1ab493"
+    },
     "x86_64_macos": {
       "etag": "0x8D9B938B306049C",
       "checksum": "b4ef12ff6e8085bfe1bb670c9d344c6a1ae3f1ec34317ce92a6a2858f1ae363e"
@@ -3778,6 +3801,10 @@
     }
   },
   "1.0.5": {
+    "x86_64_linux_gnu": {
+      "etag": "0x8D9B938B1107177",
+      "checksum": "f89a2815046a11ad5f35fd554296b584fbbfe09b7377505489263e1e106cddcf"
+    },
     "x86_64_macos": {
       "etag": "0x8D9B938BC8D9237",
       "checksum": "b60f35d7c341bbd0555d7fc0c0bfea3d513f2e238736862f14235c40e26c6c79"
@@ -3788,6 +3815,10 @@
     }
   },
   "1.0.4": {
+    "x86_64_linux_gnu": {
+      "etag": "0x8D9B938B0A1E158",
+      "checksum": "d50f8a0793d200e6e3222f2ec9eb27e04c89628c026e9e3495a191a48de27aee"
+    },
     "x86_64_macos": {
       "etag": "0x8D9B938BE789F94",
       "checksum": "cdb6a9d6001b85ecf3c3acc804568efcf22218e9e87f74fdd09b10a5fdb95553"
@@ -3798,6 +3829,10 @@
     }
   },
   "1.0.3": {
+    "x86_64_linux_gnu": {
+      "etag": "0x8D9B938BE67D91F",
+      "checksum": "b7a59815d70429a58ff3fc8fc2f6e5d48cad4566cf089ab0d929d6697fd2e95b"
+    },
     "x86_64_macos": {
       "etag": "0x8D9B938BACDD443",
       "checksum": "e3d565e0e48754b2c7180df8d0622e9128da2382bb3ecc9978844a30edbbfe6b"
@@ -3808,6 +3843,10 @@
     }
   },
   "1.0.2": {
+    "x86_64_linux_gnu": {
+      "etag": "0x8D9B938BC87EDBC",
+      "checksum": "25c5d0f1a065106a6411a6fbf20a4a5247df42b13920dfe19f47aa5776ebc743"
+    },
     "x86_64_macos": {
       "etag": "0x8D9B938B0DC70C3",
       "checksum": "99b3694e83fa6e9e121eaea1fce769ed7a947a39d8ea49f11d7858970899088b"
@@ -3818,6 +3857,10 @@
     }
   },
   "1.0.1": {
+    "x86_64_linux_gnu": {
+      "etag": "0x8D9B938B118ADA3",
+      "checksum": "c57fe7c43b50aa047f58f1954efae6e2ac62996bcfd5cfaf9a4c6c520ea6cbe6"
+    },
     "x86_64_macos": {
       "etag": "0x8D9B938BACC4DDC",
       "checksum": "65e83854318bcdf777233afccbed84db0bd2a2eaa775209078337c4e579b512f"
@@ -3828,6 +3871,10 @@
     }
   },
   "1.0.0": {
+    "x86_64_linux_gnu": {
+      "etag": "0x8D9B938B8876DD7",
+      "checksum": "e4b4028f71211936beb3e0b4953123b217277d6d6b76eca1d0bdb25b067e176e"
+    },
     "x86_64_macos": {
       "etag": "0x8D9B938B36665FA",
       "checksum": "97bc6b5c6d7a68e996753a0800db7269789370fdb03c14745142e41eba10c5a0"

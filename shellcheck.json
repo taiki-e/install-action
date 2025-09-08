@@ -20,6 +20,10 @@
     "aarch64_macos": {
       "url": "https://github.com/koalaman/shellcheck/releases/download/v${version}/shellcheck-v${version}.darwin.aarch64.tar.xz",
       "bin": "shellcheck-v${version}/shellcheck"
+    },
+    "riscv64_linux_musl": {
+      "url": "https://github.com/koalaman/shellcheck/releases/download/v${version}/shellcheck-v${version}.linux.riscv64.tar.xz",
+      "bin": "shellcheck-v${version}/shellcheck"
     }
   },
   "license_markdown": "[GPL-3.0](https://github.com/koalaman/shellcheck/blob/master/LICENSE)",
@@ -49,6 +53,10 @@
     "aarch64_macos": {
       "etag": "0x8DDD2EF81DCBA89",
       "checksum": "56affdd8de5527894dca6dc3d7e0a99a873b0f004d7aabc30ae407d3f48b0a79"
+    },
+    "riscv64_linux_musl": {
+      "etag": "0x8DDD2EF81DDCAC0",
+      "checksum": "693c987777e7b524dd311d9b8c704885a39c889c9804bb1ef1fd29b48567b0b3"
     }
   },
   "0.10": {
@@ -74,6 +82,10 @@
     "aarch64_macos": {
       "etag": "0x8DC3F18BC8509B7",
       "checksum": "bbd2f14826328eee7679da7221f2bc3afb011f6a928b848c80c321f6046ddf81"
+    },
+    "riscv64_linux_musl": {
+      "etag": "0x8DC98BAB3402008",
+      "checksum": "be1f2028951783424c7a5dc744ac0bab8d5b181189e80f640cc56f481f1e371e"
     }
   },
   "0.9": {

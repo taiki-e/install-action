@@ -18,14 +18,61 @@
     },
     "aarch64_windows": {
       "url": "https://github.com/taiki-e/parse-dockerfile/releases/download/v${version}/parse-dockerfile-aarch64-pc-windows-msvc.tar.gz"
+    },
+    "powerpc64le_linux_musl": {
+      "url": "https://github.com/taiki-e/parse-dockerfile/releases/download/v${version}/parse-dockerfile-powerpc64le-unknown-linux-musl.tar.gz"
+    },
+    "riscv64_linux_musl": {
+      "url": "https://github.com/taiki-e/parse-dockerfile/releases/download/v${version}/parse-dockerfile-riscv64gc-unknown-linux-musl.tar.gz"
+    },
+    "s390x_linux_gnu": {
+      "url": "https://github.com/taiki-e/parse-dockerfile/releases/download/v${version}/parse-dockerfile-s390x-unknown-linux-gnu.tar.gz"
     }
   },
   "license_markdown": "[Apache-2.0](https://github.com/taiki-e/parse-dockerfile/blob/main/LICENSE-APACHE) OR [MIT](https://github.com/taiki-e/parse-dockerfile/blob/main/LICENSE-MIT)",
   "latest": {
-    "version": "0.1.1"
+    "version": "0.1.2"
   },
   "0.1": {
-    "version": "0.1.1"
+    "version": "0.1.2"
+  },
+  "0.1.2": {
+    "x86_64_linux_musl": {
+      "etag": "0x8DDEE0E3DDD8470",
+      "checksum": "91c664a5d1da224c78d2c3af8a92342ff997ed9c1203361ffe46a9a464a44bc4"
+    },
+    "x86_64_macos": {
+      "etag": "0x8DDEE0E3CC4EAD3",
+      "checksum": "7c5ca07ba547034f3459bbb8b8ea292488a823a9f0ad28ece9ae0eb48c6451e1"
+    },
+    "x86_64_windows": {
+      "etag": "0x8DDEE0E9D74AFF5",
+      "checksum": "c9ba2a01af08674a363c78266fb7d67e2d135f8a994ecfea27cdaa8e305b4670"
+    },
+    "aarch64_linux_musl": {
+      "etag": "0x8DDEE0E4187C9A3",
+      "checksum": "f36e89a61f7efbba0c45d4bd3b62f962dc98a92508dcfabe63cdc68d41e0291b"
+    },
+    "aarch64_macos": {
+      "etag": "0x8DDEE0E43BC2D80",
+      "checksum": "2ed2a742012b127e9dbb7d32a755beb5ba20148d7b2e1476fb89132c340736cd"
+    },
+    "aarch64_windows": {
+      "etag": "0x8DDEE0E51AA8AB0",
+      "checksum": "d7a4d562760174fd898f53793e9d678259d276c0fb553e0e9b72f0d819d5f553"
+    },
+    "powerpc64le_linux_musl": {
+      "etag": "0x8DDEE0E4062940F",
+      "checksum": "e0d6e255e182bb676ff3f6beea27844c2e5a00e64ed272909ccf284cb8db6f88"
+    },
+    "riscv64_linux_musl": {
+      "etag": "0x8DDEE0E432BB32C",
+      "checksum": "2c0b11a59bc60443a34a58043f0b00d127491e292be3036e84c18348faaa44f5"
+    },
+    "s390x_linux_gnu": {
+      "etag": "0x8DDEE0E4EB14313",
+      "checksum": "3b0759a099f977c1049b2c007483d285062ccd036453bdd66d312cd96a441951"
+    }
   },
   "0.1.1": {
     "x86_64_linux_musl": {

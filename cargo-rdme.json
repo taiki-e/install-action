@@ -1,16 +1,6 @@
 {
   "rust_crate": "cargo-rdme",
-  "template": {
-    "x86_64_linux_musl": {
-      "url": "https://github.com/orium/cargo-rdme/releases/download/v${version}/cargo-rdme_v${version}_x86_64-unknown-linux-musl.tar.bz2"
-    },
-    "x86_64_macos": {
-      "url": "https://github.com/orium/cargo-rdme/releases/download/v${version}/cargo-rdme_v${version}_x86_64-apple-darwin.zip"
-    },
-    "x86_64_windows": {
-      "url": "https://github.com/orium/cargo-rdme/releases/download/v${version}/cargo-rdme_v${version}_x86_64-pc-windows-gnu.zip"
-    }
-  },
+  "template": null,
   "license_markdown": "[MPL-2.0](https://github.com/orium/cargo-rdme/blob/main/LICENSE.md)",
   "latest": {
     "version": "1.4.2"
@@ -23,86 +13,103 @@
   },
   "1.4.8": {
     "x86_64_linux_musl": {
+      "url": "https://github.com/orium/cargo-rdme/releases/download/v1.4.8/cargo-rdme_v1.4.8_x86_64-unknown-linux-musl.tar.bz2",
       "etag": "0x8DD0D8E946C15EC",
       "checksum": "b3a3e141b128d3dfffe3806d9c65a001818355a515111c946775d9e2c7112ab4"
     },
     "x86_64_windows": {
+      "url": "https://github.com/orium/cargo-rdme/releases/download/v1.4.8/cargo-rdme_v1.4.8_x86_64-pc-windows-gnu.zip",
       "etag": "0x8DD0D8EC01F6FC1",
       "checksum": "7ddb73756f780151c3616777faeea1c0c8b577614c1ea3dea4bbea13b5cdf4c0"
     }
   },
   "1.4.7": {
     "x86_64_linux_musl": {
+      "url": "https://github.com/orium/cargo-rdme/releases/download/v1.4.7/cargo-rdme_v1.4.7_x86_64-unknown-linux-musl.tar.bz2",
       "etag": "0x8DCFF8CF498DEEF",
       "checksum": "05e30bad3bf5478b7164754574764309a9b3daebbfd83de05a0f00fb39be01dd"
     },
     "x86_64_windows": {
+      "url": "https://github.com/orium/cargo-rdme/releases/download/v1.4.7/cargo-rdme_v1.4.7_x86_64-pc-windows-gnu.zip",
       "etag": "0x8DCFF8D2530DAEA",
       "checksum": "d398dd69b55f65c568e41b55da001b42f0149e5dd79aaaf54600d0ad264b5e75"
     }
   },
   "1.4.6": {
     "x86_64_windows": {
+      "url": "https://github.com/orium/cargo-rdme/releases/download/v1.4.6/cargo-rdme_v1.4.6_x86_64-pc-windows-gnu.zip",
       "etag": "0x8DCFEB4AD6F091D",
       "checksum": "9bf2bdaba8a068e4a002a20581a0d26ec0609276b2671019b151a7d86ea1a3e3"
     }
   },
   "1.4.5": {
     "x86_64_windows": {
+      "url": "https://github.com/orium/cargo-rdme/releases/download/v1.4.5/cargo-rdme_v1.4.5_x86_64-pc-windows-gnu.zip",
       "etag": "0x8DCF3B9BC0D4C9C",
       "checksum": "d3a7d8952c2b71159af47ac88bdbc61de91a36382f810663f35499e5a830e033"
     }
   },
   "1.4.4": {
     "x86_64_windows": {
+      "url": "https://github.com/orium/cargo-rdme/releases/download/v1.4.4/cargo-rdme_v1.4.4_x86_64-pc-windows-gnu.zip",
       "etag": "0x8DC897D83E337FF",
       "checksum": "ff9b7a4d56a89451e8e0ae40716d47534fb08c5723a08fd560a66227b49e2694"
     }
   },
   "1.4.3": {
     "x86_64_windows": {
+      "url": "https://github.com/orium/cargo-rdme/releases/download/v1.4.3/cargo-rdme_v1.4.3_x86_64-pc-windows-gnu.zip",
       "etag": "0x8DC2BFA5B345CC9",
       "checksum": "408ffb657c99bf4142521632306edc4ed130dd991a0cd4b62cf370c28b307daf"
     }
   },
   "1.4.2": {
     "x86_64_linux_musl": {
+      "url": "https://github.com/orium/cargo-rdme/releases/download/v1.4.2/cargo-rdme_v1.4.2_x86_64-unknown-linux-musl.tar.bz2",
       "etag": "0x8DB92D680D05305",
       "checksum": "8555ae93237e1702e79542c810657afc1ff76282c9ecd7b21aa22f5f3b3c21d2"
     },
     "x86_64_macos": {
+      "url": "https://github.com/orium/cargo-rdme/releases/download/v1.4.2/cargo-rdme_v1.4.2_x86_64-apple-darwin.zip",
       "etag": "0x8DB92D668BB8C91",
       "checksum": "2c6996d2b6ec150275436bc8d0969d75247b4ac7400c43c63d24cfc843266f47"
     },
     "x86_64_windows": {
+      "url": "https://github.com/orium/cargo-rdme/releases/download/v1.4.2/cargo-rdme_v1.4.2_x86_64-pc-windows-gnu.zip",
       "etag": "0x8DB92D6AF4F93C7",
       "checksum": "a6333997cb418b369a3ed005eebf30313942bd824456f26d2834af87c8449475"
     }
   },
   "1.4.1": {
     "x86_64_linux_musl": {
+      "url": "https://github.com/orium/cargo-rdme/releases/download/v1.4.1/cargo-rdme_v1.4.1_x86_64-unknown-linux-musl.tar.bz2",
       "etag": "0x8DB922121D34267",
       "checksum": "cbcb893f585def07cb64486063cc9d490fb2eb2b06eaec7e2beb70a47bfd004c"
     },
     "x86_64_macos": {
+      "url": "https://github.com/orium/cargo-rdme/releases/download/v1.4.1/cargo-rdme_v1.4.1_x86_64-apple-darwin.zip",
       "etag": "0x8DB9221272EF35C",
       "checksum": "053236ff190a3601230886679c8fb3405fcbc7f49188eef0bda75a72bd78b9a7"
     },
     "x86_64_windows": {
+      "url": "https://github.com/orium/cargo-rdme/releases/download/v1.4.1/cargo-rdme_v1.4.1_x86_64-pc-windows-gnu.zip",
       "etag": "0x8DB922180C93706",
       "checksum": "83f38b7299c785e9712e7aab3461eea131e79f13bbd45953514019cd75412b1d"
     }
   },
   "1.4.0": {
     "x86_64_linux_musl": {
+      "url": "https://github.com/orium/cargo-rdme/releases/download/v1.4.0/cargo-rdme_v1.4.0_x86_64-unknown-linux-musl.tar.bz2",
       "etag": "0x8DB1D2360EC8AFB",
       "checksum": "2aacb472abeb943a8c4676aa4e4603ab4b037ee9d43eda611b4e8d65c8162100"
     },
     "x86_64_macos": {
+      "url": "https://github.com/orium/cargo-rdme/releases/download/v1.4.0/cargo-rdme_v1.4.0_x86_64-apple-darwin.zip",
       "etag": "0x8DB1D234DD1FE4B",
       "checksum": "0664ef1e0d70b5dbe68c8ad896e5d59972440b4dd46d970d0adf94e5bc5a1768"
     },
     "x86_64_windows": {
+      "url": "https://github.com/orium/cargo-rdme/releases/download/v1.4.0/cargo-rdme_v1.4.0_x86_64-pc-windows-gnu.zip",
       "etag": "0x8DB1D233CE1EFF9",
       "checksum": "8df835d817813252502a28d01e6352b5141660e914b89baf72956a2274d4d1a7"
     }
@@ -112,14 +119,17 @@
   },
   "1.3.0": {
     "x86_64_linux_musl": {
+      "url": "https://github.com/orium/cargo-rdme/releases/download/v1.3.0/cargo-rdme_v1.3.0_x86_64-unknown-linux-musl.tar.bz2",
       "etag": "0x8DB17A01D58FDE6",
       "checksum": "811341ec9724388660bcd4d1a8c6d04947252ff44adaef7d75ba19a58dc25bfc"
     },
     "x86_64_macos": {
+      "url": "https://github.com/orium/cargo-rdme/releases/download/v1.3.0/cargo-rdme_v1.3.0_x86_64-apple-darwin.zip",
       "etag": "0x8DB17A050AA3218",
       "checksum": "a8d4dbe536b9b3389e9db9ff226384705defaed3c2d09f2cf2ead21b5bcd2e4e"
     },
     "x86_64_windows": {
+      "url": "https://github.com/orium/cargo-rdme/releases/download/v1.3.0/cargo-rdme_v1.3.0_x86_64-pc-windows-gnu.zip",
       "etag": "0x8DB17A059C2FCC4",
       "checksum": "6b2988694fc870e6071ada84c94d03736daaf0706daed21765e898235d927296"
     }
@@ -129,14 +139,17 @@
   },
   "1.2.0": {
     "x86_64_linux_musl": {
+      "url": "https://github.com/orium/cargo-rdme/releases/download/v1.2.0/cargo-rdme_v1.2.0_x86_64-unknown-linux-musl.tar.bz2",
       "etag": "0x8DB15347F4132A5",
       "checksum": "e2cea84cd1c7f7c2c03662396a6ef268474c66faa471a6e755c4bda8d35ef0e2"
     },
     "x86_64_macos": {
+      "url": "https://github.com/orium/cargo-rdme/releases/download/v1.2.0/cargo-rdme_v1.2.0_x86_64-apple-darwin.zip",
       "etag": "0x8DB15344FACF90C",
       "checksum": "4226504f45e96dfca35a72b4631dde717cf2f5fed0f87a3cb71d58d6055a1b60"
     },
     "x86_64_windows": {
+      "url": "https://github.com/orium/cargo-rdme/releases/download/v1.2.0/cargo-rdme_v1.2.0_x86_64-pc-windows-gnu.zip",
       "etag": "0x8DB1534AFD1F51B",
       "checksum": "0119712829cd6aaef12094441b574d759c45d62bab069224d21dc1af52df9390"
     }
@@ -146,14 +159,17 @@
   },
   "1.1.0": {
     "x86_64_linux_musl": {
+      "url": "https://github.com/orium/cargo-rdme/releases/download/v1.1.0/cargo-rdme_v1.1.0_x86_64-unknown-linux-musl.tar.bz2",
       "etag": "0x8DB0315902DB0D5",
       "checksum": "1e645bca96bb5c497e6af8a6d7249572709a6fb45b7b7afa789440d7400a61a4"
     },
     "x86_64_macos": {
+      "url": "https://github.com/orium/cargo-rdme/releases/download/v1.1.0/cargo-rdme_v1.1.0_x86_64-apple-darwin.zip",
       "etag": "0x8DB03156F780628",
       "checksum": "1487f7cf5e795b08f56e29dfdb542343ae5b4d74805b6bfb7726da5f6c0dc99f"
     },
     "x86_64_windows": {
+      "url": "https://github.com/orium/cargo-rdme/releases/download/v1.1.0/cargo-rdme_v1.1.0_x86_64-pc-windows-gnu.zip",
       "etag": "0x8DB0315B19C2EFA",
       "checksum": "82f224eef98778d36088eac8a7bdd4b4640b4d10429150718bc3975e4f16daa8"
     }
@@ -163,38 +179,46 @@
   },
   "1.0.2": {
     "x86_64_linux_musl": {
+      "url": "https://github.com/orium/cargo-rdme/releases/download/v1.0.2/cargo-rdme_v1.0.2_x86_64-unknown-linux-musl.tar.bz2",
       "etag": "0x8DAFD789C824BDB",
       "checksum": "85d3b8c5fd247557b90357718f156a9d2cb637f82a77a7bea800d1fad4b870b7"
     },
     "x86_64_macos": {
+      "url": "https://github.com/orium/cargo-rdme/releases/download/v1.0.2/cargo-rdme_v1.0.2_x86_64-apple-darwin.zip",
       "etag": "0x8DAFD789F9272FA",
       "checksum": "0f4d749a397b33d41295f74f005534a4c1a785dfcfa6dc4b5df1016d289cbec6"
     },
     "x86_64_windows": {
+      "url": "https://github.com/orium/cargo-rdme/releases/download/v1.0.2/cargo-rdme_v1.0.2_x86_64-pc-windows-gnu.zip",
       "etag": "0x8DAFD7903B01D84",
       "checksum": "2416fe0cebcde091138882f45044d2e057940653194d2474139967b6e7e09cb5"
     }
   },
   "1.0.1": {
     "x86_64_linux_musl": {
+      "url": "https://github.com/orium/cargo-rdme/releases/download/v1.0.1/cargo-rdme_v1.0.1_x86_64-unknown-linux-musl.tar.bz2",
       "etag": "0x8DAEF4F7F7C70AE",
       "checksum": "ef601c5773119972e67cfe61518b46faaf993037ae7caaf455178e8a6466be67"
     },
     "x86_64_macos": {
+      "url": "https://github.com/orium/cargo-rdme/releases/download/v1.0.1/cargo-rdme_v1.0.1_x86_64-apple-darwin.zip",
       "etag": "0x8DAEF4F6A5C49C7",
       "checksum": "ea1bccf8a3290c7a1fd2f30e27bf2005f264f7219555b2131a23fb5ca91d0105"
     },
     "x86_64_windows": {
+      "url": "https://github.com/orium/cargo-rdme/releases/download/v1.0.1/cargo-rdme_v1.0.1_x86_64-pc-windows-gnu.zip",
       "etag": "0x8DAEF4FB886BD2D",
       "checksum": "3abe728bb5bb983683698189110ddbc8b72b0ca965d5a75b802ef981e10ef437"
     }
   },
   "1.0.0": {
     "x86_64_linux_musl": {
+      "url": "https://github.com/orium/cargo-rdme/releases/download/v1.0.0/cargo-rdme_v1.0.0_x86_64-unknown-linux-musl.tar.bz2",
       "etag": "0x8DAEEAB93981AE2",
       "checksum": "ff0c7e7adcaf5dc0943d5ca075a49f77e5a9a531e6e3fbb8e04aa8708d93199f"
     },
     "x86_64_windows": {
+      "url": "https://github.com/orium/cargo-rdme/releases/download/v1.0.0/cargo-rdme_v1.0.0_x86_64-pc-windows-gnu.zip",
       "etag": "0x8DAEEABDC175C8E",
       "checksum": "51e755b5a0613408e1d42de561ad88f80e44c9494bc02f18d92a6d9cd0c4cff8"
     }
@@ -204,22 +228,36 @@
   },
   "0.7.3": {
     "x86_64_linux_musl": {
+      "url": "https://github.com/orium/cargo-rdme/releases/download/v0.7.3/cargo-rdme_v0.7.3_x86_64-unknown-linux-musl.tar.bz2",
       "etag": "0x8DAB50795D95CEC",
       "checksum": "11b1eb91e95f5fe014b6c0ba7850fb677015a1f4c76aa94beca16f6278cbb690"
     },
     "x86_64_windows": {
+      "url": "https://github.com/orium/cargo-rdme/releases/download/v0.7.3/cargo-rdme_v0.7.3_x86_64-pc-windows-gnu.zip",
       "etag": "0x8DAB5082F15E565",
       "checksum": "ee60b8fe9a0f00fe7e6d75ed31ed6cc566d666a9ca27765654250715016aeb7c"
     }
   },
   "0.7.2": {
+    "x86_64_linux_musl": {
+      "url": "https://github.com/orium/cargo-rdme/releases/download/v0.7.2/cargo-rdme_v0.7.2_x86_64-unknown-linux-musl.zip",
+      "etag": "0x8DA91FD1AFEB603",
+      "checksum": "ca2842fe46d1ef335ec2b2238134377fed09e01010a59aee9c8901b56e921d8d"
+    },
     "x86_64_windows": {
+      "url": "https://github.com/orium/cargo-rdme/releases/download/v0.7.2/cargo-rdme_v0.7.2_x86_64-pc-windows-gnu.zip",
       "etag": "0x8DA91FD3176BB59",
       "checksum": "fe6ca1d38381ed9f8f87359fe8fb50bb87787cb058ed8efe2ebbc72ed03cff80"
     }
   },
   "0.7.1": {
+    "x86_64_linux_musl": {
+      "url": "https://github.com/orium/cargo-rdme/releases/download/v0.7.1/cargo-rdme_v0.7.1_x86_64-unknown-linux-musl.zip",
+      "etag": "0x8DA88E8F8D3782E",
+      "checksum": "0f18ad356e62743efc7d3e19bf0251c8463eb398d95b19836545dcd4de6835f7"
+    },
     "x86_64_windows": {
+      "url": "https://github.com/orium/cargo-rdme/releases/download/v0.7.1/cargo-rdme_v0.7.1_x86_64-pc-windows-gnu.zip",
       "etag": "0x8DA88E943BA0032",
       "checksum": "a19a756f13d46bb5ee96f8d24696541a494cb38bb726397f06df848b183c49ab"
     }
