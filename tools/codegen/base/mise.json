@@ -2,7 +2,7 @@
   "repository": "https://github.com/jdx/mise",
   "tag_prefix": "v",
   "rust_crate": "${package}",
-  "bin": "${package}${exe}",
+  "bin": "mise/bin/${package}${exe}",
   "version_range": ">= 2025.9.7",
   "platform": {
     "x86_64_linux_musl": {

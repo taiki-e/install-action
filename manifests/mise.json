@@ -3,23 +3,23 @@
   "template": {
     "x86_64_linux_musl": {
       "url": "https://github.com/jdx/mise/releases/download/v${version}/mise-v${version}-linux-x64-musl.tar.gz",
-      "bin": "mise"
+      "bin": "mise/bin/mise"
     },
     "x86_64_macos": {
       "url": "https://github.com/jdx/mise/releases/download/v${version}/mise-v${version}-macos-x64.tar.gz",
-      "bin": "mise"
+      "bin": "mise/bin/mise"
     },
     "x86_64_windows": {
       "url": "https://github.com/jdx/mise/releases/download/v${version}/mise-v${version}-windows-x64.zip",
-      "bin": "mise.exe"
+      "bin": "mise/bin/mise.exe"
     },
     "aarch64_linux_musl": {
       "url": "https://github.com/jdx/mise/releases/download/v${version}/mise-v${version}-linux-arm64-musl.tar.gz",
-      "bin": "mise"
+      "bin": "mise/bin/mise"
     },
     "aarch64_macos": {
       "url": "https://github.com/jdx/mise/releases/download/v${version}/mise-v${version}-macos-arm64.tar.gz",
-      "bin": "mise"
+      "bin": "mise/bin/mise"
     }
   },
   "license_markdown": "[MIT](https://github.com/jdx/mise/blob/main/LICENSE)",
