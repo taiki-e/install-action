@@ -10,6 +10,8 @@ Note: In this file, do not use the hard wrap in the middle of a sentence for com
 
 ## [Unreleased]
 
+- Update `coreutils@latest` to 0.2.2.
+
 ## [2.60.0] - 2025-09-08
 
 - Add `fallback: cargo-install` input option to use `cargo install` instead of `cargo-binstall` for fallback.
