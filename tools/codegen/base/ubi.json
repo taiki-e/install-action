@@ -1,0 +1,24 @@
+{
+  "repository": "https://github.com/houseabsolute/ubi",
+  "tag_prefix": "v",
+  "rust_crate": "${package}",
+  "bin": "${package}${exe}",
+  "version_range": ">= 0.7.4",
+  "platform": {
+    "x86_64_linux_musl": {
+      "asset_name": "${package}-Linux-musl-${rust_target_arch}.tar.gz"
+    },
+    "x86_64_macos": {
+      "asset_name": "${package}-macOS-${rust_target_arch}.tar.gz"
+    },
+    "x86_64_windows": {
+      "asset_name": "${package}-Windows-msvc-${rust_target_arch}.zip"
+    },
+    "aarch64_linux_musl": {
+      "asset_name": "${package}-Linux-musl-arm64.tar.gz"
+    },
+    "aarch64_macos": {
+      "asset_name": "${package}-macOS-arm64.tar.gz"
+    }
+  }
+}
