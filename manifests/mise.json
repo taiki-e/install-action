@@ -1,0 +1,57 @@
+{
+  "rust_crate": "mise",
+  "template": {
+    "x86_64_linux_musl": {
+      "url": "https://github.com/jdx/mise/releases/download/v${version}/mise-v${version}-linux-x64-musl.tar.gz",
+      "bin": "mise"
+    },
+    "x86_64_macos": {
+      "url": "https://github.com/jdx/mise/releases/download/v${version}/mise-v${version}-macos-x64.tar.gz",
+      "bin": "mise"
+    },
+    "x86_64_windows": {
+      "url": "https://github.com/jdx/mise/releases/download/v${version}/mise-v${version}-windows-x64.zip",
+      "bin": "mise.exe"
+    },
+    "aarch64_linux_musl": {
+      "url": "https://github.com/jdx/mise/releases/download/v${version}/mise-v${version}-linux-arm64-musl.tar.gz",
+      "bin": "mise"
+    },
+    "aarch64_macos": {
+      "url": "https://github.com/jdx/mise/releases/download/v${version}/mise-v${version}-macos-arm64.tar.gz",
+      "bin": "mise"
+    }
+  },
+  "license_markdown": "[MIT](https://github.com/jdx/mise/blob/main/LICENSE)",
+  "latest": {
+    "version": "2025.9.7"
+  },
+  "2025": {
+    "version": "2025.9.7"
+  },
+  "2025.9": {
+    "version": "2025.9.7"
+  },
+  "2025.9.7": {
+    "x86_64_linux_musl": {
+      "etag": "0x8DDEFDF602B48F6",
+      "checksum": "9852b691c0df34952f1d91c8d18f5280b32061443539847a09f476f5bfc06cd8"
+    },
+    "x86_64_macos": {
+      "etag": "0x8DDEFDF6297BAA5",
+      "checksum": "1dc807169555216111d2e442cb4e16110a3b7b49254d6aec19228390dd28df3e"
+    },
+    "x86_64_windows": {
+      "etag": "0x8DDEFDF6340358F",
+      "checksum": "2aac56960cabb1efffdf713714961ab87ba1b240877e8638aef6e10a8f466b93"
+    },
+    "aarch64_linux_musl": {
+      "etag": "0x8DDEFDF5CF31D77",
+      "checksum": "c3466591b103ea105640f129fc053ab96478e43154e4b67fd98c3892f021e299"
+    },
+    "aarch64_macos": {
+      "etag": "0x8DDEFDF61CD85CD",
+      "checksum": "206c397c602bc1d1856a2c4acdd50b643de83e9b8152a4b4444877136e95a472"
+    }
+  }
+}

@@ -1,0 +1,24 @@
+{
+  "repository": "https://github.com/jdx/mise",
+  "tag_prefix": "v",
+  "rust_crate": "${package}",
+  "bin": "${package}${exe}",
+  "version_range": ">= 2025.9.7",
+  "platform": {
+    "x86_64_linux_musl": {
+      "asset_name": "${package}-v${version}-${rust_target_os}-x64-musl.tar.gz"
+    },
+    "x86_64_macos": {
+      "asset_name": "${package}-v${version}-${rust_target_os}-x64.tar.gz"
+    },
+    "x86_64_windows": {
+      "asset_name": "${package}-v${version}-${rust_target_os}-x64.zip"
+    },
+    "aarch64_linux_musl": {
+      "asset_name": "${package}-v${version}-${rust_target_os}-arm64-musl.tar.gz"
+    },
+    "aarch64_macos": {
+      "asset_name": "${package}-v${version}-${rust_target_os}-arm64.tar.gz"
+    }
+  }
+}
