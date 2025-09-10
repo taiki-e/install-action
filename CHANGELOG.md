@@ -10,6 +10,8 @@ Note: In this file, do not use the hard wrap in the middle of a sentence for com
 
 ## [Unreleased]
 
+## [2.61.0] - 2025-09-10
+
 - Add `uv`. ([#1138](https://github.com/taiki-e/install-action/pull/1138), thanks @jayvdb)
 
 - Add `mise` ([#1137](https://github.com/taiki-e/install-action/pull/1137), thanks @jayvdb)
@@ -4451,7 +4453,8 @@ Note: This release is considered a breaking change because installing on version
 
 Initial release
 
-[Unreleased]: https://github.com/taiki-e/install-action/compare/v2.60.0...HEAD
+[Unreleased]: https://github.com/taiki-e/install-action/compare/v2.61.0...HEAD
+[2.61.0]: https://github.com/taiki-e/install-action/compare/v2.60.0...v2.61.0
 [2.60.0]: https://github.com/taiki-e/install-action/compare/v2.59.1...v2.60.0
 [2.59.1]: https://github.com/taiki-e/install-action/compare/v2.59.0...v2.59.1
 [2.59.0]: https://github.com/taiki-e/install-action/compare/v2.58.33...v2.59.0
