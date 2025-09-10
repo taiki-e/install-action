@@ -1,0 +1,86 @@
+{
+  "rust_crate": "ubi",
+  "template": {
+    "x86_64_linux_musl": {
+      "url": "https://github.com/houseabsolute/ubi/releases/download/v${version}/ubi-Linux-musl-x86_64.tar.gz",
+      "bin": "ubi"
+    },
+    "x86_64_macos": {
+      "url": "https://github.com/houseabsolute/ubi/releases/download/v${version}/ubi-macOS-x86_64.tar.gz",
+      "bin": "ubi"
+    },
+    "x86_64_windows": {
+      "url": "https://github.com/houseabsolute/ubi/releases/download/v${version}/ubi-Windows-msvc-x86_64.zip",
+      "bin": "ubi.exe"
+    },
+    "aarch64_linux_musl": {
+      "url": "https://github.com/houseabsolute/ubi/releases/download/v${version}/ubi-Linux-musl-arm64.tar.gz",
+      "bin": "ubi"
+    },
+    "aarch64_macos": {
+      "url": "https://github.com/houseabsolute/ubi/releases/download/v${version}/ubi-macOS-arm64.tar.gz",
+      "bin": "ubi"
+    },
+    "aarch64_windows": {
+      "url": "https://github.com/houseabsolute/ubi/releases/download/v${version}/ubi-Windows-msvc-arm64.zip",
+      "bin": "ubi.exe"
+    },
+    "powerpc64le_linux_gnu": {
+      "url": "https://github.com/houseabsolute/ubi/releases/download/v${version}/ubi-Linux-gnu-powerpc64le.tar.gz",
+      "bin": "ubi"
+    },
+    "riscv64_linux_gnu": {
+      "url": "https://github.com/houseabsolute/ubi/releases/download/v${version}/ubi-Linux-gnu-riscv64gc.tar.gz",
+      "bin": "ubi"
+    },
+    "s390x_linux_gnu": {
+      "url": "https://github.com/houseabsolute/ubi/releases/download/v${version}/ubi-Linux-gnu-s390x.tar.gz",
+      "bin": "ubi"
+    }
+  },
+  "license_markdown": "[MIT](https://github.com/houseabsolute/ubi/blob/master/LICENSE-MIT) OR [Apache-2.0](https://github.com/houseabsolute/ubi/blob/master/LICENSE-APACHE)",
+  "latest": {
+    "version": "0.7.4"
+  },
+  "0.7": {
+    "version": "0.7.4"
+  },
+  "0.7.4": {
+    "x86_64_linux_musl": {
+      "etag": "0x8DDE33E8277D23B",
+      "checksum": "913cba6ef010db5cca73863118bf215ae9e78f02b5e38a8fc3195385cea68c1b"
+    },
+    "x86_64_macos": {
+      "etag": "0x8DDE33EB1FD3132",
+      "checksum": "83d378f0181d4e5b601386d0f658b43da345d4c29308d5e8d2c43f18368c06d1"
+    },
+    "x86_64_windows": {
+      "etag": "0x8DDE33EE0521D86",
+      "checksum": "450836aebc9ec3f16b03c6883b0c195a24abf419596fec3067fa495306640f7c"
+    },
+    "aarch64_linux_musl": {
+      "etag": "0x8DDE33EDD2FADE5",
+      "checksum": "f91b62bc9dbe358ae29b7485e0d74f31b3cc87b651b6b3658dc60f1534775f8b"
+    },
+    "aarch64_macos": {
+      "etag": "0x8DDE33E88A30502",
+      "checksum": "fbed4e8cff1ed4eae94a39ae4e6ad2ca862e876415cdea3cee036bc9d674d066"
+    },
+    "aarch64_windows": {
+      "etag": "0x8DDE33E916C552C",
+      "checksum": "2df26cd0021aa699309534462dcb62dd2c666edf952b0f63be70495a4aee24ac"
+    },
+    "powerpc64le_linux_gnu": {
+      "etag": "0x8DDE33E6E5D6969",
+      "checksum": "a010a386fd61c21704c0c9d07d0ca589b2b28cf85a7c563b908cc42f63b316d9"
+    },
+    "riscv64_linux_gnu": {
+      "etag": "0x8DDE33E77AB32DB",
+      "checksum": "45c50498b0f3a5946befe0c1bd6fcd50d8dcef4279c688e8a9fd87a55c730d07"
+    },
+    "s390x_linux_gnu": {
+      "etag": "0x8DDE33EC518872E",
+      "checksum": "32fb0b89493298058ea93ea43887a9d8fb57153aa453ac14b513873e46e9d1cc"
+    }
+  }
+}
