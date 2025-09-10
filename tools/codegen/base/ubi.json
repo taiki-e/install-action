@@ -19,6 +19,18 @@
     },
     "aarch64_macos": {
       "asset_name": "${package}-macOS-arm64.tar.gz"
+    },
+    "aarch64_windows": {
+      "asset_name": "${package}-Windows-msvc-arm64.zip"
+    },
+    "powerpc64le_linux_gnu": {
+      "asset_name": "${package}-Linux-gnu-powerpc64le.tar.gz"
+    },
+    "riscv64_linux_gnu": {
+      "asset_name": "${package}-Linux-gnu-riscv64gc.tar.gz"
+    },
+    "s390x_linux_gnu": {
+      "asset_name": "${package}-Linux-gnu-s390x.tar.gz"
     }
   }
 }
