@@ -10,6 +10,8 @@ Note: In this file, do not use the hard wrap in the middle of a sentence for com
 
 ## [Unreleased]
 
+- Update `release-plz@latest` to 0.3.144.
+
 ## [2.61.0] - 2025-09-10
 
 - Add `uv`. ([#1138](https://github.com/taiki-e/install-action/pull/1138), thanks @jayvdb)
