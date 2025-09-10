@@ -24,6 +24,18 @@
     "aarch64_windows": {
       "url": "https://github.com/astral-sh/uv/releases/download/${version}/uv-aarch64-pc-windows-msvc.zip",
       "bin": "uv.exe"
+    },
+    "powerpc64le_linux_gnu": {
+      "url": "https://github.com/astral-sh/uv/releases/download/${version}/uv-powerpc64le-unknown-linux-gnu.tar.gz",
+      "bin": "uv-powerpc64le-unknown-linux-gnu/uv"
+    },
+    "riscv64_linux_gnu": {
+      "url": "https://github.com/astral-sh/uv/releases/download/${version}/uv-riscv64gc-unknown-linux-gnu.tar.gz",
+      "bin": "uv-riscv64gc-unknown-linux-gnu/uv"
+    },
+    "s390x_linux_gnu": {
+      "url": "https://github.com/astral-sh/uv/releases/download/${version}/uv-s390x-unknown-linux-gnu.tar.gz",
+      "bin": "uv-s390x-unknown-linux-gnu/uv"
     }
   },
   "license_markdown": "[Apache-2.0](https://github.com/astral-sh/uv/blob/main/LICENSE-APACHE) OR [MIT](https://github.com/astral-sh/uv/blob/main/LICENSE-MIT)",
@@ -57,6 +69,18 @@
     "aarch64_windows": {
       "etag": "0x8DDF013631054A2",
       "checksum": "392acca957d8d7cccafbb68ce6c4ba29b2ff00c8b0d4744a2136918d3a7bf765"
+    },
+    "powerpc64le_linux_gnu": {
+      "etag": "0x8DDF0137CA026B2",
+      "checksum": "91645092447a14c23b47d0f434a787a9555b29e061607d9e60d2d556b831f5aa"
+    },
+    "riscv64_linux_gnu": {
+      "etag": "0x8DDF0137D66B606",
+      "checksum": "dbaeff3f0baad73c264c35abd937a231fb6b9d1201b6763d82e39e7516358115"
+    },
+    "s390x_linux_gnu": {
+      "etag": "0x8DDF0137F8A6251",
+      "checksum": "e29c330a8956c13acb0f2af7aa650dd5d9ebba6aefdceaea77f689953d140780"
     }
   }
 }

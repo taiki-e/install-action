@@ -27,6 +27,18 @@
     "aarch64_windows": {
       "asset_name": "${package}-aarch64-pc-windows-msvc.zip",
       "bin": "${package}${exe}"
+    },
+    "powerpc64le_linux_gnu": {
+      "asset_name": "${package}-powerpc64le-unknown-linux-gnu.tar.gz",
+      "bin": "${package}-powerpc64le-unknown-linux-gnu/${package}${exe}"
+    },
+    "riscv64_linux_gnu": {
+      "asset_name": "${package}-riscv64gc-unknown-linux-gnu.tar.gz",
+      "bin": "${package}-riscv64gc-unknown-linux-gnu/${package}${exe}"
+    },
+    "s390x_linux_gnu": {
+      "asset_name": "${package}-s390x-unknown-linux-gnu.tar.gz",
+      "bin": "${package}-s390x-unknown-linux-gnu/${package}${exe}"
     }
   }
 }
