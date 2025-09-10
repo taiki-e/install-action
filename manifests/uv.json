@@ -11,7 +11,7 @@
     },
     "x86_64_windows": {
       "url": "https://github.com/astral-sh/uv/releases/download/${version}/uv-x86_64-pc-windows-msvc.zip",
-      "bin": "uv-x86_64-pc-windows-msvc/uv.exe"
+      "bin": "uv.exe"
     },
     "aarch64_linux_musl": {
       "url": "https://github.com/astral-sh/uv/releases/download/${version}/uv-aarch64-unknown-linux-musl.tar.gz",
@@ -23,7 +23,7 @@
     },
     "aarch64_windows": {
       "url": "https://github.com/astral-sh/uv/releases/download/${version}/uv-aarch64-pc-windows-msvc.zip",
-      "bin": "uv-aarch64-pc-windows-msvc/uv.exe"
+      "bin": "uv.exe"
     }
   },
   "license_markdown": "[Apache-2.0](https://github.com/astral-sh/uv/blob/main/LICENSE-APACHE) OR [MIT](https://github.com/astral-sh/uv/blob/main/LICENSE-MIT)",
