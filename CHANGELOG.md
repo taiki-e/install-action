@@ -10,6 +10,12 @@ Note: In this file, do not use the hard wrap in the middle of a sentence for com
 
 ## [Unreleased]
 
+- Add `uv`. ([#1138](https://github.com/taiki-e/install-action/pull/1138), thanks @jayvdb)
+
+- Add `mise` ([#1137](https://github.com/taiki-e/install-action/pull/1137), thanks @jayvdb)
+
+- Add `ubi` ([#1135](https://github.com/taiki-e/install-action/pull/1135), thanks @jayvdb)
+
 - Update `coreutils@latest` to 0.2.2.
 
 ## [2.60.0] - 2025-09-08
