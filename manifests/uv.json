@@ -1,0 +1,86 @@
+{
+  "rust_crate": null,
+  "template": {
+    "x86_64_linux_musl": {
+      "url": "https://github.com/astral-sh/uv/releases/download/${version}/uv-x86_64-unknown-linux-musl.tar.gz",
+      "bin": "uv-x86_64-unknown-linux-musl/uv"
+    },
+    "x86_64_macos": {
+      "url": "https://github.com/astral-sh/uv/releases/download/${version}/uv-x86_64-apple-darwin.tar.gz",
+      "bin": "uv-x86_64-apple-darwin/uv"
+    },
+    "x86_64_windows": {
+      "url": "https://github.com/astral-sh/uv/releases/download/${version}/uv-x86_64-pc-windows-msvc.zip",
+      "bin": "uv.exe"
+    },
+    "aarch64_linux_musl": {
+      "url": "https://github.com/astral-sh/uv/releases/download/${version}/uv-aarch64-unknown-linux-musl.tar.gz",
+      "bin": "uv-aarch64-unknown-linux-musl/uv"
+    },
+    "aarch64_macos": {
+      "url": "https://github.com/astral-sh/uv/releases/download/${version}/uv-aarch64-apple-darwin.tar.gz",
+      "bin": "uv-aarch64-apple-darwin/uv"
+    },
+    "aarch64_windows": {
+      "url": "https://github.com/astral-sh/uv/releases/download/${version}/uv-aarch64-pc-windows-msvc.zip",
+      "bin": "uv.exe"
+    },
+    "powerpc64le_linux_gnu": {
+      "url": "https://github.com/astral-sh/uv/releases/download/${version}/uv-powerpc64le-unknown-linux-gnu.tar.gz",
+      "bin": "uv-powerpc64le-unknown-linux-gnu/uv"
+    },
+    "riscv64_linux_gnu": {
+      "url": "https://github.com/astral-sh/uv/releases/download/${version}/uv-riscv64gc-unknown-linux-gnu.tar.gz",
+      "bin": "uv-riscv64gc-unknown-linux-gnu/uv"
+    },
+    "s390x_linux_gnu": {
+      "url": "https://github.com/astral-sh/uv/releases/download/${version}/uv-s390x-unknown-linux-gnu.tar.gz",
+      "bin": "uv-s390x-unknown-linux-gnu/uv"
+    }
+  },
+  "license_markdown": "[Apache-2.0](https://github.com/astral-sh/uv/blob/main/LICENSE-APACHE) OR [MIT](https://github.com/astral-sh/uv/blob/main/LICENSE-MIT)",
+  "latest": {
+    "version": "0.8.16"
+  },
+  "0.8": {
+    "version": "0.8.16"
+  },
+  "0.8.16": {
+    "x86_64_linux_musl": {
+      "etag": "0x8DDF01386647510",
+      "checksum": "ee220f112b91b23f641d169ba7a3652c6ab7104e7c666d26104ebd6a2f76be43"
+    },
+    "x86_64_macos": {
+      "etag": "0x8DDF013833787EB",
+      "checksum": "07491a998fd741090501df9bbfe538f85568901a3a66c9e0368636509158727a"
+    },
+    "x86_64_windows": {
+      "etag": "0x8DDF0138569C9D5",
+      "checksum": "97fb93678eca3b4f731ea3879ae2e78787976e03f38c9c6fb744ab28bc3aec1b"
+    },
+    "aarch64_linux_musl": {
+      "etag": "0x8DDF0136684A8D0",
+      "checksum": "6bd6a11c384f07353c3c7eec9bde094f89b92a12dc09caea9df40c424afebea5"
+    },
+    "aarch64_macos": {
+      "etag": "0x8DDF0137096BFC6",
+      "checksum": "87e4b51b735e8445f6c445c7b4c0398273e40d34cd192bad8158736653600cd6"
+    },
+    "aarch64_windows": {
+      "etag": "0x8DDF013631054A2",
+      "checksum": "392acca957d8d7cccafbb68ce6c4ba29b2ff00c8b0d4744a2136918d3a7bf765"
+    },
+    "powerpc64le_linux_gnu": {
+      "etag": "0x8DDF0137CA026B2",
+      "checksum": "91645092447a14c23b47d0f434a787a9555b29e061607d9e60d2d556b831f5aa"
+    },
+    "riscv64_linux_gnu": {
+      "etag": "0x8DDF0137D66B606",
+      "checksum": "dbaeff3f0baad73c264c35abd937a231fb6b9d1201b6763d82e39e7516358115"
+    },
+    "s390x_linux_gnu": {
+      "etag": "0x8DDF0137F8A6251",
+      "checksum": "e29c330a8956c13acb0f2af7aa650dd5d9ebba6aefdceaea77f689953d140780"
+    }
+  }
+}
