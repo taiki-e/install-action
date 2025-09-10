@@ -20,6 +20,10 @@
     "aarch64_macos": {
       "url": "https://github.com/jdx/mise/releases/download/v${version}/mise-v${version}-macos-arm64.tar.gz",
       "bin": "mise/bin/mise"
+    },
+    "aarch64_windows": {
+      "url": "https://github.com/jdx/mise/releases/download/v${version}/mise-v${version}-windows-arm64.zip",
+      "bin": "mise/bin/mise.exe"
     }
   },
   "license_markdown": "[MIT](https://github.com/jdx/mise/blob/main/LICENSE)",
@@ -52,6 +56,10 @@
     "aarch64_macos": {
       "etag": "0x8DDEFDF61CD85CD",
       "checksum": "206c397c602bc1d1856a2c4acdd50b643de83e9b8152a4b4444877136e95a472"
+    },
+    "aarch64_windows": {
+      "etag": "0x8DDEFDF62BF884E",
+      "checksum": "eb87a69447acd5e3878a38e05312921b4f44abf57687ce827f0571fe5447b2ab"
     }
   }
 }

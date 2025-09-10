@@ -19,6 +19,9 @@
     },
     "aarch64_macos": {
       "asset_name": "${package}-v${version}-${rust_target_os}-arm64.tar.gz"
+    },
+    "aarch64_windows": {
+      "asset_name": "${package}-v${version}-${rust_target_os}-arm64.zip"
     }
   }
 }
