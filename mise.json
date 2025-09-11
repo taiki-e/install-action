@@ -28,13 +28,39 @@
   },
   "license_markdown": "[MIT](https://github.com/jdx/mise/blob/main/LICENSE)",
   "latest": {
-    "version": "2025.9.7"
+    "version": "2025.9.8"
   },
   "2025": {
-    "version": "2025.9.7"
+    "version": "2025.9.8"
   },
   "2025.9": {
-    "version": "2025.9.7"
+    "version": "2025.9.8"
+  },
+  "2025.9.8": {
+    "x86_64_linux_musl": {
+      "etag": "0x8DDF0C205BDD9F1",
+      "checksum": "163d6ca2cd17e7029a8d6e033c444c53ad0bd18c1f9ac82a25e0a88fa4cc89bd"
+    },
+    "x86_64_macos": {
+      "etag": "0x8DDF0C207647E7F",
+      "checksum": "658a9e4a5457bd18da7a56e08dd986e099be7264cebc5367d39439825e030e2c"
+    },
+    "x86_64_windows": {
+      "etag": "0x8DDF0C2080256ED",
+      "checksum": "2702f4c203c31df0d31d0e4f346225a2a83dfc03b734028389402f9a70dc7b36"
+    },
+    "aarch64_linux_musl": {
+      "etag": "0x8DDF0C20381436E",
+      "checksum": "4a80821b2c0a7679b9645f9cf9fb26d5e6443f2318fea711182319007f422580"
+    },
+    "aarch64_macos": {
+      "etag": "0x8DDF0C206B0EC9A",
+      "checksum": "98e62798a3a7332e0a1e43b2ec67fc937fc61b17871dc394fc157afbc24613a5"
+    },
+    "aarch64_windows": {
+      "etag": "0x8DDF0C207A7F265",
+      "checksum": "c99dc83bcbb20c3c7ea2ec80d7c8645c5b4431c797d21df5fa74d2112d26db1b"
+    }
   },
   "2025.9.7": {
     "x86_64_linux_musl": {
