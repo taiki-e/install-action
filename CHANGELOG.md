@@ -10,6 +10,8 @@ Note: In this file, do not use the hard wrap in the middle of a sentence for com
 
 ## [Unreleased]
 
+- Update `ubi@latest` to 0.8.0.
+
 - Update `release-plz@latest` to 0.3.147.
 
 - Update `dprint@latest` to 0.50.2.
