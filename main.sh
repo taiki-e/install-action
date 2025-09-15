@@ -440,8 +440,11 @@ tool="${INPUT_TOOL:-}"
 tools=()
 if [[ -n "${tool}" ]]; then
   while read -rd,; do
-    t="${REPLY# *}"
-    tools+=("${t%* }")
+    # Trim leading and trailing whitespace
+    t="${REPLY}"
+    t="${t#"${t%%[![:space:]]*}"}"  # Remove leading whitespace
+    t="${t%"${t##*[![:space:]]}"}"  # Remove trailing whitespace
+    tools+=("${t}")
   done <<<"${tool},"
 fi
 if [[ ${#tools[@]} -eq 0 ]]; then
