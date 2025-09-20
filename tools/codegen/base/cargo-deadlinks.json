@@ -1,0 +1,12 @@
+{
+  "repository": "https://github.com/deadlinks/cargo-deadlinks",
+  "tag_prefix": "",
+  "rust_crate": "${package}",
+  "asset_name": "${package}-${rust_target_os}",
+  "bin": "${package}",
+  "platform": {
+    "x86_64_linux_musl": {},
+    "x86_64_macos": {},
+    "x86_64_windows": {}
+  }
+}
