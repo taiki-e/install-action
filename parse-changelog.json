@@ -3,10 +3,57 @@
   "template": null,
   "license_markdown": "[Apache-2.0](https://github.com/taiki-e/parse-changelog/blob/main/LICENSE-APACHE) OR [MIT](https://github.com/taiki-e/parse-changelog/blob/main/LICENSE-MIT)",
   "latest": {
-    "version": "0.6.13"
+    "version": "0.6.14"
   },
   "0.6": {
-    "version": "0.6.13"
+    "version": "0.6.14"
+  },
+  "0.6.14": {
+    "x86_64_linux_musl": {
+      "url": "https://github.com/taiki-e/parse-changelog/releases/download/v0.6.14/parse-changelog-x86_64-unknown-linux-musl.tar.gz",
+      "etag": "0x8DDF7E0C6960B46",
+      "checksum": "af16b6329bfbeb1be710bf76141f194e3d1b6cf42b8b0a82fafa841d097763fc"
+    },
+    "x86_64_macos": {
+      "url": "https://github.com/taiki-e/parse-changelog/releases/download/v0.6.14/parse-changelog-x86_64-apple-darwin.tar.gz",
+      "etag": "0x8DDF7E0EB93B8A2",
+      "checksum": "d6e11da5bb7aaf8650b7d81bc97c468142b87825f0a6da0e1a8c1b1edb78f0ff"
+    },
+    "x86_64_windows": {
+      "url": "https://github.com/taiki-e/parse-changelog/releases/download/v0.6.14/parse-changelog-x86_64-pc-windows-msvc.tar.gz",
+      "etag": "0x8DDF7E0FD27C3FB",
+      "checksum": "82abf7de83cdabc93453fd08f0255333e85bec8e727df446ab59d49260b2ac80"
+    },
+    "aarch64_linux_musl": {
+      "url": "https://github.com/taiki-e/parse-changelog/releases/download/v0.6.14/parse-changelog-aarch64-unknown-linux-musl.tar.gz",
+      "etag": "0x8DDF7E0C3E05FA9",
+      "checksum": "d32280ab0c2459b6c39b286f6898503ab5d99b41b7fc792cb7aec4eb125f2c54"
+    },
+    "aarch64_macos": {
+      "url": "https://github.com/taiki-e/parse-changelog/releases/download/v0.6.14/parse-changelog-aarch64-apple-darwin.tar.gz",
+      "etag": "0x8DDF7E0CFE5FC21",
+      "checksum": "823f5468e646012a70876e22e9d2eba319390b0611207c66cda721a42dcc14f1"
+    },
+    "aarch64_windows": {
+      "url": "https://github.com/taiki-e/parse-changelog/releases/download/v0.6.14/parse-changelog-aarch64-pc-windows-msvc.tar.gz",
+      "etag": "0x8DDF7E0DCC46309",
+      "checksum": "c1974204fe957cb1a11c9997fc84e48618c02749ce9ecd0e477b0597e9412c66"
+    },
+    "powerpc64le_linux_musl": {
+      "url": "https://github.com/taiki-e/parse-changelog/releases/download/v0.6.14/parse-changelog-powerpc64le-unknown-linux-musl.tar.gz",
+      "etag": "0x8DDF7E0C27DCA65",
+      "checksum": "524ddb946f18643bf09a0d819aa05ff6be5e54e5e78e07a04b2fcd6592592d41"
+    },
+    "riscv64_linux_musl": {
+      "url": "https://github.com/taiki-e/parse-changelog/releases/download/v0.6.14/parse-changelog-riscv64gc-unknown-linux-musl.tar.gz",
+      "etag": "0x8DDF7E0C807F88E",
+      "checksum": "ab5c0ff31a35d1a6663fbc8cb25a66db59b1a9f457a482a0523aa736fe84e832"
+    },
+    "s390x_linux_gnu": {
+      "url": "https://github.com/taiki-e/parse-changelog/releases/download/v0.6.14/parse-changelog-s390x-unknown-linux-gnu.tar.gz",
+      "etag": "0x8DDF7E0DFE41905",
+      "checksum": "f3505fe284a78cf6d8a9891f2e2893cc0b24c338140f1eab696fab741f2c8226"
+    }
   },
   "0.6.13": {
     "x86_64_linux_musl": {
