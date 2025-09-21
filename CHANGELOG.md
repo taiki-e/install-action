@@ -10,6 +10,8 @@ Note: In this file, do not use the hard wrap in the middle of a sentence for com
 
 ## [Unreleased]
 
+## [2.62.0] - 2025-09-21
+
 - Support `cargo-deadlinks` ([#1161](https://github.com/taiki-e/install-action/pull/1161), thanks @BenjaminBrienen)
 
 ## [2.61.13] - 2025-09-21
@@ -4543,7 +4545,8 @@ Note: This release is considered a breaking change because installing on version
 
 Initial release
 
-[Unreleased]: https://github.com/taiki-e/install-action/compare/v2.61.13...HEAD
+[Unreleased]: https://github.com/taiki-e/install-action/compare/v2.62.0...HEAD
+[2.62.0]: https://github.com/taiki-e/install-action/compare/v2.61.13...v2.62.0
 [2.61.13]: https://github.com/taiki-e/install-action/compare/v2.61.12...v2.61.13
 [2.61.12]: https://github.com/taiki-e/install-action/compare/v2.61.11...v2.61.12
 [2.61.11]: https://github.com/taiki-e/install-action/compare/v2.61.10...v2.61.11
