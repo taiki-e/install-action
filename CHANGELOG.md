@@ -10,6 +10,8 @@ Note: In this file, do not use the hard wrap in the middle of a sentence for com
 
 ## [Unreleased]
 
+- Update `git-cliff@latest` to 2.10.1.
+
 ## [2.62.0] - 2025-09-21
 
 - Support `cargo-deadlinks` ([#1161](https://github.com/taiki-e/install-action/pull/1161), thanks @BenjaminBrienen)
