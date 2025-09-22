@@ -10,6 +10,8 @@ Note: In this file, do not use the hard wrap in the middle of a sentence for com
 
 ## [Unreleased]
 
+## [2.62.1] - 2025-09-22
+
 - Update `mise@latest` to 2025.9.15.
 
 - Update `cargo-udeps@latest` to 0.1.59.
@@ -4551,7 +4553,8 @@ Note: This release is considered a breaking change because installing on version
 
 Initial release
 
-[Unreleased]: https://github.com/taiki-e/install-action/compare/v2.62.0...HEAD
+[Unreleased]: https://github.com/taiki-e/install-action/compare/v2.62.1...HEAD
+[2.62.1]: https://github.com/taiki-e/install-action/compare/v2.62.0...v2.62.1
 [2.62.0]: https://github.com/taiki-e/install-action/compare/v2.61.13...v2.62.0
 [2.61.13]: https://github.com/taiki-e/install-action/compare/v2.61.12...v2.61.13
 [2.61.12]: https://github.com/taiki-e/install-action/compare/v2.61.11...v2.61.12
