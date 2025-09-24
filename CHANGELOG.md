@@ -10,6 +10,8 @@ Note: In this file, do not use the hard wrap in the middle of a sentence for com
 
 ## [Unreleased]
 
+- Update `rclone@latest` to 1.71.1.
+
 ## [2.62.6] - 2025-09-24
 
 - Update `wasm-bindgen@latest` to 0.2.104.
