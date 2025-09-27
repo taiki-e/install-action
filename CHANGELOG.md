@@ -14,8 +14,6 @@ Note: In this file, do not use the hard wrap in the middle of a sentence for com
 
 - Update `zizmor@latest` to 1.14.1.
 
-- Update `zizmor@latest` to 1.14.0.
-
 ## [2.62.9] - 2025-09-26
 
 - Update `espup@latest` to 0.16.0.
