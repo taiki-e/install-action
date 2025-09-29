@@ -17,6 +17,7 @@ build.include-workspace = false # covered by tools/tidy.sh
 build.include-archives = true
 build.allow-build-scripts = [
     { name = "proc-macro2" }, # via serde_derive
+    { name = "quote" }, # via serde_derive
     { name = "semver" },
     { name = "serde_core" },
     { name = "serde" }, # https://github.com/serde-rs/serde/issues/2972
