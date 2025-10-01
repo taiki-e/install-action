@@ -10,6 +10,8 @@ Note: In this file, do not use the hard wrap in the middle of a sentence for com
 
 ## [Unreleased]
 
+## [2.62.15] - 2025-10-01
+
 - Update `osv-scanner@latest` to 2.2.3.
 
 - Update `typos@latest` to 1.37.0.
@@ -4633,7 +4635,8 @@ Note: This release is considered a breaking change because installing on version
 
 Initial release
 
-[Unreleased]: https://github.com/taiki-e/install-action/compare/v2.62.14...HEAD
+[Unreleased]: https://github.com/taiki-e/install-action/compare/v2.62.15...HEAD
+[2.62.15]: https://github.com/taiki-e/install-action/compare/v2.62.14...v2.62.15
 [2.62.14]: https://github.com/taiki-e/install-action/compare/v2.62.13...v2.62.14
 [2.62.13]: https://github.com/taiki-e/install-action/compare/v2.62.12...v2.62.13
 [2.62.12]: https://github.com/taiki-e/install-action/compare/v2.62.11...v2.62.12
