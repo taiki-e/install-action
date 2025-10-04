@@ -14,8 +14,6 @@ Note: In this file, do not use the hard wrap in the middle of a sentence for com
 
 - Update `typos@latest` to 1.37.2.
 
-- Update `mise@latest` to 2025.10.1.
-
 ## [2.62.17] - 2025-10-03
 
 - Update `cargo-nextest@latest` to 0.9.105.
