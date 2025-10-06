@@ -22,13 +22,60 @@
   },
   "license_markdown": "[MIT](https://github.com/crate-ci/typos/blob/master/LICENSE-MIT) OR [Apache-2.0](https://github.com/crate-ci/typos/blob/master/LICENSE-APACHE)",
   "latest": {
-    "version": "1.37.2"
+    "version": "1.38.0"
   },
   "1": {
-    "version": "1.37.2"
+    "version": "1.38.0"
+  },
+  "1.38": {
+    "version": "1.38.0"
+  },
+  "1.38.0": {
+    "x86_64_linux_musl": {
+      "etag": "0x8DE051B46BA7A14",
+      "checksum": "fa5e184d67f28af3c92cab732cf6c5b8b6ef2b367cf942369db8b5d6f5c6668a"
+    },
+    "x86_64_macos": {
+      "etag": "0x8DE051B5E5CBDF5",
+      "checksum": "7d5bb4783be741f193b77544ff480371de9b75a66b9f5fa2b9f5da68042120ea"
+    },
+    "x86_64_windows": {
+      "etag": "0x8DE051B79FDE636",
+      "checksum": "b280804ffe58d52bb81c25cd67a226932cd00e9de052efa420a01e75b74c0683"
+    },
+    "aarch64_linux_musl": {
+      "etag": "0x8DE051B37BC30AE",
+      "checksum": "bce55159ba5cc55daffc67e4d6611de3dc5f9866d60be0a978a2322a42306ea2"
+    },
+    "aarch64_macos": {
+      "etag": "0x8DE051B60F75F87",
+      "checksum": "0c089200662058b906c753e329264f944c0002151c09684571dc0948a38d6b5b"
+    }
   },
   "1.37": {
-    "version": "1.37.2"
+    "version": "1.37.3"
+  },
+  "1.37.3": {
+    "x86_64_linux_musl": {
+      "etag": "0x8DE05082D6F5C18",
+      "checksum": "7a1150653c8c65af14726b1e4d6e032193c0c05214dc02f2b2d404702679521c"
+    },
+    "x86_64_macos": {
+      "etag": "0x8DE050883178BAF",
+      "checksum": "d68f9ce73ffba4db5631403d9d7a6c84d64000c179405b314186164e02ebcdd6"
+    },
+    "x86_64_windows": {
+      "etag": "0x8DE050878B7A7DF",
+      "checksum": "6601ddede89a96e38cf748920048d702ad72a26f863edb606da7602e1276a0ee"
+    },
+    "aarch64_linux_musl": {
+      "etag": "0x8DE05084A3E8811",
+      "checksum": "3b15e6893db9cb39da05498fd559d4a9a52ea7e183427a80196e50795ace040a"
+    },
+    "aarch64_macos": {
+      "etag": "0x8DE05085729DD1D",
+      "checksum": "1c9a276968f5d8206ac290d6ed16c664e8d75fd2e2a6948e8833275c3b468973"
+    }
   },
   "1.37.2": {
     "x86_64_linux_musl": {
