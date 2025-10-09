@@ -13,13 +13,27 @@
   },
   "license_markdown": "[MIT](https://github.com/jfrimmel/cargo-valgrind/blob/master/LICENSE-MIT) OR [Apache-2.0](https://github.com/jfrimmel/cargo-valgrind/blob/master/LICENSE-APACHE)",
   "latest": {
-    "version": "2.3.2"
+    "version": "2.3.3"
   },
   "2": {
-    "version": "2.3.2"
+    "version": "2.3.3"
   },
   "2.3": {
-    "version": "2.3.2"
+    "version": "2.3.3"
+  },
+  "2.3.3": {
+    "x86_64_linux_musl": {
+      "etag": "0x8DE06B5F44B3D08",
+      "checksum": "559bc9438486a40bfc0869d9398488cdf4a54a283123fcdbdb0e6487dcf33e31"
+    },
+    "x86_64_macos": {
+      "etag": "0x8DE06B5F4537137",
+      "checksum": "f6e32e18032045e1586fab72e293c768a6546adae572a4a2054990500a525728"
+    },
+    "x86_64_windows": {
+      "etag": "0x8DE06B5F45826D2",
+      "checksum": "6571551d2cc6e43e4d9370042e5efe35abbf0fd599092cf804978e2c65e6119e"
+    }
   },
   "2.3.2": {
     "x86_64_linux_musl": {
