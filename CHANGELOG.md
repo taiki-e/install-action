@@ -10,6 +10,8 @@ Note: In this file, do not use the hard wrap in the middle of a sentence for com
 
 ## [Unreleased]
 
+- Update `trivy@latest` to 0.67.2.
+
 - Update `editorconfig-checker@latest` to 3.4.1.
 
 - Update `mise@latest` to 2025.10.7.
