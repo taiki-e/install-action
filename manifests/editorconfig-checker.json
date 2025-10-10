@@ -3,13 +3,51 @@
   "template": null,
   "license_markdown": "[MIT](https://github.com/editorconfig-checker/editorconfig-checker/blob/main/LICENSE)",
   "latest": {
-    "version": "3.4.0"
+    "version": "3.4.1"
   },
   "3": {
-    "version": "3.4.0"
+    "version": "3.4.1"
   },
   "3.4": {
-    "version": "3.4.0"
+    "version": "3.4.1"
+  },
+  "3.4.1": {
+    "x86_64_linux_musl": {
+      "url": "https://github.com/editorconfig-checker/editorconfig-checker/releases/download/v3.4.1/ec-linux-amd64.tar.gz",
+      "etag": "0x8DE07E232AD80DC",
+      "checksum": "8412b617d9f6ee9af78df8122f627470b2782e29a977ee147322a49bae16bde5",
+      "bin": "bin/ec-linux-amd64"
+    },
+    "x86_64_macos": {
+      "url": "https://github.com/editorconfig-checker/editorconfig-checker/releases/download/v3.4.1/ec-darwin-amd64.tar.gz",
+      "etag": "0x8DE07E231D44247",
+      "checksum": "788ee1f18285b247aeec62ebfcfe9ac3f8c18c8066243e90d4b079e373d70533",
+      "bin": "bin/ec-darwin-amd64"
+    },
+    "x86_64_windows": {
+      "url": "https://github.com/editorconfig-checker/editorconfig-checker/releases/download/v3.4.1/ec-windows-amd64.zip",
+      "etag": "0x8DE07E2320B40F0",
+      "checksum": "49ab0a4008794c8a04fae43a754bc335815ce77b3f0b1dd55448e1eb3123329e",
+      "bin": "bin/ec-windows-amd64.exe"
+    },
+    "aarch64_linux_musl": {
+      "url": "https://github.com/editorconfig-checker/editorconfig-checker/releases/download/v3.4.1/ec-linux-arm64.tar.gz",
+      "etag": "0x8DE07E231D5C732",
+      "checksum": "fe4da32549efcacdf528651603c0ec87c42ad544dc5ff87cd529a1ba7420008a",
+      "bin": "bin/ec-linux-arm64"
+    },
+    "aarch64_macos": {
+      "url": "https://github.com/editorconfig-checker/editorconfig-checker/releases/download/v3.4.1/ec-darwin-arm64.tar.gz",
+      "etag": "0x8DE07E23297EE56",
+      "checksum": "5ef6b8a19bbab3183586399d181ca94e9f5e028cb1e2c8a19b651ac241631794",
+      "bin": "bin/ec-darwin-arm64"
+    },
+    "aarch64_windows": {
+      "url": "https://github.com/editorconfig-checker/editorconfig-checker/releases/download/v3.4.1/ec-windows-arm64.zip",
+      "etag": "0x8DE07E23230A03B",
+      "checksum": "92781582db04ef62c4af413f326ecd5c8bc8ee8878cdfbdd2fcc077a9779cad6",
+      "bin": "bin/ec-windows-arm64.exe"
+    }
   },
   "3.4.0": {
     "x86_64_linux_musl": {
