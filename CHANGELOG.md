@@ -10,6 +10,8 @@ Note: In this file, do not use the hard wrap in the middle of a sentence for com
 
 ## [Unreleased]
 
+## [2.62.28] - 2025-10-11
+
 - Update `release-plz@latest` to 0.3.148.
 
 - Update `cargo-sort@latest` to 2.0.2.
@@ -4719,7 +4721,8 @@ Note: This release is considered a breaking change because installing on version
 
 Initial release
 
-[Unreleased]: https://github.com/taiki-e/install-action/compare/v2.62.27...HEAD
+[Unreleased]: https://github.com/taiki-e/install-action/compare/v2.62.28...HEAD
+[2.62.28]: https://github.com/taiki-e/install-action/compare/v2.62.27...v2.62.28
 [2.62.27]: https://github.com/taiki-e/install-action/compare/v2.62.26...v2.62.27
 [2.62.26]: https://github.com/taiki-e/install-action/compare/v2.62.25...v2.62.26
 [2.62.25]: https://github.com/taiki-e/install-action/compare/v2.62.24...v2.62.25
