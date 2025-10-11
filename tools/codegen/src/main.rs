@@ -620,6 +620,14 @@ fn main() -> Result<()> {
                 continue;
             }
         }
+        if p == HostPlatform::x86_64_macos
+            && latest_manifest.download_info.contains_key(&HostPlatform::aarch64_macos)
+        {
+            // The value of x86_64 macOS binaries has significantly decreased since GitHub Actions
+            // deprecated macos-13 runner. While the recently introduced macos-15-intel is available
+            // until 2027-08, people aren't paying much attention to it at this time.
+            continue;
+        }
         bail!(
             "platform list in base manifest for {package} contains {p:?}, \
              but latest release ({latest_version}) doesn't contain it; \
