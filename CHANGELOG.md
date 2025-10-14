@@ -10,6 +10,8 @@ Note: In this file, do not use the hard wrap in the middle of a sentence for com
 
 ## [Unreleased]
 
+## [2.62.29] - 2025-10-14
+
 - Update `zizmor@latest` to 1.15.1.
 
 - Update `cargo-nextest@latest` to 0.9.106.
@@ -4729,7 +4731,8 @@ Note: This release is considered a breaking change because installing on version
 
 Initial release
 
-[Unreleased]: https://github.com/taiki-e/install-action/compare/v2.62.28...HEAD
+[Unreleased]: https://github.com/taiki-e/install-action/compare/v2.62.29...HEAD
+[2.62.29]: https://github.com/taiki-e/install-action/compare/v2.62.28...v2.62.29
 [2.62.28]: https://github.com/taiki-e/install-action/compare/v2.62.27...v2.62.28
 [2.62.27]: https://github.com/taiki-e/install-action/compare/v2.62.26...v2.62.27
 [2.62.26]: https://github.com/taiki-e/install-action/compare/v2.62.25...v2.62.26
