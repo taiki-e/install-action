@@ -12,8 +12,6 @@ Note: In this file, do not use the hard wrap in the middle of a sentence for com
 
 - Update `zizmor@latest` to 1.15.1.
 
-- Update `zizmor@latest` to 1.15.0.
-
 - Update `cargo-nextest@latest` to 0.9.106.
 
 - Update `mise@latest` to 2025.10.8.
