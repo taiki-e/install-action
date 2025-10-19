@@ -20,7 +20,28 @@
   },
   "license_markdown": "[Apache-2.0](https://github.com/rust-secure-code/cargo-auditable/blob/HEAD/LICENSE-APACHE) OR [MIT](https://github.com/rust-secure-code/cargo-auditable/blob/HEAD/LICENSE-MIT)",
   "latest": {
-    "version": "0.6.6"
+    "version": "0.7.1"
+  },
+  "0.7": {
+    "version": "0.7.1"
+  },
+  "0.7.1": {
+    "x86_64_linux_musl": {
+      "etag": "0x8DE0F0432B09789",
+      "checksum": "fcb8d9bdff017feb1c6a58cd7cb3f349f145a36b6016e7e6060526257f830658"
+    },
+    "x86_64_macos": {
+      "etag": "0x8DE0F04324E739F",
+      "checksum": "b60375765500418dd921bc522ac7cf2611a89f53efeafbc51be0580aa0d9623d"
+    },
+    "x86_64_windows": {
+      "etag": "0x8DE0F04329A903B",
+      "checksum": "c5f36611faa6110291ab45b0ad5a8c13249243918c573c8b54b363f980568f16"
+    },
+    "aarch64_macos": {
+      "etag": "0x8DE0F04324FAAC8",
+      "checksum": "edbae5d6d5002d9e4b966f37648b54bae0cf263cd5e001be68d31cda10b69f1e"
+    }
   },
   "0.6": {
     "version": "0.6.6"
