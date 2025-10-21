@@ -10,6 +10,8 @@ Note: In this file, do not use the hard wrap in the middle of a sentence for com
 
 ## [Unreleased]
 
+- Update `sccache@latest` to 0.12.0.
+
 - Update `wasmtime@latest` to 38.0.1.
 
 - Update `rclone@latest` to 1.71.2.
