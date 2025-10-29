@@ -10,6 +10,8 @@ Note: In this file, do not use the hard wrap in the middle of a sentence for com
 
 ## [Unreleased]
 
+## [2.62.41] - 2025-10-29
+
 - Update `osv-scanner@latest` to 2.2.4.
 
 - Update `zizmor@latest` to 1.16.1.
@@ -4841,7 +4843,8 @@ Note: This release is considered a breaking change because installing on version
 
 Initial release
 
-[Unreleased]: https://github.com/taiki-e/install-action/compare/v2.62.40...HEAD
+[Unreleased]: https://github.com/taiki-e/install-action/compare/v2.62.41...HEAD
+[2.62.41]: https://github.com/taiki-e/install-action/compare/v2.62.40...v2.62.41
 [2.62.40]: https://github.com/taiki-e/install-action/compare/v2.62.39...v2.62.40
 [2.62.39]: https://github.com/taiki-e/install-action/compare/v2.62.38...v2.62.39
 [2.62.38]: https://github.com/taiki-e/install-action/compare/v2.62.37...v2.62.38
