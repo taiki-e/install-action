@@ -10,6 +10,8 @@ Note: In this file, do not use the hard wrap in the middle of a sentence for com
 
 ## [Unreleased]
 
+- Update `osv-scanner@latest` to 2.2.4.
+
 - Update `zizmor@latest` to 1.16.1.
 
 - Update `vacuum@latest` to 0.19.2.
