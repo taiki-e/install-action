@@ -18,8 +18,6 @@ Note: In this file, do not use the hard wrap in the middle of a sentence for com
 
 - Update `uv@latest` to 0.9.6.
 
-- Update `vacuum@latest` to 0.19.3.
-
 ## [2.62.41] - 2025-10-29
 
 - Update `osv-scanner@latest` to 2.2.4.
