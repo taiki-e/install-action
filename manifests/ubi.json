@@ -40,10 +40,48 @@
   },
   "license_markdown": "[MIT](https://github.com/houseabsolute/ubi/blob/master/LICENSE-MIT) OR [Apache-2.0](https://github.com/houseabsolute/ubi/blob/master/LICENSE-APACHE)",
   "latest": {
-    "version": "0.8.2"
+    "version": "0.8.4"
   },
   "0.8": {
-    "version": "0.8.2"
+    "version": "0.8.4"
+  },
+  "0.8.4": {
+    "x86_64_linux_musl": {
+      "etag": "0x8DE1978B1A261EE",
+      "checksum": "db53ab41ada9f877bc3313e9c06b44c8ea116805002c6e0f892e6ddb506caa26"
+    },
+    "x86_64_macos": {
+      "etag": "0x8DE1978D8C7241C",
+      "checksum": "35ad704ed07281fadd0cf5b11e08c9c37d2eae97438e934e5b1848b6d98201be"
+    },
+    "x86_64_windows": {
+      "etag": "0x8DE1978B0CF36F0",
+      "checksum": "e7dcb4bf6999f2d0ba0e5d4af35699447abe729bf144f07e28240fb3cd655bb4"
+    },
+    "aarch64_linux_musl": {
+      "etag": "0x8DE1978901770A7",
+      "checksum": "fde418df914f8f541af3451e317d93b81b91e8a621ffad15315d6cbd8a696179"
+    },
+    "aarch64_macos": {
+      "etag": "0x8DE19787B86D2D8",
+      "checksum": "851b677c26c70d890403a2c34d63b120bdee246a89c363c25c16528bf448723e"
+    },
+    "aarch64_windows": {
+      "etag": "0x8DE19786F2EE62F",
+      "checksum": "25f6abe24ef000d09e5efdf7e4779735220a0c37de49fc376255793929d835c1"
+    },
+    "powerpc64le_linux_gnu": {
+      "etag": "0x8DE19787BFB31AD",
+      "checksum": "4c8f84a33d9a0b1771d8eb39e379f94a2a50577253448cb351abae852d9239aa"
+    },
+    "riscv64_linux_gnu": {
+      "etag": "0x8DE19789DCACDE4",
+      "checksum": "9099f4cbf1fd056b9a9c6653f719acf059a91faa4289c229e17efcf8ff40fe62"
+    },
+    "s390x_linux_gnu": {
+      "etag": "0x8DE19787007D716",
+      "checksum": "e04a6057fc2ca54565a2d9bcfb0eb530569d83652b5d2f7ae7b3201e21c867e3"
+    }
   },
   "0.8.2": {
     "x86_64_linux_musl": {
