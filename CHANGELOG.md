@@ -10,6 +10,8 @@ Note: In this file, do not use the hard wrap in the middle of a sentence for com
 
 ## [Unreleased]
 
+- Update `zizmor@latest` to 1.16.2.
+
 - Update `cargo-binstall@latest` to 1.15.10.
 
 - Update `ubi@latest` to 0.8.4.
