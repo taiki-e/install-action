@@ -10,6 +10,8 @@ Note: In this file, do not use the hard wrap in the middle of a sentence for com
 
 ## [Unreleased]
 
+## [2.62.46] - 2025-11-04
+
 - Update `vacuum@latest` to 0.19.5.
 
 - Update `syft@latest` to 1.37.0.
@@ -4887,7 +4889,8 @@ Note: This release is considered a breaking change because installing on version
 
 Initial release
 
-[Unreleased]: https://github.com/taiki-e/install-action/compare/v2.62.45...HEAD
+[Unreleased]: https://github.com/taiki-e/install-action/compare/v2.62.46...HEAD
+[2.62.46]: https://github.com/taiki-e/install-action/compare/v2.62.45...v2.62.46
 [2.62.45]: https://github.com/taiki-e/install-action/compare/v2.62.44...v2.62.45
 [2.62.44]: https://github.com/taiki-e/install-action/compare/v2.62.43...v2.62.44
 [2.62.43]: https://github.com/taiki-e/install-action/compare/v2.62.42...v2.62.43
