@@ -20,7 +20,28 @@
   },
   "license_markdown": "[Apache-2.0](https://github.com/rustsec/rustsec/blob/HEAD/cargo-audit/LICENSE-APACHE) OR [MIT](https://github.com/rustsec/rustsec/blob/HEAD/cargo-audit/LICENSE-MIT)",
   "latest": {
-    "version": "0.21.2"
+    "version": "0.22.0"
+  },
+  "0.22": {
+    "version": "0.22.0"
+  },
+  "0.22.0": {
+    "x86_64_linux_musl": {
+      "etag": "0x8DE1E42AFC17765",
+      "checksum": "0ea7a15f67d5007af5bd18f89be38a90ebd004f149dc36ebfab0aedba24cbb4f"
+    },
+    "x86_64_macos": {
+      "etag": "0x8DE1E42C23BA523",
+      "checksum": "be2c3f86cdaf39ad88a58a151a946b2360c38cc2ec056dd6aa4cf0dbbcf9e809"
+    },
+    "x86_64_windows": {
+      "etag": "0x8DE1E431B4A43B3",
+      "checksum": "c4e309c9b6da7dd63a0c191b39ce4c2d48eb7c5cd538dbfdc180c26f02baa777"
+    },
+    "aarch64_linux_gnu": {
+      "etag": "0x8DE1E42B2AAA237",
+      "checksum": "64ddb7e99b171a881ea2c9f4ec5efa7b988f9131949d957bcd18d17a981b5302"
+    }
   },
   "0.21": {
     "version": "0.21.2"
