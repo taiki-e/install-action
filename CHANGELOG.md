@@ -10,6 +10,8 @@ Note: In this file, do not use the hard wrap in the middle of a sentence for com
 
 ## [Unreleased]
 
+## [2.62.48] - 2025-11-08
+
 - Update `mise@latest` to 2025.11.3.
 
 - Update `cargo-audit@latest` to 0.22.0.
@@ -4909,7 +4911,8 @@ Note: This release is considered a breaking change because installing on version
 
 Initial release
 
-[Unreleased]: https://github.com/taiki-e/install-action/compare/v2.62.47...HEAD
+[Unreleased]: https://github.com/taiki-e/install-action/compare/v2.62.48...HEAD
+[2.62.48]: https://github.com/taiki-e/install-action/compare/v2.62.47...v2.62.48
 [2.62.47]: https://github.com/taiki-e/install-action/compare/v2.62.46...v2.62.47
 [2.62.46]: https://github.com/taiki-e/install-action/compare/v2.62.45...v2.62.46
 [2.62.45]: https://github.com/taiki-e/install-action/compare/v2.62.44...v2.62.45
