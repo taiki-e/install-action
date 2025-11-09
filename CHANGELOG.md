@@ -10,6 +10,8 @@ Note: In this file, do not use the hard wrap in the middle of a sentence for com
 
 ## [Unreleased]
 
+- Update `cargo-binstall@latest` to 1.15.11.
+
 - Update `cargo-auditable@latest` to 0.7.2.
 
 - Update `vacuum@latest` to 0.20.2.
