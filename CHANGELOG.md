@@ -10,6 +10,8 @@ Note: In this file, do not use the hard wrap in the middle of a sentence for com
 
 ## [Unreleased]
 
+- Update `typos@latest` to 1.39.1.
+
 - Update `protoc@latest` to 3.33.1.
 
 - Update `just@latest` to 1.43.1.
