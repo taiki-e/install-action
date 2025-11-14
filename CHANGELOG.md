@@ -16,8 +16,6 @@ Note: In this file, do not use the hard wrap in the middle of a sentence for com
 
 - Update `uv@latest` to 0.9.9.
 
-- Update `typos@latest` to 1.39.1.
-
 - Update `protoc@latest` to 3.33.1.
 
 - Update `just@latest` to 1.43.1.
