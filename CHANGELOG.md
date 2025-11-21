@@ -10,6 +10,8 @@ Note: In this file, do not use the hard wrap in the middle of a sentence for com
 
 ## [Unreleased]
 
+- Update `cargo-binstall@latest` to 1.16.1.
+
 - Update `editorconfig-checker@latest` to 3.5.0.
 
 - Update `uv@latest` to 0.9.11.
