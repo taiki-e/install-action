@@ -10,6 +10,8 @@ Note: In this file, do not use the hard wrap in the middle of a sentence for com
 
 ## [Unreleased]
 
+## [2.62.55] - 2025-11-21
+
 - Update `cargo-binstall@latest` to 1.16.1.
 
 - Update `editorconfig-checker@latest` to 3.5.0.
@@ -4977,7 +4979,8 @@ Note: This release is considered a breaking change because installing on version
 
 Initial release
 
-[Unreleased]: https://github.com/taiki-e/install-action/compare/v2.62.54...HEAD
+[Unreleased]: https://github.com/taiki-e/install-action/compare/v2.62.55...HEAD
+[2.62.55]: https://github.com/taiki-e/install-action/compare/v2.62.54...v2.62.55
 [2.62.54]: https://github.com/taiki-e/install-action/compare/v2.62.53...v2.62.54
 [2.62.53]: https://github.com/taiki-e/install-action/compare/v2.62.52...v2.62.53
 [2.62.52]: https://github.com/taiki-e/install-action/compare/v2.62.51...v2.62.52
