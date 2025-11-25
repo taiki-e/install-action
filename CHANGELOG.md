@@ -10,6 +10,8 @@ Note: In this file, do not use the hard wrap in the middle of a sentence for com
 
 ## [Unreleased]
 
+- Update `editorconfig-checker@latest` to 3.6.0.
+
 - Update `wasmtime@latest` to 39.0.1.
 
 - Update `release-plz@latest` to 0.3.149.
