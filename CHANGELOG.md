@@ -10,6 +10,8 @@ Note: In this file, do not use the hard wrap in the middle of a sentence for com
 
 ## [Unreleased]
 
+- Update `zizmor@latest` to 1.17.0.
+
 - Update `uv@latest` to 0.9.12.
 
 - Update `editorconfig-checker@latest` to 3.6.0.
