@@ -10,6 +10,8 @@ Note: In this file, do not use the hard wrap in the middle of a sentence for com
 
 ## [Unreleased]
 
+## [2.62.58] - 2025-11-26
+
 - Update `cargo-shear@latest` to 1.6.6.
 
 - Update `mise@latest` to 2025.11.8.
@@ -5007,7 +5009,8 @@ Note: This release is considered a breaking change because installing on version
 
 Initial release
 
-[Unreleased]: https://github.com/taiki-e/install-action/compare/v2.62.57...HEAD
+[Unreleased]: https://github.com/taiki-e/install-action/compare/v2.62.58...HEAD
+[2.62.58]: https://github.com/taiki-e/install-action/compare/v2.62.57...v2.62.58
 [2.62.57]: https://github.com/taiki-e/install-action/compare/v2.62.56...v2.62.57
 [2.62.56]: https://github.com/taiki-e/install-action/compare/v2.62.55...v2.62.56
 [2.62.55]: https://github.com/taiki-e/install-action/compare/v2.62.54...v2.62.55
