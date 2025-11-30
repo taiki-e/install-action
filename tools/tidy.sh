@@ -8,7 +8,7 @@ trap -- 'printf >&2 "%s\n" "${0##*/}: trapped SIGINT"; exit 1' SIGINT
 cd -- "$(dirname -- "$0")"/..
 
 # USAGE:
-#    ./tools/tidy.sh
+#    GH_TOKEN=$(gh auth token) ./tools/tidy.sh
 #
 # Note: This script requires the following tools:
 # - git 1.8+
@@ -17,6 +17,7 @@ cd -- "$(dirname -- "$0")"/..
 # - python 3.6+ and pipx
 # - shfmt
 # - shellcheck
+# - zizmor
 # - cargo, rustfmt (if Rust code exists)
 # - clang-format (if C/C++/Protobuf code exists)
 # - parse-dockerfile <https://github.com/taiki-e/parse-dockerfile> (if Dockerfile exists)
@@ -905,6 +906,18 @@ EOF
     fi
   fi
 fi
+zizmor_targets=(${workflows[@]+"${workflows[@]}"} ${actions[@]+"${actions[@]}"})
+if [[ -e .github/dependabot.yml ]]; then
+  zizmor_targets+=(.github/dependabot.yml)
+fi
+if [[ ${#zizmor_targets[@]} -gt 0 ]]; then
+  if check_install zizmor; then
+    IFS=' '
+    info "running \`zizmor ${zizmor_targets[*]}\`"
+    IFS=$'\n\t'
+    zizmor "${zizmor_targets[@]}"
+  fi
+fi
 printf '\n'
 check_alt '.sh extension' '*.bash extension' "$(ls_files '*.bash')"
 
@@ -981,6 +994,7 @@ if [[ -f .cspell.json ]]; then
       dependencies_words=$(npx -y cspell stdin --no-progress --no-summary --words-only --unique <<<"${dependencies}" || true)
     fi
     all_words=$(ls_files | { grep -Fv "${project_dictionary}" || true; } | npx -y cspell --file-list stdin --no-progress --no-summary --words-only --unique || true)
+    all_words+=$'\n'$(ls_files | npx -y cspell stdin --no-progress --no-summary --words-only --unique || true)
     printf '%s\n' "${config_old}" >|.cspell.json
     trap -- 'printf >&2 "%s\n" "${0##*/}: trapped SIGINT"; exit 1' SIGINT
     cat >|.github/.cspell/rust-dependencies.txt <<EOF
@@ -1000,6 +1014,15 @@ EOF
       error "you may want to mark .github/.cspell/rust-dependencies.txt linguist-generated"
     fi
 
+    # Check file names.
+    info "running \`git ls-files | npx -y cspell stdin --no-progress --no-summary --show-context\`"
+    if ! ls_files | npx -y cspell stdin --no-progress --no-summary --show-context; then
+      error "spellcheck failed: please fix uses of below words in file names or add to ${project_dictionary} if correct"
+      printf '=======================================\n'
+      { ls_files | npx -y cspell stdin --no-progress --no-summary --words-only || true; } | sed "s/'s$//g" | LC_ALL=C sort -f -u
+      printf '=======================================\n\n'
+    fi
+    # Check file contains.
     info "running \`git ls-files | npx -y cspell --file-list stdin --no-progress --no-summary\`"
     if ! ls_files | npx -y cspell --file-list stdin --no-progress --no-summary; then
       error "spellcheck failed: please fix uses of below words or add to ${project_dictionary} if correct"
