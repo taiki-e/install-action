@@ -63,6 +63,7 @@ jobs:
           - os: ubuntu-22.04-arm
           - os: ubuntu-24.04
           - os: ubuntu-24.04-arm
+          - os: ubuntu-slim
           - os: ubuntu-22.04
             tool: major.minor.patch
           - os: ubuntu-22.04
@@ -125,6 +126,7 @@ jobs:
       - name: Test pwsh
         run: just --version; shfmt --version; protoc --version
         shell: pwsh
+        if: matrix.os != 'ubuntu-slim'
       - name: Test powershell
         run: just --version; shfmt --version; protoc --version
         shell: powershell
@@ -138,7 +140,7 @@ jobs:
       # check it with CI. (e.g., 0.14.0->0.16.0 update change it
       # from "cargo-binstall <version>" to "<version>")
       - run: |
-          if [[ "$(cargo binstall -V)" != "$(jq -r '.latest.version' manifests/cargo-binstall.json)" ]]; then
+          if [[ "$(cargo-binstall binstall -V)" != "$(jq -r '.latest.version' manifests/cargo-binstall.json)" ]]; then
             exit 1
           fi
         if: matrix.bash != 'cygwin' && matrix.os != 'windows-11-arm'
