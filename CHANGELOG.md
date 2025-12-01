@@ -10,6 +10,8 @@ Note: In this file, do not use the hard wrap in the middle of a sentence for com
 
 ## [Unreleased]
 
+- Update `uv@latest` to 0.9.14.
+
 - Update `vacuum@latest` to 0.20.4.
 
 - Update `cargo-valgrind@latest` to 2.4.0.
