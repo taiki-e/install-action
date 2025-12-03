@@ -20,10 +20,10 @@ GitHub Action for installing development tools (mainly from GitHub Releases).
 
 ### Inputs
 
-| Name     | Required | Description                             | Type    | Default |
-| -------- |:--------:| --------------------------------------- | ------- | ------- |
-| tool     | **✓**    | Tools to install (comma-separated list) | String  |         |
-| checksum |          | Whether to enable checksums             | Boolean | `true`  |
+| Name | Required | Description | Type | Default |
+| ---- | :------: | ----------- | ---- | ------- |
+| tool | **✓** | Tools to install (comma-separated list) | String | |
+| checksum | | Whether to enable checksums | Boolean | `true` |
 
 ### Example workflow
 
