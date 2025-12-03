@@ -191,7 +191,7 @@ cp -- ./manifests/* "${schema_workspace}"
   # Stage changes
   git add .
   # Detect changes, then commit and push if changes exist
-  if [[ "$(git status --porcelain=v1 | wc -l)" != "0" ]]; then
+  if [[ "$(git status --porcelain=v1 | LC_ALL=C wc -l)" != "0" ]]; then
     git commit -m 'Update manifest schema'
     retry git push origin HEAD
   fi
