@@ -32,7 +32,8 @@ jobs:
 
   create-release-manifest-schema:
     if: github.repository_owner == 'taiki-e' && startsWith(github.ref_name, 'install-action-manifest-schema-')
-    uses: taiki-e/github-actions/.github/workflows/create-release.yml@main
+    # TODO: use new rust-release workflow
+    uses: taiki-e/github-actions/.github/workflows/create-release.yml@853cebf868aa2dce1470668df24176803e05adc8
     with:
       crates: tools/manifest-schema
       changelog: tools/manifest-schema/CHANGELOG.md
