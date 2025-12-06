@@ -3,13 +3,50 @@
   "template": null,
   "license_markdown": "[BSD-3-Clause](https://github.com/protocolbuffers/protobuf/blob/HEAD/LICENSE)",
   "latest": {
-    "version": "3.33.1"
+    "version": "3.33.2"
   },
   "3": {
-    "version": "3.33.1"
+    "version": "3.33.2"
   },
   "3.33": {
-    "version": "3.33.1"
+    "version": "3.33.2"
+  },
+  "3.33.2": {
+    "x86_64_linux_gnu": {
+      "url": "https://github.com/protocolbuffers/protobuf/releases/download/v33.2/protoc-33.2-linux-x86_64.zip",
+      "etag": "0x8DE344B9A3BA1FC",
+      "checksum": "b24b53f87c151bfd48b112fe4c3a6e6574e5198874f38036aff41df3456b8caf"
+    },
+    "x86_64_macos": {
+      "url": "https://github.com/protocolbuffers/protobuf/releases/download/v33.2/protoc-33.2-osx-x86_64.zip",
+      "etag": "0x8DE344B9A608C9D",
+      "checksum": "dba51cfcc85076d56e7de01a647865c5a7f995c3dce427d5215b53e50b7be43f"
+    },
+    "x86_64_windows": {
+      "url": "https://github.com/protocolbuffers/protobuf/releases/download/v33.2/protoc-33.2-win64.zip",
+      "etag": "0x8DE344B9A984DC3",
+      "checksum": "376770cd4073beb63db56fdd339260edb9957b3c4472e05a75f5f9ec8f98d8f5"
+    },
+    "aarch64_linux_gnu": {
+      "url": "https://github.com/protocolbuffers/protobuf/releases/download/v33.2/protoc-33.2-linux-aarch_64.zip",
+      "etag": "0x8DE344B99D1BEFF",
+      "checksum": "706662a332683aa2fffe1c4ea61588279d31679cd42d91c7d60a69651768edb8"
+    },
+    "aarch64_macos": {
+      "url": "https://github.com/protocolbuffers/protobuf/releases/download/v33.2/protoc-33.2-osx-aarch_64.zip",
+      "etag": "0x8DE344B9A449896",
+      "checksum": "5be1427127788c9f7dd7d606c3e69843dd3587327dea993917ffcb77e7234b44"
+    },
+    "powerpc64le_linux_gnu": {
+      "url": "https://github.com/protocolbuffers/protobuf/releases/download/v33.2/protoc-33.2-linux-ppcle_64.zip",
+      "etag": "0x8DE344B99DB9E8D",
+      "checksum": "16b4a36c07daab458bc040523b1f333ddd37e1440fa71634f297a458c7fef4c4"
+    },
+    "s390x_linux_gnu": {
+      "url": "https://github.com/protocolbuffers/protobuf/releases/download/v33.2/protoc-33.2-linux-s390_64.zip",
+      "etag": "0x8DE344B99ECA266",
+      "checksum": "c53c6513ebd6cd8c3592e2d75ea9d8aa1a91be3ba1e17f3bf95cabc2d6b8c3e0"
+    }
   },
   "3.33.1": {
     "x86_64_linux_gnu": {

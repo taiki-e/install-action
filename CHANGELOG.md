@@ -10,6 +10,8 @@ Note: In this file, do not use the hard wrap in the middle of a sentence for com
 
 ## [Unreleased]
 
+- Update `protoc@latest` to 3.33.2.
+
 - Update `release-plz@latest` to 0.3.150.
 
 - Update `cargo-binstall@latest` to 1.16.3.
