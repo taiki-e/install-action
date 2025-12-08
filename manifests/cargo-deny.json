@@ -24,10 +24,32 @@
   },
   "license_markdown": "[MIT](https://github.com/EmbarkStudios/cargo-deny/blob/main/LICENSE-MIT) OR [Apache-2.0](https://github.com/EmbarkStudios/cargo-deny/blob/main/LICENSE-APACHE)",
   "latest": {
-    "version": "0.18.8"
+    "version": "0.18.9"
   },
   "0.18": {
-    "version": "0.18.8"
+    "version": "0.18.9"
+  },
+  "0.18.9": {
+    "x86_64_linux_musl": {
+      "etag": "0x8DE365F9DB7C550",
+      "checksum": "491d04e4c05d7c92582e3d40ec94126c52472a546326a6d29473a5a4e73babd2"
+    },
+    "x86_64_macos": {
+      "etag": "0x8DE365FC112E094",
+      "checksum": "4d49f9e0764b018fbffe90e6159aed29eef828ea17042f9c08049ca96c1fe9ca"
+    },
+    "x86_64_windows": {
+      "etag": "0x8DE36600C8678E4",
+      "checksum": "86a3f6dfa497b1e4e34e037e5be98ec2abde5949bed312948525864e9291827f"
+    },
+    "aarch64_linux_musl": {
+      "etag": "0x8DE365FA547B0BA",
+      "checksum": "8bc65cc9f5573e1538f914a227e87f70586a50922b73d0def28ffd6f74514a53"
+    },
+    "aarch64_macos": {
+      "etag": "0x8DE365FAFEA1A89",
+      "checksum": "a06e6cbab3d51f51997c5bb986580e4127b65ac323d2f354535bcca0a5d9b67f"
+    }
   },
   "0.18.8": {
     "x86_64_linux_musl": {
