@@ -10,6 +10,16 @@ Note: In this file, do not use the hard wrap in the middle of a sentence for com
 
 ## [Unreleased]
 
+## [2.62.67] - 2025-12-11
+
+- Update `vacuum@latest` to 0.20.5.
+
+- Update `rclone@latest` to 1.72.1.
+
+- Update `osv-scanner@latest` to 2.3.1.
+
+- Update `just@latest` to 1.45.0.
+
 ## [2.62.66] - 2025-12-10
 
 - Update `uv@latest` to 0.9.17.
@@ -5087,7 +5097,8 @@ Note: This release is considered a breaking change because installing on version
 
 Initial release
 
-[Unreleased]: https://github.com/taiki-e/install-action/compare/v2.62.66...HEAD
+[Unreleased]: https://github.com/taiki-e/install-action/compare/v2.62.67...HEAD
+[2.62.67]: https://github.com/taiki-e/install-action/compare/v2.62.66...v2.62.67
 [2.62.66]: https://github.com/taiki-e/install-action/compare/v2.62.65...v2.62.66
 [2.62.65]: https://github.com/taiki-e/install-action/compare/v2.62.64...v2.62.65
 [2.62.64]: https://github.com/taiki-e/install-action/compare/v2.62.63...v2.62.64
