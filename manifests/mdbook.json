@@ -22,10 +22,32 @@
   },
   "license_markdown": "[MPL-2.0](https://github.com/rust-lang/mdBook/blob/master/LICENSE)",
   "latest": {
-    "version": "0.5.1"
+    "version": "0.5.2"
   },
   "0.5": {
-    "version": "0.5.1"
+    "version": "0.5.2"
+  },
+  "0.5.2": {
+    "x86_64_linux_musl": {
+      "etag": "0x8DE38FAF5795807",
+      "checksum": "8e9d802bbecea34380aabfc65bec4fdba23c07453ef2c7e06fa34c282082e2c4"
+    },
+    "x86_64_macos": {
+      "etag": "0x8DE38FAFF0379EB",
+      "checksum": "17cc64478ec279a73881420e850bd8f9d460552e56b50159ff465bc97eb90d6c"
+    },
+    "x86_64_windows": {
+      "etag": "0x8DE38FB0A72D86C",
+      "checksum": "e78fa1159bfc381d03f9c6659c48c883706497dc63c9153007a8a4c8df8da166"
+    },
+    "aarch64_linux_musl": {
+      "etag": "0x8DE38FAE50B8ED8",
+      "checksum": "fb229bfdc68dd6c93692e64c502a67a8d3d2fc35c37c61fc72768843e6476add"
+    },
+    "aarch64_macos": {
+      "etag": "0x8DE38FAFAFCD7D6",
+      "checksum": "da2f55653e96e3f6e1c53e2e13e91cc0cfbce8ab971c2e0de792c0f1f8d24222"
+    }
   },
   "0.5.1": {
     "x86_64_linux_musl": {
