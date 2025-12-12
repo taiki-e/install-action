@@ -1,0 +1,27 @@
+{
+  "repository": "https://github.com/tombi-toml/tombi",
+  "website": "https://tombi-toml.github.io/tombi/",
+  "license_markdown": "[MIT](https://github.com/tombi-toml/tombi/blob/main/LICENSE)",
+  "version_range": ">= 0.7",
+  "tag_prefix": "v",
+  "platform": {
+    "x86_64_linux_musl": {
+      "asset_name": "tombi-cli-${version}-x86_64-unknown-linux-musl.gz"
+    },
+    "x86_64_macos": {
+      "asset_name": "tombi-cli-${version}-x86_64-apple-darwin.gz"
+    },
+    "x86_64_windows": {
+      "asset_name": "tombi-cli-${version}-x86_64-pc-windows-msvc.zip"
+    },
+    "aarch64_linux_musl": {
+      "asset_name": "tombi-cli-${version}-aarch64-unknown-linux-musl.gz"
+    },
+    "aarch64_macos": {
+      "asset_name": "tombi-cli-${version}-aarch64-apple-darwin.gz"
+    },
+    "aarch64_windows": {
+      "asset_name": "tombi-cli-${version}-aarch64-pc-windows-msvc.zip"
+    }
+  }
+}
