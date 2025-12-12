@@ -10,6 +10,8 @@ Note: In this file, do not use the hard wrap in the middle of a sentence for com
 
 ## [Unreleased]
 
+## [2.63.0] - 2025-12-12
+
 - Support `tombi` ([#1340](https://github.com/taiki-e/install-action/pull/1340), thanks @crepererum)
 
 - Update `cargo-dinghy@latest` to 0.8.4.
@@ -5105,7 +5107,8 @@ Note: This release is considered a breaking change because installing on version
 
 Initial release
 
-[Unreleased]: https://github.com/taiki-e/install-action/compare/v2.62.67...HEAD
+[Unreleased]: https://github.com/taiki-e/install-action/compare/v2.63.0...HEAD
+[2.63.0]: https://github.com/taiki-e/install-action/compare/v2.62.67...v2.63.0
 [2.62.67]: https://github.com/taiki-e/install-action/compare/v2.62.66...v2.62.67
 [2.62.66]: https://github.com/taiki-e/install-action/compare/v2.62.65...v2.62.66
 [2.62.65]: https://github.com/taiki-e/install-action/compare/v2.62.64...v2.62.65
