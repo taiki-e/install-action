@@ -10,7 +10,7 @@ Note: In this file, do not use the hard wrap in the middle of a sentence for com
 
 ## [Unreleased]
 
-- Update `tombi@latest` to 0.7.7.
+- Support `tombi` ([#1340](https://github.com/taiki-e/install-action/pull/1340), thanks @crepererum)
 
 - Update `cargo-dinghy@latest` to 0.8.4.
 
@@ -572,7 +572,7 @@ Note: In this file, do not use the hard wrap in the middle of a sentence for com
 
 ## [2.62.0] - 2025-09-21
 
-- Support `cargo-deadlinks` ([#1161](https://github.com/taiki-e/install-action/pull/1161), thanks @BenjaminBrienen)
+- Support `cargo-deadlinks`. ([#1161](https://github.com/taiki-e/install-action/pull/1161), thanks @BenjaminBrienen)
 
 ## [2.61.13] - 2025-09-21
 
@@ -666,9 +666,9 @@ Note: In this file, do not use the hard wrap in the middle of a sentence for com
 
 - Support `uv`. ([#1138](https://github.com/taiki-e/install-action/pull/1138), thanks @jayvdb)
 
-- Support `mise` ([#1137](https://github.com/taiki-e/install-action/pull/1137), thanks @jayvdb)
+- Support `mise`. ([#1137](https://github.com/taiki-e/install-action/pull/1137), thanks @jayvdb)
 
-- Support `ubi` ([#1135](https://github.com/taiki-e/install-action/pull/1135), thanks @jayvdb)
+- Support `ubi`. ([#1135](https://github.com/taiki-e/install-action/pull/1135), thanks @jayvdb)
 
 - Update `coreutils@latest` to 0.2.2.
 
