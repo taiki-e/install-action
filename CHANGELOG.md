@@ -10,6 +10,8 @@ Note: In this file, do not use the hard wrap in the middle of a sentence for com
 
 ## [Unreleased]
 
+- Update `mise@latest` to 2025.12.3.
+
 ## [2.63.0] - 2025-12-12
 
 - Support `tombi` ([#1340](https://github.com/taiki-e/install-action/pull/1340), thanks @crepererum)
