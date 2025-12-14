@@ -28,7 +28,36 @@
   },
   "license_markdown": "[MIT](https://github.com/uutils/coreutils/blob/main/LICENSE)",
   "latest": {
-    "version": "0.4.0"
+    "version": "0.5.0"
+  },
+  "0.5": {
+    "version": "0.5.0"
+  },
+  "0.5.0": {
+    "x86_64_linux_musl": {
+      "etag": "0x8DE3A58E83993BE",
+      "checksum": "dc3ced6fa8ea63f20640b4cb610017c4afa8fdaf6318c998161bbaf5e7bfc830"
+    },
+    "x86_64_macos": {
+      "etag": "0x8DE3A5B4C77B5CD",
+      "checksum": "9c6b68cb1e01619ed5ff2f9691e58d9e4035e6120e21030c4608f9a234a3089d"
+    },
+    "x86_64_windows": {
+      "etag": "0x8DE3A5967011891",
+      "checksum": "ba0a319a2acf0ab2c1786fb75a246090d905f49762638e903b4f8ff3195b72be"
+    },
+    "aarch64_linux_musl": {
+      "etag": "0x8DE3A5814A6F76A",
+      "checksum": "a1ffa4faf1e1b6267edb58a5015fbc09dd6f787d80c4d59d781876374edb0f8e"
+    },
+    "aarch64_macos": {
+      "etag": "0x8DE3A5ACB7FBD12",
+      "checksum": "cb54ceebbd09936b2ee5167d5ff9318c3a9e28e2f154fddd3ec7febb7fc40624"
+    },
+    "aarch64_windows": {
+      "etag": "0x8DE3A586ED221E8",
+      "checksum": "96538e06f0092b23cb0f368426fc2b1132f494ce7195ccc53e0fc8071436f73c"
+    }
   },
   "0.4": {
     "version": "0.4.0"
