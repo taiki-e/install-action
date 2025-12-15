@@ -10,6 +10,8 @@ Note: In this file, do not use the hard wrap in the middle of a sentence for com
 
 ## [Unreleased]
 
+## [2.63.2] - 2025-12-15
+
 - Update `mise@latest` to 2025.12.7.
 
 - Update `git-cliff@latest` to 2.11.0.
@@ -5121,7 +5123,8 @@ Note: This release is considered a breaking change because installing on version
 
 Initial release
 
-[Unreleased]: https://github.com/taiki-e/install-action/compare/v2.63.1...HEAD
+[Unreleased]: https://github.com/taiki-e/install-action/compare/v2.63.2...HEAD
+[2.63.2]: https://github.com/taiki-e/install-action/compare/v2.63.1...v2.63.2
 [2.63.1]: https://github.com/taiki-e/install-action/compare/v2.63.0...v2.63.1
 [2.63.0]: https://github.com/taiki-e/install-action/compare/v2.62.67...v2.63.0
 [2.62.67]: https://github.com/taiki-e/install-action/compare/v2.62.66...v2.62.67
