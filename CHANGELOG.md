@@ -12,8 +12,6 @@ Note: In this file, do not use the hard wrap in the middle of a sentence for com
 
 - Update `mise@latest` to 2025.12.7.
 
-- Update `mise@latest` to 2025.12.6.
-
 - Update `git-cliff@latest` to 2.11.0.
 
 - Update `coreutils@latest` to 0.5.0.
