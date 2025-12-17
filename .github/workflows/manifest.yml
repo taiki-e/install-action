@@ -37,8 +37,7 @@ jobs:
     timeout-minutes: 60
     permissions:
       contents: read
-      pull-requests: write # for gh pr review --approve and gh pr edit --add-assignee
-      repository-projects: read # for gh pr edit --add-assignee
+      pull-requests: write # for gh pr review --approve
     steps:
       - uses: taiki-e/checkout-action@v1
       - uses: taiki-e/github-actions/install-rust@stable
@@ -50,12 +49,7 @@ jobs:
       - run: tools/manifest.sh
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-      - uses: taiki-e/github-actions/.github/workflows/tidy.yml@main
-        permissions:
-          contents: read
-          pull-requests: write # for gh pr edit --add-assignee
-          repository-projects: read # for gh pr edit --add-assignee
-        secrets: inherit
+      - run: ./tools/tidy.sh
       - name: Handle diff
         id: diff
         run: tools/ci/manifest.sh
