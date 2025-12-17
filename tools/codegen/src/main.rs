@@ -17,7 +17,6 @@ use install_action_internal_codegen::{
     BaseManifest, HostPlatform, Manifest, ManifestDownloadInfo, ManifestRef, ManifestTemplate,
     ManifestTemplateDownloadInfo, Manifests, Signing, SigningKind, Version, workspace_root,
 };
-use sha2::{Digest as _, Sha256};
 use spdx::expression::{ExprNode, ExpressionReq, Operator};
 
 fn main() -> Result<()> {
@@ -343,8 +342,8 @@ fn main() -> Result<()> {
             }
 
             eprintln!("getting sha256 hash for {url}");
-            let hash = Sha256::digest(&buf);
-            let hash = format!("{hash:x}");
+            let hash = ring::digest::digest(&ring::digest::SHA256, &buf);
+            let hash = format!("{hash:?}").strip_prefix("SHA256:").unwrap().to_owned();
             if let Some(digest) = digest {
                 if hash != digest.strip_prefix("sha256:").unwrap() {
                     bail!(
@@ -386,8 +385,8 @@ fn main() -> Result<()> {
                         eprintln!("already downloaded");
                     } else {
                         download(&url)?.into_reader().read_to_end(&mut buf2)?;
-                        let hash = Sha256::digest(&buf2);
-                        if format!("{hash:x}") != v.checksum {
+                        let hash = ring::digest::digest(&ring::digest::SHA256, &buf2);
+                        if format!("{hash:?}").strip_prefix("SHA256:").unwrap() != v.checksum {
                             bail!("checksum mismatch for {url}");
                         }
                         let decoder = flate2::read::GzDecoder::new(&*buf2);
