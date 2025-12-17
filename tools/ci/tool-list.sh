@@ -206,7 +206,29 @@ IFS=$'\n'
 tools=($(LC_ALL=C sort -u <<<"${tools[*]}"))
 IFS=$'\n\t'
 
-# TODO: inject random space before/after of tool name for testing https://github.com/taiki-e/install-action/issues/115.
-IFS=','
-printf 'tool=%s\n' "${tools[*]}"
-IFS=$'\n\t'
+comma_sep=$((RANDOM % 2))
+list=''
+for tool in "${tools[@]}"; do
+  if [[ -n "${list}" ]]; then
+    if [[ "${comma_sep}" == "1" ]]; then
+      list+=','
+    else
+      case $((RANDOM % 2)) in
+        0) list+=' ' ;;
+        1) list+=$'\t' ;;
+      esac
+    fi
+  fi
+  case $((RANDOM % 3)) in
+    0) ;;
+    1) list+=' ' ;;
+    2) list+=$' \t ' ;;
+  esac
+  list+="${tool}"
+  case $((RANDOM % 3)) in
+    0) ;;
+    1) list+=' ' ;;
+    2) list+=$' \t ' ;;
+  esac
+done
+printf 'tool=%s\n' "${list}"

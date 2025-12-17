@@ -156,7 +156,12 @@ jobs:
       - uses: ./
         with:
           # NB: Update alias list in tools/publish.rs and case for aliases in main.sh.
-          tool: nextest,taplo-cli,typos-cli,wasm-bindgen-cli,wasmtime-cli
+          tool: |
+            nextest
+            taplo-cli
+            typos-cli
+            wasm-bindgen-cli
+            wasmtime-cli
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
       - name: Test bash
