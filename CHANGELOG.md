@@ -10,6 +10,8 @@ Note: In this file, do not use the hard wrap in the middle of a sentence for com
 
 ## [Unreleased]
 
+## [2.64.0] - 2025-12-17
+
 - `tool` input option now supports whitespace (space, tab, and line) or comma separated list. Previously, only comma-separated list was supported. ([#1366](https://github.com/taiki-e/install-action/pull/1366))
 
 - Support `prek`. ([#1357](https://github.com/taiki-e/install-action/pull/1357), thanks @j178)
@@ -5145,7 +5147,8 @@ Note: This release is considered a breaking change because installing on version
 
 Initial release
 
-[Unreleased]: https://github.com/taiki-e/install-action/compare/v2.63.3...HEAD
+[Unreleased]: https://github.com/taiki-e/install-action/compare/v2.64.0...HEAD
+[2.64.0]: https://github.com/taiki-e/install-action/compare/v2.63.3...v2.64.0
 [2.63.3]: https://github.com/taiki-e/install-action/compare/v2.63.2...v2.63.3
 [2.63.2]: https://github.com/taiki-e/install-action/compare/v2.63.1...v2.63.2
 [2.63.1]: https://github.com/taiki-e/install-action/compare/v2.63.0...v2.63.1
