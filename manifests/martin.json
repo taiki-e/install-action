@@ -3,19 +3,31 @@
   "template": {
     "x86_64_linux_musl": {
       "url": "https://github.com/maplibre/martin/releases/download/martin-v${version}/martin-x86_64-unknown-linux-musl.tar.gz",
-      "bin": ["martin", "martin-cp"]
+      "bin": [
+        "martin",
+        "martin-cp"
+      ]
     },
     "x86_64_macos": {
       "url": "https://github.com/maplibre/martin/releases/download/martin-v${version}/martin-x86_64-apple-darwin.tar.gz",
-      "bin": ["martin", "martin-cp"]
+      "bin": [
+        "martin",
+        "martin-cp"
+      ]
     },
     "aarch64_linux_musl": {
       "url": "https://github.com/maplibre/martin/releases/download/martin-v${version}/martin-aarch64-unknown-linux-musl.tar.gz",
-      "bin": ["martin", "martin-cp"]
+      "bin": [
+        "martin",
+        "martin-cp"
+      ]
     },
     "aarch64_macos": {
       "url": "https://github.com/maplibre/martin/releases/download/martin-v${version}/martin-aarch64-apple-darwin.tar.gz",
-      "bin": ["martin", "martin-cp"]
+      "bin": [
+        "martin",
+        "martin-cp"
+      ]
     }
   },
   "license_markdown": "[MIT](https://github.com/maplibre/martin/blob/main/LICENSE-MIT) OR [Apache-2.0](https://github.com/maplibre/martin/blob/main/LICENSE-APACHE)",
