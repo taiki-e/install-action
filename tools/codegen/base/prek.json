@@ -2,43 +2,25 @@
   "repository": "https://github.com/j178/prek",
   "license_markdown": "[MIT](https://github.com/j178/prek/blob/master/LICENSE)",
   "tag_prefix": "v",
+  "rust_crate": "${package}",
+  "asset_name": "${package}-${rust_target}.tar.gz",
+  "bin": "${package}-${rust_target}/${package}${exe}",
   "version_range": ">= 0.2.20",
   "platform": {
-    "x86_64_linux_musl": {
-      "asset_name": "${package}-x86_64-unknown-linux-musl.tar.gz",
-      "bin": "${package}-x86_64-unknown-linux-musl/${package}${exe}"
-    },
-    "x86_64_macos": {
-      "asset_name": "${package}-x86_64-apple-darwin.tar.gz",
-      "bin": "${package}-x86_64-apple-darwin/${package}${exe}"
-    },
+    "x86_64_linux_musl": {},
+    "x86_64_macos": {},
     "x86_64_windows": {
-      "asset_name": "${package}-x86_64-pc-windows-msvc.zip",
+      "asset_name": "${package}-${rust_target}.zip",
       "bin": "${package}${exe}"
     },
-    "aarch64_linux_musl": {
-      "asset_name": "${package}-aarch64-unknown-linux-musl.tar.gz",
-      "bin": "${package}-aarch64-unknown-linux-musl/${package}${exe}"
-    },
-    "aarch64_macos": {
-      "asset_name": "${package}-aarch64-apple-darwin.tar.gz",
-      "bin": "${package}-aarch64-apple-darwin/${package}${exe}"
-    },
+    "aarch64_linux_musl": {},
+    "aarch64_macos": {},
     "aarch64_windows": {
-      "asset_name": "${package}-aarch64-pc-windows-msvc.zip",
+      "asset_name": "${package}-${rust_target}.zip",
       "bin": "${package}${exe}"
     },
-    "powerpc64le_linux_gnu": {
-      "asset_name": "${package}-powerpc64le-unknown-linux-gnu.tar.gz",
-      "bin": "${package}-powerpc64le-unknown-linux-gnu/${package}${exe}"
-    },
-    "riscv64_linux_gnu": {
-      "asset_name": "${package}-riscv64gc-unknown-linux-gnu.tar.gz",
-      "bin": "${package}-riscv64gc-unknown-linux-gnu/${package}${exe}"
-    },
-    "s390x_linux_gnu": {
-      "asset_name": "${package}-s390x-unknown-linux-gnu.tar.gz",
-      "bin": "${package}-s390x-unknown-linux-gnu/${package}${exe}"
-    }
+    "powerpc64le_linux_gnu": {},
+    "riscv64_linux_gnu": {},
+    "s390x_linux_gnu": {}
   }
 }

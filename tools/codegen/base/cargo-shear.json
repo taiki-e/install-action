@@ -2,9 +2,9 @@
   "repository": "https://github.com/Boshen/cargo-shear",
   "tag_prefix": "v",
   "rust_crate": "${package}",
-  "version_range": ">= 1.2.0",
   "asset_name": "${package}-${rust_target}.tar.gz",
   "bin": "${package}${exe}",
+  "version_range": ">= 1.2.0",
   "platform": {
     "x86_64_linux_musl": {},
     "x86_64_macos": {},

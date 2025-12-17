@@ -2,9 +2,9 @@
   "repository": "https://github.com/tamasfe/taplo",
   "tag_prefix": "",
   "rust_crate": "${package}-cli",
-  "version_range": ">= 0.8.0",
   "asset_name": "${package}-${rust_target_os}-${rust_target_arch}.gz",
   "bin": "${package}${exe}",
+  "version_range": ">= 0.8.0",
   "platform": {
     "x86_64_linux_gnu": {},
     "x86_64_macos": {
