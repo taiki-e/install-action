@@ -10,6 +10,14 @@ Note: In this file, do not use the hard wrap in the middle of a sentence for com
 
 ## [Unreleased]
 
+- `tool` input option now supports whitespace (space, tab, and line) or comma separated list. Previously, only comma-separated list was supported. ([#1366](https://github.com/taiki-e/install-action/pull/1366))
+
+- Support `prek`. ([#1357](https://github.com/taiki-e/install-action/pull/1357), thanks @j178)
+
+- Support `mdbook-mermaid`. ([#1359](https://github.com/taiki-e/install-action/pull/1359), thanks @CommanderStorm)
+
+- Support `martin`. ([#1364](https://github.com/taiki-e/install-action/pull/1364), thanks @CommanderStorm)
+
 - Update `trivy@latest` to 0.68.2.
 
 - Update `xh@latest` to 0.25.3.
@@ -17,10 +25,6 @@ Note: In this file, do not use the hard wrap in the middle of a sentence for com
 - Update `mise@latest` to 2025.12.10.
 
 - Update `uv@latest` to 0.9.18.
-
-- Update `mise@latest` to 2025.12.9.
-
-- Update `mise@latest` to 2025.12.8.
 
 - Update `cargo-shear@latest` to 1.9.1.
 
@@ -46,7 +50,7 @@ Note: In this file, do not use the hard wrap in the middle of a sentence for com
 
 ## [2.63.0] - 2025-12-12
 
-- Support `tombi` ([#1340](https://github.com/taiki-e/install-action/pull/1340), thanks @crepererum)
+- Support `tombi`. ([#1340](https://github.com/taiki-e/install-action/pull/1340), thanks @crepererum)
 
 - Update `cargo-dinghy@latest` to 0.8.4.
 
