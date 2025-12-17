@@ -22,7 +22,7 @@ GitHub Action for installing development tools (mainly from GitHub Releases).
 
 | Name | Required | Description | Type | Default |
 | ---- | :------: | ----------- | ---- | ------- |
-| tool | **✓** | Tools to install (comma-separated list) | String | |
+| tool | **✓** | Tools to install (whitespace or comma separated list) | String | |
 | checksum | | Whether to enable checksums | Boolean | `true` |
 
 ### Example workflow

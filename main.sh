@@ -29,6 +29,19 @@ warn() {
 info() {
   printf >&2 'info: %s\n' "$*"
 }
+normalize_comma_or_space_separated() {
+  # Normalize whitespace characters into space because it's hard to handle single input contains lines with POSIX sed alone.
+  local list="${1//[$'\r\n\t']/ }"
+  if [[ "${list}" == *","* ]]; then
+    # If a comma is contained, consider it is a comma-separated list.
+    # Drop leading and trailing whitespaces in each element.
+    sed -E 's/ *, */,/g; s/^.//' <<<",${list},"
+  else
+    # Otherwise, consider it is a whitespace-separated list.
+    # Convert whitespace characters into comma.
+    sed -E 's/ +/,/g; s/^.//' <<<" ${list} "
+  fi
+}
 _sudo() {
   if type -P sudo >/dev/null; then
     sudo "$@"
@@ -440,9 +453,8 @@ tool="${INPUT_TOOL:-}"
 tools=()
 if [[ -n "${tool}" ]]; then
   while read -rd,; do
-    t="${REPLY# *}"
-    tools+=("${t%* }")
-  done <<<"${tool},"
+    tools+=("${REPLY}")
+  done < <(normalize_comma_or_space_separated "${tool}")
 fi
 if [[ ${#tools[@]} -eq 0 ]]; then
   warn "no tool specified; this could be caused by a dependabot bug where @<tool_name> tags on this action are replaced by @<version> tags"
