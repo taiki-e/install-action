@@ -49,7 +49,6 @@ jobs:
       - run: tools/manifest.sh
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-      - run: ./tools/tidy.sh
       - name: Handle diff
         id: diff
         run: tools/ci/manifest.sh
