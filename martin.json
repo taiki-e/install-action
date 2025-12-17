@@ -1,0 +1,82 @@
+{
+  "rust_crate": "martin",
+  "template": {
+    "x86_64_linux_musl": {
+      "url": "https://github.com/maplibre/martin/releases/download/martin-v${version}/martin-x86_64-unknown-linux-musl.tar.gz",
+      "bin": [
+        "martin",
+        "martin-cp"
+      ]
+    },
+    "x86_64_macos": {
+      "url": "https://github.com/maplibre/martin/releases/download/martin-v${version}/martin-x86_64-apple-darwin.tar.gz",
+      "bin": [
+        "martin",
+        "martin-cp"
+      ]
+    },
+    "aarch64_linux_musl": {
+      "url": "https://github.com/maplibre/martin/releases/download/martin-v${version}/martin-aarch64-unknown-linux-musl.tar.gz",
+      "bin": [
+        "martin",
+        "martin-cp"
+      ]
+    },
+    "aarch64_macos": {
+      "url": "https://github.com/maplibre/martin/releases/download/martin-v${version}/martin-aarch64-apple-darwin.tar.gz",
+      "bin": [
+        "martin",
+        "martin-cp"
+      ]
+    }
+  },
+  "license_markdown": "[MIT](https://github.com/maplibre/martin/blob/main/LICENSE-MIT) OR [Apache-2.0](https://github.com/maplibre/martin/blob/main/LICENSE-APACHE)",
+  "latest": {
+    "version": "1.1.0"
+  },
+  "1": {
+    "version": "1.1.0"
+  },
+  "1.1": {
+    "version": "1.1.0"
+  },
+  "1.1.0": {
+    "x86_64_linux_musl": {
+      "etag": "0x8DE3BE41FE428EE",
+      "checksum": "696f331cdf7b6f31a94174efdc0176d024bfe07b7341248437669310d654da27"
+    },
+    "x86_64_macos": {
+      "etag": "0x8DE3BE41FCB8C7A",
+      "checksum": "5f938c033c8f0eec4cb306da3006becaa5376851510ced253d59fb441fc30051"
+    },
+    "aarch64_linux_musl": {
+      "etag": "0x8DE3BE41FC80DF6",
+      "checksum": "a11db36240d91e4a4bee838080b13394aa92e70b13070bcadfd2527dba5058b7"
+    },
+    "aarch64_macos": {
+      "etag": "0x8DE3BE41FCA2E76",
+      "checksum": "21437a757c6efad91e9c6965b9133ee3ece82d70881c59d9bb2b74cc97b2ee05"
+    }
+  },
+  "1.0": {
+    "version": "1.0.0"
+  },
+  "1.0.0": {
+    "x86_64_linux_musl": {
+      "etag": "0x8DE27211023BBA3",
+      "checksum": "9ef58e23cf79647a5e993d5c201a72a38398c189a4678d0c11e2dae82fd0b120"
+    },
+    "x86_64_macos": {
+      "etag": "0x8DE27211021E8EF",
+      "checksum": "1e3c955a22988b46624c4a3df5bc4fd6880c286f33cb51aa5510c6eda3b8cfea"
+    },
+    "aarch64_linux_musl": {
+      "etag": "0x8DE272110061BD5",
+      "checksum": "991957c0c285c2c949dcc6b326980850925af5ab5c7b66ebf1cf31465820a727"
+    },
+    "aarch64_macos": {
+      "etag": "0x8DE2721100A0F05",
+      "checksum": "756d4f0c73396eca6b34ec4f512f03fc619574e386646d8c441611a48ba49a8f"
+    }
+  }
+}

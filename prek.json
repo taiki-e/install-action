@@ -1,0 +1,162 @@
+{
+  "rust_crate": "prek",
+  "template": {
+    "x86_64_linux_musl": {
+      "url": "https://github.com/j178/prek/releases/download/v${version}/prek-x86_64-unknown-linux-musl.tar.gz",
+      "bin": "prek-x86_64-unknown-linux-musl/prek"
+    },
+    "x86_64_macos": {
+      "url": "https://github.com/j178/prek/releases/download/v${version}/prek-x86_64-apple-darwin.tar.gz",
+      "bin": "prek-x86_64-apple-darwin/prek"
+    },
+    "x86_64_windows": {
+      "url": "https://github.com/j178/prek/releases/download/v${version}/prek-x86_64-pc-windows-msvc.zip",
+      "bin": "prek.exe"
+    },
+    "aarch64_linux_musl": {
+      "url": "https://github.com/j178/prek/releases/download/v${version}/prek-aarch64-unknown-linux-musl.tar.gz",
+      "bin": "prek-aarch64-unknown-linux-musl/prek"
+    },
+    "aarch64_macos": {
+      "url": "https://github.com/j178/prek/releases/download/v${version}/prek-aarch64-apple-darwin.tar.gz",
+      "bin": "prek-aarch64-apple-darwin/prek"
+    },
+    "aarch64_windows": {
+      "url": "https://github.com/j178/prek/releases/download/v${version}/prek-aarch64-pc-windows-msvc.zip",
+      "bin": "prek.exe"
+    },
+    "powerpc64le_linux_gnu": {
+      "url": "https://github.com/j178/prek/releases/download/v${version}/prek-powerpc64le-unknown-linux-gnu.tar.gz",
+      "bin": "prek-powerpc64le-unknown-linux-gnu/prek"
+    },
+    "riscv64_linux_gnu": {
+      "url": "https://github.com/j178/prek/releases/download/v${version}/prek-riscv64gc-unknown-linux-gnu.tar.gz",
+      "bin": "prek-riscv64gc-unknown-linux-gnu/prek"
+    },
+    "s390x_linux_gnu": {
+      "url": "https://github.com/j178/prek/releases/download/v${version}/prek-s390x-unknown-linux-gnu.tar.gz",
+      "bin": "prek-s390x-unknown-linux-gnu/prek"
+    }
+  },
+  "license_markdown": "[MIT](https://github.com/j178/prek/blob/master/LICENSE)",
+  "latest": {
+    "version": "0.2.22"
+  },
+  "0.2": {
+    "version": "0.2.22"
+  },
+  "0.2.22": {
+    "x86_64_linux_musl": {
+      "etag": "0x8DE3A4768CE0B04",
+      "checksum": "ef1ed96f85c6808596fb1982dd2649fdc70f1a20e1db621a4bf709d8578cb8b8"
+    },
+    "x86_64_macos": {
+      "etag": "0x8DE3A476865859E",
+      "checksum": "16204bd25850d0cd6bdfbc72485102297f91e2ef87f43f9dfe5846215671d53d"
+    },
+    "x86_64_windows": {
+      "etag": "0x8DE3A476885BA99",
+      "checksum": "4079464661eb54edb01668538c7b09aa4d879e779540b76e3a41356a0f10ccc5"
+    },
+    "aarch64_linux_musl": {
+      "etag": "0x8DE3A4766AB6F66",
+      "checksum": "4052005de5e284a648be76a61e300af0d07caa9031f8a273a11ff7443f14cfae"
+    },
+    "aarch64_macos": {
+      "etag": "0x8DE3A4766A64512",
+      "checksum": "f56617577f9a31d1e5d4c7020f6d771c85cbab0e48cdd97e832d2928c5957106"
+    },
+    "aarch64_windows": {
+      "etag": "0x8DE3A4766AB6F66",
+      "checksum": "00b5835015a30410a916eafc1991d613d4d7a40de56ffa8084c680b7940ea14f"
+    },
+    "powerpc64le_linux_gnu": {
+      "etag": "0x8DE3A4767F3E2DF",
+      "checksum": "a8e5c03130826d9d05e07059040629bf543117ba741c7edeffa4e7759b18a268"
+    },
+    "riscv64_linux_gnu": {
+      "etag": "0x8DE3A47681D354E",
+      "checksum": "ebc2b041e035934eeda98402d267432e242e1938c3f9d9454fd716a4bc7f15ec"
+    },
+    "s390x_linux_gnu": {
+      "etag": "0x8DE3A47683FD888",
+      "checksum": "5c8e603e7607572af619393e292e210d0b73f26e5775bf70f3d0a3ecbfd9f654"
+    }
+  },
+  "0.2.21": {
+    "x86_64_linux_musl": {
+      "etag": "0x8DE36E2FAF65ED5",
+      "checksum": "9e2f855206df44687e08f1d039f0fcf1a7a207cb7845ad42224cde37ba3fcb16"
+    },
+    "x86_64_macos": {
+      "etag": "0x8DE36E2FA5F35AF",
+      "checksum": "63a8d0244df6bd473ca45d6d9ba3e9630bc9fa0f0a5667600f74d6a6e1660f89"
+    },
+    "x86_64_windows": {
+      "etag": "0x8DE36E2FA7FB871",
+      "checksum": "cec005a2c837d7f4e3b16b798bd93da19d240eb0efc2f1757b0d77cc6f8fd6ed"
+    },
+    "aarch64_linux_musl": {
+      "etag": "0x8DE36E2F9343AEB",
+      "checksum": "42bcd923f0cf5c44589f27bc3b26e4144061423312c65bfd0b09d56da755a327"
+    },
+    "aarch64_macos": {
+      "etag": "0x8DE36E2F80BFC26",
+      "checksum": "38e468f6c874709e0f31c5c55f164f48ad21d8d2c0c56b1dfe5f717f9e365530"
+    },
+    "aarch64_windows": {
+      "etag": "0x8DE36E2F9034FC7",
+      "checksum": "4b2d27589b84c37eac2be27bab303a53b2b5f2a064cc0cb6497ce9c817c8156f"
+    },
+    "powerpc64le_linux_gnu": {
+      "etag": "0x8DE36E2F9F9931C",
+      "checksum": "f7bc7ef77539dbe812a7952a3ade3c2fd75282b0a9fc19b6decf271fbafb81d9"
+    },
+    "riscv64_linux_gnu": {
+      "etag": "0x8DE36E2FA06F19F",
+      "checksum": "3217ee9914ec367e6e8fa9a936c79185916e0f8f465f648b7f5b0e1ae01b7c92"
+    },
+    "s390x_linux_gnu": {
+      "etag": "0x8DE36E2FAB18CEC",
+      "checksum": "e5357521e2c98d0ea63d2a16042e0e7420ac9e34076c61767499daa2c5b6b1bc"
+    }
+  },
+  "0.2.20": {
+    "x86_64_linux_musl": {
+      "etag": "0x8DE363BDAD2190B",
+      "checksum": "60fe951055c874dff06f9fb0c6aa9afc0d509bef0d3d9b514f6b4cc28f2b98bf"
+    },
+    "x86_64_macos": {
+      "etag": "0x8DE363BDA84508A",
+      "checksum": "0b52ea1a3a83c715c2e1168356566d66add419d5ec140b7a2f81951daeff33af"
+    },
+    "x86_64_windows": {
+      "etag": "0x8DE363BDA96D94D",
+      "checksum": "be2a57bac3f6f3c94d495ccb3ee43e74b12415884ed700380a02540d44567f3c"
+    },
+    "aarch64_linux_musl": {
+      "etag": "0x8DE363BD8992806",
+      "checksum": "100a90b31b0715c67a6f4e9041fb2b11a44210e7ae2e16c431bae1aadffdd0f9"
+    },
+    "aarch64_macos": {
+      "etag": "0x8DE363BD8787E57",
+      "checksum": "c3cbc595b07e5814ab9b8646bcfee0ea81cec29bbca9747ac8c370cd1353a3c0"
+    },
+    "aarch64_windows": {
+      "etag": "0x8DE363BD875E935",
+      "checksum": "70cf62589c433c146c8f987f5c2dfb670e6a5f15c8700286889baec215839d2f"
+    },
+    "powerpc64le_linux_gnu": {
+      "etag": "0x8DE363BD9EB2DCE",
+      "checksum": "90aa607bb1c68bfacc719af9b6e40ab5b9dcac4adda597d2d95858f01bbabdfa"
+    },
+    "riscv64_linux_gnu": {
+      "etag": "0x8DE363BDA1B2F91",
+      "checksum": "f56c6dc4cd6e7d7f54e5cae9898ec6ba60f5adaace5d8dfeb56e630b385b4b2b"
+    },
+    "s390x_linux_gnu": {
+      "etag": "0x8DE363BDA2A87A0",
+      "checksum": "4135a86056e8df51e44cfc3d1141856cb315a620d41c2707e1293a20bc9bb623"
+    }
+  }
+}
