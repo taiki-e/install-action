@@ -10,6 +10,8 @@ Note: In this file, do not use the hard wrap in the middle of a sentence for com
 
 ## [Unreleased]
 
+- Update `mise@latest` to 2025.12.11.
+
 ## [2.64.0] - 2025-12-17
 
 - `tool` input option now supports whitespace (space, tab, and line) or comma separated list. Previously, only comma-separated list was supported. ([#1366](https://github.com/taiki-e/install-action/pull/1366))
