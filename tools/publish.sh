@@ -145,6 +145,7 @@ tools+=(
 # Non-manifest-based tools.
 tools+=(valgrind)
 
+refs=()
 for tool in "${tools[@]}"; do
   git checkout -b "${tool}"
   sed -E "${in_place[@]}" action.yml \
@@ -152,12 +153,12 @@ for tool in "${tools[@]}"; do
     -e "s/# default: #publish:tool/default: ${tool}/g"
   git add action.yml
   git commit -m "${tool}"
-  retry git push origin -f refs/heads/"${tool}"
   git tag -f "${tool}"
-  retry git push origin -f refs/tags/"${tool}"
   git checkout main
-  git branch -D "${tool}"
+  refs+=(refs/heads/"${tool}" refs/tags/"${tool}")
 done
+retry git push origin --atomic -f "${refs[@]}"
+git branch -D "${tools[@]}"
 
 schema_workspace=/tmp/workspace
 rm -rf -- "${schema_workspace}"
