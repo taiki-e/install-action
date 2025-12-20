@@ -847,8 +847,8 @@ for tool in "${tools[@]}"; do
       wasm2es6js) ;;
       # iai-callgrind-runner --version works only with iai-callgrind in nearby Cargo.toml.
       iai-callgrind-runner) ;;
-      # cargo-zigbuild has no --version flag on `cargo zigbuild` subcommand.
-      cargo-zigbuild) rx "${tool_bin_stem}" --version ;;
+      # cargo-zigbuild/cargo-insta has no --version flag on `cargo $tool_bin_stem` subcommand.
+      cargo-zigbuild | cargo-insta) rx "${tool_bin_stem}" --version ;;
       # deepsource has version command instead of --version flag.
       deepsource | vacuum) rx "${tool_bin_stem}" version ;;
       cargo-*)
