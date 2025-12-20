@@ -10,6 +10,8 @@ Note: In this file, do not use the hard wrap in the middle of a sentence for com
 
 ## [Unreleased]
 
+- Update `prek@latest` to 0.2.23.
+
 ## [2.65.0] - 2025-12-20
 
 - Support `cargo-insta`. ([#1372](https://github.com/taiki-e/install-action/pull/1372), thanks @CommanderStorm)
