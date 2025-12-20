@@ -10,6 +10,8 @@ Note: In this file, do not use the hard wrap in the middle of a sentence for com
 
 ## [Unreleased]
 
+- Support `cargo-insta`. ([#1372](https://github.com/taiki-e/install-action/pull/1372), thanks @CommanderStorm)
+
 - Update `vacuum@latest` to 0.21.2.
 
 ## [2.64.2] - 2025-12-19
