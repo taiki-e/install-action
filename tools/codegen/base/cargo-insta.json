@@ -4,7 +4,7 @@
   "tag_prefix": "",
   "rust_crate": "${package}",
   "asset_name": "${package}-${rust_target}.tar.xz",
-  "version_range": ">= 1.44.2",
+  "version_range": ">= 1.44.1",
   "bin": "${package}-${rust_target}/${package}",
   "platform": {
     "x86_64_linux_musl": {},
