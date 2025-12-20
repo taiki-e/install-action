@@ -1,0 +1,16 @@
+{
+  "repository": "https://github.com/mitsuhiko/insta",
+  "website": "https://insta.rs/",
+  "tag_prefix": "",
+  "rust_crate": "${package}",
+  "asset_name": "${package}-${rust_target}.tar.xz",
+  "bin": "${package}-${rust_target}/${package}${exe}",
+  "platform": {
+    "x86_64_linux_musl": {},
+    "x86_64_macos": {},
+    "aarch64_macos": {},
+    "x86_64_windows": {
+      "asset_name": "${package}-${rust_target}.zip"
+    }
+  }
+}
