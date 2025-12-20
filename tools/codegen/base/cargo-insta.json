@@ -4,13 +4,15 @@
   "tag_prefix": "",
   "rust_crate": "${package}",
   "asset_name": "${package}-${rust_target}.tar.xz",
-  "bin": "${package}-${rust_target}/${package}${exe}",
+  "version_range": ">= 1.44.2",
+  "bin": "${package}-${rust_target}/${package}",
   "platform": {
     "x86_64_linux_musl": {},
     "x86_64_macos": {},
     "aarch64_macos": {},
     "x86_64_windows": {
-      "asset_name": "${package}-${rust_target}.zip"
+      "asset_name": "${package}-${rust_target}.zip",
+      "bin": "${package}.exe"
     }
   }
 }
