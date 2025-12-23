@@ -36,7 +36,47 @@
   },
   "license_markdown": "[Apache-2.0 WITH LLVM-exception](https://github.com/bytecodealliance/wasmtime/blob/main/LICENSE)",
   "latest": {
-    "version": "39.0.1"
+    "version": "40.0.0"
+  },
+  "40": {
+    "version": "40.0.0"
+  },
+  "40.0": {
+    "version": "40.0.0"
+  },
+  "40.0.0": {
+    "x86_64_linux_gnu": {
+      "etag": "0x8DE41749F491BCB",
+      "checksum": "cbf4cc21d78c53bbde2bc8d3b37c97cec84e63044fa2e4b793afab1b831dc67f"
+    },
+    "x86_64_macos": {
+      "etag": "0x8DE41749F4A2C0F",
+      "checksum": "e8a1d77264681ed9be2521f1c5bfac15b5e8727811da2d035f6897d378df064d"
+    },
+    "x86_64_windows": {
+      "etag": "0x8DE4174A0DCC34E",
+      "checksum": "9e4190c52c7693e6c0d5dc306b4dc095292f3c9456b7a26dbe52833a443bd505"
+    },
+    "aarch64_linux_gnu": {
+      "etag": "0x8DE41749C102D58",
+      "checksum": "2efe6fc9600f596c69d638f4a411604896b133f7a0e910a58bd1080f8254685e"
+    },
+    "aarch64_macos": {
+      "etag": "0x8DE41749C5A508B",
+      "checksum": "56756e2643aa64b18431df43864adcef95c9183828386e33eb529b3c4eabe04c"
+    },
+    "aarch64_windows": {
+      "etag": "0x8DE41749CC56B3B",
+      "checksum": "d2f72396c78a4537cb280f1a7dfd60318fc97b5b656b7d03a0970c9024caf199"
+    },
+    "riscv64_linux_gnu": {
+      "etag": "0x8DE41749DEC9A08",
+      "checksum": "e0c79df1618b7a231e4a08ac5314375153dc1c864801ff7c7248dc3d85c19e4e"
+    },
+    "s390x_linux_gnu": {
+      "etag": "0x8DE41749E690671",
+      "checksum": "e34595f493d6c1707e454c3c14a8b4f98ba81abd1da64d82d442d357de0a3e34"
+    }
   },
   "39": {
     "version": "39.0.1"
