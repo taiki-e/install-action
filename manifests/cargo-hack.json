@@ -3,10 +3,57 @@
   "template": null,
   "license_markdown": "[Apache-2.0](https://github.com/taiki-e/cargo-hack/blob/main/LICENSE-APACHE) OR [MIT](https://github.com/taiki-e/cargo-hack/blob/main/LICENSE-MIT)",
   "latest": {
-    "version": "0.6.39"
+    "version": "0.6.40"
   },
   "0.6": {
-    "version": "0.6.39"
+    "version": "0.6.40"
+  },
+  "0.6.40": {
+    "x86_64_linux_musl": {
+      "url": "https://github.com/taiki-e/cargo-hack/releases/download/v0.6.40/cargo-hack-x86_64-unknown-linux-musl.tar.gz",
+      "etag": "0x8DE469E162C74A7",
+      "checksum": "8d50401953d8a1f17ccb2c6dd213405825514101626af48a54dba00f1e7cf063"
+    },
+    "x86_64_macos": {
+      "url": "https://github.com/taiki-e/cargo-hack/releases/download/v0.6.40/cargo-hack-x86_64-apple-darwin.tar.gz",
+      "etag": "0x8DE469E29F09D10",
+      "checksum": "11949af746f59b46a0fb222eee651c77b4fc746834f7e112a9d687a3a338132b"
+    },
+    "x86_64_windows": {
+      "url": "https://github.com/taiki-e/cargo-hack/releases/download/v0.6.40/cargo-hack-x86_64-pc-windows-msvc.tar.gz",
+      "etag": "0x8DE469E5D2B2155",
+      "checksum": "cf5db378e03ad1de91f65cee13eca994836688fbd4089ea202c676e143d2b34b"
+    },
+    "aarch64_linux_musl": {
+      "url": "https://github.com/taiki-e/cargo-hack/releases/download/v0.6.40/cargo-hack-aarch64-unknown-linux-musl.tar.gz",
+      "etag": "0x8DE469E31AE69A2",
+      "checksum": "64d360c67892196fe7b37f4dbfa823b23943b0e2f8a1ba9ea4bb1010d205a4df"
+    },
+    "aarch64_macos": {
+      "url": "https://github.com/taiki-e/cargo-hack/releases/download/v0.6.40/cargo-hack-aarch64-apple-darwin.tar.gz",
+      "etag": "0x8DE469E2FF31C01",
+      "checksum": "1c3a988378f75c848d0a8912c8bc11e4107c7c699c0205430341ef84b5156439"
+    },
+    "aarch64_windows": {
+      "url": "https://github.com/taiki-e/cargo-hack/releases/download/v0.6.40/cargo-hack-aarch64-pc-windows-msvc.tar.gz",
+      "etag": "0x8DE469E46607B10",
+      "checksum": "682f40f8712d9e213c0e6e7457f3030f56e7d8c81561a75d56f7080dfdf47821"
+    },
+    "powerpc64le_linux_musl": {
+      "url": "https://github.com/taiki-e/cargo-hack/releases/download/v0.6.40/cargo-hack-powerpc64le-unknown-linux-musl.tar.gz",
+      "etag": "0x8DE469E2E52D919",
+      "checksum": "35aaed0061e22e067e146a93bddbfb5638a113d845cf4a635dd9b51b08b98aba"
+    },
+    "riscv64_linux_musl": {
+      "url": "https://github.com/taiki-e/cargo-hack/releases/download/v0.6.40/cargo-hack-riscv64gc-unknown-linux-musl.tar.gz",
+      "etag": "0x8DE469E1CB2D17A",
+      "checksum": "ce08f2945950f70abe32ef3cd64aab126d46806d444184f233223373b70d5b70"
+    },
+    "s390x_linux_gnu": {
+      "url": "https://github.com/taiki-e/cargo-hack/releases/download/v0.6.40/cargo-hack-s390x-unknown-linux-gnu.tar.gz",
+      "etag": "0x8DE469E0F355E46",
+      "checksum": "4f5f8db3a64c47c3150e5e5a0c86c2515238a7e15f55e277ab177b39ca5619f2"
+    }
   },
   "0.6.39": {
     "x86_64_linux_musl": {
