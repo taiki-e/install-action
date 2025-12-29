@@ -10,6 +10,8 @@ Note: In this file, do not use the hard wrap in the middle of a sentence for com
 
 ## [Unreleased]
 
+## [2.65.7] - 2025-12-29
+
 - Update `cargo-no-dev-deps@latest` to 0.2.19.
 
 - Update `cargo-minimal-versions@latest` to 0.1.34.
@@ -5219,7 +5221,8 @@ Note: This release is considered a breaking change because installing on version
 
 Initial release
 
-[Unreleased]: https://github.com/taiki-e/install-action/compare/v2.65.6...HEAD
+[Unreleased]: https://github.com/taiki-e/install-action/compare/v2.65.7...HEAD
+[2.65.7]: https://github.com/taiki-e/install-action/compare/v2.65.6...v2.65.7
 [2.65.6]: https://github.com/taiki-e/install-action/compare/v2.65.5...v2.65.6
 [2.65.5]: https://github.com/taiki-e/install-action/compare/v2.65.4...v2.65.5
 [2.65.4]: https://github.com/taiki-e/install-action/compare/v2.65.3...v2.65.4
