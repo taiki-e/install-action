@@ -1,0 +1,54 @@
+{
+  "rust_crate": "mdbook-mermaid-ssr",
+  "template": {
+    "x86_64_linux_musl": {
+      "url": "https://github.com/CommanderStorm/mdbook-mermaid-ssr/releases/download/v${version}/mdbook-mermaid-ssr-x86_64-unknown-linux-musl.tar.gz",
+      "bin": "mdbook-mermaid-ssr"
+    },
+    "x86_64_windows": {
+      "url": "https://github.com/CommanderStorm/mdbook-mermaid-ssr/releases/download/v${version}/mdbook-mermaid-ssr-x86_64-pc-windows-msvc.zip",
+      "bin": "mdbook-mermaid-ssr.exe"
+    },
+    "aarch64_linux_musl": {
+      "url": "https://github.com/CommanderStorm/mdbook-mermaid-ssr/releases/download/v${version}/mdbook-mermaid-ssr-aarch64-unknown-linux-musl.tar.gz",
+      "bin": "mdbook-mermaid-ssr"
+    },
+    "aarch64_macos": {
+      "url": "https://github.com/CommanderStorm/mdbook-mermaid-ssr/releases/download/v${version}/mdbook-mermaid-ssr-aarch64-apple-darwin.tar.gz",
+      "bin": "mdbook-mermaid-ssr"
+    },
+    "aarch64_windows": {
+      "url": "https://github.com/CommanderStorm/mdbook-mermaid-ssr/releases/download/v${version}/mdbook-mermaid-ssr-aarch64-pc-windows-msvc.zip",
+      "bin": "mdbook-mermaid-ssr.exe"
+    }
+  },
+  "license_markdown": "[MPL-2.0](https://github.com/CommanderStorm/mdbook-mermaid-ssr/blob/main/LICENSE)",
+  "latest": {
+    "version": "0.2.0"
+  },
+  "0.2": {
+    "version": "0.2.0"
+  },
+  "0.2.0": {
+    "x86_64_linux_musl": {
+      "etag": "0x8DE48C025DD384B",
+      "checksum": "5a63b1852b504047d9cc44021decf31a09b1950bc48d26cd443c71793c547cb7"
+    },
+    "x86_64_windows": {
+      "etag": "0x8DE48C071468E35",
+      "checksum": "0e1c04cef263df9b8814c53764b1a849050dce086ab5a9ac643b49532c7f1c76"
+    },
+    "aarch64_linux_musl": {
+      "etag": "0x8DE48C0334B7A05",
+      "checksum": "8e8c69c7a9d0cde9f57ecdd832fac34ea80e29b47c3489164cede558cd4be321"
+    },
+    "aarch64_macos": {
+      "etag": "0x8DE48C028CDD50C",
+      "checksum": "6c572938ceef41fc702b9038b757aebe3e2d44280167bf3528da94847100a297"
+    },
+    "aarch64_windows": {
+      "etag": "0x8DE48C076F07D91",
+      "checksum": "0cb33f7d3836dc0edf9453adc79d9d11f392feb3899a7fe3d618eb6769081bc5"
+    }
+  }
+}
