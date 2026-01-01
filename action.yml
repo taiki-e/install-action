@@ -3,7 +3,7 @@ description: GitHub Action for installing development tools
 
 inputs:
   tool:
-    description: Tools to install (comma-separated list)
+    description: Tools to install (whitespace or comma separated list)
     required: true
     # default: #publish:tool
   checksum:

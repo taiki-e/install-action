@@ -40,10 +40,86 @@
   },
   "license_markdown": "[Apache-2.0](https://github.com/astral-sh/uv/blob/main/LICENSE-APACHE) OR [MIT](https://github.com/astral-sh/uv/blob/main/LICENSE-MIT)",
   "latest": {
-    "version": "0.9.18"
+    "version": "0.9.21"
   },
   "0.9": {
-    "version": "0.9.18"
+    "version": "0.9.21"
+  },
+  "0.9.21": {
+    "x86_64_linux_musl": {
+      "etag": "0x8DE47BE93AD9727",
+      "checksum": "7abc29b3a06a99fb23564400fe884f5798a1786dc2ca05b6e0f70c53de748ab2"
+    },
+    "x86_64_macos": {
+      "etag": "0x8DE47BE9331C680",
+      "checksum": "26390da48bd55e21ab62451a80ad240ef6df10d4c48ec199cbb34c18b4288983"
+    },
+    "x86_64_windows": {
+      "etag": "0x8DE47BE93431824",
+      "checksum": "d27952e73183ef8f6ee8c2a50cf8b3f2e08e01b6a9279a00a85cb261ea8d8337"
+    },
+    "aarch64_linux_musl": {
+      "etag": "0x8DE47BE90FDFFD3",
+      "checksum": "03a49fb609888032dbc3be9fd114b50fc9bce8b73b3df319746ae08d1fbdea83"
+    },
+    "aarch64_macos": {
+      "etag": "0x8DE47BE9074A9C8",
+      "checksum": "473977236ef8ac5937c80de08a3599cb6ed6021d0e015e10f88076767877a153"
+    },
+    "aarch64_windows": {
+      "etag": "0x8DE47BE90ADC90E",
+      "checksum": "54f66a44108b1b68583c9da0a515195d011189874ec9547710c032801726e042"
+    },
+    "powerpc64le_linux_gnu": {
+      "etag": "0x8DE47BE9298F19B",
+      "checksum": "3ede0329f67f5db37914b5dfd6014c414d27e1bf0153dab8d5cc2e066da034dc"
+    },
+    "riscv64_linux_gnu": {
+      "etag": "0x8DE47BE92B9E90B",
+      "checksum": "3b7b070afd9c7be5a6364f081081cf9fec2160b53eba46cad27304b8b158e4ab"
+    },
+    "s390x_linux_gnu": {
+      "etag": "0x8DE47BE92CC98B3",
+      "checksum": "34bd75d67a5819c9f796a78b1ec9ebd48021d87d2391b4cf282249c4d026f145"
+    }
+  },
+  "0.9.20": {
+    "x86_64_linux_musl": {
+      "etag": "0x8DE471CD304C853",
+      "checksum": "0de686dcc02e0b045980779e7330f2deb98e6cd9ece40d3341bd45c6733e682d"
+    },
+    "x86_64_macos": {
+      "etag": "0x8DE471CD29435C5",
+      "checksum": "0059dc2986e7032c12b7039e1a66e570ab5c3a41598263c76e5a9c4e7da9f971"
+    },
+    "x86_64_windows": {
+      "etag": "0x8DE471CD2AB4D3F",
+      "checksum": "be51ed9fcba5be4ac9c41a46aaf8af5cef86624fe27e2c645771b174069e049d"
+    },
+    "aarch64_linux_musl": {
+      "etag": "0x8DE471CD08BBBC5",
+      "checksum": "d1b645d63c70da3f6f2368ea4dbc9dd5534b54be74ae32dee8941531c6874b6d"
+    },
+    "aarch64_macos": {
+      "etag": "0x8DE471CD018E1DC",
+      "checksum": "c3f4b03a5d526119d41fa8b8f255aa8053c49d787778df654895e3d174b1519a"
+    },
+    "aarch64_windows": {
+      "etag": "0x8DE471CD037B8C7",
+      "checksum": "ddba8b1ca82df9b49745c93855c670490d776027269cf7de404d951919c96ea7"
+    },
+    "powerpc64le_linux_gnu": {
+      "etag": "0x8DE471CD1EEEBED",
+      "checksum": "f40409d551a30081ada78cca7a1a260c02a7d16c912d73988d8e212324dea758"
+    },
+    "riscv64_linux_gnu": {
+      "etag": "0x8DE471CD2398396",
+      "checksum": "6dda223f877ff3eb3eba2fcf14abfd36280e5db1c0480addf5da5273ece087d6"
+    },
+    "s390x_linux_gnu": {
+      "etag": "0x8DE471CD236C78F",
+      "checksum": "8ca14c1a9fe47ad2293a321f061c7278b32d7bc200d2692662790ab6ccd395c1"
+    }
   },
   "0.9.18": {
     "x86_64_linux_musl": {
