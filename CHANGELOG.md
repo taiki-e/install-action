@@ -12,6 +12,8 @@ Note: In this file, do not use the hard wrap in the middle of a sentence for com
 
 ## [2.65.14] - 2026-01-06
 
+- Enable [release immutability](https://docs.github.com/en/code-security/supply-chain-security/understanding-your-software-supply-chain/immutable-releases).
+
 - Update `uv@latest` to 0.9.22.
 
 - Update `zizmor@latest` to 1.20.0.
