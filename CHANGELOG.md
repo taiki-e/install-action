@@ -10,6 +10,8 @@ Note: In this file, do not use the hard wrap in the middle of a sentence for com
 
 ## [Unreleased]
 
+## [2.65.15] - 2026-01-06
+
 - Update `parse-dockerfile@latest` to 0.1.3.
 
 - Update `parse-changelog@latest` to 0.6.15.
@@ -5281,7 +5283,8 @@ Note: This release is considered a breaking change because installing on version
 
 Initial release
 
-[Unreleased]: https://github.com/taiki-e/install-action/compare/v2.65.14...HEAD
+[Unreleased]: https://github.com/taiki-e/install-action/compare/v2.65.15...HEAD
+[2.65.15]: https://github.com/taiki-e/install-action/compare/v2.65.14...v2.65.15
 [2.65.14]: https://github.com/taiki-e/install-action/compare/v2.65.13...v2.65.14
 [2.65.13]: https://github.com/taiki-e/install-action/compare/v2.65.12...v2.65.13
 [2.65.12]: https://github.com/taiki-e/install-action/compare/v2.65.11...v2.65.12
