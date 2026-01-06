@@ -31,10 +31,48 @@
   },
   "license_markdown": "[Apache-2.0](https://github.com/taiki-e/parse-dockerfile/blob/main/LICENSE-APACHE) OR [MIT](https://github.com/taiki-e/parse-dockerfile/blob/main/LICENSE-MIT)",
   "latest": {
-    "version": "0.1.2"
+    "version": "0.1.3"
   },
   "0.1": {
-    "version": "0.1.2"
+    "version": "0.1.3"
+  },
+  "0.1.3": {
+    "x86_64_linux_musl": {
+      "etag": "0x8DE4D3DD8CAE9F9",
+      "checksum": "70c63736ac58d7d808d677d9bc5cc69a4e7e7cbb3a5a4d726d2bba7b1fb96452"
+    },
+    "x86_64_macos": {
+      "etag": "0x8DE4D3E9ECFB6EE",
+      "checksum": "a17cbcca768443eccbac2fb682760f66c04f6e807de069e46cd0df5c624cd079"
+    },
+    "x86_64_windows": {
+      "etag": "0x8DE4D3DD20928A3",
+      "checksum": "93dc7128ccf14b9e3133eb3db8b7b3bfcb44b5e5fb49ea8ea699635d792e134f"
+    },
+    "aarch64_linux_musl": {
+      "etag": "0x8DE4D3DAE018538",
+      "checksum": "aebe710820be9eaeb8cc553c223053689d1ef78252b2f376e0fb62d7d933ca09"
+    },
+    "aarch64_macos": {
+      "etag": "0x8DE4D3E88069D4E",
+      "checksum": "0c6a477da18bf5d5748b4f9797c7d648c5bd16155cb13b0466be2561f409c14e"
+    },
+    "aarch64_windows": {
+      "etag": "0x8DE4D3DDAC4598B",
+      "checksum": "51eb0be27c73653cec7d77d5f599bfed56a87e49ae2039da875733277b95f51f"
+    },
+    "powerpc64le_linux_musl": {
+      "etag": "0x8DE4D3DD291951F",
+      "checksum": "f221fe38fe905921099607e307574cfc0f51de1f576cec931b9405db459e6547"
+    },
+    "riscv64_linux_musl": {
+      "etag": "0x8DE4D3DD83E6374",
+      "checksum": "80706535edf8db6f5d30710e03cb50d9ef0402fa4c098a66004980b6be2a78f4"
+    },
+    "s390x_linux_gnu": {
+      "etag": "0x8DE4D3DCEDAB7F7",
+      "checksum": "a933d005109de1e9a4649901d77b878f3f73b08184d538b8310edf1a94fb3b8c"
+    }
   },
   "0.1.2": {
     "x86_64_linux_musl": {
