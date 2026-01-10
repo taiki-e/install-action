@@ -32,10 +32,43 @@
   },
   "license_markdown": "[Apache-2.0](https://github.com/anchore/syft/blob/main/LICENSE)",
   "latest": {
-    "version": "1.39.0"
+    "version": "1.40.0"
   },
   "1": {
-    "version": "1.39.0"
+    "version": "1.40.0"
+  },
+  "1.40": {
+    "version": "1.40.0"
+  },
+  "1.40.0": {
+    "x86_64_linux_musl": {
+      "etag": "0x8DE4EB46B70A8CF",
+      "checksum": "f551cd16da3a5456f5245bb8045b98594263a678a9d2a07b462a05be0357b795"
+    },
+    "x86_64_macos": {
+      "etag": "0x8DE4EB46B9DC7A2",
+      "checksum": "370036e312a3a95a436b2c8fccb66160fe43b0ad68d3c47193958ee05b526d03"
+    },
+    "x86_64_windows": {
+      "etag": "0x8DE4EB46B78DCF5",
+      "checksum": "3f4021ec098b4bcbaf19bba7028cf7704fef12936970778cec3c6d669b740e6d"
+    },
+    "aarch64_linux_musl": {
+      "etag": "0x8DE4EB46BA780AE",
+      "checksum": "1d62e6c40d23c319e113514dae3cf84375f4aa93520a46cb01b6ad4e8183f9dd"
+    },
+    "aarch64_macos": {
+      "etag": "0x8DE4EB46B98766C",
+      "checksum": "c7d6dc1bb17bddd90b1976b289c82b4c6a58b2cc01f4862e72c76982bc306e81"
+    },
+    "powerpc64le_linux_musl": {
+      "etag": "0x8DE4EB46B43154C",
+      "checksum": "75191fccc09e620c5aef529af552a31ac5af3043be222e60864fa949cff7430f"
+    },
+    "s390x_linux_musl": {
+      "etag": "0x8DE4EB46B619E87",
+      "checksum": "1d020336248bf9c1161a909dd7576dcce7d7a9f55753108f017b264ac8d9a65b"
+    }
   },
   "1.39": {
     "version": "1.39.0"
