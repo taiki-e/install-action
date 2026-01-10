@@ -654,10 +654,10 @@ case "${host_os}" in
       jq() { "${install_action_dir}/jq/bin/jq.exe" -b "$@"; }
     elif type -P jq >/dev/null; then
       # https://github.com/jqlang/jq/issues/1854
-      _tmp=$(jq -r .a <<<'{}')
-      if [[ "${_tmp}" != "null" ]]; then
-        _tmp=$(jq -b -r .a 2>/dev/null <<<'{}' || true)
-        if [[ "${_tmp}" == "null" ]]; then
+      _tmp=$(jq -r .a <<<'{}' | wc -c)
+      if [[ "${_tmp}" != 5 ]]; then
+        _tmp=$({ jq -b -r .a 2>/dev/null <<<'{}' || true; } | wc -c)
+        if [[ "${_tmp}" == 5 ]]; then
           jq() { command jq -b "$@"; }
         else
           jq() { command jq "$@" | tr -d '\r'; }
