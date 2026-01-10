@@ -10,7 +10,11 @@ Note: In this file, do not use the hard wrap in the middle of a sentence for com
 
 ## [Unreleased]
 
-- Update `mdbook-mermaid-ssr@latest` to 0.3.0.
+- Support `mdbook-mermaid-ssr`. ([#1400](https://github.com/taiki-e/install-action/pull/1400), thanks @CommanderStorm)
+
+- Improve support for Windows with MSYS2 bash.
+
+- Documentation improvements.
 
 ## [2.65.16] - 2026-01-10
 
