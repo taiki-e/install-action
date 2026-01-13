@@ -40,10 +40,44 @@
   },
   "license_markdown": "[MIT](https://github.com/j178/prek/blob/master/LICENSE)",
   "latest": {
-    "version": "0.2.27"
+    "version": "0.2.28"
   },
   "0.2": {
-    "version": "0.2.27"
+    "version": "0.2.28"
+  },
+  "0.2.28": {
+    "x86_64_linux_musl": {
+      "etag": "0x8DE52B65C6CB119",
+      "checksum": "f98884374c4998c2917e573eea4f56d3cc1e9a3faa03d45b286ee383a4541a51"
+    },
+    "x86_64_macos": {
+      "etag": "0x8DE52B65C0D2251",
+      "checksum": "c3ecc957d89d983321d83b2687f759263b511ac686bf557d25b9b8ca2192ce7e"
+    },
+    "x86_64_windows": {
+      "etag": "0x8DE52B65C483B20",
+      "checksum": "4607034285abc551c135e680b92d53c1b4f046bb4c9507076acdc9417092c3b6"
+    },
+    "aarch64_linux_musl": {
+      "etag": "0x8DE52B65AB66713",
+      "checksum": "c329196f6a68e8053a40f5f7949430083d7c5417c1deb97af49a7f3abbb6ae48"
+    },
+    "aarch64_macos": {
+      "etag": "0x8DE52B65A61EF55",
+      "checksum": "7a201905bf3cc807143cf91ff47fc85c7c841cae72f592d95f4adee19d36d082"
+    },
+    "aarch64_windows": {
+      "etag": "0x8DE52B65A74037D",
+      "checksum": "7cebe665d74cc09ef64501273ace2269d44d2baf8674f011effaba8da3b832d8"
+    },
+    "riscv64_linux_gnu": {
+      "etag": "0x8DE52B65BEC03FB",
+      "checksum": "efe02cb89d8d1402f78fc2fe75085c282e4f58e20b96f56b25b1e76c0d6b499b"
+    },
+    "s390x_linux_gnu": {
+      "etag": "0x8DE52B65BFA24E8",
+      "checksum": "bf19fe53d73394c40737486f78b93af3d7651f2492af39723ab41743639ccf80"
+    }
   },
   "0.2.27": {
     "x86_64_linux_musl": {
