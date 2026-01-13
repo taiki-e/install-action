@@ -10,6 +10,8 @@ Note: In this file, do not use the hard wrap in the middle of a sentence for com
 
 ## [Unreleased]
 
+## [2.66.3] - 2026-01-13
+
 - Update `prek@latest` to 0.2.28.
 
 - Update `tombi@latest` to 0.7.19.
@@ -5335,7 +5337,8 @@ Note: This release is considered a breaking change because installing on version
 
 Initial release
 
-[Unreleased]: https://github.com/taiki-e/install-action/compare/v2.66.2...HEAD
+[Unreleased]: https://github.com/taiki-e/install-action/compare/v2.66.3...HEAD
+[2.66.3]: https://github.com/taiki-e/install-action/compare/v2.66.2...v2.66.3
 [2.66.2]: https://github.com/taiki-e/install-action/compare/v2.66.1...v2.66.2
 [2.66.1]: https://github.com/taiki-e/install-action/compare/v2.66.0...v2.66.1
 [2.66.0]: https://github.com/taiki-e/install-action/compare/v2.65.16...v2.66.0
