@@ -10,6 +10,8 @@ Note: In this file, do not use the hard wrap in the middle of a sentence for com
 
 ## [Unreleased]
 
+## [2.66.2] - 2026-01-13
+
 - Update `cargo-nextest@latest` to 0.9.121.
 
 - Update `protoc@latest` to 3.33.4.
@@ -5329,7 +5331,8 @@ Note: This release is considered a breaking change because installing on version
 
 Initial release
 
-[Unreleased]: https://github.com/taiki-e/install-action/compare/v2.66.1...HEAD
+[Unreleased]: https://github.com/taiki-e/install-action/compare/v2.66.2...HEAD
+[2.66.2]: https://github.com/taiki-e/install-action/compare/v2.66.1...v2.66.2
 [2.66.1]: https://github.com/taiki-e/install-action/compare/v2.66.0...v2.66.1
 [2.66.0]: https://github.com/taiki-e/install-action/compare/v2.65.16...v2.66.0
 [2.65.16]: https://github.com/taiki-e/install-action/compare/v2.65.15...v2.65.16
