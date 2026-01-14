@@ -28,7 +28,32 @@
   },
   "license_markdown": "[Apache-2.0](https://github.com/mozilla/sccache/blob/main/LICENSE)",
   "latest": {
-    "version": "0.12.0"
+    "version": "0.13.0"
+  },
+  "0.13": {
+    "version": "0.13.0"
+  },
+  "0.13.0": {
+    "x86_64_linux_musl": {
+      "etag": "0x8DE52D74CC75462",
+      "checksum": "0f57d80d0036967bc06b8391dcf4b527a6837187de454b55222ce4e0d5e19d0a"
+    },
+    "x86_64_windows": {
+      "etag": "0x8DE52D74BBB7ECD",
+      "checksum": "dc2333919c6eb4d58dbadd663e9504579df69a800effb3b4f80647015a7e3d3a"
+    },
+    "aarch64_linux_musl": {
+      "etag": "0x8DE52D747003DA5",
+      "checksum": "1bbbd570aa957db85c1e7c3fbc790f7766d4406347371b884515ed723ac03086"
+    },
+    "aarch64_macos": {
+      "etag": "0x8DE52D74509D7AB",
+      "checksum": "6dbdb01f5854ca1b42b44b838f2ccba34c8003c211a1c315bfad7191cf74c08b"
+    },
+    "aarch64_windows": {
+      "etag": "0x8DE52D745FEE398",
+      "checksum": "a57ad29859610baedaa92683d342272424d6a43fda8a3295ee36c23030ecffd5"
+    }
   },
   "0.12": {
     "version": "0.12.0"

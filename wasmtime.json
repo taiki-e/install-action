@@ -36,13 +36,47 @@
   },
   "license_markdown": "[Apache-2.0 WITH LLVM-exception](https://github.com/bytecodealliance/wasmtime/blob/main/LICENSE)",
   "latest": {
-    "version": "40.0.1"
+    "version": "40.0.2"
   },
   "40": {
-    "version": "40.0.1"
+    "version": "40.0.2"
   },
   "40.0": {
-    "version": "40.0.1"
+    "version": "40.0.2"
+  },
+  "40.0.2": {
+    "x86_64_linux_gnu": {
+      "etag": "0x8DE53927BEDDA5D",
+      "checksum": "f2cc5e234ad4e54696606204f68ec8510e96687cc7e062e94892d0caac459436"
+    },
+    "x86_64_macos": {
+      "etag": "0x8DE53927C3651C1",
+      "checksum": "679e5018e94fc455bdd8d6827a6e5a1f95ad520243a7d13b380e070821d9c270"
+    },
+    "x86_64_windows": {
+      "etag": "0x8DE53927D625CE3",
+      "checksum": "d221cd2985e0e1a72c4fb86f349cf0dff935bbe6d7ad73cd77c55a58fa293aea"
+    },
+    "aarch64_linux_gnu": {
+      "etag": "0x8DE5392794A1C08",
+      "checksum": "f4eda0018cf1559be60cb7fed9250b15e34163e1413c4934219206dbca53fb0a"
+    },
+    "aarch64_macos": {
+      "etag": "0x8DE539279A5431B",
+      "checksum": "ab36e438a519eb95da7b7a857979bf8d7758dcee04a28dcd03fdfe52bf817cd6"
+    },
+    "aarch64_windows": {
+      "etag": "0x8DE539279F6D7F4",
+      "checksum": "8d3e302052d67b2714f44fc8de44919c0a2759973caa482a786ed1735f4548c6"
+    },
+    "riscv64_linux_gnu": {
+      "etag": "0x8DE53927B07FF42",
+      "checksum": "fc2c703c9922a0352aa8a9b2a6f61d086caacd7aa63092d7097e2f4e0c334b42"
+    },
+    "s390x_linux_gnu": {
+      "etag": "0x8DE53927B59E1E4",
+      "checksum": "b7f79ea64d13029342a715d2c8b500b4e83fd92d3da418df9ffe96506b01c130"
+    }
   },
   "40.0.1": {
     "x86_64_linux_gnu": {
@@ -113,10 +147,44 @@
     }
   },
   "39": {
-    "version": "39.0.1"
+    "version": "39.0.2"
   },
   "39.0": {
-    "version": "39.0.1"
+    "version": "39.0.2"
+  },
+  "39.0.2": {
+    "x86_64_linux_gnu": {
+      "etag": "0x8DE538F1AD4EEA2",
+      "checksum": "87b31eba11531977263b82de1796943f7725923a309d6f979fb4cf5e88f33f9f"
+    },
+    "x86_64_macos": {
+      "etag": "0x8DE538F1C4B1D37",
+      "checksum": "158a6160c04e9db6b8d970e41445a4b7a679df6fc2f89140b8760ac834fc1a6e"
+    },
+    "x86_64_windows": {
+      "etag": "0x8DE538F1D2B0BC8",
+      "checksum": "dcee270af0d7e63aea43e1e00275b354b4d297f2e812aec5cc874b76325a4aa7"
+    },
+    "aarch64_linux_gnu": {
+      "etag": "0x8DE538F1759279E",
+      "checksum": "4ac67901fd091d064b62bfafc0c1b052ff41490232e326817e23d78a82dc090b"
+    },
+    "aarch64_macos": {
+      "etag": "0x8DE538F179E9536",
+      "checksum": "1458402c56be8231d36e35e44437d07507958be003dce4b42f68319cd56eaa27"
+    },
+    "aarch64_windows": {
+      "etag": "0x8DE538F184CAF36",
+      "checksum": "60d7dc508bf27f055ff38a0198b8f64d670226c22735577b5c84f0813b5066bc"
+    },
+    "riscv64_linux_gnu": {
+      "etag": "0x8DE538F19C0E437",
+      "checksum": "094a8b09981f9a61875da4f5eb7ef40d4356220aceaf4a9cd55f556513189951"
+    },
+    "s390x_linux_gnu": {
+      "etag": "0x8DE538F1A20E7D6",
+      "checksum": "21fd3dc109fb41d122aab71789d8d19f82f1df5778b5c4a3220d7d753c3b8199"
+    }
   },
   "39.0.1": {
     "x86_64_linux_gnu": {
@@ -471,10 +539,44 @@
     }
   },
   "36": {
-    "version": "36.0.3"
+    "version": "36.0.4"
   },
   "36.0": {
-    "version": "36.0.3"
+    "version": "36.0.4"
+  },
+  "36.0.4": {
+    "x86_64_linux_gnu": {
+      "etag": "0x8DE5390A89E2D09",
+      "checksum": "4908dc5c85141e97db276d51295bc478aa1bee2fe7919bc8438c8e77cfe05846"
+    },
+    "x86_64_macos": {
+      "etag": "0x8DE5390AA20F7B8",
+      "checksum": "2b7b542ea62137bcca01a5f8b97e44bea006fbec9cb15e87f457750fa5b1958a"
+    },
+    "x86_64_windows": {
+      "etag": "0x8DE5390B099D250",
+      "checksum": "198500277035c5a485faed09292dd60b5f4135a74dd0a13b2b26dc35932e4b46"
+    },
+    "aarch64_linux_gnu": {
+      "etag": "0x8DE539093CC786C",
+      "checksum": "276869552db865db02d040730dc803fad3b441c745a26e5ea232dc3cfa83d29a"
+    },
+    "aarch64_macos": {
+      "etag": "0x8DE53909530B9E7",
+      "checksum": "a408268902cb7c2b555d3ef727c410ad3765a6fb394fec4456e96e48f6fcdecc"
+    },
+    "aarch64_windows": {
+      "etag": "0x8DE5390987AACAC",
+      "checksum": "42a68054a13698d525055b50e4f7f3f63ed28cde986a1eb5d26268d7d4c0a489"
+    },
+    "riscv64_linux_gnu": {
+      "etag": "0x8DE53909EB19861",
+      "checksum": "afaae953f43b71883704cf5311489981ebfb48d084df26abf4515f27485c2da4"
+    },
+    "s390x_linux_gnu": {
+      "etag": "0x8DE5390A04E0FDD",
+      "checksum": "f37a9c03f490baffa057aadeab7a28a6cfd2bf63e225cdb1045767b67a3160b9"
+    }
   },
   "36.0.3": {
     "x86_64_linux_gnu": {
