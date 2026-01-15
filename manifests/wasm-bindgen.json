@@ -44,10 +44,32 @@
   },
   "license_markdown": "[MIT](https://github.com/wasm-bindgen/wasm-bindgen/blob/main/LICENSE-MIT) OR [Apache-2.0](https://github.com/wasm-bindgen/wasm-bindgen/blob/main/LICENSE-APACHE)",
   "latest": {
-    "version": "0.2.107"
+    "version": "0.2.108"
   },
   "0.2": {
-    "version": "0.2.107"
+    "version": "0.2.108"
+  },
+  "0.2.108": {
+    "x86_64_linux_musl": {
+      "etag": "0x8DE53D2BDB3CC96",
+      "checksum": "d15d7e476feec78d0ec9edc27b8f77279ec7a3e6227756e7036e5cd2066800f4"
+    },
+    "x86_64_macos": {
+      "etag": "0x8DE53D2BDA3D8F6",
+      "checksum": "0a123dc21a55b3ace0030ba9c46ecd5220e1abc69125889f76dae497db9ef046"
+    },
+    "x86_64_windows": {
+      "etag": "0x8DE53D2BD978ABB",
+      "checksum": "08e921c688bd35a2c324c0fd6590360dca1944c910b64ea9d388e87c4f48a173"
+    },
+    "aarch64_linux_gnu": {
+      "etag": "0x8DE53D2BDC0DD46",
+      "checksum": "0be1a37f175ab5aef3385016fc69039c4ca4fdda22ef6cccc50684b551606f83"
+    },
+    "aarch64_macos": {
+      "etag": "0x8DE53D2BD984D31",
+      "checksum": "3903c81dc8943592dfd9d98c8c21c9a05f8265aa6b0014f641a8457cec4925dd"
+    }
   },
   "0.2.107": {
     "x86_64_linux_musl": {
