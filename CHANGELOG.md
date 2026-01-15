@@ -10,6 +10,8 @@ Note: In this file, do not use the hard wrap in the middle of a sentence for com
 
 ## [Unreleased]
 
+## [2.66.5] - 2026-01-15
+
 - Update `wasm-bindgen@latest` to 0.2.108.
 
 - Update `osv-scanner@latest` to 2.3.2.
@@ -5353,7 +5355,8 @@ Note: This release is considered a breaking change because installing on version
 
 Initial release
 
-[Unreleased]: https://github.com/taiki-e/install-action/compare/v2.66.4...HEAD
+[Unreleased]: https://github.com/taiki-e/install-action/compare/v2.66.5...HEAD
+[2.66.5]: https://github.com/taiki-e/install-action/compare/v2.66.4...v2.66.5
 [2.66.4]: https://github.com/taiki-e/install-action/compare/v2.66.3...v2.66.4
 [2.66.3]: https://github.com/taiki-e/install-action/compare/v2.66.2...v2.66.3
 [2.66.2]: https://github.com/taiki-e/install-action/compare/v2.66.1...v2.66.2
