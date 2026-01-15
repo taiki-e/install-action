@@ -10,6 +10,8 @@ Note: In this file, do not use the hard wrap in the middle of a sentence for com
 
 ## [Unreleased]
 
+- Update `wasm-bindgen@latest` to 0.2.108.
+
 - Update `osv-scanner@latest` to 2.3.2.
 
 - Update `wasm-bindgen@latest` to 0.2.107.
