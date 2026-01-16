@@ -10,7 +10,7 @@ rules:
       policies:
         taiki-e/*: any
         '*': ref-pin
-  obfuscation:
+  misfeature:
     ignore:
       # We use `shell: cmd` to test compatibility.
       - ci.yml
