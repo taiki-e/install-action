@@ -10,6 +10,8 @@ Note: In this file, do not use the hard wrap in the middle of a sentence for com
 
 ## [Unreleased]
 
+## [2.67.0] - 2026-01-20
+
 - Support `cargo-neat`. ([#1404](https://github.com/taiki-e/install-action/pull/1404), thanks @killzoner)
 
 - Update `tombi@latest` to 0.7.20.
@@ -5395,7 +5397,8 @@ Note: This release is considered a breaking change because installing on version
 
 Initial release
 
-[Unreleased]: https://github.com/taiki-e/install-action/compare/v2.66.7...HEAD
+[Unreleased]: https://github.com/taiki-e/install-action/compare/v2.67.0...HEAD
+[2.67.0]: https://github.com/taiki-e/install-action/compare/v2.66.7...v2.67.0
 [2.66.7]: https://github.com/taiki-e/install-action/compare/v2.66.6...v2.66.7
 [2.66.6]: https://github.com/taiki-e/install-action/compare/v2.66.5...v2.66.6
 [2.66.5]: https://github.com/taiki-e/install-action/compare/v2.66.4...v2.66.5
