@@ -1,0 +1,14 @@
+{
+  "repository": "https://github.com/killzoner/cargo-neat",
+  "tag_prefix": "",
+  "rust_crate": "${package}",
+  "asset_name": "${package}-${version}-${rust_target}.tar.gz",
+  "bin": "${package}-${version}-${rust_target}/${package}${exe}",
+  "platform": {
+    "x86_64_linux_musl": {},
+    "x86_64_macos": {},
+    "x86_64_windows": {},
+    "aarch64_linux_musl": {},
+    "aarch64_macos": {}
+  }
+}
