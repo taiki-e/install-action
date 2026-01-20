@@ -10,6 +10,8 @@ Note: In this file, do not use the hard wrap in the middle of a sentence for com
 
 ## [Unreleased]
 
+- Support `cargo-neat`. ([#1404](https://github.com/taiki-e/install-action/pull/1404), thanks @killzoner)
+
 - Update `tombi@latest` to 0.7.20.
 
 - Update `knope@latest` to 0.22.1.
