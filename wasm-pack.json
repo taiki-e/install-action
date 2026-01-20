@@ -2,25 +2,46 @@
   "rust_crate": "wasm-pack",
   "template": {
     "x86_64_linux_musl": {
-      "url": "https://github.com/rustwasm/wasm-pack/releases/download/v${version}/wasm-pack-v${version}-x86_64-unknown-linux-musl.tar.gz",
+      "url": "https://github.com/drager/wasm-pack/releases/download/v${version}/wasm-pack-v${version}-x86_64-unknown-linux-musl.tar.gz",
       "bin": "wasm-pack-v${version}-x86_64-unknown-linux-musl/wasm-pack"
     },
     "x86_64_macos": {
-      "url": "https://github.com/rustwasm/wasm-pack/releases/download/v${version}/wasm-pack-v${version}-x86_64-apple-darwin.tar.gz",
+      "url": "https://github.com/drager/wasm-pack/releases/download/v${version}/wasm-pack-v${version}-x86_64-apple-darwin.tar.gz",
       "bin": "wasm-pack-v${version}-x86_64-apple-darwin/wasm-pack"
     },
     "x86_64_windows": {
-      "url": "https://github.com/rustwasm/wasm-pack/releases/download/v${version}/wasm-pack-v${version}-x86_64-pc-windows-msvc.tar.gz",
+      "url": "https://github.com/drager/wasm-pack/releases/download/v${version}/wasm-pack-v${version}-x86_64-pc-windows-msvc.tar.gz",
       "bin": "wasm-pack-v${version}-x86_64-pc-windows-msvc/wasm-pack.exe"
     },
     "aarch64_linux_musl": {
-      "url": "https://github.com/rustwasm/wasm-pack/releases/download/v${version}/wasm-pack-v${version}-aarch64-unknown-linux-musl.tar.gz",
+      "url": "https://github.com/drager/wasm-pack/releases/download/v${version}/wasm-pack-v${version}-aarch64-unknown-linux-musl.tar.gz",
       "bin": "wasm-pack-v${version}-aarch64-unknown-linux-musl/wasm-pack"
     }
   },
-  "license_markdown": "[MIT](https://github.com/rustwasm/wasm-pack/blob/master/LICENSE-MIT) OR [Apache-2.0](https://github.com/rustwasm/wasm-pack/blob/master/LICENSE-APACHE)",
+  "license_markdown": "[MIT](https://github.com/drager/wasm-pack/blob/master/LICENSE-MIT) OR [Apache-2.0](https://github.com/drager/wasm-pack/blob/master/LICENSE-APACHE)",
   "latest": {
-    "version": "0.13.1"
+    "version": "0.14.0"
+  },
+  "0.14": {
+    "version": "0.14.0"
+  },
+  "0.14.0": {
+    "x86_64_linux_musl": {
+      "etag": "0x8DE580F1B5D53B6",
+      "checksum": "278a8d668085821f4d1a637bd864f1713f872b0ae3a118c77562a308c0abfe8d"
+    },
+    "x86_64_macos": {
+      "etag": "0x8DE580F1DC36326",
+      "checksum": "46b66072ee9912b53f83841aecb04479a60e0705f7bb8b6681b377a07a512a23"
+    },
+    "x86_64_windows": {
+      "etag": "0x8DE580F1C970AA5",
+      "checksum": "d484c8e8bcd9e8c30097fbac78b52dd159598f99d11e43a50f5d143b67c721f1"
+    },
+    "aarch64_linux_musl": {
+      "etag": "0x8DE580F1BE0E3B5",
+      "checksum": "5941c7b05060440ff37ee50fe9009a408e63fa5ba607a3b0736f5a887ec5f2ca"
+    }
   },
   "0.13": {
     "version": "0.13.1"
