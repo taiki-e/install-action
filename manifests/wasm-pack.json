@@ -2,23 +2,23 @@
   "rust_crate": "wasm-pack",
   "template": {
     "x86_64_linux_musl": {
-      "url": "https://github.com/rustwasm/wasm-pack/releases/download/v${version}/wasm-pack-v${version}-x86_64-unknown-linux-musl.tar.gz",
+      "url": "https://github.com/drager/wasm-pack/releases/download/v${version}/wasm-pack-v${version}-x86_64-unknown-linux-musl.tar.gz",
       "bin": "wasm-pack-v${version}-x86_64-unknown-linux-musl/wasm-pack"
     },
     "x86_64_macos": {
-      "url": "https://github.com/rustwasm/wasm-pack/releases/download/v${version}/wasm-pack-v${version}-x86_64-apple-darwin.tar.gz",
+      "url": "https://github.com/drager/wasm-pack/releases/download/v${version}/wasm-pack-v${version}-x86_64-apple-darwin.tar.gz",
       "bin": "wasm-pack-v${version}-x86_64-apple-darwin/wasm-pack"
     },
     "x86_64_windows": {
-      "url": "https://github.com/rustwasm/wasm-pack/releases/download/v${version}/wasm-pack-v${version}-x86_64-pc-windows-msvc.tar.gz",
+      "url": "https://github.com/drager/wasm-pack/releases/download/v${version}/wasm-pack-v${version}-x86_64-pc-windows-msvc.tar.gz",
       "bin": "wasm-pack-v${version}-x86_64-pc-windows-msvc/wasm-pack.exe"
     },
     "aarch64_linux_musl": {
-      "url": "https://github.com/rustwasm/wasm-pack/releases/download/v${version}/wasm-pack-v${version}-aarch64-unknown-linux-musl.tar.gz",
+      "url": "https://github.com/drager/wasm-pack/releases/download/v${version}/wasm-pack-v${version}-aarch64-unknown-linux-musl.tar.gz",
       "bin": "wasm-pack-v${version}-aarch64-unknown-linux-musl/wasm-pack"
     }
   },
-  "license_markdown": "[MIT](https://github.com/rustwasm/wasm-pack/blob/master/LICENSE-MIT) OR [Apache-2.0](https://github.com/rustwasm/wasm-pack/blob/master/LICENSE-APACHE)",
+  "license_markdown": "[MIT](https://github.com/drager/wasm-pack/blob/master/LICENSE-MIT) OR [Apache-2.0](https://github.com/drager/wasm-pack/blob/master/LICENSE-APACHE)",
   "latest": {
     "version": "0.13.1"
   },
