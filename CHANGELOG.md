@@ -10,6 +10,8 @@ Note: In this file, do not use the hard wrap in the middle of a sentence for com
 
 ## [Unreleased]
 
+- Update `wasm-pack@latest` to 0.14.0.
+
 ## [2.67.0] - 2026-01-20
 
 - Support `cargo-neat`. ([#1404](https://github.com/taiki-e/install-action/pull/1404), thanks @killzoner)
