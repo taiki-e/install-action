@@ -1,0 +1,54 @@
+{
+  "rust_crate": "cargo-neat",
+  "template": {
+    "x86_64_linux_musl": {
+      "url": "https://github.com/killzoner/cargo-neat/releases/download/${version}/cargo-neat-${version}-x86_64-unknown-linux-musl.tar.gz",
+      "bin": "cargo-neat-${version}-x86_64-unknown-linux-musl/cargo-neat"
+    },
+    "x86_64_macos": {
+      "url": "https://github.com/killzoner/cargo-neat/releases/download/${version}/cargo-neat-${version}-x86_64-apple-darwin.tar.gz",
+      "bin": "cargo-neat-${version}-x86_64-apple-darwin/cargo-neat"
+    },
+    "x86_64_windows": {
+      "url": "https://github.com/killzoner/cargo-neat/releases/download/${version}/cargo-neat-${version}-x86_64-pc-windows-msvc.tar.gz",
+      "bin": "cargo-neat-${version}-x86_64-pc-windows-msvc/cargo-neat.exe"
+    },
+    "aarch64_linux_musl": {
+      "url": "https://github.com/killzoner/cargo-neat/releases/download/${version}/cargo-neat-${version}-aarch64-unknown-linux-musl.tar.gz",
+      "bin": "cargo-neat-${version}-aarch64-unknown-linux-musl/cargo-neat"
+    },
+    "aarch64_macos": {
+      "url": "https://github.com/killzoner/cargo-neat/releases/download/${version}/cargo-neat-${version}-aarch64-apple-darwin.tar.gz",
+      "bin": "cargo-neat-${version}-aarch64-apple-darwin/cargo-neat"
+    }
+  },
+  "license_markdown": "[MIT](https://github.com/killzoner/cargo-neat/blob/master/LICENSE-MIT) OR [Apache-2.0](https://github.com/killzoner/cargo-neat/blob/master/LICENSE-APACHE)",
+  "latest": {
+    "version": "0.2.3"
+  },
+  "0.2": {
+    "version": "0.2.3"
+  },
+  "0.2.3": {
+    "x86_64_linux_musl": {
+      "etag": "0x8DE4C5D8F94ED60",
+      "checksum": "25e5cb704c60141f4806c9abd54a767f41ded08639328a4a8da42b69fc7b7f51"
+    },
+    "x86_64_macos": {
+      "etag": "0x8DE4C5D6DA53B1E",
+      "checksum": "508eac6217b37ec9fb8775bb0ce7e91a372c14397d32d50ed67cf543c2c03686"
+    },
+    "x86_64_windows": {
+      "etag": "0x8DE4C5DC9809A25",
+      "checksum": "97a3731dafbe1cda77bdef449fdae5bfc2c63ba6b16f5e086db41a69f71e4cc9"
+    },
+    "aarch64_linux_musl": {
+      "etag": "0x8DE4C5D7C0D64BF",
+      "checksum": "e7b02db85319553bb64a576ede4c5995f7c2721212ecbcb1331d4b8c6f5b36f2"
+    },
+    "aarch64_macos": {
+      "etag": "0x8DE4C5D79051512",
+      "checksum": "b0a5add7f413380b32aa659d08da4f8b3d1e4ea96258951e06fdf5b0b6995aaf"
+    }
+  }
+}
