@@ -10,6 +10,8 @@ Note: In this file, do not use the hard wrap in the middle of a sentence for com
 
 ## [Unreleased]
 
+- Update `tombi@latest` to 0.7.23.
+
 ## [2.67.4] - 2026-01-22
 
 - Support installing native binary for `cargo-llvm-cov`  on AArch64 Windows. (Previously x86_64 Windows binary is used as fallback.)
