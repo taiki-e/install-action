@@ -10,6 +10,8 @@ Note: In this file, do not use the hard wrap in the middle of a sentence for com
 
 ## [Unreleased]
 
+## [2.67.3] - 2026-01-22
+
 - Update `zola@latest` to 0.22.1.
 
 - Update `prek@latest` to 0.3.0.
@@ -5417,7 +5419,8 @@ Note: This release is considered a breaking change because installing on version
 
 Initial release
 
-[Unreleased]: https://github.com/taiki-e/install-action/compare/v2.67.2...HEAD
+[Unreleased]: https://github.com/taiki-e/install-action/compare/v2.67.3...HEAD
+[2.67.3]: https://github.com/taiki-e/install-action/compare/v2.67.2...v2.67.3
 [2.67.2]: https://github.com/taiki-e/install-action/compare/v2.67.1...v2.67.2
 [2.67.1]: https://github.com/taiki-e/install-action/compare/v2.67.0...v2.67.1
 [2.67.0]: https://github.com/taiki-e/install-action/compare/v2.66.7...v2.67.0
