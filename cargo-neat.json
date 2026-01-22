@@ -24,10 +24,32 @@
   },
   "license_markdown": "[MIT](https://github.com/killzoner/cargo-neat/blob/master/LICENSE-MIT) OR [Apache-2.0](https://github.com/killzoner/cargo-neat/blob/master/LICENSE-APACHE)",
   "latest": {
-    "version": "0.2.3"
+    "version": "0.2.4"
   },
   "0.2": {
-    "version": "0.2.3"
+    "version": "0.2.4"
+  },
+  "0.2.4": {
+    "x86_64_linux_musl": {
+      "etag": "0x8DE58EB83E930F9",
+      "checksum": "9d52e1f0ca56261ec034461b6fd0eea6c545e07058bb46ddc21abb328b8e27ab"
+    },
+    "x86_64_macos": {
+      "etag": "0x8DE58EBC764909B",
+      "checksum": "8e780846f6ac0cacfd25b12562806ca3c2b59498d1c2cb12d7c7cebec7216623"
+    },
+    "x86_64_windows": {
+      "etag": "0x8DE58EC025B9659",
+      "checksum": "9760ad7d4515a8555836128b5e1573e11ebb80594d323b9a1321fd8396a44e36"
+    },
+    "aarch64_linux_musl": {
+      "etag": "0x8DE58EB8368D1C0",
+      "checksum": "0b057b908bfb0f3f3d1c30da881bcc65a2633972767b458a41e416bdbd706aaa"
+    },
+    "aarch64_macos": {
+      "etag": "0x8DE58EBA80A5AB3",
+      "checksum": "ef98c8afe0bc06b32e92acb3fe4e7690e6c031f973cd28136ae367ea01de409d"
+    }
   },
   "0.2.3": {
     "x86_64_linux_musl": {
