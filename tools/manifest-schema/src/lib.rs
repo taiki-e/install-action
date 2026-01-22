@@ -20,19 +20,20 @@ Structured access to the install-action manifests.
     // clippy::exhaustive_structs,
     clippy::impl_trait_in_params,
     // clippy::missing_inline_in_public_items,
-    // clippy::std_instead_of_alloc,
-    // clippy::std_instead_of_core,
+    clippy::std_instead_of_alloc,
+    clippy::std_instead_of_core,
 )]
 #![allow(clippy::missing_panics_doc, clippy::too_long_first_doc_paragraph)]
 
-use std::{
+extern crate alloc;
+
+use alloc::collections::BTreeMap;
+use core::{
     cmp::{self, Reverse},
-    collections::BTreeMap,
-    fmt,
-    path::Path,
-    slice,
+    fmt, slice,
     str::FromStr,
 };
+use std::path::Path;
 
 use serde::{
     de::{self, Deserialize, Deserializer},
