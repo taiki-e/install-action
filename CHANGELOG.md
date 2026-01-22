@@ -10,6 +10,8 @@ Note: In this file, do not use the hard wrap in the middle of a sentence for com
 
 ## [Unreleased]
 
+- Update `cargo-llvm-cov@latest` to 0.6.24.
+
 - Support installing native binary for `cargo-llvm-cov`  on AArch64 Windows. (Previously x86_64 Windows binary is used as fallback.)
 
 ## [2.67.3] - 2026-01-22
