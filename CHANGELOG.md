@@ -10,6 +10,8 @@ Note: In this file, do not use the hard wrap in the middle of a sentence for com
 
 ## [Unreleased]
 
+## [2.67.5] - 2026-01-23
+
 - Update `cargo-semver-checks@latest` to 0.46.0.
 
 - Update `tombi@latest` to 0.7.23.
@@ -5429,7 +5431,8 @@ Note: This release is considered a breaking change because installing on version
 
 Initial release
 
-[Unreleased]: https://github.com/taiki-e/install-action/compare/v2.67.4...HEAD
+[Unreleased]: https://github.com/taiki-e/install-action/compare/v2.67.5...HEAD
+[2.67.5]: https://github.com/taiki-e/install-action/compare/v2.67.4...v2.67.5
 [2.67.4]: https://github.com/taiki-e/install-action/compare/v2.67.3...v2.67.4
 [2.67.3]: https://github.com/taiki-e/install-action/compare/v2.67.2...v2.67.3
 [2.67.2]: https://github.com/taiki-e/install-action/compare/v2.67.1...v2.67.2
