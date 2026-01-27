@@ -18,7 +18,7 @@ See JSON files in `tools/codegen/base` directory for examples of the manifest.
 > If you have `Github CLI` installed (the command `gh`), you can:
 >
 > ```sh
-> GITHUB_TOKEN=$(gh auth status --show-token 2>&1 | sed -n 's/^.*Token: //p') ./tools/manifest.sh <tool>
+> GITHUB_TOKEN=$(gh auth token) ./tools/manifest.sh <tool>
 > ```
 
 ## Refresh TOOLS.md
