@@ -3,13 +3,50 @@
   "template": null,
   "license_markdown": "[BSD-3-Clause](https://github.com/protocolbuffers/protobuf/blob/HEAD/LICENSE)",
   "latest": {
-    "version": "3.33.4"
+    "version": "3.33.5"
   },
   "3": {
-    "version": "3.33.4"
+    "version": "3.33.5"
   },
   "3.33": {
-    "version": "3.33.4"
+    "version": "3.33.5"
+  },
+  "3.33.5": {
+    "x86_64_linux_gnu": {
+      "url": "https://github.com/protocolbuffers/protobuf/releases/download/v33.5/protoc-33.5-linux-x86_64.zip",
+      "etag": "0x8DE5F77F2B7BE3C",
+      "checksum": "24e58fb231d50306ee28491f33a170301e99540f7e29ca461e0e80fd1239f8d1"
+    },
+    "x86_64_macos": {
+      "url": "https://github.com/protocolbuffers/protobuf/releases/download/v33.5/protoc-33.5-osx-x86_64.zip",
+      "etag": "0x8DE5F77F2DC0D51",
+      "checksum": "7f31625f8bec4929082ae9209e101c1c03692624457cc6332f83736db495ee92"
+    },
+    "x86_64_windows": {
+      "url": "https://github.com/protocolbuffers/protobuf/releases/download/v33.5/protoc-33.5-win64.zip",
+      "etag": "0x8DE5F77F310023C",
+      "checksum": "7e3468cd1fbd1ae9361a5304d4ac28fbd593aa1a425b5464bd9d4da5fca224b4"
+    },
+    "aarch64_linux_gnu": {
+      "url": "https://github.com/protocolbuffers/protobuf/releases/download/v33.5/protoc-33.5-linux-aarch_64.zip",
+      "etag": "0x8DE5F77F269A809",
+      "checksum": "2b0fcf9b2c32cbadccc0eb7a88b841fffecd4a06fc80acdba2b5be45e815c38a"
+    },
+    "aarch64_macos": {
+      "url": "https://github.com/protocolbuffers/protobuf/releases/download/v33.5/protoc-33.5-osx-aarch_64.zip",
+      "etag": "0x8DE5F77F2BBB171",
+      "checksum": "7084c6482e3bb416a33fe2162ba566711773b842e6953bf6cb181647b9ef57c0"
+    },
+    "powerpc64le_linux_gnu": {
+      "url": "https://github.com/protocolbuffers/protobuf/releases/download/v33.5/protoc-33.5-linux-ppcle_64.zip",
+      "etag": "0x8DE5F77F26173DC",
+      "checksum": "eef750b2119fc03bda049c24322777ade4a0215bd3996a04f915d1eb6a283328"
+    },
+    "s390x_linux_gnu": {
+      "url": "https://github.com/protocolbuffers/protobuf/releases/download/v33.5/protoc-33.5-linux-s390_64.zip",
+      "etag": "0x8DE5F77F266774F",
+      "checksum": "8adc51c28761b52cc0a924bc6f78815a43bcb88fbff2500dbb0401aab637199b"
+    }
   },
   "3.33.4": {
     "x86_64_linux_gnu": {
