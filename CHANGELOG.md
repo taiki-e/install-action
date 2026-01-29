@@ -10,6 +10,8 @@ Note: In this file, do not use the hard wrap in the middle of a sentence for com
 
 ## [Unreleased]
 
+- Update `martin@latest` to 1.3.0.
+
 - Update `mise@latest` to 2026.1.9.
 
 - Update `editorconfig-checker@latest` to 3.6.1.
