@@ -10,6 +10,8 @@ Note: In this file, do not use the hard wrap in the middle of a sentence for com
 
 ## [Unreleased]
 
+## [2.67.17] - 2026-01-31
+
 - Update `rclone@latest` to 1.73.0.
 
 - Update `mise@latest` to 2026.1.11.
@@ -5519,7 +5521,8 @@ Note: This release is considered a breaking change because installing on version
 
 Initial release
 
-[Unreleased]: https://github.com/taiki-e/install-action/compare/v2.67.16...HEAD
+[Unreleased]: https://github.com/taiki-e/install-action/compare/v2.67.17...HEAD
+[2.67.17]: https://github.com/taiki-e/install-action/compare/v2.67.16...v2.67.17
 [2.67.16]: https://github.com/taiki-e/install-action/compare/v2.67.15...v2.67.16
 [2.67.15]: https://github.com/taiki-e/install-action/compare/v2.67.14...v2.67.15
 [2.67.14]: https://github.com/taiki-e/install-action/compare/v2.67.13...v2.67.14
