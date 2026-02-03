@@ -10,6 +10,8 @@ Note: In this file, do not use the hard wrap in the middle of a sentence for com
 
 ## [Unreleased]
 
+- Update `wasmtime@latest` to 41.0.2.
+
 - Update `typos@latest` to 1.43.0.
 
 - Update `cargo-insta@latest` to 1.46.3.
