@@ -28,10 +28,117 @@
   },
   "license_markdown": "[MIT](https://github.com/jdx/mise/blob/main/LICENSE)",
   "latest": {
-    "version": "2026.1.12"
+    "version": "2026.2.3"
   },
   "2026": {
-    "version": "2026.1.12"
+    "version": "2026.2.3"
+  },
+  "2026.2": {
+    "version": "2026.2.3"
+  },
+  "2026.2.3": {
+    "x86_64_linux_musl": {
+      "etag": "0x8DE63DEA3517E33",
+      "checksum": "de85a3f3245d626ae57cf048ab15673c7aa13e88a145e31344800aebd00b4a76"
+    },
+    "x86_64_macos": {
+      "etag": "0x8DE63DEA55D506C",
+      "checksum": "23cd74527e116742a405572e0cfb886307f268e05738a636f9c651cf67f09085"
+    },
+    "x86_64_windows": {
+      "etag": "0x8DE63DEA6A072D7",
+      "checksum": "b7dd9408f52a68c1a43372705ef6f907ece6736468b64c808cf0a1e80e07b894"
+    },
+    "aarch64_linux_musl": {
+      "etag": "0x8DE63DE9FAE866B",
+      "checksum": "dd1d17b7d4e7992fa0ac4e1f65faac254fb99bffc12e29644226c8bab1564db5"
+    },
+    "aarch64_macos": {
+      "etag": "0x8DE63DEA4545D79",
+      "checksum": "2ba668c8a552193d4dd6d261a76c151ce183c3f70416cbee760297dcd4b7ba63"
+    },
+    "aarch64_windows": {
+      "etag": "0x8DE63DEA58592B6",
+      "checksum": "88bd067c8f6b949b6ed28cf1bf705b28ef1735189fe6c8da0a96b3e91adcf538"
+    }
+  },
+  "2026.2.2": {
+    "x86_64_linux_musl": {
+      "etag": "0x8DE6332896B9CCD",
+      "checksum": "e92eeadcc9816f8162121c0c602b4e17a844fcc40d2be0e4be4aaf4465c5a859"
+    },
+    "x86_64_macos": {
+      "etag": "0x8DE63328DA79221",
+      "checksum": "427877316ac15703722bf40265d275a8234bec49400be249191057fa2bff98bc"
+    },
+    "x86_64_windows": {
+      "etag": "0x8DE63328EB51443",
+      "checksum": "5b3e079edd2687ba370e6bc5907dd231a3ec7ddd07e8ff6d4cd850ba2f57a95f"
+    },
+    "aarch64_linux_musl": {
+      "etag": "0x8DE633283156578",
+      "checksum": "d1b4af5eeac4a7cd84fd24f161777c3c0915d615d9b589695adfef358e68b073"
+    },
+    "aarch64_macos": {
+      "etag": "0x8DE63328C7E1BE5",
+      "checksum": "ba27908d3c4430b928542e654d21e275f4aadc7d804e41f6bc61f7967c8469d5"
+    },
+    "aarch64_windows": {
+      "etag": "0x8DE63328E97E90B",
+      "checksum": "ba06a9d11e59833f643103d2c9a29ea5439d52aaf34dfedbf2d1a934091ea434"
+    }
+  },
+  "2026.2.1": {
+    "x86_64_linux_musl": {
+      "etag": "0x8DE624D7C38B289",
+      "checksum": "54608f9385f7aef1f2e2ec9a3b41af79a384ed08c9734ebce4cf412f0a3ebba2"
+    },
+    "x86_64_macos": {
+      "etag": "0x8DE624D7E55AF7D",
+      "checksum": "4e532bbd81f5dba08c1b4302f1f1e7836a98215a891532b71190dd9e624c853f"
+    },
+    "x86_64_windows": {
+      "etag": "0x8DE624D7EE67720",
+      "checksum": "879ac13b2658565a9984a920d51a7e40915104e311bf29233105e2c3ce0a4dc0"
+    },
+    "aarch64_linux_musl": {
+      "etag": "0x8DE624D79B3A4BD",
+      "checksum": "ad97ff31b003c916e53d70b238489cff90c6c6010cf15580a75f1c3b5ee5b6c3"
+    },
+    "aarch64_macos": {
+      "etag": "0x8DE624D7D994DDC",
+      "checksum": "1287be99c7fd135e07c5d41c3347dca9340369ae8e71881889ac434cacd5678d"
+    },
+    "aarch64_windows": {
+      "etag": "0x8DE624D7E728CDF",
+      "checksum": "cfa0b90ffa0c79b3bc9863251a17e593910cf271580a826bf0a127e796931ef8"
+    }
+  },
+  "2026.2.0": {
+    "x86_64_linux_musl": {
+      "etag": "0x8DE618F39BDFC2B",
+      "checksum": "1693248fdee8dd316fc31cd64844f65fddc8778176e14842ed168de5b076d728"
+    },
+    "x86_64_macos": {
+      "etag": "0x8DE618F3B9820DB",
+      "checksum": "0dcb83fdb17158907efdddd38acd8f1b13877f621c1d6779c8f96767daae71f1"
+    },
+    "x86_64_windows": {
+      "etag": "0x8DE618F3C38677A",
+      "checksum": "c7472466f805751a029bc31926a8e60f503f4dea3888402b40fdf03c925b78ee"
+    },
+    "aarch64_linux_musl": {
+      "etag": "0x8DE618F373B35DA",
+      "checksum": "66236534349671d9dc9815e802b6a883c2cddb7b28d10332bc2fd992e8ed50ee"
+    },
+    "aarch64_macos": {
+      "etag": "0x8DE618F3AF40DEE",
+      "checksum": "f3bc94bcd49dbf4c2ac1feb0478de8a94b741d6dec8c1098c546f5e040c9eabd"
+    },
+    "aarch64_windows": {
+      "etag": "0x8DE618F3BC6EB77",
+      "checksum": "e1e8107c3b9dbed293e49c352a420909e577ed8caedb8e35bf64afd4a3f97d03"
+    }
   },
   "2026.1": {
     "version": "2026.1.12"
