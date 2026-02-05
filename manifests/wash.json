@@ -3,7 +3,42 @@
   "template": null,
   "license_markdown": "[Apache-2.0](https://github.com/wasmCloud/wasmCloud/blob/main/LICENSE)",
   "latest": {
-    "version": "0.42.0"
+    "version": "0.43.0"
+  },
+  "0.43": {
+    "version": "0.43.0"
+  },
+  "0.43.0": {
+    "x86_64_linux_musl": {
+      "url": "https://github.com/wasmCloud/wasmCloud/releases/download/wash-v0.43.0/wash-x86_64-unknown-linux-musl",
+      "etag": "0x8DE642D82CBDBE0",
+      "checksum": "cf4d2cd801de892dd8d130c356c85a484c2c261a51863c6e8874423790becbe9"
+    },
+    "x86_64_macos": {
+      "url": "https://github.com/wasmCloud/wasmCloud/releases/download/wash-v0.43.0/wash-x86_64-apple-darwin",
+      "etag": "0x8DE642D824A934D",
+      "checksum": "2433eeec8887bd0549cae15fadd04b999790dcb76739f05603a0691c4641b581"
+    },
+    "x86_64_windows": {
+      "url": "https://github.com/wasmCloud/wasmCloud/releases/download/wash-v0.43.0/wash-x86_64-pc-windows-msvc.exe",
+      "etag": "0x8DE642D82833DC4",
+      "checksum": "765be4d0ffc2a33ae21243d7a8aad88bfb77ec63fe41afbb9c102240887bfcdf"
+    },
+    "aarch64_linux_musl": {
+      "url": "https://github.com/wasmCloud/wasmCloud/releases/download/wash-v0.43.0/wash-aarch64-unknown-linux-musl",
+      "etag": "0x8DE642D825CA786",
+      "checksum": "ae546f852c612eaa844fd484b24654b3ec3d4c85555d7acef5cc15fbdee52455"
+    },
+    "aarch64_macos": {
+      "url": "https://github.com/wasmCloud/wasmCloud/releases/download/wash-v0.43.0/wash-aarch64-apple-darwin",
+      "etag": "0x8DE642D825901F4",
+      "checksum": "9ac99538f30a7d2c6d495500ba9b7589ccaf7ce8e32bba18fc70805e6abf9f38"
+    },
+    "riscv64_linux_gnu": {
+      "url": "https://github.com/wasmCloud/wasmCloud/releases/download/wash-v0.43.0/wash-riscv64gc-unknown-linux-gnu",
+      "etag": "0x8DE642D82789B5C",
+      "checksum": "30dc19e93ac7b3dee81ebfa0080e691261693384115528909ab36cb6a592ce4f"
+    }
   },
   "0.42": {
     "version": "0.42.0"
