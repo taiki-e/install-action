@@ -10,6 +10,8 @@ Note: In this file, do not use the hard wrap in the middle of a sentence for com
 
 ## [Unreleased]
 
+- Update `cargo-llvm-cov@latest` to 0.8.4.
+
 - Update `typos@latest` to 1.43.3.
 
 - Update `vacuum@latest` to 0.23.8.
