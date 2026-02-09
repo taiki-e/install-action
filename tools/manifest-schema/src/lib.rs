@@ -4,6 +4,7 @@
 Structured access to the install-action manifests.
 */
 
+#![no_std]
 #![doc(test(
     no_crate_inject,
     attr(allow(
@@ -28,8 +29,13 @@ Structured access to the install-action manifests.
 #![allow(clippy::missing_panics_doc, clippy::too_long_first_doc_paragraph)]
 
 extern crate alloc;
+extern crate std;
 
-use alloc::collections::BTreeMap;
+use alloc::{
+    collections::BTreeMap,
+    string::{String, ToString as _},
+    vec::Vec,
+};
 use core::{
     cmp::{self, Reverse},
     fmt, slice,
