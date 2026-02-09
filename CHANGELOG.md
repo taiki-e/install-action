@@ -10,6 +10,8 @@ Note: In this file, do not use the hard wrap in the middle of a sentence for com
 
 ## [Unreleased]
 
+## [2.67.27] - 2026-02-09
+
 - Update `sccache@latest` to 0.14.0.
 
 - Update `typos@latest` to 1.43.4.
@@ -5613,7 +5615,8 @@ Note: This release is considered a breaking change because installing on version
 
 Initial release
 
-[Unreleased]: https://github.com/taiki-e/install-action/compare/v2.67.26...HEAD
+[Unreleased]: https://github.com/taiki-e/install-action/compare/v2.67.27...HEAD
+[2.67.27]: https://github.com/taiki-e/install-action/compare/v2.67.26...v2.67.27
 [2.67.26]: https://github.com/taiki-e/install-action/compare/v2.67.25...v2.67.26
 [2.67.25]: https://github.com/taiki-e/install-action/compare/v2.67.24...v2.67.25
 [2.67.24]: https://github.com/taiki-e/install-action/compare/v2.67.23...v2.67.24
