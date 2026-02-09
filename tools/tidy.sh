@@ -894,10 +894,19 @@ EOF
         for job in $(jq -c '.jobs | to_entries[] | select(.value.steps)' <<<"${workflow}"); do
           name=$(jq -r '.key' <<<"${job}")
           job=$(jq -r '.value' <<<"${job}")
+          eval "$(jq -r '@sh "RUNS_ON=\(."runs-on") TIMEOUT_MINUTES=\(."timeout-minutes") JOB_DEFAULT_SHELL=\(.defaults.run.shell)"' <<<"${job}")"
+          if [[ "${TIMEOUT_MINUTES}" == 'null' ]]; then
+            error ".jobs.${name}.timeout-minutes must be set"
+          fi
+          if [[ "${RUNS_ON}" == 'ubuntu-slim' ]]; then
+            case "${TIMEOUT_MINUTES}" in
+              ? | 1[0-5]) ;;
+              *) error ".jobs.${name}.timeout-minutes must be <= 15 because max execution time of ubuntu-slim runner is 15 minutes" ;;
+            esac
+          fi
           n=0
-          job_default_shell=$(jq -r '.defaults.run.shell' <<<"${job}")
-          if [[ "${job_default_shell}" == 'null' ]]; then
-            job_default_shell="${default_shell}"
+          if [[ "${JOB_DEFAULT_SHELL}" == 'null' ]]; then
+            JOB_DEFAULT_SHELL="${default_shell}"
           fi
           for step in $(jq -c '.steps[]' <<<"${job}"); do
             prepare=''
@@ -908,7 +917,7 @@ EOF
             fi
             if [[ "${shell}" == 'null' ]]; then
               if [[ -z "${prepare}" ]]; then
-                shell="${job_default_shell}"
+                shell="${JOB_DEFAULT_SHELL}"
               elif grep -Eq '^ *chsh +-s +[^ ]+/bash' <<<"${prepare}"; then
                 shell='bash'
               else
