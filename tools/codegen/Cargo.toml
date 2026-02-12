@@ -16,7 +16,7 @@ serde_derive = "1"
 serde_json = "1"
 spdx = "0.13"
 tar = "0.4"
-toml = { version = "1.0", default-features = false, features = ["parse", "serde"] }
+toml = { version = "1", default-features = false, features = ["parse", "serde"] }
 # TODO: call curl command instead of using ureq?
 ureq = { version = "2", features = ["json"] }
 
