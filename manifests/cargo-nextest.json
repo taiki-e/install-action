@@ -19,10 +19,33 @@
   },
   "license_markdown": "[Apache-2.0](https://github.com/nextest-rs/nextest/blob/main/LICENSE-APACHE) OR [MIT](https://github.com/nextest-rs/nextest/blob/main/LICENSE-MIT)",
   "latest": {
-    "version": "0.9.126"
+    "version": "0.9.127"
   },
   "0.9": {
-    "version": "0.9.126"
+    "version": "0.9.127"
+  },
+  "0.9.127": {
+    "previous_stable_version": "0.9.126",
+    "x86_64_linux_gnu": {
+      "etag": "0x8DE6B2F56693476",
+      "checksum": "0a9d356170528ba92a65fd0157ec0445a67d1f7c2c5726085656e55ba8a1b976"
+    },
+    "x86_64_linux_musl": {
+      "etag": "0x8DE6B2ED81EC9E7",
+      "checksum": "51648aa64c76c87e6357195c9bbb702bda8b2b6fbeeae0960926556b7aea37bc"
+    },
+    "x86_64_macos": {
+      "etag": "0x8DE6B2F967EE463",
+      "checksum": "c814033126902b9f06fc5d01651c6dafc634b3a7a27d3ad87a893f749027f661"
+    },
+    "x86_64_windows": {
+      "etag": "0x8DE6B30804FF2E7",
+      "checksum": "c00d48d96a5fdbac7664532fa81a07602242f5b9618980350997664d109d222b"
+    },
+    "aarch64_linux_gnu": {
+      "etag": "0x8DE6B2E95DD5A04",
+      "checksum": "ce9f682227a131497227f84328e0b2eb36d2a7f43515f867a47bdb35c69516e4"
+    }
   },
   "0.9.126": {
     "previous_stable_version": "0.9.125",
