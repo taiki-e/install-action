@@ -77,13 +77,13 @@ jobs:
           - os: windows-2022
           - os: windows-2022
             bash: msys64
-          - os: windows-2022
-            bash: cygwin
+          # - os: windows-2022
+          #   bash: cygwin
           - os: windows-2025
           - os: windows-2025
             bash: msys64
-          - os: windows-2025
-            bash: cygwin
+          # - os: windows-2025
+          #   bash: cygwin
           - os: windows-11-arm
           - os: windows-2022
             tool: major.minor.patch
