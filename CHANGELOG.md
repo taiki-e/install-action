@@ -10,6 +10,22 @@ Note: In this file, do not use the hard wrap in the middle of a sentence for com
 
 ## [Unreleased]
 
+## [2.67.29] - 2026-02-13
+
+- Update `mise@latest` to 2026.2.11.
+
+- Update `cargo-no-dev-deps@latest` to 0.2.21.
+
+- Update `cargo-minimal-versions@latest` to 0.1.36.
+
+- Update `cargo-hack@latest` to 0.6.43.
+
+- Update `cargo-binstall@latest` to 1.17.5.
+
+- Update `osv-scanner@latest` to 2.3.3.
+
+- Update `martin@latest` to 1.3.1.
+
 - Update `parse-dockerfile@latest` to 0.1.4.
 
 ## [2.67.28] - 2026-02-11
@@ -5627,7 +5643,8 @@ Note: This release is considered a breaking change because installing on version
 
 Initial release
 
-[Unreleased]: https://github.com/taiki-e/install-action/compare/v2.67.28...HEAD
+[Unreleased]: https://github.com/taiki-e/install-action/compare/v2.67.29...HEAD
+[2.67.29]: https://github.com/taiki-e/install-action/compare/v2.67.28...v2.67.29
 [2.67.28]: https://github.com/taiki-e/install-action/compare/v2.67.27...v2.67.28
 [2.67.27]: https://github.com/taiki-e/install-action/compare/v2.67.26...v2.67.27
 [2.67.26]: https://github.com/taiki-e/install-action/compare/v2.67.25...v2.67.26
