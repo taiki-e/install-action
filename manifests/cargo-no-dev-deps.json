@@ -31,10 +31,48 @@
   },
   "license_markdown": "[Apache-2.0](https://github.com/taiki-e/cargo-no-dev-deps/blob/main/LICENSE-APACHE) OR [MIT](https://github.com/taiki-e/cargo-no-dev-deps/blob/main/LICENSE-MIT)",
   "latest": {
-    "version": "0.2.20"
+    "version": "0.2.21"
   },
   "0.2": {
-    "version": "0.2.20"
+    "version": "0.2.21"
+  },
+  "0.2.21": {
+    "x86_64_linux_musl": {
+      "etag": "0x8DE6AFC3E8431E1",
+      "checksum": "5a32f020fb678debd1c2af85b6c822714cf9d158a2089cfd2c4e1f2796a41f4f"
+    },
+    "x86_64_macos": {
+      "etag": "0x8DE6AFD07092CA8",
+      "checksum": "61ae4fea3de88cf32b27395aab176cc3071db35fef73128485d0351c537c2272"
+    },
+    "x86_64_windows": {
+      "etag": "0x8DE6AFC76C0DB8B",
+      "checksum": "ed66350f835e95837280312d2eb8e2fe24e47264da67955d57bd93656ec2c597"
+    },
+    "aarch64_linux_musl": {
+      "etag": "0x8DE6AFC528E5E70",
+      "checksum": "9e04305a5e8119c103a9d8017192d611d7208192772cf725c49c23ccc44f1881"
+    },
+    "aarch64_macos": {
+      "etag": "0x8DE6AFD24C51E90",
+      "checksum": "e2466aa92b2e7454210a4ff8f0e59988fd0d4b471124ee6a483d8aef62564418"
+    },
+    "aarch64_windows": {
+      "etag": "0x8DE6AFC57C9635F",
+      "checksum": "54c032f6093a3335e380732907a520857dd327902a56ec1b4e0aeccfed942372"
+    },
+    "powerpc64le_linux_musl": {
+      "etag": "0x8DE6AFC3ADEA618",
+      "checksum": "6359b49a16172e9c05637d1399535050ebfd40d22330589319372e811375acd5"
+    },
+    "riscv64_linux_musl": {
+      "etag": "0x8DE6AFC6CCE8870",
+      "checksum": "22cd4b624667fa559347f11c2871d43a07f40fe322f25399aa270b7b0706e7ad"
+    },
+    "s390x_linux_gnu": {
+      "etag": "0x8DE6AFC6B65E02E",
+      "checksum": "cf06f516481072b25d017f6b0d5fded19f86f2008ba5aee5c43f80fb25f80062"
+    }
   },
   "0.2.20": {
     "x86_64_linux_musl": {
