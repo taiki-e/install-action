@@ -124,6 +124,8 @@ On other platforms, at least the following tools are required:
 
 Known environments affected by the above version requirements are CentOS 6 (EoL on 2020-11) using curl 7.19, and Ubuntu 12.04 (EoL on 2017-04) using curl 7.22 (see "Install requirements" in [our CI config](https://github.com/taiki-e/install-action/blob/HEAD/.github/workflows/ci.yml) for example of workaround).
 
+Note that what this action installs for its setup (such as above tools) is considered an implementation detail if they are installed by this action's side, and there is no guarantee that they will be available in subsequent steps, because this action is not an action for installing those tools.
+
 ## Related Projects
 
 - [cache-cargo-install-action]: GitHub Action for `cargo install` with cache.
