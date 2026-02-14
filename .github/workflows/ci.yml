@@ -231,7 +231,17 @@ jobs:
           - opensuse/leap:latest # glibc 2.38 (as of leap 15.6)
           - opensuse/tumbleweed:latest # glibc 2.39 (as of 2024-07-19)
           - archlinux:latest # glibc 2.39 (as of 2024-07-19)
-          - alpine:latest # musl 1.2.5 (as of alpine 3.20)
+          - alpine:3.2 # musl 1.1.11
+          - alpine:3.14 # musl 1.2.2
+          - alpine:3.15 # musl 1.2.2
+          - alpine:3.16 # musl 1.2.3
+          - alpine:3.17 # musl 1.2.3
+          - alpine:3.18 # musl 1.2.4
+          - alpine:3.19 # musl 1.2.4
+          - alpine:3.20 # musl 1.2.5
+          - alpine:3.21 # musl 1.2.5
+          - alpine:3.22 # musl 1.2.5
+          - alpine:3.23 # musl 1.2.5
           # - openwrt/rootfs:x86-64-openwrt-24.10 # musl 1.2.5
     runs-on: ubuntu-latest
     timeout-minutes: 60
