@@ -1,6 +1,7 @@
 #!/usr/bin/env bash
 # SPDX-License-Identifier: Apache-2.0 OR MIT
-set -CeEuo pipefail
+# Do not set -E as busybox 3.15 and older don't support it.
+set -Ceuo pipefail
 IFS=$'\n\t'
 
 rx() {
@@ -35,11 +36,11 @@ normalize_comma_or_space_separated() {
   if [[ "${list}" == *","* ]]; then
     # If a comma is contained, consider it is a comma-separated list.
     # Drop leading and trailing whitespaces in each element.
-    sed -E 's/ *, */,/g; s/^.//' <<<",${list},"
+    printf '%s\n' ",${list}," | sed -E 's/ *, */,/g; s/^.//'
   else
     # Otherwise, consider it is a whitespace-separated list.
     # Convert whitespace characters into comma.
-    sed -E 's/ +/,/g; s/^.//' <<<" ${list} "
+    printf '%s\n' " ${list} " | sed -E 's/ +/,/g; s/^.//'
   fi
 }
 _sudo() {
@@ -60,11 +61,11 @@ download_and_checksum() {
   if [[ -n "${checksum}" ]]; then
     info "verifying sha256 checksum for $(basename -- "${url}")"
     if type -P sha256sum >/dev/null; then
-      sha256sum -c - >/dev/null <<<"${checksum} *tmp"
+      printf '%s\n' "${checksum} *tmp" | sha256sum -c - >/dev/null
     elif type -P shasum >/dev/null; then
       # GitHub-hosted macOS runner does not install GNU Coreutils by default.
       # https://github.com/actions/runner-images/issues/90
-      shasum -a 256 -c - >/dev/null <<<"${checksum} *tmp"
+      printf '%s\n' "${checksum} *tmp" | shasum -a 256 -c - >/dev/null
     else
       bail "checksum requires 'sha256sum' or 'shasum' command; consider installing one of them or setting 'checksum' input option to 'false'"
     fi
@@ -224,7 +225,7 @@ read_manifest() {
     download_info="null"
     return 0
   fi
-  exact_version=$(jq -r '.version' <<<"${manifest}")
+  exact_version=$(printf '%s\n' "${manifest}" | jq -r '.version')
   if [[ "${exact_version}" == "null" ]]; then
     exact_version="${version}"
   else
@@ -236,11 +237,11 @@ read_manifest() {
           crate_info=$(curl -v --user-agent "${ACTION_USER_AGENT}" --proto '=https' --tlsv1.2 -fsSL --retry 10 "https://crates.io/api/v1/crates/${rust_crate}" || true)
           if [[ -n "${crate_info}" ]]; then
             while true; do
-              yanked=$(jq -r ".versions[] | select(.num == \"${exact_version}\") | .yanked" <<<"${crate_info}")
+              yanked=$(printf '%s\n' "${crate_info}" | jq -r ".versions[] | select(.num == \"${exact_version}\") | .yanked")
               if [[ "${yanked}" != "true" ]]; then
                 break
               fi
-              previous_stable_version=$(jq -r '.previous_stable_version' <<<"${manifest}")
+              previous_stable_version=$(printf '%s\n' "${manifest}" | jq -r '.previous_stable_version')
               if [[ "${previous_stable_version}" == "null" ]]; then
                 break
               fi
@@ -260,26 +261,26 @@ read_manifest() {
       # usually preferred over linux-gnu binaries because they can avoid glibc version issues.
       # (rustc enables statically linking for linux-musl by default, except for mips.)
       host_platform="${host_arch}_linux_musl"
-      download_info=$(jq -r ".${host_platform}" <<<"${manifest}")
+      download_info=$(printf '%s\n' "${manifest}" | jq -r ".${host_platform}")
       if [[ "${download_info}" == "null" ]]; then
         # Even if host_env is musl, we won't issue an error here because it seems that in
         # some cases linux-gnu binaries will work on linux-musl hosts.
         # https://wiki.alpinelinux.org/wiki/Running_glibc_programs
         # TODO: However, a warning may make sense.
         host_platform="${host_arch}_linux_gnu"
-        download_info=$(jq -r ".${host_platform}" <<<"${manifest}")
+        download_info=$(printf '%s\n' "${manifest}" | jq -r ".${host_platform}")
       elif [[ "${host_env}" == "gnu" ]]; then
         # TODO: don't hardcode tool name and use 'prefer_linux_gnu' field in base manifest.
         case "${tool}" in
           cargo-nextest)
             # TODO: don't hardcode required glibc version
             required_glibc_version=2.27
-            higher_glibc_version=$(LC_ALL=C sort -Vu <<<"${required_glibc_version}"$'\n'"${host_glibc_version}" | tail -1)
+            higher_glibc_version=$(printf '%s\n%s\n' "${required_glibc_version}" "${host_glibc_version}" | LC_ALL=C sort -Vu | tail -1)
             if [[ "${higher_glibc_version}" == "${host_glibc_version}" ]]; then
               # musl build of nextest is slow, so use glibc build if host_env is gnu.
               # https://github.com/taiki-e/install-action/issues/13
               host_platform="${host_arch}_linux_gnu"
-              download_info=$(jq -r ".${host_platform}" <<<"${manifest}")
+              download_info=$(printf '%s\n' "${manifest}" | jq -r ".${host_platform}")
             fi
             ;;
         esac
@@ -289,10 +290,10 @@ read_manifest() {
       # Binaries compiled for x86_64 macOS will usually also work on AArch64 macOS.
       # Binaries compiled for x86_64 Windows will usually also work on AArch64 Windows 11+.
       host_platform="${host_arch}_${host_os}"
-      download_info=$(jq -r ".${host_platform}" <<<"${manifest}")
+      download_info=$(printf '%s\n' "${manifest}" | jq -r ".${host_platform}")
       if [[ "${download_info}" == "null" ]] && [[ "${host_arch}" != "x86_64" ]]; then
         host_platform="x86_64_${host_os}"
-        download_info=$(jq -r ".${host_platform}" <<<"${manifest}")
+        download_info=$(printf '%s\n' "${manifest}" | jq -r ".${host_platform}")
       fi
       ;;
     *) bail "unsupported OS type '${host_os}' for ${tool}" ;;
@@ -304,25 +305,25 @@ read_download_info() {
   if [[ "${download_info}" == "null" ]]; then
     bail "${tool}@${version} for '${host_os}' is not supported"
   fi
-  checksum=$(jq -r '.checksum' <<<"${download_info}")
-  url=$(jq -r '.url' <<<"${download_info}")
+  checksum=$(printf '%s\n' "${download_info}" | jq -r '.checksum')
+  url=$(printf '%s\n' "${download_info}" | jq -r '.url')
   local tmp
   bin_in_archive=()
   if [[ "${url}" == "null" ]]; then
     local template
     template=$(jq -c ".template.${host_platform}" "${manifest_dir}/${tool}.json")
     template="${template//\$\{version\}/${exact_version}}"
-    url=$(jq -r '.url' <<<"${template}")
-    tmp=$(jq -r '.bin' <<<"${template}")
+    url=$(printf '%s\n' "${template}" | jq -r '.url')
+    tmp=$(printf '%s\n' "${template}" | jq -r '.bin')
     if [[ "${tmp}" == *"["* ]]; then
       # shellcheck disable=SC2207
-      bin_in_archive=($(jq -r '.bin[]' <<<"${template}"))
+      bin_in_archive=($(printf '%s\n' "${template}" | jq -r '.bin[]'))
     fi
   else
-    tmp=$(jq -r '.bin' <<<"${download_info}")
+    tmp=$(printf '%s\n' "${download_info}" | jq -r '.bin')
     if [[ "${tmp}" == *"["* ]]; then
       # shellcheck disable=SC2207
-      bin_in_archive=($(jq -r '.bin[]' <<<"${download_info}"))
+      bin_in_archive=($(printf '%s\n' "${download_info}" | jq -r '.bin[]'))
     fi
   fi
   if [[ ${#bin_in_archive[@]} -eq 0 ]]; then
@@ -431,7 +432,7 @@ init_install_action_bin_dir() {
 }
 canonicalize_windows_path() {
   case "${host_os}" in
-    windows) sed -E 's/^\/cygdrive\//\//; s/^\/c\//C:\\/; s/\//\\/g' <<<"$1" ;;
+    windows) printf '%s\n' "$1" | sed -E 's/^\/cygdrive\//\//; s/^\/c\//C:\\/; s/\//\\/g' ;;
     *) printf '%s\n' "$1" ;;
   esac
 }
@@ -483,11 +484,11 @@ case "$(uname -s)" in
   Linux)
     host_os=linux
     ldd_version=$(ldd --version 2>&1 || true)
-    if grep -Fq musl <<<"${ldd_version}"; then
+    if printf '%s\n' "${ldd_version}" | grep -Fq musl; then
       host_env=musl
     else
       host_env=gnu
-      host_glibc_version=$(grep -E "GLIBC|GNU libc" <<<"${ldd_version}" | sed -E "s/.* //g")
+      host_glibc_version=$(printf '%s\n' "${ldd_version}" | grep -E "GLIBC|GNU libc" | sed -E "s/.* //g")
     fi
     if [[ -e /etc/os-release ]]; then
       if grep -Eq '^ID_LIKE=' /etc/os-release; then
@@ -654,9 +655,9 @@ case "${host_os}" in
       jq() { "${install_action_dir}/jq/bin/jq.exe" -b "$@"; }
     elif type -P jq >/dev/null; then
       # https://github.com/jqlang/jq/issues/1854
-      _tmp=$(jq -r .a <<<'{}' | wc -c)
+      _tmp=$(printf '{}\n' | jq -r .a | wc -c)
       if [[ "${_tmp}" != 5 ]]; then
-        _tmp=$({ jq -b -r .a 2>/dev/null <<<'{}' || true; } | wc -c)
+        _tmp=$({ printf '{}\n' | jq -b -r .a 2>/dev/null || true; } | wc -c)
         if [[ "${_tmp}" == 5 ]]; then
           jq() { command jq -b "$@"; }
         else
@@ -685,8 +686,8 @@ for tool in "${tools[@]}"; do
   if [[ "${tool}" == *"@"* ]]; then
     version="${tool#*@}"
     tool="${tool%@*}"
-    if [[ ! "${version}" =~ ^([1-9][0-9]*(\.[0-9]+(\.[0-9]+)?)?|0\.[1-9][0-9]*(\.[0-9]+)?|^0\.0\.[0-9]+)(-[0-9A-Za-z\.-]+)?$|^latest$ ]]; then
-      if [[ ! "${version}" =~ ^([1-9][0-9]*(\.[0-9]+(\.[0-9]+)?)?|0\.[1-9][0-9]*(\.[0-9]+)?|^0\.0\.[0-9]+)(-[0-9A-Za-z\.-]+)?(\+[0-9A-Za-z\.-]+)?$|^latest$ ]]; then
+    if ! printf '%s\n' "${version}" | grep -Eq '^([1-9][0-9]*(\.[0-9]+(\.[0-9]+)?)?|0\.[1-9][0-9]*(\.[0-9]+)?|^0\.0\.[0-9]+)(-[0-9A-Za-z\.-]+)?$|^latest$'; then
+      if ! printf '%s\n' "${version}" | grep -Eq '^([1-9][0-9]*(\.[0-9]+(\.[0-9]+)?)?|0\.[1-9][0-9]*(\.[0-9]+)?|^0\.0\.[0-9]+)(-[0-9A-Za-z\.-]+)?(\+[0-9A-Za-z\.-]+)?$|^latest$'; then
         bail "install-action does not support semver operators: '${version}'"
       fi
       bail "install-action v2 does not support semver build-metadata: '${version}'; if you need these supports again, please submit an issue at <https://github.com/taiki-e/install-action>"

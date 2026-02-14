@@ -118,7 +118,7 @@ On Linux, if any required tools are missing, this action will attempt to install
 
 On other platforms, at least the following tools are required:
 
-- bash 3.2+
+- bash 3.2+ (or busybox on Linux)
 - jq 1.3+ (only on non-Windows platforms)
 - curl 7.34+ (or RHEL7/CentOS7's patched curl 7.29)
 
