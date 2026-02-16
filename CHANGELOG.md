@@ -10,6 +10,8 @@ Note: In this file, do not use the hard wrap in the middle of a sentence for com
 
 ## [Unreleased]
 
+## [2.68.0] - 2026-02-16
+
 - Support `gungraun-runner`. ([#1520](https://github.com/taiki-e/install-action/pull/1520), thanks @gamma0987)
 
 - Update `uv@latest` to 0.10.3.
@@ -5663,7 +5665,8 @@ Note: This release is considered a breaking change because installing on version
 
 Initial release
 
-[Unreleased]: https://github.com/taiki-e/install-action/compare/v2.67.30...HEAD
+[Unreleased]: https://github.com/taiki-e/install-action/compare/v2.68.0...HEAD
+[2.68.0]: https://github.com/taiki-e/install-action/compare/v2.67.30...v2.68.0
 [2.67.30]: https://github.com/taiki-e/install-action/compare/v2.67.29...v2.67.30
 [2.67.29]: https://github.com/taiki-e/install-action/compare/v2.67.28...v2.67.29
 [2.67.28]: https://github.com/taiki-e/install-action/compare/v2.67.27...v2.67.28
