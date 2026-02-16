@@ -10,6 +10,8 @@ Note: In this file, do not use the hard wrap in the middle of a sentence for com
 
 ## [Unreleased]
 
+- Support `gungraun-runner`. ([#1520](https://github.com/taiki-e/install-action/pull/1520), thanks @gamma0987)
+
 - Update `uv@latest` to 0.10.3.
 
 - Update `typos@latest` to 1.43.5.
