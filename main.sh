@@ -840,7 +840,8 @@ for tool in "${tools[@]}"; do
       # biome up to 1.2.2 exits with 1 on both --version and --help flags.
       # cargo-machete up to 0.6.0 does not support --version flag.
       # wait-for-them up to 0.4.0 does not support --version flag.
-      biome | cargo-machete | wait-for-them) rx "${tool_bin_stem}" --version || true ;;
+      # gungraun-runner up to 0.17.1 (exclusive) does not support --version flag.
+      biome | cargo-machete | wait-for-them | gungraun-runner) rx "${tool_bin_stem}" --version || true ;;
       # these packages support neither --version nor --help flag.
       cargo-auditable | cargo-careful | wasm-bindgen-test-runner) ;;
       # wasm2es6js does not support --version flag and --help flag doesn't contains version info.
