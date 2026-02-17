@@ -10,6 +10,8 @@ Note: In this file, do not use the hard wrap in the middle of a sentence for com
 
 ## [Unreleased]
 
+- Update `knope@latest` to 0.22.3.
+
 ## [2.68.0] - 2026-02-16
 
 - Support `gungraun-runner`. ([#1520](https://github.com/taiki-e/install-action/pull/1520), thanks @gamma0987)
