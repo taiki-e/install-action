@@ -10,6 +10,8 @@ Note: In this file, do not use the hard wrap in the middle of a sentence for com
 
 ## [Unreleased]
 
+- Update `uv@latest` to 0.10.4.
+
 - Update `tombi@latest` to 0.7.31.
 
 - Update `rclone@latest` to 1.73.1.
