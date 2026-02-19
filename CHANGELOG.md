@@ -16,8 +16,6 @@ Note: In this file, do not use the hard wrap in the middle of a sentence for com
 
 - Update `syft@latest` to 1.42.1.
 
-- Update `mise@latest` to 2026.2.16.
-
 ## [2.68.2] - 2026-02-18
 
 - Update `uv@latest` to 0.10.4.
