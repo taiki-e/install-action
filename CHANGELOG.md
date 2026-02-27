@@ -10,6 +10,8 @@ Note: In this file, do not use the hard wrap in the middle of a sentence for com
 
 ## [Unreleased]
 
+- Update `wasm-bindgen@latest` to 0.2.114.
+
 - Update `typos@latest` to 1.44.0.
 
 ## [2.68.13] - 2026-02-27
