@@ -22,9 +22,9 @@ Structured access to the install-action manifests.
     // clippy::exhaustive_enums,
     // clippy::exhaustive_structs,
     clippy::impl_trait_in_params,
-    // clippy::missing_inline_in_public_items,
     clippy::std_instead_of_alloc,
     clippy::std_instead_of_core,
+    // clippy::missing_inline_in_public_items,
 )]
 #![allow(clippy::missing_panics_doc, clippy::too_long_first_doc_paragraph)]
 
