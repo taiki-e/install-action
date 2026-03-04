@@ -10,6 +10,8 @@ Note: In this file, do not use the hard wrap in the middle of a sentence for com
 
 ## [Unreleased]
 
+## [2.68.18] - 2026-03-04
+
 - Update `uv@latest` to 0.10.8.
 
 - Update `grcov@latest` to 0.10.7.
@@ -5793,7 +5795,8 @@ Note: This release is considered a breaking change because installing on version
 
 Initial release
 
-[Unreleased]: https://github.com/taiki-e/install-action/compare/v2.68.17...HEAD
+[Unreleased]: https://github.com/taiki-e/install-action/compare/v2.68.18...HEAD
+[2.68.18]: https://github.com/taiki-e/install-action/compare/v2.68.17...v2.68.18
 [2.68.17]: https://github.com/taiki-e/install-action/compare/v2.68.16...v2.68.17
 [2.68.16]: https://github.com/taiki-e/install-action/compare/v2.68.15...v2.68.16
 [2.68.15]: https://github.com/taiki-e/install-action/compare/v2.68.14...v2.68.15
