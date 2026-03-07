@@ -28,13 +28,39 @@
   },
   "license_markdown": "[MIT](https://github.com/rclone/rclone/blob/master/COPYING)",
   "latest": {
-    "version": "1.73.1"
+    "version": "1.73.2"
   },
   "1": {
-    "version": "1.73.1"
+    "version": "1.73.2"
   },
   "1.73": {
-    "version": "1.73.1"
+    "version": "1.73.2"
+  },
+  "1.73.2": {
+    "x86_64_linux_musl": {
+      "etag": "0x8DE7BBFA80B041D",
+      "checksum": "00a1d8cb85552b7b07bb0416559b2e78fcf9c6926662a52682d81b5f20c90535"
+    },
+    "x86_64_macos": {
+      "etag": "0x8DE7BC095AB90AE",
+      "checksum": "ff3215b1b93e4588e0ccfef11e4c49755a91d42f4bc89c98bf89f6d30b0ae16f"
+    },
+    "x86_64_windows": {
+      "etag": "0x8DE7BC0D4DCD564",
+      "checksum": "b77a72eab9692f9032dac89d7e13e07ce4747acd9ae402168cc8fe306de1138e"
+    },
+    "aarch64_linux_musl": {
+      "etag": "0x8DE7BBFC2F85867",
+      "checksum": "2f7d8b807e6ea638855129052c834ca23aa538d3ad7786e30b8ad1e97c5db47b"
+    },
+    "aarch64_macos": {
+      "etag": "0x8DE7BC09F5BA574",
+      "checksum": "879fd46e0338bf6244f55af6bde9f151a1711dd62abdc46117a4c11cfb0a601e"
+    },
+    "aarch64_windows": {
+      "etag": "0x8DE7BC0DD8DD787",
+      "checksum": "bc100700af528d00647aba08acdcfb81862f624f755c11c5324cf34c14982f2c"
+    }
   },
   "1.73.1": {
     "x86_64_linux_musl": {
