@@ -134,7 +134,7 @@ jobs:
         if: startsWith(matrix.os, 'windows')
       - name: Test cmd
         run: just --version & shfmt --version & protoc --version
-        shell: cmd
+        shell: cmd # zizmor: ignore[misfeature] used for compatibility testing
         if: startsWith(matrix.os, 'windows')
       # We use the version output to check the version of cargo-binstall, but they
       # several times change the version output format in the past so we need to
