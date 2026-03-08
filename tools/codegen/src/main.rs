@@ -32,7 +32,7 @@ fn main() -> Result<()> {
     let version_req_given = version_req.is_some();
     let skip_existing_manifest_versions = std::env::var("SKIP_EXISTING_MANIFEST_VERSIONS").is_ok();
 
-    let workspace_root = &workspace_root();
+    let workspace_root = workspace_root();
     let manifest_path = &workspace_root.join("manifests").join(format!("{package}.json"));
     let download_cache_dir = &workspace_root.join("tools/codegen/tmp/cache").join(package);
     fs::create_dir_all(manifest_path.parent().unwrap())?;

@@ -40,9 +40,9 @@ fn main() -> Result<()> {
 
     let workspace_root = workspace_root();
 
-    let mut manifest_dir = workspace_root.clone();
+    let mut manifest_dir = workspace_root.to_owned();
     manifest_dir.push("manifests");
-    let mut base_info_dir = workspace_root.clone();
+    let mut base_info_dir = workspace_root.to_owned();
     base_info_dir.push("tools");
     base_info_dir.push("codegen");
     base_info_dir.push("base");
@@ -112,7 +112,7 @@ fn main() -> Result<()> {
 
     tools.sort_by(|x, y| x.name.cmp(&y.name));
 
-    let mut markdown_file = workspace_root.clone();
+    let mut markdown_file = workspace_root.to_owned();
     markdown_file.push("TOOLS.md");
 
     let mut file = BufWriter::new(fs::File::create(markdown_file).unwrap()); // Buffered because it is written many times.
