@@ -10,6 +10,8 @@ Note: In this file, do not use the hard wrap in the middle of a sentence for com
 
 ## [Unreleased]
 
+## [2.68.24] - 2026-03-08
+
 - Avoid triggering [zizmor ref-confusion](https://docs.zizmor.sh/audits/#ref-confusion) when using this action in form of `uses: taiki-e/install-action@v2` or `uses: taiki-e/install-action@<tool_name>`.
 
 ## [2.68.23] - 2026-03-08
@@ -5837,7 +5839,8 @@ Note: This release is considered a breaking change because installing on version
 
 Initial release
 
-[Unreleased]: https://github.com/taiki-e/install-action/compare/v2.68.23...HEAD
+[Unreleased]: https://github.com/taiki-e/install-action/compare/v2.68.24...HEAD
+[2.68.24]: https://github.com/taiki-e/install-action/compare/v2.68.23...v2.68.24
 [2.68.23]: https://github.com/taiki-e/install-action/compare/v2.68.22...v2.68.23
 [2.68.22]: https://github.com/taiki-e/install-action/compare/v2.68.21...v2.68.22
 [2.68.21]: https://github.com/taiki-e/install-action/compare/v2.68.20...v2.68.21
