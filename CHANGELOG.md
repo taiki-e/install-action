@@ -10,6 +10,8 @@ Note: In this file, do not use the hard wrap in the middle of a sentence for com
 
 ## [Unreleased]
 
+## [2.68.25] - 2026-03-08
+
 - Update `zizmor@latest` to 1.23.1.
 
 - Update `tombi@latest` to 0.9.4.
@@ -5845,7 +5847,8 @@ Note: This release is considered a breaking change because installing on version
 
 Initial release
 
-[Unreleased]: https://github.com/taiki-e/install-action/compare/v2.68.24...HEAD
+[Unreleased]: https://github.com/taiki-e/install-action/compare/v2.68.25...HEAD
+[2.68.25]: https://github.com/taiki-e/install-action/compare/v2.68.24...v2.68.25
 [2.68.24]: https://github.com/taiki-e/install-action/compare/v2.68.23...v2.68.24
 [2.68.23]: https://github.com/taiki-e/install-action/compare/v2.68.22...v2.68.23
 [2.68.22]: https://github.com/taiki-e/install-action/compare/v2.68.21...v2.68.22
