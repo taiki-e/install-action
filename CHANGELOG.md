@@ -10,6 +10,8 @@ Note: In this file, do not use the hard wrap in the middle of a sentence for com
 
 ## [Unreleased]
 
+- Avoid triggering [zizmor ref-confusion](https://docs.zizmor.sh/audits/#ref-confusion) when using this action in form of `uses: taiki-e/install-action@v2` or `uses: taiki-e/install-action@<tool_name>`.
+
 ## [2.68.23] - 2026-03-08
 
 - Update `zizmor@latest` to 1.23.0.

@@ -121,9 +121,9 @@ retry git push origin refs/heads/main
 retry git push origin refs/tags/"${tag}"
 
 major_version_tag="v${version%%.*}"
-git branch "${major_version_tag}"
+git branch "releases/${major_version_tag}"
 git tag -f "${major_version_tag}"
-refs=("refs/heads/${major_version_tag}" "+refs/tags/${major_version_tag}")
+refs=("refs/heads/releases/${major_version_tag}" "+refs/tags/${major_version_tag}")
 
 tools=()
 for tool in tools/codegen/base/*.json; do
@@ -142,8 +142,9 @@ tools+=(
 # Non-manifest-based tools.
 tools+=(valgrind)
 
+branches=()
 for tool in "${tools[@]}"; do
-  git checkout -b "${tool}"
+  git checkout -b "releases/${tool}"
   sed -E "${in_place[@]}" action.yml \
     -e "s/required: true/required: false/g" \
     -e "s/# default: #publish:tool/default: ${tool}/g"
@@ -151,11 +152,12 @@ for tool in "${tools[@]}"; do
   git commit -m "${tool}"
   git tag -f "${tool}"
   git checkout main
-  refs+=("+refs/heads/${tool}" "+refs/tags/${tool}")
+  refs+=("+refs/heads/releases/${tool}" "+refs/tags/${tool}")
+  branches+=("releases/${tool}")
 done
 retry git push origin --atomic "${refs[@]}"
-git branch -d "${major_version_tag}"
-git branch -D "${tools[@]}"
+git branch -d "releases/${major_version_tag}"
+git branch -D "${branches[@]}"
 
 schema_workspace=/tmp/workspace
 rm -rf -- "${schema_workspace}"
