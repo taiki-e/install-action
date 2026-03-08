@@ -10,6 +10,8 @@ Note: In this file, do not use the hard wrap in the middle of a sentence for com
 
 ## [Unreleased]
 
+- Update `tombi@latest` to 0.9.4.
+
 - Update `cargo-semver-checks@latest` to 0.47.0.
 
 ## [2.68.24] - 2026-03-08
