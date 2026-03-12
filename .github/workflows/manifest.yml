@@ -35,9 +35,8 @@ jobs:
   manifest:
     uses: taiki-e/github-actions/.github/workflows/gen.yml@main
     permissions:
-      contents: read
-      pull-requests: write # for gh pr edit --add-assignee / gh pr review --approve
-      repository-projects: read # for gh pr edit --add-assignee
+      contents: write # for creating branch for pr
+      pull-requests: write # for gh pr review --approve
     secrets: inherit
     with:
       script: tools/manifest.sh
