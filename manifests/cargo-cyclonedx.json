@@ -3,10 +3,36 @@
   "template": null,
   "license_markdown": "[Apache-2.0](https://github.com/CycloneDX/cyclonedx-rust-cargo/blob/main/LICENSE)",
   "latest": {
-    "version": "0.5.7"
+    "version": "0.5.8"
   },
   "0.5": {
-    "version": "0.5.7"
+    "version": "0.5.8"
+  },
+  "0.5.8": {
+    "x86_64_linux_musl": {
+      "url": "https://github.com/CycloneDX/cyclonedx-rust-cargo/releases/download/cargo-cyclonedx-0.5.8/cargo-cyclonedx-x86_64-unknown-linux-musl.tar.xz",
+      "etag": "0x8DE805A50426FFF",
+      "checksum": "7cda4d471e70cad04daef2d55f3d031a7a246098dad263ca7fbda4e752f3bcc7",
+      "bin": "cargo-cyclonedx-x86_64-unknown-linux-musl/cargo-cyclonedx"
+    },
+    "x86_64_macos": {
+      "url": "https://github.com/CycloneDX/cyclonedx-rust-cargo/releases/download/cargo-cyclonedx-0.5.8/cargo-cyclonedx-x86_64-apple-darwin.tar.xz",
+      "etag": "0x8DE805A4FE43F58",
+      "checksum": "fd44040b33bafbb7b5073b8302f83100e02e12327de1e1ac245b32853ca320e7",
+      "bin": "cargo-cyclonedx-x86_64-apple-darwin/cargo-cyclonedx"
+    },
+    "x86_64_windows": {
+      "url": "https://github.com/CycloneDX/cyclonedx-rust-cargo/releases/download/cargo-cyclonedx-0.5.8/cargo-cyclonedx-x86_64-pc-windows-msvc.zip",
+      "etag": "0x8DE805A5010C283",
+      "checksum": "81577d0bdc7dbe99bed56ec79437afef476842999541a85096efa1f28f7fd965",
+      "bin": "cargo-cyclonedx.exe"
+    },
+    "aarch64_macos": {
+      "url": "https://github.com/CycloneDX/cyclonedx-rust-cargo/releases/download/cargo-cyclonedx-0.5.8/cargo-cyclonedx-aarch64-apple-darwin.tar.xz",
+      "etag": "0x8DE805A4FB1F65D",
+      "checksum": "0b0b28095b775886a530c2be191a51a053e853d3a0212536b958ebf2828b119b",
+      "bin": "cargo-cyclonedx-aarch64-apple-darwin/cargo-cyclonedx"
+    }
   },
   "0.5.7": {
     "x86_64_linux_musl": {
