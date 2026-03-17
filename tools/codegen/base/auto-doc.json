@@ -1,0 +1,26 @@
+{
+  "repository": "https://github.com/tj-actions/auto-doc",
+  "tag_prefix": "v",
+  "bin": "${package}${exe}",
+  "version_range": ">= 3.0.0",
+  "platform": {
+    "x86_64_linux_musl": {
+      "asset_name": "${package}_${version}_Linux_x86_64.tar.gz"
+    },
+    "x86_64_macos": {
+      "asset_name": "${package}_${version}_Darwin_x86_64.tar.gz"
+    },
+    "x86_64_windows": {
+      "asset_name": "${package}_${version}_Windows_x86_64.zip"
+    },
+    "aarch64_linux_musl": {
+      "asset_name": "${package}_${version}_Linux_arm64.tar.gz"
+    },
+    "aarch64_macos": {
+      "asset_name": "${package}_${version}_Darwin_arm64.tar.gz"
+    },
+    "aarch64_windows": {
+      "asset_name": "${package}_${version}_Windows_arm64.zip"
+    }
+  }
+}
