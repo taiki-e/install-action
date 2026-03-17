@@ -22,10 +22,36 @@
   },
   "license_markdown": "[MIT](https://github.com/tombi-toml/tombi/blob/main/LICENSE)",
   "latest": {
-    "version": "0.9.6"
+    "version": "0.9.7"
   },
   "0.9": {
-    "version": "0.9.6"
+    "version": "0.9.7"
+  },
+  "0.9.7": {
+    "x86_64_linux_musl": {
+      "etag": "0x8DE840CC752C8CE",
+      "checksum": "15608b739274fa8df6f79e218d1e8313f1e02a55f17472ff232498feae4b32ef"
+    },
+    "x86_64_macos": {
+      "etag": "0x8DE840CC74FBEF9",
+      "checksum": "a933c5c77aebc96e681a2a6241ec67d44b14437b0183942ea0467c326916a547"
+    },
+    "x86_64_windows": {
+      "etag": "0x8DE840CC759511F",
+      "checksum": "c7e6fd267c9e77b7c69254822576b24dabe49ec56697fe4e55c4d35cfd438915"
+    },
+    "aarch64_linux_musl": {
+      "etag": "0x8DE840CC7BE57EA",
+      "checksum": "023c167f7656670efc129e26ab0938d0f3c7dad6cef820993384044120a83e08"
+    },
+    "aarch64_macos": {
+      "etag": "0x8DE840CC7467A95",
+      "checksum": "098d027b8959bf89cec616f8c895807e3d2793c9883dc76b6047b8daaf59bcb8"
+    },
+    "aarch64_windows": {
+      "etag": "0x8DE840CC74D02F3",
+      "checksum": "4247972a4425321adf0deadb20bd05199ef33caf8dd33edb9916d7de43225819"
+    }
   },
   "0.9.6": {
     "x86_64_linux_musl": {
