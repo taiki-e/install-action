@@ -10,6 +10,8 @@ Note: In this file, do not use the hard wrap in the middle of a sentence for com
 
 ## [Unreleased]
 
+- Update `syft@latest` to 1.42.3.
+
 ## [2.69.1] - 2026-03-19
 
 - Support `cargo-auditable`, `cargo-cyclonedx`, `cargo-machete`, and `knope` on AArch64 Linux.
