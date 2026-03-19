@@ -10,6 +10,8 @@ Note: In this file, do not use the hard wrap in the middle of a sentence for com
 
 ## [Unreleased]
 
+## [2.69.0] - 2026-03-19
+
 - Support `auto-doc`. ([#1596](https://github.com/taiki-e/install-action/pull/1596), thanks @quotidian-ennui)
 
 - Support `cargo-nextest` on riscv64 Linux. ([#1598](https://github.com/taiki-e/install-action/pull/1598), thanks @yuzibo)
@@ -5931,7 +5933,8 @@ Note: This release is considered a breaking change because installing on version
 
 Initial release
 
-[Unreleased]: https://github.com/taiki-e/install-action/compare/v2.68.36...HEAD
+[Unreleased]: https://github.com/taiki-e/install-action/compare/v2.69.0...HEAD
+[2.69.0]: https://github.com/taiki-e/install-action/compare/v2.68.36...v2.69.0
 [2.68.36]: https://github.com/taiki-e/install-action/compare/v2.68.35...v2.68.36
 [2.68.35]: https://github.com/taiki-e/install-action/compare/v2.68.34...v2.68.35
 [2.68.34]: https://github.com/taiki-e/install-action/compare/v2.68.33...v2.68.34
