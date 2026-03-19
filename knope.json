@@ -27,6 +27,12 @@
       "checksum": "2ea29e6c9cd81f0f50c241ac26eb518b77d16202f87878d0aa3e6065f97526c0",
       "bin": "knope-x86_64-pc-windows-msvc/knope.exe"
     },
+    "aarch64_linux_musl": {
+      "url": "https://github.com/knope-dev/knope/releases/download/knope/v0.22.3/knope-aarch64-unknown-linux-musl.tgz",
+      "etag": "0x8DE6D9C83216C20",
+      "checksum": "5ffbc14453a383f241c2ce8214f4c02769a3376f3c61a89552d42fd10a1bd41b",
+      "bin": "knope-aarch64-unknown-linux-musl/knope"
+    },
     "aarch64_macos": {
       "url": "https://github.com/knope-dev/knope/releases/download/knope/v0.22.3/knope-aarch64-apple-darwin.tgz",
       "etag": "0x8DE6D9C831DED94",

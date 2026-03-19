@@ -24,6 +24,14 @@
     "aarch64_windows": {
       "url": "https://github.com/mozilla/sccache/releases/download/v${version}/sccache-v${version}-aarch64-pc-windows-msvc.tar.gz",
       "bin": "sccache-v${version}-aarch64-pc-windows-msvc/sccache.exe"
+    },
+    "riscv64_linux_musl": {
+      "url": "https://github.com/mozilla/sccache/releases/download/v${version}/sccache-v${version}-riscv64gc-unknown-linux-musl.tar.gz",
+      "bin": "sccache-v${version}-riscv64gc-unknown-linux-musl/sccache"
+    },
+    "s390x_linux_musl": {
+      "url": "https://github.com/mozilla/sccache/releases/download/v${version}/sccache-v${version}-s390x-unknown-linux-musl.tar.gz",
+      "bin": "sccache-v${version}-s390x-unknown-linux-musl/sccache"
     }
   },
   "license_markdown": "[Apache-2.0](https://github.com/mozilla/sccache/blob/main/LICENSE)",
@@ -57,6 +65,14 @@
     "aarch64_windows": {
       "etag": "0x8DE67ED6470B953",
       "checksum": "b416e81f946c607467c5383022842649569d73f468a8e42b4536998e3d784224"
+    },
+    "riscv64_linux_musl": {
+      "etag": "0x8DE67ED680C3E95",
+      "checksum": "a441c38cc6f316d86977082aaabe981aa0198fc3ab120459d9b2e76d8ff0243f"
+    },
+    "s390x_linux_musl": {
+      "etag": "0x8DE67ED69D8DD8A",
+      "checksum": "024a407ade66a39d04aaa1e55dcd5273bec093633ceb592af8e405128f80a6f4"
     }
   },
   "0.13": {
@@ -82,6 +98,14 @@
     "aarch64_windows": {
       "etag": "0x8DE52D745FEE398",
       "checksum": "a57ad29859610baedaa92683d342272424d6a43fda8a3295ee36c23030ecffd5"
+    },
+    "riscv64_linux_musl": {
+      "etag": "0x8DE52D749B8560B",
+      "checksum": "0194bd7ad66fcd77486370f62069336d44a2f08c61a8c8042cdf706f887ce413"
+    },
+    "s390x_linux_musl": {
+      "etag": "0x8DE52D74AB6CD28",
+      "checksum": "1bcb3333a762ce6870f7a0cec371d767990773fc9dfb1c1ee35e6996b22af3af"
     }
   },
   "0.12": {
@@ -111,6 +135,10 @@
     "aarch64_windows": {
       "etag": "0x8DE1028E6EF8402",
       "checksum": "5d99dfc3552907596de7e912432e49fd627eef0fb63b27b777c21db135bb1795"
+    },
+    "s390x_linux_musl": {
+      "etag": "0x8DE1028EA578862",
+      "checksum": "1df0c557e5a0e193a208d6c07af569fe79f09ed0c640e76057b91bf548bce704"
     }
   },
   "0.11": {
@@ -140,6 +168,10 @@
     "aarch64_windows": {
       "etag": "0x8DE0830F547F1AC",
       "checksum": "b3f6552a5ceefe4073e7a0cfc4f0b8dd514f5ae75988240637950c1d0450a747"
+    },
+    "s390x_linux_musl": {
+      "etag": "0x8DE0830F82B0916",
+      "checksum": "ef4fc6266e342fd7b9b576006a140a9e92be4ab6645b8fe4d972c5458fbb502f"
     }
   },
   "0.10": {
