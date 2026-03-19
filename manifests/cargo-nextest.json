@@ -15,6 +15,9 @@
     },
     "aarch64_linux_gnu": {
       "url": "https://github.com/nextest-rs/nextest/releases/download/cargo-nextest-${version}/cargo-nextest-${version}-aarch64-unknown-linux-gnu.tar.gz"
+    },
+    "riscv64_linux_gnu": {
+      "url": "https://github.com/nextest-rs/nextest/releases/download/cargo-nextest-${version}/cargo-nextest-${version}-riscv64gc-unknown-linux-gnu.tar.gz"
     }
   },
   "license_markdown": "[Apache-2.0](https://github.com/nextest-rs/nextest/blob/main/LICENSE-APACHE) OR [MIT](https://github.com/nextest-rs/nextest/blob/main/LICENSE-MIT)",
@@ -45,6 +48,10 @@
     "aarch64_linux_gnu": {
       "etag": "0x8DE852B597809A7",
       "checksum": "ce3bc715344d51e6f0fbb944489e37d17e25d24dfafaf861cc37643cfe7de663"
+    },
+    "riscv64_linux_gnu": {
+      "etag": "0x8DE852AB87E4324",
+      "checksum": "22adaaf5fa232dc78a8b2a3f51c41eb175440fda999c20eff17709a2905d0f94"
     }
   },
   "0.9.130": {
