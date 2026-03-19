@@ -538,9 +538,11 @@ esac
 # NB: Sync with tools/ci/tool-list.sh.
 case "$(uname -m)" in
   aarch64 | arm64) host_arch=aarch64 ;;
-  # Ignore Arm for now, as we need to consider the version and whether hard-float is supported.
+  # Ignore 32-bit Arm for now, as we need to consider the version and whether hard-float is supported.
   # https://github.com/rust-lang/rustup/pull/593
   # https://github.com/cross-rs/cross/pull/1018
+  # And support for 32-bit Arm will be removed in near future.
+  # https://github.blog/changelog/2025-09-19-deprecation-of-node-20-on-github-actions-runners/#removal-of-operating-system-support-with-node24
   # Does it seem only armv7l+ is supported?
   # https://github.com/actions/runner/blob/v2.321.0/src/Misc/externals.sh#L178
   # https://github.com/actions/runner/issues/688
@@ -551,9 +553,8 @@ case "$(uname -m)" in
   # Very few tools provide prebuilt binaries for these.
   # TODO: fallback to `cargo install`? (binstall fallback is not good idea here as cargo-binstall doesn't provide prebuilt binaries for these.)
   loongarch64 | mips | mips64 | ppc | ppc64 | sun4v) bail "$(uname -m) runner is not supported yet by this action; if you need support for this platform, please submit an issue at <https://github.com/taiki-e/install-action>" ;;
-  # GitHub Actions Runner supports x86_64/AArch64/Arm Linux, x86_64/AArch64 Windows,
-  # and x86_64/AArch64 macOS.
-  # https://github.com/actions/runner/blob/v2.321.0/.github/workflows/build.yml#L21
+  # GitHub Actions Runner supports x86_64/AArch64/Arm Linux and x86_64/AArch64 Windows/macOS.
+  # https://github.com/actions/runner/blob/v2.332.0/.github/workflows/build.yml#L24
   # https://docs.github.com/en/actions/reference/runners/self-hosted-runners#supported-processor-architectures
   # And IBM provides runners for powerpc64le/s390x Linux.
   # https://github.com/IBM/actionspz

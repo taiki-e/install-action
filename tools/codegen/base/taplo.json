@@ -17,6 +17,9 @@
     "aarch64_macos": {
       "asset_name": "${package}-darwin-${rust_target_arch}.gz"
     },
+    "aarch64_windows": {
+      "asset_name": "${package}-${rust_target_os}-${rust_target_arch}.zip"
+    },
     "riscv64_linux_gnu": {}
   }
 }

@@ -16,6 +16,10 @@
     "aarch64_linux_gnu": {
       "url": "https://github.com/rustsec/rustsec/releases/download/cargo-audit/v${version}/cargo-audit-aarch64-unknown-linux-gnu-v${version}.tgz",
       "bin": "cargo-audit-aarch64-unknown-linux-gnu-v${version}/cargo-audit"
+    },
+    "aarch64_macos": {
+      "url": "https://github.com/rustsec/rustsec/releases/download/cargo-audit/v${version}/cargo-audit-aarch64-apple-darwin-v${version}.tgz",
+      "bin": "cargo-audit-aarch64-apple-darwin-v${version}/cargo-audit"
     }
   },
   "license_markdown": "[Apache-2.0](https://github.com/rustsec/rustsec/blob/HEAD/cargo-audit/LICENSE-APACHE) OR [MIT](https://github.com/rustsec/rustsec/blob/HEAD/cargo-audit/LICENSE-MIT)",
@@ -41,6 +45,10 @@
     "aarch64_linux_gnu": {
       "etag": "0x8DE64326434D959",
       "checksum": "4c8df835ee484441bd2c8c6bcac28c4ce4b4058ba9e7477cb9e0012fe7769f66"
+    },
+    "aarch64_macos": {
+      "etag": "0x8DE643283AA3EF2",
+      "checksum": "04e76e1da25f597bea4814c44faf8aac215838b9f3646e3b6a873d87acd31b73"
     }
   },
   "0.22.0": {

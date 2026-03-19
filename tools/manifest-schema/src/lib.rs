@@ -346,9 +346,8 @@ impl StringOrArray {
     }
 }
 
-/// GitHub Actions Runner supports x86_64/AArch64/Arm Linux, x86_64/AArch64 Windows,
-/// and x86_64/AArch64 macOS.
-/// <https://github.com/actions/runner/blob/v2.321.0/.github/workflows/build.yml#L21>
+/// GitHub Actions runner supports x86_64/AArch64/Arm Linux and x86_64/AArch64 Windows/macOS.
+/// <https://github.com/actions/runner/blob/v2.332.0/.github/workflows/build.yml#L24>
 /// <https://docs.github.com/en/actions/reference/runners/self-hosted-runners#supported-processor-architectures>
 /// And IBM provides runners for powerpc64le/s390x Linux.
 /// <https://github.com/IBM/actionspz>
@@ -359,13 +358,15 @@ impl StringOrArray {
 ///   (rustc enables statically linking for linux-musl by default, except for mips.)
 /// - Binaries compiled for x86_64 macOS will usually also work on AArch64 macOS.
 /// - Binaries compiled for x86_64 Windows will usually also work on AArch64 Windows 11+.
-/// - Ignore Arm for now, as we need to consider the version and whether hard-float is supported.
+/// - Ignore 32-bit Arm for now, as we need to consider the version and whether hard-float is supported.
 ///   <https://github.com/rust-lang/rustup/pull/593>
 ///   <https://github.com/cross-rs/cross/pull/1018>
+///   And support for 32-bit Arm will be removed in near future.
+///   <https://github.blog/changelog/2025-09-19-deprecation-of-node-20-on-github-actions-runners/#removal-of-operating-system-support-with-node24>
 ///   Does it seem only armv7l+ is supported?
 ///   <https://github.com/actions/runner/blob/v2.321.0/src/Misc/externals.sh#L178>
 ///   <https://github.com/actions/runner/issues/688>
-// TODO: support musl with dynamic linking like wasmtime 22.0.0+'s musl binaries: <https://github.com/bytecodealliance/wasmtime/releases/tag/v22.0.0>
+// TODO: support musl with dynamic linking like wasmtime and cyclonedx's musl binaries.
 #[allow(non_camel_case_types)]
 #[derive(Debug, Clone, Copy, PartialEq, Eq, PartialOrd, Ord, Serialize, Deserialize)]
 pub enum HostPlatform {

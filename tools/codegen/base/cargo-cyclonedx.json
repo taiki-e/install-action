@@ -24,6 +24,9 @@
       ],
       "bin": "${package}${exe}"
     },
+    "aarch64_linux_gnu": {
+      "asset_name": "${package}-${rust_target}.tar.xz"
+    },
     "aarch64_macos": {
       "asset_name": "${package}-${rust_target}.tar.xz"
     }
