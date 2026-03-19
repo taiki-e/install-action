@@ -16,6 +16,10 @@
     "aarch64_linux_musl": {
       "url": "https://github.com/drager/wasm-pack/releases/download/v${version}/wasm-pack-v${version}-aarch64-unknown-linux-musl.tar.gz",
       "bin": "wasm-pack-v${version}-aarch64-unknown-linux-musl/wasm-pack"
+    },
+    "aarch64_macos": {
+      "url": "https://github.com/drager/wasm-pack/releases/download/v${version}/wasm-pack-v${version}-aarch64-apple-darwin.tar.gz",
+      "bin": "wasm-pack-v${version}-aarch64-apple-darwin/wasm-pack"
     }
   },
   "license_markdown": "[MIT](https://github.com/drager/wasm-pack/blob/master/LICENSE-MIT) OR [Apache-2.0](https://github.com/drager/wasm-pack/blob/master/LICENSE-APACHE)",
@@ -41,6 +45,10 @@
     "aarch64_linux_musl": {
       "etag": "0x8DE580F1BE0E3B5",
       "checksum": "5941c7b05060440ff37ee50fe9009a408e63fa5ba607a3b0736f5a887ec5f2ca"
+    },
+    "aarch64_macos": {
+      "etag": "0x8DE580F1E459530",
+      "checksum": "9d0e70c6b229de18f0abfe910f2963e8f09ebae218250e9b09a1c3fdd955bef9"
     }
   },
   "0.13": {

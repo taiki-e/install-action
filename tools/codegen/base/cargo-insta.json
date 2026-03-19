@@ -9,10 +9,10 @@
   "platform": {
     "x86_64_linux_musl": {},
     "x86_64_macos": {},
-    "aarch64_macos": {},
     "x86_64_windows": {
       "asset_name": "${package}-${rust_target}.zip",
       "bin": "${package}.exe"
-    }
+    },
+    "aarch64_macos": {}
   }
 }

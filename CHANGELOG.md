@@ -10,6 +10,18 @@ Note: In this file, do not use the hard wrap in the middle of a sentence for com
 
 ## [Unreleased]
 
+- Support `cargo-auditable`, `cargo-cyclonedx`, `cargo-machete`, and `knope` on AArch64 Linux.
+
+- Support `cargo-nextest` on AArch64 Linux (musl).
+
+- Support `coreutils`, `dprint`, and `sccache` on riscv64 Linux.
+
+- Support `sccache` on s390x Linux.
+
+- Support installing native binary for `cargo-audit` and `wasm-pack` on AArch64 macOS. (Previously x86_64 macOS binary is used as fallback.)
+
+- Support installing native binary for `cargo-auditable`, `cargo-nextest`, `syft`, and `taplo` on AArch64 Windows. (Previously x86_64 Windows binary is used as fallback.)
+
 ## [2.69.0] - 2026-03-19
 
 - Support `auto-doc`. ([#1596](https://github.com/taiki-e/install-action/pull/1596), thanks @quotidian-ennui)
@@ -520,7 +532,7 @@ Note: In this file, do not use the hard wrap in the middle of a sentence for com
 
 ## [2.67.4] - 2026-01-22
 
-- Support installing native binary for `cargo-llvm-cov`  on AArch64 Windows. (Previously x86_64 Windows binary is used as fallback.)
+- Support installing native binary for `cargo-llvm-cov` on AArch64 Windows. (Previously x86_64 Windows binary is used as fallback.)
 
 - Update `cargo-llvm-cov@latest` to 0.6.24.
 

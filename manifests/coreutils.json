@@ -41,6 +41,12 @@
       "etag": "0x8DE7DA02369BEFA",
       "checksum": "372323492402f3249876599f1ff99aad9bd2aecaa217b1cb146608ef58d3ed4b",
       "bin": "coreutils-0.7.0-aarch64-pc-windows-msvc/coreutils.exe"
+    },
+    "riscv64_linux_musl": {
+      "url": "https://github.com/uutils/coreutils/releases/download/0.7.0/coreutils-0.7.0-riscv64gc-unknown-linux-musl.tar.gz",
+      "etag": "0x8DE7DA02D98FC34",
+      "checksum": "472be17cbe0b69b4c328c3c3e37d889f3792fb37a642603ac94b3c99a9cfae0e",
+      "bin": "coreutils-0.7.0-riscv64gc-unknown-linux-musl/coreutils"
     }
   },
   "0.6": {
@@ -82,6 +88,12 @@
       "etag": "0x8DE62481C536BB1",
       "checksum": "7183bd5aff648b76517182e50d94819efdaede637650f5b9ad9117c171c4eebf",
       "bin": "coreutils-aarch64-pc-windows-msvc/coreutils.exe"
+    },
+    "riscv64_linux_musl": {
+      "url": "https://github.com/uutils/coreutils/releases/download/0.6.0/coreutils-0.6.0-riscv64gc-unknown-linux-musl.tar.gz",
+      "etag": "0x8DE6247C8CECA39",
+      "checksum": "0deaa2ccf9c41f2f727e6715c40c433dc7ad4cd024cfc497d4d67e4020635be9",
+      "bin": "coreutils-0.6.0-riscv64gc-unknown-linux-musl/coreutils"
     }
   },
   "0.5": {

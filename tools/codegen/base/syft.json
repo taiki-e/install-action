@@ -19,6 +19,9 @@
     "aarch64_macos": {
       "asset_name": "${package}_${version}_darwin_arm64.tar.gz"
     },
+    "aarch64_windows": {
+      "asset_name": "${package}_${version}_windows_arm64.zip"
+    },
     "powerpc64le_linux_musl": {
       "asset_name": "${package}_${version}_linux_ppc64le.tar.gz"
     },

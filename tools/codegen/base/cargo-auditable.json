@@ -12,6 +12,11 @@
       "asset_name": "${package}-${rust_target}.zip",
       "bin": "${package}${exe}"
     },
-    "aarch64_macos": {}
+    "aarch64_linux_gnu": {},
+    "aarch64_macos": {},
+    "aarch64_windows": {
+      "asset_name": "${package}-${rust_target}.zip",
+      "bin": "${package}${exe}"
+    }
   }
 }

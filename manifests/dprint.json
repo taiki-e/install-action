@@ -21,6 +21,9 @@
     },
     "aarch64_macos": {
       "url": "https://github.com/dprint/dprint/releases/download/${version}/dprint-aarch64-apple-darwin.zip"
+    },
+    "riscv64_linux_gnu": {
+      "url": "https://github.com/dprint/dprint/releases/download/${version}/dprint-riscv64gc-unknown-linux-gnu.zip"
     }
   },
   "license_markdown": "[MIT](https://github.com/dprint/dprint/blob/main/LICENSE)",
@@ -50,6 +53,10 @@
     "aarch64_macos": {
       "etag": "0x8DE82F1B95C3423",
       "checksum": "1906f3292dab7d333afbbb15b2e05a29f080f5cf91746ca6c73ee843da298d82"
+    },
+    "riscv64_linux_gnu": {
+      "etag": "0x8DE82F1B968A933",
+      "checksum": "936b493204e47d25b820d3f91daa8ea2a2ec0fdebe93d69fc5dd4ca011c4deed"
     }
   },
   "0.52": {
@@ -75,6 +82,10 @@
     "aarch64_macos": {
       "etag": "0x8DE73D41594E259",
       "checksum": "bb3a5be1444fcfaf2f405cbf8af7da809d055705a2ca17bd2e7edff6f2959354"
+    },
+    "riscv64_linux_gnu": {
+      "etag": "0x8DE73D415A87B66",
+      "checksum": "5806e6f16799d32484134281c60cdfdd335cc9f5d37bfaa6a413e811504844b1"
     }
   },
   "0.51": {
@@ -100,6 +111,10 @@
     "aarch64_macos": {
       "etag": "0x8DE46550DA130BC",
       "checksum": "cc1321a524d8e1312d376ce2c51343f43f8f5489c2e265f11aea5a6af4de52ad"
+    },
+    "riscv64_linux_gnu": {
+      "etag": "0x8DE46550DA806DD",
+      "checksum": "35cf03b5c8f3e0218f78f9351463e035c411b2c3743a911e3d103613a4e282f8"
     }
   },
   "0.51.0": {
@@ -122,6 +137,10 @@
     "aarch64_macos": {
       "etag": "0x8DE45B158E61664",
       "checksum": "f3fb85da6b10011835f3b5a14faf11d03594b4b3b32602ae2b45418794c5039b"
+    },
+    "riscv64_linux_gnu": {
+      "etag": "0x8DE45B158F10696",
+      "checksum": "5d20460a263e858bd28b61be2ddec12277863c8f29ddc4591c18105ec3d2ab0c"
     }
   },
   "0.50": {
@@ -147,6 +166,10 @@
     "aarch64_macos": {
       "etag": "0x8DDF3116397FAD4",
       "checksum": "f534bcc054947ab2a42c069b5f6027914d252729bd15c1109812313b35a662a5"
+    },
+    "riscv64_linux_gnu": {
+      "etag": "0x8DDF311638BACA1",
+      "checksum": "6918c45b0070da1da137fa328c7ca82133c6ab0b49a651fa53513305611fe3a8"
     }
   },
   "0.50.1": {
@@ -169,6 +192,10 @@
     "aarch64_macos": {
       "etag": "0x8DDB82271DB6D99",
       "checksum": "c92e1a8dddd9bc65391468265b2805cb2317e4490fd777bca2dfaf1ef716ac36"
+    },
+    "riscv64_linux_gnu": {
+      "etag": "0x8DDB82271E26A9E",
+      "checksum": "841120bd28f9d3afdd89bab65a2cb676877c808a460507f1567d97604a111b61"
     }
   },
   "0.50.0": {
@@ -191,6 +218,10 @@
     "aarch64_macos": {
       "etag": "0x8DD965DE76DBF13",
       "checksum": "b6a25e1dff9ea8d9e023548c0ec80fcde5d425e48fab60028fc0003fddf2debb"
+    },
+    "riscv64_linux_gnu": {
+      "etag": "0x8DD965DE770A205",
+      "checksum": "29cac7205ddfc5d94cc1c89f7935e7ec41572e4fe921725c7e2a0a391d0740d5"
     }
   },
   "0.49": {
@@ -216,6 +247,10 @@
     "aarch64_macos": {
       "etag": "0x8DD6634A4F57D78",
       "checksum": "e8d0da82dd56ea629519e250ad54f084c4a0a1c42cfc4680d73d9f31be21c849"
+    },
+    "riscv64_linux_gnu": {
+      "etag": "0x8DD6634A50F2A26",
+      "checksum": "60ba95d4335d09f72a280e77985b5d2719654dbffb0922a9dd5f58a8110c3831"
     }
   },
   "0.49.0": {
@@ -238,6 +273,10 @@
     "aarch64_macos": {
       "etag": "0x8DD4320D520B868",
       "checksum": "6772b452179a7142710860a8da8d8ec112b84c1b4dd5a7e4458c759c44b76751"
+    },
+    "riscv64_linux_gnu": {
+      "etag": "0x8DD4320D513CE9D",
+      "checksum": "71b941ae78f9a83ace40a2c5a88f4d8fb49881f32c75144fb67d685e2001b1ad"
     }
   },
   "0.48": {
@@ -263,6 +302,10 @@
     "aarch64_macos": {
       "etag": "0x8DD22149A9C71B2",
       "checksum": "31efaf7d6fbdbb53188c457105e894d08b0c43eb02878abae778edaedd0a5c70"
+    },
+    "riscv64_linux_gnu": {
+      "etag": "0x8DD22149AAD9C78",
+      "checksum": "a72959d94a520ebb728eec3e8d318e4181108fe910c7df2a7e2292d9351cde35"
     }
   },
   "0.47": {
@@ -288,6 +331,10 @@
     "aarch64_macos": {
       "etag": "0x8DD1261B07FD733",
       "checksum": "4f33c24141a19638ab045fe5e95654ff0ef8db29949e145d28ea3cc5b088a042"
+    },
+    "riscv64_linux_gnu": {
+      "etag": "0x8DD1261B0899042",
+      "checksum": "c335c3aff2812ca1f640af10f13a2d94cc6d414814dc8038e7412aacc3065ea0"
     }
   },
   "0.47.5": {
