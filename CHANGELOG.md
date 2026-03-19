@@ -10,6 +10,8 @@ Note: In this file, do not use the hard wrap in the middle of a sentence for com
 
 ## [Unreleased]
 
+## [2.69.1] - 2026-03-19
+
 - Support `cargo-auditable`, `cargo-cyclonedx`, `cargo-machete`, and `knope` on AArch64 Linux.
 
 - Support `cargo-nextest` on AArch64 Linux (musl).
@@ -5945,7 +5947,8 @@ Note: This release is considered a breaking change because installing on version
 
 Initial release
 
-[Unreleased]: https://github.com/taiki-e/install-action/compare/v2.69.0...HEAD
+[Unreleased]: https://github.com/taiki-e/install-action/compare/v2.69.1...HEAD
+[2.69.1]: https://github.com/taiki-e/install-action/compare/v2.69.0...v2.69.1
 [2.69.0]: https://github.com/taiki-e/install-action/compare/v2.68.36...v2.69.0
 [2.68.36]: https://github.com/taiki-e/install-action/compare/v2.68.35...v2.68.36
 [2.68.35]: https://github.com/taiki-e/install-action/compare/v2.68.34...v2.68.35
