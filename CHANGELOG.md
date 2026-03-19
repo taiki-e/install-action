@@ -10,6 +10,8 @@ Note: In this file, do not use the hard wrap in the middle of a sentence for com
 
 ## [Unreleased]
 
+## [2.69.2] - 2026-03-19
+
 - Update `trivy@latest` to 0.69.4.
 
 - Update `syft@latest` to 1.42.3.
@@ -5951,7 +5953,8 @@ Note: This release is considered a breaking change because installing on version
 
 Initial release
 
-[Unreleased]: https://github.com/taiki-e/install-action/compare/v2.69.1...HEAD
+[Unreleased]: https://github.com/taiki-e/install-action/compare/v2.69.2...HEAD
+[2.69.2]: https://github.com/taiki-e/install-action/compare/v2.69.1...v2.69.2
 [2.69.1]: https://github.com/taiki-e/install-action/compare/v2.69.0...v2.69.1
 [2.69.0]: https://github.com/taiki-e/install-action/compare/v2.68.36...v2.69.0
 [2.68.36]: https://github.com/taiki-e/install-action/compare/v2.68.35...v2.68.36
