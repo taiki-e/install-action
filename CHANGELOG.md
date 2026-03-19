@@ -10,6 +10,10 @@ Note: In this file, do not use the hard wrap in the middle of a sentence for com
 
 ## [Unreleased]
 
+- Support `auto-doc`. ([#1596](https://github.com/taiki-e/install-action/pull/1596), thanks @quotidian-ennui)
+
+- Support `cargo-nextest` on riscv64 Linux. ([#1598](https://github.com/taiki-e/install-action/pull/1598), thanks @yuzibo)
+
 - Update `cargo-cyclonedx@latest` to 0.5.9.
 
 ## [2.68.36] - 2026-03-19
