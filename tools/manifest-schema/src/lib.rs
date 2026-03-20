@@ -41,7 +41,6 @@ use core::{
     fmt, slice,
     str::FromStr,
 };
-use std::path::Path;
 
 use serde::{
     de::{self, Deserialize, Deserializer},
@@ -242,83 +241,6 @@ pub struct ManifestTemplateDownloadInfo {
     pub url: String,
     /// Path to binaries in archive. Default to `${tool}${exe}`.
     #[serde(skip_serializing_if = "Option::is_none")]
-    pub bin: Option<StringOrArray>,
-}
-
-#[derive(Debug, Deserialize)]
-#[serde(deny_unknown_fields)]
-pub struct BaseManifest {
-    /// Link to the GitHub repository.
-    pub repository: String,
-    /// Alternative link for the project.  Automatically detected if possible.
-    pub website: Option<String>,
-    /// Markdown syntax for links to licenses.  Automatically detected if possible.
-    pub license_markdown: Option<String>,
-    /// Prefix of release tag.
-    pub tag_prefix: String,
-    /// Crate name, if this is Rust crate.
-    pub rust_crate: Option<String>,
-    pub default_major_version: Option<String>,
-    /// Asset name patterns.
-    pub asset_name: Option<StringOrArray>,
-    /// Path to binaries in archive. Default to `${tool}${exe}`.
-    pub bin: Option<StringOrArray>,
-    pub signing: Option<Signing>,
-    #[serde(default)]
-    pub broken: Vec<semver::Version>,
-    pub version_range: Option<String>,
-    /// Use glibc build if host_env is gnu.
-    #[serde(default)]
-    pub prefer_linux_gnu: bool,
-    /// Check that the version is yanked not only when updating the manifest,
-    /// but also when running the action.
-    #[serde(default)]
-    pub immediate_yank_reflection: bool,
-    pub platform: BTreeMap<HostPlatform, BaseManifestPlatformInfo>,
-}
-impl BaseManifest {
-    /// Validate the manifest.
-    pub fn validate(&self) {
-        for bin in self.bin.iter().chain(self.platform.values().flat_map(|m| &m.bin)) {
-            assert!(!bin.as_slice().is_empty());
-            for bin in bin.as_slice() {
-                let file_name = Path::new(bin).file_name().unwrap().to_str().unwrap();
-                if !self.repository.ends_with("/xbuild") {
-                    assert!(
-                        !(file_name.contains("${version") || file_name.contains("${rust")),
-                        "{bin}"
-                    );
-                }
-            }
-        }
-        if self.platform.is_empty() {
-            panic!("At least one platform must be specified");
-        }
-    }
-}
-
-#[derive(Debug, Deserialize)]
-#[serde(deny_unknown_fields)]
-pub struct Signing {
-    pub kind: SigningKind,
-}
-
-#[derive(Debug, Deserialize, PartialEq, Eq)]
-#[serde(rename_all = "kebab-case")]
-#[serde(deny_unknown_fields)]
-pub enum SigningKind {
-    /// algorithm: minisign
-    /// public key: package.metadata.binstall.signing.pubkey at Cargo.toml
-    /// <https://github.com/cargo-bins/cargo-binstall/blob/HEAD/SIGNING.md>
-    MinisignBinstall,
-}
-
-#[derive(Debug, Deserialize)]
-#[serde(deny_unknown_fields)]
-pub struct BaseManifestPlatformInfo {
-    /// Asset name patterns. Default to the value at `BaseManifest::asset_name`.
-    pub asset_name: Option<StringOrArray>,
-    /// Path to binaries in archive. Default to the value at `BaseManifest::bin`.
     pub bin: Option<StringOrArray>,
 }
 
