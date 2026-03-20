@@ -21,6 +21,9 @@ See the [Supported tools section in README.md](README.md#supported-tools) for ho
 > If `$CARGO_HOME/bin` is not available, Rust-related binaries will be installed to `$HOME/.cargo/bin`.<br>
 > If `$HOME/.cargo/bin` is not available, Rust-related binaries will be installed to `$HOME/.install-action/bin`.<br>
 
+> [!WARNING]
+> Please note that the fact that a specific tool is listed here does **NOT** mean that the maintainer trusts the tool for safety or has reviewed its code.
+
 | Name | Where binaries will be installed | Where will it be installed from | Supported platform | License |
 | ---- | -------------------------------- | ------------------------------- | ------------------ | ------- |
 ";
@@ -97,15 +100,23 @@ fn main() -> Result<()> {
 
         let license_markdown = manifests.license_markdown;
 
+        // NB: Update alias list in tools/publish.rs, case for aliases in main.sh,
+        // and tool input option in test-alias in .github/workflows/ci.yml.
+        let alias = match name.as_str() {
+            "cargo-nextest" => Some(name.strip_prefix("cargo-").unwrap().to_owned()),
+            "taplo" | "typos-cli" | "wasm-bindgen" | "wasmtime" => Some(format!("{name}-cli")),
+            _ => None,
+        };
+
         let readme_entry = MarkdownEntry {
             name,
+            alias,
             website,
             repository,
             installed_to,
             installed_from,
             platforms,
             license_markdown,
-            alias: None,
         };
         tools.push(readme_entry);
     }
@@ -195,7 +206,7 @@ impl fmt::Display for MarkdownEntry {
         f.write_str(&name)?;
 
         if let Some(alias) = self.alias.clone() {
-            let alias = format!("(alias: `{alias}`)");
+            let alias = format!("(alias: `{alias}`) ");
             f.write_str(&alias)?;
         }
 

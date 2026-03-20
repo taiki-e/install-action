@@ -131,7 +131,8 @@ for tool in tools/codegen/base/*.json; do
   tools+=("${tool%.*}")
 done
 # Aliases.
-# NB: Update case for aliases in main.sh and tool input option in test-alias in .github/workflows/ci.yml.
+# NB: Update case for aliases in main.sh, tool input option in test-alias job
+# in .github/workflows/ci.yml, and match for alias for tools/codegen/src/tools-markdown.rs.
 tools+=(
   nextest
   taplo-cli

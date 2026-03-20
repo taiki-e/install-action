@@ -763,7 +763,8 @@ for tool in "${tools[@]}"; do
       ;;
     *)
       # Handle aliases.
-      # NB: Update alias list in tools/publish.rs and tool input option in test-alias in .github/workflows/ci.yml.
+      # NB: Update alias list in tools/publish.rs, tool input option in test-alias in .github/workflows/ci.yml,
+      # and match for alias for tools/codegen/src/tools-markdown.rs.
       # TODO(codegen): auto-detect cases where crate name and tool name are different.
       case "${tool}" in
         nextest) tool=cargo-nextest ;;
