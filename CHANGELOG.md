@@ -10,6 +10,8 @@ Note: In this file, do not use the hard wrap in the middle of a sentence for com
 
 ## [Unreleased]
 
+- Update `tombi@latest` to 0.9.8.
+
 - Update `parse-dockerfile@latest` to 0.1.5.
 
 - Update `parse-changelog@latest` to 0.6.16.
