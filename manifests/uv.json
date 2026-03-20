@@ -40,10 +40,48 @@
   },
   "license_markdown": "[Apache-2.0](https://github.com/astral-sh/uv/blob/main/LICENSE-APACHE) OR [MIT](https://github.com/astral-sh/uv/blob/main/LICENSE-MIT)",
   "latest": {
-    "version": "0.10.11"
+    "version": "0.10.12"
   },
   "0.10": {
-    "version": "0.10.11"
+    "version": "0.10.12"
+  },
+  "0.10.12": {
+    "x86_64_linux_musl": {
+      "etag": "0x8DE86020F5F7DCE",
+      "checksum": "adccf40b5d1939a5e0093081ec2307ea24235adf7c2d96b122c561fa37711c46"
+    },
+    "x86_64_macos": {
+      "etag": "0x8DE86020E1FB29D",
+      "checksum": "17443e293f2ae407bb2d8d34b875ebfe0ae01cf1296de5647e69e7b2e2b428f0"
+    },
+    "x86_64_windows": {
+      "etag": "0x8DE86020E4F3FC2",
+      "checksum": "4c1d55501869b3330d4aabf45ad6024ce2367e0f3af83344395702d272c22e88"
+    },
+    "aarch64_linux_musl": {
+      "etag": "0x8DE86020B91AD77",
+      "checksum": "55bd1c1c10ec8b95a8c184f5e18b566703c6ab105f0fc118aaa4d748aabf28e4"
+    },
+    "aarch64_macos": {
+      "etag": "0x8DE86020ABEA8CB",
+      "checksum": "ae738b5661a900579ec621d3918c0ef17bdec0da2a8a6d8b161137cd15f25414"
+    },
+    "aarch64_windows": {
+      "etag": "0x8DE86020B1EAC61",
+      "checksum": "e79881e2c4f98a0f3a37b8770bf224e8fee70f6dcf8fc17055d8291bb1b0b867"
+    },
+    "powerpc64le_linux_gnu": {
+      "etag": "0x8DE86020D80F0AB",
+      "checksum": "3c8017d9112221c83f43e8a15a58099663c0b2bdeabc8b43bb800413dfa21218"
+    },
+    "riscv64_linux_gnu": {
+      "etag": "0x8DE86020D7DE6DC",
+      "checksum": "b1ca482b6b5dd7bf6ab733a3695cb0ab5b8e992ca96527efae93aa78fcc52a9b"
+    },
+    "s390x_linux_gnu": {
+      "etag": "0x8DE86020DDA4505",
+      "checksum": "e1a0345eefe6fd3300948cd6f18aab092f9b88a243782113e645ce96530a6693"
+    }
   },
   "0.10.11": {
     "x86_64_linux_musl": {
