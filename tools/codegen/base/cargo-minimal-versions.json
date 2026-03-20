@@ -3,6 +3,14 @@
   "tag_prefix": "v",
   "rust_crate": "${package}",
   "asset_name": "${package}-${rust_target}.tar.gz",
+  "signing": {
+    "version_range": ">= 0.1.37",
+    "kind": {
+      "gh-attestation": {
+        "signer-workflow": "taiki-e/github-actions/.github/workflows/rust-release.yml"
+      }
+    }
+  },
   "platform": {
     "x86_64_linux_musl": {},
     "x86_64_macos": {},

@@ -1,5 +1,8 @@
 // SPDX-License-Identifier: Apache-2.0 OR MIT
 
+#[macro_use]
+mod process;
+
 use std::{
     cmp::Reverse,
     collections::{BTreeMap, BTreeSet},
@@ -15,7 +18,7 @@ use anyhow::{Context as _, Result, bail};
 use fs_err as fs;
 use install_action_internal_codegen::{
     BaseManifest, HostPlatform, Manifest, ManifestDownloadInfo, ManifestRef, ManifestTemplate,
-    ManifestTemplateDownloadInfo, Manifests, Signing, SigningKind, Version, workspace_root,
+    ManifestTemplateDownloadInfo, Manifests, SigningKind, Version, workspace_root,
 };
 use spdx::expression::{ExprNode, ExpressionReq, Operator};
 
@@ -76,7 +79,14 @@ fn main() -> Result<()> {
             if release.prerelease {
                 return None;
             }
-            let version = release.tag_name.strip_prefix(&base_info.tag_prefix)?;
+            let mut version = None;
+            for tag_prefix in base_info.tag_prefix.as_slice() {
+                if let Some(v) = release.tag_name.strip_prefix(tag_prefix) {
+                    version = Some(v);
+                    break;
+                }
+            }
+            let version = version?;
             let mut semver_version = version.parse::<semver::Version>();
             if semver_version.is_err() {
                 if let Some(default_major_version) = &base_info.default_major_version {
@@ -215,15 +225,15 @@ fn main() -> Result<()> {
         }
     }
 
-    let version_req: Option<semver::VersionReq> = match version_req {
+    let version_req: semver::VersionReq = match version_req {
         _ if latest_only => {
             let req = format!("={}", releases.first_key_value().unwrap().0.0).parse()?;
             eprintln!("update manifest for versions '{req}'");
-            Some(req)
+            req
         }
         None => match base_info.version_range {
-            Some(version_range) => Some(version_range.parse()?),
-            None => Some(">= 0.0.1".parse()?), // HACK: ignore pre-releases
+            Some(version_range) => version_range.parse()?,
+            None => ">= 0.0.1".parse()?, // HACK: ignore pre-releases
         },
         Some(version_req) => {
             for version in manifests.map.keys() {
@@ -247,17 +257,15 @@ fn main() -> Result<()> {
                 version_req.parse()?
             };
             eprintln!("update manifest for versions '{req}'");
-            Some(req)
+            req
         }
     };
 
     let mut buf = vec![];
     let mut buf2 = vec![];
     for (Reverse(semver_version), (version, release)) in &releases {
-        if let Some(version_req) = &version_req {
-            if !version_req.matches(semver_version) {
-                continue;
-            }
+        if !version_req.matches(semver_version) {
+            continue;
         }
 
         // Specifically skip versions of xbuild with build metadata.
@@ -273,6 +281,28 @@ fn main() -> Result<()> {
             eprintln!("Skipping {semver_version} already in manifest");
             continue;
         }
+
+        let signing_version_req: Option<semver::VersionReq> = match &base_info.signing {
+            Some(signing) => {
+                match &signing.version_range {
+                    Some(version_range) => Some(version_range.parse()?),
+                    None => Some(">= 0.0.1".parse()?), // HACK: ignore pre-releases
+                }
+            }
+            None => {
+                if let Some(asset) = release.assets.iter().find(|asset| {
+                    asset.name.contains(".asc")
+                        || asset.name.contains(".gpg")
+                        || asset.name.contains(".sig")
+                }) {
+                    eprintln!(
+                        "{package} may supports other signing verification method using {}",
+                        asset.name
+                    );
+                }
+                None
+            }
+        };
 
         let mut download_info = BTreeMap::new();
         let mut pubkey = None;
@@ -323,6 +353,7 @@ fn main() -> Result<()> {
                 if let Some(entry) = manifest.download_info.get(&platform) {
                     if entry.etag == etag {
                         eprintln!("existing etag matched");
+                        // NB: Comment out these two lines when adding verification for old release.
                         download_info.insert(platform, entry.clone());
                         continue;
                     }
@@ -354,81 +385,103 @@ fn main() -> Result<()> {
             eprintln!("{hash} *{asset_name}");
             let bin_url = &url;
 
-            match base_info.signing {
-                Some(Signing { kind: SigningKind::MinisignBinstall }) => {
-                    let url = url.clone() + ".sig";
-                    let sig_download_cache = &download_cache.with_extension(format!(
-                        "{}.sig",
-                        download_cache.extension().unwrap_or_default().to_str().unwrap()
-                    ));
-                    eprint!("downloading {url} for signature validation ... ");
-                    let sig = if sig_download_cache.is_file() {
-                        eprintln!("already downloaded");
-                        minisign_verify::Signature::from_file(sig_download_cache)?
-                    } else {
-                        let buf = download(&url)?.into_string()?;
-                        eprintln!("download complete");
-                        fs::write(sig_download_cache, &buf)?;
-                        minisign_verify::Signature::decode(&buf)?
-                    };
+            if let Some(signing) = &base_info.signing {
+                match &signing.kind {
+                    _ if !signing_version_req.as_ref().unwrap().matches(semver_version) => {}
+                    SigningKind::GhAttestation { signer_workflow } => {
+                        eprintln!("verifying {url} with gh attestation verify");
+                        let signer_workflow = signer_workflow.replace("${repo}", repo);
+                        cmd!(
+                            "gh",
+                            "attestation",
+                            "verify",
+                            "--repo",
+                            repo,
+                            "--signer-workflow",
+                            signer_workflow,
+                            &download_cache
+                        )
+                        .run()?;
+                    }
+                    SigningKind::MinisignBinstall => {
+                        let url = url.clone() + ".sig";
+                        let sig_download_cache = &download_cache.with_extension(format!(
+                            "{}.sig",
+                            download_cache.extension().unwrap_or_default().to_str().unwrap()
+                        ));
+                        eprint!("downloading {url} for signature validation ... ");
+                        let sig = if sig_download_cache.is_file() {
+                            eprintln!("already downloaded");
+                            minisign_verify::Signature::from_file(sig_download_cache)?
+                        } else {
+                            let buf = download(&url)?.into_string()?;
+                            eprintln!("download complete");
+                            fs::write(sig_download_cache, &buf)?;
+                            minisign_verify::Signature::decode(&buf)?
+                        };
 
-                    let Some(crates_io_info) = &crates_io_info else {
-                        bail!("signing kind minisign-binstall is supported only for rust crate");
-                    };
-                    let v =
-                        crates_io_info.versions.iter().find(|v| v.num == *semver_version).unwrap();
-                    let url = format!("https://crates.io{}", v.dl_path);
-                    let crate_download_cache =
-                        &download_cache_dir.join(format!("{version}-Cargo.toml"));
-                    eprint!("downloading {url} for signature verification ... ");
-                    if crate_download_cache.is_file() {
-                        eprintln!("already downloaded");
-                    } else {
-                        download(&url)?.into_reader().read_to_end(&mut buf2)?;
-                        let hash = ring::digest::digest(&ring::digest::SHA256, &buf2);
-                        if format!("{hash:?}").strip_prefix("SHA256:").unwrap() != v.checksum {
-                            bail!("checksum mismatch for {url}");
-                        }
-                        let decoder = flate2::read::GzDecoder::new(&*buf2);
-                        let mut archive = tar::Archive::new(decoder);
-                        for entry in archive.entries()? {
-                            let mut entry = entry?;
-                            let path = entry.path()?;
-                            if path.file_name() == Some(OsStr::new("Cargo.toml")) {
-                                entry.unpack(crate_download_cache)?;
-                                break;
+                        let Some(crates_io_info) = &crates_io_info else {
+                            bail!(
+                                "signing kind minisign-binstall is supported only for rust crate"
+                            );
+                        };
+                        let v = crates_io_info
+                            .versions
+                            .iter()
+                            .find(|v| v.num == *semver_version)
+                            .unwrap();
+                        let url = format!("https://crates.io{}", v.dl_path);
+                        let crate_download_cache =
+                            &download_cache_dir.join(format!("{version}-Cargo.toml"));
+                        eprint!("downloading {url} for signature verification ... ");
+                        if crate_download_cache.is_file() {
+                            eprintln!("already downloaded");
+                        } else {
+                            download(&url)?.into_reader().read_to_end(&mut buf2)?;
+                            let hash = ring::digest::digest(&ring::digest::SHA256, &buf2);
+                            if format!("{hash:?}").strip_prefix("SHA256:").unwrap() != v.checksum {
+                                bail!("checksum mismatch for {url}");
                             }
+                            let decoder = flate2::read::GzDecoder::new(&*buf2);
+                            let mut archive = tar::Archive::new(decoder);
+                            for entry in archive.entries()? {
+                                let mut entry = entry?;
+                                let path = entry.path()?;
+                                if path.file_name() == Some(OsStr::new("Cargo.toml")) {
+                                    entry.unpack(crate_download_cache)?;
+                                    break;
+                                }
+                            }
+                            buf2.clear();
+                            eprintln!("download complete");
                         }
-                        buf2.clear();
-                        eprintln!("download complete");
+                        if pubkey.is_none() {
+                            let cargo_manifest = toml::de::from_str::<cargo_manifest::Manifest>(
+                                &fs::read_to_string(crate_download_cache)?,
+                            )?;
+                            eprintln!(
+                                "algorithm: {}",
+                                cargo_manifest.package.metadata.binstall.signing.algorithm
+                            );
+                            eprintln!(
+                                "pubkey: {}",
+                                cargo_manifest.package.metadata.binstall.signing.pubkey
+                            );
+                            assert_eq!(
+                                cargo_manifest.package.metadata.binstall.signing.algorithm,
+                                "minisign"
+                            );
+                            pubkey = Some(minisign_verify::PublicKey::from_base64(
+                                &cargo_manifest.package.metadata.binstall.signing.pubkey,
+                            )?);
+                        }
+                        let pubkey = pubkey.as_ref().unwrap();
+                        eprint!("verifying signature for {bin_url} ... ");
+                        let allow_legacy = false;
+                        pubkey.verify(&buf, &sig, allow_legacy)?;
+                        eprintln!("done");
                     }
-                    if pubkey.is_none() {
-                        let cargo_manifest = toml::de::from_str::<cargo_manifest::Manifest>(
-                            &fs::read_to_string(crate_download_cache)?,
-                        )?;
-                        eprintln!(
-                            "algorithm: {}",
-                            cargo_manifest.package.metadata.binstall.signing.algorithm
-                        );
-                        eprintln!(
-                            "pubkey: {}",
-                            cargo_manifest.package.metadata.binstall.signing.pubkey
-                        );
-                        assert_eq!(
-                            cargo_manifest.package.metadata.binstall.signing.algorithm,
-                            "minisign"
-                        );
-                        pubkey = Some(minisign_verify::PublicKey::from_base64(
-                            &cargo_manifest.package.metadata.binstall.signing.pubkey,
-                        )?);
-                    }
-                    let pubkey = pubkey.as_ref().unwrap();
-                    eprint!("verifying signature for {bin_url} ... ");
-                    let allow_legacy = false;
-                    pubkey.verify(&buf, &sig, allow_legacy)?;
-                    eprintln!("done");
                 }
-                None => {}
             }
 
             download_info.insert(

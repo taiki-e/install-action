@@ -2,6 +2,14 @@
   "repository": "https://github.com/getzola/zola",
   "tag_prefix": "v",
   "asset_name": "${package}-v${version}-${rust_target}.tar.gz",
+  "signing": {
+    "version_range": ">= 0.20.0",
+    "kind": {
+      "gh-attestation": {
+        "signer-workflow": "${repo}/.github/workflows/release.yml"
+      }
+    }
+  },
   "platform": {
     "x86_64_linux_gnu": {},
     "x86_64_linux_musl": {},

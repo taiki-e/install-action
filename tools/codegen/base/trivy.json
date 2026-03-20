@@ -3,6 +3,14 @@
   "tag_prefix": "v",
   "bin": "${package}${exe}",
   "version_range": ">= 0.62.0",
+  "signing": {
+    "version_range": ">= 0.69.4",
+    "kind": {
+      "gh-attestation": {
+        "signer-workflow": "${repo}/.github/workflows/reusable-release.yaml"
+      }
+    }
+  },
   "platform": {
     "x86_64_linux_gnu": {
       "asset_name": "${package}_${version}_Linux-64bit.tar.gz"

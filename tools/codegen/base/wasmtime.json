@@ -4,6 +4,14 @@
   "rust_crate": "${package}-cli",
   "asset_name": "${package}-v${version}-${rust_target_arch}-${rust_target_os}.tar.xz",
   "bin": "${package}-v${version}-${rust_target_arch}-${rust_target_os}/${package}${exe}",
+  "signing": {
+    "version_range": ">= 28.0.0",
+    "kind": {
+      "gh-attestation": {
+        "signer-workflow": "${repo}/.github/workflows/publish-artifacts.yml"
+      }
+    }
+  },
   "platform": {
     "x86_64_linux_gnu": {},
     "x86_64_macos": {},

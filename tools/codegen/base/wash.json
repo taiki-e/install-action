@@ -3,6 +3,14 @@
   "tag_prefix": "wash-v",
   "rust_crate": "${package}",
   "asset_name": "${package}-${rust_target}${exe}",
+  "signing": {
+    "version_range": ">= 2.0.0",
+    "kind": {
+      "gh-attestation": {
+        "signer-workflow": "${repo}/.github/workflows/wash.yml"
+      }
+    }
+  },
   "platform": {
     "x86_64_linux_musl": {},
     "x86_64_macos": {},

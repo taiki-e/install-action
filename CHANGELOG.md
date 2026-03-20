@@ -10,6 +10,10 @@ Note: In this file, do not use the hard wrap in the middle of a sentence for com
 
 ## [Unreleased]
 
+- Support artifact attestations verification for `biome`, `cargo-cyclonedx`, `cargo-hack`, `cargo-llvm-cov`, `cargo-minimal-versions`, `cargo-no-dev-deps`, `martin`, `parse-changelog`, `parse-dockerfile`, `prek`, `uv`, `wasmtime`, `zizmor`, and `zola`. ([#1606](https://github.com/taiki-e/install-action/pull/1606))
+
+- Update `biome@latest` to 2.4.8.
+
 - Update `tombi@latest` to 0.9.8.
 
 - Update `parse-dockerfile@latest` to 0.1.5.

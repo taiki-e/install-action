@@ -6,6 +6,14 @@
   "asset_name": "${package}-${rust_target}.tar.gz",
   "bin": "${package}-${rust_target}/${package}${exe}",
   "version_range": ">= 0.2.20",
+  "signing": {
+    "version_range": ">= 0.3.1",
+    "kind": {
+      "gh-attestation": {
+        "signer-workflow": "${repo}/.github/workflows/release.yml"
+      }
+    }
+  },
   "platform": {
     "x86_64_linux_musl": {},
     "x86_64_macos": {},

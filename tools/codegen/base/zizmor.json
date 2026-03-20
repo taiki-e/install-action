@@ -4,6 +4,13 @@
   "rust_crate": "${package}",
   "asset_name": "${package}-${rust_target}.tar.gz",
   "version_range": ">= 1.9.0",
+  "signing": {
+    "kind": {
+      "gh-attestation": {
+        "signer-workflow": "${repo}/.github/workflows/release-binaries.yml"
+      }
+    }
+  },
   "platform": {
     "x86_64_linux_gnu": {},
     "x86_64_macos": {},

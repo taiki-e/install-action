@@ -6,6 +6,13 @@
   "asset_name": "${package}-${rust_target}.tar.gz",
   "bin": ["${package}${exe}", "${package}-cp${exe}"],
   "version_range": ">= 1.0.0",
+  "signing": {
+    "kind": {
+      "gh-attestation": {
+        "signer-workflow": "${repo}/.github/workflows/ci.yml"
+      }
+    }
+  },
   "platform": {
     "x86_64_linux_musl": {},
     "x86_64_macos": {},
