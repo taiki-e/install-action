@@ -10,6 +10,8 @@ Note: In this file, do not use the hard wrap in the middle of a sentence for com
 
 ## [Unreleased]
 
+- Update `parse-dockerfile@latest` to 0.1.5.
+
 - Update `parse-changelog@latest` to 0.6.16.
 
 - Update `cargo-llvm-cov@latest` to 0.8.5.
