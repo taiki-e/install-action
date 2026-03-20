@@ -6,6 +6,14 @@
     "${package}-${rust_target}.tar.gz",
     "${package}-${rust_target}.zip"
   ],
+  "signing": {
+    "version_range": ">= 0.6.16",
+    "kind": {
+      "gh-attestation": {
+        "signer-workflow": "taiki-e/github-actions/.github/workflows/rust-release.yml"
+      }
+    }
+  },
   "platform": {
     "x86_64_linux_gnu": {},
     "x86_64_linux_musl": {},

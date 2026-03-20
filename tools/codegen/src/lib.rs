@@ -22,7 +22,7 @@ pub struct BaseManifest {
     /// Markdown syntax for links to licenses.  Automatically detected if possible.
     pub license_markdown: Option<String>,
     /// Prefix of release tag.
-    pub tag_prefix: String,
+    pub tag_prefix: StringOrArray,
     /// Crate name, if this is Rust crate.
     pub rust_crate: Option<String>,
     pub default_major_version: Option<String>,
@@ -67,6 +67,7 @@ impl BaseManifest {
 #[derive(Debug, Deserialize)]
 #[serde(deny_unknown_fields)]
 pub struct Signing {
+    pub version_range: Option<String>,
     pub kind: SigningKind,
 }
 
@@ -74,6 +75,10 @@ pub struct Signing {
 #[serde(rename_all = "kebab-case")]
 #[serde(deny_unknown_fields)]
 pub enum SigningKind {
+    /// gh attestation
+    /// <https://docs.github.com/en/actions/how-tos/secure-your-work/use-artifact-attestations/use-artifact-attestations>
+    #[serde(rename_all = "kebab-case")]
+    GhAttestation { signer_workflow: String },
     /// algorithm: minisign
     /// public key: package.metadata.binstall.signing.pubkey at Cargo.toml
     /// <https://github.com/cargo-bins/cargo-binstall/blob/HEAD/SIGNING.md>

@@ -4,6 +4,14 @@
   "rust_crate": "${package}",
   "bin": "${package}-${rust_target}/${package}${exe}",
   "version_range": ">= 0.5.0",
+  "signing": {
+    "version_range": ">= 0.5.4",
+    "kind": {
+      "gh-attestation": {
+        "signer-workflow": "${repo}/.github/workflows/release.yml"
+      }
+    }
+  },
   "platform": {
     "x86_64_linux_gnu": {
       "asset_name": "${package}-linux-amd64.tar.gz"
