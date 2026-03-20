@@ -434,7 +434,7 @@ fn main() -> Result<()> {
             download_info.insert(platform, ManifestDownloadInfo {
                 url: Some(url),
                 etag,
-                checksum: hash,
+                hash,
                 bin: base_download_info.bin.as_ref().or(base_info.bin.as_ref()).map(|s| {
                     s.map(|s| {
                         replace_vars(

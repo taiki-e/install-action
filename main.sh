@@ -304,7 +304,7 @@ read_download_info() {
   if [[ "${download_info}" == "null" ]]; then
     bail "${tool}@${version} for '${host_os}' is not supported"
   fi
-  checksum=$(jq -r '.checksum' <<<"${download_info}")
+  checksum=$(jq -r '.hash' <<<"${download_info}")
   url=$(jq -r '.url' <<<"${download_info}")
   local tmp
   bin_in_archive=()

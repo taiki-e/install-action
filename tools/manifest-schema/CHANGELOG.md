@@ -10,6 +10,10 @@ Note: In this file, do not use the hard wrap in the middle of a sentence for com
 
 ## [Unreleased]
 
+- Rename `ManifestDownloadInfo::checksum` field to `hash` to reduce manifest size.
+
+- Remove `BaseManifest` and related types since they are unrelated to public manifests.
+
 ## [0.1.1] - 2025-09-20
 
 - Add `HostPlatform::{powerpc64le_linux_gnu,powerpc64le_linux_musl,riscv64_linux_gnu,riscv64_linux_musl,s390x_linux_gnu,s390x_linux_musl}` ([#1133](https://github.com/taiki-e/install-action/pull/1133))

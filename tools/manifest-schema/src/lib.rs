@@ -224,7 +224,7 @@ pub struct ManifestDownloadInfo {
     #[serde(skip_serializing_if = "Option::is_none")]
     pub url: Option<String>,
     pub etag: String,
-    pub checksum: String,
+    pub hash: String,
     /// Path to binaries in archive. Default to `${tool}${exe}`.
     #[serde(skip_serializing_if = "Option::is_none")]
     pub bin: Option<StringOrArray>,
