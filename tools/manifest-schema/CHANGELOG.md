@@ -10,6 +10,8 @@ Note: In this file, do not use the hard wrap in the middle of a sentence for com
 
 ## [Unreleased]
 
+## [0.2.0] - 2026-03-20
+
 - Rename `ManifestDownloadInfo::checksum` field to `hash` to reduce manifest size.
 
 - Make `Version`, `Manifests`, `Manifest`, `ManifestDownloadInfo`, `ManifestTemplate`, `ManifestTemplateDownloadInfo`, and `HostPlatform` `#[non_exhaustive]`.
