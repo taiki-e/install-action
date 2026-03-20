@@ -1,0 +1,115 @@
+{
+  "rust_crate": null,
+  "template": {
+    "x86_64_linux_musl": {
+      "url": "https://github.com/earthly/earthly/releases/download/v${version}/earthly-linux-amd64"
+    },
+    "x86_64_macos": {
+      "url": "https://github.com/earthly/earthly/releases/download/v${version}/earthly-darwin-amd64"
+    },
+    "x86_64_windows": {
+      "url": "https://github.com/earthly/earthly/releases/download/v${version}/earthly-windows-amd64.exe"
+    },
+    "aarch64_linux_musl": {
+      "url": "https://github.com/earthly/earthly/releases/download/v${version}/earthly-linux-arm64"
+    },
+    "aarch64_macos": {
+      "url": "https://github.com/earthly/earthly/releases/download/v${version}/earthly-darwin-arm64"
+    }
+  },
+  "license_markdown": "[MPL-2.0](https://github.com/earthly/earthly/blob/main/LICENSE)",
+  "latest": {
+    "version": "0.8.16"
+  },
+  "0.8": {
+    "version": "0.8.16"
+  },
+  "0.8.16": {
+    "x86_64_linux_musl": {
+      "etag": "0x8DDC49BA1A16F96",
+      "hash": "3ef3163c81bdd10e28ab31cd96e35c1856d97478c8ce7f20954b8bea7a598404"
+    },
+    "x86_64_macos": {
+      "etag": "0x8DDC49B9E522C27",
+      "hash": "1592cb497256577a76dda4e827010876eeeec05e76e3a203f60a68c71a80fc3a"
+    },
+    "x86_64_windows": {
+      "etag": "0x8DDC49BA4CADEDF",
+      "hash": "30672f3a3ce73893b30fe47e6e9b0aeed67bd596a156c10762ea7fce3db5d934"
+    },
+    "aarch64_linux_musl": {
+      "etag": "0x8DDC49BA351A6A1",
+      "hash": "dfdc3957f24754d66cea0c19a46bb542941132c9ccc81df7d71009ed79be54e8"
+    },
+    "aarch64_macos": {
+      "etag": "0x8DDC49B9FFA7CE5",
+      "hash": "4ac88e47414778f0a5af0f59637148c9b0eabc7c77cd77890e6cd99e3040a2b4"
+    }
+  },
+  "0.8.15": {
+    "x86_64_linux_musl": {
+      "etag": "0x8DCA2A154D402F6",
+      "hash": "2e545a08c17a195ad86d3844df0c3d28064b1231abe05530342138acf3067619"
+    },
+    "x86_64_macos": {
+      "etag": "0x8DCA2A1520484EC",
+      "hash": "6e17da01a10509398da088dfc6005c726019c08077dd296d42d92ed1799ac76f"
+    },
+    "x86_64_windows": {
+      "etag": "0x8DCA2A1580F5DF5",
+      "hash": "c64a84df967f4624202c5cdf1b9f8149ef7ee9e2056ffd84954f0587a0787291"
+    },
+    "aarch64_linux_musl": {
+      "etag": "0x8DCA2A1566C5F46",
+      "hash": "cc5ea041c6d7e5d019c8fe37c58c5b7b294f7ce1da0e06569056f41b3413d7bf"
+    },
+    "aarch64_macos": {
+      "etag": "0x8DCA2A1536436B9",
+      "hash": "86c6712f19029f151d3b478bf60906e8731acb2383c5de5e0675fb6a11bd5aaf"
+    }
+  },
+  "0.8.14": {
+    "x86_64_linux_musl": {
+      "etag": "0x8DC898036907B4D",
+      "hash": "9c184536faccf2e16e92ad06d2a2579e4b3ff6aaf6bf4c2f72b21228a6903bc2"
+    },
+    "x86_64_macos": {
+      "etag": "0x8DC897FFC054806",
+      "hash": "09d749a4f5b9d71acb803ba229086b28f447ac2080492106f6f51536a64a0760"
+    },
+    "x86_64_windows": {
+      "etag": "0x8DC89807141A969",
+      "hash": "3244284dc9648d7cd3af350ab4a8bfd4c63b0e0e16e656c3e249fc1d58fe7e5f"
+    },
+    "aarch64_linux_musl": {
+      "etag": "0x8DC8980535E3770",
+      "hash": "a88786778964eb74b6b5db44734a4630dcedab49c4ed21fe432e9e6d08ff116c"
+    },
+    "aarch64_macos": {
+      "etag": "0x8DC89801984C346",
+      "hash": "0a0154bb94ef4c8692737156a74534d369947be1a4558e81603be3d2b4328d7b"
+    }
+  },
+  "0.8.13": {
+    "x86_64_linux_musl": {
+      "etag": "0x8DC7F5FF4E42C3C",
+      "hash": "5e1d7a41cd7a5c22f7c5c71f08e99cab3964eb604ca223b36312c755fbbce4f8"
+    },
+    "x86_64_macos": {
+      "etag": "0x8DC7F5FBA6D141D",
+      "hash": "8d50d07d24794fa284ae78a699c45df540e85347ea108374b86df45a7800ff55"
+    },
+    "x86_64_windows": {
+      "etag": "0x8DC7F603050FEFF",
+      "hash": "8201bcdd20272e4e68c56ce3b070fd488e410aef6be1e75b3b1992b4cdd0caaa"
+    },
+    "aarch64_linux_musl": {
+      "etag": "0x8DC7F6012229473",
+      "hash": "6b33bb767f34a94c49fc5db668b3f5936daa01777f3083a217f73b8aefdd7859"
+    },
+    "aarch64_macos": {
+      "etag": "0x8DC7F5FD78F1F62",
+      "hash": "8d4e2055a761b07f77b11deb2f75914fe20a7bc033eb1115d9b74731df0d3593"
+    }
+  }
+}

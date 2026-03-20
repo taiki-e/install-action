@@ -1,0 +1,84 @@
+{
+  "rust_crate": "cargo-spellcheck",
+  "template": {
+    "x86_64_linux_gnu": {
+      "url": "https://github.com/drahnr/cargo-spellcheck/releases/download/v${version}/cargo-spellcheck-v${version}-x86_64-unknown-linux-gnu"
+    },
+    "x86_64_windows": {
+      "url": "https://github.com/drahnr/cargo-spellcheck/releases/download/v${version}/cargo-spellcheck-v${version}-x86_64-pc-windows-gnu.exe"
+    }
+  },
+  "license_markdown": "[LGPLv2.1](https://github.com/drahnr/cargo-spellcheck/blob/master/LICENSE-LGPL)",
+  "latest": {
+    "version": "0.15.1"
+  },
+  "0.15": {
+    "version": "0.15.1"
+  },
+  "0.15.2": {
+    "x86_64_linux_gnu": {
+      "etag": "0x8DD4A85530EF13A",
+      "hash": "9b36eb04e83aaea2c943064fbb2e5a04d37a46bcf51dfd99495b74b09ff56455"
+    },
+    "x86_64_windows": {
+      "etag": "0x8DD4A8564500872",
+      "hash": "5d70eac68be1dae5fb69439217581f79e642867ddd4b67ba258e224de6ff82a2"
+    }
+  },
+  "0.15.1": {
+    "x86_64_linux_gnu": {
+      "etag": "0x8DD49AEF852F898",
+      "hash": "b96e4e73babd959aa138d1629b143180e83ebd8461064fa68e99e2e961560029"
+    },
+    "x86_64_windows": {
+      "etag": "0x8DD49AF09E6176C",
+      "hash": "53e697b1016880ffe864dfba9fda68c050694644267557450881d52d9eed987d"
+    }
+  },
+  "0.14": {
+    "version": "0.14.0"
+  },
+  "0.14.0": {
+    "x86_64_linux_gnu": {
+      "etag": "0x8DC6466EF3038F3",
+      "hash": "6f35073843f2eb87990ef19c841c61ded5263e3a7ff38f885cfab22193b84f13"
+    },
+    "x86_64_windows": {
+      "etag": "0x8DC646705A424A4",
+      "hash": "ad97a1471b7e718902ec385c3ad045a6afbc986f736d0c4986855ec99a79c80c"
+    }
+  },
+  "0.13": {
+    "version": "0.13.2"
+  },
+  "0.13.2": {
+    "x86_64_linux_gnu": {
+      "etag": "0x8DC0E0760B5DD94",
+      "hash": "f547b8f992dcc43f8a4106bae8b090ecb3fcb7ef6ce336081c22636f70e876d9"
+    },
+    "x86_64_windows": {
+      "etag": "0x8DC0E07751C8D13",
+      "hash": "f54fb8243497258115d1eb55b99bfc94ab3e09636c78665d3b6410885ba9190a"
+    }
+  },
+  "0.13.1": {
+    "x86_64_linux_gnu": {
+      "etag": "0x8DBC987279A3734",
+      "hash": "17af34dbefad5c45d23df3e4e81b0addc78782db0ed2e8e491a1532761463e1e"
+    },
+    "x86_64_windows": {
+      "etag": "0x8DBC9875250341E",
+      "hash": "d18c19a3c5e7eb9ea516e691b54a4517a60517b6b1fb75b7f56a0c1dcc9b177e"
+    }
+  },
+  "0.13.0": {
+    "x86_64_linux_gnu": {
+      "etag": "0x8DB98F2A6C10BCB",
+      "hash": "41e99240e55f38cc6d43d7ea9f2ccd448f584eefdc262129e4238f057d995923"
+    },
+    "x86_64_windows": {
+      "etag": "0x8DB98F240CB78CC",
+      "hash": "57d45d5942d7ccd49599aae549c0bd5d906868eaeb39481088e55001d65f4784"
+    }
+  }
+}

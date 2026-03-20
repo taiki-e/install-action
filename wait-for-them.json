@@ -1,0 +1,52 @@
+{
+  "rust_crate": "wait-for-them",
+  "template": {
+    "x86_64_linux_gnu": {
+      "url": "https://github.com/shenek/wait-for-them/releases/download/v${version}/wait-for-them-linux"
+    },
+    "x86_64_windows": {
+      "url": "https://github.com/shenek/wait-for-them/releases/download/v${version}/wait-for-them-windows.exe"
+    },
+    "aarch64_macos": {
+      "url": "https://github.com/shenek/wait-for-them/releases/download/v${version}/wait-for-them-macos"
+    }
+  },
+  "license_markdown": "[GPL-3.0](https://github.com/shenek/wait-for-them/blob/v0.4.0/Cargo.toml#L7)",
+  "latest": {
+    "version": "0.5.1"
+  },
+  "0.5": {
+    "version": "0.5.1"
+  },
+  "0.5.1": {
+    "x86_64_linux_gnu": {
+      "etag": "0x8DDC24CACAA9E9A",
+      "hash": "c221ae4d2597bd91943c9fefd60306033d6fe1e5f8380067928ec25cfb00bfa0"
+    },
+    "x86_64_windows": {
+      "etag": "0x8DDC24CAD7F9C68",
+      "hash": "8862ec3f660c08fa058f4af92eb15b38238f122eb0b8542bcbbfe2da54a4ceb4"
+    },
+    "aarch64_macos": {
+      "etag": "0x8DDC24CAE3B8920",
+      "hash": "7010913065f824cef9c473668d30ca2af0eecca952efeb356b6605d2414cedec"
+    }
+  },
+  "0.4": {
+    "version": "0.4.0"
+  },
+  "0.4.0": {
+    "x86_64_linux_gnu": {
+      "etag": "0x8DB10C06F1D3C45",
+      "hash": "2350e38c79f9e59d83ceade3ba7dc2a449bdaac075ea574786421a4bc4646f3d"
+    },
+    "x86_64_windows": {
+      "etag": "0x8DB10C070B0944D",
+      "hash": "1f716ee4f755a01b67e9606e91a0a65448d4f06113ba40b09e465af62a1c73da"
+    },
+    "aarch64_macos": {
+      "etag": "0x8DB10C072173E3D",
+      "hash": "a294da6da0ffc0b0a755eb3db50a968841356ff1fdc14724cfa288732496b6dc"
+    }
+  }
+}

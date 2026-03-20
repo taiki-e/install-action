@@ -1,0 +1,131 @@
+{
+  "rust_crate": "cargo-valgrind",
+  "template": {
+    "x86_64_linux_musl": {
+      "url": "https://github.com/jfrimmel/cargo-valgrind/releases/download/${version}/cargo-valgrind-${version}-x86_64-unknown-linux-musl.tar.gz"
+    },
+    "x86_64_macos": {
+      "url": "https://github.com/jfrimmel/cargo-valgrind/releases/download/${version}/cargo-valgrind-${version}-x86_64-apple-darwin.tar.gz"
+    },
+    "x86_64_windows": {
+      "url": "https://github.com/jfrimmel/cargo-valgrind/releases/download/${version}/cargo-valgrind-${version}-x86_64-pc-windows-msvc.zip"
+    }
+  },
+  "license_markdown": "[MIT](https://github.com/jfrimmel/cargo-valgrind/blob/master/LICENSE-MIT) OR [Apache-2.0](https://github.com/jfrimmel/cargo-valgrind/blob/master/LICENSE-APACHE)",
+  "latest": {
+    "version": "2.4.0"
+  },
+  "2": {
+    "version": "2.4.0"
+  },
+  "2.4": {
+    "version": "2.4.0"
+  },
+  "2.4.0": {
+    "x86_64_linux_musl": {
+      "etag": "0x8DE30DF337C56A8",
+      "hash": "8a00e22c096e411766da05dcb2d2e0466b2d29e33dd3a9d3032f8dadea1fd15d"
+    },
+    "x86_64_macos": {
+      "etag": "0x8DE30DF3380979E",
+      "hash": "0f399df398947d2391d9ae3f6933a553742048f887e7515581c51cee99b7b0ec"
+    },
+    "x86_64_windows": {
+      "etag": "0x8DE30DF337F8766",
+      "hash": "607e2dbef6563b4abb6c3bedb325524ad28c78561d49eb4ab91c16efa0d2c0fd"
+    }
+  },
+  "2.3": {
+    "version": "2.3.3"
+  },
+  "2.3.3": {
+    "x86_64_linux_musl": {
+      "etag": "0x8DE06B5F44B3D08",
+      "hash": "559bc9438486a40bfc0869d9398488cdf4a54a283123fcdbdb0e6487dcf33e31"
+    },
+    "x86_64_macos": {
+      "etag": "0x8DE06B5F4537137",
+      "hash": "f6e32e18032045e1586fab72e293c768a6546adae572a4a2054990500a525728"
+    },
+    "x86_64_windows": {
+      "etag": "0x8DE06B5F45826D2",
+      "hash": "6571551d2cc6e43e4d9370042e5efe35abbf0fd599092cf804978e2c65e6119e"
+    }
+  },
+  "2.3.2": {
+    "x86_64_linux_musl": {
+      "etag": "0x8DDC3D1A6EC3934",
+      "hash": "7a21c6f6b9999db31e95d1310a1e3a2090207a648edf9b46d177d4f93259c26a"
+    },
+    "x86_64_macos": {
+      "etag": "0x8DDC3D1A6F35D12",
+      "hash": "6a07300581be81ee50de9f88febf347a8c213656f125a8c89ee4b2146400f996"
+    },
+    "x86_64_windows": {
+      "etag": "0x8DDC3D1A6EE0BD9",
+      "hash": "53a99412f32fa18902a0665cf1254716b9b817eed2281872e2b297fbd2db3f25"
+    }
+  },
+  "2.3.1": {
+    "x86_64_linux_musl": {
+      "etag": "0x8DD74F2025E7479",
+      "hash": "e5953facbdf3532d86f0423852a4035ef8cfd9202e508770011e68a0905eb137"
+    },
+    "x86_64_macos": {
+      "etag": "0x8DD74F20262DC55",
+      "hash": "466432f2eeaaede71a31c7633254440bc160ccf85a3e12da1d8bd950da86b524"
+    },
+    "x86_64_windows": {
+      "etag": "0x8DD74F2025DD8EC",
+      "hash": "55d505346951fcefd9ff9c190533c315d60d053f0313f7086b4db17a7a764275"
+    }
+  },
+  "2.3.0": {
+    "x86_64_linux_musl": {
+      "etag": "0x8DD703D825CACA0",
+      "hash": "d18eef45da5bfabe727e5b4528dfdd1a4998f758583fdc7b2d5867eb9ec998d0"
+    },
+    "x86_64_macos": {
+      "etag": "0x8DD703D8253DCF1",
+      "hash": "cc2ee6c9c92fdb76eb7d72bb20ec42b749776fdeecd6b2ae06ff1048aa9170d4"
+    },
+    "x86_64_windows": {
+      "etag": "0x8DD703D825B00CF",
+      "hash": "bf8b48d213adc1e3298dc3d6d78b070790a7c424ca5e7f13674409187e164e00"
+    }
+  },
+  "2.2": {
+    "version": "2.2.1"
+  },
+  "2.2.1": {
+    "x86_64_linux_musl": {
+      "etag": "0x8DCD72C8A619D28",
+      "hash": "063edb8e26cf9166ff61b5d339844d7ab86264e9f898c99d3cd65ab463725ca6"
+    },
+    "x86_64_macos": {
+      "etag": "0x8DCD72C8A636FDE",
+      "hash": "b18b1930624d085889b6725d998d15dbaacda634ecf2e15e71079382a84fae6b"
+    },
+    "x86_64_windows": {
+      "etag": "0x8DCD72C8A6A6CD4",
+      "hash": "7bc3892f31913cc943986fbf4a7fb98c7a0b16cbf5ddd9d3d71f0741c2843fff"
+    }
+  },
+  "2.1": {
+    "version": "2.1.0"
+  },
+  "2.1.0": {
+    "x86_64_linux_musl": {
+      "etag": "0x8DA70B724C7F3AF",
+      "hash": "eaca63383f6efd2532fd1708d0de9e0bad3bebec53d6a2fd106924277a870bf1"
+    },
+    "x86_64_macos": {
+      "etag": "0x8DA70B724C66D4B",
+      "hash": "654578f72d1224876a276780fd96c9cca28b2432d2485dc3871dca46966d2359"
+    },
+    "x86_64_windows": {
+      "etag": "0x8DA70B724D33CA8",
+      "hash": "43c3cc0472e4b3887db06cbd042706fc193eec6d274590b1c6d5e1aaf274f3ab"
+    }
+  }
+}

@@ -1,0 +1,53 @@
+{
+  "rust_crate": "cargo-binstall",
+  "template": {
+    "x86_64_linux_musl": {
+      "url": "https://github.com/cargo-bins/cargo-binstall/releases/download/v${version}/cargo-binstall-x86_64-unknown-linux-musl.tgz"
+    },
+    "x86_64_macos": {
+      "url": "https://github.com/cargo-bins/cargo-binstall/releases/download/v${version}/cargo-binstall-x86_64-apple-darwin.zip"
+    },
+    "x86_64_windows": {
+      "url": "https://github.com/cargo-bins/cargo-binstall/releases/download/v${version}/cargo-binstall-x86_64-pc-windows-msvc.zip"
+    },
+    "aarch64_linux_musl": {
+      "url": "https://github.com/cargo-bins/cargo-binstall/releases/download/v${version}/cargo-binstall-aarch64-unknown-linux-musl.tgz"
+    },
+    "aarch64_macos": {
+      "url": "https://github.com/cargo-bins/cargo-binstall/releases/download/v${version}/cargo-binstall-aarch64-apple-darwin.zip"
+    },
+    "aarch64_windows": {
+      "url": "https://github.com/cargo-bins/cargo-binstall/releases/download/v${version}/cargo-binstall-aarch64-pc-windows-msvc.zip"
+    }
+  },
+  "license_markdown": "[GPL-3.0](https://github.com/cargo-bins/cargo-binstall/blob/HEAD/crates/bin/LICENSE)",
+  "latest": {
+    "version": "1.17.7"
+  },
+  "1.17.7": {
+    "x86_64_linux_musl": {
+      "etag": "0x8DE7C5AC0E4497E",
+      "hash": "29b5ecfb6e03c2511a617c77d312b06df0c54717644fbfda3d465ec8240532f0"
+    },
+    "x86_64_macos": {
+      "etag": "0x8DE7C5AC5E5BC1B",
+      "hash": "aa7174fb938e668dea4b4c3d22fe6cefed97642cc3a7a419ba96d63d63fd729b"
+    },
+    "x86_64_windows": {
+      "etag": "0x8DE7C5AC441ACDB",
+      "hash": "c5cb2444ee04480502a8ac73d96abd9f97af8300ec04ea1c1f2a9e959c02e4d6"
+    },
+    "aarch64_linux_musl": {
+      "etag": "0x8DE7C5ACC95E091",
+      "hash": "b0658b0a7f0959bc1dbb4ab665931c31c7dd1109ff01cb8772af17dfdc52a9af"
+    },
+    "aarch64_macos": {
+      "etag": "0x8DE7C5AD2545078",
+      "hash": "1ad3c0c56fa3970634cce5009ed0ce61b943515f9115f8e480fd0e41d8d89085"
+    },
+    "aarch64_windows": {
+      "etag": "0x8DE7C5AD068DA1E",
+      "hash": "e876543c9aad23968d1123c0d959309937894bbfd267bb0878109fb253217878"
+    }
+  }
+}
