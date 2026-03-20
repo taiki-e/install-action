@@ -32,7 +32,7 @@ Note: In this file, do not use the hard wrap in the middle of a sentence for com
 
 - Update `protoc@latest` to 3.34.1.
 
-- Downgrade `trivy@latest` to 0.69.3.
+- Downgrade `trivy@latest` to 0.69.3. ([#1602](https://github.com/taiki-e/install-action/pull/1602))
 
 ## [2.69.2] - 2026-03-19
 
