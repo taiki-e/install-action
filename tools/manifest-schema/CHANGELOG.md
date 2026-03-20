@@ -12,6 +12,12 @@ Note: In this file, do not use the hard wrap in the middle of a sentence for com
 
 - Rename `ManifestDownloadInfo::checksum` field to `hash` to reduce manifest size.
 
+- Make `Version`, `Manifests`, `Manifest`, `ManifestDownloadInfo`, `ManifestTemplate`, `ManifestTemplateDownloadInfo`, and `HostPlatform` `#[non_exhaustive]`.
+
+- Add `Manifest::new`, `ManifestDownloadInfo::new`, and `ManifestTemplateDownloadInfo::new`.
+
+- Implement `Default` for `ManifestTemplate`.
+
 - Remove `BaseManifest` and related types since they are unrelated to public manifests.
 
 ## [0.1.1] - 2025-09-20

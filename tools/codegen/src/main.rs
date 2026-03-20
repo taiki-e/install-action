@@ -431,23 +431,26 @@ fn main() -> Result<()> {
                 None => {}
             }
 
-            download_info.insert(platform, ManifestDownloadInfo {
-                url: Some(url),
-                etag,
-                hash,
-                bin: base_download_info.bin.as_ref().or(base_info.bin.as_ref()).map(|s| {
-                    s.map(|s| {
-                        replace_vars(
-                            s,
-                            package,
-                            Some(version),
-                            Some(platform),
-                            base_info.rust_crate.as_deref(),
-                        )
-                        .unwrap()
-                    })
-                }),
-            });
+            download_info.insert(
+                platform,
+                ManifestDownloadInfo::new(
+                    Some(url),
+                    etag,
+                    hash,
+                    base_download_info.bin.as_ref().or(base_info.bin.as_ref()).map(|s| {
+                        s.map(|s| {
+                            replace_vars(
+                                s,
+                                package,
+                                Some(version),
+                                Some(platform),
+                                base_info.rust_crate.as_deref(),
+                            )
+                            .unwrap()
+                        })
+                    }),
+                ),
+            );
             buf.clear();
         }
         if download_info.is_empty() {
@@ -503,10 +506,7 @@ fn main() -> Result<()> {
         if semver_version.pre.is_empty() {
             semver_versions.insert(semver_version.clone());
         }
-        manifests.map.insert(
-            reverse_semver,
-            ManifestRef::Real(Manifest { previous_stable_version: None, download_info }),
-        );
+        manifests.map.insert(reverse_semver, ManifestRef::Real(Manifest::new(download_info)));
 
         // update an existing manifests.json to avoid discarding work done in the event of a fetch error.
         if existing_manifest.is_some() && !version_req_given {
@@ -635,7 +635,7 @@ fn main() -> Result<()> {
     }
 
     let original_manifests = manifests.clone();
-    let mut template = Some(ManifestTemplate { download_info: BTreeMap::new() });
+    let mut template = Some(ManifestTemplate::default());
     'outer: for (version, manifest) in &mut manifests.map {
         let ManifestRef::Real(manifest) = manifest else {
             continue;
@@ -652,10 +652,10 @@ fn main() -> Result<()> {
                     break 'outer;
                 }
             } else {
-                t.download_info.insert(*platform, ManifestTemplateDownloadInfo {
-                    url: template_url,
-                    bin: template_bin,
-                });
+                t.download_info.insert(
+                    *platform,
+                    ManifestTemplateDownloadInfo::new(template_url, template_bin),
+                );
             }
         }
     }

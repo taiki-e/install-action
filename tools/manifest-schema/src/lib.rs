@@ -19,8 +19,8 @@ Structured access to the install-action manifests.
     missing_debug_implementations,
     // missing_docs,
     clippy::alloc_instead_of_core,
-    // clippy::exhaustive_enums,
-    // clippy::exhaustive_structs,
+    clippy::exhaustive_enums,
+    clippy::exhaustive_structs,
     clippy::impl_trait_in_params,
     clippy::std_instead_of_alloc,
     clippy::std_instead_of_core,
@@ -58,6 +58,7 @@ pub fn get_manifest_schema_branch_name() -> &'static str {
 }
 
 #[derive(Debug, Clone, PartialEq, Eq)]
+#[non_exhaustive]
 pub struct Version {
     pub major: Option<u64>,
     pub minor: Option<u64>,
@@ -195,6 +196,7 @@ impl<'de> Deserialize<'de> for Version {
 }
 
 #[derive(Debug, Clone, Default, Serialize, Deserialize)]
+#[non_exhaustive]
 pub struct Manifests {
     pub rust_crate: Option<String>,
     pub template: Option<ManifestTemplate>,
@@ -206,12 +208,14 @@ pub struct Manifests {
 
 #[derive(Debug, Clone, Serialize, Deserialize)]
 #[serde(untagged)]
+#[allow(clippy::exhaustive_enums)]
 pub enum ManifestRef {
     Ref { version: Version },
     Real(Manifest),
 }
 
 #[derive(Debug, Clone, Serialize, Deserialize)]
+#[non_exhaustive]
 pub struct Manifest {
     #[serde(skip_serializing_if = "Option::is_none")]
     pub previous_stable_version: Option<Version>,
@@ -219,7 +223,15 @@ pub struct Manifest {
     pub download_info: BTreeMap<HostPlatform, ManifestDownloadInfo>,
 }
 
+impl Manifest {
+    #[must_use]
+    pub fn new(download_info: BTreeMap<HostPlatform, ManifestDownloadInfo>) -> Self {
+        Self { previous_stable_version: None, download_info }
+    }
+}
+
 #[derive(Debug, Clone, Serialize, Deserialize)]
+#[non_exhaustive]
 pub struct ManifestDownloadInfo {
     #[serde(skip_serializing_if = "Option::is_none")]
     pub url: Option<String>,
@@ -230,13 +242,27 @@ pub struct ManifestDownloadInfo {
     pub bin: Option<StringOrArray>,
 }
 
-#[derive(Debug, Clone, Serialize, Deserialize)]
+impl ManifestDownloadInfo {
+    #[must_use]
+    pub fn new(
+        url: Option<String>,
+        etag: String,
+        hash: String,
+        bin: Option<StringOrArray>,
+    ) -> Self {
+        Self { url, etag, hash, bin }
+    }
+}
+
+#[derive(Debug, Clone, Default, Serialize, Deserialize)]
+#[non_exhaustive]
 pub struct ManifestTemplate {
     #[serde(flatten)]
     pub download_info: BTreeMap<HostPlatform, ManifestTemplateDownloadInfo>,
 }
 
 #[derive(Debug, Clone, Serialize, Deserialize)]
+#[non_exhaustive]
 pub struct ManifestTemplateDownloadInfo {
     pub url: String,
     /// Path to binaries in archive. Default to `${tool}${exe}`.
@@ -244,8 +270,16 @@ pub struct ManifestTemplateDownloadInfo {
     pub bin: Option<StringOrArray>,
 }
 
+impl ManifestTemplateDownloadInfo {
+    #[must_use]
+    pub fn new(url: String, bin: Option<StringOrArray>) -> Self {
+        Self { url, bin }
+    }
+}
+
 #[derive(Debug, Clone, PartialEq, Serialize, Deserialize)]
 #[serde(untagged)]
+#[allow(clippy::exhaustive_enums)]
 pub enum StringOrArray {
     String(String),
     Array(Vec<String>),
@@ -291,6 +325,7 @@ impl StringOrArray {
 // TODO: support musl with dynamic linking like wasmtime and cyclonedx's musl binaries.
 #[allow(non_camel_case_types)]
 #[derive(Debug, Clone, Copy, PartialEq, Eq, PartialOrd, Ord, Serialize, Deserialize)]
+#[non_exhaustive]
 pub enum HostPlatform {
     x86_64_linux_gnu,
     x86_64_linux_musl,
