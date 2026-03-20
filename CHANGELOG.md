@@ -10,6 +10,8 @@ Note: In this file, do not use the hard wrap in the middle of a sentence for com
 
 ## [Unreleased]
 
+## [2.69.4] - 2026-03-20
+
 - Support artifact attestations verification for `biome`, `cargo-cyclonedx`, `cargo-hack`, `cargo-llvm-cov`, `cargo-minimal-versions`, `cargo-no-dev-deps`, `martin`, `parse-changelog`, `parse-dockerfile`, `prek`, `uv`, `wasmtime`, `zizmor`, and `zola`. ([#1606](https://github.com/taiki-e/install-action/pull/1606))
 
 - Update `biome@latest` to 2.4.8.
@@ -5981,7 +5983,8 @@ Note: This release is considered a breaking change because installing on version
 
 Initial release
 
-[Unreleased]: https://github.com/taiki-e/install-action/compare/v2.69.3...HEAD
+[Unreleased]: https://github.com/taiki-e/install-action/compare/v2.69.4...HEAD
+[2.69.4]: https://github.com/taiki-e/install-action/compare/v2.69.3...v2.69.4
 [2.69.3]: https://github.com/taiki-e/install-action/compare/v2.69.2...v2.69.3
 [2.69.2]: https://github.com/taiki-e/install-action/compare/v2.69.1...v2.69.2
 [2.69.1]: https://github.com/taiki-e/install-action/compare/v2.69.0...v2.69.1
