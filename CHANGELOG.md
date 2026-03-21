@@ -10,6 +10,8 @@ Note: In this file, do not use the hard wrap in the middle of a sentence for com
 
 ## [Unreleased]
 
+- Update `cargo-nextest@latest` to 0.9.132.
+
 ## [2.69.4] - 2026-03-20
 
 - Support artifact attestations verification for `biome`, `cargo-cyclonedx`, `cargo-hack`, `cargo-llvm-cov`, `cargo-minimal-versions`, `cargo-no-dev-deps`, `martin`, `parse-changelog`, `parse-dockerfile`, `prek`, `uv`, `wasmtime`, `zizmor`, and `zola`. ([#1606](https://github.com/taiki-e/install-action/pull/1606))
