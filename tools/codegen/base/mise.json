@@ -4,6 +4,9 @@
   "rust_crate": "${package}",
   "bin": "mise/bin/${package}${exe}",
   "version_range": ">= 2025.9.7",
+  "signing": {
+    "kind": "custom"
+  },
   "platform": {
     "x86_64_linux_musl": {
       "asset_name": "${package}-v${version}-${rust_target_os}-x64-musl.tar.gz"

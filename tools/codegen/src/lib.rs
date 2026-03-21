@@ -95,6 +95,8 @@ pub enum SigningKind {
     /// public key: package.metadata.binstall.signing.pubkey at Cargo.toml
     /// <https://github.com/cargo-bins/cargo-binstall/blob/HEAD/SIGNING.md>
     MinisignBinstall,
+    /// tool-specific
+    Custom,
 }
 
 #[derive(Debug, Deserialize)]
