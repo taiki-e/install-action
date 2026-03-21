@@ -22,7 +22,7 @@ use install_action_internal_codegen::{
 };
 use spdx::expression::{ExprNode, ExpressionReq, Operator};
 
-fn main() -> Result<()> {
+fn main() {
     let args: Vec<_> = env::args().skip(1).collect();
     if args.is_empty() || args.iter().any(|arg| arg.starts_with('-')) {
         println!(
@@ -38,23 +38,26 @@ fn main() -> Result<()> {
     let workspace_root = workspace_root();
     let manifest_path = &workspace_root.join("manifests").join(format!("{package}.json"));
     let download_cache_dir = &workspace_root.join("tools/codegen/tmp/cache").join(package);
-    fs::create_dir_all(manifest_path.parent().unwrap())?;
-    fs::create_dir_all(download_cache_dir)?;
+    fs::create_dir_all(manifest_path.parent().unwrap()).unwrap();
+    fs::create_dir_all(download_cache_dir).unwrap();
 
     eprintln!("download cache: {}", download_cache_dir.display());
 
-    let mut base_info: BaseManifest = serde_json::from_slice(&fs::read(
-        workspace_root.join("tools/codegen/base").join(format!("{package}.json")),
-    )?)?;
+    let mut base_info: BaseManifest = serde_json::from_slice(
+        &fs::read(workspace_root.join("tools/codegen/base").join(format!("{package}.json")))
+            .unwrap(),
+    )
+    .unwrap();
     base_info.validate();
     let repo = base_info
         .repository
         .strip_prefix("https://github.com/")
-        .context("repository must start with https://github.com/")?;
+        .context("repository must start with https://github.com/")
+        .unwrap();
 
     eprintln!("downloading metadata from {GITHUB_API_START}repos/{repo}");
     let repo_info: github::RepoMetadata =
-        download(&format!("{GITHUB_API_START}repos/{repo}"))?.into_json()?;
+        download(&format!("{GITHUB_API_START}repos/{repo}")).unwrap().into_json().unwrap();
 
     eprintln!("downloading releases from {GITHUB_API_START}repos/{repo}/releases");
     let mut releases: github::Releases = vec![];
@@ -64,8 +67,10 @@ fn main() -> Result<()> {
         let per_page = 100;
         let mut r: github::Releases = download(&format!(
             "{GITHUB_API_START}repos/{repo}/releases?per_page={per_page}&page={page}"
-        ))?
-        .into_json()?;
+        ))
+        .unwrap()
+        .into_json()
+        .unwrap();
         // If version_req is latest, it is usually sufficient to look at the latest 100 releases.
         if r.len() < per_page || version_req.is_some_and(|req| req == "latest") {
             releases.append(&mut r);
@@ -103,15 +108,20 @@ fn main() -> Result<()> {
         .rust_crate
         .as_ref()
         .map(|s| replace_vars(s, package, None, None, base_info.rust_crate.as_deref()))
-        .transpose()?;
+        .transpose()
+        .unwrap();
     if let Some(crate_name) = &base_info.rust_crate {
         eprintln!("downloading crate info from https://crates.io/api/v1/crates/{crate_name}");
-        let info = download(&format!("https://crates.io/api/v1/crates/{crate_name}"))?
-            .into_json::<crates_io::Crate>()?;
+        let info = download(&format!("https://crates.io/api/v1/crates/{crate_name}"))
+            .unwrap()
+            .into_json::<crates_io::Crate>()
+            .unwrap();
         let latest_version = &info.versions[0].num;
         crates_io_version_detail = Some(
-            download(&format!("https://crates.io/api/v1/crates/{crate_name}/{latest_version}"))?
-                .into_json::<crates_io::VersionMetadata>()?
+            download(&format!("https://crates.io/api/v1/crates/{crate_name}/{latest_version}"))
+                .unwrap()
+                .into_json::<crates_io::VersionMetadata>()
+                .unwrap()
                 .version,
         );
 
@@ -119,7 +129,7 @@ fn main() -> Result<()> {
             if !crate_repository.to_lowercase().starts_with(&base_info.repository.to_lowercase()) {
                 panic!("repository {crate_repository} from crates.io differs from base manifest");
             }
-        } else if crate_name != "zola" {
+        } else {
             panic!("crate metadata does not include a repository");
         }
 
@@ -139,7 +149,7 @@ fn main() -> Result<()> {
 
     if manifest_path.is_file() {
         println!("loading pre-existing manifest {}", manifest_path.display());
-        match serde_json::from_slice(&fs::read(manifest_path)?) {
+        match serde_json::from_slice(&fs::read(manifest_path).unwrap()) {
             Ok(m) => {
                 manifests = m;
                 for (k, manifest) in &mut manifests.map {
@@ -165,18 +175,8 @@ fn main() -> Result<()> {
         }
     }
 
-    // Check website
-    if let Some(website) = base_info.website {
-        if website.is_empty() || website == base_info.repository {
-            panic!("Please do not put the repository in website, or set website to an empty value");
-        }
-    }
-
     // Populate license_markdown from the base manifest if present.
     if let Some(license_markdown) = base_info.license_markdown {
-        if license_markdown.is_empty() {
-            panic!("license_markdown can not be an empty value");
-        }
         manifests.license_markdown = license_markdown;
     }
 
@@ -184,7 +184,7 @@ fn main() -> Result<()> {
     if !manifests.license_markdown.is_empty() {
         let urls = get_license_markdown_urls(&manifests.license_markdown);
         if urls.is_empty() {
-            bail!("Could not find URLs in license_markdown: {}.", manifests.license_markdown);
+            panic!("Could not find URLs in license_markdown: {}.", manifests.license_markdown);
         }
         for url in urls {
             if let Err(err) = github_head(&url) {
@@ -207,7 +207,7 @@ fn main() -> Result<()> {
                 spdx_id
             }
             _ => {
-                bail!(
+                panic!(
                     "No license SPDX found in crates.io or GitHub metadata.\n\
                     Please set license_markdown in the base manifest"
                 );
@@ -218,7 +218,7 @@ fn main() -> Result<()> {
         {
             manifests.license_markdown = license_markdown;
         } else {
-            bail!(
+            panic!(
                 "Unable to verify license file(s) in the repo for license {license}.\n\
                 Please set license_markdown in the base manifest"
             );
@@ -227,13 +227,13 @@ fn main() -> Result<()> {
 
     let version_req: semver::VersionReq = match version_req {
         _ if latest_only => {
-            let req = format!("={}", releases.first_key_value().unwrap().0.0).parse()?;
+            let req = format!("={}", releases.first_key_value().unwrap().0.0).parse().unwrap();
             eprintln!("update manifest for versions '{req}'");
             req
         }
         None => match base_info.version_range {
-            Some(version_range) => version_range.parse()?,
-            None => ">= 0.0.1".parse()?, // HACK: ignore pre-releases
+            Some(version_range) => version_range.parse().unwrap(),
+            None => ">= 0.0.1".parse().unwrap(), // HACK: ignore pre-releases
         },
         Some(version_req) => {
             for version in manifests.map.keys() {
@@ -249,12 +249,12 @@ fn main() -> Result<()> {
             let req = if version_req == "latest" {
                 // TODO: this should check all missing versions
                 if manifests.map.is_empty() {
-                    format!("={}", releases.first_key_value().unwrap().0.0).parse()?
+                    format!("={}", releases.first_key_value().unwrap().0.0).parse().unwrap()
                 } else {
-                    format!(">={}", semver_versions.last().unwrap()).parse()?
+                    format!(">={}", semver_versions.last().unwrap()).parse().unwrap()
                 }
             } else {
-                version_req.parse()?
+                version_req.parse().unwrap()
             };
             eprintln!("update manifest for versions '{req}'");
             req
@@ -285,8 +285,8 @@ fn main() -> Result<()> {
         let signing_version_req: Option<semver::VersionReq> = match &base_info.signing {
             Some(signing) => {
                 match &signing.version_range {
-                    Some(version_range) => Some(version_range.parse()?),
-                    None => Some(">= 0.0.1".parse()?), // HACK: ignore pre-releases
+                    Some(version_range) => Some(version_range.parse().unwrap()),
+                    None => Some(">= 0.0.1".parse().unwrap()), // HACK: ignore pre-releases
                 }
             }
             None => {
@@ -311,7 +311,8 @@ fn main() -> Result<()> {
                 .asset_name
                 .as_ref()
                 .or(base_info.asset_name.as_ref())
-                .with_context(|| format!("asset_name is needed for {package} on {platform:?}"))?
+                .with_context(|| format!("asset_name is needed for {package} on {platform:?}"))
+                .unwrap()
                 .as_slice()
                 .iter()
                 .map(|asset_name| {
@@ -323,7 +324,8 @@ fn main() -> Result<()> {
                         base_info.rust_crate.as_deref(),
                     )
                 })
-                .collect::<Result<Vec<_>>>()?;
+                .collect::<Result<Vec<_>>>()
+                .unwrap();
             let (url, digest, asset_name) = match asset_names.iter().find_map(|asset_name| {
                 release
                     .assets
@@ -345,7 +347,7 @@ fn main() -> Result<()> {
                 "{version}-{platform:?}-{}",
                 Path::new(&url).file_name().unwrap().to_str().unwrap()
             ));
-            let response = download(&url)?;
+            let response = download(&url).unwrap();
             let etag =
                 response.header("etag").expect("binary should have an etag").replace('\"', "");
 
@@ -365,11 +367,11 @@ fn main() -> Result<()> {
 
             if download_cache.is_file() {
                 eprintln!("already downloaded");
-                fs::File::open(download_cache)?.read_to_end(&mut buf)?; // Not buffered because it is read at once.
+                fs::File::open(download_cache).unwrap().read_to_end(&mut buf).unwrap(); // Not buffered because it is read at once.
             } else {
-                response.into_reader().read_to_end(&mut buf)?;
+                response.into_reader().read_to_end(&mut buf).unwrap();
                 eprintln!("download complete");
-                fs::write(download_cache, &buf)?;
+                fs::write(download_cache, &buf).unwrap();
             }
 
             eprintln!("getting sha256 hash for {url}");
@@ -377,7 +379,7 @@ fn main() -> Result<()> {
             let hash = format!("{hash:?}").strip_prefix("SHA256:").unwrap().to_owned();
             if let Some(digest) = digest {
                 if hash != digest.strip_prefix("sha256:").unwrap() {
-                    bail!(
+                    panic!(
                         "digest mismatch between GitHub release page and actually downloaded file"
                     );
                 }
@@ -401,9 +403,15 @@ fn main() -> Result<()> {
                             signer_workflow,
                             &download_cache
                         )
-                        .run()?;
+                        .run()
+                        .unwrap();
                     }
                     SigningKind::MinisignBinstall => {
+                        let Some(crates_io_info) = &crates_io_info else {
+                            panic!(
+                                "signing kind minisign-binstall is supported only for rust crate"
+                            );
+                        };
                         let url = url.clone() + ".sig";
                         let sig_download_cache = &download_cache.with_extension(format!(
                             "{}.sig",
@@ -412,19 +420,14 @@ fn main() -> Result<()> {
                         eprint!("downloading {url} for signature validation ... ");
                         let sig = if sig_download_cache.is_file() {
                             eprintln!("already downloaded");
-                            minisign_verify::Signature::from_file(sig_download_cache)?
+                            minisign_verify::Signature::from_file(sig_download_cache).unwrap()
                         } else {
-                            let buf = download(&url)?.into_string()?;
+                            let buf = download(&url).unwrap().into_string().unwrap();
                             eprintln!("download complete");
-                            fs::write(sig_download_cache, &buf)?;
-                            minisign_verify::Signature::decode(&buf)?
+                            fs::write(sig_download_cache, &buf).unwrap();
+                            minisign_verify::Signature::decode(&buf).unwrap()
                         };
 
-                        let Some(crates_io_info) = &crates_io_info else {
-                            bail!(
-                                "signing kind minisign-binstall is supported only for rust crate"
-                            );
-                        };
                         let v = crates_io_info
                             .versions
                             .iter()
@@ -437,18 +440,18 @@ fn main() -> Result<()> {
                         if crate_download_cache.is_file() {
                             eprintln!("already downloaded");
                         } else {
-                            download(&url)?.into_reader().read_to_end(&mut buf2)?;
+                            download(&url).unwrap().into_reader().read_to_end(&mut buf2).unwrap();
                             let hash = ring::digest::digest(&ring::digest::SHA256, &buf2);
                             if format!("{hash:?}").strip_prefix("SHA256:").unwrap() != v.checksum {
-                                bail!("checksum mismatch for {url}");
+                                panic!("checksum mismatch for {url}");
                             }
                             let decoder = flate2::read::GzDecoder::new(&*buf2);
                             let mut archive = tar::Archive::new(decoder);
-                            for entry in archive.entries()? {
-                                let mut entry = entry?;
-                                let path = entry.path()?;
+                            for entry in archive.entries().unwrap() {
+                                let mut entry = entry.unwrap();
+                                let path = entry.path().unwrap();
                                 if path.file_name() == Some(OsStr::new("Cargo.toml")) {
-                                    entry.unpack(crate_download_cache)?;
+                                    entry.unpack(crate_download_cache).unwrap();
                                     break;
                                 }
                             }
@@ -457,8 +460,9 @@ fn main() -> Result<()> {
                         }
                         if pubkey.is_none() {
                             let cargo_manifest = toml::de::from_str::<cargo_manifest::Manifest>(
-                                &fs::read_to_string(crate_download_cache)?,
-                            )?;
+                                &fs::read_to_string(crate_download_cache).unwrap(),
+                            )
+                            .unwrap();
                             eprintln!(
                                 "algorithm: {}",
                                 cargo_manifest.package.metadata.binstall.signing.algorithm
@@ -471,14 +475,17 @@ fn main() -> Result<()> {
                                 cargo_manifest.package.metadata.binstall.signing.algorithm,
                                 "minisign"
                             );
-                            pubkey = Some(minisign_verify::PublicKey::from_base64(
-                                &cargo_manifest.package.metadata.binstall.signing.pubkey,
-                            )?);
+                            pubkey = Some(
+                                minisign_verify::PublicKey::from_base64(
+                                    &cargo_manifest.package.metadata.binstall.signing.pubkey,
+                                )
+                                .unwrap(),
+                            );
                         }
                         let pubkey = pubkey.as_ref().unwrap();
                         eprint!("verifying signature for {bin_url} ... ");
                         let allow_legacy = false;
-                        pubkey.verify(&buf, &sig, allow_legacy)?;
+                        pubkey.verify(&buf, &sig, allow_legacy).unwrap();
                         eprintln!("done");
                     }
                 }
@@ -563,7 +570,7 @@ fn main() -> Result<()> {
 
         // update an existing manifests.json to avoid discarding work done in the event of a fetch error.
         if existing_manifest.is_some() && !version_req_given {
-            write_manifests(manifest_path, &manifests.clone())?;
+            write_manifests(manifest_path, &manifests.clone()).unwrap();
             eprintln!("wrote {} with incomplete data", manifest_path.display());
         }
     }
@@ -636,7 +643,7 @@ fn main() -> Result<()> {
             .values()
             .any(|m| matches!(m, ManifestRef::Real(m) if m.download_info.contains_key(&p)))
         {
-            bail!(
+            panic!(
                 "platform list in base manifest for {package} contains {p:?}, \
                  but result manifest doesn't contain it; \
                  consider removing {p:?} from platform list in base manifest"
@@ -680,7 +687,7 @@ fn main() -> Result<()> {
             // until 2027-08, people aren't paying much attention to it at this time.
             continue;
         }
-        bail!(
+        panic!(
             "platform list in base manifest for {package} contains {p:?}, \
              but latest release ({latest_version}) doesn't contain it; \
              consider marking {latest_version} as broken by adding 'broken' field to base manifest"
@@ -720,10 +727,8 @@ fn main() -> Result<()> {
 
     manifests.rust_crate = base_info.rust_crate;
 
-    write_manifests(manifest_path, &manifests)?;
+    write_manifests(manifest_path, &manifests).unwrap();
     eprintln!("wrote {}", manifest_path.display());
-
-    Ok(())
 }
 
 fn write_manifests(manifest_path: &Path, manifests: &Manifests) -> Result<()> {

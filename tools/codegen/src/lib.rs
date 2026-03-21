@@ -61,6 +61,18 @@ impl BaseManifest {
         if self.platform.is_empty() {
             panic!("At least one platform must be specified");
         }
+        if let Some(website) = &self.website {
+            if website.is_empty() || *website == self.repository {
+                panic!(
+                    "Please do not put the repository in website, or set website to an empty value"
+                );
+            }
+        }
+        if let Some(license_markdown) = &self.license_markdown {
+            if license_markdown.is_empty() {
+                panic!("license_markdown can not be an empty value");
+            }
+        }
     }
 }
 

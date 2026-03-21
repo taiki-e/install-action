@@ -6,7 +6,6 @@ use std::{
     path::PathBuf,
 };
 
-use anyhow::Result;
 use fs_err as fs;
 use install_action_internal_codegen::{BaseManifest, Manifests, workspace_root};
 
@@ -32,7 +31,7 @@ const FOOTER: &str = "
 [cargo-binstall]: https://github.com/cargo-bins/cargo-binstall
 ";
 
-fn main() -> Result<()> {
+fn main() {
     let args: Vec<_> = env::args().skip(1).collect();
     if !args.is_empty() || args.iter().any(|arg| arg.starts_with('-')) {
         println!(
@@ -72,9 +71,10 @@ fn main() -> Result<()> {
         name.set_extension("");
         let name = name.to_string_lossy().to_string();
         let base_info: BaseManifest =
-            serde_json::from_slice(&fs::read(base_info_dir.join(file_name.clone()))?)?;
+            serde_json::from_slice(&fs::read(base_info_dir.join(file_name.clone())).unwrap())
+                .unwrap();
         let manifests: Manifests =
-            serde_json::from_slice(&fs::read(manifest_dir.join(file_name))?)?;
+            serde_json::from_slice(&fs::read(manifest_dir.join(file_name)).unwrap()).unwrap();
 
         let website = match base_info.website {
             Some(website) => website,
@@ -135,9 +135,7 @@ fn main() -> Result<()> {
     }
 
     file.write_all(FOOTER.as_bytes()).expect("Unable to write footer");
-    file.flush()?;
-
-    Ok(())
+    file.flush().unwrap();
 }
 
 #[derive(Debug)]
