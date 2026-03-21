@@ -10,6 +10,12 @@ Note: In this file, do not use the hard wrap in the middle of a sentence for com
 
 ## [Unreleased]
 
+- Support signature verification for `mise` and `syft`. ([#1611](https://github.com/taiki-e/install-action/pull/1611))
+
+- Update `mise@latest` to 2026.3.10.
+
+- Update `knope@latest` to 0.22.4.
+
 - Update `cargo-binstall@latest` to 1.17.8.
 
 - Update `tombi@latest` to 0.9.9.

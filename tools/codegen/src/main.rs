@@ -9,7 +9,7 @@ use std::{
     env,
     ffi::OsStr,
     io::Read as _,
-    path::Path,
+    path::{Path, PathBuf},
     sync::{LazyLock, RwLock},
     time::Duration,
 };
@@ -20,6 +20,7 @@ use install_action_internal_codegen::{
     BaseManifest, HostPlatform, Manifest, ManifestDownloadInfo, ManifestRef, ManifestTemplate,
     ManifestTemplateDownloadInfo, Manifests, SigningKind, Version, workspace_root,
 };
+use serde::de::DeserializeOwned;
 use spdx::expression::{ExprNode, ExpressionReq, Operator};
 
 fn main() {
@@ -30,7 +31,7 @@ fn main() {
         );
         std::process::exit(1);
     }
-    let package = &args[0];
+    let package = &*args[0];
     let version_req = args.get(1);
     let version_req_given = version_req.is_some();
     let skip_existing_manifest_versions = std::env::var("SKIP_EXISTING_MANIFEST_VERSIONS").is_ok();
@@ -56,8 +57,7 @@ fn main() {
         .unwrap();
 
     eprintln!("downloading metadata from {GITHUB_API_START}repos/{repo}");
-    let repo_info: github::RepoMetadata =
-        download(&format!("{GITHUB_API_START}repos/{repo}")).unwrap().into_json().unwrap();
+    let repo_info: github::RepoMetadata = download_json(&format!("{GITHUB_API_START}repos/{repo}"));
 
     eprintln!("downloading releases from {GITHUB_API_START}repos/{repo}/releases");
     let mut releases: github::Releases = vec![];
@@ -65,12 +65,9 @@ fn main() {
     // is greater than 100, multiple fetches are needed.
     for page in 1.. {
         let per_page = 100;
-        let mut r: github::Releases = download(&format!(
+        let mut r: github::Releases = download_json(&format!(
             "{GITHUB_API_START}repos/{repo}/releases?per_page={per_page}&page={page}"
-        ))
-        .unwrap()
-        .into_json()
-        .unwrap();
+        ));
         // If version_req is latest, it is usually sufficient to look at the latest 100 releases.
         if r.len() < per_page || version_req.is_some_and(|req| req == "latest") {
             releases.append(&mut r);
@@ -112,17 +109,14 @@ fn main() {
         .unwrap();
     if let Some(crate_name) = &base_info.rust_crate {
         eprintln!("downloading crate info from https://crates.io/api/v1/crates/{crate_name}");
-        let info = download(&format!("https://crates.io/api/v1/crates/{crate_name}"))
-            .unwrap()
-            .into_json::<crates_io::Crate>()
-            .unwrap();
+        let info: crates_io::Crate =
+            download_json(&format!("https://crates.io/api/v1/crates/{crate_name}"));
         let latest_version = &info.versions[0].num;
         crates_io_version_detail = Some(
-            download(&format!("https://crates.io/api/v1/crates/{crate_name}/{latest_version}"))
-                .unwrap()
-                .into_json::<crates_io::VersionMetadata>()
-                .unwrap()
-                .version,
+            download_json::<crates_io::VersionMetadata>(&format!(
+                "https://crates.io/api/v1/crates/{crate_name}/{latest_version}"
+            ))
+            .version,
         );
 
         if let Some(crate_repository) = info.crate_.repository.clone() {
@@ -261,6 +255,14 @@ fn main() {
         }
     };
 
+    let signing_version_req: Option<semver::VersionReq> =
+        base_info.signing.as_ref().map(|signing| {
+            match &signing.version_range {
+                Some(version_range) => version_range.parse().unwrap(),
+                None => ">= 0.0.1".parse().unwrap(), // HACK: ignore pre-releases
+            }
+        });
+
     let mut buf = vec![];
     let mut buf2 = vec![];
     for (Reverse(semver_version), (version, release)) in &releases {
@@ -282,11 +284,154 @@ fn main() {
             continue;
         }
 
-        let signing_version_req: Option<semver::VersionReq> = match &base_info.signing {
+        let mut verified_checksum: Option<Vec<_>> = None;
+        match &base_info.signing {
             Some(signing) => {
-                match &signing.version_range {
-                    Some(version_range) => Some(version_range.parse().unwrap()),
-                    None => Some(">= 0.0.1".parse().unwrap()), // HACK: ignore pre-releases
+                if let SigningKind::Custom = signing.kind {
+                    match package {
+                        _ if !signing_version_req.as_ref().unwrap().matches(semver_version) => {}
+                        "mise" => {
+                            // Refs: https://github.com/jdx/mise/blob/v2026.3.9/src/minisign.rs
+                            let crates_io_info = crates_io_info.as_ref().unwrap();
+                            let [checksum, sig] =
+                                ["SHASUMS256.txt", "SHASUMS256.txt.minisig"].map(|f| {
+                                    let Some(asset) =
+                                        release.assets.iter().find(|asset| asset.name == f)
+                                    else {
+                                        // There is broken release which has no release assets: https://github.com/jdx/mise/releases/tag/v2026.2.14
+                                        return PathBuf::new();
+                                    };
+                                    let download_cache =
+                                        download_cache_dir.join(format!("{version}-{f}"));
+                                    let url = &asset.browser_download_url;
+                                    eprint!("downloading {url} for signature verification ... ");
+                                    if download_cache.is_file() {
+                                        eprintln!("already downloaded");
+                                    } else {
+                                        download_to_buf(url, &mut buf);
+                                        eprintln!("download complete");
+                                        fs::write(&download_cache, &buf).unwrap();
+                                        buf.clear();
+                                    }
+                                    download_cache
+                                });
+                            if checksum.as_os_str().is_empty() || sig.as_os_str().is_empty() {
+                                continue;
+                            }
+
+                            let v = crates_io_info
+                                .versions
+                                .iter()
+                                .find(|v| v.num == *semver_version)
+                                .unwrap();
+                            let url = format!("https://crates.io{}", v.dl_path);
+                            let pubkey_download_cache =
+                                &download_cache_dir.join(format!("{version}-minisign.pub"));
+                            eprint!("downloading {url} for signature verification ... ");
+                            if pubkey_download_cache.is_file() {
+                                eprintln!("already downloaded");
+                            } else {
+                                download_to_buf(&url, &mut buf);
+                                let hash = ring::digest::digest(&ring::digest::SHA256, &buf);
+                                if format!("{hash:?}").strip_prefix("SHA256:").unwrap()
+                                    != v.checksum
+                                {
+                                    panic!("checksum mismatch for {url}");
+                                }
+                                let decoder = flate2::read::GzDecoder::new(&*buf);
+                                let mut archive = tar::Archive::new(decoder);
+                                for entry in archive.entries().unwrap() {
+                                    let mut entry = entry.unwrap();
+                                    let path = entry.path().unwrap();
+                                    if path.file_name() == Some(OsStr::new("minisign.pub")) {
+                                        entry.unpack(pubkey_download_cache).unwrap();
+                                        break;
+                                    }
+                                }
+                                buf.clear();
+                                eprintln!("download complete");
+                            }
+                            let pubkey =
+                                minisign_verify::PublicKey::from_file(pubkey_download_cache)
+                                    .unwrap();
+                            eprint!("verifying checksum file for {package}@{version} ... ");
+                            let allow_legacy = false;
+                            pubkey
+                                .verify(
+                                    &fs::read(&checksum).unwrap(),
+                                    &minisign_verify::Signature::from_file(sig).unwrap(),
+                                    allow_legacy,
+                                )
+                                .unwrap();
+                            verified_checksum = Some(
+                                fs::read_to_string(checksum)
+                                    .unwrap()
+                                    .lines()
+                                    .filter_map(|l| l.split_once("  "))
+                                    .map(|(h, f)| {
+                                        (f.trim_ascii().to_owned(), h.trim_ascii().to_owned())
+                                    })
+                                    .collect(),
+                            );
+                            eprintln!("done");
+                        }
+                        "syft" => {
+                            // Refs: https://oss.anchore.com/docs/installation/verification/
+                            let [checksum, certificate, signature] =
+                                ["checksums.txt", "checksums.txt.pem", "checksums.txt.sig"].map(
+                                    |f| {
+                                        let asset = release
+                                            .assets
+                                            .iter()
+                                            .find(|asset| asset.name.ends_with(f))
+                                            .unwrap();
+                                        let download_cache =
+                                            download_cache_dir.join(format!("{version}-{f}"));
+                                        let url = &asset.browser_download_url;
+                                        eprint!(
+                                            "downloading {url} for signature verification ... "
+                                        );
+                                        if download_cache.is_file() {
+                                            eprintln!("already downloaded");
+                                        } else {
+                                            download_to_buf(url, &mut buf);
+                                            eprintln!("download complete");
+                                            fs::write(&download_cache, &buf).unwrap();
+                                            buf.clear();
+                                        }
+                                        download_cache
+                                    },
+                                );
+                            eprint!("verifying checksum file for {package}@{version} ... ");
+                            cmd!(
+                                "cosign",
+                                "verify-blob",
+                                &checksum,
+                                "--certificate",
+                                certificate,
+                                "--signature",
+                                signature,
+                                "--certificate-identity-regexp",
+                                format!("https://github\\.com/{repo}/\\.github/workflows/.+"),
+                                "--certificate-oidc-issuer",
+                                "https://token.actions.githubusercontent.com"
+                            )
+                            .run()
+                            .unwrap();
+                            verified_checksum = Some(
+                                fs::read_to_string(checksum)
+                                    .unwrap()
+                                    .lines()
+                                    .filter_map(|l| l.split_once("  "))
+                                    .map(|(h, f)| {
+                                        (f.trim_ascii().to_owned(), h.trim_ascii().to_owned())
+                                    })
+                                    .collect(),
+                            );
+                            eprintln!("done");
+                        }
+                        _ => {}
+                    }
                 }
             }
             None => {
@@ -294,18 +439,22 @@ fn main() {
                     asset.name.contains(".asc")
                         || asset.name.contains(".gpg")
                         || asset.name.contains(".sig")
+                        || asset.name.contains(".minisig")
+                        || asset.name.contains(".pem")
+                        || asset.name.contains(".crt")
+                        || asset.name.contains(".key")
+                        || asset.name.contains(".pub")
                 }) {
                     eprintln!(
-                        "{package} may supports other signing verification method using {}",
+                        "{package} may supports other signature verification method using {}",
                         asset.name
                     );
                 }
-                None
             }
-        };
+        }
 
         let mut download_info = BTreeMap::new();
-        let mut pubkey = None;
+        let mut minisign_binstall_pubkey = None;
         for (&platform, base_download_info) in &base_info.platform {
             let asset_names = base_download_info
                 .asset_name
@@ -440,7 +589,7 @@ fn main() {
                         if crate_download_cache.is_file() {
                             eprintln!("already downloaded");
                         } else {
-                            download(&url).unwrap().into_reader().read_to_end(&mut buf2).unwrap();
+                            download_to_buf(&url, &mut buf2);
                             let hash = ring::digest::digest(&ring::digest::SHA256, &buf2);
                             if format!("{hash:?}").strip_prefix("SHA256:").unwrap() != v.checksum {
                                 panic!("checksum mismatch for {url}");
@@ -458,7 +607,7 @@ fn main() {
                             buf2.clear();
                             eprintln!("download complete");
                         }
-                        if pubkey.is_none() {
+                        if minisign_binstall_pubkey.is_none() {
                             let cargo_manifest = toml::de::from_str::<cargo_manifest::Manifest>(
                                 &fs::read_to_string(crate_download_cache).unwrap(),
                             )
@@ -475,18 +624,41 @@ fn main() {
                                 cargo_manifest.package.metadata.binstall.signing.algorithm,
                                 "minisign"
                             );
-                            pubkey = Some(
+                            minisign_binstall_pubkey = Some(
                                 minisign_verify::PublicKey::from_base64(
                                     &cargo_manifest.package.metadata.binstall.signing.pubkey,
                                 )
                                 .unwrap(),
                             );
                         }
-                        let pubkey = pubkey.as_ref().unwrap();
+                        let pubkey = minisign_binstall_pubkey.as_ref().unwrap();
                         eprint!("verifying signature for {bin_url} ... ");
                         let allow_legacy = false;
                         pubkey.verify(&buf, &sig, allow_legacy).unwrap();
                         eprintln!("done");
+                    }
+                    SigningKind::Custom => {
+                        if let Some(verified_checksum) = &verified_checksum {
+                            let asset_name_cwd = format!("./{asset_name}");
+                            let mut checked = false;
+                            for (f, h) in verified_checksum {
+                                if *f == asset_name || *f == asset_name_cwd {
+                                    checked = true;
+                                    assert_eq!(
+                                        hash, *h,
+                                        "verified checksum doesn't match with sha256 hash of {asset_name} in {package}@{version}"
+                                    );
+                                }
+                            }
+                            assert!(
+                                checked,
+                                "{asset_name} not found in verified checksum for {package}@{version}"
+                            );
+                        } else {
+                            unimplemented!(
+                                "unimplemented tool-specific signing handling for {package}"
+                            );
+                        }
                     }
                 }
             }
@@ -861,6 +1033,16 @@ fn download(url: &str) -> Result<ureq::Response> {
         std::thread::sleep(Duration::from_secs(retry_time * 2));
     }
     Err(last_error.unwrap().into())
+}
+
+#[track_caller]
+fn download_to_buf(url: &str, buf: &mut Vec<u8>) {
+    download(url).unwrap().into_reader().read_to_end(buf).unwrap();
+}
+
+#[track_caller]
+fn download_json<T: DeserializeOwned>(url: &str) -> T {
+    download(url).unwrap().into_json().unwrap()
 }
 
 fn github_head(url: &str) -> Result<()> {

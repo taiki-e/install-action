@@ -3,6 +3,10 @@
   "tag_prefix": "v",
   "bin": "${package}${exe}",
   "version_range": ">= 0.83.0",
+  "signing": {
+    "version_range": ">= 0.104.0",
+    "kind": "custom"
+  },
   "platform": {
     "x86_64_linux_musl": {
       "asset_name": "${package}_${version}_linux_amd64.tar.gz"
