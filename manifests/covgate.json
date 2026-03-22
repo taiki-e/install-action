@@ -1,0 +1,46 @@
+{
+  "rust_crate": "covgate",
+  "template": {
+    "x86_64_linux_musl": {
+      "url": "https://github.com/jesse-black/covgate/releases/download/v${version}/covgate-v${version}-x86_64-unknown-linux-musl.tar.gz",
+      "bin": "covgate-v${version}-x86_64-unknown-linux-musl/covgate"
+    },
+    "x86_64_windows": {
+      "url": "https://github.com/jesse-black/covgate/releases/download/v${version}/covgate-v${version}-x86_64-pc-windows-msvc.zip",
+      "bin": "covgate-v${version}-x86_64-pc-windows-msvc/covgate.exe"
+    },
+    "aarch64_linux_musl": {
+      "url": "https://github.com/jesse-black/covgate/releases/download/v${version}/covgate-v${version}-aarch64-unknown-linux-musl.tar.gz",
+      "bin": "covgate-v${version}-aarch64-unknown-linux-musl/covgate"
+    },
+    "aarch64_macos": {
+      "url": "https://github.com/jesse-black/covgate/releases/download/v${version}/covgate-v${version}-aarch64-apple-darwin.tar.gz",
+      "bin": "covgate-v${version}-aarch64-apple-darwin/covgate"
+    }
+  },
+  "license_markdown": "[Apache-2.0](https://github.com/jesse-black/covgate/blob/main/LICENSE)",
+  "latest": {
+    "version": "0.1.0"
+  },
+  "0.1": {
+    "version": "0.1.0"
+  },
+  "0.1.0": {
+    "x86_64_linux_musl": {
+      "etag": "0x8DE86A9F48F07CA",
+      "hash": "28ac6cb68e44e56b6590463668199c51deba709ae0b647c69837c98a85629a70"
+    },
+    "x86_64_windows": {
+      "etag": "0x8DE86A9F48AC6D3",
+      "hash": "20f9f86605ddf27ac7dd1e57bcd3ea61be16febb1b621b12295f9003d657a473"
+    },
+    "aarch64_linux_musl": {
+      "etag": "0x8DE86A9F48EE0E6",
+      "hash": "85fe8bad3b6fef936b4ed247b103b58ceadfd92e6f7cbc79ade41290fd7eb018"
+    },
+    "aarch64_macos": {
+      "etag": "0x8DE86A9F48B6265",
+      "hash": "56363d4ec10d1bb8174cc4a5d2b9589cde4fc487aeb72333c84944d7e8063f78"
+    }
+  }
+}
