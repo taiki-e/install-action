@@ -10,6 +10,8 @@ Note: In this file, do not use the hard wrap in the middle of a sentence for com
 
 ## [Unreleased]
 
+- Update `cargo-valgrind@latest` to 2.4.1.
+
 ## [2.69.6] - 2026-03-21
 
 - Support signature verification for `mise` and `syft`. ([#1611](https://github.com/taiki-e/install-action/pull/1611))
