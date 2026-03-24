@@ -446,7 +446,7 @@ fn main() {
                         || asset.name.contains(".pub")
                 }) {
                     eprintln!(
-                        "{package} may supports other signature verification method using {}",
+                        "{package} may support other signature verification methods using {}",
                         asset.name
                     );
                 }
