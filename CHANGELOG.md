@@ -10,6 +10,8 @@ Note: In this file, do not use the hard wrap in the middle of a sentence for com
 
 ## [Unreleased]
 
+- Update `uv@latest` to 0.11.1.
+
 - Update `osv-scanner@latest` to 2.3.5.
 
 - Update `mise@latest` to 2026.3.14.
