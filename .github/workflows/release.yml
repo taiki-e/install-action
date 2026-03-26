@@ -4,18 +4,208 @@ permissions:
   contents: read
 
 on:
-  push:
-    tags:
-      - v[0-9]+.[0-9]+.*
-      - install-action-manifest-schema-[0-9]+.[0-9]+.*
+  workflow_dispatch:
+    inputs:
+      target:
+        description: Package to be released
+        required: true
+        type: choice
+        options:
+          - install-action
+          - install-action-manifest-schema
+      version:
+        description: Version to be increased
+        required: true
+        type: choice
+        options:
+          - patch
+          - minor
+          - major
 
 defaults:
   run:
     shell: bash --noprofile --norc -CeEuxo pipefail {0}
 
 jobs:
-  create-release:
-    if: github.repository_owner == 'taiki-e' && !startsWith(github.ref_name, 'install-action-manifest-schema-')
+  prepare:
+    if: github.repository_owner == 'taiki-e' && inputs.target == 'install-action'
+    runs-on: ubuntu-latest
+    timeout-minutes: 60
+    steps:
+      - uses: taiki-e/checkout-action@v1
+      - uses: taiki-e/install-action@v2
+        with:
+          tool: parse-changelog
+          fallback: none
+      - id: check
+        run: |
+          IFS=$'\n\t'
+          trap -- 's=$?; printf >&2 "%s\n" "${0##*/}:${LINENO}: \`${BASH_COMMAND}\` exit with ${s}"; exit ${s}' ERR
+          retry() {
+            for i in {1..10}; do
+              if "$@"; then
+                return 0
+              else
+                sleep "${i}"
+              fi
+            done
+            "$@"
+          }
+          bail() {
+            printf '::error::%s\n' "$*"
+            exit 1
+          }
+          normalize_comma_or_space_separated() {
+            # Normalize whitespace characters into space because it's hard to handle single input contains lines with POSIX sed alone.
+            local list="${1//[$'\r\n\t']/ }"
+            if [[ "${list}" == *","* ]]; then
+              # If a comma is contained, consider it is a comma-separated list.
+              # Drop leading and trailing whitespaces in each element.
+              sed -E 's/ *, */,/g; s/^.//' <<<",${list},"
+            else
+              # Otherwise, consider it is a whitespace-separated list.
+              # Convert whitespace characters into comma.
+              sed -E 's/ +/,/g; s/^.//' <<<" ${list} "
+            fi
+          }
+          if { sed --help 2>&1 || true; } | grep -Eq -e '-i extension'; then
+            in_place=(-i '')
+          else
+            in_place=(-i)
+          fi
+
+          # shellcheck disable=SC2153
+          version="${VERSION}"
+          printf '%s\n' "version(input): ${version}"
+          # shellcheck disable=SC2153
+          tag_prefix="${TAG_PREFIX}"
+          printf '%s\n' "tag_prefix: ${tag_prefix}"
+          # shellcheck disable=SC2153
+          changelog="${CHANGELOG}"
+          printf '%s\n' "changelog: ${changelog}"
+
+          # Get the current date.
+          release_date=$(date -u '+%Y-%m-%d')
+          printf '%s\n' "release-date: ${release_date}"
+          printf '%s\n' "release-date=${release_date}" >>"${GITHUB_OUTPUT}"
+
+          # Get the current revision.
+          retry git fetch origin &>/dev/null
+          rev=$(git rev-parse HEAD)
+          printf '%s\n' "rev: ${rev}"
+          printf '%s\n' "rev=${rev}" >>"${GITHUB_OUTPUT}"
+
+          prev_version=$(parse-changelog --title-no-link "${changelog}" | cut -d' ' -f1)
+
+          # Determine the new version number and tag name.
+          case "${version}" in
+            major | minor | patch)
+              if [[ ! "${prev_version}" =~ ^[0-9]+\.[0-9]+\.[0-9]+$ ]]; then
+                bail "pre-release/build-metadata"
+              fi
+              major="${prev_version%%.*}"
+              minor_patch="${prev_version#*.}"
+              minor="${minor_patch%%.*}"
+              patch="${minor_patch#*.}"
+              case "${version}" in
+                major) version="$((major+1)).0.0" ;;
+                minor) version="${major}.$((minor+1)).0" ;;
+                patch) version="${major}.${minor}.$((patch+1))" ;;
+              esac
+              ;;
+            *) version="${version#v}" ;;
+          esac
+          if [[ ! "${version}" =~ ^[0-9]+\.[0-9]+\.[0-9]+(-[0-9A-Za-z\.-]+)?(\+[0-9A-Za-z\.-]+)?$ ]]; then
+            bail "invalid version format '${version}'"
+          fi
+          printf '%s\n' "version: ${version}"
+          printf '%s\n' "version=${version}" >>"${GITHUB_OUTPUT}"
+          tag="${tag_prefix}${version}"
+          printf '%s\n' "tag: ${tag}"
+          printf '%s\n' "tag=${tag}" >>"${GITHUB_OUTPUT}"
+
+          # Make sure the same release has not been created in the past.
+          if gh release view "${tag}" &>/dev/null; then
+            bail "tag '${tag}' has already been created and pushed"
+          fi
+          # Make sure that the release was created from an allowed branch.
+          if ! git branch | grep -Eq '\* '"${BRANCH}"'$'; then
+            bail "current branch is not '${BRANCH}'"
+          fi
+
+          changed_paths=()
+          retry git fetch origin --tags &>/dev/null
+          tags=$(git --no-pager tag | { grep -E "^${tag_prefix}[0-9]+" || true; })
+          if [[ -n "${tags}" ]]; then
+            printf 'has-tags=true\n' >>"${GITHUB_OUTPUT}"
+            # Make sure the same release does not exist in changelog.
+            if grep -Eq "^## \\[${version//./\\.}\\]" "${changelog}"; then
+              bail "release ${version} already exist in ${changelog}"
+            fi
+            if grep -Eq "^\\[${version//./\\.}\\]: " "${changelog}"; then
+              bail "link to ${version} already exist in ${changelog}"
+            fi
+
+            # Update changelog.
+            changed_paths+=("${changelog}")
+            remote_url=$(grep -E '^\[Unreleased\]: https://' "${changelog}" | sed -E 's/^\[Unreleased\]: //; s/\.\.\.HEAD$//')
+            prev_tag="${remote_url#*/compare/}"
+            remote_url="${remote_url%/compare/*}"
+            sed -E "${in_place[@]}" \
+              -e "s/^## \\[Unreleased\\]/## [Unreleased]\\n\\n## [${version}] - ${release_date}/" \
+              -e "s#^\[Unreleased\]: https://.*#[Unreleased]: ${remote_url}/compare/${tag}...HEAD\\n[${version}]: ${remote_url}/compare/${prev_tag}...${tag}#" "${changelog}"
+            if ! grep -Eq "^## \\[${version//./\\.}\\] - ${release_date}$" "${changelog}"; then
+              bail "failed to update ${changelog}"
+            fi
+            if ! grep -Eq "^\\[${version//./\\.}\\]: " "${changelog}"; then
+              bail "failed to update ${changelog}"
+            fi
+          else
+            # Make sure the release exists in changelog.
+            if ! grep -Eq "^## \\[${version//./\\.}\\] - ${release_date}$" "${changelog}"; then
+              bail "release ${version} does not exist in ${changelog} or has wrong release date"
+            fi
+            if ! grep -Eq "^\\[${version//./\\.}\\]: " "${changelog}"; then
+              bail "link to ${version} does not exist in ${changelog}"
+            fi
+          fi
+          # Make sure that a valid release note for this version exists.
+          # https://github.com/taiki-e/parse-changelog
+          changes=$(parse-changelog "${changelog}" "${version}")
+          if [[ -z "${changes}" ]]; then
+            bail "changelog for ${version} has no body"
+          fi
+          printf '============== CHANGELOG ==============\n'
+          printf '%s\n' "${changes}"
+          printf '=======================================\n'
+
+          if [[ -n "${tags}" ]]; then
+            git -c color.ui=always diff "${changed_paths[@]}"
+            git add "${changed_paths[@]}"
+          fi
+          # Make sure that there is no unintended change.
+          git add -N .
+          git -c color.ui=always diff --exit-code
+
+          (
+            set -x
+            git show HEAD --shortstat
+          )
+        env:
+          VERSION: ${{ inputs.version }}
+          TAG_PREFIX: v
+          CHANGELOG: CHANGELOG.md
+          BRANCH: main
+    outputs:
+      has-tags: ${{ steps.check.outputs.has-tags }}
+      release-date: ${{ steps.check.outputs.release-date }}
+      rev: ${{ steps.check.outputs.rev }}
+      tag: ${{ steps.check.outputs.tag }}
+      version: ${{ steps.check.outputs.version }}
+
+  release:
+    if: github.repository_owner == 'taiki-e' && inputs.target == 'install-action'
+    needs: prepare
     runs-on: ubuntu-latest
     timeout-minutes: 60
     environment:
@@ -25,24 +215,235 @@ jobs:
       contents: write # for taiki-e/create-gh-release-action
     steps:
       - uses: taiki-e/checkout-action@v1
+      - uses: taiki-e/install-action@v2
+        with:
+          tool: parse-changelog
+          fallback: none
+      - name: Create and push release commit and tag
+        id: push
+        run: |
+          IFS=$'\n\t'
+          trap -- 's=$?; printf >&2 "%s\n" "${0##*/}:${LINENO}: \`${BASH_COMMAND}\` exit with ${s}"; exit ${s}' ERR
+          retry() {
+            for i in {1..10}; do
+              if "$@"; then
+                return 0
+              else
+                sleep "${i}"
+              fi
+            done
+            "$@"
+          }
+          bail() {
+            printf '::error::%s\n' "$*"
+            exit 1
+          }
+          if { sed --help 2>&1 || true; } | grep -Eq -e '-i extension'; then
+            in_place=(-i '')
+          else
+            in_place=(-i)
+          fi
+
+          git config user.name 'Taiki Endo'
+          git config user.email 'te316e89@gmail.com'
+
+          # shellcheck disable=SC2153
+          version="${VERSION}"
+          # shellcheck disable=SC2153
+          tag="${TAG}"
+          # shellcheck disable=SC2153
+          changelog="${CHANGELOG}"
+          # shellcheck disable=SC2153
+          release_date="${RELEASE_DATE}"
+
+          # Make sure the current revision is same as prepare step.
+          retry git fetch origin &>/dev/null
+          rev=$(git rev-parse HEAD)
+          if [[ "${rev}" != "${PREPARE_REV}" ]]; then
+            bail "revision difference between prepare step"
+          fi
+
+          # Make sure the same release has not been created in the past.
+          if gh release view "${tag}" &>/dev/null; then
+            bail "tag '${tag}' has already been created and pushed"
+          fi
+          # Make sure that the release was created from an allowed branch.
+          if ! git branch | grep -Eq '\* '"${BRANCH}"'$'; then
+            bail "current branch is not '${BRANCH}'"
+          fi
+
+          changed_paths=()
+          if [[ "${HAS_TAGS}" == "true" ]]; then
+            # Update changelog.
+            changed_paths+=("${changelog}")
+            remote_url=$(grep -E '^\[Unreleased\]: https://' "${changelog}" | sed -E 's/^\[Unreleased\]: //; s/\.\.\.HEAD$//')
+            prev_tag="${remote_url#*/compare/}"
+            remote_url="${remote_url%/compare/*}"
+            sed -E "${in_place[@]}" \
+              -e "s/^## \\[Unreleased\\]/## [Unreleased]\\n\\n## [${version}] - ${release_date}/" \
+              -e "s#^\[Unreleased\]: https://.*#[Unreleased]: ${remote_url}/compare/${tag}...HEAD\\n[${version}]: ${remote_url}/compare/${prev_tag}...${tag}#" "${changelog}"
+            if ! grep -Eq "^## \\[${version//./\\.}\\] - ${release_date}$" "${changelog}"; then
+              bail "failed to update ${changelog}"
+            fi
+            if ! grep -Eq "^\\[${version//./\\.}\\]: " "${changelog}"; then
+              bail "failed to update ${changelog}"
+            fi
+          fi
+          changes=$(parse-changelog "${changelog}" "${version}")
+          printf '============== CHANGELOG ==============\n'
+          printf '%s\n' "${changes}"
+          printf '=======================================\n'
+
+          if [[ "${HAS_TAGS}" == "true" ]]; then
+            # Create a release commit.
+            (
+              set -x
+              git add "${changed_paths[@]}"
+              git commit -m "Release ${version}"
+            )
+          fi
+
+          prev_credential_helper=$(git config get --global credential.helper || true)
+          if [[ -n "${prev_credential_helper}" ]]; then
+            printf 'credential helper is already set (%s)\n' "${prev_credential_helper}"
+          else
+            (
+              set -x
+              git config --global credential.helper store
+            )
+            protocol="${GITHUB_SERVER_URL%%://*}"
+            hostname="${GITHUB_SERVER_URL#*://}"
+            printf '%s\n' "${protocol}://${GITHUB_ACTOR}:${PUSH_TOKEN}@${hostname}" >~/.git-credentials
+            # Remove credential helper config on exit.
+            trap -- '(set -x; rm -f -- ~/.git-credentials; git config --global --unset credential.helper || true)' EXIT
+          fi
+
+          (
+            set -x
+            git tag "${tag}"
+            retry git push origin HEAD
+            retry git push origin refs/tags/"${tag}"
+
+            major_version_tag="v${version%%.*}"
+            git branch "releases/${major_version_tag}"
+            git tag -f "${major_version_tag}"
+            refs=("refs/heads/releases/${major_version_tag}" "+refs/tags/${major_version_tag}")
+
+            if [[ "${INSTALL_ACTION}" == 'true' ]]; then
+              tools=()
+              for tool in tools/codegen/base/*.json; do
+                tool="${tool##*/}"
+                tools+=("${tool%.*}")
+              done
+              # Aliases.
+              # NB: Update case for aliases in main.sh, tool input option in test-alias job
+              # in .github/workflows/ci.yml, and match for alias for tools/codegen/src/tools-markdown.rs.
+              tools+=(
+                nextest
+                taplo-cli
+                typos-cli
+                wasm-bindgen-cli
+                wasmtime-cli
+              )
+              # Non-manifest-based tools.
+              tools+=(valgrind)
+
+              branches=()
+              for tool in "${tools[@]}"; do
+                git checkout -b "releases/${tool}"
+                sed -E "${in_place[@]}" action.yml \
+                  -e "s/required: true/required: false/g" \
+                  -e "s/# default: #publish:tool/default: ${tool}/g"
+                git add action.yml
+                git commit -m "${tool}"
+                git tag -f "${tool}"
+                git checkout main
+                refs+=("+refs/heads/releases/${tool}" "+refs/tags/${tool}")
+                branches+=("releases/${tool}")
+              done
+            fi
+
+            retry git push origin --atomic "${refs[@]}"
+            git branch -d "releases/${major_version_tag}"
+
+            if [[ "${INSTALL_ACTION}" == 'true' ]]; then
+              git branch -D "${branches[@]}"
+
+              schema_workspace=/tmp/workspace
+              rm -rf -- "${schema_workspace}"
+              # Checkout manifest-schema branch
+              schema_version="$(cargo metadata --format-version=1 --no-deps | jq -r '.packages[] | select(.name == "install-action-manifest-schema") | .version')"
+              if [[ "${schema_version}" == "0."* ]]; then
+                schema_version="0.$(cut -d. -f2 <<<"${schema_version}")"
+              else
+                schema_version="$(cut -d. -f1 <<<"${schema_version}")"
+              fi
+              schema_branch="manifest-schema-${schema_version}"
+
+              git worktree add --force "${schema_workspace}"
+              (
+                cd -- "${schema_workspace}"
+                if git fetch origin "${schema_branch}"; then
+                  git checkout "origin/${schema_branch}" -B "${schema_branch}"
+                elif ! git checkout "${schema_branch}"; then
+                  # New branch with no history. Credit: https://stackoverflow.com/a/13969482
+                  git checkout --orphan "${schema_branch}"
+                  git rm -rf -- . || true
+                  git commit -m 'Initial commit' --allow-empty
+                fi
+              )
+
+              # Copy over schema
+              cp -- ./manifests/* "${schema_workspace}"
+
+              (
+                cd -- "${schema_workspace}"
+                # Stage changes
+                git add .
+                # Detect changes, then commit and push if changes exist
+                if [[ "$(git status --porcelain=v1 | LC_ALL=C wc -l)" != "0" ]]; then
+                  git commit -m 'Update manifest schema'
+                  retry git push origin HEAD
+                fi
+              )
+
+              rm -rf -- "${schema_workspace}"
+              git worktree prune
+              # TODO: get branch in schema_workspace dir instead
+              git branch -D "${schema_branch}" "${schema_workspace##*/}"
+
+            fi
+          )
+        env:
+          VERSION: ${{ needs.prepare.outputs.version }}
+          RELEASE_DATE: ${{ needs.prepare.outputs.release-date }}
+          HAS_TAGS: ${{ needs.prepare.outputs.has-tags }}
+          TAG: ${{ needs.prepare.outputs.tag }}
+          CHANGELOG: CHANGELOG.md
+          BRANCH: main
+          PREPARE_REV: ${{ needs.prepare.outputs.rev }}
+          # Note that if we use secrets.GITHUB_TOKEN, the pushed commit/tag cannot trigger other workflows.
+          PUSH_TOKEN: ${{ secrets.PUSH_TOKEN }}
       - uses: taiki-e/create-gh-release-action@v1
         with:
           changelog: CHANGELOG.md
           title: $version
-          branch: 'main|v[0-9]+'
+          branch: main
           token: ${{ secrets.GITHUB_TOKEN }}
+          ref: refs/tags/${{ needs.prepare.outputs.tag }}
 
-  create-release-manifest-schema:
-    if: github.repository_owner == 'taiki-e' && startsWith(github.ref_name, 'install-action-manifest-schema-')
-    # TODO: use new rust-release workflow
-    uses: taiki-e/github-actions/.github/workflows/create-release.yml@853cebf868aa2dce1470668df24176803e05adc8
-    with:
-      crates: tools/manifest-schema
-      changelog: tools/manifest-schema/CHANGELOG.md
-      title: $prefix $version
-      prefix: install-action-manifest-schema
+  release-manifest-schema:
+    if: github.repository_owner == 'taiki-e' && inputs.target == 'install-action-manifest-schema'
+    uses: taiki-e/github-actions/.github/workflows/rust-release.yml@main
     permissions:
       contents: write # for taiki-e/create-gh-release-action
       id-token: write # for rust-lang/crates-io-auth-action
       attestations: write # unused (used when options for uploading binaries are set)
     secrets: inherit
+    with:
+      version: ${{ inputs.version }}
+      tag-prefix: install-action-manifest-schema-
+      crates: tools/manifest-schema
+      changelog: tools/manifest-schema/CHANGELOG.md
+      title: $prefix $version
+      prefix: install-action-manifest-schema
