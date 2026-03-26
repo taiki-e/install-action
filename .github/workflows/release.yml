@@ -39,6 +39,7 @@ jobs:
           fallback: none
       - id: check
         run: |
+          set +x
           IFS=$'\n\t'
           trap -- 's=$?; printf >&2 "%s\n" "${0##*/}:${LINENO}: \`${BASH_COMMAND}\` exit with ${s}"; exit ${s}' ERR
           retry() {
@@ -222,6 +223,7 @@ jobs:
       - name: Create and push release commit and tag
         id: push
         run: |
+          set +x
           IFS=$'\n\t'
           trap -- 's=$?; printf >&2 "%s\n" "${0##*/}:${LINENO}: \`${BASH_COMMAND}\` exit with ${s}"; exit ${s}' ERR
           retry() {
@@ -329,90 +331,84 @@ jobs:
             git tag -f "${major_version_tag}"
             refs=("refs/heads/releases/${major_version_tag}" "+refs/tags/${major_version_tag}")
 
-            if [[ "${INSTALL_ACTION}" == 'true' ]]; then
-              tools=()
-              for tool in tools/codegen/base/*.json; do
-                tool="${tool##*/}"
-                tools+=("${tool%.*}")
-              done
-              # Aliases.
-              # NB: Update case for aliases in main.sh, tool input option in test-alias job
-              # in .github/workflows/ci.yml, and match for alias for tools/codegen/src/tools-markdown.rs.
-              tools+=(
-                nextest
-                taplo-cli
-                typos-cli
-                wasm-bindgen-cli
-                wasmtime-cli
-              )
-              # Non-manifest-based tools.
-              tools+=(valgrind)
+            tools=()
+            for tool in tools/codegen/base/*.json; do
+              tool="${tool##*/}"
+              tools+=("${tool%.*}")
+            done
+            # Aliases.
+            # NB: Update case for aliases in main.sh, tool input option in test-alias job
+            # in .github/workflows/ci.yml, and match for alias for tools/codegen/src/tools-markdown.rs.
+            tools+=(
+              nextest
+              taplo-cli
+              typos-cli
+              wasm-bindgen-cli
+              wasmtime-cli
+            )
+            # Non-manifest-based tools.
+            tools+=(valgrind)
 
-              branches=()
-              for tool in "${tools[@]}"; do
-                git checkout -b "releases/${tool}"
-                sed -E "${in_place[@]}" action.yml \
-                  -e "s/required: true/required: false/g" \
-                  -e "s/# default: #publish:tool/default: ${tool}/g"
-                git add action.yml
-                git commit -m "${tool}"
-                git tag -f "${tool}"
-                git checkout main
-                refs+=("+refs/heads/releases/${tool}" "+refs/tags/${tool}")
-                branches+=("releases/${tool}")
-              done
-            fi
+            branches=()
+            for tool in "${tools[@]}"; do
+              git checkout -b "releases/${tool}"
+              sed -E "${in_place[@]}" action.yml \
+                -e "s/required: true/required: false/g" \
+                -e "s/# default: #publish:tool/default: ${tool}/g"
+              git add action.yml
+              git commit -m "${tool}"
+              git tag -f "${tool}"
+              git checkout main
+              refs+=("+refs/heads/releases/${tool}" "+refs/tags/${tool}")
+              branches+=("releases/${tool}")
+            done
 
             retry git push origin --atomic "${refs[@]}"
             git branch -d "releases/${major_version_tag}"
+            git branch -D "${branches[@]}"
 
-            if [[ "${INSTALL_ACTION}" == 'true' ]]; then
-              git branch -D "${branches[@]}"
-
-              schema_workspace=/tmp/workspace
-              rm -rf -- "${schema_workspace}"
-              # Checkout manifest-schema branch
-              schema_version="$(cargo metadata --format-version=1 --no-deps | jq -r '.packages[] | select(.name == "install-action-manifest-schema") | .version')"
-              if [[ "${schema_version}" == "0."* ]]; then
-                schema_version="0.$(cut -d. -f2 <<<"${schema_version}")"
-              else
-                schema_version="$(cut -d. -f1 <<<"${schema_version}")"
-              fi
-              schema_branch="manifest-schema-${schema_version}"
-
-              git worktree add --force "${schema_workspace}"
-              (
-                cd -- "${schema_workspace}"
-                if git fetch origin "${schema_branch}"; then
-                  git checkout "origin/${schema_branch}" -B "${schema_branch}"
-                elif ! git checkout "${schema_branch}"; then
-                  # New branch with no history. Credit: https://stackoverflow.com/a/13969482
-                  git checkout --orphan "${schema_branch}"
-                  git rm -rf -- . || true
-                  git commit -m 'Initial commit' --allow-empty
-                fi
-              )
-
-              # Copy over schema
-              cp -- ./manifests/* "${schema_workspace}"
-
-              (
-                cd -- "${schema_workspace}"
-                # Stage changes
-                git add .
-                # Detect changes, then commit and push if changes exist
-                if [[ "$(git status --porcelain=v1 | LC_ALL=C wc -l)" != "0" ]]; then
-                  git commit -m 'Update manifest schema'
-                  retry git push origin HEAD
-                fi
-              )
-
-              rm -rf -- "${schema_workspace}"
-              git worktree prune
-              # TODO: get branch in schema_workspace dir instead
-              git branch -D "${schema_branch}" "${schema_workspace##*/}"
-
+            schema_workspace=/tmp/workspace
+            rm -rf -- "${schema_workspace}"
+            # Checkout manifest-schema branch
+            schema_version="$(cargo metadata --format-version=1 --no-deps | jq -r '.packages[] | select(.name == "install-action-manifest-schema") | .version')"
+            if [[ "${schema_version}" == "0."* ]]; then
+              schema_version="0.$(cut -d. -f2 <<<"${schema_version}")"
+            else
+              schema_version="$(cut -d. -f1 <<<"${schema_version}")"
             fi
+            schema_branch="manifest-schema-${schema_version}"
+
+            git worktree add --force "${schema_workspace}"
+            (
+              cd -- "${schema_workspace}"
+              if git fetch origin "${schema_branch}"; then
+                git checkout "origin/${schema_branch}" -B "${schema_branch}"
+              elif ! git checkout "${schema_branch}"; then
+                # New branch with no history. Credit: https://stackoverflow.com/a/13969482
+                git checkout --orphan "${schema_branch}"
+                git rm -rf -- . || true
+                git commit -m 'Initial commit' --allow-empty
+              fi
+            )
+
+            # Copy over schema
+            cp -- ./manifests/* "${schema_workspace}"
+
+            (
+              cd -- "${schema_workspace}"
+              # Stage changes
+              git add .
+              # Detect changes, then commit and push if changes exist
+              if [[ "$(git status --porcelain=v1 | LC_ALL=C wc -l)" != "0" ]]; then
+                git commit -m 'Update manifest schema'
+                retry git push origin HEAD
+              fi
+            )
+
+            rm -rf -- "${schema_workspace}"
+            git worktree prune
+            # TODO: get branch in schema_workspace dir instead
+            git branch -D "${schema_branch}" "${schema_workspace##*/}"
           )
         env:
           VERSION: ${{ needs.prepare.outputs.version }}
