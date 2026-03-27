@@ -155,7 +155,7 @@ jobs:
       - run: env
       - uses: ./
         with:
-          # NB: Update alias list in tools/publish.rs, case for aliases in main.sh,
+          # NB: Update alias list in release.yml, case for aliases in main.sh,
           # and match for alias for tools/codegen/src/tools-markdown.rs.
           tool: |
             nextest

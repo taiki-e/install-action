@@ -92,6 +92,7 @@ jobs:
 
           # Get the current revision.
           retry git fetch origin &>/dev/null
+          git log --decorate --oneline | head -5
           rev=$(git rev-parse HEAD)
           printf '%s\n' "rev: ${rev}"
           printf '%s\n' "rev=${rev}" >>"${GITHUB_OUTPUT}"
@@ -136,6 +137,7 @@ jobs:
 
           changed_paths=()
           retry git fetch origin --tags &>/dev/null
+          git log --decorate --oneline | head -5
           tags=$(git --no-pager tag | { grep -E "^${tag_prefix}[0-9]+" || true; })
           if [[ -n "${tags}" ]]; then
             printf 'has-tags=true\n' >>"${GITHUB_OUTPUT}"
@@ -191,6 +193,27 @@ jobs:
           (
             set -x
             git show HEAD --shortstat
+          )
+
+          git config user.name 'Taiki Endo'
+          git config user.email 'te316e89@gmail.com'
+
+          if [[ -n "${tags}" ]]; then
+            # Create a release commit.
+            (
+              set -x
+              git add "${changed_paths[@]}"
+              git commit -m "Release ${version}"
+            )
+          fi
+
+          (
+            set -x
+            git tag "${tag}"
+            major_version_tag="v${version%%.*}"
+            git branch "releases/${major_version_tag}"
+            git tag -f "${major_version_tag}"
+            git log --decorate --oneline | head -5
           )
         env:
           VERSION: ${{ inputs.version }}
@@ -324,12 +347,12 @@ jobs:
             set -x
             git tag "${tag}"
             retry git push origin HEAD
-            retry git push origin refs/tags/"${tag}"
 
             major_version_tag="v${version%%.*}"
             git branch "releases/${major_version_tag}"
             git tag -f "${major_version_tag}"
-            refs=("refs/heads/releases/${major_version_tag}" "+refs/tags/${major_version_tag}")
+            git log --decorate --oneline | head -5
+            refs=("refs/tags/${tag}" "refs/heads/releases/${major_version_tag}" "+refs/tags/${major_version_tag}")
 
             tools=()
             for tool in tools/codegen/base/*.json; do
@@ -358,7 +381,7 @@ jobs:
               git add action.yml
               git commit -m "${tool}"
               git tag -f "${tool}"
-              git checkout main
+              git checkout refs/tags/"${tag}"
               refs+=("+refs/heads/releases/${tool}" "+refs/tags/${tool}")
               branches+=("releases/${tool}")
             done
