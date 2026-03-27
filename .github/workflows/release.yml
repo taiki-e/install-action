@@ -91,7 +91,6 @@ jobs:
           printf '%s\n' "release-date=${release_date}" >>"${GITHUB_OUTPUT}"
 
           # Get the current revision.
-          retry git fetch origin &>/dev/null
           rev=$(git rev-parse HEAD)
           printf '%s\n' "rev: ${rev}"
           printf '%s\n' "rev=${rev}" >>"${GITHUB_OUTPUT}"
@@ -259,7 +258,7 @@ jobs:
           release_date="${RELEASE_DATE}"
 
           # Make sure the current revision is same as prepare step.
-          retry git fetch origin &>/dev/null
+          retry git fetch origin --unshallow &>/dev/null
           rev=$(git rev-parse HEAD)
           if [[ "${rev}" != "${PREPARE_REV}" ]]; then
             bail "revision difference between prepare step"
@@ -324,12 +323,11 @@ jobs:
             set -x
             git tag "${tag}"
             retry git push origin HEAD
-            retry git push origin refs/tags/"${tag}"
 
             major_version_tag="v${version%%.*}"
             git branch "releases/${major_version_tag}"
             git tag -f "${major_version_tag}"
-            refs=("refs/heads/releases/${major_version_tag}" "+refs/tags/${major_version_tag}")
+            refs=("refs/tags/${tag}" "refs/heads/releases/${major_version_tag}" "+refs/tags/${major_version_tag}")
 
             tools=()
             for tool in tools/codegen/base/*.json; do
@@ -358,7 +356,7 @@ jobs:
               git add action.yml
               git commit -m "${tool}"
               git tag -f "${tool}"
-              git checkout main
+              git checkout refs/tags/"${tag}"
               refs+=("+refs/heads/releases/${tool}" "+refs/tags/${tool}")
               branches+=("releases/${tool}")
             done
