@@ -10,6 +10,8 @@ Note: In this file, do not use the hard wrap in the middle of a sentence for com
 
 ## [Unreleased]
 
+## [2.70.0] - 2026-03-28
+
 - Install `uv`, `uvw` (Windows-only), and `uvx` binaries when installing `uv`. Previously, only `uv` binary was installed. ([#1632](https://github.com/taiki-e/install-action/pull/1632))
 
 ## [2.69.14] - 2026-03-28
@@ -6055,7 +6057,8 @@ Note: This release is considered a breaking change because installing on version
 
 Initial release
 
-[Unreleased]: https://github.com/taiki-e/install-action/compare/v2.69.14...HEAD
+[Unreleased]: https://github.com/taiki-e/install-action/compare/v2.70.0...HEAD
+[2.70.0]: https://github.com/taiki-e/install-action/compare/v2.69.14...v2.70.0
 [2.69.14]: https://github.com/taiki-e/install-action/compare/v2.69.13...v2.69.14
 [2.69.13]: https://github.com/taiki-e/install-action/compare/v2.69.12...v2.69.13
 [2.69.12]: https://github.com/taiki-e/install-action/compare/v2.69.11...v2.69.12
