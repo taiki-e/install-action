@@ -1,41 +1,70 @@
 {
-  "rust_crate": null,
+  "rust_crate": "uv",
   "template": {
     "x86_64_linux_musl": {
       "url": "https://github.com/astral-sh/uv/releases/download/${version}/uv-x86_64-unknown-linux-musl.tar.gz",
-      "bin": "uv-x86_64-unknown-linux-musl/uv"
+      "bin": [
+        "uv-x86_64-unknown-linux-musl/uv",
+        "uv-x86_64-unknown-linux-musl/uvx"
+      ]
     },
     "x86_64_macos": {
       "url": "https://github.com/astral-sh/uv/releases/download/${version}/uv-x86_64-apple-darwin.tar.gz",
-      "bin": "uv-x86_64-apple-darwin/uv"
+      "bin": [
+        "uv-x86_64-apple-darwin/uv",
+        "uv-x86_64-apple-darwin/uvx"
+      ]
     },
     "x86_64_windows": {
       "url": "https://github.com/astral-sh/uv/releases/download/${version}/uv-x86_64-pc-windows-msvc.zip",
-      "bin": "uv.exe"
+      "bin": [
+        "uv.exe",
+        "uvw.exe",
+        "uvx.exe"
+      ]
     },
     "aarch64_linux_musl": {
       "url": "https://github.com/astral-sh/uv/releases/download/${version}/uv-aarch64-unknown-linux-musl.tar.gz",
-      "bin": "uv-aarch64-unknown-linux-musl/uv"
+      "bin": [
+        "uv-aarch64-unknown-linux-musl/uv",
+        "uv-aarch64-unknown-linux-musl/uvx"
+      ]
     },
     "aarch64_macos": {
       "url": "https://github.com/astral-sh/uv/releases/download/${version}/uv-aarch64-apple-darwin.tar.gz",
-      "bin": "uv-aarch64-apple-darwin/uv"
+      "bin": [
+        "uv-aarch64-apple-darwin/uv",
+        "uv-aarch64-apple-darwin/uvx"
+      ]
     },
     "aarch64_windows": {
       "url": "https://github.com/astral-sh/uv/releases/download/${version}/uv-aarch64-pc-windows-msvc.zip",
-      "bin": "uv.exe"
+      "bin": [
+        "uv.exe",
+        "uvw.exe",
+        "uvx.exe"
+      ]
     },
     "powerpc64le_linux_gnu": {
       "url": "https://github.com/astral-sh/uv/releases/download/${version}/uv-powerpc64le-unknown-linux-gnu.tar.gz",
-      "bin": "uv-powerpc64le-unknown-linux-gnu/uv"
+      "bin": [
+        "uv-powerpc64le-unknown-linux-gnu/uv",
+        "uv-powerpc64le-unknown-linux-gnu/uvx"
+      ]
     },
     "riscv64_linux_gnu": {
       "url": "https://github.com/astral-sh/uv/releases/download/${version}/uv-riscv64gc-unknown-linux-gnu.tar.gz",
-      "bin": "uv-riscv64gc-unknown-linux-gnu/uv"
+      "bin": [
+        "uv-riscv64gc-unknown-linux-gnu/uv",
+        "uv-riscv64gc-unknown-linux-gnu/uvx"
+      ]
     },
     "s390x_linux_gnu": {
       "url": "https://github.com/astral-sh/uv/releases/download/${version}/uv-s390x-unknown-linux-gnu.tar.gz",
-      "bin": "uv-s390x-unknown-linux-gnu/uv"
+      "bin": [
+        "uv-s390x-unknown-linux-gnu/uv",
+        "uv-s390x-unknown-linux-gnu/uvx"
+      ]
     }
   },
   "license_markdown": "[Apache-2.0](https://github.com/astral-sh/uv/blob/main/LICENSE-APACHE) OR [MIT](https://github.com/astral-sh/uv/blob/main/LICENSE-MIT)",

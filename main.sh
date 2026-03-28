@@ -179,7 +179,7 @@ download_and_extract() {
     else
       case "${url}" in
         *.zip)
-          unzip -q tmp "${bin_in_archive#\./}"
+          unzip -q tmp
           for tmp in "${bin_in_archive[@]}"; do
             case "${tool}" in
               editorconfig-checker) mv -- "${tmp}" "${bin_dir}/${tool}${exe}" ;;
