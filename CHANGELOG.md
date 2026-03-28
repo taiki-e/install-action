@@ -10,6 +10,8 @@ Note: In this file, do not use the hard wrap in the middle of a sentence for com
 
 ## [Unreleased]
 
+- Install `uv`, `uvw` (Windows-only), and `uvx` binaries when installing `uv`. Previously, only `uv` binary was installed. ([#1632](https://github.com/taiki-e/install-action/pull/1632))
+
 ## [2.69.14] - 2026-03-28
 
 - Update `just@latest` to 1.48.1.
