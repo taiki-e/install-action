@@ -258,6 +258,8 @@ jobs:
           release_date="${RELEASE_DATE}"
 
           # Make sure the current revision is same as prepare step.
+          # --unshallow is necessary to successfully push the
+          # "releases/${major_version_tag}" branch in the subsequent step.
           retry git fetch origin --unshallow &>/dev/null
           rev=$(git rev-parse HEAD)
           if [[ "${rev}" != "${PREPARE_REV}" ]]; then
