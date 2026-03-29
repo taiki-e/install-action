@@ -37,7 +37,8 @@ jobs:
     permissions:
       contents: write # for creating branch for pr
       pull-requests: write # for gh pr review --approve
-    secrets: inherit
+    secrets:
+      PR_TOKEN_APP_PRIVATE_KEY: ${{ secrets.PR_TOKEN_APP_PRIVATE_KEY }}
     with:
       script: tools/manifest.sh
       commit-script: tools/ci/manifest.sh

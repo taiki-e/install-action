@@ -51,7 +51,8 @@ jobs:
       contents: write # for creating branch for pr
       pull-requests: write # unused (used in `codegen-automerge: true` case)
       security-events: write # for github/codeql-action/*
-    secrets: inherit
+    secrets:
+      PR_TOKEN_APP_PRIVATE_KEY: ${{ secrets.PR_TOKEN_APP_PRIVATE_KEY }}
 
   test:
     strategy:
@@ -99,7 +100,11 @@ jobs:
       - run: rm -- Cargo.toml
       - name: Generate tool list
         id: tool-list
-        run: tools/ci/tool-list.sh "${{ matrix.tool }}" "${{ matrix.os }}" "${{ matrix.bash }}" >>"${GITHUB_OUTPUT}"
+        run: tools/ci/tool-list.sh "${TOOL}" "${OS}" "${BASH}" >>"${GITHUB_OUTPUT}"
+        env:
+          TOOL: ${{ matrix.tool }}
+          OS: ${{ matrix.os }}
+          BASH: ${{ matrix.bash }}
       - run: |
           printf '%s\n' 'C:\msys64\mingw32\bin' >>"${GITHUB_PATH}"
           printf '%s\n' 'C:\msys64\usr\bin' >>"${GITHUB_PATH}"
@@ -264,7 +269,7 @@ jobs:
           sed -i /etc/yum.repos.d/*.repo -e 's!^mirrorlist!#mirrorlist!' \
             -e 's!^#baseurl=http://mirror.centos.org/!baseurl=https://vault.centos.org/!'
           sed -i 's/enabled=1/enabled=0/' /etc/yum/pluginconf.d/fastestmirror.conf
-          if [[ "${{ matrix.container }}" == "centos:6" ]]; then
+          if [[ "${CONTAINER}" == "centos:6" ]]; then
             # CentOS 6's curl (7.19.7) has no curl has no --proto/--tlsv1.2.
             yum install -y gcc openssl-devel
             curl -fsSL --retry 10 https://curl.se/download/curl-7.34.0.tar.gz | tar xzf -
@@ -278,13 +283,17 @@ jobs:
               https://vault.ius.io/el6/x86_64/packages/p/perl-Git18-1.8.5.5-4.ius.el6.noarch.rpm \
               https://vault.ius.io/el6/x86_64/packages/g/git18-1.8.5.5-4.ius.el6.x86_64.rpm
           fi
+        env:
+          CONTAINER: ${{ matrix.container }}
         if: startsWith(matrix.container, 'centos')
       - uses: taiki-e/checkout-action@v1
       # cross attempts to install rust-src when Cargo.toml is available even if `cross --version`
       - run: rm -- Cargo.toml
       - name: Generate tool list
         id: tool-list
-        run: tools/ci/tool-list.sh "" "${{ matrix.container }}" >>"${GITHUB_OUTPUT}"
+        run: tools/ci/tool-list.sh "" "${CONTAINER}" >>"${GITHUB_OUTPUT}"
+        env:
+          CONTAINER: ${{ matrix.container }}
       # remove bash installed by checkout-action
       - run: apk --no-cache del bash
         shell: sh

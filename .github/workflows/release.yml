@@ -26,6 +26,10 @@ defaults:
   run:
     shell: bash --noprofile --norc -CeEuxo pipefail {0}
 
+concurrency:
+  group: ${{ github.workflow }}
+  cancel-in-progress: false
+
 jobs:
   prepare:
     if: github.repository_owner == 'taiki-e' && inputs.target == 'install-action'
@@ -435,7 +439,8 @@ jobs:
       contents: write # for taiki-e/create-gh-release-action
       id-token: write # for rust-lang/crates-io-auth-action
       attestations: write # unused (used when options for uploading binaries are set)
-    secrets: inherit
+    secrets:
+      PUSH_TOKEN: ${{ secrets.PUSH_TOKEN }}
     with:
       version: ${{ inputs.version }}
       tag-prefix: install-action-manifest-schema-
