@@ -3,13 +3,51 @@
   "template": null,
   "license_markdown": "[Apache-2.0](https://github.com/biomejs/biome/blob/main/LICENSE-APACHE) OR [MIT](https://github.com/biomejs/biome/blob/main/LICENSE-MIT)",
   "latest": {
-    "version": "2.4.9"
+    "version": "2.4.10"
   },
   "2": {
-    "version": "2.4.9"
+    "version": "2.4.10"
   },
   "2.4": {
-    "version": "2.4.9"
+    "version": "2.4.10"
+  },
+  "2.4.10": {
+    "x86_64_linux_musl": {
+      "url": "https://github.com/biomejs/biome/releases/download/%40biomejs/biome%402.4.10/biome-linux-x64-musl",
+      "etag": "0x8DE8E7705F6C243",
+      "hash": "897a1eb7be2bcc6dfa596f4c786014f82fd60615c7a2726241eb0bafc228f82c",
+      "bin": "biome"
+    },
+    "x86_64_macos": {
+      "url": "https://github.com/biomejs/biome/releases/download/%40biomejs/biome%402.4.10/biome-darwin-x64",
+      "etag": "0x8DE8E7705A3CF6D",
+      "hash": "8269b5ef30bbc1fcf0cff5695bdc3733d417744ae638df70e7dabc3b82590fca",
+      "bin": "biome"
+    },
+    "x86_64_windows": {
+      "url": "https://github.com/biomejs/biome/releases/download/%40biomejs/biome%402.4.10/biome-win32-x64.exe",
+      "etag": "0x8DE8E77063F8765",
+      "hash": "a2bdc915914114c09a6f38ea092af2e450953bf3ace76bc143f2ab4d5a17b238",
+      "bin": "biome.exe"
+    },
+    "aarch64_linux_musl": {
+      "url": "https://github.com/biomejs/biome/releases/download/%40biomejs/biome%402.4.10/biome-linux-arm64-musl",
+      "etag": "0x8DE8E7705851F43",
+      "hash": "dfabcbc165bd077464244fe2f73eceb7148219566a3ad94ddf7510e663675045",
+      "bin": "biome"
+    },
+    "aarch64_macos": {
+      "url": "https://github.com/biomejs/biome/releases/download/%40biomejs/biome%402.4.10/biome-darwin-arm64",
+      "etag": "0x8DE8E7705839A5F",
+      "hash": "c6782336dff872beec7d34e1b801c533bd296b5dcf2a30d3cf6335bca975e984",
+      "bin": "biome"
+    },
+    "aarch64_windows": {
+      "url": "https://github.com/biomejs/biome/releases/download/%40biomejs/biome%402.4.10/biome-win32-arm64.exe",
+      "etag": "0x8DE8E77061B8612",
+      "hash": "4285a020237cdb93e6c42cf8af12b3bb2614ecccaeec283dc89f4e092577a3b7",
+      "bin": "biome.exe"
+    }
   },
   "2.4.9": {
     "x86_64_linux_musl": {
