@@ -10,6 +10,8 @@ Note: In this file, do not use the hard wrap in the middle of a sentence for com
 
 ## [Unreleased]
 
+- Update `cargo-insta@latest` to 1.47.2.
+
 - Update `tombi@latest` to 0.9.12.
 
 - Update `biome@latest` to 2.4.10.
