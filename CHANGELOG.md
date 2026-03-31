@@ -10,6 +10,8 @@ Note: In this file, do not use the hard wrap in the middle of a sentence for com
 
 ## [Unreleased]
 
+- Update `mise@latest` to 2026.3.18.
+
 ## [2.70.3] - 2026-03-31
 
 - Update `wasm-bindgen@latest` to 0.2.116.
