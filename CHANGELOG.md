@@ -10,6 +10,8 @@ Note: In this file, do not use the hard wrap in the middle of a sentence for com
 
 ## [Unreleased]
 
+- Update `wasm-bindgen@latest` to 0.2.116.
+
 - Update `cargo-insta@latest` to 1.47.2.
 
 - Update `tombi@latest` to 0.9.12.
