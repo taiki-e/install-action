@@ -100,6 +100,12 @@ See the [development guide](DEVELOPMENT.md) for how to add support for new tool.
 
 ## Security
 
+The `@v<major>` and `@<tool_name>` tags are updated with each release. To enhance workflow stability and security against supply chain attacks, use the `@v<major>.<minor>.<patch>` tag or their hash to pin the version. Since all releases are immutable, pinning the version in either way should have the same effect.
+
+When installing the tool from GitHub Releases, the tool version that install-action installs with `tool: <tool_name>@latest` or `tool: <tool_name>@<omitted_version>` is associated with the install-action version, so pinning install-action version with the above ways also pins the version of the tool being installed. This also means that if a [dependency cooldown](https://blog.yossarian.net/2025/11/21/We-should-all-be-using-dependency-cooldowns) applies to the action itself, a cooldown of the same duration or a few days longer will apply to the tools installed by that action.
+
+### Security on tool installation
+
 When installing the tool from GitHub Releases, this action will download the tool or its installer from GitHub Releases using HTTPS with tlsv1.2+. This is basically considered to be the same level of security as [the recommended installation of rustup](https://www.rust-lang.org/tools/install).
 
 Additionally, this action will also verify SHA256 checksums for downloaded files in all tools installed from GitHub Releases. This is enabled by default and can be disabled by setting the `checksum` input option to `false`.
