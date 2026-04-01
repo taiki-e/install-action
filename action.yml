@@ -45,8 +45,25 @@ runs:
     - run: bash --noprofile --norc "${GITHUB_ACTION_PATH:?}/main.sh"
       shell: bash
       env:
+        # NB: Sync with non-Windows case.
         INPUT_TOOL: ${{ inputs.tool }}
         INPUT_CHECKSUM: ${{ inputs.checksum }}
         INPUT_FALLBACK: ${{ inputs.fallback }}
         DEFAULT_GITHUB_TOKEN: ${{ github.token }}
         ACTION_USER_AGENT: ${{ github.action_repository }} (${{ github.action_ref }})
+      if: runner.os != 'Windows'
+    # Workaround for https://github.com/actions/partner-runner-images/issues/169
+    # TODO: Is it necessary to retry for main.sh call? Or is this sufficient? https://github.com/taiki-e/install-action/pull/1647
+    - run: |
+        Set-StrictMode -Version Latest
+        $action_path = $env:GITHUB_ACTION_PATH
+        & bash --noprofile --norc "${action_path}/main.sh"
+      shell: powershell
+      env:
+        # NB: Sync with non-Windows case.
+        INPUT_TOOL: ${{ inputs.tool }}
+        INPUT_CHECKSUM: ${{ inputs.checksum }}
+        INPUT_FALLBACK: ${{ inputs.fallback }}
+        DEFAULT_GITHUB_TOKEN: ${{ github.token }}
+        ACTION_USER_AGENT: ${{ github.action_repository }} (${{ github.action_ref }})
+      if: runner.os == 'Windows'
