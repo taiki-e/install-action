@@ -30,6 +30,7 @@ glibc_pre_2_31_incompat=(
 # version `GLIBC_2.28' not found
 glibc_pre_2_28_incompat=(
   "${glibc_pre_2_31_incompat[@]}"
+  wasm-tools
   wasmtime
 )
 # version `GLIBC_2.27' not found
