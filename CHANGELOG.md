@@ -10,6 +10,8 @@ Note: In this file, do not use the hard wrap in the middle of a sentence for com
 
 ## [Unreleased]
 
+- Update `dprint@latest` to 0.53.2.
+
 ## [2.71.0] - 2026-04-01
 
 - Support `wasm-tools`. ([#1642](https://github.com/taiki-e/install-action/pull/1642), thanks @crepererum)
