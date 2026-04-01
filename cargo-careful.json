@@ -3,10 +3,27 @@
   "template": null,
   "license_markdown": "[MIT](https://github.com/RalfJung/cargo-careful/blob/master/LICENSE-MIT) OR [Apache-2.0](https://github.com/RalfJung/cargo-careful/blob/master/LICENSE-APACHE)",
   "latest": {
-    "version": "0.4.9"
+    "version": "0.4.10"
   },
   "0.4": {
-    "version": "0.4.9"
+    "version": "0.4.10"
+  },
+  "0.4.10": {
+    "x86_64_linux_musl": {
+      "url": "https://github.com/RalfJung/cargo-careful/releases/download/v0.4.10/cargo-careful-x86_64-unknown-linux-musl",
+      "etag": "0x8DE8FC4E147531F",
+      "hash": "bd0937ba41dec5ba45ca7cb9c502060fbcf625d12f5cf8d0b0c47328b4d82ac4"
+    },
+    "x86_64_macos": {
+      "url": "https://github.com/RalfJung/cargo-careful/releases/download/v0.4.10/cargo-careful-x86_64-apple-darwin",
+      "etag": "0x8DE8FC4E136EADB",
+      "hash": "5f39ae33320bc0fb101e1be2020a69c2e6368bc26ee6ef7207e89ae39b2cf351"
+    },
+    "x86_64_windows": {
+      "url": "https://github.com/RalfJung/cargo-careful/releases/download/v0.4.10/cargo-careful-windows.exe",
+      "etag": "0x8DE8FC4E141665F",
+      "hash": "89e2e95a6347595d73326b9ed014a58fb397f5a3cf9887ee8b9d92c181e20828"
+    }
   },
   "0.4.9": {
     "x86_64_linux_musl": {
