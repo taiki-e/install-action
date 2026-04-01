@@ -10,6 +10,10 @@ Note: In this file, do not use the hard wrap in the middle of a sentence for com
 
 ## [Unreleased]
 
+- Support `wasm-tools`. ([#1642](https://github.com/taiki-e/install-action/pull/1642), thanks @crepererum)
+
+- Implement potential workaround for [windows-11-arm runner bug](https://github.com/actions/partner-runner-images/issues/169) which sometimes causes issue that the action successfully completes but the tool is not installed. ([#1647](https://github.com/taiki-e/install-action/pull/1647))
+
 - Update `typos@latest` to 1.45.0.
 
 - Update `mise@latest` to 2026.4.0.
