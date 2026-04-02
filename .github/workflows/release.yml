@@ -310,19 +310,24 @@ jobs:
             )
           fi
 
-          prev_credential_helper=$(git config get --global credential.helper || true)
+          prev_credential_helper=$(git config get --local credential.helper || true)
           if [[ -n "${prev_credential_helper}" ]]; then
             printf 'credential helper is already set (%s)\n' "${prev_credential_helper}"
           else
-            (
-              set -x
-              git config --global credential.helper store
-            )
             protocol="${GITHUB_SERVER_URL%%://*}"
             hostname="${GITHUB_SERVER_URL#*://}"
-            printf '%s\n' "${protocol}://${GITHUB_ACTOR}:${PUSH_TOKEN}@${hostname}" >~/.git-credentials
+            (
+              set -x
+              git config --local credential.helper cache
+            )
+            git credential approve <<EOF
+          protocol=${protocol}
+          host=${hostname}
+          username=${GITHUB_ACTOR}
+          password=${PUSH_TOKEN}
+          EOF
             # Remove credential helper config on exit.
-            trap -- '(set -x; rm -f -- ~/.git-credentials; git config --global --unset credential.helper || true)' EXIT
+            trap -- '(set -x; git credential-cache exit; git config --local --unset credential.helper || true)' EXIT
           fi
 
           (
