@@ -52,12 +52,26 @@ runs:
         DEFAULT_GITHUB_TOKEN: ${{ github.token }}
         ACTION_USER_AGENT: ${{ github.action_repository }} (${{ github.action_ref }})
       if: runner.os != 'Windows'
-    # Workaround for https://github.com/actions/partner-runner-images/issues/169
-    # TODO: Is it necessary to retry for main.sh call? Or is this sufficient? https://github.com/taiki-e/install-action/pull/1647
+    # Use pwsh and retry on bash startup failure to work around windows-11-arm runner bug: https://github.com/actions/partner-runner-images/issues/169
     - run: |
         Set-StrictMode -Version Latest
-        $action_path = $env:GITHUB_ACTION_PATH
-        & bash --noprofile --norc "${action_path}/main.sh"
+        for ($i=1; $i -le 10; $i++) {
+          $prev_err_action = $ErrorActionPreference
+          $ErrorActionPreference = "Continue"
+          & bash --noprofile --norc "$env:GITHUB_ACTION_PATH/main.sh"
+          $code = $LASTEXITCODE
+          $ErrorActionPreference = "$prev_err_action"
+          if (Test-Path "$env:USERPROFILE\.install-action\init") {
+            # If bash started successfully, main.sh creates init file.
+            Remove-Item "$env:USERPROFILE\.install-action\init" -Force
+            exit $code
+          }
+          if ($i -lt 10) {
+            Write-Output "::warning::installation failed due to bash startup failure (<https://github.com/actions/partner-runner-images/issues/169>); retrying..."
+          }
+        }
+        Write-Output "::error::installation failed due to bash startup failure (<https://github.com/actions/partner-runner-images/issues/169>); this maybe resolved by re-running job"
+        exit 1
       shell: pwsh
       env:
         # NB: Sync with non-Windows case.

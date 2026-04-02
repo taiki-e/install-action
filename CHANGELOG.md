@@ -10,6 +10,10 @@ Note: In this file, do not use the hard wrap in the middle of a sentence for com
 
 ## [Unreleased]
 
+- Implement workaround for [windows-11-arm runner bug](https://github.com/actions/partner-runner-images/issues/169) which sometimes causes installation failure. ([#1657](https://github.com/taiki-e/install-action/pull/1657))
+
+  This addresses an issue that was attempted to be worked around in 2.71.0 but was insufficient.
+
 - Update `mise@latest` to 2026.4.1.
 
 - Update `uv@latest` to 0.11.3.
