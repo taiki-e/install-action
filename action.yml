@@ -45,14 +45,15 @@ runs:
     - run: bash --noprofile --norc "${GITHUB_ACTION_PATH:?}/main.sh"
       shell: bash
       env:
-        # NB: Sync with non-Windows case.
+        # NB: Sync with Windows case.
         INPUT_TOOL: ${{ inputs.tool }}
         INPUT_CHECKSUM: ${{ inputs.checksum }}
         INPUT_FALLBACK: ${{ inputs.fallback }}
         DEFAULT_GITHUB_TOKEN: ${{ github.token }}
         ACTION_USER_AGENT: ${{ github.action_repository }} (${{ github.action_ref }})
       if: runner.os != 'Windows'
-    # Use pwsh and retry on bash startup failure to work around windows-11-arm runner bug: https://github.com/actions/partner-runner-images/issues/169
+    # Use pwsh and retry on bash startup failure to work around windows-11-arm runner bug:
+    # https://github.com/actions/partner-runner-images/issues/169
     - run: |
         Set-StrictMode -Version Latest
         for ($i=1; $i -le 10; $i++) {
