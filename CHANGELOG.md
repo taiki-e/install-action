@@ -10,6 +10,8 @@ Note: In this file, do not use the hard wrap in the middle of a sentence for com
 
 ## [Unreleased]
 
+## [2.71.1] - 2026-04-02
+
 - Fix a regression that caused an execution policy violation on self-hosted Windows runner due to use of non-default `powershell` shell, introduced in 2.71.0.
 
 - Update `dprint@latest` to 0.53.2.
@@ -6109,7 +6111,8 @@ Note: This release is considered a breaking change because installing on version
 
 Initial release
 
-[Unreleased]: https://github.com/taiki-e/install-action/compare/v2.71.0...HEAD
+[Unreleased]: https://github.com/taiki-e/install-action/compare/v2.71.1...HEAD
+[2.71.1]: https://github.com/taiki-e/install-action/compare/v2.71.0...v2.71.1
 [2.71.0]: https://github.com/taiki-e/install-action/compare/v2.70.4...v2.71.0
 [2.70.4]: https://github.com/taiki-e/install-action/compare/v2.70.3...v2.70.4
 [2.70.3]: https://github.com/taiki-e/install-action/compare/v2.70.2...v2.70.3
