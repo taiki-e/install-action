@@ -58,7 +58,7 @@ runs:
         Set-StrictMode -Version Latest
         $action_path = $env:GITHUB_ACTION_PATH
         & bash --noprofile --norc "${action_path}/main.sh"
-      shell: powershell
+      shell: pwsh
       env:
         # NB: Sync with non-Windows case.
         INPUT_TOOL: ${{ inputs.tool }}

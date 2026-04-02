@@ -10,6 +10,8 @@ Note: In this file, do not use the hard wrap in the middle of a sentence for com
 
 ## [Unreleased]
 
+- Fix a regression that caused an execution policy violation on self-hosted Windows runner due to use of non-default `powershell` shell, introduced in 2.71.0.
+
 - Update `dprint@latest` to 0.53.2.
 
 ## [2.71.0] - 2026-04-01
