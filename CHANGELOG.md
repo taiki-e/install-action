@@ -10,6 +10,8 @@ Note: In this file, do not use the hard wrap in the middle of a sentence for com
 
 ## [Unreleased]
 
+## [2.71.2] - 2026-04-02
+
 - Implement workaround for [windows-11-arm runner bug](https://github.com/actions/partner-runner-images/issues/169) which sometimes causes installation failure. ([#1657](https://github.com/taiki-e/install-action/pull/1657))
 
   This addresses an issue that was attempted to be worked around in 2.71.0 but was insufficient.
@@ -6119,7 +6121,8 @@ Note: This release is considered a breaking change because installing on version
 
 Initial release
 
-[Unreleased]: https://github.com/taiki-e/install-action/compare/v2.71.1...HEAD
+[Unreleased]: https://github.com/taiki-e/install-action/compare/v2.71.2...HEAD
+[2.71.2]: https://github.com/taiki-e/install-action/compare/v2.71.1...v2.71.2
 [2.71.1]: https://github.com/taiki-e/install-action/compare/v2.71.0...v2.71.1
 [2.71.0]: https://github.com/taiki-e/install-action/compare/v2.70.4...v2.71.0
 [2.70.4]: https://github.com/taiki-e/install-action/compare/v2.70.3...v2.70.4
