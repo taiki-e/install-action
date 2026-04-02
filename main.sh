@@ -436,46 +436,6 @@ canonicalize_windows_path() {
   esac
 }
 
-# cargo-binstall may call `cargo install` on their fallback: https://github.com/taiki-e/install-action/pull/54#issuecomment-1383140833
-# cross calls rustup on `cross --version` if the current directly is cargo workspace.
-export CARGO_NET_RETRY=10
-export RUSTUP_MAX_RETRIES=10
-
-if [[ $# -gt 0 ]]; then
-  bail "invalid argument '$1'"
-fi
-
-export DEBIAN_FRONTEND=noninteractive
-manifest_dir="$(dirname -- "$0")/manifests"
-
-# Inputs
-tool="${INPUT_TOOL:-}"
-tools=()
-if [[ -n "${tool}" ]]; then
-  while read -rd,; do
-    tools+=("${REPLY}")
-  done < <(normalize_comma_or_space_separated "${tool}")
-fi
-if [[ ${#tools[@]} -eq 0 ]]; then
-  warn "no tool specified; this could be caused by a dependabot bug where @<tool_name> tags on this action are replaced by @<version> tags"
-  # Exit with 0 for backward compatibility.
-  # TODO: We want to reject it in the next major release.
-  exit 0
-fi
-
-enable_checksum="${INPUT_CHECKSUM:-}"
-case "${enable_checksum}" in
-  true) ;;
-  false) enable_checksum='' ;;
-  *) bail "'checksum' input option must be 'true' or 'false': '${enable_checksum}'" ;;
-esac
-
-fallback="${INPUT_FALLBACK:-}"
-case "${fallback}" in
-  none | cargo-binstall | cargo-install) ;;
-  *) bail "'fallback' input option must be 'none', 'cargo-binstall', or 'cargo-install': '${fallback}'" ;;
-esac
-
 # Refs: https://github.com/rust-lang/rustup/blob/HEAD/rustup-init.sh
 base_distro=''
 exe=''
@@ -590,6 +550,9 @@ cargo_bin="${CARGO_HOME:-"${home}/.cargo"}/bin"
 # is used ($CARGO_HOME/bin is most likely not included in the PATH), fallback to
 # $install_action_dir/bin.
 if [[ "${host_os}" == "windows" ]]; then
+  mkdir -p -- "${install_action_dir}"
+  # See action.yml.
+  touch -- "${install_action_dir}"/init
   if type -P cargo >/dev/null; then
     info "cargo is located at $(type -P cargo)"
     cargo_bin=$(dirname -- "$(type -P cargo)")
@@ -603,6 +566,46 @@ elif [[ ! -e "${cargo_bin}" ]] || [[ "$(type -P cargo || true)" != "${cargo_bin}
   # Moving files to /usr/local/bin requires sudo in some environments, so do not use it: https://github.com/taiki-e/install-action/issues/543
   cargo_bin="${install_action_dir}/bin"
 fi
+
+# cargo-binstall may call `cargo install` on their fallback: https://github.com/taiki-e/install-action/pull/54#issuecomment-1383140833
+# cross calls rustup on `cross --version` if the current directly is cargo workspace.
+export CARGO_NET_RETRY=10
+export RUSTUP_MAX_RETRIES=10
+
+if [[ $# -gt 0 ]]; then
+  bail "invalid argument '$1'"
+fi
+
+export DEBIAN_FRONTEND=noninteractive
+manifest_dir="$(dirname -- "$0")/manifests"
+
+# Inputs
+tool="${INPUT_TOOL:-}"
+tools=()
+if [[ -n "${tool}" ]]; then
+  while read -rd,; do
+    tools+=("${REPLY}")
+  done < <(normalize_comma_or_space_separated "${tool}")
+fi
+if [[ ${#tools[@]} -eq 0 ]]; then
+  warn "no tool specified; this could be caused by a dependabot bug where @<tool_name> tags on this action are replaced by @<version> tags"
+  # Exit with 0 for backward compatibility.
+  # TODO: We want to reject it in the next major release.
+  exit 0
+fi
+
+enable_checksum="${INPUT_CHECKSUM:-}"
+case "${enable_checksum}" in
+  true) ;;
+  false) enable_checksum='' ;;
+  *) bail "'checksum' input option must be 'true' or 'false': '${enable_checksum}'" ;;
+esac
+
+fallback="${INPUT_FALLBACK:-}"
+case "${fallback}" in
+  none | cargo-binstall | cargo-install) ;;
+  *) bail "'fallback' input option must be 'none', 'cargo-binstall', or 'cargo-install': '${fallback}'" ;;
+esac
 
 case "${host_os}" in
   linux)
