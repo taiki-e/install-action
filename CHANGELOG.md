@@ -10,6 +10,8 @@ Note: In this file, do not use the hard wrap in the middle of a sentence for com
 
 ## [Unreleased]
 
+## [2.72.0] - 2026-04-04
+
 - Support `cargo-xwin`. ([#1659](https://github.com/taiki-e/install-action/pull/1659), thanks @daxpedda)
 
 - Support trailing comma in `tool` input option.
@@ -6133,7 +6135,8 @@ Note: This release is considered a breaking change because installing on version
 
 Initial release
 
-[Unreleased]: https://github.com/taiki-e/install-action/compare/v2.71.3...HEAD
+[Unreleased]: https://github.com/taiki-e/install-action/compare/v2.72.0...HEAD
+[2.72.0]: https://github.com/taiki-e/install-action/compare/v2.71.3...v2.72.0
 [2.71.3]: https://github.com/taiki-e/install-action/compare/v2.71.2...v2.71.3
 [2.71.2]: https://github.com/taiki-e/install-action/compare/v2.71.1...v2.71.2
 [2.71.1]: https://github.com/taiki-e/install-action/compare/v2.71.0...v2.71.1
