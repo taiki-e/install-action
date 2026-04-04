@@ -24,13 +24,35 @@
   },
   "license_markdown": "[Apache-2.0 WITH LLVM-exception](https://github.com/bytecodealliance/wasm-tools/blob/main/LICENSE-APACHE) OR [Apache-2.0](https://github.com/bytecodealliance/wasm-tools/blob/main/LICENSE-APACHE) OR [MIT](https://github.com/bytecodealliance/wasm-tools/blob/main/LICENSE-MIT)",
   "latest": {
-    "version": "1.246.1"
+    "version": "1.246.2"
   },
   "1": {
-    "version": "1.246.1"
+    "version": "1.246.2"
   },
   "1.246": {
-    "version": "1.246.1"
+    "version": "1.246.2"
+  },
+  "1.246.2": {
+    "x86_64_linux_gnu": {
+      "etag": "0x8DE91C3E7F1C282",
+      "hash": "f0df9428792225322e9b4344ca581f03b1740d509d6bdad33d14a810009be9ec"
+    },
+    "x86_64_macos": {
+      "etag": "0x8DE91C3E7EB3A2E",
+      "hash": "fd89fb34457e7d2f7e221f3971b023674fa1ca5ac650b9685320a3324082ddb6"
+    },
+    "x86_64_windows": {
+      "etag": "0x8DE91C3E7FDE9D4",
+      "hash": "1be1934e9a630ff95ab869eba85bba30d652b61b0e6bfb88aac76d0ee3892035"
+    },
+    "aarch64_linux_gnu": {
+      "etag": "0x8DE91C3E7887ABE",
+      "hash": "cd28f8086297b491d857a5a8118d0de3b910f785d0b465defb4ca4d3826937dc"
+    },
+    "aarch64_macos": {
+      "etag": "0x8DE91C3E77F0F87",
+      "hash": "0ff7b4594d6ef643df282f8672ee2af6cec85d006bb83fa9d69c805b8cc6eabf"
+    }
   },
   "1.246.1": {
     "x86_64_linux_gnu": {
