@@ -35,7 +35,7 @@ normalize_comma_or_space_separated() {
   if [[ "${list}" == *","* ]]; then
     # If a comma is contained, consider it is a comma-separated list.
     # Drop leading and trailing whitespaces in each element.
-    sed -E 's/ *, */,/g; s/^.//' <<<",${list},"
+    sed -E 's/ *, */,/g; s/^.//; s/,,$/,/' <<<",${list},"
   else
     # Otherwise, consider it is a whitespace-separated list.
     # Convert whitespace characters into comma.
