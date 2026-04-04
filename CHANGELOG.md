@@ -10,6 +10,10 @@ Note: In this file, do not use the hard wrap in the middle of a sentence for com
 
 ## [Unreleased]
 
+- Support `cargo-xwin`. ([#1659](https://github.com/taiki-e/install-action/pull/1659), thanks @daxpedda)
+
+- Support trailing comma in `tool` input option.
+
 - Update `tombi@latest` to 0.9.14.
 
 ## [2.71.3] - 2026-04-04
