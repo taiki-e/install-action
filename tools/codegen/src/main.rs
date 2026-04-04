@@ -52,7 +52,7 @@ fn main() {
     base_info.validate();
     let repo = base_info
         .repository
-        .strip_prefix("https://github.com/")
+        .strip_prefix(GITHUB_START)
         .context("repository must start with https://github.com/")
         .unwrap();
 
@@ -69,7 +69,7 @@ fn main() {
             "{GITHUB_API_START}repos/{repo}/releases?per_page={per_page}&page={page}"
         ));
         // If version_req is latest, it is usually sufficient to look at the latest 100 releases.
-        if r.len() < per_page || version_req.is_some_and(|req| req == "latest") {
+        if r.len() < per_page {
             releases.append(&mut r);
             break;
         }
@@ -146,12 +146,19 @@ fn main() {
         match serde_json::from_slice(&fs::read(manifest_path).unwrap()) {
             Ok(m) => {
                 manifests = m;
-                for (k, manifest) in &mut manifests.map {
-                    let ManifestRef::Real(manifest) = manifest else {
-                        continue;
-                    };
-                    let version = &*k.0.to_string();
-                    if let Some(template) = &manifests.template {
+                manifests.map.retain(|v, m| match v.0.to_semver() {
+                    Some(v) => releases.contains_key(&Reverse(v.clone())),
+                    None => {
+                        let ManifestRef::Ref { version } = m else { unreachable!() };
+                        releases.contains_key(&Reverse(version.to_semver().unwrap()))
+                    }
+                });
+                if let Some(template) = &manifests.template {
+                    for (k, manifest) in &mut manifests.map {
+                        let ManifestRef::Real(manifest) = manifest else {
+                            continue;
+                        };
+                        let version = &*k.0.to_string();
                         #[allow(clippy::literal_string_with_formatting_args)]
                         for (platform, d) in &mut manifest.download_info {
                             let template = &template.download_info[platform];
@@ -961,6 +968,7 @@ struct GitHubTokens {
     // https://github.com/*/*/releases/download/
     other: RwLock<Option<String>>,
 }
+const GITHUB_START: &str = "https://github.com/";
 const GITHUB_API_START: &str = "https://api.github.com/";
 const GITHUB_RAW_START: &str = "https://raw.githubusercontent.com/";
 impl GitHubTokens {
@@ -969,7 +977,7 @@ impl GitHubTokens {
             self.raw.read().unwrap().clone()
         } else if url.starts_with(GITHUB_API_START) {
             self.api.read().unwrap().clone()
-        } else if url.starts_with("https://github.com/") {
+        } else if url.starts_with(GITHUB_START) {
             self.other.read().unwrap().clone()
         } else {
             None
@@ -980,7 +988,7 @@ impl GitHubTokens {
             *self.raw.write().unwrap() = None;
         } else if url.starts_with(GITHUB_API_START) {
             *self.api.write().unwrap() = None;
-        } else if url.starts_with("https://github.com/") {
+        } else if url.starts_with(GITHUB_START) {
             *self.other.write().unwrap() = None;
         }
     }

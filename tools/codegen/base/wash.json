@@ -1,6 +1,6 @@
 {
   "repository": "https://github.com/wasmCloud/wasmCloud",
-  "tag_prefix": "wash-v",
+  "tag_prefix": ["wash-v", "wash-cli-v"],
   "rust_crate": "${package}",
   "asset_name": "${package}-${rust_target}${exe}",
   "signing": {
