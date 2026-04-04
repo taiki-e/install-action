@@ -10,6 +10,8 @@ Note: In this file, do not use the hard wrap in the middle of a sentence for com
 
 ## [Unreleased]
 
+## [2.71.3] - 2026-04-04
+
 - Update `wasm-tools@latest` to 1.246.2.
 
 - Update `mise@latest` to 2026.4.3.
@@ -6125,7 +6127,8 @@ Note: This release is considered a breaking change because installing on version
 
 Initial release
 
-[Unreleased]: https://github.com/taiki-e/install-action/compare/v2.71.2...HEAD
+[Unreleased]: https://github.com/taiki-e/install-action/compare/v2.71.3...HEAD
+[2.71.3]: https://github.com/taiki-e/install-action/compare/v2.71.2...v2.71.3
 [2.71.2]: https://github.com/taiki-e/install-action/compare/v2.71.1...v2.71.2
 [2.71.1]: https://github.com/taiki-e/install-action/compare/v2.71.0...v2.71.1
 [2.71.0]: https://github.com/taiki-e/install-action/compare/v2.70.4...v2.71.0
