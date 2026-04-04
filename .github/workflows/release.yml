@@ -1,5 +1,7 @@
 name: Release
 
+# Adapted from https://github.com/taiki-e/github-actions/blob/HEAD/.github/workflows/action-release.yml.
+
 permissions:
   contents: read
 
@@ -434,7 +436,6 @@ jobs:
           changelog: CHANGELOG.md
           title: $version
           branch: main
-          token: ${{ secrets.GITHUB_TOKEN }}
           ref: refs/tags/${{ needs.prepare.outputs.tag }}
 
   release-manifest-schema:
