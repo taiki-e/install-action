@@ -232,4 +232,9 @@ for tool in "${tools[@]}"; do
     2) list+=$' \t ' ;;
   esac
 done
+if [[ "${comma_sep}" == "1" ]]; then
+  case $((RANDOM % 2)) in
+    0) list+=',' ;;
+  esac
+fi
 printf 'tool=%s\n' "${list}"
