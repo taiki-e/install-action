@@ -597,7 +597,10 @@ fi
 enable_checksum="${INPUT_CHECKSUM:-}"
 case "${enable_checksum}" in
   true) ;;
-  false) enable_checksum='' ;;
+  false)
+    enable_checksum=''
+    warn "checksums have been disabled by 'checksum' input option; this is strongly discouraged for security reasons"
+    ;;
   *) bail "'checksum' input option must be 'true' or 'false': '${enable_checksum}'" ;;
 esac
 

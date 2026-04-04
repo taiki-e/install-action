@@ -7,7 +7,7 @@ inputs:
     required: true
     # default: #publish:tool
   checksum:
-    description: Whether to enable checksums
+    description: Whether to enable checksums (strongly discouraged to disable)
     required: false
     default: 'true'
   fallback:

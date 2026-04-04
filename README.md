@@ -23,7 +23,7 @@ GitHub Action for installing development tools (mainly from GitHub Releases).
 | Name | Required | Description | Type | Default |
 | ---- | :------: | ----------- | ---- | ------- |
 | tool | **✓** | Tools to install (whitespace or comma separated list) | String | |
-| checksum | | Whether to enable checksums | Boolean | `true` |
+| checksum | | Whether to enable checksums (strongly discouraged to disable) | Boolean | `true` |
 
 ### Example workflow
 
@@ -108,7 +108,7 @@ When installing the tool from GitHub Releases, the tool version that install-act
 
 When installing the tool from GitHub Releases, this action will download the tool or its installer from GitHub Releases using HTTPS with tlsv1.2+. This is basically considered to be the same level of security as [the recommended installation of rustup](https://www.rust-lang.org/tools/install).
 
-Additionally, this action will also verify SHA256 checksums for downloaded files in all tools installed from GitHub Releases. This is enabled by default and can be disabled by setting the `checksum` input option to `false`.
+Additionally, this action will also verify SHA256 checksums for downloaded files in all tools installed from GitHub Releases. This is enabled by default and can be disabled by setting the `checksum` input option to `false` (strongly discouraged to disable).
 
 Additionally, we also verify [artifact attestations](https://docs.github.com/en/actions/concepts/security/artifact-attestations) or signature if the tool publishes artifact attestations or distributes signed archives. Verification is done at the stage of getting the checksum, so disabling the checksum will also disable verification.
 
