@@ -40,10 +40,8 @@ runs:
             exit 1
           fi
         fi
+        bash --noprofile --norc "${GITHUB_ACTION_PATH:?}/main.sh"
       shell: sh
-      if: runner.os == 'Linux'
-    - run: bash --noprofile --norc "${GITHUB_ACTION_PATH:?}/main.sh"
-      shell: bash
       env:
         # NB: Sync with Windows case.
         INPUT_TOOL: ${{ inputs.tool }}
