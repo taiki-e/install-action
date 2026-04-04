@@ -68,7 +68,7 @@ case "$(uname -s)" in
   Linux)
     host_os=linux
     ldd_version=$(ldd --version 2>&1 || true)
-    if grep -Fq musl <<<"${ldd_version}"; then
+    if [[ "${ldd_version}" == *'musl'* ]]; then
       incompat_tools+=("${musl_incompat[@]}")
     else
       host_glibc_version=$(grep -E "GLIBC|GNU libc" <<<"${ldd_version}" | sed "s/.* //g")

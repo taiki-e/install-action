@@ -443,7 +443,7 @@ case "$(uname -s)" in
   Linux)
     host_os=linux
     ldd_version=$(ldd --version 2>&1 || true)
-    if grep -Fq musl <<<"${ldd_version}"; then
+    if [[ "${ldd_version}" == *'musl'* ]]; then
       host_env=musl
     else
       host_env=gnu
