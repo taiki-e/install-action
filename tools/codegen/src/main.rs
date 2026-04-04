@@ -23,6 +23,8 @@ use install_action_internal_codegen::{
 use serde::de::DeserializeOwned;
 use spdx::expression::{ExprNode, ExpressionReq, Operator};
 
+const DEFAULT_COOLDOWN: u64 = 24;
+
 fn main() {
     let args: Vec<_> = env::args().skip(1).collect();
     if args.is_empty() || args.iter().any(|arg| arg.starts_with('-')) {
@@ -59,6 +61,7 @@ fn main() {
     eprintln!("downloading metadata from {GITHUB_API_START}repos/{repo}");
     let repo_info: github::RepoMetadata = download_json(&format!("{GITHUB_API_START}repos/{repo}"));
 
+    let before = jiff::Timestamp::now() - Duration::from_hours(DEFAULT_COOLDOWN);
     eprintln!("downloading releases from {GITHUB_API_START}repos/{repo}/releases");
     let mut releases: github::Releases = vec![];
     // GitHub API returns up to 100 results at a time. If the number of releases
@@ -772,17 +775,20 @@ fn main() {
     } else if !semver_versions.is_empty() {
         let mut prev_version = semver_versions.iter().next().unwrap();
         for version in &semver_versions {
+            if releases[&Reverse(version.clone())].1.published_at > before {
+                continue; // Exclude very recently released version from candidate for latest and omitted versions.
+            }
             if let Some(crates_io_info) = &crates_io_info {
                 if let Some(v) = crates_io_info.versions.iter().find(|v| v.num == *version) {
                     if v.yanked {
-                        continue; // Exclude yanked version from candidate for "latest".
+                        continue; // Exclude yanked version from candidate for latest and omitted versions.
                     }
                 } else {
-                    continue; // Exclude version not released on crates.io from candidate for "latest".
+                    continue; // Exclude version not released on crates.io from candidate for latest and omitted versions.
                 }
             }
             if base_info.broken.contains(version) {
-                continue; // Exclude version marked as broken from candidate for "latest".
+                continue; // Exclude version marked as broken from candidate for latest and omitted versions.
             }
             if !(version.major == 0 && version.minor == 0) {
                 manifests.map.insert(
@@ -1249,6 +1255,7 @@ mod github {
     pub(crate) struct Release {
         pub(crate) tag_name: String,
         pub(crate) prerelease: bool,
+        pub(crate) published_at: jiff::Timestamp,
         pub(crate) assets: Vec<ReleaseAsset>,
     }
 

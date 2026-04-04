@@ -8,6 +8,7 @@ install-action-manifest-schema = { path = "../manifest-schema" }
 anyhow = "1"
 flate2 = "1"
 fs-err = "3"
+jiff = { version = "0.2", default-features = false, features = ["std", "serde"] }
 minisign-verify = "0.2"
 ring = "0.17"
 semver = { version = "1", features = ["serde"] }
