@@ -161,6 +161,17 @@ download_and_extract() {
         esac
       fi
       ;;
+    *.deb)
+      if ! type -P dpkg-deb >/dev/null; then
+        case "${base_distro}" in
+          debian | fedora | suse | arch | alpine)
+            printf '::group::Install packages required for installation (dpkg)\n'
+            sys_install dpkg
+            printf '::endgroup::\n'
+            ;;
+        esac
+      fi
+      ;;
   esac
 
   mkdir -p -- "${tmp_dir}"
@@ -190,6 +201,12 @@ download_and_extract() {
         *.gz)
           mv -- tmp "${bin_in_archive#\./}.gz"
           gzip -d "${bin_in_archive#\./}.gz"
+          for tmp in "${bin_in_archive[@]}"; do
+            mv -- "${tmp}" "${bin_dir}/"
+          done
+          ;;
+        *.deb)
+          dpkg-deb -x tmp .
           for tmp in "${bin_in_archive[@]}"; do
             mv -- "${tmp}" "${bin_dir}/"
           done

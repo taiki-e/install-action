@@ -1,0 +1,12 @@
+{
+  "repository": "https://github.com/kornelski/cargo-deb",
+  "license_markdown": "[MIT](https://github.com/kornelski/cargo-deb/blob/main/LICENSE)",
+  "tag_prefix": "v",
+  "rust_crate": "${package}",
+  "platform": {
+    "x86_64_linux_gnu": {
+      "asset_name": "${package}_${version}-1_amd64.deb",
+      "bin": "usr/bin/${package}"
+    }
+  }
+}
