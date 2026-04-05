@@ -8,6 +8,7 @@ cd -- "$(dirname -- "$0")"/../..
 # They don't provide prebuilt binaries for musl or old glibc host.
 # version `GLIBC_2.35' not found
 glibc_pre_2_39_incompat=(
+  cargo-deb
   zizmor
 )
 glibc_pre_2_35_incompat=(
@@ -115,6 +116,9 @@ case "$(uname -s)" in
     fi
     if [[ "${runner}" == "ubuntu:14.04" ]]; then
       incompat_tools+=(cyclonedx)
+    fi
+    if [[ "${runner}" == "almalinux:10"* ]]; then
+      incompat_tools+=(cargo-deb) # no dpkg in package manager
     fi
     ;;
   Darwin) host_os=macos ;;
