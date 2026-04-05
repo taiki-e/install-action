@@ -266,6 +266,16 @@ jobs:
         if: startsWith(matrix.container, 'debian:9') || startsWith(matrix.container, 'debian:10')
       - name: Install requirements (centos)
         run: |
+          retry() {
+            for i in {1..10}; do
+              if "$@"; then
+                return 0
+              else
+                sleep "${i}"
+              fi
+            done
+            "$@"
+          }
           # In CentOS, the old repositories is removed from the main mirrors just after EoL.
           # https://github.com/rust-lang/rust/pull/126352
           sed -i /etc/yum.repos.d/*.repo -e 's!^mirrorlist!#mirrorlist!' \
@@ -273,15 +283,15 @@ jobs:
           sed -i 's/enabled=1/enabled=0/' /etc/yum/pluginconf.d/fastestmirror.conf
           if [[ "${CONTAINER}" == "centos:6" ]]; then
             # CentOS 6's curl (7.19.7) has no curl has no --proto/--tlsv1.2.
-            yum install -y gcc openssl-devel
-            curl -fsSL --retry 10 https://curl.se/download/curl-7.34.0.tar.gz | tar xzf -
+            retry yum install -y gcc openssl-devel
+            retry curl -fsSL --retry 10 https://curl.se/download/curl-7.34.0.tar.gz | tar xzf -
             cd -- curl-*
             ./configure --prefix=/usr/local --with-ssl
             make
             make install
             # for checkout-action https://github.com/taiki-e/checkout-action/blob/v1.3.0/.github/workflows/ci.yml#L135-L143
-            yum install -y openssh-clients perl perl-Error perl-TermReadKey rsync
-            rpm -i \
+            retry yum install -y openssh-clients perl perl-Error perl-TermReadKey rsync
+            retry rpm -i \
               https://vault.ius.io/el6/x86_64/packages/p/perl-Git18-1.8.5.5-4.ius.el6.noarch.rpm \
               https://vault.ius.io/el6/x86_64/packages/g/git18-1.8.5.5-4.ius.el6.x86_64.rpm
           fi
