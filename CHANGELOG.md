@@ -10,6 +10,14 @@ Note: In this file, do not use the hard wrap in the middle of a sentence for com
 
 ## [Unreleased]
 
+- Introduce [dependency cooldown](https://blog.yossarian.net/2025/11/21/We-should-all-be-using-dependency-cooldowns) when installing with `taiki-e/install-action@<tool_name>`, `tool: <tool_name>@latest`, or `tool: <tool_name>@<omitted_version>` to mitigate the risk of supply chain attacks by default. ([#1666](https://github.com/taiki-e/install-action/pull/1666))
+
+  This action without this cooldown already takes a few hours to a few days for new releases to be reflected (as with other common package managers that verify checksums or signatures), so this should not affect most users.
+
+  See the ["Security" section in readme](https://github.com/taiki-e/install-action#security) for more details.
+
+- Documentation improvements.
+
 ## [2.72.0] - 2026-04-04
 
 - Support `cargo-xwin`. ([#1659](https://github.com/taiki-e/install-action/pull/1659), thanks @daxpedda)
