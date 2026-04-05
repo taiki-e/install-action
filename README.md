@@ -100,17 +100,27 @@ See the [development guide](DEVELOPMENT.md) for how to add support for new tool.
 
 ## Security
 
-The `@v<major>` and `@<tool_name>` tags are updated with each release. To enhance workflow stability and security against supply chain attacks, use the `@v<major>.<minor>.<patch>` tag or their hash to pin the version. Since all releases are immutable, pinning the version in either way should have the same effect.
+The `@v<major>` and `@<tool_name>` tags are updated with each release. If you want to enhance workflow stability and security against supply chain attacks, consider using the `@v<major>.<minor>.<patch>` tag or their hash to pin the version and regularly updating with [dependency cooldown]. Since all releases are immutable, pinning the version in either way should have the same effect. Pinning `@<tool_name>` tags by hash is strongly discouraged, as it causes the workflow to reference a [commit that is not present on the repository](https://docs.zizmor.sh/audits/#impostor-commit) when a new version is released.
 
-When installing the tool from GitHub Releases, the tool version that install-action installs with `tool: <tool_name>@latest` or `tool: <tool_name>@<omitted_version>` is associated with the install-action version, so pinning install-action version with the above ways also pins the version of the tool being installed. This also means that if a [dependency cooldown](https://blog.yossarian.net/2025/11/21/We-should-all-be-using-dependency-cooldowns) applies to the action itself, a cooldown of the same duration or a few days longer will apply to the tools installed by that action.
+<!-- omit in toc -->
+### Security on installation from GitHub Releases
 
-### Security on tool installation
+**Tools covered in this section:** Tools in the [supported tools list](TOOLS.md) where column "Where will it be installed from" is "GitHub Releases".
 
-When installing the tool from GitHub Releases, this action will download the tool or its installer from GitHub Releases using HTTPS with tlsv1.2+. This is basically considered to be the same level of security as [the recommended installation of rustup](https://www.rust-lang.org/tools/install).
+This action will download the tool or its installer from GitHub Releases using HTTPS with tlsv1.2+. This is basically considered to be the same level of security as [the recommended installation of rustup](https://www.rust-lang.org/tools/install).
 
-Additionally, this action will also verify SHA256 checksums for downloaded files in all tools installed from GitHub Releases. This is enabled by default and can be disabled by setting the `checksum` input option to `false` (strongly discouraged to disable).
+Additionally, this action will also verify SHA256 checksums for downloaded files for all tools covered in this section. This is enabled by default and can be disabled by setting the `checksum` input option to `false` (strongly discouraged to disable).
 
 Additionally, we also verify [artifact attestations](https://docs.github.com/en/actions/concepts/security/artifact-attestations) or signature if the tool publishes artifact attestations or distributes signed archives. Verification is done at the stage of getting the checksum, so disabling the checksum will also disable verification.
+
+When installing with `taiki-e/install-action@<tool_name>`, `tool: <tool_name>`, or `tool: <tool_name>@<omitted_version>`, The tool version is reflects upstream releases with a delay of one to a few days (as with other common package managers that verify checksums or signatures). A delay of at least one day is known as [dependency cooldown] and is intended to mitigate the risk of supply chain attacks (the specific cooldown period may be changed in the future). You can bypass the cooldown by explicitly specifying a version. If you want a longer cooldown, consider using the property described below.
+
+When installing with `tool: <tool_name>` or `tool: <tool_name>@<omitted_version>`, the tool version is associated with the install-action version, so pinning install-action version with the `@v<major>.<minor>.<patch>` tag or their hash also pins the version of the tool being installed. This also means that if a [dependency cooldown] applies to the action itself, a cooldown of one to a few days longer will apply to the tools installed by that action.
+
+[dependency cooldown]: https://blog.yossarian.net/2025/11/21/We-should-all-be-using-dependency-cooldowns
+
+<!-- omit in toc -->
+### Security on other installation methods
 
 See the linked documentation for information on security when installed using [snap](https://snapcraft.io/docs) or [cargo-binstall](https://github.com/cargo-bins/cargo-binstall#faq).
 
