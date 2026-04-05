@@ -10,6 +10,8 @@ Note: In this file, do not use the hard wrap in the middle of a sentence for com
 
 ## [Unreleased]
 
+- Update `just@latest` to 1.49.0.
+
 ## [2.72.0] - 2026-04-04
 
 - Support `cargo-xwin`. ([#1659](https://github.com/taiki-e/install-action/pull/1659), thanks @daxpedda)
