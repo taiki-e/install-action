@@ -21,9 +21,7 @@ See JSON files in `tools/codegen/base` directory for examples of the manifest.
 > GITHUB_TOKEN=$(gh auth token) ./tools/manifest.sh <tool>
 > ```
 
-## Refresh TOOLS.md
-
-To update `TOOLS.md`, run
+3\. Update `TOOLS.md` with the following command.
 
 ```sh
 ./tools/update-markdown.sh

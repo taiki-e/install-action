@@ -1,0 +1,46 @@
+name: New tool suggestion
+description: Suggest support for a new tool
+labels: [enhancement]
+body:
+  - type: markdown
+    attributes:
+      value: |
+        Thanks for a new tool suggestion!
+
+        Normally, you don't need to open an issue to request support for a new tool.
+        Instead, please submit a pull request.
+        (See [DEVELOPMENT.md](https://github.com/taiki-e/install-action/blob/main/DEVELOPMENT.md) for how to add support for a new tool.)
+
+        That said, if you have any questions before getting started, or if you’re unable to contribute for any reason, feel free to open an issue.
+  - type: input
+    id: name
+    attributes:
+      label: Tool name
+    validations:
+      required: true
+  - type: dropdown
+    id: pre-built
+    attributes:
+      label: Are official pre-built binaries provided?
+      description: |
+        If "No", this issue will be blocked until official pre-built binaries are provided.<br>
+        If "Unknown", this issue will be blocked until it is determined that it is provided.<br>
+        (When the tool is a Rust crate, it may already be available via fallback even if "No" or "Unknown".)<br>
+      options:
+        - 'Yes'
+        - 'No'
+        - Unknown
+      default: 2
+    validations:
+      required: true
+  - type: input
+    id: url
+    attributes:
+      label: Website or repository link
+    validations:
+      required: true
+  - type: textarea
+    id: context
+    attributes:
+      label: Additional Context
+      description: Any additional context that you believe may be relevant.
