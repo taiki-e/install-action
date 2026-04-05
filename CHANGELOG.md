@@ -16,6 +16,8 @@ Note: In this file, do not use the hard wrap in the middle of a sentence for com
 
   See the ["Security" section in readme](https://github.com/taiki-e/install-action#security) for more details.
 
+- Improve robustness for network failure.
+
 - Documentation improvements.
 
 ## [2.72.0] - 2026-04-04
