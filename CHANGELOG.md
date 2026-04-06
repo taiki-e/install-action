@@ -10,6 +10,8 @@ Note: In this file, do not use the hard wrap in the middle of a sentence for com
 
 ## [Unreleased]
 
+## [2.74.0] - 2026-04-06
+
 - Support `cargo-deb`. ([#1669](https://github.com/taiki-e/install-action/pull/1669))
 
 - Update `just@latest` to 1.49.0.
@@ -6153,7 +6155,8 @@ Note: This release is considered a breaking change because installing on version
 
 Initial release
 
-[Unreleased]: https://github.com/taiki-e/install-action/compare/v2.73.0...HEAD
+[Unreleased]: https://github.com/taiki-e/install-action/compare/v2.74.0...HEAD
+[2.74.0]: https://github.com/taiki-e/install-action/compare/v2.73.0...v2.74.0
 [2.73.0]: https://github.com/taiki-e/install-action/compare/v2.72.0...v2.73.0
 [2.72.0]: https://github.com/taiki-e/install-action/compare/v2.71.3...v2.72.0
 [2.71.3]: https://github.com/taiki-e/install-action/compare/v2.71.2...v2.71.3
