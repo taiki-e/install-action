@@ -466,7 +466,13 @@ case "$(uname -s)" in
       host_env=gnu
       host_glibc_version=$(grep -E "GLIBC|GNU libc" <<<"${ldd_version}" | sed -E "s/.* //g")
     fi
-    if [[ -e /etc/os-release ]]; then
+    if [[ -e /etc/redhat-release ]]; then
+      # /etc/os-release is available on RHEL/CentOS 7+
+      base_distro=fedora
+    elif [[ -e /etc/debian_version ]]; then
+      # /etc/os-release is available on Debian 7+
+      base_distro=debian
+    elif [[ -e /etc/os-release ]]; then
       if grep -Eq '^ID_LIKE=' /etc/os-release; then
         base_distro=$(grep -E '^ID_LIKE=' /etc/os-release | cut -d= -f2)
         case "${base_distro}" in
@@ -480,12 +486,6 @@ case "$(uname -s)" in
         base_distro=$(grep -E '^ID=' /etc/os-release | cut -d= -f2)
       fi
       base_distro="${base_distro//\"/}"
-    elif [[ -e /etc/redhat-release ]]; then
-      # /etc/os-release is available on RHEL/CentOS 7+
-      base_distro=fedora
-    elif [[ -e /etc/debian_version ]]; then
-      # /etc/os-release is available on Debian 7+
-      base_distro=debian
     fi
     case "${base_distro}" in
       fedora)
