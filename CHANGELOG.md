@@ -10,11 +10,11 @@ Note: In this file, do not use the hard wrap in the middle of a sentence for com
 
 ## [Unreleased]
 
+- Support `cargo-deb`. ([#1669](https://github.com/taiki-e/install-action/pull/1669))
+
 - Update `just@latest` to 1.49.0.
 
 - Update `mise@latest` to 2026.4.4.
-
-- Support `cargo-deb`. ([#1669](https://github.com/taiki-e/install-action/pull/1669))
 
 ## [2.73.0] - 2026-04-05
 
