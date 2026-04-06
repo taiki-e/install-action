@@ -62,19 +62,6 @@ jobs:
             printf '::error::%s\n' "$*"
             exit 1
           }
-          normalize_comma_or_space_separated() {
-            # Normalize whitespace characters into space because it's hard to handle single input contains lines with POSIX sed alone.
-            local list="${1//[$'\r\n\t']/ }"
-            if [[ "${list}" == *","* ]]; then
-              # If a comma is contained, consider it is a comma-separated list.
-              # Drop leading and trailing whitespaces in each element.
-              sed -E 's/ *, */,/g; s/^.//; s/,,$/,/' <<<",${list},"
-            else
-              # Otherwise, consider it is a whitespace-separated list.
-              # Convert whitespace characters into comma.
-              sed -E 's/ +/,/g; s/^.//' <<<" ${list} "
-            fi
-          }
           if { sed --help 2>&1 || true; } | grep -Eq -e '-i extension'; then
             in_place=(-i '')
           else
