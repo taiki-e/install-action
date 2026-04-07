@@ -10,6 +10,8 @@ Note: In this file, do not use the hard wrap in the middle of a sentence for com
 
 ## [Unreleased]
 
+- Update `tombi@latest` to 0.9.15.
+
 ## [2.74.0] - 2026-04-06
 
 - Support `cargo-deb`. ([#1669](https://github.com/taiki-e/install-action/pull/1669))
