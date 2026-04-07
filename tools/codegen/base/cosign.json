@@ -1,0 +1,34 @@
+{
+  "repository": "https://github.com/sigstore/cosign",
+  "tag_prefix": "v",
+  "version_range": ">= 3.0.0",
+  "signing": {
+    "kind": "custom"
+  },
+  "platform": {
+    "x86_64_linux_musl": {
+      "asset_name": "${package}-linux-amd64"
+    },
+    "x86_64_macos": {
+      "asset_name": "${package}-darwin-amd64"
+    },
+    "x86_64_windows": {
+      "asset_name": "${package}-windows-amd64.exe"
+    },
+    "aarch64_linux_musl": {
+      "asset_name": "${package}-linux-arm64"
+    },
+    "aarch64_macos": {
+      "asset_name": "${package}-darwin-arm64"
+    },
+    "powerpc64le_linux_musl": {
+      "asset_name": "${package}-linux-ppc64le"
+    },
+    "riscv64_linux_musl": {
+      "asset_name": "${package}-linux-riscv64"
+    },
+    "s390x_linux_musl": {
+      "asset_name": "${package}-linux-s390x"
+    }
+  }
+}
