@@ -212,6 +212,11 @@ jobs:
         with:
           tool: parse-changelog
           fallback: none
+      - uses: actions/create-github-app-token@f8d387b68d61c58ab83c6c016672934102569859 # v3.0.0
+        id: push-token
+        with:
+          app-id: ${{ secrets.PUSH_TOKEN_APP_CLIENT_ID }}
+          private-key: ${{ secrets.PUSH_TOKEN_APP_PRIVATE_KEY }}
       - name: Create and push release commit and tag
         id: push
         run: |
@@ -417,7 +422,7 @@ jobs:
           BRANCH: main
           PREPARE_REV: ${{ needs.prepare.outputs.rev }}
           # Note that if we use secrets.GITHUB_TOKEN, the pushed commit/tag cannot trigger other workflows.
-          PUSH_TOKEN: ${{ secrets.PUSH_TOKEN }}
+          PUSH_TOKEN: ${{ steps.push-token.outputs.token }}
       - uses: taiki-e/create-gh-release-action@v1
         with:
           changelog: CHANGELOG.md
@@ -433,7 +438,8 @@ jobs:
       id-token: write # for rust-lang/crates-io-auth-action
       attestations: write # unused (used when options for uploading binaries are set)
     secrets:
-      PUSH_TOKEN: ${{ secrets.PUSH_TOKEN }}
+      PUSH_TOKEN_APP_CLIENT_ID: ${{ secrets.PUSH_TOKEN_APP_CLIENT_ID }}
+      PUSH_TOKEN_APP_PRIVATE_KEY: ${{ secrets.PUSH_TOKEN_APP_PRIVATE_KEY }}
     with:
       version: ${{ inputs.version }}
       tag-prefix: install-action-manifest-schema-
