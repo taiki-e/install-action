@@ -11,11 +11,6 @@ cd -- "$(dirname -- "$0")"/..
 #    ./tools/manifest.sh [PACKAGE [VERSION_REQ]]
 #    ./tools/manifest.sh full
 
-if [[ -n "${GITHUB_ACTIONS:-}" ]] && ! type -P cosign; then
-  go install github.com/sigstore/cosign/v3/cmd/cosign@latest
-  sudo mv -- ~/go/bin/cosign /usr/local/bin
-fi
-
 if [[ $# -eq 1 ]] && [[ "$1" == "full" ]]; then
   for manifest in tools/codegen/base/*.json; do
     package="${manifest##*/}"

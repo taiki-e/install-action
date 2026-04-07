@@ -33,7 +33,7 @@ concurrency:
 
 jobs:
   manifest:
-    uses: taiki-e/github-actions/.github/workflows/gen.yml@606d6c78d69927c489d319133073a03157928a7a # main
+    uses: taiki-e/github-actions/.github/workflows/gen.yml@7e4093bf4e87dd120ac0c3be2e47ebe7f737a47d # main
     permissions:
       contents: write # for creating branch for pr
       pull-requests: write # for gh pr review --approve
@@ -46,3 +46,4 @@ jobs:
       branch: update-manifest
       automerge: true
       install-rust: true
+      install-cosign: true
