@@ -10,6 +10,8 @@ Note: In this file, do not use the hard wrap in the middle of a sentence for com
 
 ## [Unreleased]
 
+## [2.74.1] - 2026-04-07
+
 - Update `mise@latest` to 2026.4.5.
 
 - Update `tombi@latest` to 0.9.15.
@@ -6159,7 +6161,8 @@ Note: This release is considered a breaking change because installing on version
 
 Initial release
 
-[Unreleased]: https://github.com/taiki-e/install-action/compare/v2.74.0...HEAD
+[Unreleased]: https://github.com/taiki-e/install-action/compare/v2.74.1...HEAD
+[2.74.1]: https://github.com/taiki-e/install-action/compare/v2.74.0...v2.74.1
 [2.74.0]: https://github.com/taiki-e/install-action/compare/v2.73.0...v2.74.0
 [2.73.0]: https://github.com/taiki-e/install-action/compare/v2.72.0...v2.73.0
 [2.72.0]: https://github.com/taiki-e/install-action/compare/v2.71.3...v2.72.0
