@@ -33,20 +33,20 @@ concurrency:
 
 jobs:
   miri:
-    uses: taiki-e/github-actions/.github/workflows/miri.yml@main
+    uses: taiki-e/github-actions/.github/workflows/miri.yml@606d6c78d69927c489d319133073a03157928a7a # main
     with:
       # NB: sync with test job's --exclude option
       args: --exclude install-action-internal-codegen
   msrv:
-    uses: taiki-e/github-actions/.github/workflows/msrv.yml@main
+    uses: taiki-e/github-actions/.github/workflows/msrv.yml@606d6c78d69927c489d319133073a03157928a7a # main
   test-manifest-schema:
-    uses: taiki-e/github-actions/.github/workflows/test.yml@main
+    uses: taiki-e/github-actions/.github/workflows/test.yml@606d6c78d69927c489d319133073a03157928a7a # main
     with:
       # NB: sync with miri job's --exclude option
       test-args: --exclude install-action-internal-codegen
       no-std: false
   tidy:
-    uses: taiki-e/github-actions/.github/workflows/tidy.yml@main
+    uses: taiki-e/github-actions/.github/workflows/tidy.yml@606d6c78d69927c489d319133073a03157928a7a # main
     permissions:
       contents: write # for creating branch for pr
       pull-requests: write # unused (used in `codegen-automerge: true` case)
@@ -95,7 +95,7 @@ jobs:
     runs-on: ${{ matrix.os }}
     timeout-minutes: 60
     steps:
-      - uses: taiki-e/checkout-action@v1
+      - uses: taiki-e/checkout-action@83ed61bfbe2b8abbb3c66e8b65b1335484c70009 # v1.4.1
       # cross attempts to install rust-src when Cargo.toml is available even if `cross --version`
       - run: rm -- Cargo.toml
       - name: Generate tool list
@@ -154,7 +154,7 @@ jobs:
     runs-on: ubuntu-latest
     timeout-minutes: 60
     steps:
-      - uses: taiki-e/checkout-action@v1
+      - uses: taiki-e/checkout-action@83ed61bfbe2b8abbb3c66e8b65b1335484c70009 # v1.4.1
       # cross attempts to install rust-src when Cargo.toml is available even if `cross --version`
       - run: rm -- Cargo.toml
       - run: env
@@ -187,7 +187,7 @@ jobs:
     runs-on: ubuntu-24.04-arm
     timeout-minutes: 60
     steps:
-      - uses: taiki-e/checkout-action@v1
+      - uses: taiki-e/checkout-action@83ed61bfbe2b8abbb3c66e8b65b1335484c70009 # v1.4.1
       # cross attempts to install rust-src when Cargo.toml is available even if `cross --version`
       - run: rm -- Cargo.toml
       - run: env
@@ -298,7 +298,7 @@ jobs:
         env:
           CONTAINER: ${{ matrix.container }}
         if: startsWith(matrix.container, 'centos')
-      - uses: taiki-e/checkout-action@v1
+      - uses: taiki-e/checkout-action@83ed61bfbe2b8abbb3c66e8b65b1335484c70009 # v1.4.1
       # cross attempts to install rust-src when Cargo.toml is available even if `cross --version`
       - run: rm -- Cargo.toml
       - name: Generate tool list
