@@ -875,8 +875,8 @@ for tool in "${tools[@]}"; do
       iai-callgrind-runner) ;;
       # cargo-zigbuild/cargo-insta has no --version flag on `cargo $tool_bin_stem` subcommand.
       cargo-zigbuild | cargo-insta) rx "${tool_bin_stem}" --version ;;
-      # deepsource has version command instead of --version flag.
-      deepsource | vacuum) rx "${tool_bin_stem}" version ;;
+      # these packages have version command instead of --version flag.
+      cosign | deepsource | vacuum) rx "${tool_bin_stem}" version ;;
       cargo-*)
         case "${tool_bin_stem}" in
           # cargo-valgrind 2.1.0's --version flag just calls cargo's --version flag

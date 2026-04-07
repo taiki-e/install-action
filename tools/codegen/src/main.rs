@@ -385,6 +385,58 @@ fn main() {
                             );
                             eprintln!("done");
                         }
+                        "cosign" => {
+                            let [checksum, bundle] =
+                                ["cosign_checksums.txt", "cosign_checksums.txt.sigstore.json"].map(
+                                    |f| {
+                                        let asset = release
+                                            .assets
+                                            .iter()
+                                            .find(|asset| asset.name.ends_with(f))
+                                            .unwrap();
+                                        let download_cache =
+                                            download_cache_dir.join(format!("{version}-{f}"));
+                                        let url = &asset.browser_download_url;
+                                        eprint!(
+                                            "downloading {url} for signature verification ... "
+                                        );
+                                        if download_cache.is_file() {
+                                            eprintln!("already downloaded");
+                                        } else {
+                                            download_to_buf(url, &mut buf);
+                                            eprintln!("download complete");
+                                            fs::write(&download_cache, &buf).unwrap();
+                                            buf.clear();
+                                        }
+                                        download_cache
+                                    },
+                                );
+                            eprint!("verifying checksum file for {package}@{version} ... ");
+                            cmd!(
+                                "cosign",
+                                "verify-blob",
+                                &checksum,
+                                "--bundle",
+                                bundle,
+                                "--certificate-identity",
+                                "keyless@projectsigstore.iam.gserviceaccount.com",
+                                "--certificate-oidc-issuer",
+                                "https://accounts.google.com"
+                            )
+                            .run()
+                            .unwrap();
+                            verified_checksum = Some(
+                                fs::read_to_string(checksum)
+                                    .unwrap()
+                                    .lines()
+                                    .filter_map(|l| l.split_once("  "))
+                                    .map(|(h, f)| {
+                                        (f.trim_ascii().to_owned(), h.trim_ascii().to_owned())
+                                    })
+                                    .collect(),
+                            );
+                            eprintln!("done");
+                        }
                         "syft" => {
                             // Refs: https://oss.anchore.com/docs/installation/verification/
                             let [checksum, certificate, signature] =
@@ -572,10 +624,7 @@ fn main() {
                             );
                         };
                         let url = url.clone() + ".sig";
-                        let sig_download_cache = &download_cache.with_extension(format!(
-                            "{}.sig",
-                            download_cache.extension().unwrap_or_default().to_str().unwrap()
-                        ));
+                        let sig_download_cache = &download_cache.with_added_extension("sig");
                         eprint!("downloading {url} for signature validation ... ");
                         let sig = if sig_download_cache.is_file() {
                             eprintln!("already downloaded");

@@ -10,6 +10,8 @@ Note: In this file, do not use the hard wrap in the middle of a sentence for com
 
 ## [Unreleased]
 
+- Support `cosign`. ([#1677](https://github.com/taiki-e/install-action/pull/1677))
+
 ## [2.74.1] - 2026-04-07
 
 - Update `mise@latest` to 2026.4.5.
