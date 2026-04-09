@@ -10,6 +10,8 @@ Note: In this file, do not use the hard wrap in the middle of a sentence for com
 
 ## [Unreleased]
 
+## [2.75.3] - 2026-04-09
+
 - Enhance security when cargo-binstall fallback is disabled.
 
 - Update `rclone@latest` to 1.73.4.
@@ -6183,7 +6185,8 @@ Note: This release is considered a breaking change because installing on version
 
 Initial release
 
-[Unreleased]: https://github.com/taiki-e/install-action/compare/v2.75.2...HEAD
+[Unreleased]: https://github.com/taiki-e/install-action/compare/v2.75.3...HEAD
+[2.75.3]: https://github.com/taiki-e/install-action/compare/v2.75.2...v2.75.3
 [2.75.2]: https://github.com/taiki-e/install-action/compare/v2.75.1...v2.75.2
 [2.75.1]: https://github.com/taiki-e/install-action/compare/v2.75.0...v2.75.1
 [2.75.0]: https://github.com/taiki-e/install-action/compare/v2.74.1...v2.75.0
