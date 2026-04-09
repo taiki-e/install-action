@@ -10,6 +10,8 @@ Note: In this file, do not use the hard wrap in the middle of a sentence for com
 
 ## [Unreleased]
 
+- Enhance security when cargo-binstall fallback is disabled.
+
 - Update `rclone@latest` to 1.73.4.
 
 ## [2.75.2] - 2026-04-09

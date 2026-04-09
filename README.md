@@ -124,6 +124,8 @@ When installing with `tool: <tool_name>` or `tool: <tool_name>@<omitted_version>
 
 See the linked documentation for information on security when installed using [snap](https://snapcraft.io/docs) or [cargo-binstall](https://github.com/cargo-bins/cargo-binstall#faq).
 
+The default fallback (cargo-binstall) is often affected by GitHub's API rate limits, so we pass the `${{ github.token }}` to cargo-binstall. Disabling the cargo-binstall fallback prevent passing token so helps enhance security.
+
 See the [Supported tools section](#supported-tools) for how to ensure that fallback is not used.
 
 ## Compatibility
