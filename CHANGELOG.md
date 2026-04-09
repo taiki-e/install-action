@@ -10,6 +10,8 @@ Note: In this file, do not use the hard wrap in the middle of a sentence for com
 
 ## [Unreleased]
 
+- Update `dprint@latest` to 0.54.0.
+
 ## [2.75.3] - 2026-04-09
 
 - Enhance security when cargo-binstall fallback is disabled.
