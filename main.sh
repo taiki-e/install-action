@@ -627,6 +627,15 @@ case "${fallback}" in
   *) bail "'fallback' input option must be 'none', 'cargo-binstall', or 'cargo-install': '${fallback}'" ;;
 esac
 
+# Unlike gh command, cargo-binstall reads GITHUB_TOKEN first via cli parser, and then reads GH_TOKEN.
+# https://github.com/cargo-bins/cargo-binstall/blob/v1.17.9/crates/bin/src/args.rs#L704
+token="${GITHUB_TOKEN:-"${GH_TOKEN:-"${DEFAULT_GITHUB_TOKEN:-}"}"}"
+# This prevents tokens from being displayed to subprocesses via environment variables.
+# Since the tokens remain in the parent process's environment variables, and since unset may not
+# immediately cleanse memory, setting `fallback: none` (which prevents the tokens from being set
+# in the first place) remains the best practice from a security standpoint, as readme says.
+unset GITHUB_TOKEN GH_TOKEN DEFAULT_GITHUB_TOKEN
+
 case "${host_os}" in
   linux)
     if ! type -P jq >/dev/null || ! type -P curl >/dev/null || ! type -P tar >/dev/null; then
@@ -921,8 +930,8 @@ if [[ ${#unsupported_tools[@]} -gt 0 ]]; then
       # As a result, http will be disabled, and it will also set
       # min tls version to be 1.2
       binstall_args=(--force --no-confirm --locked "${unsupported_tools[@]}")
-      if [[ -z "${GITHUB_TOKEN:-}" ]] && [[ -n "${DEFAULT_GITHUB_TOKEN:-}" ]]; then
-        cargo-binstall binstall --github-token "${DEFAULT_GITHUB_TOKEN}" "${binstall_args[@]}"
+      if [[ -n "${token}" ]]; then
+        cargo-binstall binstall --github-token "${token}" "${binstall_args[@]}"
       else
         cargo-binstall binstall "${binstall_args[@]}"
       fi
