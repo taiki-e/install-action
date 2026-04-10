@@ -10,6 +10,8 @@ Note: In this file, do not use the hard wrap in the middle of a sentence for com
 
 ## [Unreleased]
 
+- Enhance security when cargo-binstall fallback is enabled.
+
 - Update `uv@latest` to 0.11.5.
 
 - Update `syft@latest` to 1.42.4.

@@ -917,13 +917,15 @@ if [[ ${#unsupported_tools[@]} -gt 0 ]]; then
   case "${fallback}" in
     cargo-binstall)
       install_cargo_binstall
-      if [[ -z "${GITHUB_TOKEN:-}" ]] && [[ -n "${DEFAULT_GITHUB_TOKEN:-}" ]]; then
-        export GITHUB_TOKEN="${DEFAULT_GITHUB_TOKEN}"
-      fi
       # By default, cargo-binstall enforce downloads over secure transports only.
       # As a result, http will be disabled, and it will also set
       # min tls version to be 1.2
-      cargo-binstall binstall --force --no-confirm --locked "${unsupported_tools[@]}"
+      binstall_args=(--force --no-confirm --locked "${unsupported_tools[@]}")
+      if [[ -z "${GITHUB_TOKEN:-}" ]] && [[ -n "${DEFAULT_GITHUB_TOKEN:-}" ]]; then
+        cargo-binstall binstall --github-token "${DEFAULT_GITHUB_TOKEN}" "${binstall_args[@]}"
+      else
+        cargo-binstall binstall "${binstall_args[@]}"
+      fi
       if ! type -P cargo >/dev/null; then
         _bin_dir=$(canonicalize_windows_path "${home}/.cargo/bin")
         # TODO: avoid this when already added
