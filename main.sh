@@ -236,7 +236,7 @@ read_manifest() {
   local version="$2"
   local manifest
   rust_crate=$(jq -r '.rust_crate' "${manifest_dir}/${tool}.json")
-  manifest=$(jq -r ".[\"${version}\"]" "${manifest_dir}/${tool}.json")
+  manifest=$(jq -r --arg version "${version}" '.[$version]' "${manifest_dir}/${tool}.json")
   if [[ "${manifest}" == "null" ]]; then
     download_info="null"
     return 0
@@ -245,7 +245,7 @@ read_manifest() {
   if [[ "${exact_version}" == "null" ]]; then
     exact_version="${version}"
   else
-    manifest=$(jq -r ".[\"${exact_version}\"]" "${manifest_dir}/${tool}.json")
+    manifest=$(jq -r --arg version "${exact_version}" '.[$version]' "${manifest_dir}/${tool}.json")
     if [[ "${rust_crate}" != "null" ]]; then
       # TODO: don't hardcode tool name and use 'immediate_yank_reflection' field in base manifest.
       case "${tool}" in
@@ -253,7 +253,7 @@ read_manifest() {
           crate_info=$(retry curl --user-agent "${ACTION_USER_AGENT}" --proto '=https' --tlsv1.2 -fsSL --retry 10 "https://crates.io/api/v1/crates/${rust_crate}" || true)
           if [[ -n "${crate_info}" ]]; then
             while true; do
-              yanked=$(jq -r ".versions[] | select(.num == \"${exact_version}\") | .yanked" <<<"${crate_info}")
+              yanked=$(jq -r --arg version "${exact_version}" '.versions[] | select(.num == $version) | .yanked' <<<"${crate_info}")
               if [[ "${yanked}" != "true" ]]; then
                 break
               fi
@@ -263,7 +263,7 @@ read_manifest() {
               fi
               info "${tool}@${exact_version} is yanked; downgrade to ${previous_stable_version}"
               exact_version="${previous_stable_version}"
-              manifest=$(jq -r ".[\"${exact_version}\"]" "${manifest_dir}/${tool}.json")
+              manifest=$(jq -r --arg version "${exact_version}" '.[$version]' "${manifest_dir}/${tool}.json")
             done
           fi
           ;;
