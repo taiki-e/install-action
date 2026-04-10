@@ -436,7 +436,7 @@ jobs:
 
   release-manifest-schema:
     if: github.repository_owner == 'taiki-e' && inputs.target == 'install-action-manifest-schema'
-    uses: taiki-e/github-actions/.github/workflows/rust-release.yml@606d6c78d69927c489d319133073a03157928a7a # main
+    uses: taiki-e/github-actions/.github/workflows/rust-release.yml@dec917193d835117a7238865adf83273d9fcd27a # main
     permissions:
       contents: write # for taiki-e/create-gh-release-action
       id-token: write # for rust-lang/crates-io-auth-action
