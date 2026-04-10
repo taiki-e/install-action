@@ -39,7 +39,7 @@ jobs:
     timeout-minutes: 60
     steps:
       - uses: taiki-e/checkout-action@7d1e50e93dc4fb3bba58f85018fadf77898aee8b # v1.4.2
-      - uses: taiki-e/install-action@7a562dfa955aa2e4d5b0fd6ebd57ff9715c07b0b # v2.73.0
+      - uses: taiki-e/install-action@b8be7f5e140177087325943c4a8e169d01c59b3d # v2.75.3
         with:
           tool: parse-changelog
           fallback: none
@@ -208,7 +208,7 @@ jobs:
       contents: write # for taiki-e/create-gh-release-action
     steps:
       - uses: taiki-e/checkout-action@7d1e50e93dc4fb3bba58f85018fadf77898aee8b # v1.4.2
-      - uses: taiki-e/install-action@7a562dfa955aa2e4d5b0fd6ebd57ff9715c07b0b # v2.73.0
+      - uses: taiki-e/install-action@b8be7f5e140177087325943c4a8e169d01c59b3d # v2.75.3
         with:
           tool: parse-changelog
           fallback: none
@@ -304,6 +304,50 @@ jobs:
             )
           fi
 
+          major_version_tag="v${version%%.*}"
+          (
+            set -x
+            git tag "${tag}"
+            git branch "releases/${major_version_tag}"
+            git tag -f "${major_version_tag}"
+          )
+          refs=("refs/heads/${BRANCH}" "refs/tags/${tag}" "refs/heads/releases/${major_version_tag}" "+refs/tags/${major_version_tag}")
+
+          tools=()
+          for tool in tools/codegen/base/*.json; do
+            tool="${tool##*/}"
+            tools+=("${tool%.*}")
+          done
+          # Aliases.
+          # NB: Update case for aliases in main.sh, tool input option in test-alias job
+          # in .github/workflows/ci.yml, and match for alias for tools/codegen/src/tools-markdown.rs.
+          tools+=(
+            nextest
+            taplo-cli
+            typos-cli
+            wasm-bindgen-cli
+            wasmtime-cli
+          )
+          # Non-manifest-based tools.
+          tools+=(valgrind)
+
+          branches=()
+          for tool in "${tools[@]}"; do
+            (
+              set -x
+              git checkout -b "releases/${tool}"
+              sed -E "${in_place[@]}" action.yml \
+                -e "s/required: true/required: false/g" \
+                -e "s/# default: #publish:tool/default: ${tool}/g"
+              git add action.yml
+              git commit -m "${tool}"
+              git tag -f "${tool}"
+              git checkout refs/tags/"${tag}"
+            )
+            refs+=("+refs/heads/releases/${tool}" "+refs/tags/${tool}")
+            branches+=("releases/${tool}")
+          done
+
           prev_credential_helper=$(git config get --local credential.helper || true)
           if [[ -n "${prev_credential_helper}" ]]; then
             printf 'credential helper is already set (%s)\n' "${prev_credential_helper}"
@@ -326,46 +370,6 @@ jobs:
 
           (
             set -x
-            git tag "${tag}"
-            retry git push origin HEAD
-
-            major_version_tag="v${version%%.*}"
-            git branch "releases/${major_version_tag}"
-            git tag -f "${major_version_tag}"
-            refs=("refs/tags/${tag}" "refs/heads/releases/${major_version_tag}" "+refs/tags/${major_version_tag}")
-
-            tools=()
-            for tool in tools/codegen/base/*.json; do
-              tool="${tool##*/}"
-              tools+=("${tool%.*}")
-            done
-            # Aliases.
-            # NB: Update case for aliases in main.sh, tool input option in test-alias job
-            # in .github/workflows/ci.yml, and match for alias for tools/codegen/src/tools-markdown.rs.
-            tools+=(
-              nextest
-              taplo-cli
-              typos-cli
-              wasm-bindgen-cli
-              wasmtime-cli
-            )
-            # Non-manifest-based tools.
-            tools+=(valgrind)
-
-            branches=()
-            for tool in "${tools[@]}"; do
-              git checkout -b "releases/${tool}"
-              sed -E "${in_place[@]}" action.yml \
-                -e "s/required: true/required: false/g" \
-                -e "s/# default: #publish:tool/default: ${tool}/g"
-              git add action.yml
-              git commit -m "${tool}"
-              git tag -f "${tool}"
-              git checkout refs/tags/"${tag}"
-              refs+=("+refs/heads/releases/${tool}" "+refs/tags/${tool}")
-              branches+=("releases/${tool}")
-            done
-
             retry git push origin --atomic "${refs[@]}"
             git branch -d "releases/${major_version_tag}"
             git branch -D "${branches[@]}"
