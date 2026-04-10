@@ -147,12 +147,12 @@ for manifest in tools/codegen/base/*.json; do
   fi
   case "${host_os}" in
     linux*)
-      if [[ "${host_arch}" != "x86_64" ]] && [[ "$(jq -r ".platform.${host_arch}_${host_os}_gnu" "${manifest}")" == "null" ]] && [[ "$(jq -r ".platform.${host_arch}_${host_os}_musl" "${manifest}")" == "null" ]]; then
+      if [[ "${host_arch}" != "x86_64" ]] && [[ "$(jq -r --arg p "${host_arch}_${host_os}_gnu" '.platform[$p]' "${manifest}")" == "null" ]] && [[ "$(jq -r --arg p "${host_arch}_${host_os}_musl" '.platform[$p]' "${manifest}")" == "null" ]]; then
         continue
       fi
       ;;
     *)
-      if [[ "$(jq -r ".platform.x86_64_${host_os}" "${manifest}")" == "null" ]] && [[ "$(jq -r ".platform.${host_arch}_${host_os}" "${manifest}")" == "null" ]]; then
+      if [[ "$(jq -r --arg p "x86_64_${host_os}" '.platform[$p]' "${manifest}")" == "null" ]] && [[ "$(jq -r --arg p "${host_arch}_${host_os}" '.platform[$p]' "${manifest}")" == "null" ]]; then
         continue
       fi
       ;;

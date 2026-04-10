@@ -277,14 +277,14 @@ read_manifest() {
       # usually preferred over linux-gnu binaries because they can avoid glibc version issues.
       # (rustc enables statically linking for linux-musl by default, except for mips.)
       host_platform="${host_arch}_linux_musl"
-      download_info=$(jq -r ".${host_platform}" <<<"${manifest}")
+      download_info=$(jq -r --arg p "${host_platform}" '.[$p]' <<<"${manifest}")
       if [[ "${download_info}" == "null" ]]; then
         # Even if host_env is musl, we won't issue an error here because it seems that in
         # some cases linux-gnu binaries will work on linux-musl hosts.
         # https://wiki.alpinelinux.org/wiki/Running_glibc_programs
         # TODO: However, a warning may make sense.
         host_platform="${host_arch}_linux_gnu"
-        download_info=$(jq -r ".${host_platform}" <<<"${manifest}")
+        download_info=$(jq -r --arg p "${host_platform}" '.[$p]' <<<"${manifest}")
       elif [[ "${host_env}" == "gnu" ]]; then
         # TODO: don't hardcode tool name and use 'prefer_linux_gnu' field in base manifest.
         case "${tool}" in
@@ -296,7 +296,7 @@ read_manifest() {
               # musl build of nextest is slow, so use glibc build if host_env is gnu.
               # https://github.com/taiki-e/install-action/issues/13
               host_platform="${host_arch}_linux_gnu"
-              download_info=$(jq -r ".${host_platform}" <<<"${manifest}")
+              download_info=$(jq -r --arg p "${host_platform}" '.[$p]' <<<"${manifest}")
             fi
             ;;
         esac
@@ -306,10 +306,10 @@ read_manifest() {
       # Binaries compiled for x86_64 macOS will usually also work on AArch64 macOS.
       # Binaries compiled for x86_64 Windows will usually also work on AArch64 Windows 11+.
       host_platform="${host_arch}_${host_os}"
-      download_info=$(jq -r ".${host_platform}" <<<"${manifest}")
+      download_info=$(jq -r --arg p "${host_platform}" '.[$p]' <<<"${manifest}")
       if [[ "${download_info}" == "null" ]] && [[ "${host_arch}" != "x86_64" ]]; then
         host_platform="x86_64_${host_os}"
-        download_info=$(jq -r ".${host_platform}" <<<"${manifest}")
+        download_info=$(jq -r --arg p "${host_platform}" '.[$p]' <<<"${manifest}")
       fi
       ;;
     *) bail "unsupported OS type '${host_os}' for ${tool}" ;;
@@ -327,7 +327,7 @@ read_download_info() {
   bin_in_archive=()
   if [[ "${url}" == "null" ]]; then
     local template
-    template=$(jq -c ".template.${host_platform}" "${manifest_dir}/${tool}.json")
+    template=$(jq -c --arg p "${host_platform}" '.template[$p]' "${manifest_dir}/${tool}.json")
     template="${template//\$\{version\}/${exact_version}}"
     url=$(jq -r '.url' <<<"${template}")
     tmp=$(jq -r '.bin' <<<"${template}")
