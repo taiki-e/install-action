@@ -102,6 +102,10 @@ See the [development guide](DEVELOPMENT.md) for how to add support for new tool.
 
 The `@v<major>` and `@<tool_name>` tags are updated with each release. If you want to enhance workflow stability and security against supply chain attacks, consider using the `@v<major>.<minor>.<patch>` tag or their hash to pin the version and regularly updating with [dependency cooldown]. Since all releases are immutable, pinning the version in either way should have the same effect. Pinning `@<tool_name>` tags by hash is strongly discouraged, as it causes the workflow to reference a [commit that is not present on the repository](https://docs.zizmor.sh/audits/#impostor-commit) when a new version is released.
 
+The default fallback (cargo-binstall) is often affected by GitHub's API rate limits, so we [pass the `${{ github.token }}` to cargo-binstall](https://github.com/taiki-e/install-action/issues/561). Disabling the cargo-binstall fallback prevent passing token so helps enhance security.
+
+See the [Supported tools section](#supported-tools) for how to ensure that fallback is not used.
+
 <!-- omit in toc -->
 ### Security on installation from GitHub Releases
 
@@ -123,8 +127,6 @@ When installing with `tool: <tool_name>` or `tool: <tool_name>@<omitted_version>
 ### Security on other installation methods
 
 See the linked documentation for information on security when installed using [snap](https://snapcraft.io/docs) or [cargo-binstall](https://github.com/cargo-bins/cargo-binstall#faq).
-
-The default fallback (cargo-binstall) is often affected by GitHub's API rate limits, so we pass the `${{ github.token }}` to cargo-binstall. Disabling the cargo-binstall fallback prevent passing token so helps enhance security.
 
 See the [Supported tools section](#supported-tools) for how to ensure that fallback is not used.
 
