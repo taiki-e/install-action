@@ -10,9 +10,9 @@ Note: In this file, do not use the hard wrap in the middle of a sentence for com
 
 ## [Unreleased]
 
-- Update `martin@latest` to 1.5.0.
+- Enhance security when cargo-binstall fallback is enabled. ([08a38582](https://github.com/taiki-e/install-action/commit/08a38582e35739e1fda5e4cd298e348536a1ddaa), [ba626b4d](https://github.com/taiki-e/install-action/commit/ba626b4d71edcae17f6ca956b7b81e925b2d24ef))
 
-- Enhance security when cargo-binstall fallback is enabled.
+- Update `martin@latest` to 1.5.0.
 
 - Update `uv@latest` to 0.11.5.
 
@@ -22,7 +22,7 @@ Note: In this file, do not use the hard wrap in the middle of a sentence for com
 
 ## [2.75.3] - 2026-04-09
 
-- Enhance security when cargo-binstall fallback is disabled.
+- Enhance security when cargo-binstall fallback is disabled. ([77557fa3](https://github.com/taiki-e/install-action/commit/77557fa3993e075c27572045b0d159865c23016b))
 
 - Update `rclone@latest` to 1.73.4.
 
