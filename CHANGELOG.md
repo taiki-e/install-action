@@ -10,6 +10,8 @@ Note: In this file, do not use the hard wrap in the middle of a sentence for com
 
 ## [Unreleased]
 
+- Update `gungraun-runner@latest` to 0.18.0.
+
 ## [2.75.4] - 2026-04-10
 
 - Enhance security when cargo-binstall fallback is enabled. ([08a38582](https://github.com/taiki-e/install-action/commit/08a38582e35739e1fda5e4cd298e348536a1ddaa), [ba626b4d](https://github.com/taiki-e/install-action/commit/ba626b4d71edcae17f6ca956b7b81e925b2d24ef))
