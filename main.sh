@@ -630,10 +630,9 @@ esac
 # Unlike gh command, cargo-binstall reads GITHUB_TOKEN first via cli parser, and then reads GH_TOKEN.
 # https://github.com/cargo-bins/cargo-binstall/blob/v1.17.9/crates/bin/src/args.rs#L704
 token="${GITHUB_TOKEN:-"${GH_TOKEN:-"${DEFAULT_GITHUB_TOKEN:-}"}"}"
-# This prevents tokens from being displayed to subprocesses via environment variables.
-# Since the tokens remain in the parent process's environment variables, and since unset may not
-# immediately cleanse memory, setting `fallback: none` (which prevents the tokens from being set
-# in the first place) remains the best practice from a security standpoint, as readme says.
+# This prevents tokens from being exposed to subprocesses via environment variables.
+# Since the tokens remain in memory, setting `fallback: none` (which prevents the tokens from being
+# set in the first place) remains the best practice from a security standpoint, as readme says.
 unset GITHUB_TOKEN GH_TOKEN DEFAULT_GITHUB_TOKEN
 
 case "${host_os}" in
