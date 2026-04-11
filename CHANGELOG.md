@@ -10,6 +10,8 @@ Note: In this file, do not use the hard wrap in the middle of a sentence for com
 
 ## [Unreleased]
 
+- Update `covgate@latest` to 0.1.4.
+
 - Update `wasm-bindgen@latest` to 0.2.118.
 
 ## [2.75.6] - 2026-04-11
