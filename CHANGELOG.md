@@ -10,6 +10,8 @@ Note: In this file, do not use the hard wrap in the middle of a sentence for com
 
 ## [Unreleased]
 
+## [2.75.6] - 2026-04-11
+
 - Update `mise@latest` to 2026.4.8.
 
 - Update `cargo-deny@latest` to 0.19.1.
@@ -6213,7 +6215,8 @@ Note: This release is considered a breaking change because installing on version
 
 Initial release
 
-[Unreleased]: https://github.com/taiki-e/install-action/compare/v2.75.5...HEAD
+[Unreleased]: https://github.com/taiki-e/install-action/compare/v2.75.6...HEAD
+[2.75.6]: https://github.com/taiki-e/install-action/compare/v2.75.5...v2.75.6
 [2.75.5]: https://github.com/taiki-e/install-action/compare/v2.75.4...v2.75.5
 [2.75.4]: https://github.com/taiki-e/install-action/compare/v2.75.3...v2.75.4
 [2.75.3]: https://github.com/taiki-e/install-action/compare/v2.75.2...v2.75.3
