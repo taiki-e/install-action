@@ -231,7 +231,11 @@ fn main() {
 
     let version_req: semver::VersionReq = match version_req {
         _ if latest_only => {
-            let req = format!("={}", releases.first_key_value().unwrap().0.0).parse().unwrap();
+            // Exclude very recently released version from candidate for latest version.
+            let req =
+                format!("={}", releases.iter().find(|r| r.1.1.published_at <= before).unwrap().0.0)
+                    .parse()
+                    .unwrap();
             eprintln!("update manifest for versions '{req}'");
             req
         }
