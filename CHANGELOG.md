@@ -10,6 +10,8 @@ Note: In this file, do not use the hard wrap in the middle of a sentence for com
 
 ## [Unreleased]
 
+- Enhance security when cargo-binstall fallback is enabled.
+
 ## [2.75.8] - 2026-04-13
 
 - Update `vacuum@latest` to 0.25.8.

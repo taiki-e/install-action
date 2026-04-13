@@ -181,9 +181,12 @@ jobs:
     strategy:
       fail-fast: false
       matrix:
-        fallback:
-          - none
-          - cargo-install
+        include:
+          - fallback: none
+          - fallback: cargo-install
+          - fallback: cargo-binstall
+          - fallback: cargo-binstall
+            version: 0.3
     runs-on: ubuntu-24.04-arm
     timeout-minutes: 60
     steps:
@@ -195,7 +198,7 @@ jobs:
         id: install
         continue-on-error: ${{ matrix.fallback == 'none' }}
         with:
-          tool: parse-changelog@0.4.6
+          tool: parse-changelog@${{ matrix.version || '0.4.6' }}
           fallback: ${{ matrix.fallback }}
       - run: exit 1
         if: matrix.fallback == 'none' && steps.install.outcome != 'failure'
