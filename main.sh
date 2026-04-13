@@ -975,7 +975,7 @@ if [[ ${#unsupported_tools[@]} -gt 0 ]]; then
                 fi
               done
               if [[ -z "${full_version}" ]]; then
-                bail "no stable version  found for ${tool} that match with '${version}.*'; if you want to install a pre-release version, please specify the full version"
+                bail "no stable version found for ${tool} that match with '${version}.*'; if you want to install a pre-release version, please specify the full version"
               fi
               version="${full_version}"
             fi
