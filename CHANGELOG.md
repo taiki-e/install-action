@@ -10,7 +10,7 @@ Note: In this file, do not use the hard wrap in the middle of a sentence for com
 
 ## [Unreleased]
 
-- Enhance security when cargo-binstall fallback is enabled.
+- Enhance security when cargo-binstall fallback is enabled. ([acc1621b](https://github.com/taiki-e/install-action/commit/acc1621b4419c9cf5d2361f3dd3bedcc288c6c43))
 
 ## [2.75.8] - 2026-04-13
 
