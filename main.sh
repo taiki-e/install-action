@@ -953,6 +953,7 @@ if [[ ${#unsupported_tools[@]} -gt 0 ]]; then
       done
       if [[ ${#unsupported_tools2[@]} -gt 0 ]]; then
         for tool in "${unsupported_tools2[@]}"; do
+          # This logic is from cache-cargo-install-action.
           cargo_args=(--locked)
           if [[ "${tool}" == *"@"* ]]; then
             version="${tool#*@}"
