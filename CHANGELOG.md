@@ -16,8 +16,6 @@ Note: In this file, do not use the hard wrap in the middle of a sentence for com
 
 - Update `cargo-binstall@latest` to 1.18.0.
 
-- Update `vacuum@latest` to 0.25.6.
-
 - Update `gungraun-runner@latest` to 0.18.1.
 
 ## [2.75.7] - 2026-04-11
