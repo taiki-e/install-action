@@ -10,6 +10,8 @@ Note: In this file, do not use the hard wrap in the middle of a sentence for com
 
 ## [Unreleased]
 
+- Update `mise@latest` to 2026.4.10.
+
 ## [2.75.9] - 2026-04-13
 
 - Enhance security when cargo-binstall fallback is used. ([acc1621b](https://github.com/taiki-e/install-action/commit/acc1621b4419c9cf5d2361f3dd3bedcc288c6c43))
