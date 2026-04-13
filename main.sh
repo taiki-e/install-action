@@ -935,6 +935,8 @@ if [[ ${#unsupported_tools[@]} -gt 0 ]]; then
         # Since the build script can access the token when `cargo install` is called
         # within `cargo-binstall`, disables building from source in cargo-binstall
         # and fallback to `cargo install` which doesn't need the token.
+        # TODO: once https://github.com/cargo-bins/cargo-binstall/pull/2533 merged,
+        # we can remove this and use batch install again.
         --disable-strategies compile
       )
       unsupported_tools2=()
