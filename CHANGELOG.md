@@ -10,6 +10,8 @@ Note: In this file, do not use the hard wrap in the middle of a sentence for com
 
 ## [Unreleased]
 
+## [2.75.9] - 2026-04-13
+
 - Enhance security when cargo-binstall fallback is enabled. ([acc1621b](https://github.com/taiki-e/install-action/commit/acc1621b4419c9cf5d2361f3dd3bedcc288c6c43))
 
 ## [2.75.8] - 2026-04-13
@@ -6233,7 +6235,8 @@ Note: This release is considered a breaking change because installing on version
 
 Initial release
 
-[Unreleased]: https://github.com/taiki-e/install-action/compare/v2.75.8...HEAD
+[Unreleased]: https://github.com/taiki-e/install-action/compare/v2.75.9...HEAD
+[2.75.9]: https://github.com/taiki-e/install-action/compare/v2.75.8...v2.75.9
 [2.75.8]: https://github.com/taiki-e/install-action/compare/v2.75.7...v2.75.8
 [2.75.7]: https://github.com/taiki-e/install-action/compare/v2.75.6...v2.75.7
 [2.75.6]: https://github.com/taiki-e/install-action/compare/v2.75.5...v2.75.6
