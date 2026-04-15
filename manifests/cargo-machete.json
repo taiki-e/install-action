@@ -7,6 +7,38 @@
   "0.9": {
     "version": "0.9.1"
   },
+  "0.9.2": {
+    "x86_64_linux_musl": {
+      "url": "https://github.com/bnjbvr/cargo-machete/releases/download/v0.9.2/cargo-machete-v0.9.2-x86_64-unknown-linux-musl.tar.gz",
+      "etag": "0x8DE9B0EC4E4A16A",
+      "hash": "48200087f54c55aabcd4db4af1e25742b49846c02a1b1bfa134711945b35b2e9",
+      "bin": "cargo-machete-v0.9.2-x86_64-unknown-linux-musl/cargo-machete"
+    },
+    "x86_64_macos": {
+      "url": "https://github.com/bnjbvr/cargo-machete/releases/download/v0.9.2/cargo-machete-v0.9.2-x86_64-apple-darwin.tar.gz",
+      "etag": "0x8DE9B0EC263ACC1",
+      "hash": "3e8cb936c9b820f84d047a2b5be8b229b2be67bf2467014885376a6faffdcac3",
+      "bin": "cargo-machete-v0.9.2-x86_64-apple-darwin/cargo-machete"
+    },
+    "x86_64_windows": {
+      "url": "https://github.com/bnjbvr/cargo-machete/releases/download/v0.9.2/cargo-machete-v0.9.2-x86_64-pc-windows-msvc.tar.gz",
+      "etag": "0x8DE9B0EDA735250",
+      "hash": "996120ac70afe405c58fce508a476f25bb71032c6fb8013aa0123bba36429c76",
+      "bin": "cargo-machete-v0.9.2-x86_64-pc-windows-msvc/cargo-machete.exe"
+    },
+    "aarch64_linux_gnu": {
+      "url": "https://github.com/bnjbvr/cargo-machete/releases/download/v0.9.2/cargo-machete-v0.9.2-aarch64-unknown-linux-gnu.tar.gz",
+      "etag": "0x8DE9B0EB0A844A7",
+      "hash": "6f96c3e6026a5bdd241b6ae600c6fb86c9197c6e189a894f91371baa01fd10f5",
+      "bin": "cargo-machete-v0.9.2-aarch64-unknown-linux-gnu/cargo-machete"
+    },
+    "aarch64_macos": {
+      "url": "https://github.com/bnjbvr/cargo-machete/releases/download/v0.9.2/cargo-machete-v0.9.2-aarch64-apple-darwin.tar.gz",
+      "etag": "0x8DE9B0EC004E6C0",
+      "hash": "63e28fee386d82d33f2d12406c857f98e2d4697f3f7df7f71f34dff07fca0fde",
+      "bin": "cargo-machete-v0.9.2-aarch64-apple-darwin/cargo-machete"
+    }
+  },
   "0.9.1": {
     "x86_64_linux_musl": {
       "url": "https://github.com/bnjbvr/cargo-machete/releases/download/v0.9.1/cargo-machete-v0.9.1-x86_64-unknown-linux-musl.tar.gz",
