@@ -10,6 +10,8 @@ Note: In this file, do not use the hard wrap in the middle of a sentence for com
 
 ## [Unreleased]
 
+- Update `biome@latest` to 2.4.12.
+
 ## [2.75.14] - 2026-04-15
 
 - Implement potential workaround for [windows-11-arm runner bug](https://github.com/actions/partner-runner-images/issues/169) which sometimes causes installation failure.
