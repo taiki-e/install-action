@@ -10,6 +10,8 @@ Note: In this file, do not use the hard wrap in the middle of a sentence for com
 
 ## [Unreleased]
 
+## [2.75.14] - 2026-04-15
+
 - Implement potential workaround for [windows-11-arm runner bug](https://github.com/actions/partner-runner-images/issues/169) which sometimes causes installation failure.
 
   The issue where this bug affected the startup of bash was addressed in 2.71.2, but we received a report that the same problem seems to occur when starting other commands as well.
@@ -6267,7 +6269,8 @@ Note: This release is considered a breaking change because installing on version
 
 Initial release
 
-[Unreleased]: https://github.com/taiki-e/install-action/compare/v2.75.13...HEAD
+[Unreleased]: https://github.com/taiki-e/install-action/compare/v2.75.14...HEAD
+[2.75.14]: https://github.com/taiki-e/install-action/compare/v2.75.13...v2.75.14
 [2.75.13]: https://github.com/taiki-e/install-action/compare/v2.75.12...v2.75.13
 [2.75.12]: https://github.com/taiki-e/install-action/compare/v2.75.11...v2.75.12
 [2.75.11]: https://github.com/taiki-e/install-action/compare/v2.75.10...v2.75.11
