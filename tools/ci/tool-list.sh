@@ -72,7 +72,8 @@ case "$(uname -s)" in
     if [[ "${ldd_version}" == *'musl'* ]]; then
       incompat_tools+=("${musl_incompat[@]}")
     else
-      host_glibc_version=$(grep -E "GLIBC|GNU libc" <<<"${ldd_version}" | sed "s/.* //g")
+      host_glibc_version=$(grep -E "GLIBC|GNU libc" <<<"${ldd_version}")
+      host_glibc_version="${host_glibc_version##* }"
       higher_glibc_version=$(LC_ALL=C sort -Vu <<<"2.39"$'\n'"${host_glibc_version}" | tail -1)
       if [[ "${higher_glibc_version}" != "${host_glibc_version}" ]]; then
         higher_glibc_version=$(LC_ALL=C sort -Vu <<<"2.35"$'\n'"${host_glibc_version}" | tail -1)

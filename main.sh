@@ -464,7 +464,8 @@ case "$(uname -s)" in
       host_env=musl
     else
       host_env=gnu
-      host_glibc_version=$(grep -E "GLIBC|GNU libc" <<<"${ldd_version}" | sed -E "s/.* //g")
+      host_glibc_version=$(grep -E "GLIBC|GNU libc" <<<"${ldd_version}")
+      host_glibc_version="${host_glibc_version##* }"
     fi
     if [[ -e /etc/redhat-release ]]; then
       # /etc/os-release is available on RHEL/CentOS 7+
