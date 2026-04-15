@@ -1,0 +1,183 @@
+{
+  "rust_crate": "martin",
+  "template": {
+    "x86_64_linux_musl": {
+      "url": "https://github.com/maplibre/martin/releases/download/martin-v${version}/martin-x86_64-unknown-linux-musl.tar.gz",
+      "bin": [
+        "martin",
+        "martin-cp"
+      ]
+    },
+    "x86_64_macos": {
+      "url": "https://github.com/maplibre/martin/releases/download/martin-v${version}/martin-x86_64-apple-darwin.tar.gz",
+      "bin": [
+        "martin",
+        "martin-cp"
+      ]
+    },
+    "aarch64_linux_musl": {
+      "url": "https://github.com/maplibre/martin/releases/download/martin-v${version}/martin-aarch64-unknown-linux-musl.tar.gz",
+      "bin": [
+        "martin",
+        "martin-cp"
+      ]
+    },
+    "aarch64_macos": {
+      "url": "https://github.com/maplibre/martin/releases/download/martin-v${version}/martin-aarch64-apple-darwin.tar.gz",
+      "bin": [
+        "martin",
+        "martin-cp"
+      ]
+    }
+  },
+  "latest": {
+    "version": "1.5.0"
+  },
+  "1": {
+    "version": "1.5.0"
+  },
+  "1.5": {
+    "version": "1.5.0"
+  },
+  "1.5.0": {
+    "x86_64_linux_musl": {
+      "etag": "0x8DE9606A16881B6",
+      "hash": "29cebebba0bc6bc8cd3f089d4c8e06abecef1a1754b9c816ef4dbf6ae41b6f63"
+    },
+    "x86_64_macos": {
+      "etag": "0x8DE9606A093D120",
+      "hash": "c50589f9fd2ad018adb3c085b9f31fe73b9b5587949cc04f6ae37c18cd0cc390"
+    },
+    "aarch64_linux_musl": {
+      "etag": "0x8DE9606A0994946",
+      "hash": "11b9305afc987e71d0edc0a7454d1b3f9a7b42d3b2603870729c21bba924ad20"
+    },
+    "aarch64_macos": {
+      "etag": "0x8DE9606A08CFAF6",
+      "hash": "c52a2851aae177cfdcd2adf019e391ac4512eaa1566c4f7de3bd4a4746bb60d7"
+    }
+  },
+  "1.4": {
+    "version": "1.4.0"
+  },
+  "1.4.0": {
+    "x86_64_linux_musl": {
+      "etag": "0x8DE8289D41A741D",
+      "hash": "fbeb563a8a53f1268786d70c0ed2a1e5c7e8142f76168b0b1d07cb6e694ebbfd"
+    },
+    "x86_64_macos": {
+      "etag": "0x8DE8289D41BAB3C",
+      "hash": "3b42f618cd8d4364690553ad09e7ce9ac2fc548fb9905840720f21efb7c0ed19"
+    },
+    "aarch64_linux_musl": {
+      "etag": "0x8DE8289D4002BCF",
+      "hash": "7e148b4d79dd1ac0e7f6f3e637ac7ae03d287663e0c4204724ef3a2894560442"
+    },
+    "aarch64_macos": {
+      "etag": "0x8DE8289D4282055",
+      "hash": "3a9107d8960cc03c21f52474f520798cf7c784ee53cda9aadbe83828ab1323e1"
+    }
+  },
+  "1.3": {
+    "version": "1.3.1"
+  },
+  "1.3.1": {
+    "x86_64_linux_musl": {
+      "etag": "0x8DE69BEEF1273C5",
+      "hash": "efae063aa2faa85f5ccadb00d5321bb10adeb2b439ef8422a41951f532f68133"
+    },
+    "x86_64_macos": {
+      "etag": "0x8DE69BEEEB00219",
+      "hash": "15c7ae65e14df86f0b70d6c081332beba038cbc421386477fcd6507604d27677"
+    },
+    "aarch64_linux_musl": {
+      "etag": "0x8DE69BEEEDE310E",
+      "hash": "88bdff3fd145c242b047ec70c3ccb57eec19ac1817eb8819d68d840aaca6cc81"
+    },
+    "aarch64_macos": {
+      "etag": "0x8DE69BEEEB00219",
+      "hash": "f7e91fed05a219db1ebc5a6b33c006991fb472a3963b3602c230ee0864748111"
+    }
+  },
+  "1.3.0": {
+    "x86_64_linux_musl": {
+      "etag": "0x8DE5F7074F325B7",
+      "hash": "1bbea224b92b57211db264725b59d127af9a6e1561293b47710620e7ea23b518"
+    },
+    "x86_64_macos": {
+      "etag": "0x8DE5F7074F5BAE1",
+      "hash": "b562eed3e4eff6b85d2762bad0b22e88d49d4c4bc769503ca53f0c418a7d545a"
+    },
+    "aarch64_linux_musl": {
+      "etag": "0x8DE5F7074E662D8",
+      "hash": "98bfe75764fbf2d000e773da5b7c8ba21371d55782cd9082094e78d8936fa338"
+    },
+    "aarch64_macos": {
+      "etag": "0x8DE5F7074C8752B",
+      "hash": "cfa6b805ffb07b7097f00a345848e6b99ed26c9295dd5cb2e6a7014371348264"
+    }
+  },
+  "1.2": {
+    "version": "1.2.0"
+  },
+  "1.2.0": {
+    "x86_64_linux_musl": {
+      "etag": "0x8DE4B646592531C",
+      "hash": "0cddd16c5d7f04f0c83a4b1724f755239cbc0e21c2de307c75291356dbc3bbf6"
+    },
+    "x86_64_macos": {
+      "etag": "0x8DE4B6465CAFDBD",
+      "hash": "7cf0b7a14fc4d767bebd4e99d7a569ce8d0a4dcc485c5981736080196bb41148"
+    },
+    "aarch64_linux_musl": {
+      "etag": "0x8DE4B64658D7699",
+      "hash": "d67e42fa2f4a61cca47e110768114d7ac28b874fb7f350645b598ff5382279f5"
+    },
+    "aarch64_macos": {
+      "etag": "0x8DE4B64657575B8",
+      "hash": "beaae2a87c2c8481bf1f1324082e71d0e9d05100da75ac9cc451cb65601bab99"
+    }
+  },
+  "1.1": {
+    "version": "1.1.0"
+  },
+  "1.1.0": {
+    "x86_64_linux_musl": {
+      "etag": "0x8DE3BE41FE428EE",
+      "hash": "696f331cdf7b6f31a94174efdc0176d024bfe07b7341248437669310d654da27"
+    },
+    "x86_64_macos": {
+      "etag": "0x8DE3BE41FCB8C7A",
+      "hash": "5f938c033c8f0eec4cb306da3006becaa5376851510ced253d59fb441fc30051"
+    },
+    "aarch64_linux_musl": {
+      "etag": "0x8DE3BE41FC80DF6",
+      "hash": "a11db36240d91e4a4bee838080b13394aa92e70b13070bcadfd2527dba5058b7"
+    },
+    "aarch64_macos": {
+      "etag": "0x8DE3BE41FCA2E76",
+      "hash": "21437a757c6efad91e9c6965b9133ee3ece82d70881c59d9bb2b74cc97b2ee05"
+    }
+  },
+  "1.0": {
+    "version": "1.0.0"
+  },
+  "1.0.0": {
+    "x86_64_linux_musl": {
+      "etag": "0x8DE27211023BBA3",
+      "hash": "9ef58e23cf79647a5e993d5c201a72a38398c189a4678d0c11e2dae82fd0b120"
+    },
+    "x86_64_macos": {
+      "etag": "0x8DE27211021E8EF",
+      "hash": "1e3c955a22988b46624c4a3df5bc4fd6880c286f33cb51aa5510c6eda3b8cfea"
+    },
+    "aarch64_linux_musl": {
+      "etag": "0x8DE272110061BD5",
+      "hash": "991957c0c285c2c949dcc6b326980850925af5ab5c7b66ebf1cf31465820a727"
+    },
+    "aarch64_macos": {
+      "etag": "0x8DE2721100A0F05",
+      "hash": "756d4f0c73396eca6b34ec4f512f03fc619574e386646d8c441611a48ba49a8f"
+    }
+  }
+}

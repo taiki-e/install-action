@@ -1,0 +1,144 @@
+{
+  "rust_crate": "gungraun-runner",
+  "template": {
+    "x86_64_linux_musl": {
+      "url": "https://github.com/gungraun/gungraun/releases/download/v${version}/gungraun-runner-v${version}-x86_64-unknown-linux-musl.tar.gz",
+      "bin": "gungraun-runner-v${version}-x86_64-unknown-linux-musl/gungraun-runner"
+    },
+    "aarch64_linux_gnu": {
+      "url": "https://github.com/gungraun/gungraun/releases/download/v${version}/gungraun-runner-v${version}-aarch64-unknown-linux-gnu.tar.gz",
+      "bin": "gungraun-runner-v${version}-aarch64-unknown-linux-gnu/gungraun-runner"
+    },
+    "powerpc64le_linux_gnu": {
+      "url": "https://github.com/gungraun/gungraun/releases/download/v${version}/gungraun-runner-v${version}-powerpc64le-unknown-linux-gnu.tar.gz",
+      "bin": "gungraun-runner-v${version}-powerpc64le-unknown-linux-gnu/gungraun-runner"
+    },
+    "riscv64_linux_gnu": {
+      "url": "https://github.com/gungraun/gungraun/releases/download/v${version}/gungraun-runner-v${version}-riscv64gc-unknown-linux-gnu.tar.gz",
+      "bin": "gungraun-runner-v${version}-riscv64gc-unknown-linux-gnu/gungraun-runner"
+    },
+    "s390x_linux_gnu": {
+      "url": "https://github.com/gungraun/gungraun/releases/download/v${version}/gungraun-runner-v${version}-s390x-unknown-linux-gnu.tar.gz",
+      "bin": "gungraun-runner-v${version}-s390x-unknown-linux-gnu/gungraun-runner"
+    }
+  },
+  "latest": {
+    "version": "0.18.1"
+  },
+  "0.18": {
+    "version": "0.18.1"
+  },
+  "0.18.1": {
+    "x86_64_linux_musl": {
+      "etag": "0x8DE9748264D41CC",
+      "hash": "8e085908f9de28f4e4b599f171aff61e72342481c5af3a8086ed800be8e17a35"
+    },
+    "aarch64_linux_gnu": {
+      "etag": "0x8DE97471C4DE6D4",
+      "hash": "46b29d7bb529062256b28eca27d26c6f5ca1943a627f9dd024d7641b604ecf11"
+    },
+    "powerpc64le_linux_gnu": {
+      "etag": "0x8DE974857C237F9",
+      "hash": "c7833abfdd55440b8be85e854e7b673c6cd8933c85517eb6309dfee31079f4a7"
+    },
+    "riscv64_linux_gnu": {
+      "etag": "0x8DE974839AFEA4F",
+      "hash": "3374713f6e77b0f5329674a9d03bc0ed9ee5e899a9ad0d23382cff247097e8e0"
+    },
+    "s390x_linux_gnu": {
+      "etag": "0x8DE97483DFFED3C",
+      "hash": "997d992f59088c1d7b77cc4906f5c28fcbc1c59e01ecd5442ebcdeae9e47d87c"
+    }
+  },
+  "0.18.0": {
+    "x86_64_linux_musl": {
+      "etag": "0x8DE9642F0CF107C",
+      "hash": "6bc46e9b0b9df0a13897c277c9c529488e1746b5f6ad6fa33b966f4f395bec28"
+    },
+    "aarch64_linux_gnu": {
+      "etag": "0x8DE9642F5351AC4",
+      "hash": "9ffe79ab8523c1ada9a52c1352333d6499cd26fabb60d9ba6a8eeb1ab4102dc2"
+    },
+    "powerpc64le_linux_gnu": {
+      "etag": "0x8DE9642F38861F9",
+      "hash": "6b2ddd799fec1517aee95fd03eb021e125b46690c679d29d54824b87b97c61fe"
+    },
+    "riscv64_linux_gnu": {
+      "etag": "0x8DE9642EC2FBFDC",
+      "hash": "8bf2263ac4a41cb9132df94d4e570eb3e310e2afc970ff6581ccc6a32fc66c22"
+    },
+    "s390x_linux_gnu": {
+      "etag": "0x8DE9642EE460E79",
+      "hash": "e540f51a2621fe1a69cf9e7d0acf97d0e1c8b11866ba1ef08564614c496c5259"
+    }
+  },
+  "0.17": {
+    "version": "0.17.2"
+  },
+  "0.17.2": {
+    "x86_64_linux_musl": {
+      "etag": "0x8DE68853C020A9C",
+      "hash": "569b45791e87a157b6a5c248b60c679fc2fe7e0bdb6b4c8101e08ef88b75bbc5"
+    },
+    "aarch64_linux_gnu": {
+      "etag": "0x8DE68856BC32412",
+      "hash": "5b59390e72a149230b1f9a8e6fe2f99b0287cd654fda6f97a3117fff26c9c36e"
+    },
+    "powerpc64le_linux_gnu": {
+      "etag": "0x8DE68853B34CC5E",
+      "hash": "52b51a07a64065085e5185e972dedbec561bab3b21a1d7caf518e0535d2a0e28"
+    },
+    "riscv64_linux_gnu": {
+      "etag": "0x8DE688536B1739C",
+      "hash": "ba8339ccb5dd17d132299b9f92a992673c7aba3df963071e7d5937c1e718781e"
+    },
+    "s390x_linux_gnu": {
+      "etag": "0x8DE68856D0389E2",
+      "hash": "09a40672c812c0ceb13bae85c4b00b535bf3804f9f9402ca2df263ea81a66700"
+    }
+  },
+  "0.17.1": {
+    "x86_64_linux_musl": {
+      "etag": "0x8DE686AB13208B9",
+      "hash": "7ded91ba76e91f1458817672c31a0410c77fb47d6e24a991f5753f09e9ab11f9"
+    },
+    "aarch64_linux_gnu": {
+      "etag": "0x8DE686A71C74ACE",
+      "hash": "860e663b4ed4855d9aeaa5604c05d6d4a52e757817e747009738e61359acfdc4"
+    },
+    "powerpc64le_linux_gnu": {
+      "etag": "0x8DE686AB27613FC",
+      "hash": "152a201a9dba68f2e3f17d350ee1b7c1224eeaa7011acae3fff42142b89bbf2f"
+    },
+    "riscv64_linux_gnu": {
+      "etag": "0x8DE686A885720ED",
+      "hash": "bd947d5bd7f7a11c03c8e867c42b81f642025218cecd4186ea410a5813ff34e6"
+    },
+    "s390x_linux_gnu": {
+      "etag": "0x8DE686A938F793B",
+      "hash": "e71989857f9e4adaaaf8de659157c7b192e7ae9e6eed6ce3424aeda0f49f16a0"
+    }
+  },
+  "0.17.0": {
+    "x86_64_linux_musl": {
+      "etag": "0x8DDF976E83B1C58",
+      "hash": "0c0dc5702ec2319e53c9f58eb1e6f897e42ce44d8877f0b20cecad8f77138c27"
+    },
+    "aarch64_linux_gnu": {
+      "etag": "0x8DDF976AFD74096",
+      "hash": "96d1e996d03da4dd4f205d6b6d7901a829e667c1fbd1b50d457ed7985f579bc9"
+    },
+    "powerpc64le_linux_gnu": {
+      "etag": "0x8DDF976E339F8F5",
+      "hash": "eca926ef2ed9a861e812ff71eb1f425235a9abe4c790705ef4be13f3265c14cc"
+    },
+    "riscv64_linux_gnu": {
+      "etag": "0x8DDF976AB1DF8DB",
+      "hash": "315947fcbb536956e1dc203353eea523f7c306276d95ce52bde6ed0033136631"
+    },
+    "s390x_linux_gnu": {
+      "etag": "0x8DDF976DEB82496",
+      "hash": "87e6eeeeaeffc1bcbaad72f4cf45dc70694d9a803acc9d12cc9b54ee8343ae37"
+    }
+  }
+}

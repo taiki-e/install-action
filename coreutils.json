@@ -1,0 +1,385 @@
+{
+  "rust_crate": "coreutils",
+  "template": null,
+  "latest": {
+    "version": "0.6.0"
+  },
+  "0.8.0": {
+    "x86_64_linux_musl": {
+      "url": "https://github.com/uutils/coreutils/releases/download/0.8.0/coreutils-0.8.0-x86_64-unknown-linux-musl.tar.gz",
+      "etag": "0x8DE941D3DECEE20",
+      "hash": "b8977997a49b677169f7ce65bfc2ad658d4943c4f02f0493b1a802137202b0bf",
+      "bin": "coreutils-0.8.0-x86_64-unknown-linux-musl/coreutils"
+    },
+    "x86_64_macos": {
+      "url": "https://github.com/uutils/coreutils/releases/download/0.8.0/coreutils-0.8.0-x86_64-apple-darwin.tar.gz",
+      "etag": "0x8DE941DCF25AA9A",
+      "hash": "8ac6299b298eb3ba995973b42aece162578e19f9243425a5945d9c4bd8135b0a",
+      "bin": "coreutils-0.8.0-x86_64-apple-darwin/coreutils"
+    },
+    "x86_64_windows": {
+      "url": "https://github.com/uutils/coreutils/releases/download/0.8.0/coreutils-0.8.0-x86_64-pc-windows-msvc.zip",
+      "etag": "0x8DE941D6E03C003",
+      "hash": "db464cf2a6ecbfd42c85f46ed2d749be574df4df47feca1f08988fd760f324f3",
+      "bin": "coreutils-0.8.0-x86_64-pc-windows-msvc/coreutils.exe"
+    },
+    "aarch64_linux_musl": {
+      "url": "https://github.com/uutils/coreutils/releases/download/0.8.0/coreutils-0.8.0-aarch64-unknown-linux-musl.tar.gz",
+      "etag": "0x8DE941C4BA7DC07",
+      "hash": "e592200ef784deecc5ac2328b0617422c89f62b9bb841eb114528ed938ccb725",
+      "bin": "coreutils-0.8.0-aarch64-unknown-linux-musl/coreutils"
+    },
+    "aarch64_macos": {
+      "url": "https://github.com/uutils/coreutils/releases/download/0.8.0/coreutils-0.8.0-aarch64-apple-darwin.tar.gz",
+      "etag": "0x8DE941D614F7398",
+      "hash": "add95b420f9f1b69a0a7cb7b2672648fc72cf1294384344791e8e064bdc5e8c2",
+      "bin": "coreutils-0.8.0-aarch64-apple-darwin/coreutils"
+    },
+    "aarch64_windows": {
+      "url": "https://github.com/uutils/coreutils/releases/download/0.8.0/coreutils-0.8.0-aarch64-pc-windows-msvc.zip",
+      "etag": "0x8DE941BAE10C59A",
+      "hash": "1dfa62f18b64c70b664936b06fb1be20f0f6afa9ff041dd95dda629e987435a9",
+      "bin": "coreutils-0.8.0-aarch64-pc-windows-msvc/coreutils.exe"
+    },
+    "riscv64_linux_musl": {
+      "url": "https://github.com/uutils/coreutils/releases/download/0.8.0/coreutils-0.8.0-riscv64gc-unknown-linux-musl.tar.gz",
+      "etag": "0x8DE941BF13F7832",
+      "hash": "6e6c8823d7319f0d83a932515e248df0eb531e07f3a9193aaf05fdfb9dd63698",
+      "bin": "coreutils-0.8.0-riscv64gc-unknown-linux-musl/coreutils"
+    }
+  },
+  "0.7.0": {
+    "x86_64_linux_musl": {
+      "url": "https://github.com/uutils/coreutils/releases/download/0.7.0/coreutils-0.7.0-x86_64-unknown-linux-musl.tar.gz",
+      "etag": "0x8DE7DA038F22345",
+      "hash": "9f8f6039f162ace2d398b23fe989d74baeb108e8060aa58c0984b363175424ee",
+      "bin": "coreutils-0.7.0-x86_64-unknown-linux-musl/coreutils"
+    },
+    "x86_64_macos": {
+      "url": "https://github.com/uutils/coreutils/releases/download/0.7.0/coreutils-0.7.0-x86_64-apple-darwin.tar.gz",
+      "etag": "0x8DE7DA03083D203",
+      "hash": "fd66dfbd5672eebdf5381a22d82c1b0bef6f5c3f6ebe9f90b59d4317f4435225",
+      "bin": "coreutils-0.7.0-x86_64-apple-darwin/coreutils"
+    },
+    "x86_64_windows": {
+      "url": "https://github.com/uutils/coreutils/releases/download/0.7.0/coreutils-0.7.0-x86_64-pc-windows-msvc.zip",
+      "etag": "0x8DE7DA035EBA741",
+      "hash": "df878e29fc738bc4273e85c9d2c35ab898e31568021e6baf1c330c7961943c8f",
+      "bin": "coreutils-0.7.0-x86_64-pc-windows-msvc/coreutils.exe"
+    },
+    "aarch64_linux_musl": {
+      "url": "https://github.com/uutils/coreutils/releases/download/0.7.0/coreutils-0.7.0-aarch64-unknown-linux-musl.tar.gz",
+      "etag": "0x8DE7DA02619A308",
+      "hash": "5a7cd25ffa0f3450848762c70862f6fcdc2e274bc6703f1bdcaa8ff888130595",
+      "bin": "coreutils-0.7.0-aarch64-unknown-linux-musl/coreutils"
+    },
+    "aarch64_macos": {
+      "url": "https://github.com/uutils/coreutils/releases/download/0.7.0/coreutils-0.7.0-aarch64-apple-darwin.tar.gz",
+      "etag": "0x8DE7DA0221FC701",
+      "hash": "96cb272063a13551744ceba2efdbb3c92264abd8cec0aa90a637fad5cd2be208",
+      "bin": "coreutils-0.7.0-aarch64-apple-darwin/coreutils"
+    },
+    "aarch64_windows": {
+      "url": "https://github.com/uutils/coreutils/releases/download/0.7.0/coreutils-0.7.0-aarch64-pc-windows-msvc.zip",
+      "etag": "0x8DE7DA02369BEFA",
+      "hash": "372323492402f3249876599f1ff99aad9bd2aecaa217b1cb146608ef58d3ed4b",
+      "bin": "coreutils-0.7.0-aarch64-pc-windows-msvc/coreutils.exe"
+    },
+    "riscv64_linux_musl": {
+      "url": "https://github.com/uutils/coreutils/releases/download/0.7.0/coreutils-0.7.0-riscv64gc-unknown-linux-musl.tar.gz",
+      "etag": "0x8DE7DA02D98FC34",
+      "hash": "472be17cbe0b69b4c328c3c3e37d889f3792fb37a642603ac94b3c99a9cfae0e",
+      "bin": "coreutils-0.7.0-riscv64gc-unknown-linux-musl/coreutils"
+    }
+  },
+  "0.6": {
+    "version": "0.6.0"
+  },
+  "0.6.0": {
+    "x86_64_linux_musl": {
+      "url": "https://github.com/uutils/coreutils/releases/download/0.6.0/coreutils-0.6.0-x86_64-unknown-linux-musl.tar.gz",
+      "etag": "0x8DE624896875B8E",
+      "hash": "6ddc463115e501a3edd368af601be9b32613f1af3b910e63679b7b273882b304",
+      "bin": "coreutils-x86_64-unknown-linux-musl/coreutils"
+    },
+    "x86_64_macos": {
+      "url": "https://github.com/uutils/coreutils/releases/download/0.6.0/coreutils-0.6.0-x86_64-apple-darwin.tar.gz",
+      "etag": "0x8DE62497CF84E50",
+      "hash": "ffb6b57a6640f32895eaec7a5e31f2191860b036dce27769ddcd3fd2786f2865",
+      "bin": "coreutils-x86_64-apple-darwin/coreutils"
+    },
+    "x86_64_windows": {
+      "url": "https://github.com/uutils/coreutils/releases/download/0.6.0/coreutils-0.6.0-x86_64-pc-windows-msvc.zip",
+      "etag": "0x8DE624914778DB8",
+      "hash": "f223058a51e8a2a4b92d9f1a1b2954f7a02b6d0f42e4a7e0413fcdb93be2e287",
+      "bin": "coreutils-x86_64-pc-windows-msvc/coreutils.exe"
+    },
+    "aarch64_linux_musl": {
+      "url": "https://github.com/uutils/coreutils/releases/download/0.6.0/coreutils-0.6.0-aarch64-unknown-linux-musl.tar.gz",
+      "etag": "0x8DE6247D6AF7544",
+      "hash": "47a14a2ed2f64b2341731e0e15f916806b3f50cce0b6ffa2cae9ed531c0c9d33",
+      "bin": "coreutils-aarch64-unknown-linux-musl/coreutils"
+    },
+    "aarch64_macos": {
+      "url": "https://github.com/uutils/coreutils/releases/download/0.6.0/coreutils-0.6.0-aarch64-apple-darwin.tar.gz",
+      "etag": "0x8DE6249C49393A1",
+      "hash": "70319bbe063c015c8be25fd384478013f6f211fc7507282b6ed12f85eedb99dc",
+      "bin": "coreutils-aarch64-apple-darwin/coreutils"
+    },
+    "aarch64_windows": {
+      "url": "https://github.com/uutils/coreutils/releases/download/0.6.0/coreutils-0.6.0-aarch64-pc-windows-msvc.zip",
+      "etag": "0x8DE62481C536BB1",
+      "hash": "7183bd5aff648b76517182e50d94819efdaede637650f5b9ad9117c171c4eebf",
+      "bin": "coreutils-aarch64-pc-windows-msvc/coreutils.exe"
+    },
+    "riscv64_linux_musl": {
+      "url": "https://github.com/uutils/coreutils/releases/download/0.6.0/coreutils-0.6.0-riscv64gc-unknown-linux-musl.tar.gz",
+      "etag": "0x8DE6247C8CECA39",
+      "hash": "0deaa2ccf9c41f2f727e6715c40c433dc7ad4cd024cfc497d4d67e4020635be9",
+      "bin": "coreutils-0.6.0-riscv64gc-unknown-linux-musl/coreutils"
+    }
+  },
+  "0.5": {
+    "version": "0.5.0"
+  },
+  "0.5.0": {
+    "x86_64_linux_musl": {
+      "url": "https://github.com/uutils/coreutils/releases/download/0.5.0/coreutils-0.5.0-x86_64-unknown-linux-musl.tar.gz",
+      "etag": "0x8DE3A58E83993BE",
+      "hash": "dc3ced6fa8ea63f20640b4cb610017c4afa8fdaf6318c998161bbaf5e7bfc830",
+      "bin": "coreutils-0.5.0-x86_64-unknown-linux-musl/coreutils"
+    },
+    "x86_64_macos": {
+      "url": "https://github.com/uutils/coreutils/releases/download/0.5.0/coreutils-0.5.0-x86_64-apple-darwin.tar.gz",
+      "etag": "0x8DE3A5B4C77B5CD",
+      "hash": "9c6b68cb1e01619ed5ff2f9691e58d9e4035e6120e21030c4608f9a234a3089d",
+      "bin": "coreutils-0.5.0-x86_64-apple-darwin/coreutils"
+    },
+    "x86_64_windows": {
+      "url": "https://github.com/uutils/coreutils/releases/download/0.5.0/coreutils-0.5.0-x86_64-pc-windows-msvc.zip",
+      "etag": "0x8DE3A5967011891",
+      "hash": "ba0a319a2acf0ab2c1786fb75a246090d905f49762638e903b4f8ff3195b72be",
+      "bin": "coreutils-0.5.0-x86_64-pc-windows-msvc/coreutils.exe"
+    },
+    "aarch64_linux_musl": {
+      "url": "https://github.com/uutils/coreutils/releases/download/0.5.0/coreutils-0.5.0-aarch64-unknown-linux-musl.tar.gz",
+      "etag": "0x8DE3A5814A6F76A",
+      "hash": "a1ffa4faf1e1b6267edb58a5015fbc09dd6f787d80c4d59d781876374edb0f8e",
+      "bin": "coreutils-0.5.0-aarch64-unknown-linux-musl/coreutils"
+    },
+    "aarch64_macos": {
+      "url": "https://github.com/uutils/coreutils/releases/download/0.5.0/coreutils-0.5.0-aarch64-apple-darwin.tar.gz",
+      "etag": "0x8DE3A5ACB7FBD12",
+      "hash": "cb54ceebbd09936b2ee5167d5ff9318c3a9e28e2f154fddd3ec7febb7fc40624",
+      "bin": "coreutils-0.5.0-aarch64-apple-darwin/coreutils"
+    },
+    "aarch64_windows": {
+      "url": "https://github.com/uutils/coreutils/releases/download/0.5.0/coreutils-0.5.0-aarch64-pc-windows-msvc.zip",
+      "etag": "0x8DE3A586ED221E8",
+      "hash": "96538e06f0092b23cb0f368426fc2b1132f494ce7195ccc53e0fc8071436f73c",
+      "bin": "coreutils-0.5.0-aarch64-pc-windows-msvc/coreutils.exe"
+    }
+  },
+  "0.4": {
+    "version": "0.4.0"
+  },
+  "0.4.0": {
+    "x86_64_linux_musl": {
+      "url": "https://github.com/uutils/coreutils/releases/download/0.4.0/coreutils-0.4.0-x86_64-unknown-linux-musl.tar.gz",
+      "etag": "0x8DE1FE2BC2BBF8B",
+      "hash": "7658be348de0741308f59ddc0ceec0c84a879b5fad575226c4628a5ecd39c06d",
+      "bin": "coreutils-0.4.0-x86_64-unknown-linux-musl/coreutils"
+    },
+    "x86_64_macos": {
+      "url": "https://github.com/uutils/coreutils/releases/download/0.4.0/coreutils-0.4.0-x86_64-apple-darwin.tar.gz",
+      "etag": "0x8DE1FE48EEDC63C",
+      "hash": "6e4be8429efe86c9a60247ae7a930221ed11770a975fb4b6fd09ff8d39b9a15c",
+      "bin": "coreutils-0.4.0-x86_64-apple-darwin/coreutils"
+    },
+    "x86_64_windows": {
+      "url": "https://github.com/uutils/coreutils/releases/download/0.4.0/coreutils-0.4.0-x86_64-pc-windows-msvc.zip",
+      "etag": "0x8DE1FE334CD6CFA",
+      "hash": "3d22d9371118f3f6b2dbbc98d21cbfee5d3a752732af5b1efb456c6410095cda",
+      "bin": "coreutils-0.4.0-x86_64-pc-windows-msvc/coreutils.exe"
+    },
+    "aarch64_linux_musl": {
+      "url": "https://github.com/uutils/coreutils/releases/download/0.4.0/coreutils-0.4.0-aarch64-unknown-linux-musl.tar.gz",
+      "etag": "0x8DE1FE2D205235A",
+      "hash": "426eb4b18dd2ba9af6397211f7710f6474a8ec700d0f3249f147c544318d85a3",
+      "bin": "coreutils-0.4.0-aarch64-unknown-linux-musl/coreutils"
+    },
+    "aarch64_macos": {
+      "url": "https://github.com/uutils/coreutils/releases/download/0.4.0/coreutils-0.4.0-aarch64-apple-darwin.tar.gz",
+      "etag": "0x8DE1FE49AA328F5",
+      "hash": "a148b660eeaf409af7a4406903f93d0e6713a5eb9adcaf71a1d732f1e3cc3522",
+      "bin": "coreutils-0.4.0-aarch64-apple-darwin/coreutils"
+    },
+    "aarch64_windows": {
+      "url": "https://github.com/uutils/coreutils/releases/download/0.4.0/coreutils-0.4.0-aarch64-pc-windows-msvc.zip",
+      "etag": "0x8DE1FE2D8191A32",
+      "hash": "82b22fe1ca187d9aa136937aa52f2a485e40a98816f6fbecc6655199bf783198",
+      "bin": "coreutils-0.4.0-aarch64-pc-windows-msvc/coreutils.exe"
+    }
+  },
+  "0.3": {
+    "version": "0.3.0"
+  },
+  "0.3.0": {
+    "x86_64_linux_musl": {
+      "url": "https://github.com/uutils/coreutils/releases/download/0.3.0/coreutils-0.3.0-x86_64-unknown-linux-musl.tar.gz",
+      "etag": "0x8DE134D1A56FA78",
+      "hash": "4f31610e2681e278e7bce14f4dc0fc5f0265a10b102f7153c8cff40af640cf31",
+      "bin": "coreutils-0.3.0-x86_64-unknown-linux-musl/coreutils"
+    },
+    "x86_64_macos": {
+      "url": "https://github.com/uutils/coreutils/releases/download/0.3.0/coreutils-0.3.0-x86_64-apple-darwin.tar.gz",
+      "etag": "0x8DE134D802411C9",
+      "hash": "f5990c7c50b0ec0d131e135df8974ab6f552ac07bab45173d734c871af725edb",
+      "bin": "coreutils-0.3.0-x86_64-apple-darwin/coreutils"
+    },
+    "x86_64_windows": {
+      "url": "https://github.com/uutils/coreutils/releases/download/0.3.0/coreutils-0.3.0-x86_64-pc-windows-msvc.zip",
+      "etag": "0x8DE134CE2994BDF",
+      "hash": "bcb447c03bc8e15ae78a749586eddf238f4c6d9576c1b4de6b6077fa3bce2a4f",
+      "bin": "coreutils-0.3.0-x86_64-pc-windows-msvc/coreutils.exe"
+    },
+    "aarch64_linux_musl": {
+      "url": "https://github.com/uutils/coreutils/releases/download/0.3.0/coreutils-0.3.0-aarch64-unknown-linux-musl.tar.gz",
+      "etag": "0x8DE134C8A0A73A1",
+      "hash": "44750ba4e31bb02dd8272f22a778e80dd2658504e5774b24c68edae160d6ac81",
+      "bin": "coreutils-0.3.0-aarch64-unknown-linux-musl/coreutils"
+    },
+    "aarch64_macos": {
+      "url": "https://github.com/uutils/coreutils/releases/download/0.3.0/coreutils-0.3.0-aarch64-apple-darwin.tar.gz",
+      "etag": "0x8DE134DCD7BEF42",
+      "hash": "af60b273599671520b8bf2dc646fee455023d74bf72826e8491729b12748c563",
+      "bin": "coreutils-0.3.0-aarch64-apple-darwin/coreutils"
+    },
+    "aarch64_windows": {
+      "url": "https://github.com/uutils/coreutils/releases/download/0.3.0/coreutils-0.3.0-aarch64-pc-windows-msvc.zip",
+      "etag": "0x8DE134C4D7E8691",
+      "hash": "e3dadc0af59461b2da53a7d9b70c930009183963cfbf34b0d3b9f5c5451f7f0a",
+      "bin": "coreutils-0.3.0-aarch64-pc-windows-msvc/coreutils.exe"
+    }
+  },
+  "0.2": {
+    "version": "0.2.2"
+  },
+  "0.2.2": {
+    "x86_64_linux_musl": {
+      "url": "https://github.com/uutils/coreutils/releases/download/0.2.2/coreutils-0.2.2-x86_64-unknown-linux-musl.tar.gz",
+      "etag": "0x8DDEFDAE198B69D",
+      "hash": "71551a36b13ae5c7078b7e97d4c264a77446246c638379531efdeec813473921",
+      "bin": "coreutils-0.2.2-x86_64-unknown-linux-musl/coreutils"
+    },
+    "x86_64_macos": {
+      "url": "https://github.com/uutils/coreutils/releases/download/0.2.2/coreutils-0.2.2-x86_64-apple-darwin.tar.gz",
+      "etag": "0x8DDEFDCDBF40B8F",
+      "hash": "d60533c66d5f9d8b4c5aaec3837a25ef8b82227c1ace780c2d97f94da1c8b229",
+      "bin": "coreutils-0.2.2-x86_64-apple-darwin/coreutils"
+    },
+    "x86_64_windows": {
+      "url": "https://github.com/uutils/coreutils/releases/download/0.2.2/coreutils-0.2.2-x86_64-pc-windows-msvc.zip",
+      "etag": "0x8DDEFDB12CFA83D",
+      "hash": "45922f4f43a7b4cc1191d52548201b244343cfb3c27e7761f34ce654e4cfb1b1",
+      "bin": "coreutils-0.2.2-x86_64-pc-windows-msvc/coreutils.exe"
+    },
+    "aarch64_linux_musl": {
+      "url": "https://github.com/uutils/coreutils/releases/download/0.2.2/coreutils-0.2.2-aarch64-unknown-linux-musl.tar.gz",
+      "etag": "0x8DDEFDA5E470728",
+      "hash": "fa60e7777d99e00cafe86a38e859b3d21a295b06c48ac6470f87b51964a3ead3",
+      "bin": "coreutils-0.2.2-aarch64-unknown-linux-musl/coreutils"
+    },
+    "aarch64_macos": {
+      "url": "https://github.com/uutils/coreutils/releases/download/0.2.2/coreutils-0.2.2-aarch64-apple-darwin.tar.gz",
+      "etag": "0x8DDEFDB559449D8",
+      "hash": "7a48b23626bce2e114a2be674fae8af857438d96633bf6f6e9b80b0d4c18d69b",
+      "bin": "coreutils-0.2.2-aarch64-apple-darwin/coreutils"
+    },
+    "aarch64_windows": {
+      "url": "https://github.com/uutils/coreutils/releases/download/0.2.2/coreutils-0.2.2-aarch64-pc-windows-msvc.zip",
+      "etag": "0x8DDEFDA6C9C82B9",
+      "hash": "c248ac5c0f0dca0971dfda1042c3db6b9e0d498d0666192922c51f358ccbff4a",
+      "bin": "coreutils-0.2.2-aarch64-pc-windows-msvc/coreutils.exe"
+    }
+  },
+  "0.2.0": {
+    "x86_64_linux_musl": {
+      "url": "https://github.com/uutils/coreutils/releases/download/0.2.0/coreutils-0.2.0-x86_64-unknown-linux-musl.tar.gz",
+      "etag": "0x8DDED3C424B1268",
+      "hash": "aada79c3d4a590bd36d139634e0b5f7f1e29061e59af5a98dc7bb96d8440016b",
+      "bin": "coreutils-0.2.0-x86_64-unknown-linux-musl/coreutils"
+    },
+    "x86_64_macos": {
+      "url": "https://github.com/uutils/coreutils/releases/download/0.2.0/coreutils-0.2.0-x86_64-apple-darwin.tar.gz",
+      "etag": "0x8DDED3E7986A885",
+      "hash": "4ad19ce28d5b53331853891e87666310c0bcf1fd2d4daaee4dd3fe0d748c7257",
+      "bin": "coreutils-0.2.0-x86_64-apple-darwin/coreutils"
+    },
+    "x86_64_windows": {
+      "url": "https://github.com/uutils/coreutils/releases/download/0.2.0/coreutils-0.2.0-x86_64-pc-windows-msvc.zip",
+      "etag": "0x8DDED3C63D63EDF",
+      "hash": "5b1b8d6e88b3ed8d3af1ca7b180b3d99674751286e797f9735c367d680cfc634",
+      "bin": "coreutils-0.2.0-x86_64-pc-windows-msvc/coreutils.exe"
+    },
+    "aarch64_linux_musl": {
+      "url": "https://github.com/uutils/coreutils/releases/download/0.2.0/coreutils-0.2.0-aarch64-unknown-linux-musl.tar.gz",
+      "etag": "0x8DDED3BD8D22D17",
+      "hash": "1a93b2cc13129f5d876ed66ad83766e598af5297568d3df1b56a3180b95ac3e0",
+      "bin": "coreutils-0.2.0-aarch64-unknown-linux-musl/coreutils"
+    },
+    "aarch64_macos": {
+      "url": "https://github.com/uutils/coreutils/releases/download/0.2.0/coreutils-0.2.0-aarch64-apple-darwin.tar.gz",
+      "etag": "0x8DDED3CF809BDFB",
+      "hash": "6f2995336117a9d5ff33c6ed67148b75c23a130649fbbc8aecd6a22f1d850454",
+      "bin": "coreutils-0.2.0-aarch64-apple-darwin/coreutils"
+    },
+    "aarch64_windows": {
+      "url": "https://github.com/uutils/coreutils/releases/download/0.2.0/coreutils-0.2.0-aarch64-pc-windows-msvc.zip",
+      "etag": "0x8DDED3BCAB7EDE2",
+      "hash": "ed282fbb5a500574050e2a0c9e668d8ea13a7be4968625d2bb0e5a5758dcb08c",
+      "bin": "coreutils-0.2.0-aarch64-pc-windows-msvc/coreutils.exe"
+    }
+  },
+  "0.1": {
+    "version": "0.1.0"
+  },
+  "0.1.0": {
+    "x86_64_linux_musl": {
+      "url": "https://github.com/uutils/coreutils/releases/download/0.1.0/coreutils-0.1.0-x86_64-unknown-linux-musl.tar.gz",
+      "etag": "0x8DD9B07C650D18D",
+      "hash": "463648347b1fc337414a864bda960c9cbd1bd4a540f344c010ff5bb35199e6d7",
+      "bin": "coreutils-0.1.0-x86_64-unknown-linux-musl/coreutils"
+    },
+    "x86_64_macos": {
+      "url": "https://github.com/uutils/coreutils/releases/download/0.1.0/coreutils-0.1.0-x86_64-apple-darwin.tar.gz",
+      "etag": "0x8DD9B0837D94459",
+      "hash": "0a27f09f03811289b9ddcff8c6b7c1bf6e971b5eac3dd536208a40e2c1ea9cd9",
+      "bin": "coreutils-0.1.0-x86_64-apple-darwin/coreutils"
+    },
+    "x86_64_windows": {
+      "url": "https://github.com/uutils/coreutils/releases/download/0.1.0/coreutils-0.1.0-x86_64-pc-windows-msvc.zip",
+      "etag": "0x8DD9B07EF1F3F84",
+      "hash": "4ff3c7e5149ade20a342487d1c09cc6cc63599af6dfb28d2558b925780a72d82",
+      "bin": "coreutils-0.1.0-x86_64-pc-windows-msvc/coreutils.exe"
+    },
+    "aarch64_linux_musl": {
+      "url": "https://github.com/uutils/coreutils/releases/download/0.1.0/coreutils-0.1.0-aarch64-unknown-linux-musl.tar.gz",
+      "etag": "0x8DD9B0770F0F163",
+      "hash": "6572292ee74bb6a7efa88f05d0d0a7a5c696bae0ae341a438b983ae7775c9d47",
+      "bin": "coreutils-0.1.0-aarch64-unknown-linux-musl/coreutils"
+    },
+    "aarch64_macos": {
+      "url": "https://github.com/uutils/coreutils/releases/download/0.1.0/coreutils-0.1.0-aarch64-apple-darwin.tar.gz",
+      "etag": "0x8DD9B0840DF335A",
+      "hash": "7d8068f3d11278d96f78eb42b67d240bb8fb2386724ea597481e97ec75265d9c",
+      "bin": "coreutils-0.1.0-aarch64-apple-darwin/coreutils"
+    },
+    "aarch64_windows": {
+      "url": "https://github.com/uutils/coreutils/releases/download/0.1.0/coreutils-0.1.0-aarch64-pc-windows-msvc.zip",
+      "etag": "0x8DD9B078E16C3DB",
+      "hash": "9faa0ec0f3df47cafa0a09fcead46da28e2640b5fe1316ad9cb7e11f19050bd4",
+      "bin": "coreutils-0.1.0-aarch64-pc-windows-msvc/coreutils.exe"
+    }
+  }
+}

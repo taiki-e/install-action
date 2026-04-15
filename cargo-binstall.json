@@ -1,0 +1,52 @@
+{
+  "rust_crate": "cargo-binstall",
+  "template": {
+    "x86_64_linux_musl": {
+      "url": "https://github.com/cargo-bins/cargo-binstall/releases/download/v${version}/cargo-binstall-x86_64-unknown-linux-musl.tgz"
+    },
+    "x86_64_macos": {
+      "url": "https://github.com/cargo-bins/cargo-binstall/releases/download/v${version}/cargo-binstall-x86_64-apple-darwin.zip"
+    },
+    "x86_64_windows": {
+      "url": "https://github.com/cargo-bins/cargo-binstall/releases/download/v${version}/cargo-binstall-x86_64-pc-windows-msvc.zip"
+    },
+    "aarch64_linux_musl": {
+      "url": "https://github.com/cargo-bins/cargo-binstall/releases/download/v${version}/cargo-binstall-aarch64-unknown-linux-musl.tgz"
+    },
+    "aarch64_macos": {
+      "url": "https://github.com/cargo-bins/cargo-binstall/releases/download/v${version}/cargo-binstall-aarch64-apple-darwin.zip"
+    },
+    "aarch64_windows": {
+      "url": "https://github.com/cargo-bins/cargo-binstall/releases/download/v${version}/cargo-binstall-aarch64-pc-windows-msvc.zip"
+    }
+  },
+  "latest": {
+    "version": "1.18.1"
+  },
+  "1.18.1": {
+    "x86_64_linux_musl": {
+      "etag": "0x8DE9959D5E8FE78",
+      "hash": "cf2a4b54494ea8555d6349685e9a301efc1051d9fba6308c76914b2486f8700f"
+    },
+    "x86_64_macos": {
+      "etag": "0x8DE9959DBCBBA2C",
+      "hash": "e06370bec7143668653bb7c09d0b8b689fc703dd4fa58ec5847c4b571d8a490d"
+    },
+    "x86_64_windows": {
+      "etag": "0x8DE9959D9E5BCF3",
+      "hash": "89706aa5215c164d8d091597a470fee72308ac87e8553af395ea77db844a888c"
+    },
+    "aarch64_linux_musl": {
+      "etag": "0x8DE9959E60E685D",
+      "hash": "c55962a0115f9716b709216de7f8bdd59d6ba8738779e60b051b4593f677717a"
+    },
+    "aarch64_macos": {
+      "etag": "0x8DE9959ED2C11A4",
+      "hash": "955abf167994c90f3547e233edace4c0f794465dd4aa408249b38999aa5ca3cf"
+    },
+    "aarch64_windows": {
+      "etag": "0x8DE9959EAAC5732",
+      "hash": "c6873e81457d9e44973a8e9a849795f2c83765fce0af8ad68b597b5b40dec418"
+    }
+  }
+}
