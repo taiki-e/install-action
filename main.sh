@@ -563,6 +563,7 @@ fi
 install_action_dir="${home}/.install-action"
 tmp_dir="${install_action_dir}/tmp"
 cargo_bin="${CARGO_HOME:-"${home}/.cargo"}/bin"
+cargo_path=$(type -P cargo || true)
 # If $CARGO_HOME does not exist, or cargo installed outside of $CARGO_HOME/bin
 # is used ($CARGO_HOME/bin is most likely not included in the PATH), fallback to
 # $install_action_dir/bin.
@@ -570,15 +571,15 @@ if [[ "${host_os}" == "windows" ]]; then
   mkdir -p -- "${install_action_dir}"
   # See action.yml.
   touch -- "${install_action_dir}"/init
-  if type -P cargo >/dev/null; then
-    info "cargo is located at $(type -P cargo)"
-    cargo_bin=$(dirname -- "$(type -P cargo)")
+  if [[ -n "${cargo_path}" ]]; then
+    info "cargo is located at ${cargo_path}"
+    cargo_bin="${cargo_path%/*}"
   else
     cargo_bin="${install_action_dir}/bin"
   fi
-elif [[ ! -e "${cargo_bin}" ]] || [[ "$(type -P cargo || true)" != "${cargo_bin}/cargo"* ]]; then
-  if type -P cargo >/dev/null; then
-    info "cargo is located at $(type -P cargo)"
+elif [[ ! -e "${cargo_bin}" ]] || [[ "${cargo_path}" != "${cargo_bin}/cargo"* ]]; then
+  if [[ -n "${cargo_path}" ]]; then
+    info "cargo is located at ${cargo_path}"
   fi
   # Moving files to /usr/local/bin requires sudo in some environments, so do not use it: https://github.com/taiki-e/install-action/issues/543
   cargo_bin="${install_action_dir}/bin"
@@ -594,7 +595,7 @@ if [[ $# -gt 0 ]]; then
 fi
 
 export DEBIAN_FRONTEND=noninteractive
-manifest_dir="$(dirname -- "$0")/manifests"
+manifest_dir="${GITHUB_ACTION_PATH}/manifests"
 
 # Inputs
 tool="${INPUT_TOOL:-}"
@@ -987,7 +988,7 @@ if [[ ${#unsupported_tools[@]} -gt 0 ]]; then
           cargo install "${cargo_args[@]}" "${tool}"
         done
       fi
-      if ! type -P cargo >/dev/null; then
+      if [[ -z "${cargo_path}" ]]; then
         _bin_dir=$(canonicalize_windows_path "${home}/.cargo/bin")
         # TODO: avoid this when already added
         info "adding '${_bin_dir}' to PATH"

@@ -57,7 +57,7 @@ runs:
         for ($i=1; $i -le 10; $i++) {
           $prev_err_action = $ErrorActionPreference
           $ErrorActionPreference = "Continue"
-          & bash --noprofile --norc "$env:GITHUB_ACTION_PATH/main.sh"
+          & bash --noprofile --norc "$env:GITHUB_ACTION_PATH\main.sh"
           $code = $LASTEXITCODE
           $ErrorActionPreference = "$prev_err_action"
           if (Test-Path "$env:USERPROFILE\.install-action\init") {
