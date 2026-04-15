@@ -10,6 +10,8 @@ Note: In this file, do not use the hard wrap in the middle of a sentence for com
 
 ## [Unreleased]
 
+## [0.3.0] - 2026-04-15
+
 - Remove no longer used `Manifests::license_markdown`.
 
 ## [0.2.0] - 2026-03-20
@@ -34,6 +36,7 @@ Note: In this file, do not use the hard wrap in the middle of a sentence for com
 
 Initial release
 
-[Unreleased]: https://github.com/taiki-e/install-action/compare/install-action-manifest-schema-0.1.1...HEAD
+[Unreleased]: https://github.com/taiki-e/install-action/compare/install-action-manifest-schema-0.3.0...HEAD
+[0.3.0]: https://github.com/taiki-e/install-action/compare/install-action-manifest-schema-0.1.1...install-action-manifest-schema-0.3.0
 [0.1.1]: https://github.com/taiki-e/install-action/compare/install-action-manifest-schema-0.1.0...install-action-manifest-schema-0.1.1
 [0.1.0]: https://github.com/taiki-e/install-action/releases/tag/install-action-manifest-schema-0.1.0
