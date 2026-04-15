@@ -10,6 +10,8 @@ Note: In this file, do not use the hard wrap in the middle of a sentence for com
 
 ## [Unreleased]
 
+- Remove no longer used `Manifests::license_markdown`.
+
 ## [0.2.0] - 2026-03-20
 
 - Rename `ManifestDownloadInfo::checksum` field to `hash` to reduce manifest size.

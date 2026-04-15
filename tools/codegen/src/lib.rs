@@ -20,7 +20,7 @@ pub struct BaseManifest {
     /// Alternative link for the project.  Automatically detected if possible.
     pub website: Option<String>,
     /// Markdown syntax for links to licenses.  Automatically detected if possible.
-    pub license_markdown: Option<String>,
+    pub license_markdown: String,
     /// Prefix of release tag.
     pub tag_prefix: StringOrArray,
     /// Crate name, if this is Rust crate.
@@ -68,10 +68,8 @@ impl BaseManifest {
                 );
             }
         }
-        if let Some(license_markdown) = &self.license_markdown {
-            if license_markdown.is_empty() {
-                panic!("license_markdown can not be an empty value");
-            }
+        if self.license_markdown.is_empty() {
+            panic!("license_markdown can not be an empty value");
         }
     }
 }

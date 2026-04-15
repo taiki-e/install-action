@@ -1,5 +1,6 @@
 {
   "repository": "https://github.com/bytecodealliance/wasm-tools",
+  "license_markdown": "[Apache-2.0 WITH LLVM-exception](https://github.com/bytecodealliance/wasm-tools/blob/main/LICENSE-APACHE) OR [Apache-2.0](https://github.com/bytecodealliance/wasm-tools/blob/main/LICENSE-APACHE) OR [MIT](https://github.com/bytecodealliance/wasm-tools/blob/main/LICENSE-MIT)",
   "tag_prefix": "v",
   "rust_crate": "${package}",
   "asset_name": "${package}-${version}-${rust_target_arch}-${rust_target_os}.tar.gz",

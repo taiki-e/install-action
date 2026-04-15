@@ -200,8 +200,6 @@ impl<'de> Deserialize<'de> for Version {
 pub struct Manifests {
     pub rust_crate: Option<String>,
     pub template: Option<ManifestTemplate>,
-    /// Markdown for the licenses.
-    pub license_markdown: String,
     #[serde(flatten)]
     pub map: BTreeMap<Reverse<Version>, ManifestRef>,
 }

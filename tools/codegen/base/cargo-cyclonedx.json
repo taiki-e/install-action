@@ -1,5 +1,6 @@
 {
   "repository": "https://github.com/CycloneDX/cyclonedx-rust-cargo",
+  "license_markdown": "[Apache-2.0](https://github.com/CycloneDX/cyclonedx-rust-cargo/blob/main/LICENSE)",
   "tag_prefix": "cargo-cyclonedx-",
   "rust_crate": "${package}",
   "bin": "${package}-${rust_target}/${package}${exe}",

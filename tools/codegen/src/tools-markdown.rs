@@ -98,7 +98,7 @@ fn main() {
             }
         }
 
-        let license_markdown = manifests.license_markdown;
+        let license_markdown = base_info.license_markdown;
 
         // NB: Update alias list in tools/publish.rs, case for aliases in main.sh,
         // and tool input option in test-alias in .github/workflows/ci.yml.

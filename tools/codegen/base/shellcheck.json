@@ -1,6 +1,7 @@
 {
   "repository": "https://github.com/koalaman/shellcheck",
   "website": "https://www.shellcheck.net",
+  "license_markdown": "[GPL-3.0](https://github.com/koalaman/shellcheck/blob/master/LICENSE)",
   "tag_prefix": "v",
   "bin": "${package}-v${version}/${package}${exe}",
   "platform": {
