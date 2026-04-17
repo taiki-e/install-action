@@ -212,10 +212,10 @@ jobs:
         with:
           tool: parse-changelog
           fallback: none
-      - uses: actions/create-github-app-token@f8d387b68d61c58ab83c6c016672934102569859 # v3.0.0
+      - uses: actions/create-github-app-token@1b10c78c7865c340bc4f6099eb2f838309f1e8c3 # v3.1.1
         id: push-token
         with:
-          app-id: ${{ secrets.PUSH_TOKEN_APP_CLIENT_ID }}
+          client-id: ${{ secrets.PUSH_TOKEN_APP_CLIENT_ID }}
           private-key: ${{ secrets.PUSH_TOKEN_APP_PRIVATE_KEY }}
       - name: Create and push release commit and tag
         id: push
@@ -436,7 +436,7 @@ jobs:
 
   release-manifest-schema:
     if: github.repository_owner == 'taiki-e' && inputs.target == 'install-action-manifest-schema'
-    uses: taiki-e/github-actions/.github/workflows/rust-release.yml@dec917193d835117a7238865adf83273d9fcd27a # main
+    uses: taiki-e/github-actions/.github/workflows/rust-release.yml@d34e3b863da529f7c30e571fec0170fbf64fa40c # main
     permissions:
       contents: write # for taiki-e/create-gh-release-action
       id-token: write # for rust-lang/crates-io-auth-action
@@ -451,3 +451,4 @@ jobs:
       changelog: tools/manifest-schema/CHANGELOG.md
       title: $prefix $version
       prefix: install-action-manifest-schema
+      commit-prefix: 'manifest-schema: '
