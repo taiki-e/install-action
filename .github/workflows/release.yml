@@ -427,7 +427,7 @@ jobs:
           PREPARE_REV: ${{ needs.prepare.outputs.rev }}
           # Note that if we use secrets.GITHUB_TOKEN, the pushed commit/tag cannot trigger other workflows.
           PUSH_TOKEN: ${{ steps.push-token.outputs.token }}
-      - uses: taiki-e/create-gh-release-action@f67cf7b2dadd83d36b981e674a6b08063997ce68 # v1.10.0
+      - uses: taiki-e/create-gh-release-action@eba8ea96c86cca8a37f1b56e94b4d13301fba651 # v1.11.0
         with:
           changelog: CHANGELOG.md
           title: $version
@@ -436,7 +436,7 @@ jobs:
 
   release-manifest-schema:
     if: github.repository_owner == 'taiki-e' && inputs.target == 'install-action-manifest-schema'
-    uses: taiki-e/github-actions/.github/workflows/rust-release.yml@d34e3b863da529f7c30e571fec0170fbf64fa40c # main
+    uses: taiki-e/github-actions/.github/workflows/rust-release.yml@3c1cac16ef654d1febb66f21f328fa167f0d2fef # main
     permissions:
       contents: write # for taiki-e/create-gh-release-action
       id-token: write # for rust-lang/crates-io-auth-action
