@@ -36,7 +36,7 @@ Note: In this file, do not use the hard wrap in the middle of a sentence for com
 
 - Implement potential workaround for [windows-11-arm runner bug](https://github.com/actions/partner-runner-images/issues/169) which sometimes causes installation failure.
 
-  The issue where this bug affected the startup of bash was addressed in 2.71.2, but we received a report that the same problem seems to occur when starting other commands as well.
+  The issue where this bug affected the startup of bash was addressed in 2.71.2, but we received a report that the [same problem seems to occur when starting other commands as well](https://github.com/taiki-e/install-action/pull/1657#issuecomment-4252717651).
 
 - Update `cargo-deny@latest` to 0.19.2.
 
