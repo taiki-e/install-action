@@ -16,8 +16,6 @@ Note: In this file, do not use the hard wrap in the middle of a sentence for com
 
 - Update `vacuum@latest` to 0.25.9.
 
-- Update `mise@latest` to 2026.4.12.
-
 - Update `cargo-machete@latest` to 0.9.2.
 
 - Update `cargo-deny@latest` to 0.19.4.
