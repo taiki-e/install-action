@@ -494,6 +494,8 @@ token="${GITHUB_TOKEN:-"${GH_TOKEN:-"${DEFAULT_GITHUB_TOKEN:-}"}"}"
 # This prevents tokens from being exposed to subprocesses via environment variables.
 # Since the tokens remain in memory, setting `fallback: none` (which prevents the tokens from being
 # set in the first place) remains the best practice from a security standpoint, as readme says.
+# Note that this does not prevent token leaks via reading `/proc/*/environ` on Linux or
+# via `ps -Eww` on macOS. It only reduces the risk of leaks.
 unset GITHUB_TOKEN GH_TOKEN DEFAULT_GITHUB_TOKEN
 
 # Refs: https://github.com/rust-lang/rustup/blob/HEAD/rustup-init.sh
