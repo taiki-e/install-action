@@ -453,6 +453,49 @@ canonicalize_windows_path() {
   esac
 }
 
+if [[ $# -gt 0 ]]; then
+  bail "invalid argument '$1'"
+fi
+
+# Inputs
+tool="${INPUT_TOOL:-}"
+tools=()
+if [[ -n "${tool}" ]]; then
+  while read -rd,; do
+    tools+=("${REPLY}")
+  done < <(normalize_comma_or_space_separated "${tool}")
+fi
+if [[ ${#tools[@]} -eq 0 ]]; then
+  warn "no tool specified; this could be caused by a dependabot bug where @<tool_name> tags on this action are replaced by @<version> tags"
+  # Exit with 0 for backward compatibility.
+  # TODO: We want to reject it in the next major release.
+  exit 0
+fi
+
+enable_checksum="${INPUT_CHECKSUM:-}"
+case "${enable_checksum}" in
+  true) ;;
+  false)
+    enable_checksum=''
+    warn "checksums have been disabled by 'checksum' input option; this is strongly discouraged for security reasons"
+    ;;
+  *) bail "'checksum' input option must be 'true' or 'false': '${enable_checksum}'" ;;
+esac
+
+fallback="${INPUT_FALLBACK:-}"
+case "${fallback}" in
+  none | cargo-binstall | cargo-install) ;;
+  *) bail "'fallback' input option must be 'none', 'cargo-binstall', or 'cargo-install': '${fallback}'" ;;
+esac
+
+# Unlike gh command, cargo-binstall reads GITHUB_TOKEN first via cli parser, and then reads GH_TOKEN.
+# https://github.com/cargo-bins/cargo-binstall/blob/v1.17.9/crates/bin/src/args.rs#L704
+token="${GITHUB_TOKEN:-"${GH_TOKEN:-"${DEFAULT_GITHUB_TOKEN:-}"}"}"
+# This prevents tokens from being exposed to subprocesses via environment variables.
+# Since the tokens remain in memory, setting `fallback: none` (which prevents the tokens from being
+# set in the first place) remains the best practice from a security standpoint, as readme says.
+unset GITHUB_TOKEN GH_TOKEN DEFAULT_GITHUB_TOKEN
+
 # Refs: https://github.com/rust-lang/rustup/blob/HEAD/rustup-init.sh
 base_distro=''
 exe=''
@@ -591,51 +634,8 @@ fi
 export CARGO_NET_RETRY=10
 export RUSTUP_MAX_RETRIES=10
 
-if [[ $# -gt 0 ]]; then
-  bail "invalid argument '$1'"
-fi
-
 export DEBIAN_FRONTEND=noninteractive
 manifest_dir="${GITHUB_ACTION_PATH}/manifests"
-
-# Inputs
-tool="${INPUT_TOOL:-}"
-tools=()
-if [[ -n "${tool}" ]]; then
-  while read -rd,; do
-    tools+=("${REPLY}")
-  done < <(normalize_comma_or_space_separated "${tool}")
-fi
-if [[ ${#tools[@]} -eq 0 ]]; then
-  warn "no tool specified; this could be caused by a dependabot bug where @<tool_name> tags on this action are replaced by @<version> tags"
-  # Exit with 0 for backward compatibility.
-  # TODO: We want to reject it in the next major release.
-  exit 0
-fi
-
-enable_checksum="${INPUT_CHECKSUM:-}"
-case "${enable_checksum}" in
-  true) ;;
-  false)
-    enable_checksum=''
-    warn "checksums have been disabled by 'checksum' input option; this is strongly discouraged for security reasons"
-    ;;
-  *) bail "'checksum' input option must be 'true' or 'false': '${enable_checksum}'" ;;
-esac
-
-fallback="${INPUT_FALLBACK:-}"
-case "${fallback}" in
-  none | cargo-binstall | cargo-install) ;;
-  *) bail "'fallback' input option must be 'none', 'cargo-binstall', or 'cargo-install': '${fallback}'" ;;
-esac
-
-# Unlike gh command, cargo-binstall reads GITHUB_TOKEN first via cli parser, and then reads GH_TOKEN.
-# https://github.com/cargo-bins/cargo-binstall/blob/v1.17.9/crates/bin/src/args.rs#L704
-token="${GITHUB_TOKEN:-"${GH_TOKEN:-"${DEFAULT_GITHUB_TOKEN:-}"}"}"
-# This prevents tokens from being exposed to subprocesses via environment variables.
-# Since the tokens remain in memory, setting `fallback: none` (which prevents the tokens from being
-# set in the first place) remains the best practice from a security standpoint, as readme says.
-unset GITHUB_TOKEN GH_TOKEN DEFAULT_GITHUB_TOKEN
 
 case "${host_os}" in
   linux)
