@@ -880,7 +880,7 @@ for tool in "${tools[@]}"; do
       # gungraun-runner up to 0.17.1 (exclusive) does not support --version flag.
       biome | cargo-machete | wait-for-them | gungraun-runner) rx "${tool_bin_stem}" --version || true ;;
       # these packages support neither --version nor --help flag.
-      cargo-auditable | cargo-careful | wasm-bindgen-test-runner) ;;
+      cargo-auditable | cargo-careful | wasm-bindgen-test-runner | cargo-apple-runner) ;;
       # wasm2es6js does not support --version flag and --help flag doesn't contains version info.
       wasm2es6js) ;;
       # iai-callgrind-runner --version works only with iai-callgrind in nearby Cargo.toml.
