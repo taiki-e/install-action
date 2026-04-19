@@ -27,14 +27,14 @@ fi
 if [[ -n "${TIDY_DEV:-}" ]]; then
   image="ghcr.io/taiki-e/tidy:latest"
 else
-  image="ghcr.io/taiki-e/tidy@sha256:bce85a4321f80c09f2b68420e9149bcf7c085130ab1e1fca54443f76833cd184"
+  image="ghcr.io/taiki-e/tidy@sha256:71def761a5585e83a2672c4051aee13cd886ad5571215aee52f193454bb3cdff"
 fi
 user="$(id -u):$(id -g)"
 workdir=$(pwd)
 tmp=$(mktemp -d)
 trap -- 'rm -rf -- "${tmp:?}"' EXIT
 mkdir -p -- "${tmp}"/{pwsh-cache,pwsh-local,zizmor-cache,dummy-dir,tmp}
-touch -- "${tmp}"/dummy
+printf '' >"${tmp}"/dummy
 code=0
 color=''
 if [[ -t 1 ]] || [[ -n "${GITHUB_ACTIONS:-}" ]]; then
