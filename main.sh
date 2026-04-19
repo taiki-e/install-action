@@ -616,7 +616,7 @@ cargo_path=$(type -P cargo || true)
 if [[ "${host_os}" == "windows" ]]; then
   mkdir -p -- "${install_action_dir}"
   # See action.yml.
-  touch -- "${install_action_dir}"/init
+  printf '' >|"${install_action_dir}"/init
   if [[ -n "${cargo_path}" ]]; then
     info "cargo is located at ${cargo_path}"
     cargo_bin="${cargo_path%/*}"
