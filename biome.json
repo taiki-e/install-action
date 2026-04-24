@@ -10,6 +10,44 @@
   "2.4": {
     "version": "2.4.12"
   },
+  "2.4.13": {
+    "x86_64_linux_musl": {
+      "url": "https://github.com/biomejs/biome/releases/download/%40biomejs/biome%402.4.13/biome-linux-x64-musl",
+      "etag": "0x8DEA14EF44907A9",
+      "hash": "a1939a267e2077dadd9134cfa582a2f3ca153f06f882c30d37314fea187667fc",
+      "bin": "biome"
+    },
+    "x86_64_macos": {
+      "url": "https://github.com/biomejs/biome/releases/download/%40biomejs/biome%402.4.13/biome-darwin-x64",
+      "etag": "0x8DEA14EF441E3C2",
+      "hash": "2180d3467d67773daccea90855d8d65e1026ffa429ceba3edcb4553c8664627b",
+      "bin": "biome"
+    },
+    "x86_64_windows": {
+      "url": "https://github.com/biomejs/biome/releases/download/%40biomejs/biome%402.4.13/biome-win32-x64.exe",
+      "etag": "0x8DEA14EF473DF10",
+      "hash": "bc7d1f26be936aec1423f70ed94fd8c5aa80c3ba199d991dcaf13476daa5f786",
+      "bin": "biome.exe"
+    },
+    "aarch64_linux_musl": {
+      "url": "https://github.com/biomejs/biome/releases/download/%40biomejs/biome%402.4.13/biome-linux-arm64-musl",
+      "etag": "0x8DEA14EF500B376",
+      "hash": "948bbe5fb63d95372d391d42694ce5d553032f66043a178221166da2a76e8614",
+      "bin": "biome"
+    },
+    "aarch64_macos": {
+      "url": "https://github.com/biomejs/biome/releases/download/%40biomejs/biome%402.4.13/biome-darwin-arm64",
+      "etag": "0x8DEA14EF41FB52C",
+      "hash": "22eb03789d405ea84e7b01192a9b5a4885802468dd0f369613837f5b5935178b",
+      "bin": "biome"
+    },
+    "aarch64_windows": {
+      "url": "https://github.com/biomejs/biome/releases/download/%40biomejs/biome%402.4.13/biome-win32-arm64.exe",
+      "etag": "0x8DEA14EF44782BD",
+      "hash": "4ebfc108a649076b45d04ebb2a6b8a6642ab2180da893b70a5c42b15d4154da6",
+      "bin": "biome.exe"
+    }
+  },
   "2.4.12": {
     "x86_64_linux_musl": {
       "url": "https://github.com/biomejs/biome/releases/download/%40biomejs/biome%402.4.12/biome-linux-x64-musl",
