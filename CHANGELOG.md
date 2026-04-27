@@ -24,8 +24,6 @@ Note: In this file, do not use the hard wrap in the middle of a sentence for com
 
 - Update `cargo-sort@latest` to 2.1.4.
 
-- Update `mise@latest` to 2026.4.20.
-
 ## [2.75.22] - 2026-04-25
 
 - Update `tombi@latest` to 0.9.22.
