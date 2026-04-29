@@ -7,6 +7,44 @@
   "0.1": {
     "version": "0.1.60"
   },
+  "0.1.61": {
+    "x86_64_linux_musl": {
+      "url": "https://github.com/est31/cargo-udeps/releases/download/v0.1.61/cargo-udeps-v0.1.61-x86_64-unknown-linux-musl.tar.gz",
+      "etag": "0x8DEA584E93B9FDB",
+      "hash": "27031ca3902390a1d793901d17ec073ac85297ab3477b13faea984e4c97de479",
+      "bin": "cargo-udeps-v0.1.61-x86_64-unknown-linux-musl/cargo-udeps"
+    },
+    "x86_64_macos": {
+      "url": "https://github.com/est31/cargo-udeps/releases/download/v0.1.61/cargo-udeps-v0.1.61-x86_64-apple-darwin.tar.gz",
+      "etag": "0x8DEA584FB3914CC",
+      "hash": "0840c47e3ac640db8cf1ac9136c7a133eff68f07753a8a450363b95124d0ee34",
+      "bin": "cargo-udeps-v0.1.61-x86_64-apple-darwin/cargo-udeps"
+    },
+    "x86_64_windows": {
+      "url": "https://github.com/est31/cargo-udeps/releases/download/v0.1.61/cargo-udeps-v0.1.61-x86_64-pc-windows-msvc.zip",
+      "etag": "0x8DEA5855ED09C2C",
+      "hash": "6920b6f493f0c13a28e32522ccb7efffcc57c8849d887366b19c599dc2238cc0",
+      "bin": "cargo-udeps-v0.1.61-x86_64-pc-windows-msvc/cargo-udeps.exe"
+    },
+    "aarch64_linux_musl": {
+      "url": "https://github.com/est31/cargo-udeps/releases/download/v0.1.61/cargo-udeps-v0.1.61-aarch64-unknown-linux-musl.tar.gz",
+      "etag": "0x8DEA584C0D0F4DF",
+      "hash": "d257553c03b36d2ee7e8028d622c80b1244fc512fabb2de058c1e0ceeb92169b",
+      "bin": "cargo-udeps-v0.1.61-aarch64-unknown-linux-musl/cargo-udeps"
+    },
+    "aarch64_macos": {
+      "url": "https://github.com/est31/cargo-udeps/releases/download/v0.1.61/cargo-udeps-v0.1.61-aarch64-apple-darwin.tar.gz",
+      "etag": "0x8DEA5849C45DEF1",
+      "hash": "0ca49f226c268ff3f7d65e82dd471900b962e4dcb3e75793558e5f4287be2011",
+      "bin": "cargo-udeps-v0.1.61-aarch64-apple-darwin/cargo-udeps"
+    },
+    "aarch64_windows": {
+      "url": "https://github.com/est31/cargo-udeps/releases/download/v0.1.61/cargo-udeps-v0.1.61-aarch64-pc-windows-msvc.zip",
+      "etag": "0x8DEA585933B8EBC",
+      "hash": "56f71b63e24fff67cf5f34e21bf4bcd8b090d80336a629c7b829045b02494718",
+      "bin": "cargo-udeps-v0.1.61-aarch64-pc-windows-msvc/cargo-udeps.exe"
+    }
+  },
   "0.1.60": {
     "x86_64_linux_musl": {
       "url": "https://github.com/est31/cargo-udeps/releases/download/v0.1.60/cargo-udeps-v0.1.60-x86_64-unknown-linux-musl.tar.gz",
