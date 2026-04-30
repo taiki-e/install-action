@@ -148,6 +148,10 @@ for manifest in tools/codegen/base/*.json; do
   fi
   case "${host_os}" in
     linux*)
+      # cargo-apple-runner is not supported on Linux
+      if [[ "${tool_name}" == "cargo-apple-runner" ]]; then
+        continue
+      fi
       if [[ "${host_arch}" != "x86_64" ]] && [[ "$(jq -r --arg p "${host_arch}_${host_os}_gnu" '.platform[$p]' "${manifest}")" == "null" ]] && [[ "$(jq -r --arg p "${host_arch}_${host_os}_musl" '.platform[$p]' "${manifest}")" == "null" ]]; then
         continue
       fi

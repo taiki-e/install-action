@@ -1,0 +1,11 @@
+{
+  "repository": "https://github.com/madsmtm/cargo-apple-runner",
+  "license_markdown": "[Zlib](https://github.com/madsmtm/cargo-apple-runner/blob/main/LICENSE-ZLIB.txt) OR [Apache-2.0](https://github.com/madsmtm/cargo-apple-runner/blob/main/LICENSE-APACHE.txt) OR [MIT](https://github.com/madsmtm/cargo-apple-runner/blob/main/LICENSE-MIT.txt)",
+  "tag_prefix": "v",
+  "rust_crate": "${package}",
+  "asset_name": "${package}-${rust_target}.tar.gz",
+  "platform": {
+    "x86_64_macos": {},
+    "aarch64_macos": {}
+  }
+}
