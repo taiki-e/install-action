@@ -10,6 +10,8 @@ Note: In this file, do not use the hard wrap in the middle of a sentence for com
 
 ## [Unreleased]
 
+- Update `cargo-udeps@latest` to 0.1.61.
+
 - Update `wasm-tools@latest` to 1.248.0.
 
 - Update `cargo-deb@latest` to 3.6.4.
