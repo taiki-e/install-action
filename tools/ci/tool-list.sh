@@ -38,6 +38,7 @@ glibc_pre_2_28_incompat=(
 glibc_pre_2_27_incompat=(
   "${glibc_pre_2_28_incompat[@]}"
   cargo-watch
+  cyclonedx
   mdbook-linkcheck
   protoc
   valgrind
