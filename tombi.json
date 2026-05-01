@@ -2,10 +2,85 @@
   "rust_crate": null,
   "template": null,
   "latest": {
-    "version": "0.9.25"
+    "version": "0.10.1"
+  },
+  "0.10": {
+    "version": "0.10.1"
+  },
+  "0.10.1": {
+    "x86_64_linux_musl": {
+      "url": "https://github.com/tombi-toml/tombi/releases/download/v0.10.1/tombi-cli-0.10.1-x86_64-unknown-linux-musl.tar.gz",
+      "etag": "0x8DEA6C374E23B4A",
+      "hash": "c58931575a5033ac851d050a51c2bbb193b6980b4ce06169c76789e6079fcd2f",
+      "bin": "tombi-cli-0.10.1-x86_64-unknown-linux-musl/tombi"
+    },
+    "x86_64_macos": {
+      "url": "https://github.com/tombi-toml/tombi/releases/download/v0.10.1/tombi-cli-0.10.1-x86_64-apple-darwin.tar.gz",
+      "etag": "0x8DEA6C374531F70",
+      "hash": "0fe1000af463e5a39c0ee5aa5aa54fd5ebcd15d60440fc124c0437594de0f28b",
+      "bin": "tombi-cli-0.10.1-x86_64-apple-darwin/tombi"
+    },
+    "x86_64_windows": {
+      "url": "https://github.com/tombi-toml/tombi/releases/download/v0.10.1/tombi-cli-0.10.1-x86_64-pc-windows-msvc.zip",
+      "etag": "0x8DEA6C374569DE8",
+      "hash": "ad7e71c5de3e96fee8f67b5ac54a4ce32347ffdab6b85e1d7be8c857b5b6438b"
+    },
+    "aarch64_linux_musl": {
+      "url": "https://github.com/tombi-toml/tombi/releases/download/v0.10.1/tombi-cli-0.10.1-aarch64-unknown-linux-musl.tar.gz",
+      "etag": "0x8DEA6C37444FE76",
+      "hash": "d22273331c5d8eed13d4d04f9c632ca3c0eaa01a7c03c63f856a67a24a55994d",
+      "bin": "tombi-cli-0.10.1-aarch64-unknown-linux-musl/tombi"
+    },
+    "aarch64_macos": {
+      "url": "https://github.com/tombi-toml/tombi/releases/download/v0.10.1/tombi-cli-0.10.1-aarch64-apple-darwin.tar.gz",
+      "etag": "0x8DEA6C374DB3E4A",
+      "hash": "73bcea0c4fc7cd413b5724795e1ed1c466a69534e641fb6aee421487f09d37a5",
+      "bin": "tombi-cli-0.10.1-aarch64-apple-darwin/tombi"
+    },
+    "aarch64_windows": {
+      "url": "https://github.com/tombi-toml/tombi/releases/download/v0.10.1/tombi-cli-0.10.1-aarch64-pc-windows-msvc.zip",
+      "etag": "0x8DEA6C3743F5F87",
+      "hash": "0e86eddd0166086a97fea42dda5678e40eb1a4a127322cb4f5f7aa42ba7cd6d9"
+    }
+  },
+  "0.10.0": {
+    "x86_64_linux_musl": {
+      "url": "https://github.com/tombi-toml/tombi/releases/download/v0.10.0/tombi-cli-0.10.0-x86_64-unknown-linux-musl.tar.gz",
+      "etag": "0x8DEA667D443F54E",
+      "hash": "05cb1ad7c0231770d769d890345a4525573a289c30a62157445b8841fbc8a87f",
+      "bin": "tombi-cli-0.10.0-x86_64-unknown-linux-musl/tombi"
+    },
+    "x86_64_macos": {
+      "url": "https://github.com/tombi-toml/tombi/releases/download/v0.10.0/tombi-cli-0.10.0-x86_64-apple-darwin.tar.gz",
+      "etag": "0x8DEA667D44C0290",
+      "hash": "2a841b9a8fee2e3db503f11d56ae626ec0b2570da57c8d62a2ee26170481c534",
+      "bin": "tombi-cli-0.10.0-x86_64-apple-darwin/tombi"
+    },
+    "x86_64_windows": {
+      "url": "https://github.com/tombi-toml/tombi/releases/download/v0.10.0/tombi-cli-0.10.0-x86_64-pc-windows-msvc.zip",
+      "etag": "0x8DEA667D459133F",
+      "hash": "bcfbf9febe82601819ed0b01504eae85de63986d5b197db4ebdb1a0639844ee6"
+    },
+    "aarch64_linux_musl": {
+      "url": "https://github.com/tombi-toml/tombi/releases/download/v0.10.0/tombi-cli-0.10.0-aarch64-unknown-linux-musl.tar.gz",
+      "etag": "0x8DEA667D4D3ACBD",
+      "hash": "26bc3d7f3ef20ab2d9a06c2bc35fb1521c7a509b369d15fa6ee222f665ba614a",
+      "bin": "tombi-cli-0.10.0-aarch64-unknown-linux-musl/tombi"
+    },
+    "aarch64_macos": {
+      "url": "https://github.com/tombi-toml/tombi/releases/download/v0.10.0/tombi-cli-0.10.0-aarch64-apple-darwin.tar.gz",
+      "etag": "0x8DEA667D4D7045B",
+      "hash": "070348dce9fee9117dd48780deb02a24f6eda6030677d28360c9766b434b5c9b",
+      "bin": "tombi-cli-0.10.0-aarch64-apple-darwin/tombi"
+    },
+    "aarch64_windows": {
+      "url": "https://github.com/tombi-toml/tombi/releases/download/v0.10.0/tombi-cli-0.10.0-aarch64-pc-windows-msvc.zip",
+      "etag": "0x8DEA667D445EEEC",
+      "hash": "60dd5c5d97227771e4a71e342ce79ce00f1feb43795a78369aecb57f044d3c6e"
+    }
   },
   "0.9": {
-    "version": "0.9.25"
+    "version": "0.9.26"
   },
   "0.9.26": {
     "x86_64_linux_musl": {
