@@ -22,6 +22,8 @@ runs:
   using: composite
   steps:
     - run: |
+        # If /bin/sh is dash, environment variable containing % is not imported, but is fine
+        # because it also means that it will not be exposed to subprocess.
         if /usr/bin/env | grep -Eq '^BASH_FUNC_'; then
           printf '::error::bash function injection via BASH_FUNC_ environment variable is not allowed for security reasons\n'
           exit 1
@@ -57,14 +59,9 @@ runs:
     # https://github.com/actions/partner-runner-images/issues/169
     - run: |
         Set-StrictMode -Version Latest
-        if (Test-Path "Env:ENV") { Remove-Item Env:\ENV }
-        if (Test-Path "Env:BASH_ENV") { Remove-Item Env:\BASH_ENV }
-        if (Test-Path "Env:CDPATH") { Remove-Item Env:\CDPATH }
-        if (Test-Path "Env:SHELLOPTS") { Remove-Item Env:\SHELLOPTS }
-        if (Test-Path "Env:BASHOPTS") { Remove-Item Env:\BASHOPTS }
-        if (Test-Path "Env:BASH_FUNC_*") {
-          Write-Output "::error::bash function injection via BASH_FUNC_ environment variable is not allowed for security reasons"
-          exit 1
+        $remove_env = @('ENV','BASH_ENV','CDPATH','SHELLOPTS','BASHOPTS','BASH_FUNC_*')
+        foreach ($name in $remove_env) {
+          if (Test-Path "Env:$name") { Remove-Item "Env:\$name" }
         }
         for ($i=1; $i -le 10; $i++) {
           $prev_err_action = $ErrorActionPreference
