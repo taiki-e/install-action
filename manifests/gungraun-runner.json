@@ -23,10 +23,32 @@
     }
   },
   "latest": {
-    "version": "0.18.1"
+    "version": "0.18.2"
   },
   "0.18": {
-    "version": "0.18.1"
+    "version": "0.18.2"
+  },
+  "0.18.2": {
+    "x86_64_linux_musl": {
+      "etag": "0x8DEA695B3CFC4FA",
+      "hash": "bad19b8dd280e9cfab691eb3220d107ce1b09091846ac7df19c9a303988cf071"
+    },
+    "aarch64_linux_gnu": {
+      "etag": "0x8DEA695BAEDE5DA",
+      "hash": "46ee655aaac3f1d18c823ec8abf4c8adb5dd9641c526b49de007c15b743c8fe4"
+    },
+    "powerpc64le_linux_gnu": {
+      "etag": "0x8DEA69515EAE4D4",
+      "hash": "07b17bc9904c2733cfd7663ac36ed28a80af28530403c77f0a34887b76e64f4c"
+    },
+    "riscv64_linux_gnu": {
+      "etag": "0x8DEA6957D2B96BF",
+      "hash": "496df4183e0f29ac919e14688f85fa4464d2e632fa6730743bdf24acf66108ac"
+    },
+    "s390x_linux_gnu": {
+      "etag": "0x8DEA695C06514A8",
+      "hash": "6b6ec6b64d03d73b465222062fb20ead1eb6b18a48ab791fb5fcefed34fd1532"
+    }
   },
   "0.18.1": {
     "x86_64_linux_musl": {
