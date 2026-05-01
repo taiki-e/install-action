@@ -24,8 +24,6 @@ Note: In this file, do not use the hard wrap in the middle of a sentence for com
 
 - Update `cyclonedx@latest` to 0.31.0.
 
-- Update `tombi@latest` to 0.9.26.
-
 ## [2.75.27] - 2026-04-30
 
 - Update `cargo-udeps@latest` to 0.1.61.
