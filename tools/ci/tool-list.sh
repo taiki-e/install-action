@@ -191,12 +191,11 @@ fi
 # Not manifest-based
 case "${host_os}" in
   linux*)
-    # TODO: disable valgrind due to Canonical's incident.
     # Installing snap to container is difficult...
     # Specifying the version of valgrind is not supported.
-    # if type -P snap >/dev/null && [[ "${version}" == "latest" ]]; then
-    #   tools+=(valgrind)
-    # fi
+    if type -P snap >/dev/null && [[ "${version}" == "latest" ]]; then
+      tools+=(valgrind)
+    fi
     ;;
 esac
 # cargo-watch/watchexec-cli is supported by cargo-binstall (through quickinstall)
