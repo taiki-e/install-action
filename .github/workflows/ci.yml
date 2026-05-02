@@ -1,7 +1,6 @@
 name: CI
 
-permissions:
-  contents: read
+permissions: {}
 
 on:
   pull_request:
@@ -33,20 +32,20 @@ concurrency:
 
 jobs:
   miri:
-    uses: taiki-e/github-actions/.github/workflows/miri.yml@3c1cac16ef654d1febb66f21f328fa167f0d2fef # main
+    uses: taiki-e/github-actions/.github/workflows/miri.yml@5f549ff6b21e9a853f5f613784d5db27746fd2bc # main
     with:
       # NB: sync with test job's --exclude option
       args: --exclude install-action-internal-codegen
   msrv:
-    uses: taiki-e/github-actions/.github/workflows/msrv.yml@3c1cac16ef654d1febb66f21f328fa167f0d2fef # main
+    uses: taiki-e/github-actions/.github/workflows/msrv.yml@5f549ff6b21e9a853f5f613784d5db27746fd2bc # main
   test-manifest-schema:
-    uses: taiki-e/github-actions/.github/workflows/test.yml@3c1cac16ef654d1febb66f21f328fa167f0d2fef # main
+    uses: taiki-e/github-actions/.github/workflows/test.yml@5f549ff6b21e9a853f5f613784d5db27746fd2bc # main
     with:
       # NB: sync with miri job's --exclude option
       test-args: --exclude install-action-internal-codegen
       no-std: false
   tidy:
-    uses: taiki-e/github-actions/.github/workflows/tidy.yml@3c1cac16ef654d1febb66f21f328fa167f0d2fef # main
+    uses: taiki-e/github-actions/.github/workflows/tidy.yml@5f549ff6b21e9a853f5f613784d5db27746fd2bc # main
     permissions:
       contents: write # for creating branch for pr
       pull-requests: write # unused (used in `codegen-automerge: true` case)
@@ -151,7 +150,7 @@ jobs:
         if: matrix.bash != 'cygwin' && matrix.os != 'windows-11-arm'
 
   test-alias:
-    runs-on: ubuntu-latest
+    runs-on: ubuntu-24.04
     timeout-minutes: 60
     steps:
       - uses: taiki-e/checkout-action@7d1e50e93dc4fb3bba58f85018fadf77898aee8b # v1.4.2
@@ -255,7 +254,7 @@ jobs:
           - alpine:3.22 # musl 1.2.5
           - alpine:3.23 # musl 1.2.5
           # - openwrt/rootfs:x86-64-openwrt-24.10 # musl 1.2.5
-    runs-on: ubuntu-latest
+    runs-on: ubuntu-24.04
     timeout-minutes: 60
     container: ${{ matrix.container }}
     steps:

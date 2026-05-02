@@ -1,7 +1,6 @@
 name: Manifest
 
-permissions:
-  contents: read
+permissions: {}
 
 on:
   pull_request:
@@ -33,7 +32,7 @@ concurrency:
 
 jobs:
   manifest:
-    uses: taiki-e/github-actions/.github/workflows/gen.yml@3c1cac16ef654d1febb66f21f328fa167f0d2fef # main
+    uses: taiki-e/github-actions/.github/workflows/gen.yml@5f549ff6b21e9a853f5f613784d5db27746fd2bc # main
     permissions:
       contents: write # for creating branch for pr
       pull-requests: write # for gh pr review --approve

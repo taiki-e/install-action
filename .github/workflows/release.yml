@@ -2,8 +2,7 @@ name: Release
 
 # Adapted from https://github.com/taiki-e/github-actions/blob/HEAD/.github/workflows/action-release.yml.
 
-permissions:
-  contents: read
+permissions: {}
 
 on:
   workflow_dispatch:
@@ -26,7 +25,7 @@ on:
 
 defaults:
   run:
-    shell: bash --noprofile --norc -CeEuxo pipefail {0}
+    shell: bash --noprofile --norc -CeEuo pipefail {0}
 
 concurrency:
   group: ${{ github.workflow }}
@@ -35,7 +34,7 @@ concurrency:
 jobs:
   prepare:
     if: github.repository_owner == 'taiki-e' && inputs.target == 'install-action'
-    runs-on: ubuntu-latest
+    runs-on: ubuntu-24.04
     timeout-minutes: 60
     steps:
       - uses: taiki-e/checkout-action@7d1e50e93dc4fb3bba58f85018fadf77898aee8b # v1.4.2
@@ -45,7 +44,6 @@ jobs:
           fallback: none
       - id: check
         run: |
-          set +x
           IFS=$'\n\t'
           trap -- 's=$?; printf >&2 "%s\n" "${0##*/}:${LINENO}: \`${BASH_COMMAND}\` exit with ${s}"; exit ${s}' ERR
           retry() {
@@ -70,23 +68,23 @@ jobs:
 
           # shellcheck disable=SC2153
           version="${VERSION}"
-          printf '%s\n' "version(input): ${version}"
+          printf 'version(input): %s\n' "${version}"
           # shellcheck disable=SC2153
           tag_prefix="${TAG_PREFIX}"
-          printf '%s\n' "tag_prefix: ${tag_prefix}"
+          printf 'tag_prefix: %s\n' "${tag_prefix}"
           # shellcheck disable=SC2153
           changelog="${CHANGELOG}"
-          printf '%s\n' "changelog: ${changelog}"
+          printf 'changelog: %s\n' "${changelog}"
 
           # Get the current date.
           release_date=$(date -u '+%Y-%m-%d')
-          printf '%s\n' "release-date: ${release_date}"
-          printf '%s\n' "release-date=${release_date}" >>"${GITHUB_OUTPUT}"
+          printf 'release-date: %s\n' "${release_date}"
+          printf 'release-date=%s\n' "${release_date}" >>"${GITHUB_OUTPUT}"
 
           # Get the current revision.
           rev=$(git rev-parse HEAD)
-          printf '%s\n' "rev: ${rev}"
-          printf '%s\n' "rev=${rev}" >>"${GITHUB_OUTPUT}"
+          printf 'rev: %s\n' "${rev}"
+          printf 'rev=%s\n' "${rev}" >>"${GITHUB_OUTPUT}"
 
           prev_version=$(parse-changelog --title-no-link "${changelog}" | cut -d' ' -f1)
 
@@ -111,11 +109,11 @@ jobs:
           if [[ ! "${version}" =~ ^[0-9]+\.[0-9]+\.[0-9]+(-[0-9A-Za-z\.-]+)?(\+[0-9A-Za-z\.-]+)?$ ]]; then
             bail "invalid version format '${version}'"
           fi
-          printf '%s\n' "version: ${version}"
-          printf '%s\n' "version=${version}" >>"${GITHUB_OUTPUT}"
+          printf 'version: %s\n' "${version}"
+          printf 'version=%s\n' "${version}" >>"${GITHUB_OUTPUT}"
           tag="${tag_prefix}${version}"
-          printf '%s\n' "tag: ${tag}"
-          printf '%s\n' "tag=${tag}" >>"${GITHUB_OUTPUT}"
+          printf 'tag: %s\n' "${tag}"
+          printf 'tag=%s\n' "${tag}" >>"${GITHUB_OUTPUT}"
 
           # Make sure the same release has not been created in the past.
           if gh release view "${tag}" &>/dev/null; then
@@ -199,7 +197,7 @@ jobs:
   release:
     if: github.repository_owner == 'taiki-e' && inputs.target == 'install-action'
     needs: prepare
-    runs-on: ubuntu-latest
+    runs-on: ubuntu-24.04
     timeout-minutes: 60
     environment:
       name: release
@@ -220,7 +218,6 @@ jobs:
       - name: Create and push release commit and tag
         id: push
         run: |
-          set +x
           IFS=$'\n\t'
           trap -- 's=$?; printf >&2 "%s\n" "${0##*/}:${LINENO}: \`${BASH_COMMAND}\` exit with ${s}"; exit ${s}' ERR
           retry() {
@@ -436,7 +433,7 @@ jobs:
 
   release-manifest-schema:
     if: github.repository_owner == 'taiki-e' && inputs.target == 'install-action-manifest-schema'
-    uses: taiki-e/github-actions/.github/workflows/rust-release.yml@3c1cac16ef654d1febb66f21f328fa167f0d2fef # main
+    uses: taiki-e/github-actions/.github/workflows/rust-release.yml@5f549ff6b21e9a853f5f613784d5db27746fd2bc # main
     permissions:
       contents: write # for taiki-e/create-gh-release-action
       id-token: write # for rust-lang/crates-io-auth-action
