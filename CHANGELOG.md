@@ -10,6 +10,8 @@ Note: In this file, do not use the hard wrap in the middle of a sentence for com
 
 ## [Unreleased]
 
+- Support `cargo-spellcheck` on AArch64 Linux/Windows.
+
 ## [2.75.29] - 2026-05-02
 
 - Update `syft@latest` to 1.44.0.

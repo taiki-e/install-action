@@ -3,12 +3,17 @@
   "license_markdown": "[LGPLv2.1](https://github.com/drahnr/cargo-spellcheck/blob/master/LICENSE-LGPL)",
   "tag_prefix": "v",
   "rust_crate": "${package}",
-  "asset_name": "${package}-v${version}-${rust_target}",
+  "asset_name": "${package}-v${version}-${rust_target}${exe}",
   "version_range": ">= 0.13",
   "platform": {
     "x86_64_linux_gnu": {},
     "x86_64_windows": {
-      "asset_name": "${package}-v${version}-x86_64-pc-windows-gnu.exe"
-    }
+      "asset_name": [
+        "${package}-v${version}-${rust_target}${exe}",
+        "${package}-v${version}-x86_64-pc-windows-gnu${exe}"
+      ]
+    },
+    "aarch64_linux_gnu": {},
+    "aarch64_windows": {}
   }
 }
