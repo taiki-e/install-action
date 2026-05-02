@@ -10,6 +10,8 @@ Note: In this file, do not use the hard wrap in the middle of a sentence for com
 
 ## [Unreleased]
 
+- Update `syft@latest` to 1.44.0.
+
 - Update `rclone@latest` to 1.74.0.
 
 - Update `osv-scanner@latest` to 2.3.6.
