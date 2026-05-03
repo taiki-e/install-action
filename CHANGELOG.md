@@ -10,6 +10,8 @@ Note: In this file, do not use the hard wrap in the middle of a sentence for com
 
 ## [Unreleased]
 
+- Update `cargo-spellcheck@latest` to 0.15.7.
+
 - Update `biome@latest` to 2.4.14.
 
 - Support `cargo-spellcheck` on AArch64 Linux/Windows.
