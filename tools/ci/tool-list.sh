@@ -6,11 +6,13 @@ trap -- 's=$?; printf >&2 "%s\n" "${0##*/}:${LINENO}: \`${BASH_COMMAND}\` exit w
 cd -- "$(dirname -- "$0")"/../..
 
 # They don't provide prebuilt binaries for musl or old glibc host.
-# version `GLIBC_2.35' not found
+# version `GLIBC_2.39' not found
 glibc_pre_2_39_incompat=(
   cargo-deb
+  cargo-spellcheck
   zizmor
 )
+# version `GLIBC_2.35' not found
 glibc_pre_2_35_incompat=(
   "${glibc_pre_2_39_incompat[@]}"
   zola
@@ -19,7 +21,6 @@ glibc_pre_2_35_incompat=(
 glibc_pre_2_34_incompat=(
   "${glibc_pre_2_35_incompat[@]}"
   cargo-sort
-  cargo-spellcheck
   espup
   wait-for-them
   xbuild
