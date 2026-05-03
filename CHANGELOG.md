@@ -10,6 +10,8 @@ Note: In this file, do not use the hard wrap in the middle of a sentence for com
 
 ## [Unreleased]
 
+## [2.75.30] - 2026-05-03
+
 - Update `cargo-spellcheck@latest` to 0.15.7.
 
 - Update `biome@latest` to 2.4.14.
@@ -6421,7 +6423,8 @@ Note: This release is considered a breaking change because installing on version
 
 Initial release
 
-[Unreleased]: https://github.com/taiki-e/install-action/compare/v2.75.29...HEAD
+[Unreleased]: https://github.com/taiki-e/install-action/compare/v2.75.30...HEAD
+[2.75.30]: https://github.com/taiki-e/install-action/compare/v2.75.29...v2.75.30
 [2.75.29]: https://github.com/taiki-e/install-action/compare/v2.75.28...v2.75.29
 [2.75.28]: https://github.com/taiki-e/install-action/compare/v2.75.27...v2.75.28
 [2.75.27]: https://github.com/taiki-e/install-action/compare/v2.75.26...v2.75.27
