@@ -1,0 +1,61 @@
+{
+  "rust_crate": "mdbook-d2",
+  "template": {
+    "x86_64_linux_musl": {
+      "url": "https://github.com/danieleades/mdbook-d2/releases/download/v${version}/mdbook-d2-x86_64-unknown-linux-musl.tar.gz",
+      "bin": "mdbook-d2"
+    },
+    "x86_64_macos": {
+      "url": "https://github.com/danieleades/mdbook-d2/releases/download/v${version}/mdbook-d2-x86_64-apple-darwin.tar.gz",
+      "bin": "mdbook-d2"
+    },
+    "x86_64_windows": {
+      "url": "https://github.com/danieleades/mdbook-d2/releases/download/v${version}/mdbook-d2-x86_64-pc-windows-msvc.tar.gz",
+      "bin": "mdbook-d2.exe"
+    },
+    "aarch64_linux_musl": {
+      "url": "https://github.com/danieleades/mdbook-d2/releases/download/v${version}/mdbook-d2-aarch64-unknown-linux-musl.tar.gz",
+      "bin": "mdbook-d2"
+    },
+    "aarch64_macos": {
+      "url": "https://github.com/danieleades/mdbook-d2/releases/download/v${version}/mdbook-d2-aarch64-apple-darwin.tar.gz",
+      "bin": "mdbook-d2"
+    },
+    "aarch64_windows": {
+      "url": "https://github.com/danieleades/mdbook-d2/releases/download/v${version}/mdbook-d2-aarch64-pc-windows-msvc.tar.gz",
+      "bin": "mdbook-d2.exe"
+    }
+  },
+  "latest": {
+    "version": "0.3.8"
+  },
+  "0.3": {
+    "version": "0.3.8"
+  },
+  "0.3.8": {
+    "x86_64_linux_musl": {
+      "etag": "0x8DE4D1050CFDFE1",
+      "hash": "6601ff37d3f220db0c9617b85c7e80f985a13ea75e2b6bb88b5158ea429455b6"
+    },
+    "x86_64_macos": {
+      "etag": "0x8DE4D104B08EF36",
+      "hash": "0ce3bf83daa8f4d458d9acf3cc5e9af1fc85d864854439a8a7d45a9a48166eaf"
+    },
+    "x86_64_windows": {
+      "etag": "0x8DE4D106181D5F5",
+      "hash": "89ba967c1f95b32d05612183b9752aeccafa749d5dce0680fb9dcbfda24285fd"
+    },
+    "aarch64_linux_musl": {
+      "etag": "0x8DE4D104E5464C8",
+      "hash": "84f37cb1d89f6fabbefb5581205f93035fe5d9f2ace32f01cb76622cb563a9c1"
+    },
+    "aarch64_macos": {
+      "etag": "0x8DE4D104A941BA3",
+      "hash": "dcd49feace49c4adce583cfab121885cd84b746fdad6ebc99ca36eb52272f849"
+    },
+    "aarch64_windows": {
+      "etag": "0x8DE4D1061C79129",
+      "hash": "6cc7507acae02d73719b260dffd33c3b1d74029cfa97cc7edfe220f8489aef02"
+    }
+  }
+}
