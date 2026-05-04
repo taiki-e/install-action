@@ -18,6 +18,9 @@
       "asset_name": "${package}-${rust_target}.tgz"
     },
     "aarch64_macos": {},
-    "aarch64_windows": {}
+    "aarch64_windows": {},
+    "riscv64_linux_musl": {
+      "asset_name": "${package}-${rust_target}.tgz"
+    }
   }
 }

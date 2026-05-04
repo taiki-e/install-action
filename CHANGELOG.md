@@ -10,17 +10,19 @@ Note: In this file, do not use the hard wrap in the middle of a sentence for com
 
 ## [Unreleased]
 
+- Support `cargo-binstall` on riscv64 Linux.
+
 - Update `cargo-deb@latest` to 3.7.0.
 
 - Update `tombi@latest` to 0.10.2.
 
 ## [2.75.30] - 2026-05-03
 
+- Support `cargo-spellcheck` on AArch64 Linux/Windows.
+
 - Update `cargo-spellcheck@latest` to 0.15.7.
 
 - Update `biome@latest` to 2.4.14.
-
-- Support `cargo-spellcheck` on AArch64 Linux/Windows.
 
 ## [2.75.29] - 2026-05-02
 

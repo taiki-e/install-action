@@ -925,7 +925,7 @@ if [[ ${#unsupported_tools[@]} -gt 0 ]]; then
     none) bail "install-action does not support ${unsupported_tools[*]} (fallback is disabled by 'fallback: none' input option)" ;;
     cargo-binstall)
       case "${host_arch}" in
-        x86_64 | aarch64) ;;
+        x86_64 | aarch64 | riscv64) ;;
         *)
           info "cargo-binstall does not provide prebuilt binaries for this platform (${host_arch}); use 'cargo-install' fallback instead"
           fallback=cargo-install
