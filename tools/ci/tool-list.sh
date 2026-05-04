@@ -48,6 +48,7 @@ glibc_pre_2_27_incompat=(
 glibc_pre_2_17_incompat=(
   "${glibc_pre_2_27_incompat[@]}"
   deepsource # https://github.com/DeepSourceCorp/cli/issues/245
+  rust
 )
 musl_incompat=(
   "${glibc_pre_2_17_incompat[@]}"
@@ -194,6 +195,19 @@ if [[ "${version}" != "latest" ]]; then
 fi
 
 # Not manifest-based
+case "${runner}" in
+  # requires glibc 2.17 / musl 1.2
+  centos:6 | alpine:3.2) ;;
+  *)
+    case $((RANDOM % 5)) in
+      0) tools+=(rust) ;;
+      1) tools+=(rust@stable) ;;
+      2) tools+=(rust@nightly) ;;
+      3) tools+=(rust@1.93) ;;
+      4) tools+=(rust@1.93.0) ;;
+    esac
+    ;;
+esac
 case "${host_os}" in
   linux*)
     # Installing snap to container is difficult...

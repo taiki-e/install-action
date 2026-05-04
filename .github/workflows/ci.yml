@@ -121,22 +121,22 @@ jobs:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
       # Test all shells listed in https://docs.github.com/en/actions/using-workflows/workflow-syntax-for-github-actions#jobsjob_idstepsshell
       - name: Test bash
-        run: just --version && shfmt --version && protoc --version
+        run: just --version && shfmt --version && protoc --version && rustc --version && cargo --version && rustup --version
         shell: bash
       - name: Test sh
-        run: just --version && shfmt --version && protoc --version
+        run: just --version && shfmt --version && protoc --version && rustc --version && cargo --version && rustup --version
         shell: sh
         if: startsWith(matrix.os, 'ubuntu') || startsWith(matrix.os, 'macos')
       - name: Test pwsh
-        run: just --version; shfmt --version; protoc --version
+        run: just --version; shfmt --version; protoc --version; rustc --version; cargo --version; rustup --version
         shell: pwsh
         if: matrix.os != 'ubuntu-slim'
       - name: Test powershell
-        run: just --version; shfmt --version; protoc --version
+        run: just --version; shfmt --version; protoc --version; rustc --version; cargo --version; rustup --version
         shell: powershell
         if: startsWith(matrix.os, 'windows')
       - name: Test cmd
-        run: just --version & shfmt --version & protoc --version
+        run: just --version & shfmt --version & protoc --version & rustc --version & cargo --version & rustup --version
         shell: cmd # zizmor: ignore[misfeature] used for compatibility testing
         if: startsWith(matrix.os, 'windows')
       # We use the version output to check the version of cargo-binstall, but they
@@ -300,6 +300,10 @@ jobs:
         env:
           CONTAINER: ${{ matrix.container }}
         if: startsWith(matrix.container, 'centos')
+      # gcc for rustc
+      - run: apk --no-cache add gcc
+        shell: sh
+        if: startsWith(matrix.container, 'alpine')
       - uses: taiki-e/checkout-action@7d1e50e93dc4fb3bba58f85018fadf77898aee8b # v1.4.2
       # cross attempts to install rust-src when Cargo.toml is available even if `cross --version`
       - run: rm -- Cargo.toml
