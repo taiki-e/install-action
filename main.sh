@@ -43,11 +43,11 @@ normalize_comma_or_space_separated() {
   if [[ "${list}" == *","* ]]; then
     # If a comma is contained, consider it is a comma-separated list.
     # Drop leading and trailing whitespaces in each element.
-    sed -E 's/ *, */,/g; s/^.//; s/,,$/,/' <<<",${list},"
+    sed -E 's/ *\+ */+/g; s/ *, */,/g; s/^.//; s/,,$/,/' <<<",${list},"
   else
     # Otherwise, consider it is a whitespace-separated list.
     # Convert whitespace characters into comma.
-    sed -E 's/ +/,/g; s/^.//' <<<" ${list} "
+    sed -E 's/ *\+ */+/g; s/ +/,/g; s/^.//' <<<" ${list} "
   fi
 }
 _sudo() {
@@ -735,7 +735,12 @@ esac
 
 unsupported_tools=()
 for tool in "${tools[@]}"; do
-  if [[ "${tool}" == *"@"* ]]; then
+  additional=''
+  if [[ "${tool}" == *'+'* ]]; then
+    additional="${tool#*+}"
+    tool="${tool%%+*}"
+  fi
+  if [[ "${tool}" == *'@'* ]]; then
     version="${tool#*@}"
     tool="${tool%@*}"
     if [[ "${tool}" != 'rust' ]]; then
@@ -749,6 +754,12 @@ for tool in "${tools[@]}"; do
   else
     version=latest
   fi
+  if [[ -n "${additional}" ]]; then
+    case "${tool}" in
+      rust) ;;
+      *) bail "<tool_name>+<additional> syntax is not supported for ${tool}" ;;
+    esac
+  fi
   installed_bin=()
   case "${tool}" in
     rust)
@@ -758,6 +769,28 @@ for tool in "${tools[@]}"; do
       info "installing ${tool}@${version}"
       export RUSTUP_MAX_RETRIES="${RUSTUP_MAX_RETRIES:-10}"
       rustup_args=(--profile minimal)
+      if [[ -n "${additional}" ]]; then
+        component=''
+        target=''
+        while read -rd+; do
+          case "${REPLY}" in
+            # Last checked: nightly-2026-05-03
+            # rustup component list
+            # rustup target list
+            cargo | cargo-* | clippy | clippy-* | llvm-* | miri | miri-* | rust-* | rustc-* | rustfmt | rustfmt-*) component+=",${REPLY}" ;;
+            *) target+=",${REPLY}" ;;
+          esac
+        done <<<"${additional}+"
+        if [[ -n "${component}" ]]; then
+          if [[ "${component}," == *',miri,'* ]] && [[ "${component}," != *',rust-src,'* ]]; then
+            component+=',rust-src'
+          fi
+          rustup_args+=(--component "${component#,}")
+        fi
+        if [[ -n "${target}" ]]; then
+          rustup_args+=(--target "${target#,}")
+        fi
+      fi
       if type -P rustup >/dev/null; then
         # --no-self-update is necessary because the windows environment cannot self-update rustup.exe.
         g retry rustup toolchain add "${version}" --no-self-update "${rustup_args[@]}"

@@ -58,6 +58,17 @@ You can also omit patch version.
     tool: cargo-hack@0.5
 ```
 
+For some tools, we support installing additional components at the same time by `+<additional>` syntax:
+
+```yaml
+- uses: taiki-e/install-action@v2
+  with:
+    # Install rust stable with rustfmt component and wasm32-wasip1 target.
+    tool: rust+rustfmt+wasm32-wasip1
+    # When installing another rust version:
+    # tool: rust@nightly + rustfmt + wasm32-wasip1
+```
+
 To install multiple tools:
 
 ```yaml
@@ -71,6 +82,16 @@ Or:
 ```yaml
 - uses: taiki-e/install-action@cargo-hack
 - uses: taiki-e/install-action@cargo-minimal-versions
+```
+
+Tool names can also be separated with whitespaces (line, space, tab).
+
+```yaml
+- uses: taiki-e/install-action@v2
+  with:
+    tool: |
+      cargo-hack
+      cargo-minimal-versions
 ```
 
 ## Supported tools

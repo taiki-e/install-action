@@ -16,6 +16,17 @@ Note: In this file, do not use the hard wrap in the middle of a sentence for com
 
   If rustup is not yet installed, this action downloads [rustup-init for the current platform](https://rust-lang.github.io/rustup/installation/other.html#manual-installation) using HTTPS with tlsv1.2+, verifies SHA256 checksum, and then installs rustup using it.
 
+  This also supports installing additional components at the same time by `+<additional>` syntax:
+
+  ```yaml
+  - uses: taiki-e/install-action@v2
+    with:
+      # Install rust stable with rustfmt component and wasm32-wasip1 target.
+      tool: rust+rustfmt+wasm32-wasip1
+      # When installing another rust version:
+      # tool: rust@nightly + rustfmt + wasm32-wasip1
+  ```
+
 ## [2.76.0] - 2026-05-04
 
 - Support `mdbook-d2`. ([#1737](https://github.com/taiki-e/install-action/pull/1737), thanks @nhu)
