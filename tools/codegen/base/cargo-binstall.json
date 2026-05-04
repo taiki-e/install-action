@@ -4,7 +4,7 @@
   "tag_prefix": "v",
   "rust_crate": "${package}",
   "asset_name": "${package}-${rust_target}.zip",
-  "version_range": "latest",
+  "version_range": "=1.18.1",
   "signing": {
     "kind": "minisign-binstall"
   },
@@ -18,6 +18,9 @@
       "asset_name": "${package}-${rust_target}.tgz"
     },
     "aarch64_macos": {},
-    "aarch64_windows": {}
+    "aarch64_windows": {},
+    "riscv64_linux_musl": {
+      "asset_name": "${package}-${rust_target}.tgz"
+    }
   }
 }
