@@ -54,6 +54,8 @@ runs:
         INPUT_FALLBACK: ${{ inputs.fallback }}
         DEFAULT_GITHUB_TOKEN: ${{ inputs.fallback == 'cargo-binstall' && github.token || '' }}
         ACTION_USER_AGENT: ${{ github.action_repository }} (${{ github.action_ref }})
+        RUNNER_OS: ${{ runner.os }}
+        RUNNER_ARCH: ${{ runner.arch }}
       if: runner.os != 'Windows'
     # Use pwsh and retry on bash startup failure to work around windows-11-arm runner bug:
     # https://github.com/actions/partner-runner-images/issues/169
@@ -88,4 +90,6 @@ runs:
         INPUT_FALLBACK: ${{ inputs.fallback }}
         DEFAULT_GITHUB_TOKEN: ${{ inputs.fallback == 'cargo-binstall' && github.token || '' }}
         ACTION_USER_AGENT: ${{ github.action_repository }} (${{ github.action_ref }})
+        RUNNER_OS: ${{ runner.os }}
+        RUNNER_ARCH: ${{ runner.arch }}
       if: runner.os == 'Windows'

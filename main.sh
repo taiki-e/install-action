@@ -515,10 +515,13 @@ token="${GITHUB_TOKEN:-"${GH_TOKEN:-"${DEFAULT_GITHUB_TOKEN:-}"}"}"
 # via `ps -Eww` on macOS. It only reduces the risk of leaks.
 unset GITHUB_TOKEN GH_TOKEN DEFAULT_GITHUB_TOKEN
 
-# Refs: https://github.com/rust-lang/rustup/blob/HEAD/rustup-init.sh
+# Refs:
+# - https://github.com/rust-lang/rustup/blob/HEAD/rustup-init.sh
+# - https://docs.github.com/en/actions/reference/workflows-and-actions/contexts#runner-context
+# NB: Sync with tools/ci/tool-list.sh.
 base_distro=''
 exe=''
-case "$(uname -s)" in
+case "${RUNNER_OS}" in
   Linux)
     host_os=linux
     ldd_version=$(ldd --version 2>&1 || true)
@@ -568,16 +571,15 @@ case "$(uname -s)" in
         ;;
     esac
     ;;
-  Darwin) host_os=macos ;;
-  MINGW* | MSYS* | CYGWIN* | Windows_NT)
+  macOS) host_os=macos ;;
+  Windows)
     host_os=windows
     exe=.exe
     ;;
-  *) bail "unrecognized OS type '$(uname -s)'" ;;
+  *) bail "unrecognized runner.os '${RUNNER_OS}'" ;;
 esac
-# NB: Sync with tools/ci/tool-list.sh.
-case "$(uname -m)" in
-  aarch64 | arm64) host_arch=aarch64 ;;
+case "${RUNNER_ARCH}" in
+  X64) host_arch=x86_64 ;;
   # Ignore 32-bit Arm for now, as we need to consider the version and whether hard-float is supported.
   # https://github.com/rust-lang/rustup/pull/593
   # https://github.com/cross-rs/cross/pull/1018
@@ -586,21 +588,32 @@ case "$(uname -m)" in
   # Does it seem only armv7l+ is supported?
   # https://github.com/actions/runner/blob/v2.321.0/src/Misc/externals.sh#L178
   # https://github.com/actions/runner/issues/688
-  xscale | arm | armv*l) bail "32-bit Arm runner is not supported yet by this action; if you need support for this platform, please submit an issue at <https://github.com/taiki-e/install-action>" ;;
-  ppc64le) host_arch=powerpc64le ;;
-  riscv64) host_arch=riscv64 ;;
-  s390x) host_arch=s390x ;;
-  # Very few tools provide prebuilt binaries for these.
-  # TODO: fallback to `cargo install`? (binstall fallback is not good idea here as cargo-binstall doesn't provide prebuilt binaries for these.)
-  loongarch64 | mips | mips64 | ppc | ppc64 | sun4v) bail "$(uname -m) runner is not supported yet by this action; if you need support for this platform, please submit an issue at <https://github.com/taiki-e/install-action>" ;;
-  # GitHub Actions Runner supports x86_64/AArch64/Arm Linux and x86_64/AArch64 Windows/macOS.
-  # https://github.com/actions/runner/blob/v2.332.0/.github/workflows/build.yml#L24
-  # https://docs.github.com/en/actions/reference/runners/self-hosted-runners#supported-processor-architectures
-  # And IBM provides runners for powerpc64le/s390x Linux.
-  # https://github.com/IBM/actionspz
-  # So we can assume x86_64 unless it has a known non-x86_64 uname -m result.
-  # TODO: uname -m on windows-11-arm returns "x86_64"
-  *) host_arch=x86_64 ;;
+  ARM) bail "32-bit Arm runner is currently not supported by this action; if you need support for this platform, please submit an issue at <https://github.com/taiki-e/install-action>" ;;
+  X86) bail "32-bit x86 runner is currently not supported by this action; if you need support for this platform, please submit an issue at <https://github.com/taiki-e/install-action>" ;;
+  ARM64) host_arch=aarch64 ;;
+  PPC64LE) host_arch=powerpc64le ;;
+  RISCV64) host_arch=riscv64 ;;
+  S390X) host_arch=s390x ;;
+  *)
+    info "unrecognized runner.arch '${RUNNER_ARCH}'; fallback to uname -m"
+    case "$(uname -m)" in
+      aarch64 | arm64) host_arch=aarch64 ;;
+      xscale | arm | armv*l) bail "32-bit Arm runner is not supported yet by this action; if you need support for this platform, please submit an issue at <https://github.com/taiki-e/install-action>" ;;
+      ppc64le) host_arch=powerpc64le ;;
+      riscv64) host_arch=riscv64 ;;
+      s390x) host_arch=s390x ;;
+      # Very few tools provide prebuilt binaries for these.
+      # TODO: fallback to `cargo install`? (binstall fallback is not good idea here as cargo-binstall doesn't provide prebuilt binaries for these.)
+      loongarch64 | mips | mips64 | ppc | ppc64 | sun4v) bail "$(uname -m) runner is not supported yet by this action; if you need support for this platform, please submit an issue at <https://github.com/taiki-e/install-action>" ;;
+      # GitHub Actions Runner supports x86_64/AArch64/Arm Linux and x86_64/AArch64 Windows/macOS.
+      # https://github.com/actions/runner/blob/v2.332.0/.github/workflows/build.yml#L24
+      # https://docs.github.com/en/actions/reference/runners/self-hosted-runners#supported-processor-architectures
+      # And IBM provides runners for powerpc64le/s390x Linux.
+      # https://github.com/IBM/actionspz
+      # So we can assume x86_64 unless it has a known non-x86_64 uname -m result.
+      *) host_arch=x86_64 ;;
+    esac
+    ;;
 esac
 info "host platform: ${host_arch}_${host_os}"
 
