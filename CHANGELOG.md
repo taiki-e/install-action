@@ -10,8 +10,6 @@ Note: In this file, do not use the hard wrap in the middle of a sentence for com
 
 ## [Unreleased]
 
-- Update `cargo-binstall@latest` to 1.19.0.
-
 - Update `cargo-deb@latest` to 3.7.0.
 
 - Update `tombi@latest` to 0.10.2.
