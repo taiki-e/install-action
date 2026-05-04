@@ -129,7 +129,9 @@ fn main() {
 
     let mut latest_only = false;
     if let Some(version_range) = &base_info.version_range {
-        if version_range == "latest" {
+        if version_range == "latest"
+            || version_range.starts_with('=') && !version_range.contains(',')
+        {
             latest_only = true;
         }
     }
@@ -171,13 +173,20 @@ fn main() {
 
     let version_req: semver::VersionReq = match version_req {
         _ if latest_only => {
-            // Exclude very recently released version from candidate for latest version.
-            let req =
-                format!("={}", releases.iter().find(|r| r.1.1.published_at <= before).unwrap().0.0)
-                    .parse()
-                    .unwrap();
-            eprintln!("update manifest for versions '{req}'");
-            req
+            let version_range = base_info.version_range.as_ref().unwrap();
+            if version_range == "latest" {
+                // Exclude very recently released version from candidate for latest version.
+                let req = format!(
+                    "={}",
+                    releases.iter().find(|r| r.1.1.published_at <= before).unwrap().0.0
+                )
+                .parse()
+                .unwrap();
+                eprintln!("update manifest for versions '{req}'");
+                req
+            } else {
+                version_range.parse().unwrap()
+            }
         }
         None => match base_info.version_range {
             Some(version_range) => version_range.parse().unwrap(),

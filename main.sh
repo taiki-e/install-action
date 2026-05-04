@@ -448,7 +448,16 @@ init_install_action_bin_dir() {
 }
 canonicalize_windows_path() {
   case "${host_os}" in
-    windows) sed -E 's/^\/cygdrive\//\//; s/^\/c\//C:\\/; s/\//\\/g' <<<"$1" ;;
+    windows)
+      local t="$1"
+      if [[ "${t}" == '/cygdrive/'* ]]; then
+        t="${t#/cygdrive}"
+      fi
+      if [[ "${t}" == '/c/'* ]]; then
+        t="${t/\/c\//C:\\}"
+      fi
+      printf '%s\n' "${t//\//\\}"
+      ;;
     *) printf '%s\n' "$1" ;;
   esac
 }
@@ -916,7 +925,7 @@ if [[ ${#unsupported_tools[@]} -gt 0 ]]; then
     none) bail "install-action does not support ${unsupported_tools[*]} (fallback is disabled by 'fallback: none' input option)" ;;
     cargo-binstall)
       case "${host_arch}" in
-        x86_64 | aarch64) ;;
+        x86_64 | aarch64 | riscv64) ;;
         *)
           info "cargo-binstall does not provide prebuilt binaries for this platform (${host_arch}); use 'cargo-install' fallback instead"
           fallback=cargo-install

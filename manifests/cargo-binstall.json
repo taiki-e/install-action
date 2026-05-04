@@ -18,6 +18,9 @@
     },
     "aarch64_windows": {
       "url": "https://github.com/cargo-bins/cargo-binstall/releases/download/v${version}/cargo-binstall-aarch64-pc-windows-msvc.zip"
+    },
+    "riscv64_linux_musl": {
+      "url": "https://github.com/cargo-bins/cargo-binstall/releases/download/v${version}/cargo-binstall-riscv64gc-unknown-linux-musl.tgz"
     }
   },
   "latest": {
@@ -47,6 +50,10 @@
     "aarch64_windows": {
       "etag": "0x8DE9959EAAC5732",
       "hash": "c6873e81457d9e44973a8e9a849795f2c83765fce0af8ad68b597b5b40dec418"
+    },
+    "riscv64_linux_musl": {
+      "etag": "0x8DE9959DFE57CE6",
+      "hash": "3eb039f14fa71dd27b614bf692f0bffd4ba087204829805d54b014646aed7c14"
     }
   }
 }

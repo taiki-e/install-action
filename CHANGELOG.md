@@ -10,6 +10,116 @@ Note: In this file, do not use the hard wrap in the middle of a sentence for com
 
 ## [Unreleased]
 
+- Support `cargo-binstall` on riscv64 Linux.
+
+- Update `cargo-deb@latest` to 3.7.0.
+
+- Update `tombi@latest` to 0.10.2.
+
+## [2.75.30] - 2026-05-03
+
+- Support `cargo-spellcheck` on AArch64 Linux/Windows.
+
+- Update `cargo-spellcheck@latest` to 0.15.7.
+
+- Update `biome@latest` to 2.4.14.
+
+## [2.75.29] - 2026-05-02
+
+- Update `syft@latest` to 1.44.0.
+
+- Update `rclone@latest` to 1.74.0.
+
+- Update `osv-scanner@latest` to 2.3.6.
+
+## [2.75.28] - 2026-05-01
+
+- Update `wasmtime@latest` to 44.0.1.
+
+- Update `typos@latest` to 1.46.0.
+
+- Update `tombi@latest` to 0.10.1.
+
+- Update `sccache@latest` to 0.15.0.
+
+- Update `mise@latest` to 2026.4.28.
+
+- Update `gungraun-runner@latest` to 0.18.2.
+
+- Update `cyclonedx@latest` to 0.31.0.
+
+## [2.75.27] - 2026-04-30
+
+- Update `cargo-udeps@latest` to 0.1.61.
+
+- Update `wasm-tools@latest` to 1.248.0.
+
+- Update `cargo-deb@latest` to 3.6.4.
+
+## [2.75.26] - 2026-04-29
+
+- Update `wasm-bindgen@latest` to 0.2.120.
+
+- Update `mise@latest` to 2026.4.25.
+
+- Update `martin@latest` to 1.8.0.
+
+- Update `vacuum@latest` to 0.26.4.
+
+## [2.75.25] - 2026-04-28
+
+- Update `uv@latest` to 0.11.8.
+
+- Update `typos@latest` to 1.45.2.
+
+- Update `tombi@latest` to 0.9.25.
+
+- Update `mise@latest` to 2026.4.24.
+
+## [2.75.24] - 2026-04-28
+
+- Update `prek@latest` to 0.3.11.
+
+- Update `mise@latest` to 2026.4.23.
+
+- Update `vacuum@latest` to 0.26.3.
+
+## [2.75.23] - 2026-04-27
+
+- Update `vacuum@latest` to 0.26.2.
+
+- Update `tombi@latest` to 0.9.24.
+
+- Update `mise@latest` to 2026.4.22.
+
+- Update `martin@latest` to 1.7.0.
+
+- Update `git-cliff@latest` to 2.13.1.
+
+- Update `cargo-tarpaulin@latest` to 0.35.4.
+
+- Update `cargo-sort@latest` to 2.1.4.
+
+## [2.75.22] - 2026-04-25
+
+- Update `tombi@latest` to 0.9.22.
+
+- Update `biome@latest` to 2.4.13.
+
+## [2.75.21] - 2026-04-24
+
+- Update `mise@latest` to 2026.4.19.
+
+- Update `tombi@latest` to 0.9.21.
+
+- Update `syft@latest` to 1.43.0.
+
+## [2.75.20] - 2026-04-23
+
+- Update `prek@latest` to 0.3.10.
+
+- Update `cargo-xwin@latest` to 0.22.0.
+
 ## [2.75.19] - 2026-04-21
 
 - Update `wasmtime@latest` to 44.0.0.
@@ -6319,7 +6429,18 @@ Note: This release is considered a breaking change because installing on version
 
 Initial release
 
-[Unreleased]: https://github.com/taiki-e/install-action/compare/v2.75.19...HEAD
+[Unreleased]: https://github.com/taiki-e/install-action/compare/v2.75.30...HEAD
+[2.75.30]: https://github.com/taiki-e/install-action/compare/v2.75.29...v2.75.30
+[2.75.29]: https://github.com/taiki-e/install-action/compare/v2.75.28...v2.75.29
+[2.75.28]: https://github.com/taiki-e/install-action/compare/v2.75.27...v2.75.28
+[2.75.27]: https://github.com/taiki-e/install-action/compare/v2.75.26...v2.75.27
+[2.75.26]: https://github.com/taiki-e/install-action/compare/v2.75.25...v2.75.26
+[2.75.25]: https://github.com/taiki-e/install-action/compare/v2.75.24...v2.75.25
+[2.75.24]: https://github.com/taiki-e/install-action/compare/v2.75.23...v2.75.24
+[2.75.23]: https://github.com/taiki-e/install-action/compare/v2.75.22...v2.75.23
+[2.75.22]: https://github.com/taiki-e/install-action/compare/v2.75.21...v2.75.22
+[2.75.21]: https://github.com/taiki-e/install-action/compare/v2.75.20...v2.75.21
+[2.75.20]: https://github.com/taiki-e/install-action/compare/v2.75.19...v2.75.20
 [2.75.19]: https://github.com/taiki-e/install-action/compare/v2.75.18...v2.75.19
 [2.75.18]: https://github.com/taiki-e/install-action/compare/v2.75.17...v2.75.18
 [2.75.17]: https://github.com/taiki-e/install-action/compare/v2.75.16...v2.75.17
