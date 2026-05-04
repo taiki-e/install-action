@@ -10,6 +10,10 @@ Note: In this file, do not use the hard wrap in the middle of a sentence for com
 
 ## [Unreleased]
 
+- Support `mdbook-d2`. ([#1737](https://github.com/taiki-e/install-action/pull/1737), thanks @nhu)
+
+- Support `cargo-apple-runner`. ([#1731](https://github.com/taiki-e/install-action/pull/1731), thanks @madsmtm)
+
 - Support `cargo-binstall` on riscv64 Linux.
 
 - Update `cargo-deb@latest` to 3.7.0.
