@@ -10,6 +10,8 @@ Note: In this file, do not use the hard wrap in the middle of a sentence for com
 
 ## [Unreleased]
 
+## [2.76.0] - 2026-05-04
+
 - Support `mdbook-d2`. ([#1737](https://github.com/taiki-e/install-action/pull/1737), thanks @nhu)
 
 - Support `cargo-apple-runner`. ([#1731](https://github.com/taiki-e/install-action/pull/1731), thanks @madsmtm)
@@ -6433,7 +6435,8 @@ Note: This release is considered a breaking change because installing on version
 
 Initial release
 
-[Unreleased]: https://github.com/taiki-e/install-action/compare/v2.75.30...HEAD
+[Unreleased]: https://github.com/taiki-e/install-action/compare/v2.76.0...HEAD
+[2.76.0]: https://github.com/taiki-e/install-action/compare/v2.75.30...v2.76.0
 [2.75.30]: https://github.com/taiki-e/install-action/compare/v2.75.29...v2.75.30
 [2.75.29]: https://github.com/taiki-e/install-action/compare/v2.75.28...v2.75.29
 [2.75.28]: https://github.com/taiki-e/install-action/compare/v2.75.27...v2.75.28
