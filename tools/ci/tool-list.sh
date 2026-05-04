@@ -199,13 +199,35 @@ case "${runner}" in
   # requires glibc 2.17 / musl 1.2
   centos:6 | alpine:3.2) ;;
   *)
-    case $((RANDOM % 5)) in
-      0) tools+=(rust) ;;
-      1) tools+=(rust@stable) ;;
-      2) tools+=(rust@nightly) ;;
-      3) tools+=(rust@1.93) ;;
-      4) tools+=(rust@1.93.0) ;;
+    case $((RANDOM % 4)) in
+      0) rust=rust ;;
+      1) rust=rust@stable ;;
+      2) rust=rust@nightly ;;
+      3) rust=rust@1.93 ;;
     esac
+    case $((RANDOM % 3)) in
+      0) ;;
+      1) rust+='+thumbv6m-none-eabi' ;;
+      2) rust+=' + thumbv6m-none-eabi' ;;
+    esac
+    if [[ "${rust}" == *'nightly'* ]]; then
+      component=miri
+    else
+      component=rustfmt
+    fi
+    case $((RANDOM % 5)) in
+      0) ;;
+      1) rust+="+${component}" ;;
+      2) rust+=" + ${component}" ;;
+      3) rust+=" +${component}" ;;
+      4) rust+="+ ${component}" ;;
+    esac
+    case $((RANDOM % 3)) in
+      0) ;;
+      1) rust+='+thumbv7m-none-eabi' ;;
+      2) rust+=' + thumbv7m-none-eabi' ;;
+    esac
+    tools+=("${rust}")
     ;;
 esac
 case "${host_os}" in
