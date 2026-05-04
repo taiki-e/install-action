@@ -448,7 +448,16 @@ init_install_action_bin_dir() {
 }
 canonicalize_windows_path() {
   case "${host_os}" in
-    windows) sed -E 's/^\/cygdrive\//\//; s/^\/c\//C:\\/; s/\//\\/g' <<<"$1" ;;
+    windows)
+      local t="$1"
+      if [[ "${t}" == '/cygdrive/'* ]]; then
+        t="${t#/cygdrive}"
+      fi
+      if [[ "${t}" == '/c/'* ]]; then
+        t="${t/\/c\//C:\\}"
+      fi
+      printf '%s\n' "${t//\//\\}"
+      ;;
     *) printf '%s\n' "$1" ;;
   esac
 }
