@@ -29,6 +29,8 @@ Note: In this file, do not use the hard wrap in the middle of a sentence for com
 
 - Fix issue where x86_64 binary will be installed on AArch64 Windows even when AArch64 Windows binary available.
 
+- Diagnostic improvements.
+
 ## [2.76.0] - 2026-05-04
 
 - Support `mdbook-d2`. ([#1737](https://github.com/taiki-e/install-action/pull/1737), thanks @nhu)

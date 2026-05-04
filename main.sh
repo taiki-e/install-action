@@ -28,11 +28,11 @@ retry() {
   "$@"
 }
 bail() {
-  printf '::error::%s\n' "$*"
+  printf '::error::install-action: %s\n' "$*"
   exit 1
 }
 warn() {
-  printf '::warning::%s\n' "$*"
+  printf '::warning::install-action: %s\n' "$*"
 }
 info() {
   printf >&2 'info: %s\n' "$*"
@@ -382,7 +382,7 @@ install_cargo_binstall() {
       info "cargo-binstall already installed at ${cargo_bin}/cargo-binstall${exe}"
       install_binstall=''
     else
-      info "cargo-binstall already installed at ${cargo_bin}/cargo-binstall${exe}, but is not compatible version with install-action, upgrading"
+      info "cargo-binstall already installed at ${cargo_bin}/cargo-binstall${exe}, but is not compatible version with this action, upgrading"
       rm -- "${cargo_bin}/cargo-binstall${exe}"
     fi
   fi
@@ -588,8 +588,8 @@ case "${RUNNER_ARCH}" in
   # Does it seem only armv7l+ is supported?
   # https://github.com/actions/runner/blob/v2.321.0/src/Misc/externals.sh#L178
   # https://github.com/actions/runner/issues/688
-  ARM) bail "32-bit Arm runner is currently not supported by this action; if you need support for this platform, please submit an issue at <https://github.com/taiki-e/install-action>" ;;
-  X86) bail "32-bit x86 runner is currently not supported by this action; if you need support for this platform, please submit an issue at <https://github.com/taiki-e/install-action>" ;;
+  ARM) bail "32-bit Arm runner is currently not supported; if you need support for this platform, please submit an issue at <https://github.com/taiki-e/install-action>" ;;
+  X86) bail "32-bit x86 runner is currently not supported; if you need support for this platform, please submit an issue at <https://github.com/taiki-e/install-action>" ;;
   ARM64) host_arch=aarch64 ;;
   PPC64LE) host_arch=powerpc64le ;;
   RISCV64) host_arch=riscv64 ;;
@@ -598,13 +598,13 @@ case "${RUNNER_ARCH}" in
     info "unrecognized runner.arch '${RUNNER_ARCH}'; fallback to uname -m"
     case "$(uname -m)" in
       aarch64 | arm64) host_arch=aarch64 ;;
-      xscale | arm | armv*l) bail "32-bit Arm runner is not supported yet by this action; if you need support for this platform, please submit an issue at <https://github.com/taiki-e/install-action>" ;;
+      xscale | arm | armv*l) bail "32-bit Arm runner is currently not supported; if you need support for this platform, please submit an issue at <https://github.com/taiki-e/install-action>" ;;
       ppc64le) host_arch=powerpc64le ;;
       riscv64) host_arch=riscv64 ;;
       s390x) host_arch=s390x ;;
       # Very few tools provide prebuilt binaries for these.
       # TODO: fallback to `cargo install`? (binstall fallback is not good idea here as cargo-binstall doesn't provide prebuilt binaries for these.)
-      loongarch64 | mips | mips64 | ppc | ppc64 | sun4v) bail "$(uname -m) runner is not supported yet by this action; if you need support for this platform, please submit an issue at <https://github.com/taiki-e/install-action>" ;;
+      loongarch64 | mips | mips64 | ppc | ppc64 | sun4v) bail "$(uname -m) runner is not supported yet; please submit an issue at <https://github.com/taiki-e/install-action>" ;;
       # GitHub Actions Runner supports x86_64/AArch64/Arm Linux and x86_64/AArch64 Windows/macOS.
       # https://github.com/actions/runner/blob/v2.332.0/.github/workflows/build.yml#L24
       # https://docs.github.com/en/actions/reference/runners/self-hosted-runners#supported-processor-architectures
@@ -703,18 +703,18 @@ case "${host_os}" in
           fi
           printf '::endgroup::\n'
           ;;
-        *) warn "install-action requires at least jq and curl on non-Debian/Fedora/SUSE/Arch/Alpine-based Linux" ;;
+        *) warn "this action requires at least jq and curl on non-Debian/Fedora/SUSE/Arch/Alpine-based Linux" ;;
       esac
     fi
     ;;
   macos)
     if ! type -P jq >/dev/null || ! type -P curl >/dev/null; then
-      warn "install-action requires at least jq and curl on macOS"
+      warn "this action requires at least jq and curl on macOS"
     fi
     ;;
   windows)
     if ! type -P curl >/dev/null; then
-      warn "install-action requires at least curl on Windows"
+      warn "this action requires at least curl on Windows"
     fi
     if [[ -f "${install_action_dir}/jq/bin/jq.exe" ]]; then
       jq() { "${install_action_dir}/jq/bin/jq.exe" -b "$@"; }
@@ -759,7 +759,7 @@ for tool in "${tools[@]}"; do
     if [[ "${tool}" != 'rust' ]]; then
       if [[ ! "${version}" =~ ^([1-9][0-9]*(\.[0-9]+(\.[0-9]+)?)?|0\.[1-9][0-9]*(\.[0-9]+)?|^0\.0\.[0-9]+)(-[0-9A-Za-z\.-]+)?$|^latest$ ]]; then
         if [[ ! "${version}" =~ ^([1-9][0-9]*(\.[0-9]+(\.[0-9]+)?)?|0\.[1-9][0-9]*(\.[0-9]+)?|^0\.0\.[0-9]+)(-[0-9A-Za-z\.-]+)?(\+[0-9A-Za-z\.-]+)?$|^latest$ ]]; then
-          bail "install-action does not support semver operators: '${version}'"
+          bail "semver operators are not supported in 'tool' input option: '${version}'"
         fi
         bail "install-action v2 does not support semver build-metadata: '${version}'; if you need these supports again, please submit an issue at <https://github.com/taiki-e/install-action>"
       fi
@@ -932,11 +932,11 @@ for tool in "${tools[@]}"; do
       info "installing ${tool}@${version}"
       case "${version}" in
         latest) ;;
-        *) warn "specifying the version of ${tool} is not supported yet by this action" ;;
+        *) warn "specifying the version of ${tool} is not supported" ;;
       esac
       case "${host_os}" in
         linux) ;;
-        macos | windows) bail "${tool} for non-Linux is not supported yet by this action" ;;
+        macos | windows) bail "${tool} for non-Linux is not supported" ;;
         *) bail "unsupported host OS '${host_os}' for ${tool}" ;;
       esac
       # libc6-dbg is needed to run Valgrind
@@ -949,7 +949,7 @@ for tool in "${tools[@]}"; do
     cargo-binstall)
       case "${version}" in
         latest) ;;
-        *) warn "specifying the version of ${tool} is not supported by this action" ;;
+        *) warn "specifying the version of ${tool} is not supported" ;;
       esac
       install_cargo_binstall
       printf '\n'

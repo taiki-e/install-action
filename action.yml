@@ -22,11 +22,14 @@ runs:
   using: composite
   steps:
     - run: |
+        bail() {
+          printf '::error::install-action: %s\n' "$*"
+          exit 1
+        }
         # If /bin/sh is dash, environment variable containing % is not imported, but is fine
         # because it also means that it will not be exposed to subprocess.
         if /usr/bin/env | grep -Eq '^BASH_FUNC_'; then
-          printf '::error::bash function injection via BASH_FUNC_ environment variable is not allowed for security reasons\n'
-          exit 1
+          bail 'bash function injection via BASH_FUNC_ environment variable is not allowed for security reasons'
         fi
         if ! command -v bash >/dev/null; then
           if grep -Eq '^ID=alpine' /etc/os-release; then
@@ -41,8 +44,7 @@ runs:
             fi
             printf '::endgroup::\n'
           else
-            printf '::error::install-action requires bash\n'
-            exit 1
+            bail 'this action requires bash'
           fi
         fi
         bash --noprofile --norc "${GITHUB_ACTION_PATH:?}/main.sh"
@@ -77,10 +79,10 @@ runs:
             exit $code
           }
           if ($i -lt 10) {
-            Write-Output "::warning::installation failed due to bash startup failure (<https://github.com/actions/partner-runner-images/issues/169>); retrying..."
+            Write-Output "::warning::install-action: installation failed due to bash startup failure (<https://github.com/actions/partner-runner-images/issues/169>); retrying..."
           }
         }
-        Write-Output "::error::installation failed due to bash startup failure (<https://github.com/actions/partner-runner-images/issues/169>); this maybe resolved by re-running job"
+        Write-Output "::error::install-action: installation failed due to bash startup failure (<https://github.com/actions/partner-runner-images/issues/169>); this maybe resolved by re-running job"
         exit 1
       shell: pwsh
       env:
