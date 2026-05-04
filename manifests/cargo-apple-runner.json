@@ -1,0 +1,26 @@
+{
+  "rust_crate": "cargo-apple-runner",
+  "template": {
+    "x86_64_macos": {
+      "url": "https://github.com/madsmtm/cargo-apple-runner/releases/download/v${version}/cargo-apple-runner-x86_64-apple-darwin.tar.gz",
+      "bin": "cargo-apple-runner"
+    },
+    "aarch64_macos": {
+      "url": "https://github.com/madsmtm/cargo-apple-runner/releases/download/v${version}/cargo-apple-runner-aarch64-apple-darwin.tar.gz",
+      "bin": "cargo-apple-runner"
+    }
+  },
+  "latest": {
+    "version": "0.0.1"
+  },
+  "0.0.1": {
+    "x86_64_macos": {
+      "etag": "0x8DE9E56906B2739",
+      "hash": "66e53e60e1502d6c6e57aed9c423ecbe9f155fbcee56824a20eb72c49136a554"
+    },
+    "aarch64_macos": {
+      "etag": "0x8DE9E56816E1F2D",
+      "hash": "58b94a77328568eff1c8d1216f51933c0753d20365b2284cf3a1dca843a6d0c1"
+    }
+  }
+}
