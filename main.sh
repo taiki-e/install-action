@@ -9,6 +9,14 @@ rx() {
     "$@"
   )
 }
+g() {
+  IFS=' '
+  local cmd="$*"
+  IFS=$'\n\t'
+  printf '::group::%s\n' "${cmd#retry }"
+  "$@"
+  printf '::endgroup::\n'
+}
 retry() {
   for i in {1..10}; do
     if "$@"; then
@@ -730,17 +738,113 @@ for tool in "${tools[@]}"; do
   if [[ "${tool}" == *"@"* ]]; then
     version="${tool#*@}"
     tool="${tool%@*}"
-    if [[ ! "${version}" =~ ^([1-9][0-9]*(\.[0-9]+(\.[0-9]+)?)?|0\.[1-9][0-9]*(\.[0-9]+)?|^0\.0\.[0-9]+)(-[0-9A-Za-z\.-]+)?$|^latest$ ]]; then
-      if [[ ! "${version}" =~ ^([1-9][0-9]*(\.[0-9]+(\.[0-9]+)?)?|0\.[1-9][0-9]*(\.[0-9]+)?|^0\.0\.[0-9]+)(-[0-9A-Za-z\.-]+)?(\+[0-9A-Za-z\.-]+)?$|^latest$ ]]; then
-        bail "install-action does not support semver operators: '${version}'"
+    if [[ "${tool}" != 'rust' ]]; then
+      if [[ ! "${version}" =~ ^([1-9][0-9]*(\.[0-9]+(\.[0-9]+)?)?|0\.[1-9][0-9]*(\.[0-9]+)?|^0\.0\.[0-9]+)(-[0-9A-Za-z\.-]+)?$|^latest$ ]]; then
+        if [[ ! "${version}" =~ ^([1-9][0-9]*(\.[0-9]+(\.[0-9]+)?)?|0\.[1-9][0-9]*(\.[0-9]+)?|^0\.0\.[0-9]+)(-[0-9A-Za-z\.-]+)?(\+[0-9A-Za-z\.-]+)?$|^latest$ ]]; then
+          bail "install-action does not support semver operators: '${version}'"
+        fi
+        bail "install-action v2 does not support semver build-metadata: '${version}'; if you need these supports again, please submit an issue at <https://github.com/taiki-e/install-action>"
       fi
-      bail "install-action v2 does not support semver build-metadata: '${version}'; if you need these supports again, please submit an issue at <https://github.com/taiki-e/install-action>"
     fi
   else
     version=latest
   fi
   installed_bin=()
   case "${tool}" in
+    rust)
+      if [[ "${version}" == 'latest' ]]; then
+        version=stable
+      fi
+      info "installing ${tool}@${version}"
+      export RUSTUP_MAX_RETRIES="${RUSTUP_MAX_RETRIES:-10}"
+      rustup_args=(--profile minimal)
+      if type -P rustup >/dev/null; then
+        # --no-self-update is necessary because the windows environment cannot self-update rustup.exe.
+        g retry rustup toolchain add "${version}" --no-self-update "${rustup_args[@]}"
+        g rustup default "${version}"
+      else
+        # https://github.com/rust-lang/rustup/tags
+        # Run tools/rustup-hash.sh to get sha256 hash.
+        rustup_version=1.29.0
+        # https://rust-lang.github.io/rustup/installation/other.html#manual-installation
+        rust_target=''
+        checksum=''
+        case "${host_os}" in
+          linux)
+            rust_target="${host_arch}-unknown-${host_os}-${host_env}"
+            case "${host_arch}" in
+              x86_64)
+                case "${host_env}" in
+                  gnu) checksum=4acc9acc76d5079515b46346a485974457b5a79893cfb01112423c89aeb5aa10 ;;
+                  musl) checksum=9cd3fda5fd293890e36ab271af6a786ee22084b5f6c2b83fd8323cec6f0992c1 ;;
+                esac
+                ;;
+              aarch64)
+                case "${host_env}" in
+                  gnu) checksum=9732d6c5e2a098d3521fca8145d826ae0aaa067ef2385ead08e6feac88fa5792 ;;
+                  musl) checksum=88761caacddb92cd79b0b1f939f3990ba1997d701a38b3e8dd6746a562f2a759 ;;
+                esac
+                ;;
+              powerpc64le)
+                case "${host_env}" in
+                  gnu) checksum=4bfff85bd3967d988e14567aa9cc6ab0ea386f0ffeff0f9f14d23f0103bf1f97 ;;
+                  musl) checksum=e15d033af90b7a55d170aac2d82cc28ddd96dbfcdda7c6d4eb8cb064a99c4646 ;;
+                esac
+                ;;
+              riscv64)
+                rust_target="${host_arch}gc-unknown-${host_os}-${host_env}"
+                # riscv64gc-unknown-linux-musl is tier 2 without host tools
+                case "${host_env}" in
+                  gnu) checksum=7e43f2b2e6307d61da17a4dff61e6bceef408b8189822df64e1094590d2a70f9 ;;
+                esac
+                ;;
+              s390x)
+                # s390x-unknown-linux-musl is tier 3
+                case "${host_env}" in
+                  gnu) checksum=66c2c132428b6b77803facb02cbdf33b89d20c00bd20da142be8cb651f2e7cd8 ;;
+                esac
+                ;;
+            esac
+            ;;
+          macos)
+            rust_target="${host_arch}-apple-darwin"
+            case "${host_arch}" in
+              x86_64) checksum=33cf85df9142bc6d29cbc62fa5ca1d4c29622cddb55213a4c1a43c457fb9b2d7 ;;
+              aarch64) checksum=aeb4105778ca1bd3c6b0e75768f581c656633cd51368fa61289b6a71696ac7e1 ;;
+            esac
+            ;;
+          windows)
+            rust_target="${host_arch}-pc-windows-msvc"
+            case "${host_arch}" in
+              x86_64) checksum=86478e53f769379d7f0ebfa7c9aa97cb76ca92233f79aa2cc0dbee2efaac73c7 ;;
+              aarch64) checksum=3af309e6c3062aa11df0e932954f69d13b734d8a431e593812f3ecd9ff9e6ef6 ;;
+            esac
+            ;;
+        esac
+        if [[ -z "${rust_target}" ]] || [[ -z "${checksum}" ]]; then
+          bail "unsupported host platform ${host_arch}_${host_os} for ${tool}"
+        fi
+        url="https://static.rust-lang.org/rustup/archive/${rustup_version}/${rust_target}/rustup-init${exe}"
+        mkdir -p -- "${tmp_dir}"
+        (
+          cd -- "${tmp_dir}"
+          download_and_checksum "${url}" "${checksum}"
+          mv -- tmp rustup-init
+          case "${host_os}" in
+            linux | macos) chmod +x ./rustup-init ;;
+          esac
+          g retry ./rustup-init -y --default-toolchain "${version}" --no-modify-path "${rustup_args[@]}"
+        )
+        rm -rf -- "${tmp_dir}"
+        cargo_bin_dir="${CARGO_HOME:-"${home}/.cargo"}/bin"
+        export PATH="${PATH}:${cargo_bin_dir}"
+        cargo_bin_dir=$(canonicalize_windows_path "${cargo_bin_dir}")
+        info "adding '${cargo_bin_dir}' to PATH"
+        printf '%s\n' "${cargo_bin_dir}" >>"${GITHUB_PATH}"
+        cargo_path=$(type -P cargo || true)
+      fi
+      installed_bin=("rustc${exe}" "cargo${exe}")
+      ;;
     protoc)
       info "installing ${tool}@${version}"
       read_manifest "protoc" "${version}"
@@ -1002,7 +1106,6 @@ if [[ ${#unsupported_tools[@]} -gt 0 ]]; then
       fi
       if [[ -z "${cargo_path}" ]]; then
         _bin_dir=$(canonicalize_windows_path "${home}/.cargo/bin")
-        # TODO: avoid this when already added
         info "adding '${_bin_dir}' to PATH"
         printf '%s\n' "${_bin_dir}" >>"${GITHUB_PATH}"
       fi

@@ -126,7 +126,11 @@ When installing with `tool: <tool_name>` or `tool: <tool_name>@<omitted_version>
 <!-- omit in toc -->
 ### Security on other installation methods
 
-See the linked documentation for information on security when installed using [snap](https://snapcraft.io/docs) or [cargo-binstall](https://github.com/cargo-bins/cargo-binstall#faq).
+See the linked documentation for information on security when installed using [rustup](https://rust-lang.github.io/rustup/security.html), [snap](https://snapcraft.io/docs), or [cargo-binstall](https://github.com/cargo-bins/cargo-binstall#faq).
+
+If the installation method is rustup and rustup is not yet installed, this action downloads [rustup-init for the current platform](https://rust-lang.github.io/rustup/installation/other.html#manual-installation) using HTTPS with tlsv1.2+, verifies SHA256 checksum, and then installs rustup using it.
+
+If the installation method is cargo-binstall and cargo-binstall is not yet installed or outdated, this action installs cargo-binstall [from GitHub Releases](#security-on-installation-from-github-releases).
 
 See the [Supported tools section](#supported-tools) for how to ensure that fallback is not used.
 

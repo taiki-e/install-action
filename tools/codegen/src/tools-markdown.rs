@@ -52,18 +52,32 @@ fn main() {
     let mut paths: Vec<_> = fs::read_dir(&manifest_dir).unwrap().map(|r| r.unwrap()).collect();
     paths.sort_by_key(fs_err::DirEntry::path);
 
-    let mut tools = vec![MarkdownEntry {
-        name: "valgrind".to_owned(),
-        alias: None,
-        website: "https://valgrind.org/".to_owned(),
-        installed_to: InstalledTo::Snap,
-        installed_from: InstalledFrom::Snap,
-        platforms: Platforms { linux: true, ..Default::default() },
-        repository: "https://sourceware.org/git/valgrind.git".to_owned(),
-        license_markdown:
-            "[GPL-2.0](https://sourceware.org/git/?p=valgrind.git;a=blob;f=COPYING;hb=HEAD)"
-                .to_owned(),
-    }];
+    let mut tools = vec![
+        MarkdownEntry {
+            name: "rust".to_owned(),
+            alias: None,
+            website: "https://rust-lang.org".to_owned(),
+            installed_to: InstalledTo::Cargo,
+            installed_from: InstalledFrom::Rustup,
+            platforms: Platforms { linux: true, macos: true, windows: true },
+            repository: "https://github.com/rust-lang/rust".to_owned(),
+            license_markdown:
+                "[Apache-2.0 OR MIT](https://github.com/rust-lang/rust/blob/main/COPYRIGHT)"
+                    .to_owned(),
+        },
+        MarkdownEntry {
+            name: "valgrind".to_owned(),
+            alias: None,
+            website: "https://valgrind.org/".to_owned(),
+            installed_to: InstalledTo::Snap,
+            installed_from: InstalledFrom::Snap,
+            platforms: Platforms { linux: true, ..Default::default() },
+            repository: "https://sourceware.org/git/valgrind.git".to_owned(),
+            license_markdown:
+                "[GPL-2.0](https://sourceware.org/git/?p=valgrind.git;a=blob;f=COPYING;hb=HEAD)"
+                    .to_owned(),
+        },
+    ];
 
     for path in paths {
         let file_name = path.file_name();
@@ -153,6 +167,7 @@ struct MarkdownEntry {
 #[derive(Debug, Eq, PartialEq)]
 enum InstalledFrom {
     GitHubRelease,
+    Rustup,
     Snap,
 }
 
@@ -214,6 +229,9 @@ impl fmt::Display for MarkdownEntry {
             InstalledFrom::GitHubRelease => {
                 let markdown = format!("| [GitHub Releases]({}/releases) ", self.repository);
                 f.write_str(&markdown)?;
+            }
+            InstalledFrom::Rustup => {
+                f.write_str("| rustup ")?;
             }
             InstalledFrom::Snap => {
                 let markdown =
