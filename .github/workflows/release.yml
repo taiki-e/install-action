@@ -34,7 +34,7 @@ concurrency:
 jobs:
   release:
     if: github.repository_owner == 'taiki-e' && inputs.target == 'install-action'
-    uses: taiki-e/github-actions/.github/workflows/action-release.yml@4b7dd02e8c8bba1591c00f1442fc8cc29953d8f6 # main
+    uses: taiki-e/github-actions/.github/workflows/action-release.yml@2474ed4664eb8903c151603a9d841512c069f7f6 # main
     permissions:
       contents: write # for taiki-e/create-gh-release-action
     secrets:
@@ -46,7 +46,7 @@ jobs:
 
   release-manifest-schema:
     if: github.repository_owner == 'taiki-e' && inputs.target == 'install-action-manifest-schema'
-    uses: taiki-e/github-actions/.github/workflows/rust-release.yml@4b7dd02e8c8bba1591c00f1442fc8cc29953d8f6 # main
+    uses: taiki-e/github-actions/.github/workflows/rust-release.yml@2474ed4664eb8903c151603a9d841512c069f7f6 # main
     permissions:
       contents: write # for taiki-e/create-gh-release-action
       id-token: write # for rust-lang/crates-io-auth-action

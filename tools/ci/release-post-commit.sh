@@ -36,10 +36,9 @@ for tool in "${tools[@]}"; do
     git add action.yml
     git commit -m "${tool}"
     git tag -f "${tool}"
-    git checkout refs/tags/"${TAG}"
+    git checkout main
   )
-  refs+=("+refs/heads/releases/${tool}" "+refs/tags/${tool}")
-  branches+=("releases/${tool}")
+  refs+=",+refs/heads/releases/${tool},+refs/tags/${tool}"
 done
 
 set -x
@@ -59,6 +58,7 @@ else
   schema_version="$(cut -d. -f1 <<<"${schema_version}")"
 fi
 schema_branch="manifest-schema-${schema_version}"
+refs+=",refs/heads/${schema_branch}"
 
 if git fetch origin "${schema_branch}"; then
   git checkout "origin/${schema_branch}" -B "${schema_branch}"
@@ -78,5 +78,9 @@ git add .
 if [[ "$(git status --porcelain=v1 | LC_ALL=C wc -l)" != "0" ]]; then
   git commit -m 'Update manifest schema'
 fi
+git checkout main
 
-git checkout refs/tags/"${TAG}"
+printf 'additional-refs: %s\n' "${refs}"
+if [[ -n "${GITHUB_OUTPUT:-}" ]]; then
+  printf 'additional-refs=%s\n' "${refs}" >>"${GITHUB_OUTPUT}"
+fi

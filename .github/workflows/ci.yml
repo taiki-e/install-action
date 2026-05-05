@@ -32,20 +32,20 @@ concurrency:
 
 jobs:
   miri:
-    uses: taiki-e/github-actions/.github/workflows/miri.yml@4b7dd02e8c8bba1591c00f1442fc8cc29953d8f6 # main
+    uses: taiki-e/github-actions/.github/workflows/miri.yml@2474ed4664eb8903c151603a9d841512c069f7f6 # main
     with:
       # NB: sync with test job's --exclude option
       args: --exclude install-action-internal-codegen
   msrv:
-    uses: taiki-e/github-actions/.github/workflows/msrv.yml@4b7dd02e8c8bba1591c00f1442fc8cc29953d8f6 # main
+    uses: taiki-e/github-actions/.github/workflows/msrv.yml@2474ed4664eb8903c151603a9d841512c069f7f6 # main
   test-manifest-schema:
-    uses: taiki-e/github-actions/.github/workflows/test.yml@4b7dd02e8c8bba1591c00f1442fc8cc29953d8f6 # main
+    uses: taiki-e/github-actions/.github/workflows/test.yml@2474ed4664eb8903c151603a9d841512c069f7f6 # main
     with:
       # NB: sync with miri job's --exclude option
       test-args: --exclude install-action-internal-codegen
       no-std: false
   tidy:
-    uses: taiki-e/github-actions/.github/workflows/tidy.yml@4b7dd02e8c8bba1591c00f1442fc8cc29953d8f6 # main
+    uses: taiki-e/github-actions/.github/workflows/tidy.yml@2474ed4664eb8903c151603a9d841512c069f7f6 # main
     permissions:
       contents: write # for creating branch for pr
       pull-requests: write # unused (used in `codegen-automerge: true` case)
