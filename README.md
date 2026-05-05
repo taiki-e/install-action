@@ -24,6 +24,7 @@ GitHub Action for installing development tools (mainly from GitHub Releases).
 | ---- | :------: | ----------- | ---- | ------- |
 | tool | **✓** | Tools to install (whitespace or comma separated list) | String | |
 | checksum | | Whether to enable checksums (strongly discouraged to disable) | Boolean | `true` |
+| fallback | | Whether to use fallback (none, cargo-binstall, or cargo-install) | String | `cargo-binstall` |
 
 ### Example workflow
 
