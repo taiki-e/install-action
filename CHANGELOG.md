@@ -12,6 +12,8 @@ Note: In this file, do not use the hard wrap in the middle of a sentence for com
 
 ## [2.77.1] - 2026-05-05
 
+- Support `taiki-e/install-action@rust` tag.
+
 - Update `tombi@latest` to 0.10.3.
 
 - Update `martin@latest` to 1.8.2.
