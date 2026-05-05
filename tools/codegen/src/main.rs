@@ -96,7 +96,11 @@ fn main() {
                     semver_version = format!("{default_major_version}.{version}").parse();
                 }
             }
-            Some((Reverse(semver_version.ok()?), (version, release)))
+            let semver_version = semver_version.ok()?;
+            if base_info.ignore.contains(&semver_version) {
+                return None;
+            }
+            Some((Reverse(semver_version), (version, release)))
         })
         .collect();
 

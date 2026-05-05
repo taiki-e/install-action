@@ -31,9 +31,13 @@ pub struct BaseManifest {
     /// Path to binaries in archive. Default to `${tool}${exe}`.
     pub bin: Option<StringOrArray>,
     pub signing: Option<Signing>,
+    pub version_range: Option<String>,
+    /// Include to manifest, but exclude from candidate for latest and omitted versions.
     #[serde(default)]
     pub broken: Vec<semver::Version>,
-    pub version_range: Option<String>,
+    /// Exclude from manifest.
+    #[serde(default)]
+    pub ignore: Vec<semver::Version>,
     /// Use glibc build if host_env is gnu.
     #[serde(default)]
     pub prefer_linux_gnu: bool,

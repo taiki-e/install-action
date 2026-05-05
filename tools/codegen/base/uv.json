@@ -4,6 +4,7 @@
   "tag_prefix": "",
   "rust_crate": "${package}",
   "version_range": ">= 0.8.16",
+  "ignore": ["0.11.9"],
   "signing": {
     "version_range": ">= 0.9.13",
     "kind": {
