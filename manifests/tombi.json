@@ -2,10 +2,46 @@
   "rust_crate": null,
   "template": null,
   "latest": {
-    "version": "0.10.2"
+    "version": "0.10.3"
   },
   "0.10": {
-    "version": "0.10.2"
+    "version": "0.10.3"
+  },
+  "0.10.4": {
+    "x86_64_linux_musl": {
+      "url": "https://github.com/tombi-toml/tombi/releases/download/v0.10.4/tombi-cli-0.10.4-x86_64-unknown-linux-musl.tar.gz",
+      "etag": "0x8DEAA621E82D459",
+      "hash": "2988df7c5ac115dc20ebd42f45ba039df0b8cda110b444f419bec814db2c880a",
+      "bin": "tombi-cli-0.10.4-x86_64-unknown-linux-musl/tombi"
+    },
+    "x86_64_macos": {
+      "url": "https://github.com/tombi-toml/tombi/releases/download/v0.10.4/tombi-cli-0.10.4-x86_64-apple-darwin.tar.gz",
+      "etag": "0x8DEAA621E732E8B",
+      "hash": "f3ba04e491d0e2dbf42ecf6fc5d0e0c54d2b71cc74c8a4f59d34717a57544d15",
+      "bin": "tombi-cli-0.10.4-x86_64-apple-darwin/tombi"
+    },
+    "x86_64_windows": {
+      "url": "https://github.com/tombi-toml/tombi/releases/download/v0.10.4/tombi-cli-0.10.4-x86_64-pc-windows-msvc.zip",
+      "etag": "0x8DEAA621EFE096F",
+      "hash": "150c3b9f0ddb3a16faec88980df034889f618d671bdeecec4a49e45f507a4a7d"
+    },
+    "aarch64_linux_musl": {
+      "url": "https://github.com/tombi-toml/tombi/releases/download/v0.10.4/tombi-cli-0.10.4-aarch64-unknown-linux-musl.tar.gz",
+      "etag": "0x8DEAA621E95363E",
+      "hash": "0aac20f61dc0ead3eab386ecaf176ad19b8734e02a2efc031bbaeefc3ace7661",
+      "bin": "tombi-cli-0.10.4-aarch64-unknown-linux-musl/tombi"
+    },
+    "aarch64_macos": {
+      "url": "https://github.com/tombi-toml/tombi/releases/download/v0.10.4/tombi-cli-0.10.4-aarch64-apple-darwin.tar.gz",
+      "etag": "0x8DEAA621EE6566A",
+      "hash": "efff1d4fd57364c1b6f0ab7045006ed58d6fdf79925022213d44f4e0993a37a1",
+      "bin": "tombi-cli-0.10.4-aarch64-apple-darwin/tombi"
+    },
+    "aarch64_windows": {
+      "url": "https://github.com/tombi-toml/tombi/releases/download/v0.10.4/tombi-cli-0.10.4-aarch64-pc-windows-msvc.zip",
+      "etag": "0x8DEAA621E83490D",
+      "hash": "2a035a8a3b51dcc5cbff9c84391734499acf7d70279ecf317fc717d22e003647"
+    }
   },
   "0.10.3": {
     "x86_64_linux_musl": {
