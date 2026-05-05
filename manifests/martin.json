@@ -31,13 +31,31 @@
     }
   },
   "latest": {
-    "version": "1.8.0"
+    "version": "1.8.2"
   },
   "1": {
-    "version": "1.8.0"
+    "version": "1.8.2"
   },
   "1.8": {
-    "version": "1.8.0"
+    "version": "1.8.2"
+  },
+  "1.8.2": {
+    "x86_64_linux_musl": {
+      "etag": "0x8DEAA75F9C0717B",
+      "hash": "b7ce4906219974f33c0c80994fde6afe503cd8fc6e4c37fd75caf77f320d98cc"
+    },
+    "x86_64_macos": {
+      "etag": "0x8DEAA75F8954F43",
+      "hash": "6be5743e73b43bc7ef34d17b94e7fdce5f3eafa26120a67ce317b55d557ba481"
+    },
+    "aarch64_linux_musl": {
+      "etag": "0x8DEAA75F885D044",
+      "hash": "d994a862ae5ded571da994f3e525c04e4afb8ee355e3c91135fb0ff78f8d1294"
+    },
+    "aarch64_macos": {
+      "etag": "0x8DEAA75F8A93635",
+      "hash": "11a05523e1e59c8322bae7bb49442eaa22bb355905222f96e723b9ca42dd4316"
+    }
   },
   "1.8.0": {
     "x86_64_linux_musl": {
