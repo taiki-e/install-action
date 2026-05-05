@@ -10,8 +10,6 @@ Note: In this file, do not use the hard wrap in the middle of a sentence for com
 
 ## [Unreleased]
 
-- Update `mise@latest` to 2026.5.0.
-
 - Support `rust`. ([#1779](https://github.com/taiki-e/install-action/pull/1779))
 
   This installs rust using rustup.
@@ -30,6 +28,8 @@ Note: In this file, do not use the hard wrap in the middle of a sentence for com
   ```
 
 - Fix issue where x86_64 binary will be installed on AArch64 Windows even when AArch64 Windows binary available.
+
+- Update `mise@latest` to 2026.5.0.
 
 - Diagnostic improvements.
 
