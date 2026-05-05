@@ -32,7 +32,7 @@ concurrency:
 
 jobs:
   manifest:
-    uses: taiki-e/github-actions/.github/workflows/gen.yml@f6ed3145dbc8b13f5aab1cb5a7fb3f37634f8b54 # main
+    uses: taiki-e/github-actions/.github/workflows/gen.yml@4b7dd02e8c8bba1591c00f1442fc8cc29953d8f6 # main
     permissions:
       contents: write # for creating branch for pr
       pull-requests: write # for gh pr review --approve

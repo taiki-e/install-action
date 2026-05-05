@@ -774,6 +774,7 @@ for tool in "${tools[@]}"; do
     esac
   fi
   installed_bin=()
+  # NB: Update tools/ci/release-post-commit.sh when adding non-manifest-based tools.
   case "${tool}" in
     rust)
       if [[ "${version}" == 'latest' ]]; then
@@ -957,7 +958,7 @@ for tool in "${tools[@]}"; do
       ;;
     *)
       # Handle aliases.
-      # NB: Update alias list in .github/workflows/release.yml, tool input option in test-alias in .github/workflows/ci.yml,
+      # NB: Update alias list in tools/ci/release-post-commit.sh, tool input option in test-alias in .github/workflows/ci.yml,
       # and match for alias for tools/codegen/src/tools-markdown.rs.
       # TODO(codegen): auto-detect cases where crate name and tool name are different.
       case "${tool}" in

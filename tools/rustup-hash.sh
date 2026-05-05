@@ -17,7 +17,7 @@ targets=(
   powerpc64le-unknown-linux-gnu
   powerpc64le-unknown-linux-musl
   riscv64gc-unknown-linux-gnu
-  # riscv64gc-unknown-linux-musl # tier 2 without host tools
+  # riscv64gc-unknown-linux-musl # tier 2 without host tools: TODO: https://github.com/rust-lang/rust/issues/156191
   s390x-unknown-linux-gnu
   # s390x-unknown-linux-musl # tier 3
   x86_64-apple-darwin
