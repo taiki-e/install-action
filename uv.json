@@ -68,10 +68,86 @@
     }
   },
   "latest": {
-    "version": "0.11.8"
+    "version": "0.11.11"
   },
   "0.11": {
-    "version": "0.11.8"
+    "version": "0.11.11"
+  },
+  "0.11.11": {
+    "x86_64_linux_musl": {
+      "etag": "0x8DEABAB3A32BEEE",
+      "hash": "80521f18ba83109acd17e0730bd8ff898c3426aa62252c627d63418b353e788a"
+    },
+    "x86_64_macos": {
+      "etag": "0x8DEABAB39981750",
+      "hash": "57a1a8085b4088fbcbd5080c0c30723ba6d0692c89cd071c08a4209e8da602d1"
+    },
+    "x86_64_windows": {
+      "etag": "0x8DEABAB39A6115C",
+      "hash": "2f75a0db2c3530b6b3c24434dc38137f61ff1f4e5f2d7b4ddc5bcd142cf58b65"
+    },
+    "aarch64_linux_musl": {
+      "etag": "0x8DEABAB36BDA901",
+      "hash": "0fc9a49b3900f77ffaccf3ff69a70ddbc1d479e70ac5d8fd6416a7577b03c5a1"
+    },
+    "aarch64_macos": {
+      "etag": "0x8DEABAB36053AA7",
+      "hash": "3a185bf8f46a7b7c8b910d111825907b1638d0ae503cb3c333ae205772354046"
+    },
+    "aarch64_windows": {
+      "etag": "0x8DEABAB366D2476",
+      "hash": "3d8f05de7ed9de885299565f78832a13e443be51de86260f25edb7cfd0fa05f6"
+    },
+    "powerpc64le_linux_gnu": {
+      "etag": "0x8DEABAB38C2092C",
+      "hash": "5348415c8606e5efac5cb293d83d2ae71e43a2dcabf677c6a4cac965c1982c74"
+    },
+    "riscv64_linux_gnu": {
+      "etag": "0x8DEABAB38D70036",
+      "hash": "0eadf068918b960e7bf62eda83613c08d99f0d002b8d475d3383993191554d04"
+    },
+    "s390x_linux_gnu": {
+      "etag": "0x8DEABAB39185391",
+      "hash": "f19c950a93b1f5af4108267743f3de61346250b35c60cc552fb4187b534af770"
+    }
+  },
+  "0.11.10": {
+    "x86_64_linux_musl": {
+      "etag": "0x8DEAAE44DCF49FB",
+      "hash": "e3e78e7698d72c133c5ce851a6d60ee83afdc4c0edced382af9fd1f8e11d0105"
+    },
+    "x86_64_macos": {
+      "etag": "0x8DEAAE44CEF82BE",
+      "hash": "8fd091211089973f528e147166e3af683ab4ecebd4312a55d0d17d87adbde67a"
+    },
+    "x86_64_windows": {
+      "etag": "0x8DEAAE44D040512",
+      "hash": "7a0c424c7bc55a74751f13592235953ebbe182fa00355f7ae3fb7ab734a51638"
+    },
+    "aarch64_linux_musl": {
+      "etag": "0x8DEAAE44A345FEE",
+      "hash": "14c21bef6b54d268c6583d851095a543e6cb03a8e4bdca9a44ab91532b14cbc2"
+    },
+    "aarch64_macos": {
+      "etag": "0x8DEAAE4496FA369",
+      "hash": "e93d6af7dfff7071edd16342ba9eeccfc28d8a7deaa5707efeecf63a63a74453"
+    },
+    "aarch64_windows": {
+      "etag": "0x8DEAAE449BDB9A2",
+      "hash": "3d5878cfc55106083ada1e41cccdde477413701eb9d34767e8ad973bb0863de6"
+    },
+    "powerpc64le_linux_gnu": {
+      "etag": "0x8DEAAE44C0F6DBE",
+      "hash": "dfe5b338e2ebc1e5a2850a17bce35edb8e47550c221d9245c007eaf3003cb6ed"
+    },
+    "riscv64_linux_gnu": {
+      "etag": "0x8DEAAE44C34CD09",
+      "hash": "0c8776a0814bf7e32e025d13c733c3a800171a16fba77d1c21e6f10be6a28d8b"
+    },
+    "s390x_linux_gnu": {
+      "etag": "0x8DEAAE44CE003C6",
+      "hash": "66dfdc5a216a9fbd7c2541a66f753544dddbcbb2f7a597c9bbc91d10af534c7d"
+    }
   },
   "0.11.8": {
     "x86_64_linux_musl": {
