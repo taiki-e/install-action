@@ -16,7 +16,7 @@ Note: In this file, do not use the hard wrap in the middle of a sentence for com
 
 - Update `prek@latest` to 0.3.13.
 
-- Update `tombi@latest` to 0.10.5.
+- Update `tombi@latest` to 0.10.6.
 
 ## [2.77.1] - 2026-05-05
 
