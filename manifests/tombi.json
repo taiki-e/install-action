@@ -4,6 +4,42 @@
   "latest": {
     "version": "0.10.6"
   },
+  "0.11.0": {
+    "x86_64_linux_musl": {
+      "url": "https://github.com/tombi-toml/tombi/releases/download/v0.11.0/tombi-cli-0.11.0-x86_64-unknown-linux-musl.tar.gz",
+      "etag": "0x8DEACE666546096",
+      "hash": "f56f17e1d762e0cd7e127823daf2778f25b68fdecfc7d7d628a6a0d10ef13a3e",
+      "bin": "tombi-cli-0.11.0-x86_64-unknown-linux-musl/tombi"
+    },
+    "x86_64_macos": {
+      "url": "https://github.com/tombi-toml/tombi/releases/download/v0.11.0/tombi-cli-0.11.0-x86_64-apple-darwin.tar.gz",
+      "etag": "0x8DEACE666DE0443",
+      "hash": "0e73dddbd8f92324f0aa6b3bf3878913c4021d9c6385ba60875cdbbcda8f109a",
+      "bin": "tombi-cli-0.11.0-x86_64-apple-darwin/tombi"
+    },
+    "x86_64_windows": {
+      "url": "https://github.com/tombi-toml/tombi/releases/download/v0.11.0/tombi-cli-0.11.0-x86_64-pc-windows-msvc.zip",
+      "etag": "0x8DEACE6664DFF29",
+      "hash": "3f702350d274d63ae5bba0f8e62098e901c3013a5a2ad25a2d6a61fa01251ad9"
+    },
+    "aarch64_linux_musl": {
+      "url": "https://github.com/tombi-toml/tombi/releases/download/v0.11.0/tombi-cli-0.11.0-aarch64-unknown-linux-musl.tar.gz",
+      "etag": "0x8DEACE666444616",
+      "hash": "aaf54d4615008e154d9136c19c3619b37f8818d74a4ba224a3b4fa21a2c7705d",
+      "bin": "tombi-cli-0.11.0-aarch64-unknown-linux-musl/tombi"
+    },
+    "aarch64_macos": {
+      "url": "https://github.com/tombi-toml/tombi/releases/download/v0.11.0/tombi-cli-0.11.0-aarch64-apple-darwin.tar.gz",
+      "etag": "0x8DEACE6664A0BFD",
+      "hash": "87e8869b53b80d76153de661da717d963fc44803a34e21ff2eade7708f242933",
+      "bin": "tombi-cli-0.11.0-aarch64-apple-darwin/tombi"
+    },
+    "aarch64_windows": {
+      "url": "https://github.com/tombi-toml/tombi/releases/download/v0.11.0/tombi-cli-0.11.0-aarch64-pc-windows-msvc.zip",
+      "etag": "0x8DEACE666EF0824",
+      "hash": "6a7677475fc23d91145fac74e2b4c3d547488f7752e8fa4fd21c14adaedecfe9"
+    }
+  },
   "0.10": {
     "version": "0.10.6"
   },
