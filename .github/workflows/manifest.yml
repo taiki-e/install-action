@@ -13,26 +13,13 @@ on:
     - cron: '0 0,3,6,9,12,15,18,21 * * *'
   workflow_dispatch:
 
-env:
-  CARGO_INCREMENTAL: 0
-  CARGO_NET_GIT_FETCH_WITH_CLI: true
-  CARGO_NET_RETRY: 10
-  CARGO_TERM_COLOR: always
-  RUST_BACKTRACE: 1
-  RUSTFLAGS: -D warnings
-  RUSTUP_MAX_RETRIES: 10
-
-defaults:
-  run:
-    shell: bash --noprofile --norc -CeEuxo pipefail {0}
-
 concurrency:
   group: ${{ github.workflow }}-${{ github.event.pull_request.number || github.sha }}
   cancel-in-progress: true
 
 jobs:
   manifest:
-    uses: taiki-e/github-actions/.github/workflows/gen.yml@2474ed4664eb8903c151603a9d841512c069f7f6 # main
+    uses: taiki-e/github-actions/.github/workflows/gen.yml@931686d4e4cf88b13e790040727ccde2dba8ec62 # main
     permissions:
       contents: write # for creating branch for pr
       pull-requests: write # for gh pr review --approve
@@ -44,6 +31,5 @@ jobs:
       title: Update manifest
       branch: update-manifest
       automerge: true
-      install-rust: true
       install-cosign: true
       install-parse-changelog: true

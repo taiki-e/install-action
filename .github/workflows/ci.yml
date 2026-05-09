@@ -32,20 +32,20 @@ concurrency:
 
 jobs:
   miri:
-    uses: taiki-e/github-actions/.github/workflows/miri.yml@2474ed4664eb8903c151603a9d841512c069f7f6 # main
+    uses: taiki-e/github-actions/.github/workflows/miri.yml@931686d4e4cf88b13e790040727ccde2dba8ec62 # main
     with:
       # NB: sync with test job's --exclude option
       args: --exclude install-action-internal-codegen
   msrv:
-    uses: taiki-e/github-actions/.github/workflows/msrv.yml@2474ed4664eb8903c151603a9d841512c069f7f6 # main
+    uses: taiki-e/github-actions/.github/workflows/msrv.yml@931686d4e4cf88b13e790040727ccde2dba8ec62 # main
   test-manifest-schema:
-    uses: taiki-e/github-actions/.github/workflows/test.yml@2474ed4664eb8903c151603a9d841512c069f7f6 # main
+    uses: taiki-e/github-actions/.github/workflows/test.yml@931686d4e4cf88b13e790040727ccde2dba8ec62 # main
     with:
       # NB: sync with miri job's --exclude option
       test-args: --exclude install-action-internal-codegen
       no-std: false
   tidy:
-    uses: taiki-e/github-actions/.github/workflows/tidy.yml@2474ed4664eb8903c151603a9d841512c069f7f6 # main
+    uses: taiki-e/github-actions/.github/workflows/tidy.yml@931686d4e4cf88b13e790040727ccde2dba8ec62 # main
     permissions:
       contents: write # for creating branch for pr
       pull-requests: write # unused (used in `codegen-automerge: true` case)
@@ -257,7 +257,8 @@ jobs:
       - name: Install requirements (old debian)
         run: |
           # In Debian, the old repositories is removed from the main mirrors some time after EoL.
-          codename=$(grep -E '^VERSION_CODENAME=' /etc/os-release | cut -d= -f2)
+          # shellcheck source=/dev/null
+          codename=$(. /etc/os-release; printf '%s\n' "${VERSION_CODENAME}")
           sed -i /etc/apt/sources.list -e 's/deb.debian.org/archive.debian.org/g' \
             -e 's|security.debian.org|archive.debian.org/|g' \
             -e "/${codename}-updates/d"
