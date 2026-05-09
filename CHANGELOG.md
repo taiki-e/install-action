@@ -12,7 +12,7 @@ Note: In this file, do not use the hard wrap in the middle of a sentence for com
 
 - Update `osv-scanner@latest` to 2.3.8.
 
-- Update `mise@latest` to 2026.5.2.
+- Update `mise@latest` to 2026.5.3.
 
 ## [2.77.2] - 2026-05-08
 
