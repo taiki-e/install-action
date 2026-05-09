@@ -10,6 +10,8 @@ Note: In this file, do not use the hard wrap in the middle of a sentence for com
 
 ## [Unreleased]
 
+## [2.77.3] - 2026-05-09
+
 - Update `typos@latest` to 1.46.1.
 
 - Update `rclone@latest` to 1.74.1.
@@ -6492,7 +6494,8 @@ Note: This release is considered a breaking change because installing on version
 
 Initial release
 
-[Unreleased]: https://github.com/taiki-e/install-action/compare/v2.77.2...HEAD
+[Unreleased]: https://github.com/taiki-e/install-action/compare/v2.77.3...HEAD
+[2.77.3]: https://github.com/taiki-e/install-action/compare/v2.77.2...v2.77.3
 [2.77.2]: https://github.com/taiki-e/install-action/compare/v2.77.1...v2.77.2
 [2.77.1]: https://github.com/taiki-e/install-action/compare/v2.77.0...v2.77.1
 [2.77.0]: https://github.com/taiki-e/install-action/compare/v2.76.0...v2.77.0
