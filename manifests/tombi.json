@@ -2,7 +2,46 @@
   "rust_crate": null,
   "template": null,
   "latest": {
-    "version": "0.10.6"
+    "version": "0.11.0"
+  },
+  "0.11": {
+    "version": "0.11.0"
+  },
+  "0.11.1": {
+    "x86_64_linux_musl": {
+      "url": "https://github.com/tombi-toml/tombi/releases/download/v0.11.1/tombi-cli-0.11.1-x86_64-unknown-linux-musl.tar.gz",
+      "etag": "0x8DEADA939853E26",
+      "hash": "827a8de6959b37b28e9a4d2dc3bfdb28e647d6de690d81a9a6751afabaa73763",
+      "bin": "tombi-cli-0.11.1-x86_64-unknown-linux-musl/tombi"
+    },
+    "x86_64_macos": {
+      "url": "https://github.com/tombi-toml/tombi/releases/download/v0.11.1/tombi-cli-0.11.1-x86_64-apple-darwin.tar.gz",
+      "etag": "0x8DEADA9397FECFB",
+      "hash": "c9245de0d601154d01e0cd6d57f0b92465b1fa03f95221faca13a929b1e4648e",
+      "bin": "tombi-cli-0.11.1-x86_64-apple-darwin/tombi"
+    },
+    "x86_64_windows": {
+      "url": "https://github.com/tombi-toml/tombi/releases/download/v0.11.1/tombi-cli-0.11.1-x86_64-pc-windows-msvc.zip",
+      "etag": "0x8DEADA9398013E0",
+      "hash": "ad90d99ed4a525b820afeb414946e9bfe20770913d1975da04f57a350729e7d4"
+    },
+    "aarch64_linux_musl": {
+      "url": "https://github.com/tombi-toml/tombi/releases/download/v0.11.1/tombi-cli-0.11.1-aarch64-unknown-linux-musl.tar.gz",
+      "etag": "0x8DEADA93A1E12DD",
+      "hash": "f08c006ac16e8cf100c41e66276b22d29ea1a051f0d8a36b5a07dbfa36ce41fd",
+      "bin": "tombi-cli-0.11.1-aarch64-unknown-linux-musl/tombi"
+    },
+    "aarch64_macos": {
+      "url": "https://github.com/tombi-toml/tombi/releases/download/v0.11.1/tombi-cli-0.11.1-aarch64-apple-darwin.tar.gz",
+      "etag": "0x8DEADA9399668E8",
+      "hash": "e8624e4fce53073c0ae85b759eb0b901c95d9ae28c025586e4c629ac9ea2cf67",
+      "bin": "tombi-cli-0.11.1-aarch64-apple-darwin/tombi"
+    },
+    "aarch64_windows": {
+      "url": "https://github.com/tombi-toml/tombi/releases/download/v0.11.1/tombi-cli-0.11.1-aarch64-pc-windows-msvc.zip",
+      "etag": "0x8DEADA9398B9F9F",
+      "hash": "b9d8f1614b33691ff0ff7258c57c83f193f758dd378081a5ffb6c8bcb1910e4d"
+    }
   },
   "0.11.0": {
     "x86_64_linux_musl": {
