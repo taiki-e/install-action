@@ -10,6 +10,8 @@ Note: In this file, do not use the hard wrap in the middle of a sentence for com
 
 ## [Unreleased]
 
+## [2.77.4] - 2026-05-10
+
 - Update `tombi@latest` to 0.11.1.
 
 - Update `cargo-llvm-cov@latest` to 0.8.6.
@@ -6500,7 +6502,8 @@ Note: This release is considered a breaking change because installing on version
 
 Initial release
 
-[Unreleased]: https://github.com/taiki-e/install-action/compare/v2.77.3...HEAD
+[Unreleased]: https://github.com/taiki-e/install-action/compare/v2.77.4...HEAD
+[2.77.4]: https://github.com/taiki-e/install-action/compare/v2.77.3...v2.77.4
 [2.77.3]: https://github.com/taiki-e/install-action/compare/v2.77.2...v2.77.3
 [2.77.2]: https://github.com/taiki-e/install-action/compare/v2.77.1...v2.77.2
 [2.77.1]: https://github.com/taiki-e/install-action/compare/v2.77.0...v2.77.1
