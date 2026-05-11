@@ -1,0 +1,17 @@
+{
+  "repository": "https://github.com/sourcefrog/cargo-mutants",
+  "license_markdown": "[MIT](https://github.com/sourcefrog/cargo-mutants/blob/main/LICENSE)",
+  "tag_prefix": "v",
+  "rust_crate": "${package}",
+  "asset_name": [
+    "${package}-${rust_target}.tar.gz",
+    "${package}-${rust_target}.tar.xz"
+  ],
+  "platform": {
+    "x86_64_linux_gnu": {},
+    "x86_64_macos": {},
+    "x86_64_windows": {
+      "asset_name": "${package}-${rust_target}.zip"
+    }
+  }
+}
