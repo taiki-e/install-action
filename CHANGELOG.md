@@ -10,6 +10,8 @@ Note: In this file, do not use the hard wrap in the middle of a sentence for com
 
 ## [Unreleased]
 
+- Update `cargo-deny@latest` to 0.19.6.
+
 ## [2.77.6] - 2026-05-11
 
 - Fix `wasm-pack` installation failure.
