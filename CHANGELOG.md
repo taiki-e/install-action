@@ -10,7 +10,15 @@ Note: In this file, do not use the hard wrap in the middle of a sentence for com
 
 ## [Unreleased]
 
-- Update `tombi@latest` to 0.11.2.
+- Update `covgate@latest` to 0.2.0.
+
+- Update `cargo-llvm-cov@latest` to 0.8.7.
+
+- Update `uv@latest` to 0.11.14.
+
+- Update `martin@latest` to 1.9.1.
+
+- Update `tombi@latest` to 0.11.4.
 
 ## [2.77.7] - 2026-05-13
 
