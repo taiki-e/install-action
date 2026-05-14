@@ -10,6 +10,8 @@ Note: In this file, do not use the hard wrap in the middle of a sentence for com
 
 ## [Unreleased]
 
+- Support `cargo-mutants`. ([#1812](https://github.com/taiki-e/install-action/pull/1812), thanks @jakewimmer)
+
 - Update `covgate@latest` to 0.2.0.
 
 - Update `cargo-llvm-cov@latest` to 0.8.7.
