@@ -9,6 +9,7 @@ cd -- "$(dirname -- "$0")"/../..
 # version `GLIBC_2.39' not found
 glibc_pre_2_39_incompat=(
   cargo-deb
+  cargo-mutants
   cargo-spellcheck
   zizmor
 )
