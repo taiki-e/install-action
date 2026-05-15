@@ -10,6 +10,8 @@ Note: In this file, do not use the hard wrap in the middle of a sentence for com
 
 ## [Unreleased]
 
+## [2.78.1] - 2026-05-15
+
 - Update `mise@latest` to 2026.5.7.
 
 - Diagnostic improvements.
@@ -6544,7 +6546,8 @@ Note: This release is considered a breaking change because installing on version
 
 Initial release
 
-[Unreleased]: https://github.com/taiki-e/install-action/compare/v2.78.0...HEAD
+[Unreleased]: https://github.com/taiki-e/install-action/compare/v2.78.1...HEAD
+[2.78.1]: https://github.com/taiki-e/install-action/compare/v2.78.0...v2.78.1
 [2.78.0]: https://github.com/taiki-e/install-action/compare/v2.77.7...v2.78.0
 [2.77.7]: https://github.com/taiki-e/install-action/compare/v2.77.6...v2.77.7
 [2.77.6]: https://github.com/taiki-e/install-action/compare/v2.77.5...v2.77.6
