@@ -979,9 +979,9 @@ for tool in "${tools[@]}"; do
       read_manifest "${tool}" "${version}"
       if [[ "${download_info}" == "null" ]]; then
         if [[ "${rust_crate}" == "null" ]] || [[ "${fallback}" == "none" ]]; then
-          bail "${tool}@${version} for '${host_arch}_${host_os}' is not supported"
+          bail "${tool} is supported but version ${version} for '${host_arch}_${host_os}' is not supported (updating install-action might resolve this)"
         fi
-        warn "${tool}@${version} for '${host_arch}_${host_os}' is not supported; fallback to ${fallback}"
+        warn "${tool} is supported but version ${version} for '${host_arch}_${host_os}' is not supported (updating install-action might resolve this); fallback to ${fallback}"
         case "${version}" in
           latest) unsupported_tools+=("${rust_crate}") ;;
           *) unsupported_tools+=("${rust_crate}@${version}") ;;
@@ -1073,7 +1073,7 @@ done
 if [[ ${#unsupported_tools[@]} -gt 0 ]]; then
   IFS=','
   case "${fallback}" in
-    none) bail "install-action does not support ${unsupported_tools[*]} (fallback is disabled by 'fallback: none' input option)" ;;
+    none) bail "install-action does not support ${unsupported_tools[*]} (updating install-action might resolve this); aborting because fallback is disabled by 'fallback: none' input option" ;;
     cargo-binstall)
       case "${host_arch}" in
         x86_64 | aarch64 | riscv64) ;;
@@ -1084,7 +1084,7 @@ if [[ ${#unsupported_tools[@]} -gt 0 ]]; then
       esac
       ;;
   esac
-  info "install-action does not support ${unsupported_tools[*]}; fallback to ${fallback}"
+  info "install-action does not support ${unsupported_tools[*]} (updating install-action might resolve this); fallback to ${fallback}"
   IFS=$'\n\t'
   case "${fallback}" in
     cargo-binstall)
