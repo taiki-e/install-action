@@ -478,7 +478,7 @@ fi
 tool="${INPUT_TOOL:-}"
 tools=()
 if [[ -n "${tool}" ]]; then
-  while read -rd,; do
+  while IFS= read -rd,; do
     tools+=("${REPLY}")
   done < <(normalize_comma_or_space_separated "${tool}")
 fi
@@ -786,7 +786,7 @@ for tool in "${tools[@]}"; do
       if [[ -n "${additional}" ]]; then
         component=''
         target=''
-        while read -rd+; do
+        while IFS= read -rd+; do
           case "${REPLY}" in
             # Last checked: nightly-2026-05-03
             # rustup component list
