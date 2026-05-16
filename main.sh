@@ -598,13 +598,13 @@ case "${RUNNER_ARCH}" in
     info "unrecognized runner.arch '${RUNNER_ARCH}'; fallback to uname -m"
     case "$(uname -m)" in
       aarch64 | arm64) host_arch=aarch64 ;;
-      xscale | arm | armv*l) bail "32-bit Arm runner is currently not supported; if you need support for this platform, please submit an issue at <https://github.com/taiki-e/install-action>" ;;
       ppc64le) host_arch=powerpc64le ;;
       riscv64) host_arch=riscv64 ;;
       s390x) host_arch=s390x ;;
-      # Very few tools provide prebuilt binaries for these.
-      # TODO: fallback to `cargo install`? (binstall fallback is not good idea here as cargo-binstall doesn't provide prebuilt binaries for these.)
-      loongarch64 | mips | mips64 | ppc | ppc64 | sun4v) bail "$(uname -m) runner is not supported yet; please submit an issue at <https://github.com/taiki-e/install-action>" ;;
+      # On these platforms, we just use the result of `uname -m` as host_arch, and always fallback to `cargo install`.
+      xscale | arm | armv*l | loongarch64 | ppc | ppc64 | sun4v) host_arch="$(uname -m)" ;;
+      # Ignore MIPS for now, as we also need to detect endianness.
+      mips | mips64) bail "MIPS runner is not supported yet; please submit an issue at <https://github.com/taiki-e/install-action>" ;;
       # GitHub Actions Runner supports x86_64/AArch64/Arm Linux and x86_64/AArch64 Windows/macOS.
       # https://github.com/actions/runner/blob/v2.332.0/.github/workflows/build.yml#L24
       # https://docs.github.com/en/actions/reference/runners/self-hosted-runners#supported-processor-architectures
