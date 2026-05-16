@@ -10,6 +10,8 @@ Note: In this file, do not use the hard wrap in the middle of a sentence for com
 
 ## [Unreleased]
 
+- Update `wasm-tools@latest` to 1.249.0.
+
 - Update `gungraun-runner@latest` to 0.19.0.
 
 ## [2.78.2] - 2026-05-16
