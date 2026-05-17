@@ -580,7 +580,8 @@ case "${RUNNER_OS}" in
 esac
 case "${RUNNER_ARCH}" in
   X64) host_arch=x86_64 ;;
-  # Ignore 32-bit Arm for now, as we need to consider the version and whether hard-float is supported.
+  # Always fallback to `cargo install` on 32-bit Arm for now, as we need to
+  # consider the version and whether hard-float is supported.
   # https://github.com/rust-lang/rustup/pull/593
   # https://github.com/cross-rs/cross/pull/1018
   # And support for 32-bit Arm will be removed in near future.
@@ -588,23 +589,22 @@ case "${RUNNER_ARCH}" in
   # Does it seem only armv7l+ is supported?
   # https://github.com/actions/runner/blob/v2.321.0/src/Misc/externals.sh#L178
   # https://github.com/actions/runner/issues/688
-  ARM) bail "32-bit Arm runner is currently not supported; if you need support for this platform, please submit an issue at <https://github.com/taiki-e/install-action>" ;;
-  X86) bail "32-bit x86 runner is currently not supported; if you need support for this platform, please submit an issue at <https://github.com/taiki-e/install-action>" ;;
+  ARM) host_arch=arm ;;
+  X86) host_arch=x86 ;;
   ARM64) host_arch=aarch64 ;;
   PPC64LE) host_arch=powerpc64le ;;
   RISCV64) host_arch=riscv64 ;;
   S390X) host_arch=s390x ;;
   *)
     info "unrecognized runner.arch '${RUNNER_ARCH}'; fallback to uname -m"
-    case "$(uname -m)" in
+    host_arch="$(uname -m)"
+    case "${host_arch}" in
       aarch64 | arm64) host_arch=aarch64 ;;
       ppc64le) host_arch=powerpc64le ;;
       riscv64) host_arch=riscv64 ;;
       s390x) host_arch=s390x ;;
       # On these platforms, we just use the result of `uname -m` as host_arch, and always fallback to `cargo install`.
-      xscale | arm | armv*l | loongarch64 | ppc | ppc64 | sun4v) host_arch="$(uname -m)" ;;
-      # Ignore MIPS for now, as we also need to detect endianness.
-      mips | mips64) bail "MIPS runner is not supported yet; please submit an issue at <https://github.com/taiki-e/install-action>" ;;
+      xscale | arm | armv*l | loongarch64 | mips | mips64 | ppc | ppc64 | sun4v) ;;
       # GitHub Actions Runner supports x86_64/AArch64/Arm Linux and x86_64/AArch64 Windows/macOS.
       # https://github.com/actions/runner/blob/v2.332.0/.github/workflows/build.yml#L24
       # https://docs.github.com/en/actions/reference/runners/self-hosted-runners#supported-processor-architectures
