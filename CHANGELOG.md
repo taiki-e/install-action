@@ -10,6 +10,8 @@ Note: In this file, do not use the hard wrap in the middle of a sentence for com
 
 ## [Unreleased]
 
+- Update `zizmor@latest` to 1.25.2.
+
 - Update `cargo-zigbuild@latest` to 0.22.3. ([#1814](https://github.com/taiki-e/install-action/pull/1814), thanks @simonhollingshead)
 
 - Update `wasm-tools@latest` to 1.249.0.
