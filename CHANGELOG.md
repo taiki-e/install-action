@@ -12,6 +12,10 @@ Note: In this file, do not use the hard wrap in the middle of a sentence for com
 
 - Support more host architectures. ([#1841](https://github.com/taiki-e/install-action/pull/1841), thanks @Gelbpunkt)
 
+- Deprecate `mdbook-alerts` because the feature now included in `mdbook` and the [repository](https://github.com/lambdalisue/rs-mdbook-alerts) has been archived. ([#1844](https://github.com/taiki-e/install-action/pull/1844))
+
+- Deprecate `iai-callgrind-runner` because it has been [renamed](https://github.com/gungraun/gungraun/releases/tag/v0.17.0) to `gungraun-runner`. `gungraun-runner` is also supported by this action. ([#1844](https://github.com/taiki-e/install-action/pull/1844))
+
 ## [2.78.3] - 2026-05-17
 
 - Update `zizmor@latest` to 1.25.2.
