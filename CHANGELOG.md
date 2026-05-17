@@ -10,6 +10,8 @@ Note: In this file, do not use the hard wrap in the middle of a sentence for com
 
 ## [Unreleased]
 
+- Support more host architectures. ([#1841](https://github.com/taiki-e/install-action/pull/1841), thanks @Gelbpunkt)
+
 ## [2.78.3] - 2026-05-17
 
 - Update `zizmor@latest` to 1.25.2.
