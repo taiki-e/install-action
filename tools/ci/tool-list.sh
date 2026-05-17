@@ -119,14 +119,19 @@ case "$(uname -s)" in
     if ! type -P apt-get >/dev/null; then
       incompat_tools+=(cyclonedx)
     fi
-    if [[ "${runner}" == "ubuntu:14.04" ]]; then
+    if [[ "${runner}" == 'ubuntu:14.04' ]]; then
       incompat_tools+=(cyclonedx)
     fi
-    if [[ "${runner}" == "almalinux:10"* ]]; then
+    if [[ "${runner}" == 'almalinux:10'* ]]; then
       incompat_tools+=(cargo-deb) # no dpkg in package manager
     fi
     ;;
-  Darwin) host_os=macos ;;
+  Darwin)
+    host_os=macos
+    if [[ "${runner}" == 'macos-15-intel' ]]; then
+      incompat_tools+=(release-plz) # no prebuilt binary
+    fi
+    ;;
   MINGW* | MSYS* | CYGWIN* | Windows_NT) host_os=windows ;;
   *) bail "unrecognized OS type '$(uname -s)'" ;;
 esac
