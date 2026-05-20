@@ -7,6 +7,43 @@
   "3": {
     "version": "3.34.1"
   },
+  "3.35.0": {
+    "x86_64_linux_gnu": {
+      "url": "https://github.com/protocolbuffers/protobuf/releases/download/v35.0/protoc-35.0-linux-x86_64.zip",
+      "etag": "0x8DEB5F43D44EF2E",
+      "hash": "a45cda0989c17dd950db55f6fbe1e5814c50fda08e87aa422980ac1f89dddbbc"
+    },
+    "x86_64_macos": {
+      "url": "https://github.com/protocolbuffers/protobuf/releases/download/v35.0/protoc-35.0-osx-x86_64.zip",
+      "etag": "0x8DEB5F43D74CA03",
+      "hash": "3580c2d115fccb5b0239960c8f70f8da14787b1973a46b2f39c315ad71c11e01"
+    },
+    "x86_64_windows": {
+      "url": "https://github.com/protocolbuffers/protobuf/releases/download/v35.0/protoc-35.0-win64.zip",
+      "etag": "0x8DEB5F43DAD26C5",
+      "hash": "d1cede9e308cc3eb072392af1c02ccae4bdd3d2f374ec2970dbd8cdfdaa91363"
+    },
+    "aarch64_linux_gnu": {
+      "url": "https://github.com/protocolbuffers/protobuf/releases/download/v35.0/protoc-35.0-linux-aarch_64.zip",
+      "etag": "0x8DEB5F43CE2A452",
+      "hash": "36b518ac14d90351cc6598228ed2bbe5afe4e357b1af470b07e0ec1609875de2"
+    },
+    "aarch64_macos": {
+      "url": "https://github.com/protocolbuffers/protobuf/releases/download/v35.0/protoc-35.0-osx-aarch_64.zip",
+      "etag": "0x8DEB5F43D57C5B6",
+      "hash": "45444963204757fd3e2fbe304bc1fdadfb488d8556ff099c4cc06575eab88976"
+    },
+    "powerpc64le_linux_gnu": {
+      "url": "https://github.com/protocolbuffers/protobuf/releases/download/v35.0/protoc-35.0-linux-ppcle_64.zip",
+      "etag": "0x8DEB5F43CE11F63",
+      "hash": "977abb4c93d01c912a4084446a388d7d6e44923f02a5572a0518fe69e3ea9353"
+    },
+    "s390x_linux_gnu": {
+      "url": "https://github.com/protocolbuffers/protobuf/releases/download/v35.0/protoc-35.0-linux-s390_64.zip",
+      "etag": "0x8DEB5F43CE780E1",
+      "hash": "475743de89e56c72d9f5bb170b436137905e717417faccecbb856f5f8ca52b1d"
+    }
+  },
   "3.34": {
     "version": "3.34.1"
   },
