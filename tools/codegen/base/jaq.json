@@ -3,13 +3,19 @@
   "license_markdown": "[MIT](https://github.com/01mf02/jaq/blob/main/LICENSE-MIT)",
   "tag_prefix": "v",
   "rust_crate": "${package}",
-  "asset_name": "${package}-v${version}-${rust_target}",
+  "asset_name": [
+    "${package}-${rust_target}",
+    "${package}-v${version}-${rust_target}"
+  ],
   "version_range": ">= 1.4.0",
   "platform": {
     "x86_64_linux_musl": {},
     "x86_64_macos": {},
     "x86_64_windows": {
-      "asset_name": "${package}-v${version}-${rust_target}.exe"
+      "asset_name": [
+        "${package}-${rust_target}.exe",
+        "${package}-v${version}-${rust_target}.exe"
+      ]
     },
     "aarch64_linux_gnu": {},
     "aarch64_macos": {}
