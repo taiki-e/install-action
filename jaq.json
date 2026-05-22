@@ -1,24 +1,218 @@
 {
   "rust_crate": "jaq",
-  "template": {
+  "template": null,
+  "latest": {
+    "version": "3.0.0"
+  },
+  "3": {
+    "version": "3.0.0"
+  },
+  "3.0": {
+    "version": "3.0.0"
+  },
+  "3.0.0": {
     "x86_64_linux_musl": {
-      "url": "https://github.com/01mf02/jaq/releases/download/v${version}/jaq-v${version}-x86_64-unknown-linux-musl"
+      "url": "https://github.com/01mf02/jaq/releases/download/v3.0.0/jaq-x86_64-unknown-linux-musl",
+      "etag": "0x8DE8C18F1FF4B75",
+      "hash": "5beeeadd874b0bc9e4fdacff00b4dc5f8fb1430a85b3734e2c7210085dd1be08"
     },
     "x86_64_macos": {
-      "url": "https://github.com/01mf02/jaq/releases/download/v${version}/jaq-v${version}-x86_64-apple-darwin"
+      "url": "https://github.com/01mf02/jaq/releases/download/v3.0.0/jaq-x86_64-apple-darwin",
+      "etag": "0x8DE8C18F72D6AAB",
+      "hash": "361a9280910c9e4fda95cb1cb72b5f88ec2e2b0c8322cafbdc6c0aa6625e1a7d"
     },
     "x86_64_windows": {
-      "url": "https://github.com/01mf02/jaq/releases/download/v${version}/jaq-v${version}-x86_64-pc-windows-msvc.exe"
+      "url": "https://github.com/01mf02/jaq/releases/download/v3.0.0/jaq-x86_64-pc-windows-msvc.exe",
+      "etag": "0x8DE8C191270D618",
+      "hash": "07dfa5f20a9372ce96f26d5fbfdcedc4baad2162b487b3d980f35d0d0dce632f"
     },
     "aarch64_linux_gnu": {
-      "url": "https://github.com/01mf02/jaq/releases/download/v${version}/jaq-v${version}-aarch64-unknown-linux-gnu"
+      "url": "https://github.com/01mf02/jaq/releases/download/v3.0.0/jaq-aarch64-unknown-linux-gnu",
+      "etag": "0x8DE8C190620C58F",
+      "hash": "774b2446b7bff9f020ec9078a81e5c55853e87944d16fbeed8bae68ed8d42c81"
     },
     "aarch64_macos": {
-      "url": "https://github.com/01mf02/jaq/releases/download/v${version}/jaq-v${version}-aarch64-apple-darwin"
+      "url": "https://github.com/01mf02/jaq/releases/download/v3.0.0/jaq-aarch64-apple-darwin",
+      "etag": "0x8DE8C18EC3AC55D",
+      "hash": "61f666342a8d9569768ca69acefc28bacabfcfb2cf932d0717e50332f34302c5"
     }
   },
-  "latest": {
-    "version": "1.6.0"
+  "2": {
+    "version": "2.3.0"
+  },
+  "2.3": {
+    "version": "2.3.0"
+  },
+  "2.3.0": {
+    "x86_64_linux_musl": {
+      "url": "https://github.com/01mf02/jaq/releases/download/v2.3.0/jaq-x86_64-unknown-linux-musl",
+      "etag": "0x8DDBD6705C8A4C2",
+      "hash": "46c20091037d2aa8e6b84aec965c95a9d0c68d5fac45f10e0c5c305af1cce69a"
+    },
+    "x86_64_macos": {
+      "url": "https://github.com/01mf02/jaq/releases/download/v2.3.0/jaq-x86_64-apple-darwin",
+      "etag": "0x8DDBD6705A64F37",
+      "hash": "275cdb84799ff7862d2dd2fd6f909448b3890031f118644738f69d406b2bb863"
+    },
+    "x86_64_windows": {
+      "url": "https://github.com/01mf02/jaq/releases/download/v2.3.0/jaq-x86_64-pc-windows-msvc.exe",
+      "etag": "0x8DDBD672633541E",
+      "hash": "6762d8fd23e1cf07807a5d4caea76c2c1a81ba5b4230638414baa07296943d47"
+    },
+    "aarch64_linux_gnu": {
+      "url": "https://github.com/01mf02/jaq/releases/download/v2.3.0/jaq-aarch64-unknown-linux-gnu",
+      "etag": "0x8DDBD670C1411D3",
+      "hash": "23088f79440b80bd9608838898546e8604bab675bee13f862ab024ada5525ebc"
+    },
+    "aarch64_macos": {
+      "url": "https://github.com/01mf02/jaq/releases/download/v2.3.0/jaq-aarch64-apple-darwin",
+      "etag": "0x8DDBD6714568195",
+      "hash": "974b0f74cda17b597719d144a948fd813effffd8adbda7d14376c3dcb56dd012"
+    }
+  },
+  "2.2": {
+    "version": "2.2.0"
+  },
+  "2.2.0": {
+    "x86_64_linux_musl": {
+      "url": "https://github.com/01mf02/jaq/releases/download/v2.2.0/jaq-x86_64-unknown-linux-musl",
+      "etag": "0x8DD843B29FA9F43",
+      "hash": "be54388872c66b6188a826b8848c1d91631837f4b4b9109315fda87d336928a4"
+    },
+    "x86_64_macos": {
+      "url": "https://github.com/01mf02/jaq/releases/download/v2.2.0/jaq-x86_64-apple-darwin",
+      "etag": "0x8DD843B4CD14876",
+      "hash": "1d72e2b1f2da6948bd071b3f64aa3638a815a456b45f4c725bcb51524e931d88"
+    },
+    "x86_64_windows": {
+      "url": "https://github.com/01mf02/jaq/releases/download/v2.2.0/jaq-x86_64-pc-windows-msvc.exe",
+      "etag": "0x8DD843B788189D2",
+      "hash": "09a7278599afe6d9f0ac57c40bea7a8e5062bd45da6537cae4ccd0202f61d6e3"
+    },
+    "aarch64_linux_gnu": {
+      "url": "https://github.com/01mf02/jaq/releases/download/v2.2.0/jaq-aarch64-unknown-linux-gnu",
+      "etag": "0x8DD843B38627FB0",
+      "hash": "d69aa358bc2446803002793d2819a6e2051a775833a6389c46d8c35eac9c25ad"
+    },
+    "aarch64_macos": {
+      "url": "https://github.com/01mf02/jaq/releases/download/v2.2.0/jaq-aarch64-apple-darwin",
+      "etag": "0x8DD843B34096015",
+      "hash": "169ddcfe1e64213e0240606b31122aedc48cd8a9119fb17660180c2e27206309"
+    }
+  },
+  "2.1": {
+    "version": "2.1.1"
+  },
+  "2.1.1": {
+    "x86_64_linux_musl": {
+      "url": "https://github.com/01mf02/jaq/releases/download/v2.1.1/jaq-x86_64-unknown-linux-musl",
+      "etag": "0x8DD52A01782DB3D",
+      "hash": "36552a9f55f53396a5f978d05c11858f8d86fbb9da9c8092f5ade0e00792bdac"
+    },
+    "x86_64_macos": {
+      "url": "https://github.com/01mf02/jaq/releases/download/v2.1.1/jaq-x86_64-apple-darwin",
+      "etag": "0x8DD52A02992D59C",
+      "hash": "29d9463345459839a3b4406837872cca67954e8aba8c97633476e70ed86b9fbf"
+    },
+    "x86_64_windows": {
+      "url": "https://github.com/01mf02/jaq/releases/download/v2.1.1/jaq-x86_64-pc-windows-msvc.exe",
+      "etag": "0x8DD52A03A66A98F",
+      "hash": "5ddc1f7bb0e44f699812dd3320c0c2c66960b61c4fa080ea23cba3753f371b0a"
+    },
+    "aarch64_linux_gnu": {
+      "url": "https://github.com/01mf02/jaq/releases/download/v2.1.1/jaq-aarch64-unknown-linux-gnu",
+      "etag": "0x8DD52A02166E6DE",
+      "hash": "0e84042d654b84094dd5923382762fbaa74ed954db5f28bfffae172bcc0ca77e"
+    },
+    "aarch64_macos": {
+      "url": "https://github.com/01mf02/jaq/releases/download/v2.1.1/jaq-aarch64-apple-darwin",
+      "etag": "0x8DD52A03125A18E",
+      "hash": "54f297f88be946c888ccf49bbba29ae3b4322ba49de379d484c85fcc3aa2f665"
+    }
+  },
+  "2.1.0": {
+    "x86_64_linux_musl": {
+      "url": "https://github.com/01mf02/jaq/releases/download/v2.1.0/jaq-x86_64-unknown-linux-musl",
+      "etag": "0x8DD34B2A69B0185",
+      "hash": "c40ef42b55e01e694e88f2b1de5056bfa1de4c96fbe5f551564f67f492ec14bb"
+    },
+    "x86_64_macos": {
+      "url": "https://github.com/01mf02/jaq/releases/download/v2.1.0/jaq-x86_64-apple-darwin",
+      "etag": "0x8DD34B2D4B167E7",
+      "hash": "c94e004e1b44ca3282ecc4680892438e928d335093fa3f767bf9d276d0b4f868"
+    },
+    "x86_64_windows": {
+      "url": "https://github.com/01mf02/jaq/releases/download/v2.1.0/jaq-x86_64-pc-windows-msvc.exe",
+      "etag": "0x8DD34B2CE2042D4",
+      "hash": "84e7f138df7d53ed618cb88574d4566a2e41ca06e57bf4dbfffe75180bb7f05e"
+    },
+    "aarch64_linux_gnu": {
+      "url": "https://github.com/01mf02/jaq/releases/download/v2.1.0/jaq-aarch64-unknown-linux-gnu",
+      "etag": "0x8DD34B2C183D037",
+      "hash": "639278d47fc08ee549d212454b31b9a32a6ed516e01adbb6ba274bd12cda2a3e"
+    },
+    "aarch64_macos": {
+      "url": "https://github.com/01mf02/jaq/releases/download/v2.1.0/jaq-aarch64-apple-darwin",
+      "etag": "0x8DD34B2BFE95382",
+      "hash": "5e3265e0152b2de53889a80f03b37a17543e3b8fbee2cc03de20bd3bf1c9e304"
+    }
+  },
+  "2.0": {
+    "version": "2.0.0"
+  },
+  "2.0.1": {
+    "x86_64_linux_musl": {
+      "url": "https://github.com/01mf02/jaq/releases/download/v2.0.1/jaq-x86_64-unknown-linux-musl",
+      "etag": "0x8DD1834D5D7DE05",
+      "hash": "62fc4fba975ad468f56ed6af9fad382a3e72c3d699b1ed8a56e84a960276c032"
+    },
+    "x86_64_macos": {
+      "url": "https://github.com/01mf02/jaq/releases/download/v2.0.1/jaq-x86_64-apple-darwin",
+      "etag": "0x8DD1836C40D7520",
+      "hash": "05a694dfebd34cfd2b81f1856f78a0a13c372f91f9afd625b804c916222af510"
+    },
+    "x86_64_windows": {
+      "url": "https://github.com/01mf02/jaq/releases/download/v2.0.1/jaq-x86_64-pc-windows-msvc.exe",
+      "etag": "0x8DD183503C99225",
+      "hash": "f7e82493736ac0c05215341372dfd631c6389d1c9801b92674dbfcb523ef7501"
+    },
+    "aarch64_linux_gnu": {
+      "url": "https://github.com/01mf02/jaq/releases/download/v2.0.1/jaq-aarch64-unknown-linux-gnu",
+      "etag": "0x8DD1834C565944A",
+      "hash": "44296852cd1ce76413b834066922d0aca2d54f43c9e25c15ba697e95a76d854d"
+    },
+    "aarch64_macos": {
+      "url": "https://github.com/01mf02/jaq/releases/download/v2.0.1/jaq-aarch64-apple-darwin",
+      "etag": "0x8DD1836BEAE21F0",
+      "hash": "ca544d7faf981218f3ec1c127c46daf96d7bd859063069b9cb67cda3ce7ff939"
+    }
+  },
+  "2.0.0": {
+    "x86_64_linux_musl": {
+      "url": "https://github.com/01mf02/jaq/releases/download/v2.0.0/jaq-x86_64-unknown-linux-musl",
+      "etag": "0x8DD0EC16F9E23C7",
+      "hash": "e618b369bf7348cad59216c22cab485a640d00b5717a819a6d2298c1937b26bc"
+    },
+    "x86_64_macos": {
+      "url": "https://github.com/01mf02/jaq/releases/download/v2.0.0/jaq-x86_64-apple-darwin",
+      "etag": "0x8DD0EC16972EEC5",
+      "hash": "bdc964ab054f9e04ffb0f8b0e67adc7e71f83bf6b391fcc7aa93c2a5ab601295"
+    },
+    "x86_64_windows": {
+      "url": "https://github.com/01mf02/jaq/releases/download/v2.0.0/jaq-x86_64-pc-windows-msvc.exe",
+      "etag": "0x8DD0EC19861AA7B",
+      "hash": "3b271aff853a0b27db4afe59543f0083c2c8975044e91cbcd53f1528abdfe6a1"
+    },
+    "aarch64_linux_gnu": {
+      "url": "https://github.com/01mf02/jaq/releases/download/v2.0.0/jaq-aarch64-unknown-linux-gnu",
+      "etag": "0x8DD0EC16D636078",
+      "hash": "f49959e9dd465c6d075e9f6b61eb813a9cbf3732972348def538ffbc42e4638d"
+    },
+    "aarch64_macos": {
+      "url": "https://github.com/01mf02/jaq/releases/download/v2.0.0/jaq-aarch64-apple-darwin",
+      "etag": "0x8DD0EC16AEF570F",
+      "hash": "d6bae31a8833edd8698a1b5adefc33af65581cf41f61a85cf235fe79916743d2"
+    }
   },
   "1": {
     "version": "1.6.0"
@@ -28,22 +222,27 @@
   },
   "1.6.0": {
     "x86_64_linux_musl": {
+      "url": "https://github.com/01mf02/jaq/releases/download/v1.6.0/jaq-v1.6.0-x86_64-unknown-linux-musl",
       "etag": "0x8DCB0789F5FD044",
       "hash": "e5bad7939118e8dc0d28fea2ccbf351470cb28d2a4a04ff8baad8eb2a26cef18"
     },
     "x86_64_macos": {
+      "url": "https://github.com/01mf02/jaq/releases/download/v1.6.0/jaq-v1.6.0-x86_64-apple-darwin",
       "etag": "0x8DCB0789CE4EFB1",
       "hash": "f93fd96c45902264637d4b9a8aaf0bd3e41571d58340da6c2ffeffd6b8d6c86b"
     },
     "x86_64_windows": {
+      "url": "https://github.com/01mf02/jaq/releases/download/v1.6.0/jaq-v1.6.0-x86_64-pc-windows-msvc.exe",
       "etag": "0x8DCB078CD84B6D9",
       "hash": "def395eb31bab8af440938cddfe24113dfb68e9e5ea199903c3c354564c2296d"
     },
     "aarch64_linux_gnu": {
+      "url": "https://github.com/01mf02/jaq/releases/download/v1.6.0/jaq-v1.6.0-aarch64-unknown-linux-gnu",
       "etag": "0x8DCB078AABB6D06",
       "hash": "d66e5ffe2aa6cd73572fbaebd625b5fbef37cea5dc20b5a56dfd3d2a22dcaf65"
     },
     "aarch64_macos": {
+      "url": "https://github.com/01mf02/jaq/releases/download/v1.6.0/jaq-v1.6.0-aarch64-apple-darwin",
       "etag": "0x8DCB078A397F875",
       "hash": "7c62b0232f7b3491663100dbaa2c73fa15f7041e0a75c6c12c31f4b162236e31"
     }
@@ -53,44 +252,54 @@
   },
   "1.5.1": {
     "x86_64_linux_musl": {
+      "url": "https://github.com/01mf02/jaq/releases/download/v1.5.1/jaq-v1.5.1-x86_64-unknown-linux-musl",
       "etag": "0x8DC9E75A9FBA045",
       "hash": "e8f22c9eab38e475e8c7b4416b1886d0c1544166230bb256d5b7f631212c0a52"
     },
     "x86_64_macos": {
+      "url": "https://github.com/01mf02/jaq/releases/download/v1.5.1/jaq-v1.5.1-x86_64-apple-darwin",
       "etag": "0x8DC9E75ADB19362",
       "hash": "7d4383f6fcb00438c52b21183a325ebb8ea98fd1b0d95c8bb7b7d632bc507b35"
     },
     "x86_64_windows": {
+      "url": "https://github.com/01mf02/jaq/releases/download/v1.5.1/jaq-v1.5.1-x86_64-pc-windows-msvc.exe",
       "etag": "0x8DC9E75DF7F6260",
       "hash": "e7d800a1a16141ec5aa8c056a274c619debdae08fc19c91a92a88cd94418d8b7"
     },
     "aarch64_linux_gnu": {
+      "url": "https://github.com/01mf02/jaq/releases/download/v1.5.1/jaq-v1.5.1-aarch64-unknown-linux-gnu",
       "etag": "0x8DC9E75A514ECEF",
       "hash": "a91a8626b29ca15449138ea2c496b75c8bd5f25198d51c46fb83bd7b7809a343"
     },
     "aarch64_macos": {
+      "url": "https://github.com/01mf02/jaq/releases/download/v1.5.1/jaq-v1.5.1-aarch64-apple-darwin",
       "etag": "0x8DC9E75B7626A1A",
       "hash": "3fd00f216654a1cb06b638cbf54cb88f7e97d0f9292fd88340ab256db236edc2"
     }
   },
   "1.5.0": {
     "x86_64_linux_musl": {
+      "url": "https://github.com/01mf02/jaq/releases/download/v1.5.0/jaq-v1.5.0-x86_64-unknown-linux-musl",
       "etag": "0x8DC95C7C0742176",
       "hash": "36095f210f014670b50d5d8d447a3978abb6a919227f7f6140e7cb673d7503f0"
     },
     "x86_64_macos": {
+      "url": "https://github.com/01mf02/jaq/releases/download/v1.5.0/jaq-v1.5.0-x86_64-apple-darwin",
       "etag": "0x8DC95C7D06D3AE9",
       "hash": "fb15e68e47ad19dfa15dcec1adb41104e9ff7b1a6b2af8325fe21f7a239cdeae"
     },
     "x86_64_windows": {
+      "url": "https://github.com/01mf02/jaq/releases/download/v1.5.0/jaq-v1.5.0-x86_64-pc-windows-msvc.exe",
       "etag": "0x8DC95C80589FC91",
       "hash": "b8aad49b6186446f726a90816814201e2d3f8574cd6c399087e507e68f6f708b"
     },
     "aarch64_linux_gnu": {
+      "url": "https://github.com/01mf02/jaq/releases/download/v1.5.0/jaq-v1.5.0-aarch64-unknown-linux-gnu",
       "etag": "0x8DC95C7C4D0BF9A",
       "hash": "a04f2cd1be227acc596dda7015da53f57b012951cf8234a230641ca7f700b602"
     },
     "aarch64_macos": {
+      "url": "https://github.com/01mf02/jaq/releases/download/v1.5.0/jaq-v1.5.0-aarch64-apple-darwin",
       "etag": "0x8DC95C7D5667A65",
       "hash": "963b0261155f9d78b04d30372f2bb772623fc5402057c767c002211f9a744958"
     }
@@ -100,22 +309,27 @@
   },
   "1.4.0": {
     "x86_64_linux_musl": {
+      "url": "https://github.com/01mf02/jaq/releases/download/v1.4.0/jaq-v1.4.0-x86_64-unknown-linux-musl",
       "etag": "0x8DC7B460BA5B41F",
       "hash": "fce247e4b9693ff260293bdb7d4ef564f765ed6fe889c42cebfd5d2e36b591bf"
     },
     "x86_64_macos": {
+      "url": "https://github.com/01mf02/jaq/releases/download/v1.4.0/jaq-v1.4.0-x86_64-apple-darwin",
       "etag": "0x8DC7B4609EE5957",
       "hash": "f12c87eed86258b226c747ccbef55db95e78e6925eee55fe96e8a5eee4fe69f3"
     },
     "x86_64_windows": {
+      "url": "https://github.com/01mf02/jaq/releases/download/v1.4.0/jaq-v1.4.0-x86_64-pc-windows-msvc.exe",
       "etag": "0x8DC7B463C8CB19C",
       "hash": "bb8189ee62b3b467f82e06484a7ab7478f8ddc1cc67ec95b7d2ebc2da38dd14d"
     },
     "aarch64_linux_gnu": {
+      "url": "https://github.com/01mf02/jaq/releases/download/v1.4.0/jaq-v1.4.0-aarch64-unknown-linux-gnu",
       "etag": "0x8DC7B460011203B",
       "hash": "2e6449091baf52bcb982e75685459464444ea8f29c7316d246f0bd407670c568"
     },
     "aarch64_macos": {
+      "url": "https://github.com/01mf02/jaq/releases/download/v1.4.0/jaq-v1.4.0-aarch64-apple-darwin",
       "etag": "0x8DC7B4609E258E3",
       "hash": "545e26ecd01b44468a894cd6576290cc8f787d0f06dd0ef8cc0b02bfe4c95c55"
     }
