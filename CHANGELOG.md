@@ -10,6 +10,8 @@ Note: In this file, do not use the hard wrap in the middle of a sentence for com
 
 ## [Unreleased]
 
+- Update `jaq@latest` to 3.0.0. ([#1861](https://github.com/taiki-e/install-action/pull/1861), thanks @MusicalNinjaDad)
+
 - Update `wasmtime@latest` to 45.0.0.
 
 - Update `wasm-tools@latest` to 1.250.0.
