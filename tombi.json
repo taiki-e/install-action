@@ -7,6 +7,42 @@
   "0.11": {
     "version": "0.11.5"
   },
+  "0.11.6": {
+    "x86_64_linux_musl": {
+      "url": "https://github.com/tombi-toml/tombi/releases/download/v0.11.6/tombi-cli-0.11.6-x86_64-unknown-linux-musl.tar.gz",
+      "etag": "0x8DEB758518603AA",
+      "hash": "e1305b8c822d64e2aebe1bf6dee37b29a941dba5a80f6cc3ba129d76360eaa3b",
+      "bin": "tombi-cli-0.11.6-x86_64-unknown-linux-musl/tombi"
+    },
+    "x86_64_macos": {
+      "url": "https://github.com/tombi-toml/tombi/releases/download/v0.11.6/tombi-cli-0.11.6-x86_64-apple-darwin.tar.gz",
+      "etag": "0x8DEB75851961E39",
+      "hash": "104782c8e80ab336511127639d182309d488179be823001a4b2a40abe7578fce",
+      "bin": "tombi-cli-0.11.6-x86_64-apple-darwin/tombi"
+    },
+    "x86_64_windows": {
+      "url": "https://github.com/tombi-toml/tombi/releases/download/v0.11.6/tombi-cli-0.11.6-x86_64-pc-windows-msvc.zip",
+      "etag": "0x8DEB758523C2AF2",
+      "hash": "fc253878ac92e253bf9ed74da6fb159bfb9e17575351aaeccd912630fa76a5b7"
+    },
+    "aarch64_linux_musl": {
+      "url": "https://github.com/tombi-toml/tombi/releases/download/v0.11.6/tombi-cli-0.11.6-aarch64-unknown-linux-musl.tar.gz",
+      "etag": "0x8DEB758523E2483",
+      "hash": "b59f3a3694fac9c904655a7dd5bcf94aaa709430c36dfc7f0e18abd58f9c0f8f",
+      "bin": "tombi-cli-0.11.6-aarch64-unknown-linux-musl/tombi"
+    },
+    "aarch64_macos": {
+      "url": "https://github.com/tombi-toml/tombi/releases/download/v0.11.6/tombi-cli-0.11.6-aarch64-apple-darwin.tar.gz",
+      "etag": "0x8DEB758517EB8DD",
+      "hash": "fd2c09d4c632db5af85f02a883468e33c84bafca3706eb39529bbb04cee10187",
+      "bin": "tombi-cli-0.11.6-aarch64-apple-darwin/tombi"
+    },
+    "aarch64_windows": {
+      "url": "https://github.com/tombi-toml/tombi/releases/download/v0.11.6/tombi-cli-0.11.6-aarch64-pc-windows-msvc.zip",
+      "etag": "0x8DEB7585174D8E2",
+      "hash": "d85059c4e218e6a952630023c78766196111f19726b07fe1018fe43989f5b929"
+    }
+  },
   "0.11.5": {
     "x86_64_linux_musl": {
       "url": "https://github.com/tombi-toml/tombi/releases/download/v0.11.5/tombi-cli-0.11.5-x86_64-unknown-linux-musl.tar.gz",
