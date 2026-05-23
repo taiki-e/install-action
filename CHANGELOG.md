@@ -10,6 +10,8 @@ Note: In this file, do not use the hard wrap in the middle of a sentence for com
 
 ## [Unreleased]
 
+- Update `vacuum@latest` to 0.26.6.
+
 ## [2.79.5] - 2026-05-22
 
 - Update `jaq@latest` to 3.0.0. ([#1861](https://github.com/taiki-e/install-action/pull/1861), thanks @MusicalNinjaDad)
