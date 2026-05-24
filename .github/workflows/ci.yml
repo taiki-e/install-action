@@ -31,26 +31,16 @@ concurrency:
   cancel-in-progress: true
 
 jobs:
-  miri:
-    needs: tidy
-    uses: taiki-e/github-actions/.github/workflows/miri.yml@931686d4e4cf88b13e790040727ccde2dba8ec62 # main
-    with:
-      # NB: sync with test job's --exclude option
-      args: --exclude install-action-internal-codegen
-  msrv:
-    needs: tidy
-    uses: taiki-e/github-actions/.github/workflows/msrv.yml@931686d4e4cf88b13e790040727ccde2dba8ec62 # main
-  test-manifest-schema:
-    needs: tidy
-    uses: taiki-e/github-actions/.github/workflows/test.yml@931686d4e4cf88b13e790040727ccde2dba8ec62 # main
-    with:
-      # NB: sync with miri job's --exclude option
-      test-args: --exclude install-action-internal-codegen
-      no-std: false
   tidy:
-    uses: taiki-e/github-actions/.github/workflows/tidy.yml@931686d4e4cf88b13e790040727ccde2dba8ec62 # main
+    uses: taiki-e/github-actions/.github/workflows/tidy.yml@1bb80ca038216cd1fb7b6ca6d76240b3772963ab # main
     permissions:
       security-events: write # for github/codeql-action/*
+  test-manifest-schema:
+    needs: tidy
+    uses: taiki-e/github-actions/.github/workflows/rust-test.yml@1bb80ca038216cd1fb7b6ca6d76240b3772963ab # main
+    with:
+      test-args: --exclude install-action-internal-codegen
+      no-std: false
 
   test:
     needs: tidy
