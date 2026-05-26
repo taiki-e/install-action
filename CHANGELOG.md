@@ -10,6 +10,8 @@ Note: In this file, do not use the hard wrap in the middle of a sentence for com
 
 ## [Unreleased]
 
+## [2.79.8] - 2026-05-26
+
 - Update `parse-dockerfile@latest` to 0.1.6.
 
 - Update `knope@latest` to 0.23.0.
@@ -6650,7 +6652,8 @@ Note: This release is considered a breaking change because installing on version
 
 Initial release
 
-[Unreleased]: https://github.com/taiki-e/install-action/compare/v2.79.7...HEAD
+[Unreleased]: https://github.com/taiki-e/install-action/compare/v2.79.8...HEAD
+[2.79.8]: https://github.com/taiki-e/install-action/compare/v2.79.7...v2.79.8
 [2.79.7]: https://github.com/taiki-e/install-action/compare/v2.79.6...v2.79.7
 [2.79.6]: https://github.com/taiki-e/install-action/compare/v2.79.5...v2.79.6
 [2.79.5]: https://github.com/taiki-e/install-action/compare/v2.79.4...v2.79.5
