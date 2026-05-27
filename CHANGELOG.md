@@ -10,6 +10,8 @@ Note: In this file, do not use the hard wrap in the middle of a sentence for com
 
 ## [Unreleased]
 
+- Update `editorconfig-checker@latest` to 3.7.0.
+
 ## [2.79.9] - 2026-05-26
 
 - Update `vacuum@latest` to 0.26.7.
