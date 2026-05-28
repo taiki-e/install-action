@@ -10,6 +10,8 @@ Note: In this file, do not use the hard wrap in the middle of a sentence for com
 
 ## [Unreleased]
 
+- Remove uses of crates.io API, which potentially cases 403 error.
+
 ## [2.79.11] - 2026-05-28
 
 - Update `vacuum@latest` to 0.26.8.
