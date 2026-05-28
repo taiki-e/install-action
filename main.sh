@@ -1067,66 +1067,18 @@ if [[ ${#unsupported_tools[@]} -gt 0 ]]; then
     cargo-binstall)
       install_cargo_binstall
       # By default, cargo-binstall enforce downloads over secure transports only.
-      # As a result, http will be disabled, and it will also set
-      # min tls version to be 1.2
+      # As a result, http will be disabled, and it will also set min tls version
+      # to be 1.2
       binstall_args=(
         --force
         --no-confirm
         --locked
-        # Since the build script can access the token when `cargo install` is called
-        # within `cargo-binstall`, disables building from source in cargo-binstall
-        # and fallback to `cargo install` which doesn't need the token.
-        # TODO: once https://github.com/cargo-bins/cargo-binstall/pull/2533 merged,
-        # we can remove this and use batch install again.
-        --disable-strategies compile
       )
-      unsupported_tools2=()
-      for tool in "${unsupported_tools[@]}"; do
-        if [[ -n "${token}" ]]; then
-          if ! GITHUB_TOKEN="${token}" cargo-binstall binstall "${binstall_args[@]}" "${tool}"; then
-            warn "cargo-binstall fallback does not support prebuilt binaries for ${tool} on this platform (${host_arch}); use 'cargo-install' fallback instead"
-            unsupported_tools2+=("${tool}")
-          fi
-        else
-          if ! cargo-binstall binstall "${binstall_args[@]}" "${tool}"; then
-            warn "cargo-binstall fallback does not support prebuilt binaries for ${tool} on this platform (${host_arch}); use 'cargo-install' fallback instead"
-            unsupported_tools2+=("${tool}")
-          fi
-        fi
-      done
-      if [[ ${#unsupported_tools2[@]} -gt 0 ]]; then
-        for tool in "${unsupported_tools2[@]}"; do
-          # This logic is from cache-cargo-install-action.
-          cargo_args=(--locked)
-          if [[ "${tool}" == *"@"* ]]; then
-            version="${tool#*@}"
-            tool="${tool%@*}"
-            if [[ ! "${version}" =~ ^([1-9][0-9]*\.[0-9]+\.[0-9]+|0\.[1-9][0-9]*\.[0-9]+|^0\.0\.[0-9]+)(-[0-9A-Za-z\.-]+)?(\+[0-9A-Za-z\.-]+)?$|^latest$ ]]; then
-              if [[ ! "${version}" =~ ^([1-9][0-9]*(\.[0-9]+(\.[0-9]+)?)?|0\.[1-9][0-9]*(\.[0-9]+)?|^0\.0\.[0-9]+)(-[0-9A-Za-z\.-]+)?(\+[0-9A-Za-z\.-]+)?$|^latest$ ]]; then
-                bail "install-action does not support non-semver version: '${version}'"
-              fi
-              crate_info=$(retry curl --user-agent "${ACTION_USER_AGENT}" --proto '=https' --tlsv1.2 -fsSL --retry 10 "https://crates.io/api/v1/crates/${tool}")
-              if [[ ! "${version}" =~ ^[0-9]+(\.[0-9]+)?$ ]]; then
-                bail "install-action does not support non-semver version: '${version}'"
-              fi
-              # shellcheck disable=SC2207
-              versions=($(jq -r --arg start "${version}." '.versions[] | select(.num | startswith($start)) | select(.yanked == false) | .num' <<<"${crate_info}"))
-              full_version=''
-              for v in ${versions[@]+"${versions[@]}"}; do
-                if [[ "${v}" =~ ^[0-9]+\.[0-9]+\.[0-9]+(\+[0-9A-Za-z\.-]+)?$ ]]; then
-                  full_version="${v}"
-                  break
-                fi
-              done
-              if [[ -z "${full_version}" ]]; then
-                bail "no stable version found for ${tool} that match with '${version}.*'; if you want to install a pre-release version, please specify the full version"
-              fi
-              version="${full_version}"
-            fi
-            cargo_args+=(--version "${version}")
-          fi
-          cargo install "${cargo_args[@]}" "${tool}"
-        done
+      if [[ -n "${token}" ]]; then
+        GITHUB_TOKEN="${token}" \
+          cargo-binstall binstall "${binstall_args[@]}" "${unsupported_tools[@]}"
+      else
+        cargo-binstall binstall "${binstall_args[@]}" "${unsupported_tools[@]}"
       fi
       if [[ -z "${cargo_path}" ]]; then
         _bin_dir=$(canonicalize_windows_path "${home}/.cargo/bin")
