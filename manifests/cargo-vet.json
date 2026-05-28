@@ -1,0 +1,45 @@
+{
+  "rust_crate": "cargo-vet",
+  "template": {
+    "x86_64_linux_gnu": {
+      "url": "https://github.com/mozilla/cargo-vet/releases/download/v${version}/cargo-vet-x86_64-unknown-linux-gnu.tar.xz",
+      "bin": "cargo-vet-x86_64-unknown-linux-gnu/cargo-vet"
+    },
+    "x86_64_macos": {
+      "url": "https://github.com/mozilla/cargo-vet/releases/download/v${version}/cargo-vet-x86_64-apple-darwin.tar.xz",
+      "bin": "cargo-vet-x86_64-apple-darwin/cargo-vet"
+    },
+    "x86_64_windows": {
+      "url": "https://github.com/mozilla/cargo-vet/releases/download/v${version}/cargo-vet-x86_64-pc-windows-msvc.zip",
+      "bin": "cargo-vet.exe"
+    },
+    "aarch64_macos": {
+      "url": "https://github.com/mozilla/cargo-vet/releases/download/v${version}/cargo-vet-aarch64-apple-darwin.tar.xz",
+      "bin": "cargo-vet-aarch64-apple-darwin/cargo-vet"
+    }
+  },
+  "latest": {
+    "version": "0.10.0"
+  },
+  "0.10": {
+    "version": "0.10.0"
+  },
+  "0.10.0": {
+    "x86_64_linux_gnu": {
+      "etag": "0x8DCE3E854D6E7DF",
+      "hash": "c7664d9db5dd2ff813f20303650ac8253fa712ff2a1ea9ce12bed71e346f1744"
+    },
+    "x86_64_macos": {
+      "etag": "0x8DCE3E854ABC2AD",
+      "hash": "144afee60a4d1d83948470cc55e7258230abf61380d8418b9a0a01609aa2385d"
+    },
+    "x86_64_windows": {
+      "etag": "0x8DCE3E854C93B9E",
+      "hash": "a543c793a50fc3ecd69b84ea4a83a6f142a01190cf276607e09e34bd8f0f9a2e"
+    },
+    "aarch64_macos": {
+      "etag": "0x8DCE3E854AA8B8B",
+      "hash": "4b6cdbb7b1287428daf4a9bb3dc83b73ceb336893dbee6df35371a2e06ced51a"
+    }
+  }
+}
