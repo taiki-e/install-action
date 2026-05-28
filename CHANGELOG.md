@@ -10,6 +10,8 @@ Note: In this file, do not use the hard wrap in the middle of a sentence for com
 
 ## [Unreleased]
 
+- Update `prek@latest` to 0.4.3.
+
 - Remove uses of crates.io API, which potentially cases 403 error.
 
 ## [2.79.11] - 2026-05-28
