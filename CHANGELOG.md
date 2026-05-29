@@ -10,6 +10,8 @@ Note: In this file, do not use the hard wrap in the middle of a sentence for com
 
 ## [Unreleased]
 
+- Update `gungraun-runner@latest` to 0.19.1.
+
 - Update `biome@latest` to 2.4.16.
 
 ## [2.79.12] - 2026-05-28
