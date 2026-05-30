@@ -179,11 +179,15 @@ Note that what this action installs for its setup (such as above tools) is consi
 - [upload-rust-binary-action]: GitHub Action for building and uploading Rust binary to GitHub Releases.
 - [setup-cross-toolchain-action]: GitHub Action for setup toolchains for cross compilation and cross testing for Rust.
 - [checkout-action]: GitHub Action for checking out a repository. (Simplified actions/checkout alternative that does not depend on Node.js.)
+- [homebrew-tap]: Homebrew tap for projects under github.com/taiki-e.
+- [scoop-bucket]: Scoop bucket for projects under github.com/taiki-e.
 
 [cache-cargo-install-action]: https://github.com/taiki-e/cache-cargo-install-action
 [cargo-binstall]: https://github.com/cargo-bins/cargo-binstall
 [checkout-action]: https://github.com/taiki-e/checkout-action
 [create-gh-release-action]: https://github.com/taiki-e/create-gh-release-action
+[homebrew-tap]: https://github.com/taiki-e/homebrew-tap
+[scoop-bucket]: https://github.com/taiki-e/scoop-bucket
 [setup-cross-toolchain-action]: https://github.com/taiki-e/setup-cross-toolchain-action
 [upload-rust-binary-action]: https://github.com/taiki-e/upload-rust-binary-action
 
