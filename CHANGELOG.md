@@ -10,6 +10,8 @@ Note: In this file, do not use the hard wrap in the middle of a sentence for com
 
 ## [Unreleased]
 
+- Support `kingfisher`. ([#1874](https://github.com/taiki-e/install-action/pull/1874), thanks @SAY-5)
+
 ## [2.79.15] - 2026-05-30
 
 - Update `typos@latest` to 1.47.0.
