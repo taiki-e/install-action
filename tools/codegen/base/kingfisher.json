@@ -1,0 +1,27 @@
+{
+  "repository": "https://github.com/mongodb/kingfisher",
+  "license_markdown": "[Apache-2.0](https://github.com/mongodb/kingfisher/blob/main/LICENSE)",
+  "tag_prefix": "v",
+  "version_range": ">= 1.86.0",
+  "bin": "${package}${exe}",
+  "platform": {
+    "x86_64_linux_musl": {
+      "asset_name": "${package}-linux-x64.tgz"
+    },
+    "x86_64_macos": {
+      "asset_name": "${package}-darwin-x64.tgz"
+    },
+    "x86_64_windows": {
+      "asset_name": "${package}-windows-x64.zip"
+    },
+    "aarch64_linux_musl": {
+      "asset_name": "${package}-linux-arm64.tgz"
+    },
+    "aarch64_macos": {
+      "asset_name": "${package}-darwin-arm64.tgz"
+    },
+    "aarch64_windows": {
+      "asset_name": "${package}-windows-arm64.zip"
+    }
+  }
+}
