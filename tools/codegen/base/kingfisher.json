@@ -3,6 +3,14 @@
   "license_markdown": "[Apache-2.0](https://github.com/mongodb/kingfisher/blob/main/LICENSE)",
   "tag_prefix": "v",
   "version_range": ">= 1.86.0",
+  "signing": {
+    "version_range": ">= 1.91.0",
+    "kind": {
+      "gh-attestation": {
+        "signer-workflow": "${repo}/.github/workflows/release.yml"
+      }
+    }
+  },
   "bin": "${package}${exe}",
   "platform": {
     "x86_64_linux_musl": {
