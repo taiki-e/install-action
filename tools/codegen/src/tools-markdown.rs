@@ -23,13 +23,18 @@ See the [Supported tools section in README.md](README.md#supported-tools) for ho
 > [!WARNING]
 > Please note that the fact that a specific tool is listed here does **NOT** mean that the maintainer trusts the tool for safety or has reviewed its code.
 
-| Name | Where binaries will be installed | Where will it be installed from | Supported platform | License |
-| ---- | -------------------------------- | ------------------------------- | ------------------ | ------- |
+| Name | Where binaries will be installed | Where will it be installed from | Supported platform | License | Note |
+| ---- | -------------------------------- | ------------------------------- | ------------------ | ------- | ---- |
 ";
 
 const FOOTER: &str = "
 [cargo-binstall]: https://github.com/cargo-bins/cargo-binstall
 ";
+
+const DEPRECATED: &[(&str, &str)] = &[
+    ("mdbook-alerts", "included in `mdbook`"),
+    ("iai-callgrind-runner", "renamed to `gungraun-runner`"),
+];
 
 fn main() {
     let args: Vec<_> = env::args().skip(1).collect();
@@ -64,6 +69,7 @@ fn main() {
             license_markdown:
                 "[Apache-2.0 OR MIT](https://github.com/rust-lang/rust/blob/main/COPYRIGHT)"
                     .to_owned(),
+            note: String::new(),
         },
         MarkdownEntry {
             name: "valgrind".to_owned(),
@@ -76,6 +82,7 @@ fn main() {
             license_markdown:
                 "[GPL-2.0](https://sourceware.org/git/?p=valgrind.git;a=blob;f=COPYING;hb=HEAD)"
                     .to_owned(),
+            note: String::new(),
         },
     ];
 
@@ -83,7 +90,7 @@ fn main() {
         let file_name = path.file_name();
         let mut name = PathBuf::from(file_name.clone());
         name.set_extension("");
-        let name = name.to_string_lossy().to_string();
+        let name = name.into_os_string().into_string().unwrap();
         let base_info: BaseManifest =
             serde_json::from_slice(&fs::read(base_info_dir.join(file_name.clone())).unwrap())
                 .unwrap();
@@ -122,7 +129,7 @@ fn main() {
             _ => None,
         };
 
-        let readme_entry = MarkdownEntry {
+        let mut readme_entry = MarkdownEntry {
             name,
             alias,
             website,
@@ -131,7 +138,13 @@ fn main() {
             installed_from,
             platforms,
             license_markdown,
+            note: String::new(),
         };
+
+        if let Some(&(_, note)) = DEPRECATED.iter().find(|&&(name, _)| readme_entry.name == name) {
+            readme_entry.name += " (deprecated)";
+            note.clone_into(&mut readme_entry.note);
+        }
         tools.push(readme_entry);
     }
 
@@ -162,6 +175,7 @@ struct MarkdownEntry {
     installed_from: InstalledFrom,
     platforms: Platforms,
     license_markdown: String,
+    note: String,
 }
 
 #[derive(Debug, Eq, PartialEq)]
@@ -241,7 +255,12 @@ impl fmt::Display for MarkdownEntry {
         }
 
         f.write_str(&format!("| {} ", self.platforms))?;
-        f.write_str(&format!("| {} |\n", self.license_markdown))?;
+        f.write_str(&format!("| {} ", self.license_markdown))?;
+        if self.note.is_empty() {
+            f.write_str("| |\n")?;
+        } else {
+            f.write_str(&format!("| {} |\n", self.note))?;
+        }
         Ok(())
     }
 }

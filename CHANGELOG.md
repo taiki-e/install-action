@@ -10,7 +10,179 @@ Note: In this file, do not use the hard wrap in the middle of a sentence for com
 
 ## [Unreleased]
 
+- Update `vacuum@latest` to 0.27.3.
+
+- Support `convco`. ([#1831](https://github.com/taiki-e/install-action/pull/1831), thanks @graelo)
+
+- Update `cargo-binstall@latest` to 1.19.1.
+
+## [2.80.0] - 2026-05-30
+
+- Support `kingfisher`. ([#1874](https://github.com/taiki-e/install-action/pull/1874), thanks @SAY-5)
+
+## [2.79.15] - 2026-05-30
+
+- Update `typos@latest` to 1.47.0.
+
+- Update `wasm-tools@latest` to 1.251.0.
+
+- Update `vacuum@latest` to 0.27.2.
+
+- Update `uv@latest` to 0.11.17.
+
+- Update `tombi@latest` to 1.1.1.
+
+- Update `mise@latest` to 2026.5.16.
+
+## [2.79.14] - 2026-05-29
+
+- Update `vacuum@latest` to 0.27.0.
+
+- Update `cargo-deny@latest` to 0.19.8.
+
+## [2.79.13] - 2026-05-29
+
+- Update `gungraun-runner@latest` to 0.19.1.
+
+- Update `biome@latest` to 2.4.16.
+
+## [2.79.12] - 2026-05-28
+
+- Update `prek@latest` to 0.4.3.
+
+- Remove uses of crates.io API, which potentially cases 403 error.
+
+## [2.79.11] - 2026-05-28
+
+- Update `vacuum@latest` to 0.26.8.
+
+- Update `cargo-nextest@latest` to 0.9.137.
+
+## [2.79.10] - 2026-05-27
+
+- Update `tombi@latest` to 1.1.0.
+
+- Update `prek@latest` to 0.4.2.
+
+- Update `editorconfig-checker@latest` to 3.7.0.
+
+## [2.79.9] - 2026-05-26
+
+- Update `vacuum@latest` to 0.26.7.
+
+- Update `tombi@latest` to 1.0.0.
+
+## [2.79.8] - 2026-05-26
+
+- Update `parse-dockerfile@latest` to 0.1.6.
+
+- Update `knope@latest` to 0.23.0.
+
+## [2.79.7] - 2026-05-24
+
+- Update `typos@latest` to 1.46.3.
+
+- Update `rclone@latest` to 1.74.2.
+
+- Update `mise@latest` to 2026.5.15.
+
+- Update `tombi@latest` to 0.11.7.
+
+## [2.79.6] - 2026-05-23
+
+- Update `wasm-bindgen@latest` to 0.2.122.
+
+- Update `mise@latest` to 2026.5.14.
+
+- Update `cargo-deny@latest` to 0.19.7.
+
+- Update `vacuum@latest` to 0.26.6.
+
+## [2.79.5] - 2026-05-22
+
+- Update `jaq@latest` to 3.0.0. ([#1861](https://github.com/taiki-e/install-action/pull/1861), thanks @MusicalNinjaDad)
+
+- Update `wasmtime@latest` to 45.0.0.
+
+- Update `wasm-tools@latest` to 1.250.0.
+
+- Update `tombi@latest` to 0.11.6.
+
+- Update `mise@latest` to 2026.5.13.
+
+## [2.79.4] - 2026-05-22
+
+- Update `martin@latest` to 1.10.1.
+
+- Update `prek@latest` to 0.4.1.
+
+- Update `protoc@latest` to 3.35.0.
+
+- Update `mdbook@latest` to 0.5.3.
+
+## [2.79.3] - 2026-05-20
+
+- Update `mise@latest` to 2026.5.12.
+
+- Update `martin@latest` to 1.10.0.
+
+- Update `uv@latest` to 0.11.15.
+
+## [2.79.2] - 2026-05-19
+
+- Update `mise@latest` to 2026.5.11.
+
+- Update `vacuum@latest` to 0.26.5.
+
+- Update `cargo-shear@latest` to 1.12.4.
+
+## [2.79.1] - 2026-05-18
+
+- Update `tombi@latest` to 0.11.5.
+
+- Update `cargo-nextest@latest` to 0.9.136.
+
+- Update `typos@latest` to 1.46.2.
+
+- Update `mise@latest` to 2026.5.10.
+
+## [2.79.0] - 2026-05-17
+
+- Support more host architectures. ([#1841](https://github.com/taiki-e/install-action/pull/1841), thanks @Gelbpunkt)
+
+- Deprecate `mdbook-alerts` because the feature now included in `mdbook` and the [repository](https://github.com/lambdalisue/rs-mdbook-alerts) has been archived. ([#1844](https://github.com/taiki-e/install-action/pull/1844))
+
+- Deprecate `iai-callgrind-runner` because it has been [renamed](https://github.com/gungraun/gungraun/releases/tag/v0.17.0) to `gungraun-runner`. `gungraun-runner` is also supported by this action. ([#1844](https://github.com/taiki-e/install-action/pull/1844))
+
+## [2.78.3] - 2026-05-17
+
+- Update `zizmor@latest` to 1.25.2.
+
+- Update `cargo-zigbuild@latest` to 0.22.3. ([#1814](https://github.com/taiki-e/install-action/pull/1814), thanks @simonhollingshead)
+
+- Update `wasm-tools@latest` to 1.249.0.
+
+- Update `gungraun-runner@latest` to 0.19.0.
+
+## [2.78.2] - 2026-05-16
+
+- Update `wasm-pack@latest` to 0.15.0.
+
+- Update `zizmor@latest` to 1.25.0.
+
+- Update `mise@latest` to 2026.5.9.
+
+- Update `cargo-nextest@latest` to 0.9.135.
+
+- Update `cyclonedx@latest` to 0.32.0.
+
+- Update `prek@latest` to 0.4.0.
+
+## [2.78.1] - 2026-05-15
+
 - Update `mise@latest` to 2026.5.7.
+
+- Diagnostic improvements.
 
 ## [2.78.0] - 2026-05-14
 
@@ -6542,7 +6714,27 @@ Note: This release is considered a breaking change because installing on version
 
 Initial release
 
-[Unreleased]: https://github.com/taiki-e/install-action/compare/v2.78.0...HEAD
+[Unreleased]: https://github.com/taiki-e/install-action/compare/v2.80.0...HEAD
+[2.80.0]: https://github.com/taiki-e/install-action/compare/v2.79.15...v2.80.0
+[2.79.15]: https://github.com/taiki-e/install-action/compare/v2.79.14...v2.79.15
+[2.79.14]: https://github.com/taiki-e/install-action/compare/v2.79.13...v2.79.14
+[2.79.13]: https://github.com/taiki-e/install-action/compare/v2.79.12...v2.79.13
+[2.79.12]: https://github.com/taiki-e/install-action/compare/v2.79.11...v2.79.12
+[2.79.11]: https://github.com/taiki-e/install-action/compare/v2.79.10...v2.79.11
+[2.79.10]: https://github.com/taiki-e/install-action/compare/v2.79.9...v2.79.10
+[2.79.9]: https://github.com/taiki-e/install-action/compare/v2.79.8...v2.79.9
+[2.79.8]: https://github.com/taiki-e/install-action/compare/v2.79.7...v2.79.8
+[2.79.7]: https://github.com/taiki-e/install-action/compare/v2.79.6...v2.79.7
+[2.79.6]: https://github.com/taiki-e/install-action/compare/v2.79.5...v2.79.6
+[2.79.5]: https://github.com/taiki-e/install-action/compare/v2.79.4...v2.79.5
+[2.79.4]: https://github.com/taiki-e/install-action/compare/v2.79.3...v2.79.4
+[2.79.3]: https://github.com/taiki-e/install-action/compare/v2.79.2...v2.79.3
+[2.79.2]: https://github.com/taiki-e/install-action/compare/v2.79.1...v2.79.2
+[2.79.1]: https://github.com/taiki-e/install-action/compare/v2.79.0...v2.79.1
+[2.79.0]: https://github.com/taiki-e/install-action/compare/v2.78.3...v2.79.0
+[2.78.3]: https://github.com/taiki-e/install-action/compare/v2.78.2...v2.78.3
+[2.78.2]: https://github.com/taiki-e/install-action/compare/v2.78.1...v2.78.2
+[2.78.1]: https://github.com/taiki-e/install-action/compare/v2.78.0...v2.78.1
 [2.78.0]: https://github.com/taiki-e/install-action/compare/v2.77.7...v2.78.0
 [2.77.7]: https://github.com/taiki-e/install-action/compare/v2.77.6...v2.77.7
 [2.77.6]: https://github.com/taiki-e/install-action/compare/v2.77.5...v2.77.6

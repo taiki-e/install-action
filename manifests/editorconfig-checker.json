@@ -2,10 +2,51 @@
   "rust_crate": null,
   "template": null,
   "latest": {
-    "version": "3.6.1"
+    "version": "3.7.0"
   },
   "3": {
-    "version": "3.6.1"
+    "version": "3.7.0"
+  },
+  "3.7": {
+    "version": "3.7.0"
+  },
+  "3.7.0": {
+    "x86_64_linux_musl": {
+      "url": "https://github.com/editorconfig-checker/editorconfig-checker/releases/download/v3.7.0/ec-linux-amd64.tar.gz",
+      "etag": "0x8DEBA822CEFEBD7",
+      "hash": "9a0c3a5170bffa24f9e5f0def53d285777b6c5284a95367f40d399d0b76af552",
+      "bin": "bin/ec-linux-amd64"
+    },
+    "x86_64_macos": {
+      "url": "https://github.com/editorconfig-checker/editorconfig-checker/releases/download/v3.7.0/ec-darwin-amd64.tar.gz",
+      "etag": "0x8DEBA822CDDD7B8",
+      "hash": "6cd2e4aa2a374d391e3baeaae43fc28906fd15b09490f5669eee206a63eef00a",
+      "bin": "bin/ec-darwin-amd64"
+    },
+    "x86_64_windows": {
+      "url": "https://github.com/editorconfig-checker/editorconfig-checker/releases/download/v3.7.0/ec-windows-amd64.zip",
+      "etag": "0x8DEBA822C7D11CB",
+      "hash": "9c6b8a4cd7ccc5826ab96d34c460f37ab18b9cb50607d3ee9eb743fc47335da7",
+      "bin": "bin/ec-windows-amd64.exe"
+    },
+    "aarch64_linux_musl": {
+      "url": "https://github.com/editorconfig-checker/editorconfig-checker/releases/download/v3.7.0/ec-linux-arm64.tar.gz",
+      "etag": "0x8DEBA822D52AB64",
+      "hash": "e978f3f0940469989930311af8e101dd9ce8c2ee4da69264f3d76a3787e961ad",
+      "bin": "bin/ec-linux-arm64"
+    },
+    "aarch64_macos": {
+      "url": "https://github.com/editorconfig-checker/editorconfig-checker/releases/download/v3.7.0/ec-darwin-arm64.tar.gz",
+      "etag": "0x8DEBA822CD948FC",
+      "hash": "727e6ef506c6fbe7719cc29c69b495715b64514a00059f3f179077bfad0580e5",
+      "bin": "bin/ec-darwin-arm64"
+    },
+    "aarch64_windows": {
+      "url": "https://github.com/editorconfig-checker/editorconfig-checker/releases/download/v3.7.0/ec-windows-arm64.zip",
+      "etag": "0x8DEBA822D49DBB7",
+      "hash": "249759725d0b7d687cbb87b2eab14147617e1e5e0a6390f6cc12b8c57da98dce",
+      "bin": "bin/ec-windows-arm64.exe"
+    }
   },
   "3.6": {
     "version": "3.6.1"

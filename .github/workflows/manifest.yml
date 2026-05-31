@@ -19,10 +19,9 @@ concurrency:
 
 jobs:
   manifest:
-    uses: taiki-e/github-actions/.github/workflows/gen.yml@931686d4e4cf88b13e790040727ccde2dba8ec62 # main
+    uses: taiki-e/github-actions/.github/workflows/gen.yml@1bb80ca038216cd1fb7b6ca6d76240b3772963ab # main
     permissions:
       contents: write # for creating branch for pr
-      pull-requests: write # for gh pr review --approve
     secrets:
       PR_TOKEN_APP_PRIVATE_KEY: ${{ secrets.PR_TOKEN_APP_PRIVATE_KEY }}
     with:
@@ -30,6 +29,5 @@ jobs:
       commit-script: tools/ci/manifest.sh
       title: Update manifest
       branch: update-manifest
-      automerge: true
       install-cosign: true
       install-parse-changelog: true
