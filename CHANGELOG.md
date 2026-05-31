@@ -10,6 +10,8 @@ Note: In this file, do not use the hard wrap in the middle of a sentence for com
 
 ## [Unreleased]
 
+## [2.81.0] - 2026-05-31
+
 - Support `convco`. ([#1831](https://github.com/taiki-e/install-action/pull/1831), thanks @graelo)
 
 - Support `docgarden` ([#1830](https://github.com/taiki-e/install-action/pull/1830), thanks @jesse-black)
@@ -6716,7 +6718,8 @@ Note: This release is considered a breaking change because installing on version
 
 Initial release
 
-[Unreleased]: https://github.com/taiki-e/install-action/compare/v2.80.0...HEAD
+[Unreleased]: https://github.com/taiki-e/install-action/compare/v2.81.0...HEAD
+[2.81.0]: https://github.com/taiki-e/install-action/compare/v2.80.0...v2.81.0
 [2.80.0]: https://github.com/taiki-e/install-action/compare/v2.79.15...v2.80.0
 [2.79.15]: https://github.com/taiki-e/install-action/compare/v2.79.14...v2.79.15
 [2.79.14]: https://github.com/taiki-e/install-action/compare/v2.79.13...v2.79.14
