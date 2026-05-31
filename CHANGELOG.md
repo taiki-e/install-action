@@ -14,7 +14,7 @@ Note: In this file, do not use the hard wrap in the middle of a sentence for com
 
 - Support `docgarden` ([#1830](https://github.com/taiki-e/install-action/pull/1830), thanks @jesse-black)
 
-- Update `vacuum@latest` to 0.27.3.
+- Update `vacuum@latest` to 0.28.0.
 
 - Update `cargo-binstall@latest` to 1.19.1.
 
