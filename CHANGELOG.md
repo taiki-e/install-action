@@ -10,6 +10,8 @@ Note: In this file, do not use the hard wrap in the middle of a sentence for com
 
 ## [Unreleased]
 
+- Update `cargo-hack@latest` to 0.6.45.
+
 ## [2.81.0] - 2026-05-31
 
 - Support `convco`. ([#1831](https://github.com/taiki-e/install-action/pull/1831), thanks @graelo)
