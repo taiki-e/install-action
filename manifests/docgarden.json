@@ -1,0 +1,45 @@
+{
+  "rust_crate": "docgarden",
+  "template": {
+    "x86_64_linux_musl": {
+      "url": "https://github.com/jesse-black/docgarden/releases/download/v${version}/docgarden-v${version}-x86_64-unknown-linux-musl.tar.gz",
+      "bin": "docgarden-v${version}-x86_64-unknown-linux-musl/docgarden"
+    },
+    "x86_64_windows": {
+      "url": "https://github.com/jesse-black/docgarden/releases/download/v${version}/docgarden-v${version}-x86_64-pc-windows-msvc.zip",
+      "bin": "docgarden-v${version}-x86_64-pc-windows-msvc/docgarden.exe"
+    },
+    "aarch64_linux_musl": {
+      "url": "https://github.com/jesse-black/docgarden/releases/download/v${version}/docgarden-v${version}-aarch64-unknown-linux-musl.tar.gz",
+      "bin": "docgarden-v${version}-aarch64-unknown-linux-musl/docgarden"
+    },
+    "aarch64_macos": {
+      "url": "https://github.com/jesse-black/docgarden/releases/download/v${version}/docgarden-v${version}-aarch64-apple-darwin.tar.gz",
+      "bin": "docgarden-v${version}-aarch64-apple-darwin/docgarden"
+    }
+  },
+  "latest": {
+    "version": "0.1.0"
+  },
+  "0.1": {
+    "version": "0.1.0"
+  },
+  "0.1.0": {
+    "x86_64_linux_musl": {
+      "etag": "0x8DEB1081EA0A5CC",
+      "hash": "0c648e38e96e003d071014ca4cb17f195e4675ba7de9a94091ac1c34d584d45e"
+    },
+    "x86_64_windows": {
+      "etag": "0x8DEB1081E947E7A",
+      "hash": "32cd6cbc6208bccf8bc06fa33a18adcdd110f5351e5e67151ea84cbd8b135090"
+    },
+    "aarch64_linux_musl": {
+      "etag": "0x8DEB1081E95DC7B",
+      "hash": "4f341a72ec58518c0821dd0c948314077a198b9ead76140a90a04e22514ea0a1"
+    },
+    "aarch64_macos": {
+      "etag": "0x8DEB1081E8FC8D5",
+      "hash": "237613efe2cdf65f62e8b8eb9270df30522536f791809db912864958a7bae312"
+    }
+  }
+}

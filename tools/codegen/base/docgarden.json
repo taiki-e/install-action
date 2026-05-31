@@ -1,0 +1,23 @@
+{
+  "repository": "https://github.com/jesse-black/docgarden",
+  "license_markdown": "[Apache-2.0](https://github.com/jesse-black/docgarden/blob/main/LICENSE)",
+  "tag_prefix": "v",
+  "rust_crate": "${package}",
+  "asset_name": "${package}-v${version}-${rust_target}.tar.gz",
+  "bin": "${package}-v${version}-${rust_target}/${package}${exe}",
+  "signing": {
+    "kind": {
+      "gh-attestation": {
+        "signer-workflow": "${repo}/.github/workflows/release.yml"
+      }
+    }
+  },
+  "platform": {
+    "x86_64_linux_musl": {},
+    "x86_64_windows": {
+      "asset_name": "${package}-v${version}-${rust_target}.zip"
+    },
+    "aarch64_linux_musl": {},
+    "aarch64_macos": {}
+  }
+}
