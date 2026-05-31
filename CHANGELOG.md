@@ -10,6 +10,10 @@ Note: In this file, do not use the hard wrap in the middle of a sentence for com
 
 ## [Unreleased]
 
+- Support `convco`. ([#1831](https://github.com/taiki-e/install-action/pull/1831), thanks @graelo)
+
+- Update `cargo-binstall@latest` to 1.19.1.
+
 ## [2.80.0] - 2026-05-30
 
 - Support `kingfisher`. ([#1874](https://github.com/taiki-e/install-action/pull/1874), thanks @SAY-5)
