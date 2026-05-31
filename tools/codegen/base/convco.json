@@ -1,0 +1,24 @@
+{
+  "repository": "https://github.com/convco/convco",
+  "license_markdown": "[MIT](https://github.com/convco/convco/blob/main/LICENSE)",
+  "tag_prefix": "v",
+  "version_range": ">= 0.6.4",
+  "platform": {
+    "x86_64_linux_musl": {
+      "asset_name": "${package}-ubuntu.zip",
+      "bin": "${package}"
+    },
+    "x86_64_windows": {
+      "asset_name": "${package}-windows.zip",
+      "bin": "${package}.exe"
+    },
+    "aarch64_linux_musl": {
+      "asset_name": "${package}-ubuntu-aarch64.zip",
+      "bin": "${package}"
+    },
+    "aarch64_macos": {
+      "asset_name": "${package}-macos.zip",
+      "bin": "${package}"
+    }
+  }
+}
