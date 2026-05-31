@@ -10,9 +10,11 @@ Note: In this file, do not use the hard wrap in the middle of a sentence for com
 
 ## [Unreleased]
 
-- Update `vacuum@latest` to 0.27.3.
-
 - Support `convco`. ([#1831](https://github.com/taiki-e/install-action/pull/1831), thanks @graelo)
+
+- Support `docgarden` ([#1830](https://github.com/taiki-e/install-action/pull/1830), thanks @jesse-black)
+
+- Update `vacuum@latest` to 0.27.3.
 
 - Update `cargo-binstall@latest` to 1.19.1.
 
