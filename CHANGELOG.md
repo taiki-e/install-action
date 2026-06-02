@@ -10,6 +10,8 @@ Note: In this file, do not use the hard wrap in the middle of a sentence for com
 
 ## [Unreleased]
 
+## [2.81.2] - 2026-06-02
+
 - Update `mise@latest` to 2026.5.18.
 
 - Update `cargo-semver-checks@latest` to 0.48.0.
@@ -6728,7 +6730,8 @@ Note: This release is considered a breaking change because installing on version
 
 Initial release
 
-[Unreleased]: https://github.com/taiki-e/install-action/compare/v2.81.1...HEAD
+[Unreleased]: https://github.com/taiki-e/install-action/compare/v2.81.2...HEAD
+[2.81.2]: https://github.com/taiki-e/install-action/compare/v2.81.1...v2.81.2
 [2.81.1]: https://github.com/taiki-e/install-action/compare/v2.81.0...v2.81.1
 [2.81.0]: https://github.com/taiki-e/install-action/compare/v2.80.0...v2.81.0
 [2.80.0]: https://github.com/taiki-e/install-action/compare/v2.79.15...v2.80.0
