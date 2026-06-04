@@ -116,7 +116,7 @@ jobs:
           - container: almalinux:8-minimal # glibc 2.28
           # --------------------------------------------------------------------
           # SUSE-based
-          - container: opensuse/tumbleweed:latest # glibc
+          # - container: opensuse/tumbleweed:latest # glibc # TODO: zypper timeout
           - container: opensuse/leap:latest # glibc
           # --------------------------------------------------------------------
           # apk
