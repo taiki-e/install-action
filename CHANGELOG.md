@@ -10,6 +10,10 @@ Note: In this file, do not use the hard wrap in the middle of a sentence for com
 
 ## [Unreleased]
 
+- Support `runner-run`.
+
+- Fix post-install binary validation on Windows bash when a system command shadows an installed binary.
+
 ## [2.81.9] - 2026-06-10
 
 - Update `wasm-bindgen@latest` to 0.2.123.
@@ -6379,7 +6383,7 @@ Note: This release is considered a breaking change because installing on version
 
   It is mainly intended to make the use of this action easy on containers or self-hosted runners, and currently supports Debian-based distributions (including Ubuntu) and Alpine.
 
-  The system's package manager is used for these installations. However, `bash`, which is an execution requirement of the action itself, and `cargo`, which is usually preferred for installation by rustup rather than the system's package manager, are *not* covered by these installations.
+  The system's package manager is used for these installations. However, `bash`, which is an execution requirement of the action itself, and `cargo`, which is usually preferred for installation by rustup rather than the system's package manager, are _not_ covered by these installations.
 
   See also the [compatibility note in readme](https://github.com/taiki-e/install-action#compatibility).
 

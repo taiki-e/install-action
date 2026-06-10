@@ -9,7 +9,10 @@ use serde_derive::Deserialize;
 
 #[must_use]
 pub fn workspace_root() -> &'static Path {
-    Path::new(env!("CARGO_MANIFEST_DIR").strip_suffix("tools/codegen").unwrap())
+    Path::new(env!("CARGO_MANIFEST_DIR"))
+        .ancestors()
+        .nth(2)
+        .expect("CARGO_MANIFEST_DIR should be <workspace_root>/tools/codegen")
 }
 
 #[derive(Debug, Deserialize)]

@@ -993,29 +993,40 @@ for tool in "${tools[@]}"; do
   esac
 
   tool_bin_stems=()
+  tool_bin_commands=()
   for tool_bin in "${installed_bin[@]}"; do
-    tool_bin=$(basename -- "${tool_bin}")
-    tool_bin_stem="${tool_bin%.exe}"
-    installed_at=$(type -P "${tool_bin}" || true)
+    tool_bin_file=$(basename -- "${tool_bin}")
+    tool_bin_stem="${tool_bin_file%.exe}"
+    if [[ "${tool_bin}" == */* && -f "${tool_bin}" ]]; then
+      installed_at="${tool_bin}"
+      tool_bin_command="${tool_bin}"
+    else
+      installed_at=$(type -P "${tool_bin_file}" || true)
+      tool_bin_command="${tool_bin_file}"
+    fi
     if [[ -z "${installed_at}" ]]; then
-      tool_bin="${tool_bin_stem}"
-      installed_at=$(type -P "${tool_bin}" || true)
+      tool_bin_file="${tool_bin_stem}"
+      installed_at=$(type -P "${tool_bin_file}" || true)
+      tool_bin_command="${tool_bin_file}"
     fi
     if [[ -n "${installed_at}" ]]; then
       info "${tool_bin_stem} installed at ${installed_at}"
     else
-      warn "${tool_bin_stem} should be installed at ${bin_dir:+"${bin_dir}/"}${tool_bin}${exe}; but ${tool_bin}${exe} not found in path"
+      warn "${tool_bin_stem} should be installed at ${bin_dir:+"${bin_dir}/"}${tool_bin_file}${exe}; but ${tool_bin_file}${exe} not found in path"
     fi
     tool_bin_stems+=("${tool_bin_stem}")
+    tool_bin_commands+=("${tool_bin_command}")
   done
-  for tool_bin_stem in "${tool_bin_stems[@]}"; do
+  for i in "${!tool_bin_stems[@]}"; do
+    tool_bin_stem="${tool_bin_stems[${i}]}"
+    tool_bin_command="${tool_bin_commands[${i}]}"
     # cargo-udeps 0.1.30 and wasm-pack 0.12.0 do not support --version flag.
     case "${tool_bin_stem}" in
       # biome up to 1.2.2 exits with 1 on both --version and --help flags.
       # cargo-machete up to 0.6.0 does not support --version flag.
       # wait-for-them up to 0.4.0 does not support --version flag.
       # gungraun-runner up to 0.17.1 (exclusive) does not support --version flag.
-      biome | cargo-machete | wait-for-them | gungraun-runner) rx "${tool_bin_stem}" --version || true ;;
+      biome | cargo-machete | wait-for-them | gungraun-runner) rx "${tool_bin_command}" --version || true ;;
       # these packages support neither --version nor --help flag.
       cargo-auditable | cargo-careful | wasm-bindgen-test-runner | cargo-apple-runner) ;;
       # wasm2es6js does not support --version flag and --help flag doesn't contains version info.
@@ -1023,23 +1034,23 @@ for tool in "${tools[@]}"; do
       # iai-callgrind-runner --version works only with iai-callgrind in nearby Cargo.toml.
       iai-callgrind-runner) ;;
       # cargo-zigbuild/cargo-insta has no --version flag on `cargo $tool_bin_stem` subcommand.
-      cargo-zigbuild | cargo-insta) rx "${tool_bin_stem}" --version ;;
+      cargo-zigbuild | cargo-insta) rx "${tool_bin_command}" --version ;;
       # these packages have version command instead of --version flag.
-      cosign | deepsource | vacuum) rx "${tool_bin_stem}" version ;;
+      cosign | deepsource | vacuum) rx "${tool_bin_command}" version ;;
       cargo-*)
         case "${tool_bin_stem}" in
           # cargo-valgrind 2.1.0's --version flag just calls cargo's --version flag
-          cargo-valgrind) rx "${tool_bin_stem}" "${tool_bin_stem#cargo-}" --help ;;
+          cargo-valgrind) rx "${tool_bin_command}" "${tool_bin_stem#cargo-}" --help ;;
           *)
-            if ! rx "${tool_bin_stem}" "${tool_bin_stem#cargo-}" --version; then
-              rx "${tool_bin_stem}" "${tool_bin_stem#cargo-}" --help
+            if ! rx "${tool_bin_command}" "${tool_bin_stem#cargo-}" --version; then
+              rx "${tool_bin_command}" "${tool_bin_stem#cargo-}" --help
             fi
             ;;
         esac
         ;;
       *)
-        if ! rx "${tool_bin_stem}" --version; then
-          rx "${tool_bin_stem}" --help
+        if ! rx "${tool_bin_command}" --version; then
+          rx "${tool_bin_command}" --help
         fi
         ;;
     esac
