@@ -1,0 +1,17 @@
+{
+  "repository": "https://github.com/leptos-rs/cargo-leptos",
+  "license_markdown": "[MIT](https://github.com/leptos-rs/cargo-leptos/blob/main/LICENSE)",
+  "tag_prefix": "v",
+  "rust_crate": "${package}",
+  "asset_name": "${package}-${rust_target}.tar.gz",
+  "prefer_linux_gnu": true,
+  "platform": {
+    "x86_64_linux_gnu": {},
+    "x86_64_linux_musl": {},
+    "x86_64_macos": {},
+    "x86_64_windows": {},
+    "aarch64_linux_gnu": {},
+    "aarch64_linux_musl": {},
+    "aarch64_macos": {}
+  }
+}
