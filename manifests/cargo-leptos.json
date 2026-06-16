@@ -2,25 +2,32 @@
   "rust_crate": "cargo-leptos",
   "template": {
     "x86_64_linux_gnu": {
-      "url": "https://github.com/leptos-rs/cargo-leptos/releases/download/v${version}/cargo-leptos-x86_64-unknown-linux-gnu.tar.gz"
+      "url": "https://github.com/leptos-rs/cargo-leptos/releases/download/v${version}/cargo-leptos-x86_64-unknown-linux-gnu.tar.gz",
+      "bin": "cargo-leptos-x86_64-unknown-linux-gnu/cargo-leptos"
     },
     "x86_64_linux_musl": {
-      "url": "https://github.com/leptos-rs/cargo-leptos/releases/download/v${version}/cargo-leptos-x86_64-unknown-linux-musl.tar.gz"
+      "url": "https://github.com/leptos-rs/cargo-leptos/releases/download/v${version}/cargo-leptos-x86_64-unknown-linux-musl.tar.gz",
+      "bin": "cargo-leptos-x86_64-unknown-linux-musl/cargo-leptos"
     },
     "x86_64_macos": {
-      "url": "https://github.com/leptos-rs/cargo-leptos/releases/download/v${version}/cargo-leptos-x86_64-apple-darwin.tar.gz"
+      "url": "https://github.com/leptos-rs/cargo-leptos/releases/download/v${version}/cargo-leptos-x86_64-apple-darwin.tar.gz",
+      "bin": "cargo-leptos-x86_64-apple-darwin/cargo-leptos"
     },
     "x86_64_windows": {
-      "url": "https://github.com/leptos-rs/cargo-leptos/releases/download/v${version}/cargo-leptos-x86_64-pc-windows-msvc.tar.gz"
+      "url": "https://github.com/leptos-rs/cargo-leptos/releases/download/v${version}/cargo-leptos-x86_64-pc-windows-msvc.tar.gz",
+      "bin": "cargo-leptos-x86_64-pc-windows-msvc/cargo-leptos.exe"
     },
     "aarch64_linux_gnu": {
-      "url": "https://github.com/leptos-rs/cargo-leptos/releases/download/v${version}/cargo-leptos-aarch64-unknown-linux-gnu.tar.gz"
+      "url": "https://github.com/leptos-rs/cargo-leptos/releases/download/v${version}/cargo-leptos-aarch64-unknown-linux-gnu.tar.gz",
+      "bin": "cargo-leptos-aarch64-unknown-linux-gnu/cargo-leptos"
     },
     "aarch64_linux_musl": {
-      "url": "https://github.com/leptos-rs/cargo-leptos/releases/download/v${version}/cargo-leptos-aarch64-unknown-linux-musl.tar.gz"
+      "url": "https://github.com/leptos-rs/cargo-leptos/releases/download/v${version}/cargo-leptos-aarch64-unknown-linux-musl.tar.gz",
+      "bin": "cargo-leptos-aarch64-unknown-linux-musl/cargo-leptos"
     },
     "aarch64_macos": {
-      "url": "https://github.com/leptos-rs/cargo-leptos/releases/download/v${version}/cargo-leptos-aarch64-apple-darwin.tar.gz"
+      "url": "https://github.com/leptos-rs/cargo-leptos/releases/download/v${version}/cargo-leptos-aarch64-apple-darwin.tar.gz",
+      "bin": "cargo-leptos-aarch64-apple-darwin/cargo-leptos"
     }
   },
   "latest": {

@@ -5,6 +5,7 @@
   "rust_crate": "${package}",
   "asset_name": "${package}-${rust_target}.tar.gz",
   "bin": "${package}-${rust_target}/${package}${exe}",
+  "prefer_linux_gnu": true,
   "platform": {
     "x86_64_linux_gnu": {},
     "x86_64_linux_musl": {},
