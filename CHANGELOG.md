@@ -10,6 +10,24 @@ Note: In this file, do not use the hard wrap in the middle of a sentence for com
 
 ## [Unreleased]
 
+## [2.81.11] - 2026-06-15
+
+- Update `wasm-tools@latest` to 1.252.0.
+
+- Update `wasm-bindgen@latest` to 0.2.125.
+
+- Update `uv@latest` to 0.11.21.
+
+- Update `protoc@latest` to 3.35.1.
+
+- Update `mise@latest` to 2026.6.9.
+
+- Update `jaq@latest` to 3.1.0.
+
+- Update `cargo-insta@latest` to 1.48.0.
+
+- Update `biome@latest` to 2.5.0.
+
 ## [2.81.10] - 2026-06-11
 
 - Update `tombi@latest` to 1.1.3.
@@ -6810,7 +6828,8 @@ Note: This release is considered a breaking change because installing on version
 
 Initial release
 
-[Unreleased]: https://github.com/taiki-e/install-action/compare/v2.81.10...HEAD
+[Unreleased]: https://github.com/taiki-e/install-action/compare/v2.81.11...HEAD
+[2.81.11]: https://github.com/taiki-e/install-action/compare/v2.81.10...v2.81.11
 [2.81.10]: https://github.com/taiki-e/install-action/compare/v2.81.9...v2.81.10
 [2.81.9]: https://github.com/taiki-e/install-action/compare/v2.81.8...v2.81.9
 [2.81.8]: https://github.com/taiki-e/install-action/compare/v2.81.7...v2.81.8
