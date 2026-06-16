@@ -237,6 +237,17 @@ download_and_extract() {
         fi
       done
       ;;
+    windows)
+      case "$(uname -s)" in
+        CYGWIN* | MINGW* | MSYS*)
+          for tmp in "${installed_bin[@]}"; do
+            if [[ ! -x "${tmp}" ]]; then
+              chmod +x "${tmp}"
+            fi
+          done
+          ;;
+      esac
+      ;;
   esac
 }
 read_manifest() {
