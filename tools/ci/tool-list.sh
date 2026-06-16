@@ -8,6 +8,7 @@ cd -- "$(dirname -- "$0")"/../..
 # They don't provide prebuilt binaries for musl or old glibc host.
 # version `GLIBC_2.39' not found
 glibc_pre_2_39_incompat=(
+  cargo-crap
   cargo-deb
   cargo-mutants
   cargo-spellcheck

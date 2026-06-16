@@ -1,0 +1,17 @@
+{
+  "repository": "https://github.com/minikin/cargo-crap",
+  "license_markdown": "[MIT](https://github.com/minikin/cargo-crap/blob/main/LICENSE)",
+  "tag_prefix": "v",
+  "rust_crate": "${package}",
+  "bin": "${package}${exe}",
+  "asset_name": "${package}-${rust_target}.tar.gz",
+  "platform": {
+    "x86_64_linux_gnu": {},
+    "aarch64_linux_gnu": {},
+    "x86_64_macos": {},
+    "aarch64_macos": {},
+    "x86_64_windows": {
+      "asset_name": "${package}-${rust_target}.zip"
+    }
+  }
+}
