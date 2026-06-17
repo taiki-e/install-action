@@ -10,6 +10,8 @@ Note: In this file, do not use the hard wrap in the middle of a sentence for com
 
 ## [Unreleased]
 
+- Update `kingfisher@latest` to 1.103.0.
+
 - Update `cargo-xwin@latest` to 0.23.0.
 
 - Update `wasmtime@latest` to 45.0.2.
