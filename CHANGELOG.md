@@ -10,6 +10,12 @@ Note: In this file, do not use the hard wrap in the middle of a sentence for com
 
 ## [Unreleased]
 
+- Support `cargo-vet`. ([#1908](https://github.com/taiki-e/install-action/pull/1908), thanks @jakewimmer)
+
+- Support `cargo-crap`. ([#1905](https://github.com/taiki-e/install-action/pull/1905), thanks @BartoszCiesla)
+
+- Support `cargo-leptos`. ([#1903](https://github.com/taiki-e/install-action/pull/1903), thanks @404Simon)
+
 - Update `kingfisher@latest` to 1.103.0.
 
 - Update `cargo-xwin@latest` to 0.23.0.
