@@ -2,7 +2,48 @@
   "rust_crate": "cargo-zigbuild",
   "template": null,
   "latest": {
-    "version": "0.22.3"
+    "version": "0.23.0"
+  },
+  "0.23": {
+    "version": "0.23.0"
+  },
+  "0.23.0": {
+    "x86_64_linux_musl": {
+      "url": "https://github.com/rust-cross/cargo-zigbuild/releases/download/v0.23.0/cargo-zigbuild-x86_64-unknown-linux-musl.tar.xz",
+      "etag": "0x8DECD0A782C8514",
+      "hash": "f0aa9cc8220a84788c6e4a9b6d80422f041659227b680fdef982d5a8ddffddb4",
+      "bin": "cargo-zigbuild-x86_64-unknown-linux-musl/cargo-zigbuild"
+    },
+    "x86_64_macos": {
+      "url": "https://github.com/rust-cross/cargo-zigbuild/releases/download/v0.23.0/cargo-zigbuild-x86_64-apple-darwin.tar.xz",
+      "etag": "0x8DECD0A77E2AFB8",
+      "hash": "f8c746d12dfae79ac0704c5aa13631a05b24c3e4ee7216eb40f70943bd8ca7b1",
+      "bin": "cargo-zigbuild-x86_64-apple-darwin/cargo-zigbuild"
+    },
+    "x86_64_windows": {
+      "url": "https://github.com/rust-cross/cargo-zigbuild/releases/download/v0.23.0/cargo-zigbuild-x86_64-pc-windows-msvc.zip",
+      "etag": "0x8DECD0A7810B7E3",
+      "hash": "82ff1207be9e9533267b83dbe33d0b16b30043f116dc336d9a526667fa27622a",
+      "bin": "cargo-zigbuild.exe"
+    },
+    "aarch64_linux_gnu": {
+      "url": "https://github.com/rust-cross/cargo-zigbuild/releases/download/v0.23.0/cargo-zigbuild-aarch64-unknown-linux-gnu.tar.xz",
+      "etag": "0x8DECD0A777B013D",
+      "hash": "5917d5416884cba0f23c2653016f7f2df2ec04e74eb6b259598fecc066f8c429",
+      "bin": "cargo-zigbuild-aarch64-unknown-linux-gnu/cargo-zigbuild"
+    },
+    "aarch64_macos": {
+      "url": "https://github.com/rust-cross/cargo-zigbuild/releases/download/v0.23.0/cargo-zigbuild-aarch64-apple-darwin.tar.xz",
+      "etag": "0x8DECD0A777DE43B",
+      "hash": "3d8f1ad296d3f3e97122607f7c972393c6329801027acb71bb7d17a4e30ef092",
+      "bin": "cargo-zigbuild-aarch64-apple-darwin/cargo-zigbuild"
+    },
+    "aarch64_windows": {
+      "url": "https://github.com/rust-cross/cargo-zigbuild/releases/download/v0.23.0/cargo-zigbuild-aarch64-pc-windows-msvc.zip",
+      "etag": "0x8DECD0A778C6EE0",
+      "hash": "d9ffaa509e5d5d05b931b2ee4bffaf666cb80ea585f20c2c8a80820f5a9186b1",
+      "bin": "cargo-zigbuild.exe"
+    }
   },
   "0.22": {
     "version": "0.22.3"
