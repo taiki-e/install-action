@@ -10,6 +10,8 @@ Note: In this file, do not use the hard wrap in the middle of a sentence for com
 
 ## [Unreleased]
 
+- Update `cargo-zigbuild@latest` to 0.23.0.
+
 ## [2.82.0] - 2026-06-17
 
 - Support `cargo-vet`. ([#1908](https://github.com/taiki-e/install-action/pull/1908), thanks @jakewimmer)
