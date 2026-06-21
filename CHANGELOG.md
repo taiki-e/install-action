@@ -10,6 +10,8 @@ Note: In this file, do not use the hard wrap in the middle of a sentence for com
 
 ## [Unreleased]
 
+- Update `trivy@latest` to 0.71.2.
+
 - Update `sccache@latest` to 0.16.0.
 
 ## [2.82.1] - 2026-06-20
