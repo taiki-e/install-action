@@ -10,6 +10,8 @@ Note: In this file, do not use the hard wrap in the middle of a sentence for com
 
 ## [Unreleased]
 
+- Update `cargo-rdme@latest` to 2.0.1.
+
 ## [2.82.2] - 2026-06-21
 
 - Update `xh@latest` to 0.26.1.

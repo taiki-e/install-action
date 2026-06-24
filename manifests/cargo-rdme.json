@@ -2,7 +2,30 @@
   "rust_crate": "cargo-rdme",
   "template": null,
   "latest": {
-    "version": "1.4.2"
+    "version": "2.0.1"
+  },
+  "2": {
+    "version": "2.0.1"
+  },
+  "2.0": {
+    "version": "2.0.1"
+  },
+  "2.0.1": {
+    "x86_64_linux_musl": {
+      "url": "https://github.com/orium/cargo-rdme/releases/download/v2.0.1/cargo-rdme_v2.0.1_x86_64-unknown-linux-musl.tar.gz",
+      "etag": "0x8DED0984EFA079A",
+      "hash": "037abe5c85d969f63572f686fb06166c94c7997b496918693c9b79be6aae3497"
+    },
+    "x86_64_windows": {
+      "url": "https://github.com/orium/cargo-rdme/releases/download/v2.0.1/cargo-rdme_v2.0.1_x86_64-pc-windows-gnu.zip",
+      "etag": "0x8DED0987BE63E14",
+      "hash": "9edc2cba15abeeafd1f0e2461f9079454b4d2042469f61ceb9a5532873509c06"
+    },
+    "aarch64_macos": {
+      "url": "https://github.com/orium/cargo-rdme/releases/download/v2.0.1/cargo-rdme_v2.0.1_aarch64-apple-darwin.tar.gz",
+      "etag": "0x8DED0983154167C",
+      "hash": "190cc1c68d8bea1eb223bb8433d032ffe768afe05bc342fdaa41725b05b836c8"
+    }
   },
   "2.0.0": {
     "x86_64_linux_musl": {
