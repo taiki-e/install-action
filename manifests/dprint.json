@@ -27,7 +27,62 @@
     }
   },
   "latest": {
-    "version": "0.54.0"
+    "version": "0.55.0"
+  },
+  "0.55": {
+    "version": "0.55.0"
+  },
+  "0.55.1": {
+    "x86_64_linux_musl": {
+      "etag": "0x8DED4D5B0059C71",
+      "hash": "7ce856d5999585e58666701eab5e0291abfb63953884d5dd0268001c89d74b8d"
+    },
+    "x86_64_macos": {
+      "etag": "0x8DED4D5B00968BD",
+      "hash": "21f9784b3edf3b0a686932b4387359ebd83fba798ac2f7e2ba1e7b8c9f674e3e"
+    },
+    "x86_64_windows": {
+      "etag": "0x8DED4D5AFF92741",
+      "hash": "dfdee60f04810c14df310696ce680da7ece599cd27b162f77906adc80d5e9679"
+    },
+    "aarch64_linux_musl": {
+      "etag": "0x8DED4D5B0107A1E",
+      "hash": "2d414d659034650bc25b208a87ab427cd01a7ac6c21b3ed2191cf92e1b58f76c"
+    },
+    "aarch64_macos": {
+      "etag": "0x8DED4D5B00C3941",
+      "hash": "94a9ce5ca91dbb609d4f22f2ccf28d8b422627c0944c6ee63d1beecac28f8cd4"
+    },
+    "riscv64_linux_gnu": {
+      "etag": "0x8DED4D5B00B4FD4",
+      "hash": "318c4880ca5042c353cf13d860969b462b43eb758d001356d4cad4bb187c3620"
+    }
+  },
+  "0.55.0": {
+    "x86_64_linux_musl": {
+      "etag": "0x8DED47C57948C0A",
+      "hash": "b1365945a2c7ab51fa3c62221b3f984ba9971357e122dbf3817bdf02936f548a"
+    },
+    "x86_64_macos": {
+      "etag": "0x8DED47C5755F4B7",
+      "hash": "69d032d8fe70441fc4307cdd5360d5e0086773bb2f7ba63d4863e59c64f3df38"
+    },
+    "x86_64_windows": {
+      "etag": "0x8DED47C574E0E54",
+      "hash": "44a025c8ca4cf5d9598349e48927a35186caac893fee0a5bb28e98996ef11432"
+    },
+    "aarch64_linux_musl": {
+      "etag": "0x8DED47C575FADC9",
+      "hash": "12864a0ebe6274f9f4b647e6ae2abc5eb33ace9e722d94bd23942a2975783e18"
+    },
+    "aarch64_macos": {
+      "etag": "0x8DED47C575A8375",
+      "hash": "cf6c0149ac9ed76aee2535d0dfeffd2c9d34bcfe42c397127bba4a8c934722cc"
+    },
+    "riscv64_linux_gnu": {
+      "etag": "0x8DED47C576A9DF8",
+      "hash": "825ce485ea3a9a61f691de1c85542a278e22c8c08d4dca9fb8e4224ab4319c59"
+    }
   },
   "0.54": {
     "version": "0.54.0"
