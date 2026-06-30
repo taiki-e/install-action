@@ -10,6 +10,8 @@ Note: In this file, do not use the hard wrap in the middle of a sentence for com
 
 ## [Unreleased]
 
+- Update `kingfisher@latest` to 1.105.0.
+
 - Update `gungraun-runner@latest` to 0.19.3.
 
 - Update `editorconfig-checker@latest` to 3.8.0.
