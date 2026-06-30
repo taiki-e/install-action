@@ -10,6 +10,8 @@ Note: In this file, do not use the hard wrap in the middle of a sentence for com
 
 ## [Unreleased]
 
+- Update `gungraun-runner@latest` to 0.19.3.
+
 - Update `editorconfig-checker@latest` to 3.8.0.
 
 - Update `dprint@latest` to 0.55.1.
