@@ -1,0 +1,16 @@
+{
+  "repository": "https://github.com/EmbarkStudios/cargo-about",
+  "license_markdown": "[MIT](https://github.com/EmbarkStudios/cargo-about/blob/main/LICENSE-MIT) OR [Apache-2.0](https://github.com/EmbarkStudios/cargo-about/blob/main/LICENSE-APACHE)",
+  "tag_prefix": "",
+  "rust_crate": "${package}",
+  "asset_name": "${package}-${version}-${rust_target}.tar.gz",
+  "bin": "${package}-${version}-${rust_target}/${package}${exe}",
+  "platform": {
+    "x86_64_linux_musl": {},
+    "aarch64_linux_musl": {},
+    "x86_64_macos": {},
+    "aarch64_macos": {},
+    "x86_64_windows": {},
+    "aarch64_windows": {}
+  }
+}
