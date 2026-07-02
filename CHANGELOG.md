@@ -10,6 +10,8 @@ Note: In this file, do not use the hard wrap in the middle of a sentence for com
 
 ## [Unreleased]
 
+- Update `prek@latest` to 0.4.6.
+
 - Update `just@latest` to 1.55.1.
 
 - Update `biome@latest` to 2.5.2.
