@@ -2,13 +2,49 @@
   "rust_crate": null,
   "template": null,
   "latest": {
-    "version": "1.1.6"
+    "version": "1.1.7"
   },
   "1": {
-    "version": "1.1.6"
+    "version": "1.1.7"
   },
   "1.1": {
-    "version": "1.1.6"
+    "version": "1.1.7"
+  },
+  "1.1.7": {
+    "x86_64_linux_musl": {
+      "url": "https://github.com/tombi-toml/tombi/releases/download/v1.1.7/tombi-cli-1.1.7-x86_64-unknown-linux-musl.tar.gz",
+      "etag": "0x8DED7833C942112",
+      "hash": "7315e375d3a0c6a8ab2d64e833a5a8aa4deb79fbbc6cd0aea8343c0eb7ed382f",
+      "bin": "tombi-cli-1.1.7-x86_64-unknown-linux-musl/tombi"
+    },
+    "x86_64_macos": {
+      "url": "https://github.com/tombi-toml/tombi/releases/download/v1.1.7/tombi-cli-1.1.7-x86_64-apple-darwin.tar.gz",
+      "etag": "0x8DED7833D2C35B2",
+      "hash": "0d5a48ac39c531497d14e0e6067fcf180a49b1f9e3a76dddc18b7af797d15aa4",
+      "bin": "tombi-cli-1.1.7-x86_64-apple-darwin/tombi"
+    },
+    "x86_64_windows": {
+      "url": "https://github.com/tombi-toml/tombi/releases/download/v1.1.7/tombi-cli-1.1.7-x86_64-pc-windows-msvc.zip",
+      "etag": "0x8DED7833C929C29",
+      "hash": "9958ca0235ac2cfa273296c709dc48b0857391dd34d22bac5804f6365daca26a"
+    },
+    "aarch64_linux_musl": {
+      "url": "https://github.com/tombi-toml/tombi/releases/download/v1.1.7/tombi-cli-1.1.7-aarch64-unknown-linux-musl.tar.gz",
+      "etag": "0x8DED7833C84A224",
+      "hash": "aefff2704d7315c0623c5351dcb8bc6ee50030d74cec70fd3d528cfbd5c8c700",
+      "bin": "tombi-cli-1.1.7-aarch64-unknown-linux-musl/tombi"
+    },
+    "aarch64_macos": {
+      "url": "https://github.com/tombi-toml/tombi/releases/download/v1.1.7/tombi-cli-1.1.7-aarch64-apple-darwin.tar.gz",
+      "etag": "0x8DED7833D06FD47",
+      "hash": "f77522c5280ed267fe6b1c4fd5f2dd647579fc2accdb6cbcb2bf9c1de9fe23ad",
+      "bin": "tombi-cli-1.1.7-aarch64-apple-darwin/tombi"
+    },
+    "aarch64_windows": {
+      "url": "https://github.com/tombi-toml/tombi/releases/download/v1.1.7/tombi-cli-1.1.7-aarch64-pc-windows-msvc.zip",
+      "etag": "0x8DED7833C92C311",
+      "hash": "0fda4d1d12e394bc71cea06e704ae5496809e18c931b29552cd6dbe1e33d7489"
+    }
   },
   "1.1.6": {
     "x86_64_linux_musl": {
