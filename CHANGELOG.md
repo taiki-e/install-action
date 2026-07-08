@@ -12,7 +12,7 @@ Note: In this file, do not use the hard wrap in the middle of a sentence for com
 
 - Update `uv@latest` to 0.11.27.
 
-- Update `mise@latest` to 2026.7.1.
+- Update `mise@latest` to 2026.7.2.
 
 - Update `mdbook@latest` to 0.5.4.
 
