@@ -27,13 +27,39 @@
     }
   },
   "latest": {
-    "version": "2026.7.1"
+    "version": "2026.7.2"
   },
   "2026": {
-    "version": "2026.7.1"
+    "version": "2026.7.2"
   },
   "2026.7": {
-    "version": "2026.7.1"
+    "version": "2026.7.2"
+  },
+  "2026.7.3": {
+    "x86_64_linux_musl": {
+      "etag": "0x8DEDD118221C7C0",
+      "hash": "3def250fc38447ba7a1dcb3adc16d25d879e26effbec2fa7821534cefc402997"
+    },
+    "x86_64_macos": {
+      "etag": "0x8DEDD118521F42C",
+      "hash": "266519e6137139f3c69971cf819a97cac380075155ddc7defa05980200b3511a"
+    },
+    "x86_64_windows": {
+      "etag": "0x8DEDD1185FB020D",
+      "hash": "3fd148448b2ed105619b1364eb44ceddc360f08de3f1c4f70257be4182cd0c80"
+    },
+    "aarch64_linux_musl": {
+      "etag": "0x8DEDD117EA04F7A",
+      "hash": "6ac5bcd0ae6bcea6c284415e0a56d9181a6c645fd92f1d370a7494b9b14db45e"
+    },
+    "aarch64_macos": {
+      "etag": "0x8DEDD118415B6A3",
+      "hash": "a1b6f0f1b79f956631d5f5310b826453739ad6310f555a423ca2a493deb922e9"
+    },
+    "aarch64_windows": {
+      "etag": "0x8DEDD1185C477E5",
+      "hash": "9a521ea6fa59bb3ba64e05261f631f486a49d992453d8386561991d15c4d26b7"
+    }
   },
   "2026.7.2": {
     "x86_64_linux_musl": {
