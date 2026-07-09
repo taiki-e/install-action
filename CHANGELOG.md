@@ -10,6 +10,60 @@ Note: In this file, do not use the hard wrap in the middle of a sentence for com
 
 ## [Unreleased]
 
+- Update `uv@latest` to 0.11.28.
+
+- Update `martin@latest` to 1.12.0.
+
+- Update `kingfisher@latest` to 1.106.0.
+
+- Update `biome@latest` to 2.5.3.
+
+## [2.82.11] - 2026-07-08
+
+- Update `wasm-tools@latest` to 1.253.0.
+
+- Update `uv@latest` to 0.11.27.
+
+- Update `mise@latest` to 2026.7.2.
+
+- Update `mdbook@latest` to 0.5.4.
+
+## [2.82.10] - 2026-07-07
+
+- Update `tombi@latest` to 1.2.0.
+
+- Update `cargo-nextest@latest` to 0.9.140.
+
+## [2.82.9] - 2026-07-05
+
+- Update `vacuum@latest` to 0.29.9.
+
+- Update `prek@latest` to 0.4.8.
+
+- Update `cargo-tarpaulin@latest` to 0.37.0.
+
+- Update `cargo-leptos@latest` to 0.3.7.
+
+## [2.82.8] - 2026-07-03
+
+- Update `vacuum@latest` to 0.29.8.
+
+- Update `uv@latest` to 0.11.26.
+
+- Update `typos@latest` to 1.48.0.
+
+- Update `trivy@latest` to 0.72.0.
+
+- Update `tombi@latest` to 1.1.7.
+
+- Update `prek@latest` to 0.4.6.
+
+- Update `mise@latest` to 2026.7.0.
+
+- Update `just@latest` to 1.55.1.
+
+- Update `biome@latest` to 2.5.2.
+
 ## [2.82.7] - 2026-06-30
 
 - Update `tombi@latest` to 1.1.6.
@@ -6946,7 +7000,11 @@ Note: This release is considered a breaking change because installing on version
 
 Initial release
 
-[Unreleased]: https://github.com/taiki-e/install-action/compare/v2.82.7...HEAD
+[Unreleased]: https://github.com/taiki-e/install-action/compare/v2.82.11...HEAD
+[2.82.11]: https://github.com/taiki-e/install-action/compare/v2.82.10...v2.82.11
+[2.82.10]: https://github.com/taiki-e/install-action/compare/v2.82.9...v2.82.10
+[2.82.9]: https://github.com/taiki-e/install-action/compare/v2.82.8...v2.82.9
+[2.82.8]: https://github.com/taiki-e/install-action/compare/v2.82.7...v2.82.8
 [2.82.7]: https://github.com/taiki-e/install-action/compare/v2.82.6...v2.82.7
 [2.82.6]: https://github.com/taiki-e/install-action/compare/v2.82.5...v2.82.6
 [2.82.5]: https://github.com/taiki-e/install-action/compare/v2.82.4...v2.82.5
