@@ -10,6 +10,8 @@ Note: In this file, do not use the hard wrap in the middle of a sentence for com
 
 ## [Unreleased]
 
+- Support `cargo-about`. ([#1924](https://github.com/taiki-e/install-action/pull/1924), thanks @ruffsl)
+
 - Update `uv@latest` to 0.11.28.
 
 - Update `martin@latest` to 1.12.0.
