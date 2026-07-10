@@ -10,6 +10,8 @@ Note: In this file, do not use the hard wrap in the middle of a sentence for com
 
 ## [Unreleased]
 
+- Update `cargo-deny@latest` to 0.20.2.
+
 ## [2.83.0] - 2026-07-09
 
 - Support `cargo-about`. ([#1924](https://github.com/taiki-e/install-action/pull/1924), thanks @ruffsl)
