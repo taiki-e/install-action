@@ -1,0 +1,16 @@
+{
+  "repository": "https://github.com/voron-software/rafn",
+  "license_markdown": "[Apache-2.0](https://github.com/voron-software/rafn/blob/HEAD/LICENSE)",
+  "tag_prefix": "v",
+  "rust_crate": "${package}",
+  "asset_name": "${package}-${rust_target}.tar.gz",
+  "platform": {
+    "x86_64_linux_gnu": {},
+    "aarch64_linux_gnu": {},
+    "x86_64_macos": {},
+    "aarch64_macos": {},
+    "x86_64_windows": {
+      "asset_name": "${package}-${rust_target}.zip"
+    }
+  }
+}
