@@ -51,6 +51,7 @@ glibc_pre_2_27_incompat=(
 glibc_pre_2_17_incompat=(
   "${glibc_pre_2_27_incompat[@]}"
   deepsource # https://github.com/DeepSourceCorp/cli/issues/245
+  rafn # built on ubuntu-24.04, requires GLIBC_2.17+
   rust
 )
 musl_incompat=(
