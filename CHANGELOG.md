@@ -10,6 +10,8 @@ Note: In this file, do not use the hard wrap in the middle of a sentence for com
 
 ## [Unreleased]
 
+- Update `cargo-neat@latest` to 0.4.1.
+
 ## [2.83.1] - 2026-07-10
 
 - Update `rclone@latest` to 1.74.4.
