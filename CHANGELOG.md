@@ -10,6 +10,8 @@ Note: In this file, do not use the hard wrap in the middle of a sentence for com
 
 ## [Unreleased]
 
+- Update `parse-dockerfile@latest` to 0.1.8.
+
 - Update `mise@latest` to 2026.7.5.
 
 - Update `just@latest` to 1.56.0.
