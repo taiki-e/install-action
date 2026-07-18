@@ -3,23 +3,23 @@
   "license_markdown": "[MIT](https://github.com/convco/convco/blob/main/LICENSE)",
   "tag_prefix": "v",
   "rust_crate": "${package}",
-  "version_range": ">= 0.6.4",
+  "version_range": ">= 0.7.0",
   "platform": {
     "x86_64_linux_musl": {
-      "asset_name": "${package}-ubuntu.zip",
-      "bin": "${package}"
+      "asset_name": "${package}-v${version}-x86_64-unknown-linux-musl.tar.gz",
+      "bin": "${package}-v${version}-x86_64-unknown-linux-musl/${package}"
     },
     "x86_64_windows": {
-      "asset_name": "${package}-windows.zip",
-      "bin": "${package}.exe"
+      "asset_name": "${package}-v${version}-x86_64-pc-windows-msvc.tar.gz",
+      "bin": "${package}-v${version}-x86_64-pc-windows-msvc/${package}.exe"
     },
     "aarch64_linux_musl": {
-      "asset_name": "${package}-ubuntu-aarch64.zip",
-      "bin": "${package}"
+      "asset_name": "${package}-v${version}-aarch64-unknown-linux-musl.tar.gz",
+      "bin": "${package}-v${version}-aarch64-unknown-linux-musl/${package}"
     },
     "aarch64_macos": {
-      "asset_name": "${package}-macos.zip",
-      "bin": "${package}"
+      "asset_name": "${package}-v${version}-aarch64-apple-darwin.tar.gz",
+      "bin": "${package}-v${version}-aarch64-apple-darwin/${package}"
     }
   }
 }
