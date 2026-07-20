@@ -1,0 +1,92 @@
+{
+  "rust_crate": null,
+  "template": {
+    "x86_64_linux_musl": {
+      "url": "https://github.com/sudorandom/protoc-gen-connect-openapi/releases/download/v${version}/protoc-gen-connect-openapi_${version}_linux_amd64.tar.gz"
+    },
+    "x86_64_macos": {
+      "url": "https://github.com/sudorandom/protoc-gen-connect-openapi/releases/download/v${version}/protoc-gen-connect-openapi_${version}_darwin_all.tar.gz"
+    },
+    "x86_64_windows": {
+      "url": "https://github.com/sudorandom/protoc-gen-connect-openapi/releases/download/v${version}/protoc-gen-connect-openapi_${version}_windows_amd64.tar.gz"
+    },
+    "aarch64_linux_musl": {
+      "url": "https://github.com/sudorandom/protoc-gen-connect-openapi/releases/download/v${version}/protoc-gen-connect-openapi_${version}_linux_arm64.tar.gz"
+    },
+    "aarch64_windows": {
+      "url": "https://github.com/sudorandom/protoc-gen-connect-openapi/releases/download/v${version}/protoc-gen-connect-openapi_${version}_windows_arm64.tar.gz"
+    }
+  },
+  "latest": {
+    "version": "0.25.7"
+  },
+  "0.25": {
+    "version": "0.25.7"
+  },
+  "0.25.7": {
+    "x86_64_linux_musl": {
+      "etag": "0x8DECA3D49E32F02",
+      "hash": "ddea887b432df5471ac67ef6167726b46a4f337af0eec4f5f88998fac5fb6cc2"
+    },
+    "x86_64_macos": {
+      "etag": "0x8DECA3D4A995633",
+      "hash": "717c86c3ca0346457b3e4c5f69596b28b2b2ec6bf047498001c02bfad8e59f52"
+    },
+    "x86_64_windows": {
+      "etag": "0x8DECA3D49E80B84",
+      "hash": "aa22bc1563b9701b67ca3b1568ee07f56b6d04b37643eb36dfea1103af3f12ca"
+    },
+    "aarch64_linux_musl": {
+      "etag": "0x8DECA3D49DEEE03",
+      "hash": "d7229a3ac65974e024210522cb3920e764fddf408e26cb501eb41406e514d6ec"
+    },
+    "aarch64_windows": {
+      "etag": "0x8DECA3D4A02EF5C",
+      "hash": "ea2853b19d937dc4831deaa0fca417ba4362311e0a0a554708d1486f7535bd58"
+    }
+  },
+  "0.25.6": {
+    "x86_64_linux_musl": {
+      "etag": "0x8DE9D74861DFA1C",
+      "hash": "3bcd62bb8353e967018c17e4af3a908255c6e1764ab5b3e10e985193ca5750a8"
+    },
+    "x86_64_macos": {
+      "etag": "0x8DE9D7486AAF55F",
+      "hash": "e456d56052049748ceb113eb93e5929a0278db94e3acdc159bcefc7260aea7cf"
+    },
+    "x86_64_windows": {
+      "etag": "0x8DE9D7486219F83",
+      "hash": "e478565b1e1aac58bf16fbb443b5706b3e1facbfb6d0a47c94ea6b51ae0c5482"
+    },
+    "aarch64_linux_musl": {
+      "etag": "0x8DE9D7486204178",
+      "hash": "dacd2874adf145ce0ff401d503652e92a8fd391d2f1f89d4f8ac274f925ec525"
+    },
+    "aarch64_windows": {
+      "etag": "0x8DE9D7486239913",
+      "hash": "a72bc2194fcef04e16ef4cde1c114052d03fac4dfc9ab85e0f9844ddaa074259"
+    }
+  },
+  "0.25.5": {
+    "x86_64_linux_musl": {
+      "etag": "0x8DE7B5765BA6036",
+      "hash": "a9cbf821d42bc12a91b853d1fc8c3ffbea19bd8a6096d8db8b39263f1f67da74"
+    },
+    "x86_64_macos": {
+      "etag": "0x8DE7B576667DE0B",
+      "hash": "07af8e3adbac202a0d09b97d281dcdb24949d642e43c101ea2a1a0d09aff7bd0"
+    },
+    "x86_64_windows": {
+      "etag": "0x8DE7B5765C15D32",
+      "hash": "a81e3091acda45b37e375af3399b70c278e9ea365ea92b68660ad5d7943ac85f"
+    },
+    "aarch64_linux_musl": {
+      "etag": "0x8DE7B5765BF8A80",
+      "hash": "287575b705cdd4a037baef75adcd8813566c4fda2eba5399483a9cbad8be7422"
+    },
+    "aarch64_windows": {
+      "etag": "0x8DE7B5765BC80A1",
+      "hash": "b066a20cf1c18bdad4daee223014a8635d2189ff80c2c8a921967968cfe20d46"
+    }
+  }
+}
