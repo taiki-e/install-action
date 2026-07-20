@@ -10,6 +10,8 @@ Note: In this file, do not use the hard wrap in the middle of a sentence for com
 
 ## [Unreleased]
 
+## [2.84.0] - 2026-07-20
+
 - Support `d2`. ([#1944](https://github.com/taiki-e/install-action/pull/1944))
 
 - Support `protoc-gen-connect-openapi`. ([#1922](https://github.com/taiki-e/install-action/pull/1922), thanks @JasterV)
@@ -7068,7 +7070,8 @@ Note: This release is considered a breaking change because installing on version
 
 Initial release
 
-[Unreleased]: https://github.com/taiki-e/install-action/compare/v2.83.4...HEAD
+[Unreleased]: https://github.com/taiki-e/install-action/compare/v2.84.0...HEAD
+[2.84.0]: https://github.com/taiki-e/install-action/compare/v2.83.4...v2.84.0
 [2.83.4]: https://github.com/taiki-e/install-action/compare/v2.83.3...v2.83.4
 [2.83.3]: https://github.com/taiki-e/install-action/compare/v2.83.2...v2.83.3
 [2.83.2]: https://github.com/taiki-e/install-action/compare/v2.83.1...v2.83.2
