@@ -1,0 +1,23 @@
+{
+  "repository": "https://github.com/sudorandom/protoc-gen-connect-openapi",
+  "license_markdown": "[MIT](https://github.com/sudorandom/protoc-gen-connect-openapi/blob/main/LICENSE)",
+  "tag_prefix": "v",
+  "version_range": ">= 0.25.5",
+  "platform": {
+    "x86_64_linux_musl": {
+      "asset_name": "${package}_${version}_linux_amd64.tar.gz"
+    },
+    "x86_64_macos": {
+      "asset_name": "${package}_${version}_darwin_all.tar.gz"
+    },
+    "x86_64_windows": {
+      "asset_name": "${package}_${version}_windows_amd64.tar.gz"
+    },
+    "aarch64_linux_musl": {
+      "asset_name": "${package}_${version}_linux_arm64.tar.gz"
+    },
+    "aarch64_windows": {
+      "asset_name": "${package}_${version}_windows_arm64.tar.gz"
+    }
+  }
+}
