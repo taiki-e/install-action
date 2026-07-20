@@ -1,0 +1,61 @@
+{
+  "rust_crate": null,
+  "template": {
+    "x86_64_linux_musl": {
+      "url": "https://github.com/terrastruct/d2/releases/download/v${version}/d2-v${version}-linux-amd64.tar.gz",
+      "bin": "d2-v${version}/bin/d2"
+    },
+    "x86_64_macos": {
+      "url": "https://github.com/terrastruct/d2/releases/download/v${version}/d2-v${version}-macos-amd64.tar.gz",
+      "bin": "d2-v${version}/bin/d2"
+    },
+    "x86_64_windows": {
+      "url": "https://github.com/terrastruct/d2/releases/download/v${version}/d2-v${version}-windows-amd64.tar.gz",
+      "bin": "d2-v${version}/bin/d2.exe"
+    },
+    "aarch64_linux_musl": {
+      "url": "https://github.com/terrastruct/d2/releases/download/v${version}/d2-v${version}-linux-arm64.tar.gz",
+      "bin": "d2-v${version}/bin/d2"
+    },
+    "aarch64_macos": {
+      "url": "https://github.com/terrastruct/d2/releases/download/v${version}/d2-v${version}-macos-arm64.tar.gz",
+      "bin": "d2-v${version}/bin/d2"
+    },
+    "aarch64_windows": {
+      "url": "https://github.com/terrastruct/d2/releases/download/v${version}/d2-v${version}-windows-arm64.tar.gz",
+      "bin": "d2-v${version}/bin/d2.exe"
+    }
+  },
+  "latest": {
+    "version": "0.7.1"
+  },
+  "0.7": {
+    "version": "0.7.1"
+  },
+  "0.7.1": {
+    "x86_64_linux_musl": {
+      "etag": "0x8DDDF1728E4DD4A",
+      "hash": "eb172adf59f38d1e5a70ab177591356754ffaf9bebb84e0ca8b767dfb421dad7"
+    },
+    "x86_64_macos": {
+      "etag": "0x8DDDF170F26D8B8",
+      "hash": "b0178e8fdae72194d5a23aa6effd323378cc58ccd3b08d175ab80371c14e106f"
+    },
+    "x86_64_windows": {
+      "etag": "0x8DDDF17125BFAEC",
+      "hash": "d289c2866221c618c9fc6efcd416ee8c16e122bd0100761aea51001e3c958f57"
+    },
+    "aarch64_linux_musl": {
+      "etag": "0x8DDDF17039F867F",
+      "hash": "ce3a0b985a8f91335a826c254b3a88736fd81afcdd08b58f6c749d2add6864b0"
+    },
+    "aarch64_macos": {
+      "etag": "0x8DDDF1729CAB84F",
+      "hash": "80de85f3b0ac7d9569acac0780ed65dd994ea78969b6b230c58bbb2c6113465b"
+    },
+    "aarch64_windows": {
+      "etag": "0x8DDDF1704EDE5E6",
+      "hash": "c7ebdc7b2f6df513b715d431762105386f7c702b0b2dddff2a500a032b1bba67"
+    }
+  }
+}
