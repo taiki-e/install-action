@@ -25,6 +25,10 @@
       "url": "https://github.com/j178/prek/releases/download/v${version}/prek-aarch64-pc-windows-msvc.zip",
       "bin": "prek.exe"
     },
+    "powerpc64le_linux_gnu": {
+      "url": "https://github.com/j178/prek/releases/download/v${version}/prek-powerpc64le-unknown-linux-gnu.tar.gz",
+      "bin": "prek-powerpc64le-unknown-linux-gnu/prek"
+    },
     "riscv64_linux_gnu": {
       "url": "https://github.com/j178/prek/releases/download/v${version}/prek-riscv64gc-unknown-linux-gnu.tar.gz",
       "bin": "prek-riscv64gc-unknown-linux-gnu/prek"
@@ -140,40 +144,6 @@
     "s390x_linux_gnu": {
       "etag": "0x8DED9C4C3D07192",
       "hash": "587355611d3283eecbeebcbca1b97c4bd2a07c3ed6136df597bbe6efbd7c5519"
-    }
-  },
-  "0.4.6": {
-    "x86_64_linux_musl": {
-      "etag": "0x8DED720F9F23A60",
-      "hash": "820de4920c112e273aedff646ab47439d3320dfd9f2c468d35992a1055ff8afb"
-    },
-    "x86_64_macos": {
-      "etag": "0x8DED720F9880950",
-      "hash": "b65f6a9497762e3dd55bf8ce1ee3b9d4e2014d47dd0cb2e2da9fe46d2bb81a73"
-    },
-    "x86_64_windows": {
-      "etag": "0x8DED720F9ABE3AA",
-      "hash": "775a6294333821d7af614201f1976b184a66c1036e529586c82e3c2dbf401f88"
-    },
-    "aarch64_linux_musl": {
-      "etag": "0x8DED720F7FF96B5",
-      "hash": "f871abfb4f2782722dfd685360b100989c9323195dde641fadf2346a66f8ae51"
-    },
-    "aarch64_macos": {
-      "etag": "0x8DED720F7B21276",
-      "hash": "20495b109cef41f6d7188041e40c9382a830ff04706f7c02f30374a9035210ef"
-    },
-    "aarch64_windows": {
-      "etag": "0x8DED720F7B89AD0",
-      "hash": "c6efa943dd8cf1d456df6dfcfc08c932c7ad2e74c60e7c68c7497e33b9d185ef"
-    },
-    "riscv64_linux_gnu": {
-      "etag": "0x8DED720F9323365",
-      "hash": "a5e1c3c7c14f4d3d41d3df9a30660158ac6f3ce553f250eaeee3ffcb78381f9b"
-    },
-    "s390x_linux_gnu": {
-      "etag": "0x8DED720F970CAED",
-      "hash": "e4981724d88249535b1f3be79840dcb7ad40998add578b01c743567d5b16f281"
     }
   },
   "0.4.6": {
@@ -1057,6 +1027,10 @@
       "etag": "0x8DE41D7D897B3FF",
       "hash": "fb4a6df264b62da40b64483147fd07ccfb0bc4ac6682fc6e20a4d2cd2f1dedb8"
     },
+    "powerpc64le_linux_gnu": {
+      "etag": "0x8DE41D7DA00AA47",
+      "hash": "4c3e6120311ae75daf0256815710746a128f08565feee52847889d66be936eac"
+    },
     "riscv64_linux_gnu": {
       "etag": "0x8DE41D7D9FD7982",
       "hash": "dc015402b79ce338bc38edc26bf90cb2d275e88d7647585c2d368bda4a06b4f5"
@@ -1090,6 +1064,10 @@
     "aarch64_windows": {
       "etag": "0x8DE3F89A06FA06C",
       "hash": "95ddee3b1970d5187869f8dd4625936cd04368cec23b6fa6bd845880da4575c9"
+    },
+    "powerpc64le_linux_gnu": {
+      "etag": "0x8DE3F89A2032040",
+      "hash": "dd5b43568ce1fd7382ef8b405a6804d43c5ccca8a74a15e0be274ea4725f7c31"
     },
     "riscv64_linux_gnu": {
       "etag": "0x8DE3F89A23ABA93",
@@ -1125,6 +1103,10 @@
       "etag": "0x8DE3A4766AB6F66",
       "hash": "00b5835015a30410a916eafc1991d613d4d7a40de56ffa8084c680b7940ea14f"
     },
+    "powerpc64le_linux_gnu": {
+      "etag": "0x8DE3A4767F3E2DF",
+      "hash": "a8e5c03130826d9d05e07059040629bf543117ba741c7edeffa4e7759b18a268"
+    },
     "riscv64_linux_gnu": {
       "etag": "0x8DE3A47681D354E",
       "hash": "ebc2b041e035934eeda98402d267432e242e1938c3f9d9454fd716a4bc7f15ec"
@@ -1159,6 +1141,10 @@
       "etag": "0x8DE36E2F9034FC7",
       "hash": "4b2d27589b84c37eac2be27bab303a53b2b5f2a064cc0cb6497ce9c817c8156f"
     },
+    "powerpc64le_linux_gnu": {
+      "etag": "0x8DE36E2F9F9931C",
+      "hash": "f7bc7ef77539dbe812a7952a3ade3c2fd75282b0a9fc19b6decf271fbafb81d9"
+    },
     "riscv64_linux_gnu": {
       "etag": "0x8DE36E2FA06F19F",
       "hash": "3217ee9914ec367e6e8fa9a936c79185916e0f8f465f648b7f5b0e1ae01b7c92"
@@ -1192,6 +1178,10 @@
     "aarch64_windows": {
       "etag": "0x8DE363BD875E935",
       "hash": "70cf62589c433c146c8f987f5c2dfb670e6a5f15c8700286889baec215839d2f"
+    },
+    "powerpc64le_linux_gnu": {
+      "etag": "0x8DE363BD9EB2DCE",
+      "hash": "90aa607bb1c68bfacc719af9b6e40ab5b9dcac4adda597d2d95858f01bbabdfa"
     },
     "riscv64_linux_gnu": {
       "etag": "0x8DE363BDA1B2F91",
