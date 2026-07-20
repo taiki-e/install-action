@@ -10,6 +10,12 @@ Note: In this file, do not use the hard wrap in the middle of a sentence for com
 
 ## [Unreleased]
 
+- Support `d2`. ([#1944](https://github.com/taiki-e/install-action/pull/1944))
+
+- Support `protoc-gen-connect-openapi`. ([#1922](https://github.com/taiki-e/install-action/pull/1922), thanks @JasterV)
+
+- Update `convco@latest` to 0.7.0. ([#1941](https://github.com/taiki-e/install-action/pull/1941), thanks @graelo)
+
 - Update `just@latest` to 1.57.0.
 
 - Update `cargo-semver-checks@latest` to 0.49.0.
