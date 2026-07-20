@@ -14,7 +14,7 @@ Note: In this file, do not use the hard wrap in the middle of a sentence for com
 
 - Update `cargo-semver-checks@latest` to 0.49.0.
 
-- Update `tombi@latest` to 1.2.2.
+- Update `tombi@latest` to 1.2.3.
 
 - Update `cosign@latest` to 3.1.2.
 
