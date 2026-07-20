@@ -1,0 +1,27 @@
+{
+  "repository": "https://github.com/terrastruct/d2",
+  "license_markdown": "[MPL-2.0](https://github.com/terrastruct/d2/blob/master/LICENSE.txt)",
+  "tag_prefix": "v",
+  "version_range": ">= 0.7.1",
+  "bin": "${package}-v${version}/bin/${package}${exe}",
+  "platform": {
+    "x86_64_linux_musl": {
+      "asset_name": "${package}-v${version}-linux-amd64.tar.gz"
+    },
+    "x86_64_macos": {
+      "asset_name": "${package}-v${version}-macos-amd64.tar.gz"
+    },
+    "x86_64_windows": {
+      "asset_name": "${package}-v${version}-windows-amd64.tar.gz"
+    },
+    "aarch64_linux_musl": {
+      "asset_name": "${package}-v${version}-linux-arm64.tar.gz"
+    },
+    "aarch64_macos": {
+      "asset_name": "${package}-v${version}-macos-arm64.tar.gz"
+    },
+    "aarch64_windows": {
+      "asset_name": "${package}-v${version}-windows-arm64.tar.gz"
+    }
+  }
+}
