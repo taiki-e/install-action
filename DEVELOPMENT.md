@@ -37,6 +37,10 @@ to the platform object.
 If CI fails only for containers using older versions of glibc or musl, you may need to add the tool
 name to one of the `*_incompat` arrays in `tools/ci/tool-list.sh`.
 
+If the `Manifest / manifest / gen` job in CI fails due to outdated manifests for other tools,
+please ignore it and do not modify the manifest for any tools other than the one you are currently
+working on. That should be handled by the automation, and if everything else passes, your PR is okay.
+
 ## Release new version
 
 Releases are performed by running the [release workflow](https://github.com/taiki-e/install-action/actions/workflows/release.yml) via workflow dispatch. The owner and collaborators can start the release workflow, but the owner's [approval](https://docs.github.com/en/actions/reference/workflows-and-actions/deployments-and-environments#required-reviewers) is required before the actual release.
