@@ -10,11 +10,27 @@ Note: In this file, do not use the hard wrap in the middle of a sentence for com
 
 ## [Unreleased]
 
+- Update `just@latest` to 1.57.0.
+
+- Update `cargo-semver-checks@latest` to 0.49.0.
+
+- Update `tombi@latest` to 1.2.4.
+
+- Update `cosign@latest` to 3.1.2.
+
+## [2.83.4] - 2026-07-17
+
+- Update `vacuum@latest` to 0.29.10.
+
 - Update `uv@latest` to 0.11.29.
+
+- Update `syft@latest` to 1.48.0.
+
+- Update `prek@latest` to 0.4.10.
 
 - Update `mise@latest` to 2026.7.7.
 
-- Update `kingfisher@latest` to 1.107.0.
+- Update `cargo-shear@latest` to 1.13.2.
 
 ## [2.83.3] - 2026-07-16
 
@@ -7046,7 +7062,8 @@ Note: This release is considered a breaking change because installing on version
 
 Initial release
 
-[Unreleased]: https://github.com/taiki-e/install-action/compare/v2.83.3...HEAD
+[Unreleased]: https://github.com/taiki-e/install-action/compare/v2.83.4...HEAD
+[2.83.4]: https://github.com/taiki-e/install-action/compare/v2.83.3...v2.83.4
 [2.83.3]: https://github.com/taiki-e/install-action/compare/v2.83.2...v2.83.3
 [2.83.2]: https://github.com/taiki-e/install-action/compare/v2.83.1...v2.83.2
 [2.83.1]: https://github.com/taiki-e/install-action/compare/v2.83.0...v2.83.1
