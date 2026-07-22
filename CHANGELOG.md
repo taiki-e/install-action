@@ -10,6 +10,8 @@ Note: In this file, do not use the hard wrap in the middle of a sentence for com
 
 ## [Unreleased]
 
+- Update `biome@latest` to 2.5.5.
+
 ## [2.84.0] - 2026-07-20
 
 - Support `d2`. ([#1944](https://github.com/taiki-e/install-action/pull/1944))
