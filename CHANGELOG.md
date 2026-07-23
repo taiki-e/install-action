@@ -10,6 +10,8 @@ Note: In this file, do not use the hard wrap in the middle of a sentence for com
 
 ## [Unreleased]
 
+## [2.85.0] - 2026-07-23
+
 - Support `wild` (alias: `wild-linker`). ([#1949](https://github.com/taiki-e/install-action/pull/1949))
 
 - Support `bpf-linker`. ([#1950](https://github.com/taiki-e/install-action/pull/1950))
@@ -7102,7 +7104,8 @@ Note: This release is considered a breaking change because installing on version
 
 Initial release
 
-[Unreleased]: https://github.com/taiki-e/install-action/compare/v2.84.1...HEAD
+[Unreleased]: https://github.com/taiki-e/install-action/compare/v2.85.0...HEAD
+[2.85.0]: https://github.com/taiki-e/install-action/compare/v2.84.1...v2.85.0
 [2.84.1]: https://github.com/taiki-e/install-action/compare/v2.84.0...v2.84.1
 [2.84.0]: https://github.com/taiki-e/install-action/compare/v2.83.4...v2.84.0
 [2.83.4]: https://github.com/taiki-e/install-action/compare/v2.83.3...v2.83.4
