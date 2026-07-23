@@ -1,0 +1,70 @@
+{
+  "rust_crate": "rafn",
+  "template": {
+    "x86_64_linux_gnu": {
+      "url": "https://github.com/voron-software/rafn/releases/download/v${version}/rafn-x86_64-unknown-linux-gnu.tar.gz"
+    },
+    "x86_64_macos": {
+      "url": "https://github.com/voron-software/rafn/releases/download/v${version}/rafn-x86_64-apple-darwin.tar.gz"
+    },
+    "x86_64_windows": {
+      "url": "https://github.com/voron-software/rafn/releases/download/v${version}/rafn-x86_64-pc-windows-msvc.zip"
+    },
+    "aarch64_linux_gnu": {
+      "url": "https://github.com/voron-software/rafn/releases/download/v${version}/rafn-aarch64-unknown-linux-gnu.tar.gz"
+    },
+    "aarch64_macos": {
+      "url": "https://github.com/voron-software/rafn/releases/download/v${version}/rafn-aarch64-apple-darwin.tar.gz"
+    }
+  },
+  "latest": {
+    "version": "0.1.2"
+  },
+  "0.1": {
+    "version": "0.1.2"
+  },
+  "0.1.2": {
+    "x86_64_linux_gnu": {
+      "etag": "0x8DECFB90F255451",
+      "hash": "9024f2ebe428c728b1b2530ef5387de301c63eb168c2baee6218413cb10e87c1"
+    },
+    "x86_64_macos": {
+      "etag": "0x8DECFB90F23F64D",
+      "hash": "2eb716fba3393171154b82380872c7f4d78a6e87199df823a5d47055800e2420"
+    },
+    "x86_64_windows": {
+      "etag": "0x8DECFB90F1BC22A",
+      "hash": "3550dbd12c1ea01c446602910f3883d2082408d1db767266bb7f840f71ee6ea8"
+    },
+    "aarch64_linux_gnu": {
+      "etag": "0x8DECFB90F241D46",
+      "hash": "e978f88d99d136d7f4015ab81906ef2240700cee65e0c94da52583e1e31bb11a"
+    },
+    "aarch64_macos": {
+      "etag": "0x8DECFB90F266491",
+      "hash": "b1b6915d579e39f7500d935ae838b4ac561f03f2bf0f0a8612abb393425cc135"
+    }
+  },
+  "0.1.1": {
+    "x86_64_linux_gnu": {
+      "etag": "0x8DEB33A24C981E2",
+      "hash": "5e98f38b73b9fe9f5603322aff3dd3968a42724020eb94619d2c250f48992c65"
+    },
+    "x86_64_macos": {
+      "etag": "0x8DEB33A24D88C1E",
+      "hash": "abea382747951e749de2c1dc1ba4d3025eda9669d0670a8b23e8dd99686da3a7"
+    },
+    "x86_64_windows": {
+      "etag": "0x8DEB33A24C67806",
+      "hash": "7a615a3a9731a01b9af64677461cfe3340edf712cf7551fc5412da57b1533191"
+    },
+    "aarch64_linux_gnu": {
+      "etag": "0x8DEB33A24C62A3F",
+      "hash": "b0fc095bfeaff9cc39e1807a3d9820de3e108c5d701dda927aef382be89f3461"
+    },
+    "aarch64_macos": {
+      "etag": "0x8DEB33A24C21043",
+      "hash": "6d979467d6ada1bf295c1ffb3dfbeb227162899a7c041bb56946a3db92e18587"
+    }
+  }
+}
