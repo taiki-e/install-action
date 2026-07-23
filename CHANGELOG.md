@@ -10,6 +10,12 @@ Note: In this file, do not use the hard wrap in the middle of a sentence for com
 
 ## [Unreleased]
 
+- Support `wild` (alias: `wild-linker`). ([#1949](https://github.com/taiki-e/install-action/pull/1949))
+
+- Support `bpf-linker`. ([#1950](https://github.com/taiki-e/install-action/pull/1950))
+
+- Support `rafn`. ([#1935](https://github.com/taiki-e/install-action/pull/1935), thanks @DarkWanderer)
+
 - Update `cargo-neat@latest` to 0.5.1.
 
 - Update `zizmor@latest` to 1.28.0.
