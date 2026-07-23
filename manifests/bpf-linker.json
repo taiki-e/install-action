@@ -1,0 +1,55 @@
+{
+  "rust_crate": "bpf-linker",
+  "template": {
+    "x86_64_linux_musl": {
+      "url": "https://github.com/aya-rs/bpf-linker/releases/download/v${version}/bpf-linker-x86_64-unknown-linux-musl.tar.zst"
+    },
+    "x86_64_macos": {
+      "url": "https://github.com/aya-rs/bpf-linker/releases/download/v${version}/bpf-linker-x86_64-apple-darwin.tar.zst"
+    },
+    "x86_64_windows": {
+      "url": "https://github.com/aya-rs/bpf-linker/releases/download/v${version}/bpf-linker-x86_64-pc-windows-gnullvm.tar.zst"
+    },
+    "aarch64_linux_musl": {
+      "url": "https://github.com/aya-rs/bpf-linker/releases/download/v${version}/bpf-linker-aarch64-unknown-linux-musl.tar.zst"
+    },
+    "aarch64_macos": {
+      "url": "https://github.com/aya-rs/bpf-linker/releases/download/v${version}/bpf-linker-aarch64-apple-darwin.tar.zst"
+    },
+    "aarch64_windows": {
+      "url": "https://github.com/aya-rs/bpf-linker/releases/download/v${version}/bpf-linker-aarch64-pc-windows-gnullvm.tar.zst"
+    }
+  },
+  "latest": {
+    "version": "0.10.4"
+  },
+  "0.10": {
+    "version": "0.10.4"
+  },
+  "0.10.4": {
+    "x86_64_linux_musl": {
+      "etag": "0x8DECC93D0199F9F",
+      "hash": "4dda77daab6c5f120a468e6d3ede2498f5bd47ece712172cfb7290176d93d015"
+    },
+    "x86_64_macos": {
+      "etag": "0x8DECC93CE4D2D43",
+      "hash": "55771c82883b414f3f4e8bd081a182e8deefa1b953ab249c85b253fc2b69de48"
+    },
+    "x86_64_windows": {
+      "etag": "0x8DECC93CF001074",
+      "hash": "d3e3448333f4dd7e49103071a547ff9a944d6f277b48bdcfe9d9326dca725260"
+    },
+    "aarch64_linux_musl": {
+      "etag": "0x8DECC93CD762FA5",
+      "hash": "c3638cd3cb735ff85705905a07e0df61c0f9426480334c8e2efe5cb92fd9d3de"
+    },
+    "aarch64_macos": {
+      "etag": "0x8DECC93CC81DECB",
+      "hash": "7e0c692b2e839afdb3e2f1053bd9a94e55b99f7b6a94ef69990449a6d72837ce"
+    },
+    "aarch64_windows": {
+      "etag": "0x8DECC93CC8D916E",
+      "hash": "341ea6db58a7d5ac7348d835e86a8da9ef351445704646f9632a4410d89ae60a"
+    }
+  }
+}

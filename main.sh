@@ -158,6 +158,18 @@ download_and_extract() {
         esac
       fi
       ;;
+    *.tar.zst | *.tzst)
+      tar_args+=('xf')
+      if ! type -P zstd >/dev/null; then
+        case "${base_distro}" in
+          debian | fedora | suse | arch | alpine)
+            printf '::group::Install packages required for installation (zstd)\n'
+            sys_install zstd
+            printf '::endgroup::\n'
+            ;;
+        esac
+      fi
+      ;;
     *.zip)
       if ! type -P unzip >/dev/null; then
         case "${base_distro}" in
@@ -187,8 +199,10 @@ download_and_extract() {
     cd -- "${tmp_dir}"
     download_and_checksum "${url}" "${checksum}"
     if [[ ${#tar_args[@]} -gt 0 ]]; then
-      tar_args+=("tmp")
-      tar "${tar_args[@]}"
+      case "${url}" in
+        *.tar.zst | *.tzst) zstd -dc tmp | tar "${tar_args[@]}" - ;;
+        *) tar "${tar_args[@]}" tmp ;;
+      esac
       for tmp in "${bin_in_archive[@]}"; do
         case "${tool}" in
           editorconfig-checker) mv -- "${tmp}" "${bin_dir}/${tool}${exe}" ;;
