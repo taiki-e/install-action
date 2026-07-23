@@ -965,6 +965,7 @@ for tool in "${tools[@]}"; do
       # TODO(codegen): auto-detect cases where crate name and tool name are different.
       case "${tool}" in
         nextest) tool=cargo-nextest ;;
+        wild-linker) tool=wild ;;
         taplo-cli | typos-cli | wasm-bindgen-cli | wasmtime-cli) tool="${tool%-cli}" ;;
       esac
 

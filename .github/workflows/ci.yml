@@ -286,6 +286,7 @@ jobs:
             typos-cli
             wasm-bindgen-cli
             wasmtime-cli
+            wild-linker
       - name: Test bash
         run: cargo-nextest nextest --version && taplo --version
         shell: bash
