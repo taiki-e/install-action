@@ -125,7 +125,8 @@ fn main() {
         // and tool input option in test-alias in .github/workflows/ci.yml.
         let alias = match name.as_str() {
             "cargo-nextest" => Some(name.strip_prefix("cargo-").unwrap().to_owned()),
-            "taplo" | "typos-cli" | "wasm-bindgen" | "wasmtime" => Some(format!("{name}-cli")),
+            "wild" => Some(format!("{name}-linker")),
+            "taplo" | "typos" | "wasm-bindgen" | "wasmtime" => Some(format!("{name}-cli")),
             _ => None,
         };
 

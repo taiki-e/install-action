@@ -1,0 +1,37 @@
+{
+  "rust_crate": "wild-linker",
+  "template": {
+    "x86_64_linux_musl": {
+      "url": "https://github.com/wild-linker/wild/releases/download/${version}/wild-linker-${version}-x86_64-unknown-linux-musl.tar.gz",
+      "bin": "wild-linker-${version}-x86_64-unknown-linux-musl/wild"
+    },
+    "aarch64_linux_musl": {
+      "url": "https://github.com/wild-linker/wild/releases/download/${version}/wild-linker-${version}-aarch64-unknown-linux-musl.tar.gz",
+      "bin": "wild-linker-${version}-aarch64-unknown-linux-musl/wild"
+    },
+    "riscv64_linux_musl": {
+      "url": "https://github.com/wild-linker/wild/releases/download/${version}/wild-linker-${version}-riscv64gc-unknown-linux-musl.tar.gz",
+      "bin": "wild-linker-${version}-riscv64gc-unknown-linux-musl/wild"
+    }
+  },
+  "latest": {
+    "version": "0.9.0"
+  },
+  "0.9": {
+    "version": "0.9.0"
+  },
+  "0.9.0": {
+    "x86_64_linux_musl": {
+      "etag": "0x8DEB91D23B152D5",
+      "hash": "e0332432d181a06c9257bced31f8349bc9ceed9fe728fe843e68d2b9e06753a1"
+    },
+    "aarch64_linux_musl": {
+      "etag": "0x8DEB91D1EECA64B",
+      "hash": "ee8ce993505dbedb3447a1512886b7dbeeb4ec7da258b99fdafa2bf0a07e5f37"
+    },
+    "riscv64_linux_musl": {
+      "etag": "0x8DEB91D0D00D451",
+      "hash": "1a1648f25886fd6dc60bb06a1dfa09c7fbe155a23e68360a8b1d36ea76be8583"
+    }
+  }
+}
