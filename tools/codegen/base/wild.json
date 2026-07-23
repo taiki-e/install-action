@@ -1,0 +1,14 @@
+{
+  "repository": "https://github.com/wild-linker/wild",
+  "license_markdown": "[Apache-2.0](https://github.com/wild-linker/wild/blob/main/LICENSE-APACHE) OR [MIT](https://github.com/wild-linker/wild/blob/main/LICENSE-MIT)",
+  "tag_prefix": "",
+  "version_range": ">= 0.9.0",
+  "rust_crate": "${package}-linker",
+  "asset_name": "${package}-linker-${version}-${rust_target}.tar.gz",
+  "bin": "${package}-linker-${version}-${rust_target}/${package}${exe}",
+  "platform": {
+    "x86_64_linux_musl": {},
+    "aarch64_linux_musl": {},
+    "riscv64_linux_musl": {}
+  }
+}

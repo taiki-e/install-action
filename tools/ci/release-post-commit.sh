@@ -15,6 +15,7 @@ done
 # in .github/workflows/ci.yml, and match for alias for tools/codegen/src/tools-markdown.rs.
 tools+=(
   nextest
+  wild-linker
   taplo-cli
   typos-cli
   wasm-bindgen-cli
