@@ -118,15 +118,15 @@ case "$(uname -s)" in
     if ! type -P snap >/dev/null; then
       incompat_tools+=(valgrind)
     fi
-    if ! type -P apt-get >/dev/null; then
-      incompat_tools+=(cyclonedx)
-    fi
-    if [[ "${runner}" == 'ubuntu:14.04' ]]; then
+    if ! type -P apt-get >/dev/null || [[ "${runner}" == 'ubuntu:14.04' ]]; then
       incompat_tools+=(cyclonedx)
     fi
     if [[ "${runner}" == 'almalinux:10'* ]]; then
       incompat_tools+=(cargo-deb) # no dpkg in package manager
     fi
+    case "${runner}" in
+      debian/eol:jessie-slim | ubuntu:14.04 | alpine:3.2) incompat_tools+=(bpf-linker) ;; # no zstd in package manager
+    esac
     ;;
   Darwin)
     host_os=macos
