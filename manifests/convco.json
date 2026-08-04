@@ -2,10 +2,36 @@
   "rust_crate": "convco",
   "template": null,
   "latest": {
-    "version": "0.7.0"
+    "version": "0.7.1"
   },
   "0.7": {
-    "version": "0.7.0"
+    "version": "0.7.1"
+  },
+  "0.7.1": {
+    "x86_64_linux_musl": {
+      "url": "https://github.com/convco/convco/releases/download/v0.7.1/convco-v0.7.1-x86_64-unknown-linux-musl.tar.gz",
+      "etag": "0x8DEF18924807F6E",
+      "hash": "c0088e64cfa3660dd7b5e63dd0555a7e5343daf11295ddce376c928e3f105f10",
+      "bin": "convco-v0.7.1-x86_64-unknown-linux-musl/convco"
+    },
+    "x86_64_windows": {
+      "url": "https://github.com/convco/convco/releases/download/v0.7.1/convco-v0.7.1-x86_64-pc-windows-msvc.tar.gz",
+      "etag": "0x8DEF18924507DB2",
+      "hash": "4e7946cca31818522a04f00a96607425b61b1b7942a59c3404945b168576dda7",
+      "bin": "convco-v0.7.1-x86_64-pc-windows-msvc/convco.exe"
+    },
+    "aarch64_linux_musl": {
+      "url": "https://github.com/convco/convco/releases/download/v0.7.1/convco-v0.7.1-aarch64-unknown-linux-musl.tar.gz",
+      "etag": "0x8DEF189247BC9D1",
+      "hash": "0b284c89297063809429b67f78108f8cc8ab79b59e2be38fc85b241e79e0f9cd",
+      "bin": "convco-v0.7.1-aarch64-unknown-linux-musl/convco"
+    },
+    "aarch64_macos": {
+      "url": "https://github.com/convco/convco/releases/download/v0.7.1/convco-v0.7.1-aarch64-apple-darwin.tar.gz",
+      "etag": "0x8DEF18923FF5D83",
+      "hash": "f1dadc1344672a31db541c92fb85713e1ddadc88ced10bbedb02cac24f7669cd",
+      "bin": "convco-v0.7.1-aarch64-apple-darwin/convco"
+    }
   },
   "0.7.0": {
     "x86_64_linux_musl": {
