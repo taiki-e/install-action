@@ -7,6 +7,23 @@
   "2": {
     "version": "2.1.0"
   },
+  "2.2.0": {
+    "x86_64_linux_musl": {
+      "url": "https://github.com/orium/cargo-rdme/releases/download/v2.2.0/cargo-rdme_v2.2.0_x86_64-unknown-linux-musl.tar.gz",
+      "etag": "0x8DEF341570A63BA",
+      "hash": "55c25072979fdcc00c3ed0ce73376e0a233e1558064c8c5196cb9325b0509993"
+    },
+    "x86_64_windows": {
+      "url": "https://github.com/orium/cargo-rdme/releases/download/v2.2.0/cargo-rdme_v2.2.0_x86_64-pc-windows-gnu.zip",
+      "etag": "0x8DEF3418DF2C5E2",
+      "hash": "f3fc5a504157512dec78dee04ea5e8deb29ebded9f538f29209e1aed7c50c78e"
+    },
+    "aarch64_macos": {
+      "url": "https://github.com/orium/cargo-rdme/releases/download/v2.2.0/cargo-rdme_v2.2.0_aarch64-apple-darwin.tar.gz",
+      "etag": "0x8DEF34138CF8979",
+      "hash": "cd026583eef0b37c79f7f164a1d8f1ed01a9257bf38c5e6db4a9247fcad23301"
+    }
+  },
   "2.1": {
     "version": "2.1.0"
   },
