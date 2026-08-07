@@ -7,6 +7,38 @@
   "2": {
     "version": "2.4.0"
   },
+  "2.5.0": {
+    "x86_64_linux_musl": {
+      "url": "https://github.com/google/osv-scanner/releases/download/v2.5.0/osv-scanner_linux_amd64",
+      "etag": "0x8DEF4433F26881C",
+      "hash": "edcfc41d257db36148f065055655fe3fcfc434b0b423ea67468a84c207524e0c"
+    },
+    "x86_64_macos": {
+      "url": "https://github.com/google/osv-scanner/releases/download/v2.5.0/osv-scanner_darwin_amd64",
+      "etag": "0x8DEF4433F4B9FC4",
+      "hash": "baef4f4a4ce2924a9241869c36d4bd9d6c04b632cae6637a0f6347ab9272eb16"
+    },
+    "x86_64_windows": {
+      "url": "https://github.com/google/osv-scanner/releases/download/v2.5.0/osv-scanner_windows_amd64.exe",
+      "etag": "0x8DEF443407E5DAE",
+      "hash": "4342285bd8be36b9f113468f3eea86e7900befbcd19ca8dc6ac4f0f6cbe7c362"
+    },
+    "aarch64_linux_musl": {
+      "url": "https://github.com/google/osv-scanner/releases/download/v2.5.0/osv-scanner_linux_arm64",
+      "etag": "0x8DEF4433F291D51",
+      "hash": "fe152e1a546af223e6c557cc3111a8bb3e5dc02fcbf7dbe95d26567c0f0041f2"
+    },
+    "aarch64_macos": {
+      "url": "https://github.com/google/osv-scanner/releases/download/v2.5.0/osv-scanner_darwin_arm64",
+      "etag": "0x8DEF44340654CA0",
+      "hash": "fff5a2e351b7f0a60001e87cbf862e82fb82e2792d368b533fec7a5865a73da2"
+    },
+    "aarch64_windows": {
+      "url": "https://github.com/google/osv-scanner/releases/download/v2.5.0/osv-scanner_windows_arm64.exe",
+      "etag": "0x8DEF4433F69667C",
+      "hash": "b8bb8d499e0636e193688c96834a11a8f74e353734053f9641e546d76a0cb857"
+    }
+  },
   "2.4": {
     "version": "2.4.0"
   },
