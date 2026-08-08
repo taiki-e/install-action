@@ -7,6 +7,120 @@
   "3": {
     "version": "3.8.0"
   },
+  "3.11.1": {
+    "x86_64_linux_musl": {
+      "url": "https://github.com/editorconfig-checker/editorconfig-checker/releases/download/v3.11.1/ec-linux-amd64.tar.gz",
+      "etag": "0x8DEF53C67032FE5",
+      "hash": "5a37922963248451e88149251e49f6ae08f69717a3918202a51fe9945e19691e",
+      "bin": "bin/ec-linux-amd64"
+    },
+    "x86_64_macos": {
+      "url": "https://github.com/editorconfig-checker/editorconfig-checker/releases/download/v3.11.1/ec-darwin-amd64.tar.gz",
+      "etag": "0x8DEF53C67E34F3C",
+      "hash": "a9f68961e33d1a3b3f134c403557c8b2bbafb70b21b4c32b5d9245ffc2875f4f",
+      "bin": "bin/ec-darwin-amd64"
+    },
+    "x86_64_windows": {
+      "url": "https://github.com/editorconfig-checker/editorconfig-checker/releases/download/v3.11.1/ec-windows-amd64.zip",
+      "etag": "0x8DEF53C677B17B2",
+      "hash": "6f81f034bbaf77d7ea73274aa7d33995baf9e0d91bc4d4caa8eccff4645f870e",
+      "bin": "bin/ec-windows-amd64.exe"
+    },
+    "aarch64_linux_musl": {
+      "url": "https://github.com/editorconfig-checker/editorconfig-checker/releases/download/v3.11.1/ec-linux-arm64.tar.gz",
+      "etag": "0x8DEF53C66FC80B0",
+      "hash": "073d5263f0c5953f3e847df44a84403ecc284ab77419de56e280ab92bc082e8d",
+      "bin": "bin/ec-linux-arm64"
+    },
+    "aarch64_macos": {
+      "url": "https://github.com/editorconfig-checker/editorconfig-checker/releases/download/v3.11.1/ec-darwin-arm64.tar.gz",
+      "etag": "0x8DEF53C67009AD0",
+      "hash": "69205598fe8b26677d31194c5c9fdf7e8be321909ffb3c99efb5c9e4e648583e",
+      "bin": "bin/ec-darwin-arm64"
+    },
+    "aarch64_windows": {
+      "url": "https://github.com/editorconfig-checker/editorconfig-checker/releases/download/v3.11.1/ec-windows-arm64.zip",
+      "etag": "0x8DEF53C67D57C1F",
+      "hash": "358f3bbf0c297ba81174bac69dc745d75a52cdb7a587f35506955c47baf11428",
+      "bin": "bin/ec-windows-arm64.exe"
+    }
+  },
+  "3.11.0": {
+    "x86_64_linux_musl": {
+      "url": "https://github.com/editorconfig-checker/editorconfig-checker/releases/download/v3.11.0/ec-linux-amd64.tar.gz",
+      "etag": "0x8DEF539D8DAFDAE",
+      "hash": "5eba1f3f03641dc09cafae9feb7e913e2bf29e976c4286974a637f2b5f953b6d",
+      "bin": "bin/ec-linux-amd64"
+    },
+    "x86_64_macos": {
+      "url": "https://github.com/editorconfig-checker/editorconfig-checker/releases/download/v3.11.0/ec-darwin-amd64.tar.gz",
+      "etag": "0x8DEF539D8CA6E90",
+      "hash": "573bd2b93b905e3f1244c66ed784eec3ca902dad76c249de3ad0f90510042998",
+      "bin": "bin/ec-darwin-amd64"
+    },
+    "x86_64_windows": {
+      "url": "https://github.com/editorconfig-checker/editorconfig-checker/releases/download/v3.11.0/ec-windows-amd64.zip",
+      "etag": "0x8DEF539D8D2A2B0",
+      "hash": "70b3de37018c6b27fd97e3b161691d25636af6e21241a16cd149b3046cade36c",
+      "bin": "bin/ec-windows-amd64.exe"
+    },
+    "aarch64_linux_musl": {
+      "url": "https://github.com/editorconfig-checker/editorconfig-checker/releases/download/v3.11.0/ec-linux-arm64.tar.gz",
+      "etag": "0x8DEF539D87A10EF",
+      "hash": "4e8d97b667af90cf85644f24a932aa9d35e5384581a59f2e00cd84838ce99bb5",
+      "bin": "bin/ec-linux-arm64"
+    },
+    "aarch64_macos": {
+      "url": "https://github.com/editorconfig-checker/editorconfig-checker/releases/download/v3.11.0/ec-darwin-arm64.tar.gz",
+      "etag": "0x8DEF539D8718F09",
+      "hash": "63f335f58eadd7df9bb863ff0225ce95c2bc17d04d099fd5b936e57a81b6503f",
+      "bin": "bin/ec-darwin-arm64"
+    },
+    "aarch64_windows": {
+      "url": "https://github.com/editorconfig-checker/editorconfig-checker/releases/download/v3.11.0/ec-windows-arm64.zip",
+      "etag": "0x8DEF539D92B9C74",
+      "hash": "0f39ba6dd6d948bd5cb3d56bcc88ebb89ab7a1ef21577a84a632c0632ff5b30e",
+      "bin": "bin/ec-windows-arm64.exe"
+    }
+  },
+  "3.10.0": {
+    "x86_64_linux_musl": {
+      "url": "https://github.com/editorconfig-checker/editorconfig-checker/releases/download/v3.10.0/ec-linux-amd64.tar.gz",
+      "etag": "0x8DEF4DBE0879361",
+      "hash": "fcf35f10e9628fa88c0b4b7dd6ee55c6eabe267d578347907b1cbe0ede21a6f4",
+      "bin": "bin/ec-linux-amd64"
+    },
+    "x86_64_macos": {
+      "url": "https://github.com/editorconfig-checker/editorconfig-checker/releases/download/v3.10.0/ec-darwin-amd64.tar.gz",
+      "etag": "0x8DEF4DBE13418CE",
+      "hash": "cd65718f07e2efb8dcb286c458cb181a2fb8c4e48c82629da6e9e657aaf2cac2",
+      "bin": "bin/ec-darwin-amd64"
+    },
+    "x86_64_windows": {
+      "url": "https://github.com/editorconfig-checker/editorconfig-checker/releases/download/v3.10.0/ec-windows-amd64.zip",
+      "etag": "0x8DEF4DBE0931F2D",
+      "hash": "860de8014a738890440620828cc3eb49bef2beed13ab8c40ec255364ac0e1e44",
+      "bin": "bin/ec-windows-amd64.exe"
+    },
+    "aarch64_linux_musl": {
+      "url": "https://github.com/editorconfig-checker/editorconfig-checker/releases/download/v3.10.0/ec-linux-arm64.tar.gz",
+      "etag": "0x8DEF4DBE136FBC5",
+      "hash": "953ccbe18d6dab1dc92dbdc65e2ba97cf2886e5ef17206d11f245fef54499c8f",
+      "bin": "bin/ec-linux-arm64"
+    },
+    "aarch64_macos": {
+      "url": "https://github.com/editorconfig-checker/editorconfig-checker/releases/download/v3.10.0/ec-darwin-arm64.tar.gz",
+      "etag": "0x8DEF4DBE0E772A7",
+      "hash": "7b3c4fae8d04b6c4dcd5e197cfebb1ae912ba10d04c3dd9b3713b75566697302",
+      "bin": "bin/ec-darwin-arm64"
+    },
+    "aarch64_windows": {
+      "url": "https://github.com/editorconfig-checker/editorconfig-checker/releases/download/v3.10.0/ec-windows-arm64.zip",
+      "etag": "0x8DEF4DBE0E13811",
+      "hash": "865237fa01621d2824294f20fecc6880e18db0c7d0e6dacf82f7d749eb4c0a49",
+      "bin": "bin/ec-windows-arm64.exe"
+    }
+  },
   "3.8": {
     "version": "3.8.0"
   },
