@@ -10,6 +10,8 @@ Note: In this file, do not use the hard wrap in the middle of a sentence for com
 
 ## [Unreleased]
 
+- Update `kingfisher@latest` to 1.112.0.
+
 - Update `editorconfig-checker@latest` to 3.10.0.
 
 ## [2.85.10] - 2026-08-07
