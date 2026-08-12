@@ -10,6 +10,8 @@ Note: In this file, do not use the hard wrap in the middle of a sentence for com
 
 ## [Unreleased]
 
+- Update `prek@latest` to 0.4.13.
+
 - Update `mise@latest` to 2026.8.4.
 
 - Update `editorconfig-checker@latest` to 3.11.1.
