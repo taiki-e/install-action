@@ -132,7 +132,7 @@ case "$(uname -s)" in
   Darwin)
     host_os=macos
     if [[ "${runner}" == 'macos-15-intel' ]]; then
-      incompat_tools+=(martin release-plz) # no prebuilt binary
+      incompat_tools+=(cargo-rdme martin release-plz) # no prebuilt binary
     fi
     ;;
   MINGW* | MSYS* | CYGWIN* | Windows_NT) host_os=windows ;;
