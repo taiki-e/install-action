@@ -10,6 +10,8 @@ Note: In this file, do not use the hard wrap in the middle of a sentence for com
 
 ## [Unreleased]
 
+- Update `editorconfig-checker@latest` to 3.11.1.
+
 - Update `cargo-tarpaulin@latest` to 0.37.1.
 
 - Update `cargo-rdme@latest` to 2.2.1.
