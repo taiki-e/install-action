@@ -10,6 +10,8 @@ Note: In this file, do not use the hard wrap in the middle of a sentence for com
 
 ## [Unreleased]
 
+- Update `wasm-tools@latest` to 1.256.0.
+
 - Update `tombi@latest` to 1.2.10.
 
 - Update `syft@latest` to 1.51.0.
