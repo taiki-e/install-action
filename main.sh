@@ -95,8 +95,8 @@ download_and_extract() {
   case "${tool}" in
     # xbuild's binary name is "x", as opposed to the usual crate name
     xbuild) installed_bin=("${bin_dir}/x${exe}") ;;
-    # editorconfig-checker's binary name is renamed below
-    editorconfig-checker) installed_bin=("${bin_dir}/${tool}${exe}") ;;
+    # Their binary names are renamed below.
+    editorconfig-checker | oxfmt) installed_bin=("${bin_dir}/${tool}${exe}") ;;
     *)
       for tmp in "${bin_in_archive[@]}"; do
         installed_bin+=("${bin_dir}/$(basename -- "${tmp}")")
@@ -205,7 +205,7 @@ download_and_extract() {
       esac
       for tmp in "${bin_in_archive[@]}"; do
         case "${tool}" in
-          editorconfig-checker) mv -- "${tmp}" "${bin_dir}/${tool}${exe}" ;;
+          editorconfig-checker | oxfmt) mv -- "${tmp}" "${bin_dir}/${tool}${exe}" ;;
           *) mv -- "${tmp}" "${bin_dir}/" ;;
         esac
       done
@@ -215,7 +215,7 @@ download_and_extract() {
           unzip -q tmp
           for tmp in "${bin_in_archive[@]}"; do
             case "${tool}" in
-              editorconfig-checker) mv -- "${tmp}" "${bin_dir}/${tool}${exe}" ;;
+              editorconfig-checker | oxfmt) mv -- "${tmp}" "${bin_dir}/${tool}${exe}" ;;
               *) mv -- "${tmp}" "${bin_dir}/" ;;
             esac
           done
