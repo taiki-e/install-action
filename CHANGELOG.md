@@ -10,6 +10,8 @@ Note: In this file, do not use the hard wrap in the middle of a sentence for com
 
 ## [Unreleased]
 
+- Support `oxfmt`. ([#1967](https://github.com/taiki-e/install-action/pull/1967), thanks @rami3l)
+
 ## [2.85.14] - 2026-08-15
 
 - Update `uv@latest` to 0.12.4.
