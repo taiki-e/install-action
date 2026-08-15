@@ -10,6 +10,8 @@ Note: In this file, do not use the hard wrap in the middle of a sentence for com
 
 ## [Unreleased]
 
+- Update `mdbook-mermaid@latest` to 0.17.1.
+
 - Update `cargo-xwin@latest` to 0.23.1.
 
 ## [2.85.13] - 2026-08-13
