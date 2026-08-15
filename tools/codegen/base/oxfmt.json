@@ -1,0 +1,40 @@
+{
+  "repository": "https://github.com/oxc-project/oxc",
+  "license_markdown": "[MIT](https://github.com/oxc-project/oxc/blob/main/LICENSE)",
+  "tag_prefix": "apps_v",
+  "version_range": ">= 1.77.0",
+  "platform": {
+    "x86_64_linux_musl": {
+      "asset_name": "oxfmt-x86_64-unknown-linux-musl.tar.gz",
+      "bin": "oxfmt-x86_64-unknown-linux-musl"
+    },
+    "x86_64_macos": {
+      "asset_name": "oxfmt-x86_64-apple-darwin.tar.gz",
+      "bin": "oxfmt-x86_64-apple-darwin"
+    },
+    "x86_64_windows": {
+      "asset_name": "oxfmt-x86_64-pc-windows-msvc.zip",
+      "bin": "oxfmt-x86_64-pc-windows-msvc.exe"
+    },
+    "aarch64_linux_musl": {
+      "asset_name": "oxfmt-aarch64-unknown-linux-musl.tar.gz",
+      "bin": "oxfmt-aarch64-unknown-linux-musl"
+    },
+    "aarch64_macos": {
+      "asset_name": "oxfmt-aarch64-apple-darwin.tar.gz",
+      "bin": "oxfmt-aarch64-apple-darwin"
+    },
+    "aarch64_windows": {
+      "asset_name": "oxfmt-aarch64-pc-windows-msvc.zip",
+      "bin": "oxfmt-aarch64-pc-windows-msvc.exe"
+    },
+    "powerpc64le_linux_gnu": {
+      "asset_name": "oxfmt-powerpc64le-unknown-linux-gnu.tar.gz",
+      "bin": "oxfmt-powerpc64le-unknown-linux-gnu"
+    },
+    "s390x_linux_gnu": {
+      "asset_name": "oxfmt-s390x-unknown-linux-gnu.tar.gz",
+      "bin": "oxfmt-s390x-unknown-linux-gnu"
+    }
+  }
+}
