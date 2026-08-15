@@ -29,6 +29,10 @@
       "url": "https://github.com/oxc-project/oxc/releases/download/apps_v${version}/oxfmt-powerpc64le-unknown-linux-gnu.tar.gz",
       "bin": "oxfmt-powerpc64le-unknown-linux-gnu"
     },
+    "riscv64_linux_musl": {
+      "url": "https://github.com/oxc-project/oxc/releases/download/apps_v${version}/oxfmt-riscv64gc-unknown-linux-musl.tar.gz",
+      "bin": "oxfmt-riscv64gc-unknown-linux-musl"
+    },
     "s390x_linux_gnu": {
       "url": "https://github.com/oxc-project/oxc/releases/download/apps_v${version}/oxfmt-s390x-unknown-linux-gnu.tar.gz",
       "bin": "oxfmt-s390x-unknown-linux-gnu"
@@ -72,6 +76,10 @@
       "etag": "0x8DEF6CC9429A573",
       "hash": "ef9dc5ff99e778e6cd00c58f356ef5993e66c9c007a9ac4c2c1626dae7023982"
     },
+    "riscv64_linux_musl": {
+      "etag": "0x8DEF6CC942B9F0E",
+      "hash": "eed76cb17e73cfebefc4c29c5640c9cda01c72ec3237ae49beddf7df5c57ddc5"
+    },
     "s390x_linux_gnu": {
       "etag": "0x8DEF6CC94783062",
       "hash": "e322f3efd9bca63d21a2a1795f5e08033a91175b5749f5c83dd1861c11a47b27"
@@ -108,6 +116,10 @@
     "powerpc64le_linux_gnu": {
       "etag": "0x8DEF157D448CF2C",
       "hash": "d47780985061b4bf2310eac819dbf902ca536b5753129e2e290897c22c5243f3"
+    },
+    "riscv64_linux_musl": {
+      "etag": "0x8DEF157D43DDF18",
+      "hash": "183369987d02d6f8a73b0c284546fb95cb15e8333958f5663e1e571f825de319"
     },
     "s390x_linux_gnu": {
       "etag": "0x8DEF157D45E3AE5",
