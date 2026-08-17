@@ -10,6 +10,8 @@ Note: In this file, do not use the hard wrap in the middle of a sentence for com
 
 ## [Unreleased]
 
+- Update `cargo-tarpaulin@latest` to 0.37.2.
+
 ## [2.86.1] - 2026-08-15
 
 - Fix an issue where `oxfmt` was　accidentally installed as `oxfmt-{target}{exe}`. ([#1969](https://github.com/taiki-e/install-action/pull/1969))
