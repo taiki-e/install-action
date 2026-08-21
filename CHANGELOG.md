@@ -10,6 +10,8 @@ Note: In this file, do not use the hard wrap in the middle of a sentence for com
 
 ## [Unreleased]
 
+## [2.86.5] - 2026-08-21
+
 - Update `zola@latest` to 0.23.4.
 
 - Update `wasm-tools@latest` to 1.257.1.
@@ -7342,7 +7344,8 @@ Note: This release is considered a breaking change because installing on version
 
 Initial release
 
-[Unreleased]: https://github.com/taiki-e/install-action/compare/v2.86.4...HEAD
+[Unreleased]: https://github.com/taiki-e/install-action/compare/v2.86.5...HEAD
+[2.86.5]: https://github.com/taiki-e/install-action/compare/v2.86.4...v2.86.5
 [2.86.4]: https://github.com/taiki-e/install-action/compare/v2.86.3...v2.86.4
 [2.86.3]: https://github.com/taiki-e/install-action/compare/v2.86.2...v2.86.3
 [2.86.2]: https://github.com/taiki-e/install-action/compare/v2.86.1...v2.86.2
