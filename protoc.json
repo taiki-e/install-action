@@ -2,10 +2,50 @@
   "rust_crate": null,
   "template": null,
   "latest": {
-    "version": "3.35.1"
+    "version": "3.36.0"
   },
   "3": {
-    "version": "3.35.1"
+    "version": "3.36.0"
+  },
+  "3.36": {
+    "version": "3.36.0"
+  },
+  "3.36.0": {
+    "x86_64_linux_gnu": {
+      "url": "https://github.com/protocolbuffers/protobuf/releases/download/v36.0/protoc-36.0-linux-x86_64.zip",
+      "etag": "0x8DEFEBEC48A7A55",
+      "hash": "bc8211ce760bd43ee21ddc145d6d9dbaeeabae205267a79d9054a240e367d4b4"
+    },
+    "x86_64_macos": {
+      "url": "https://github.com/protocolbuffers/protobuf/releases/download/v36.0/protoc-36.0-osx-x86_64.zip",
+      "etag": "0x8DEFEBEC49D50E0",
+      "hash": "2847d952ecd1c466769ae3ca319c9cd34c3613542eba335dc9b02c49537f6c70"
+    },
+    "x86_64_windows": {
+      "url": "https://github.com/protocolbuffers/protobuf/releases/download/v36.0/protoc-36.0-win64.zip",
+      "etag": "0x8DEFEBEC4F3AF5C",
+      "hash": "510fb2369a4720adb457783768c5e1481a0e1137d9e7694478dfe9b8fe445dc1"
+    },
+    "aarch64_linux_gnu": {
+      "url": "https://github.com/protocolbuffers/protobuf/releases/download/v36.0/protoc-36.0-linux-aarch_64.zip",
+      "etag": "0x8DEFEBEC41A4830",
+      "hash": "4a00ec5e256d20a3deadd9e77d56da0ac04c72367c3c959f6d08e110a368400a"
+    },
+    "aarch64_macos": {
+      "url": "https://github.com/protocolbuffers/protobuf/releases/download/v36.0/protoc-36.0-osx-aarch_64.zip",
+      "etag": "0x8DEFEBEC488A7A0",
+      "hash": "b6bc4afdcb880124bf342851d05155b6e3d9b6e661236d87b9c614250d26ae00"
+    },
+    "powerpc64le_linux_gnu": {
+      "url": "https://github.com/protocolbuffers/protobuf/releases/download/v36.0/protoc-36.0-linux-ppcle_64.zip",
+      "etag": "0x8DEFEBEC42207AC",
+      "hash": "9bd9154c503928c8a48b6b5dee8c82881c650d753f644af75e1156ebab0c1df2"
+    },
+    "s390x_linux_gnu": {
+      "url": "https://github.com/protocolbuffers/protobuf/releases/download/v36.0/protoc-36.0-linux-s390_64.zip",
+      "etag": "0x8DEFEBEC437D53C",
+      "hash": "27556b282e33d6e04300d05ed4c38bf85e5a92d7080efedd5c41fd02cf9e3f5b"
+    }
   },
   "3.35": {
     "version": "3.35.1"
