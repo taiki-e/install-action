@@ -10,6 +10,8 @@ Note: In this file, do not use the hard wrap in the middle of a sentence for com
 
 ## [Unreleased]
 
+- Update `wasm-tools@latest` to 1.257.1.
+
 - Update `protoc@latest` to 3.36.0.
 
 - Update `mise@latest` to 2026.8.10.
