@@ -10,6 +10,8 @@ Note: In this file, do not use the hard wrap in the middle of a sentence for com
 
 ## [Unreleased]
 
+## [2.86.6] - 2026-08-23
+
 - Update `dprint@latest` to 0.56.1.
 
 - Update `cargo-lambda@latest` to 1.9.2.
@@ -7350,7 +7352,8 @@ Note: This release is considered a breaking change because installing on version
 
 Initial release
 
-[Unreleased]: https://github.com/taiki-e/install-action/compare/v2.86.5...HEAD
+[Unreleased]: https://github.com/taiki-e/install-action/compare/v2.86.6...HEAD
+[2.86.6]: https://github.com/taiki-e/install-action/compare/v2.86.5...v2.86.6
 [2.86.5]: https://github.com/taiki-e/install-action/compare/v2.86.4...v2.86.5
 [2.86.4]: https://github.com/taiki-e/install-action/compare/v2.86.3...v2.86.4
 [2.86.3]: https://github.com/taiki-e/install-action/compare/v2.86.2...v2.86.3
