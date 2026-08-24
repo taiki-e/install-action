@@ -10,6 +10,8 @@ Note: In this file, do not use the hard wrap in the middle of a sentence for com
 
 ## [Unreleased]
 
+## [2.86.7] - 2026-08-24
+
 - Update `tombi@latest` to 1.4.1.
 
 - Update `rafn@latest` to 0.1.5.
@@ -7358,7 +7360,8 @@ Note: This release is considered a breaking change because installing on version
 
 Initial release
 
-[Unreleased]: https://github.com/taiki-e/install-action/compare/v2.86.6...HEAD
+[Unreleased]: https://github.com/taiki-e/install-action/compare/v2.86.7...HEAD
+[2.86.7]: https://github.com/taiki-e/install-action/compare/v2.86.6...v2.86.7
 [2.86.6]: https://github.com/taiki-e/install-action/compare/v2.86.5...v2.86.6
 [2.86.5]: https://github.com/taiki-e/install-action/compare/v2.86.4...v2.86.5
 [2.86.4]: https://github.com/taiki-e/install-action/compare/v2.86.3...v2.86.4
