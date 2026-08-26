@@ -10,6 +10,18 @@ Note: In this file, do not use the hard wrap in the middle of a sentence for com
 
 ## [Unreleased]
 
+- Update `wasmtime@latest` to 48.0.1.
+
+- Update `wasm-tools@latest` to 1.258.0.
+
+- Update `oxfmt@latest` to 1.80.0.
+
+- Update `mise@latest` to 2026.8.12.
+
+- Update `kingfisher@latest` to 2.0.0.
+
+- Update `cargo-zigbuild@latest` to 0.23.2.
+
 ## [2.86.7] - 2026-08-24
 
 - Update `tombi@latest` to 1.4.1.

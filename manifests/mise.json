@@ -27,13 +27,65 @@
     }
   },
   "latest": {
-    "version": "2026.8.10"
+    "version": "2026.8.12"
   },
   "2026": {
-    "version": "2026.8.10"
+    "version": "2026.8.12"
   },
   "2026.8": {
-    "version": "2026.8.10"
+    "version": "2026.8.12"
+  },
+  "2026.8.14": {
+    "x86_64_linux_musl": {
+      "etag": "0x8DF030F7A416A4C",
+      "hash": "3832f39c325e343f81fe3d92b2447c5d1a5eea1bc85092bb7b6c25806222647e"
+    },
+    "x86_64_macos": {
+      "etag": "0x8DF030F7E4D17C2",
+      "hash": "6085d0b7c7bf8e176397c48e3f1e2025bd41d69dd50f05c08cb7ae89fb7f77b1"
+    },
+    "x86_64_windows": {
+      "etag": "0x8DF030F801AD2E2",
+      "hash": "dfae38ae7c782ef2f0255aa2cd7f8d2c242559f94c491fb59182c7ad36c2bf79"
+    },
+    "aarch64_linux_musl": {
+      "etag": "0x8DF030F7541BBA6",
+      "hash": "06186cfbfe947049b21d58575fb0ea800cc26ed1375f20f4b678cb3a9d679437"
+    },
+    "aarch64_macos": {
+      "etag": "0x8DF030F7CAC328B",
+      "hash": "e3ba526b629c41fa7b0918f78e746ca71a7a4b0c78dbfaca9fb25676a318762e"
+    },
+    "aarch64_windows": {
+      "etag": "0x8DF030F7FC2D5D3",
+      "hash": "135d747cfc8a1e522340b0afaa4d79681cf7ff9d3f612b928d323aad6c11c59f"
+    }
+  },
+  "2026.8.13": {
+    "x86_64_linux_musl": {
+      "etag": "0x8DF02F811787A1A",
+      "hash": "01672a7a161e275f7083f937ddb5ec76d39bb27c8c89f33ed65b902e4974dfa6"
+    },
+    "x86_64_macos": {
+      "etag": "0x8DF02F81518C6FC",
+      "hash": "8c0d2ea7cc47643ca47f8578a82fb0dbf5abbb51dabb60750088eaf4e2547732"
+    },
+    "x86_64_windows": {
+      "etag": "0x8DF02F817218D44",
+      "hash": "8a2cb35abaa336393d3605e932942541a3029732dea63cf2abb2b73f54ded6f4"
+    },
+    "aarch64_linux_musl": {
+      "etag": "0x8DF02F80B222BD0",
+      "hash": "d120242d99e4fa393523df25573eebdafceb17bb16da833df4b50910107ef232"
+    },
+    "aarch64_macos": {
+      "etag": "0x8DF02F813CCCA76",
+      "hash": "cb6e2f78f105e92b40d5ed312bb19cf63ed630471dc1adcc3393a775f756778e"
+    },
+    "aarch64_windows": {
+      "etag": "0x8DF02F8168F5874",
+      "hash": "305f6476614e1119cc9074dd0afd6f07fbbc33775faad9fba3bcf73d944403ad"
+    }
   },
   "2026.8.12": {
     "x86_64_linux_musl": {
