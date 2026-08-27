@@ -10,6 +10,23 @@
   "2.2": {
     "version": "2.2.1"
   },
+  "2.2.2": {
+    "x86_64_linux_musl": {
+      "url": "https://github.com/orium/cargo-rdme/releases/download/v2.2.2/cargo-rdme_v2.2.2_x86_64-unknown-linux-musl.tar.gz",
+      "etag": "0x8DF0445CC7C75B1",
+      "hash": "6f9f3a1ab1507cc00629bb25a23b2ef0fbcec168869a63222cffdf9989c37eb0"
+    },
+    "x86_64_windows": {
+      "url": "https://github.com/orium/cargo-rdme/releases/download/v2.2.2/cargo-rdme_v2.2.2_x86_64-pc-windows-gnu.zip",
+      "etag": "0x8DF044607618495",
+      "hash": "1325d3399d5d5087b0b928b5a583aa5576cfdcf58826068cf29b06d6c3eaf323"
+    },
+    "aarch64_macos": {
+      "url": "https://github.com/orium/cargo-rdme/releases/download/v2.2.2/cargo-rdme_v2.2.2_aarch64-apple-darwin.tar.gz",
+      "etag": "0x8DF0445A48C6B6B",
+      "hash": "9fc3ea23ef3b9275824e30d0ccebc3495d72115281efc8fd58ec6bd198755d3c"
+    }
+  },
   "2.2.1": {
     "x86_64_linux_musl": {
       "url": "https://github.com/orium/cargo-rdme/releases/download/v2.2.1/cargo-rdme_v2.2.1_x86_64-unknown-linux-musl.tar.gz",
