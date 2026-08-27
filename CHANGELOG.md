@@ -10,6 +10,8 @@ Note: In this file, do not use the hard wrap in the middle of a sentence for com
 
 ## [Unreleased]
 
+- Support `kache`. ([#1980](https://github.com/taiki-e/install-action/pull/1980), thanks @ChrisJr404)
+
 - Update `vacuum@latest` to 0.30.1.
 
 - Update `uv@latest` to 0.12.6.
