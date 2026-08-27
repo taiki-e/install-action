@@ -10,6 +10,8 @@ Note: In this file, do not use the hard wrap in the middle of a sentence for com
 
 ## [Unreleased]
 
+## [2.87.0] - 2026-08-27
+
 - Support `kache`. ([#1980](https://github.com/taiki-e/install-action/pull/1980), thanks @ChrisJr404)
 
 - Update `vacuum@latest` to 0.30.1.
@@ -7384,7 +7386,8 @@ Note: This release is considered a breaking change because installing on version
 
 Initial release
 
-[Unreleased]: https://github.com/taiki-e/install-action/compare/v2.86.8...HEAD
+[Unreleased]: https://github.com/taiki-e/install-action/compare/v2.87.0...HEAD
+[2.87.0]: https://github.com/taiki-e/install-action/compare/v2.86.8...v2.87.0
 [2.86.8]: https://github.com/taiki-e/install-action/compare/v2.86.7...v2.86.8
 [2.86.7]: https://github.com/taiki-e/install-action/compare/v2.86.6...v2.86.7
 [2.86.6]: https://github.com/taiki-e/install-action/compare/v2.86.5...v2.86.6
