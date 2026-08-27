@@ -1,0 +1,20 @@
+{
+  "repository": "https://github.com/kunobi-ninja/kache",
+  "license_markdown": "[Apache-2.0](https://github.com/kunobi-ninja/kache/blob/main/LICENSE)",
+  "tag_prefix": "v",
+  "rust_crate": "${package}",
+  "asset_name": "${package}-${rust_target}.tar.gz",
+  "version_range": ">= 0.15.0",
+  "platform": {
+    "x86_64_linux_musl": {},
+    "x86_64_macos": {},
+    "x86_64_windows": {
+      "asset_name": "${package}-${rust_target}.zip"
+    },
+    "aarch64_linux_musl": {},
+    "aarch64_macos": {},
+    "aarch64_windows": {
+      "asset_name": "${package}-${rust_target}.zip"
+    }
+  }
+}
