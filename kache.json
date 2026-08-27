@@ -1,0 +1,110 @@
+{
+  "rust_crate": "kache",
+  "template": {
+    "x86_64_linux_musl": {
+      "url": "https://github.com/kunobi-ninja/kache/releases/download/v${version}/kache-x86_64-unknown-linux-musl.tar.gz"
+    },
+    "x86_64_macos": {
+      "url": "https://github.com/kunobi-ninja/kache/releases/download/v${version}/kache-x86_64-apple-darwin.tar.gz"
+    },
+    "x86_64_windows": {
+      "url": "https://github.com/kunobi-ninja/kache/releases/download/v${version}/kache-x86_64-pc-windows-msvc.zip"
+    },
+    "aarch64_linux_musl": {
+      "url": "https://github.com/kunobi-ninja/kache/releases/download/v${version}/kache-aarch64-unknown-linux-musl.tar.gz"
+    },
+    "aarch64_macos": {
+      "url": "https://github.com/kunobi-ninja/kache/releases/download/v${version}/kache-aarch64-apple-darwin.tar.gz"
+    },
+    "aarch64_windows": {
+      "url": "https://github.com/kunobi-ninja/kache/releases/download/v${version}/kache-aarch64-pc-windows-msvc.zip"
+    }
+  },
+  "latest": {
+    "version": "0.16.0"
+  },
+  "0.16": {
+    "version": "0.16.0"
+  },
+  "0.16.0": {
+    "x86_64_linux_musl": {
+      "etag": "0x8DF02DCB24D90E2",
+      "hash": "caee657c662379475af2a0a7611ad32a6d053822036c1ec191bb8fd1c826d54b"
+    },
+    "x86_64_macos": {
+      "etag": "0x8DF02DCB1BCA27F",
+      "hash": "fef8184980ba65e9c8eaddbac7da31a7f782d994d442e23cc0ec89f396d7e889"
+    },
+    "x86_64_windows": {
+      "etag": "0x8DF02DCB20F207B",
+      "hash": "b4b53a54926e5cdc8c084562fdf215780306c9d5dc7eeaff9e4eb70c0b47fe2a"
+    },
+    "aarch64_linux_musl": {
+      "etag": "0x8DF02DCB133849D",
+      "hash": "6eabb67867022eecdbfffe43c16e75b5c5b561983742bda3c900a4cb4c50e4a7"
+    },
+    "aarch64_macos": {
+      "etag": "0x8DF02DCB1016273",
+      "hash": "6ad80d3bbb33d7db1715d5a919edbdf755dc19ca22fa83797c659147f1f9e229"
+    },
+    "aarch64_windows": {
+      "etag": "0x8DF02DCB115E4CE",
+      "hash": "4dbd93909ac11a8bfba40dbba9bc1d936dac99999d5354958506f93a2e02d641"
+    }
+  },
+  "0.15": {
+    "version": "0.15.1"
+  },
+  "0.15.1": {
+    "x86_64_linux_musl": {
+      "etag": "0x8DF020E9EFE9B1C",
+      "hash": "21a6e50fff5eeab6a4c76a17af3878369d5d3cb57b38b85d7c8a5bcd8479d300"
+    },
+    "x86_64_macos": {
+      "etag": "0x8DF020E9E75A0CF",
+      "hash": "373788f65e41cbedc313612906da3fbe9a42656f8ed7be1e73145cd663cbee41"
+    },
+    "x86_64_windows": {
+      "etag": "0x8DF020E9EBFB606",
+      "hash": "c165b40284b881426e6082a951c4fb177149ca8e4dc4e88dfbde5d4a6d1efe10"
+    },
+    "aarch64_linux_musl": {
+      "etag": "0x8DF020E9E18328E",
+      "hash": "50e8cc75fdac50e304ee3e1827c06135cc758e3a0024190d8951a00c3779da31"
+    },
+    "aarch64_macos": {
+      "etag": "0x8DF020E9DD35783",
+      "hash": "abfea79fcddad10aef742ead099e6349a0405e919dd6023d6402cc68a866705a"
+    },
+    "aarch64_windows": {
+      "etag": "0x8DF020E9DE48B4B",
+      "hash": "67b4865dadbf4700924abf69773f3874917f1edb2a2dcefab2bbf80559e7199f"
+    }
+  },
+  "0.15.0": {
+    "x86_64_linux_musl": {
+      "etag": "0x8DF01DD59FD07FB",
+      "hash": "dfe13129bb92a5656b2fb91ea06dac08f46164d488195db42d15562d6726dce6"
+    },
+    "x86_64_macos": {
+      "etag": "0x8DF01DD5968C1FB",
+      "hash": "3285aff380e69d6c1f1141c3a2d97a6d456e0397c268cdb71b6c31e79af37c3a"
+    },
+    "x86_64_windows": {
+      "etag": "0x8DF01DD59AEF1CE",
+      "hash": "35acb1f3c07eff4295b7fe6b0ad5aefb02937e0d4a1ab0b5a6a8ea399230d0e1"
+    },
+    "aarch64_linux_musl": {
+      "etag": "0x8DF01DD592332DE",
+      "hash": "f5380a5a9b215c675ea2b3de8e814aa0b2ae22db407a1d73e81c6629225fdd78"
+    },
+    "aarch64_macos": {
+      "etag": "0x8DF01DD58DB0977",
+      "hash": "65059d4190dbf2c959ab3e01d7a3147ebbc7c64d3f3fa81d1fdd596e2cd521a5"
+    },
+    "aarch64_windows": {
+      "etag": "0x8DF01DD58D89B33",
+      "hash": "e7f733ce4ab40c46b813db458680dee973afc56e52bb7f20ac8228e33980e555"
+    }
+  }
+}
