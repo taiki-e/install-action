@@ -10,6 +10,8 @@ Note: In this file, do not use the hard wrap in the middle of a sentence for com
 
 ## [Unreleased]
 
+- Update `typos@latest` to 1.49.1.
+
 - Update `syft@latest` to 1.51.1.
 
 - Update `prek@latest` to 0.5.0.
