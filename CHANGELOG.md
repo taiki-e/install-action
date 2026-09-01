@@ -10,6 +10,8 @@ Note: In this file, do not use the hard wrap in the middle of a sentence for com
 
 ## [Unreleased]
 
+- Update `kingfisher@latest` to 2.1.0.
+
 - Update `dprint@latest` to 0.57.0.
 
 ## [2.87.2] - 2026-08-30
