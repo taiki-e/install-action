@@ -10,6 +10,43 @@
   "3.36": {
     "version": "3.36.0"
   },
+  "3.36.1": {
+    "x86_64_linux_gnu": {
+      "url": "https://github.com/protocolbuffers/protobuf/releases/download/v36.1/protoc-36.1-linux-x86_64.zip",
+      "etag": "0x8DF07AC68ED08A7",
+      "hash": "c4bc672d9d49214dc8cafdceadf4df92182d6ca8e3ec65a56b2d7de5602669b4"
+    },
+    "x86_64_macos": {
+      "url": "https://github.com/protocolbuffers/protobuf/releases/download/v36.1/protoc-36.1-osx-x86_64.zip",
+      "etag": "0x8DF07AC6903D25E",
+      "hash": "ee2c5496e4af0aa6a224894bc0f7025145260e004d890487d510725ce8b473eb"
+    },
+    "x86_64_windows": {
+      "url": "https://github.com/protocolbuffers/protobuf/releases/download/v36.1/protoc-36.1-win64.zip",
+      "etag": "0x8DF07AC6949DB6A",
+      "hash": "390e515cb456e6a978553bdb57baf087b054885077fd6da7f7ff0160279c07d6"
+    },
+    "aarch64_linux_gnu": {
+      "url": "https://github.com/protocolbuffers/protobuf/releases/download/v36.1/protoc-36.1-linux-aarch_64.zip",
+      "etag": "0x8DF07AC68807277",
+      "hash": "237a68856edf1bd28b6204bddd0596c1cf46d298bc29c620012540b2e44c73e7"
+    },
+    "aarch64_macos": {
+      "url": "https://github.com/protocolbuffers/protobuf/releases/download/v36.1/protoc-36.1-osx-aarch_64.zip",
+      "etag": "0x8DF07AC68F1BE47",
+      "hash": "de56d57afe30c5d191b11d24ff93dd4025728d7fb43b773886b2d3613e0bdbb2"
+    },
+    "powerpc64le_linux_gnu": {
+      "url": "https://github.com/protocolbuffers/protobuf/releases/download/v36.1/protoc-36.1-linux-ppcle_64.zip",
+      "etag": "0x8DF07AC68940A4E",
+      "hash": "ecf722a3df8446af59c3c2f01f52978271eff396fccd48d8e793a87b551518cc"
+    },
+    "s390x_linux_gnu": {
+      "url": "https://github.com/protocolbuffers/protobuf/releases/download/v36.1/protoc-36.1-linux-s390_64.zip",
+      "etag": "0x8DF07AC688691D8",
+      "hash": "dd1bc36cd2efa7ecfa21ae03507d2e00db46f1f05e817d9bd339eb5efe6ab1e8"
+    }
+  },
   "3.36.0": {
     "x86_64_linux_gnu": {
       "url": "https://github.com/protocolbuffers/protobuf/releases/download/v36.0/protoc-36.0-linux-x86_64.zip",
