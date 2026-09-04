@@ -26,8 +26,6 @@
     "aarch64_windows": {
       "asset_name": "${package}-${rust_target}.zip",
       "bin": "${package}${exe}"
-    },
-    "riscv64_linux_gnu": {},
-    "s390x_linux_gnu": {}
+    }
   }
 }
