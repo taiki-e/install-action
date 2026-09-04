@@ -10,6 +10,44 @@
   "3.11": {
     "version": "3.11.2"
   },
+  "3.11.3": {
+    "x86_64_linux_musl": {
+      "url": "https://github.com/editorconfig-checker/editorconfig-checker/releases/download/v3.11.3/ec-linux-amd64.tar.gz",
+      "etag": "0x8DF09FCF0FBC539",
+      "hash": "6a73858f8906e466910fb3b3b525c206b27dacdad138910b0b0513f021ab32c4",
+      "bin": "bin/ec-linux-amd64"
+    },
+    "x86_64_macos": {
+      "url": "https://github.com/editorconfig-checker/editorconfig-checker/releases/download/v3.11.3/ec-darwin-amd64.tar.gz",
+      "etag": "0x8DF09FCF1CD5480",
+      "hash": "126c8fa83500389078f6b2072a04170f063787ec9905e5d1ab69a5a62ee5b10d",
+      "bin": "bin/ec-darwin-amd64"
+    },
+    "x86_64_windows": {
+      "url": "https://github.com/editorconfig-checker/editorconfig-checker/releases/download/v3.11.3/ec-windows-amd64.zip",
+      "etag": "0x8DF09FCF0FA196D",
+      "hash": "0d6739507ac0b57099f0339fce1de0856584c71dd878c89cbc07845884f42ab5",
+      "bin": "bin/ec-windows-amd64.exe"
+    },
+    "aarch64_linux_musl": {
+      "url": "https://github.com/editorconfig-checker/editorconfig-checker/releases/download/v3.11.3/ec-linux-arm64.tar.gz",
+      "etag": "0x8DF09FCF0B767F6",
+      "hash": "6d333917ad3c21cf0a23c191ec660549de381e6df56ee5e76ace0c513da2b7b4",
+      "bin": "bin/ec-linux-arm64"
+    },
+    "aarch64_macos": {
+      "url": "https://github.com/editorconfig-checker/editorconfig-checker/releases/download/v3.11.3/ec-darwin-arm64.tar.gz",
+      "etag": "0x8DF09FCF1B7E8B6",
+      "hash": "eeb0e5d1db4a913277da781bc40802542eb42c4f3f43b7c87c000714dd905faf",
+      "bin": "bin/ec-darwin-arm64"
+    },
+    "aarch64_windows": {
+      "url": "https://github.com/editorconfig-checker/editorconfig-checker/releases/download/v3.11.3/ec-windows-arm64.zip",
+      "etag": "0x8DF09FCF16167D7",
+      "hash": "f9e44367c5139bcce87e67e3bd7d9a878978692469decff607c1edf8e091c468",
+      "bin": "bin/ec-windows-arm64.exe"
+    }
+  },
   "3.11.2": {
     "x86_64_linux_musl": {
       "url": "https://github.com/editorconfig-checker/editorconfig-checker/releases/download/v3.11.2/ec-linux-amd64.tar.gz",
