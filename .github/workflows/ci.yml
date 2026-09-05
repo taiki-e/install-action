@@ -92,7 +92,7 @@ jobs:
           - container: debian:testing # glibc
           - container: debian:13-slim # glibc 2.41
           - container: debian:12-slim # glibc 2.36
-          - container: debian:11-slim # glibc 2.31, EoL
+          # - container: debian:11-slim # glibc 2.31, EoL, end of LTS
           - container: debian:10-slim # glibc 2.28, EoL, end of LTS
           - container: debian:9-slim # glibc 2.24, EoL, end of LTS
           - container: debian/eol:jessie-slim # 8, glibc 2.19, EoL, end of LTS
@@ -154,12 +154,12 @@ jobs:
     steps:
       - name: Install requirements (old Debian)
         run: |
-          # In Debian, the old repositories is removed from the main mirrors some time after EoL.
+          # In Debian, the old repositories is removed from the main mirrors some time after end of LTS.
           codename=$(grep -E '^VERSION_CODENAME=' /etc/os-release | cut -d= -f2)
           sed -i /etc/apt/sources.list -e 's/deb.debian.org/archive.debian.org/g' \
             -e 's|security.debian.org|archive.debian.org/|g' \
             -e "/${codename}-updates/d"
-        if: startsWith(matrix.container, 'debian:9') || startsWith(matrix.container, 'debian:10')
+        if: startsWith(matrix.container, 'debian:9') || startsWith(matrix.container, 'debian:10') || startsWith(matrix.container, 'debian:11')
       - name: Install requirements (CentOS)
         run: |
           retry() {
