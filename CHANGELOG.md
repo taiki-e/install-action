@@ -10,6 +10,8 @@ Note: In this file, do not use the hard wrap in the middle of a sentence for com
 
 ## [Unreleased]
 
+## [2.87.6] - 2026-09-05
+
 - Update `rafn@latest` to 0.1.6.
 
 - Update `editorconfig-checker@latest` to 3.11.3.
@@ -7470,7 +7472,8 @@ Note: This release is considered a breaking change because installing on version
 
 Initial release
 
-[Unreleased]: https://github.com/taiki-e/install-action/compare/v2.87.5...HEAD
+[Unreleased]: https://github.com/taiki-e/install-action/compare/v2.87.6...HEAD
+[2.87.6]: https://github.com/taiki-e/install-action/compare/v2.87.5...v2.87.6
 [2.87.5]: https://github.com/taiki-e/install-action/compare/v2.87.4...v2.87.5
 [2.87.4]: https://github.com/taiki-e/install-action/compare/v2.87.3...v2.87.4
 [2.87.3]: https://github.com/taiki-e/install-action/compare/v2.87.2...v2.87.3
