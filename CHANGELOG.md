@@ -10,6 +10,8 @@ Note: In this file, do not use the hard wrap in the middle of a sentence for com
 
 ## [Unreleased]
 
+- Update `rafn@latest` to 0.1.6.
+
 - Update `editorconfig-checker@latest` to 3.11.3.
 
 - Update `dprint@latest` to 0.57.1.
