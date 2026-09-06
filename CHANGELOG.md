@@ -10,6 +10,8 @@ Note: In this file, do not use the hard wrap in the middle of a sentence for com
 
 ## [Unreleased]
 
+## [2.87.7] - 2026-09-06
+
 - Update `wasm-bindgen@latest` to 0.2.128.
 
 - Update `uv@latest` to 0.12.10.
@@ -7480,7 +7482,8 @@ Note: This release is considered a breaking change because installing on version
 
 Initial release
 
-[Unreleased]: https://github.com/taiki-e/install-action/compare/v2.87.6...HEAD
+[Unreleased]: https://github.com/taiki-e/install-action/compare/v2.87.7...HEAD
+[2.87.7]: https://github.com/taiki-e/install-action/compare/v2.87.6...v2.87.7
 [2.87.6]: https://github.com/taiki-e/install-action/compare/v2.87.5...v2.87.6
 [2.87.5]: https://github.com/taiki-e/install-action/compare/v2.87.4...v2.87.5
 [2.87.4]: https://github.com/taiki-e/install-action/compare/v2.87.3...v2.87.4
