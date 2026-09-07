@@ -10,6 +10,8 @@ Note: In this file, do not use the hard wrap in the middle of a sentence for com
 
 ## [Unreleased]
 
+## [2.87.8] - 2026-09-07
+
 - Update `shfmt@latest` to 3.14.1.
 
 - Update `release-plz@latest` to 0.3.162.
@@ -7496,7 +7498,8 @@ Note: This release is considered a breaking change because installing on version
 
 Initial release
 
-[Unreleased]: https://github.com/taiki-e/install-action/compare/v2.87.7...HEAD
+[Unreleased]: https://github.com/taiki-e/install-action/compare/v2.87.8...HEAD
+[2.87.8]: https://github.com/taiki-e/install-action/compare/v2.87.7...v2.87.8
 [2.87.7]: https://github.com/taiki-e/install-action/compare/v2.87.6...v2.87.7
 [2.87.6]: https://github.com/taiki-e/install-action/compare/v2.87.5...v2.87.6
 [2.87.5]: https://github.com/taiki-e/install-action/compare/v2.87.4...v2.87.5
