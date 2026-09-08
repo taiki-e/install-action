@@ -10,6 +10,8 @@ Note: In this file, do not use the hard wrap in the middle of a sentence for com
 
 ## [Unreleased]
 
+- Update `oxfmt@latest` to 1.82.0.
+
 - Update `kache@latest` to 0.18.0.
 
 - Update `bpf-linker@latest` to 0.11.1.
