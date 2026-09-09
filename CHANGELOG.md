@@ -10,6 +10,8 @@ Note: In this file, do not use the hard wrap in the middle of a sentence for com
 
 ## [Unreleased]
 
+- Update `bpf-linker@latest` to 0.11.1.
+
 ## [2.87.8] - 2026-09-07
 
 - Update `shfmt@latest` to 3.14.1.
