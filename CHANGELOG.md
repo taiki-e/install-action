@@ -10,6 +10,8 @@ Note: In this file, do not use the hard wrap in the middle of a sentence for com
 
 ## [Unreleased]
 
+- Update `kache@latest` to 0.18.0.
+
 - Update `d2@latest` to 0.9.0.
 
 - Update `bpf-linker@latest` to 0.11.1.
