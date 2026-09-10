@@ -118,12 +118,7 @@ fn main() {
 
         if let Some(crate_repository) = info.crate_.repository.clone() {
             if !crate_repository.to_lowercase().starts_with(&base_info.repository.to_lowercase()) {
-                // TODO: wasm-pack repo has been moved, but there is no release since it.
-                if package != "wasm-pack" {
-                    panic!(
-                        "repository {crate_repository} from crates.io differs from base manifest"
-                    );
-                }
+                panic!("repository {crate_repository} from crates.io differs from base manifest");
             }
         } else {
             panic!("crate metadata does not include a repository");
