@@ -14,7 +14,7 @@ Note: In this file, do not use the hard wrap in the middle of a sentence for com
 
 - Update `uv@latest` to 0.12.11.
 
-- Update `tombi@latest` to 1.5.3.
+- Update `tombi@latest` to 1.5.4.
 
 - Update `release-plz@latest` to 0.3.164.
 
