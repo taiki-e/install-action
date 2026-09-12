@@ -10,6 +10,8 @@ Note: In this file, do not use the hard wrap in the middle of a sentence for com
 
 ## [Unreleased]
 
+- Update `uv@latest` to 0.12.13.
+
 - Update `release-plz@latest` to 0.3.165.
 
 - Update `protoc-gen-connect-openapi@latest` to 0.27.1.
