@@ -2,10 +2,45 @@
   "rust_crate": null,
   "template": null,
   "latest": {
-    "version": "2.5.1"
+    "version": "2.6.0"
   },
   "2": {
-    "version": "2.5.1"
+    "version": "2.6.0"
+  },
+  "2.6": {
+    "version": "2.6.0"
+  },
+  "2.6.0": {
+    "x86_64_linux_musl": {
+      "url": "https://github.com/google/osv-scanner/releases/download/v2.6.0/osv-scanner_linux_amd64",
+      "etag": "0x8DF1209EDD577F7",
+      "hash": "ca69b3d3cd08f889a49dc0a383122f71cc528b83803671df5fd874d97485b108"
+    },
+    "x86_64_macos": {
+      "url": "https://github.com/google/osv-scanner/releases/download/v2.6.0/osv-scanner_darwin_amd64",
+      "etag": "0x8DF1209EDF9EDFE",
+      "hash": "60c5296637e977b28eeda5c7f13573e447659a632922737f94d11fa7e30ad6ca"
+    },
+    "x86_64_windows": {
+      "url": "https://github.com/google/osv-scanner/releases/download/v2.6.0/osv-scanner_windows_amd64.exe",
+      "etag": "0x8DF1209EC8E9020",
+      "hash": "e0ed7644118b717b028c249ee9d3515024e55e8510747ca08906eb96765354d6"
+    },
+    "aarch64_linux_musl": {
+      "url": "https://github.com/google/osv-scanner/releases/download/v2.6.0/osv-scanner_linux_arm64",
+      "etag": "0x8DF1209EC7C1472",
+      "hash": "2c71403eb443d05891c4f268c3ad771cf4f16e5443463fd7851ef8f454d3c7e4"
+    },
+    "aarch64_macos": {
+      "url": "https://github.com/google/osv-scanner/releases/download/v2.6.0/osv-scanner_darwin_arm64",
+      "etag": "0x8DF1209EC888999",
+      "hash": "98c460dcd37de25819babd757d04542045b6243113e209edcd4d89fedb0256b4"
+    },
+    "aarch64_windows": {
+      "url": "https://github.com/google/osv-scanner/releases/download/v2.6.0/osv-scanner_windows_arm64.exe",
+      "etag": "0x8DF1209EC8AAA0B",
+      "hash": "ca1379da0e408279ef2c85cde0846a903495738a91c7b065a208048437c1686c"
+    }
   },
   "2.5": {
     "version": "2.5.1"
