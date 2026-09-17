@@ -21,7 +21,62 @@
     }
   },
   "latest": {
-    "version": "0.21.0"
+    "version": "0.22.0"
+  },
+  "0.23.1": {
+    "x86_64_linux_musl": {
+      "etag": "0x8DF14972CA62926",
+      "hash": "f79ed4e865ccaccdf1288ac51d0b2e1e0a9b316aaea60a871cecee556f382943"
+    },
+    "x86_64_macos": {
+      "etag": "0x8DF14972C1A2CAC",
+      "hash": "313560f5df5170e92612817a44c41f6ac1bfc13ec13ea2290f412aa3bd06cbf6"
+    },
+    "x86_64_windows": {
+      "etag": "0x8DF14972C778579",
+      "hash": "46943a42b0d3ff1a80442ba792d1c016cfabf7ceb6296ee15b8d3ceaff22f0c8"
+    },
+    "aarch64_linux_musl": {
+      "etag": "0x8DF14972BED8288",
+      "hash": "3ade5ccdcba4aaae66b9896b8ff258071aff0296398a11dd880c6cc1240084af"
+    },
+    "aarch64_macos": {
+      "etag": "0x8DF14972B8BBF6E",
+      "hash": "c2d16f19ffcf369cacc562c6f4343a81e442feaad1b1abf0fd437b0b17c3e3f5"
+    },
+    "aarch64_windows": {
+      "etag": "0x8DF14972B8F64D9",
+      "hash": "071f4e47254017166deb83369327d94c6e16ea3514a18f37175d490c86389abb"
+    }
+  },
+  "0.23.0": {
+    "x86_64_linux_musl": {
+      "etag": "0x8DF144257987A6F",
+      "hash": "918ca5a6f4f7ce820d28b85336770ae83eab1759fa712dfa95afb32de5f439e9"
+    },
+    "x86_64_macos": {
+      "etag": "0x8DF1442571066D6",
+      "hash": "317c54ca5bcaa52a9886c6c3961fb5517cc3694458cb03cde32589f44ba55e03"
+    },
+    "x86_64_windows": {
+      "etag": "0x8DF144257701148",
+      "hash": "45cd496ce6b580324fde4b26984ed3169d5e7695f5b5a8d2e83628058520817a"
+    },
+    "aarch64_linux_musl": {
+      "etag": "0x8DF144256D94143",
+      "hash": "49ff8ce883b6d28fc18b6f095e627054b0c4c5fcf0a841c75efa74da1cbc1801"
+    },
+    "aarch64_macos": {
+      "etag": "0x8DF14425679B282",
+      "hash": "050f68aabef044d71c896f27112d9554b64d85c58c92f29d1e54e73544ff55a7"
+    },
+    "aarch64_windows": {
+      "etag": "0x8DF1442568344AE",
+      "hash": "573fa46a6bbd2b15a10f9b90c304ec4d51ba5d2975a44c5f300761aec7729f76"
+    }
+  },
+  "0.22": {
+    "version": "0.22.0"
   },
   "0.22.0": {
     "x86_64_linux_musl": {

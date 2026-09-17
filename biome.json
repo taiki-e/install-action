@@ -2,13 +2,51 @@
   "rust_crate": null,
   "template": null,
   "latest": {
-    "version": "2.5.13"
+    "version": "2.5.14"
   },
   "2": {
-    "version": "2.5.13"
+    "version": "2.5.14"
   },
   "2.5": {
-    "version": "2.5.13"
+    "version": "2.5.14"
+  },
+  "2.5.14": {
+    "x86_64_linux_musl": {
+      "url": "https://github.com/biomejs/biome/releases/download/%40biomejs/biome%402.5.14/biome-linux-x64-musl",
+      "etag": "0x8DF13C77F750D05",
+      "hash": "d15a39b256ca1294fe8f8817f9162f7c26229ca0cb8bd19d0369540c1a01d781",
+      "bin": "biome"
+    },
+    "x86_64_macos": {
+      "url": "https://github.com/biomejs/biome/releases/download/%40biomejs/biome%402.5.14/biome-darwin-x64",
+      "etag": "0x8DF13C77F6A1CD4",
+      "hash": "b331448d7afb592cc4674e9bd6905eae5e79f5dd9b34b61b44803a6b7a91b801",
+      "bin": "biome"
+    },
+    "x86_64_windows": {
+      "url": "https://github.com/biomejs/biome/releases/download/%40biomejs/biome%402.5.14/biome-win32-x64.exe",
+      "etag": "0x8DF13C77FEFF218",
+      "hash": "bef8f088617c8364314f55dffdc7b8ddabe12fee9e1e71f45f708a7027579280",
+      "bin": "biome.exe"
+    },
+    "aarch64_linux_musl": {
+      "url": "https://github.com/biomejs/biome/releases/download/%40biomejs/biome%402.5.14/biome-linux-arm64-musl",
+      "etag": "0x8DF13C77F6897EC",
+      "hash": "e97669c6e998e4a160c71bd97757eae21fe8c8cb58a044311096779cd1d00454",
+      "bin": "biome"
+    },
+    "aarch64_macos": {
+      "url": "https://github.com/biomejs/biome/releases/download/%40biomejs/biome%402.5.14/biome-darwin-arm64",
+      "etag": "0x8DF13C77FAFB139",
+      "hash": "3d1194d0a7b720315fb6f8cbafeb5b18ca7100c3e635e8ce82ef46b315de9c0e",
+      "bin": "biome"
+    },
+    "aarch64_windows": {
+      "url": "https://github.com/biomejs/biome/releases/download/%40biomejs/biome%402.5.14/biome-win32-arm64.exe",
+      "etag": "0x8DF13C77FC37111",
+      "hash": "af61f09b037a6cdf24ed3b37664de83e9b61bf8a4c8dd691ea6b64e808c035c8",
+      "bin": "biome.exe"
+    }
   },
   "2.5.13": {
     "x86_64_linux_musl": {
