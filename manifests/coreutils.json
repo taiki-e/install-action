@@ -4,6 +4,50 @@
   "latest": {
     "version": "0.11.0"
   },
+  "0.12.0": {
+    "x86_64_linux_musl": {
+      "url": "https://github.com/uutils/coreutils/releases/download/0.12.0/coreutils-0.12.0-x86_64-unknown-linux-musl.tar.gz",
+      "etag": "0x8DF144ABA46F849",
+      "hash": "9b555b01457279bcc3e46753f0ef324fd3d02a0535111200a4632d1297263b54",
+      "bin": "coreutils-0.12.0-x86_64-unknown-linux-musl/coreutils"
+    },
+    "x86_64_macos": {
+      "url": "https://github.com/uutils/coreutils/releases/download/0.12.0/coreutils-0.12.0-x86_64-apple-darwin.tar.gz",
+      "etag": "0x8DF14596B37635F",
+      "hash": "a845b274f91c23b779f097e15045f4bf7cbcf99d6e62e6878d9db816e6887586",
+      "bin": "coreutils-0.12.0-x86_64-apple-darwin/coreutils"
+    },
+    "x86_64_windows": {
+      "url": "https://github.com/uutils/coreutils/releases/download/0.12.0/coreutils-0.12.0-x86_64-pc-windows-msvc.zip",
+      "etag": "0x8DF144DCB9273F5",
+      "hash": "45d6760c136ef42cdba1e2dbb492b0858be98099d6c7fb3e300a3adcfbc54cfe",
+      "bin": "coreutils-0.12.0-x86_64-pc-windows-msvc/coreutils.exe"
+    },
+    "aarch64_linux_musl": {
+      "url": "https://github.com/uutils/coreutils/releases/download/0.12.0/coreutils-0.12.0-aarch64-unknown-linux-musl.tar.gz",
+      "etag": "0x8DF144AB116BD3B",
+      "hash": "614a0224ea49f85020cfc30ca980599965fa8501131f9588db4fa41c125a7805",
+      "bin": "coreutils-0.12.0-aarch64-unknown-linux-musl/coreutils"
+    },
+    "aarch64_macos": {
+      "url": "https://github.com/uutils/coreutils/releases/download/0.12.0/coreutils-0.12.0-aarch64-apple-darwin.tar.gz",
+      "etag": "0x8DF145B55CE6B18",
+      "hash": "7caea447564405b3eb50cce2a89d314df07d1b7a67090dc4cc7c82eba7014052",
+      "bin": "coreutils-0.12.0-aarch64-apple-darwin/coreutils"
+    },
+    "aarch64_windows": {
+      "url": "https://github.com/uutils/coreutils/releases/download/0.12.0/coreutils-0.12.0-aarch64-pc-windows-msvc.zip",
+      "etag": "0x8DF1447F2DC58A8",
+      "hash": "3ee5621c16ccb290ac3a419613afc14879f1e81db7cdb21a0034e32c71eec565",
+      "bin": "coreutils-0.12.0-aarch64-pc-windows-msvc/coreutils.exe"
+    },
+    "riscv64_linux_musl": {
+      "url": "https://github.com/uutils/coreutils/releases/download/0.12.0/coreutils-0.12.0-riscv64gc-unknown-linux-musl.tar.gz",
+      "etag": "0x8DF1449F1ACA28D",
+      "hash": "7e52b31bdb42c327269b78284a92f461423d0716f9a96bc1dc0af9bd79ae480a",
+      "bin": "coreutils-0.12.0-riscv64gc-unknown-linux-musl/coreutils"
+    }
+  },
   "0.11": {
     "version": "0.11.0"
   },
