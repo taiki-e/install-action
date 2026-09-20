@@ -10,6 +10,8 @@ Note: In this file, do not use the hard wrap in the middle of a sentence for com
 
 ## [Unreleased]
 
+- Update `git-cliff@latest` to 2.14.2.
+
 - Update `cargo-tarpaulin@latest` to 0.37.3.
 
 - Update `cargo-leptos@latest` to 0.3.9.
