@@ -10,6 +10,8 @@ Note: In this file, do not use the hard wrap in the middle of a sentence for com
 
 ## [Unreleased]
 
+## [2.87.18] - 2026-09-22
+
 - Update `oxfmt@latest` to 1.84.0.
 
 - Update `mise@latest` to 2026.9.12.
@@ -7644,7 +7646,8 @@ Note: This release is considered a breaking change because installing on version
 
 Initial release
 
-[Unreleased]: https://github.com/taiki-e/install-action/compare/v2.87.17...HEAD
+[Unreleased]: https://github.com/taiki-e/install-action/compare/v2.87.18...HEAD
+[2.87.18]: https://github.com/taiki-e/install-action/compare/v2.87.17...v2.87.18
 [2.87.17]: https://github.com/taiki-e/install-action/compare/v2.87.16...v2.87.17
 [2.87.16]: https://github.com/taiki-e/install-action/compare/v2.87.15...v2.87.16
 [2.87.15]: https://github.com/taiki-e/install-action/compare/v2.87.14...v2.87.15
