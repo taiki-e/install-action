@@ -10,6 +10,8 @@ Note: In this file, do not use the hard wrap in the middle of a sentence for com
 
 ## [Unreleased]
 
+## [2.87.19] - 2026-09-23
+
 - Update `wasmtime@latest` to 49.0.0.
 
 - Update `cargo-shear@latest` to 1.13.5.
@@ -7652,7 +7654,8 @@ Note: This release is considered a breaking change because installing on version
 
 Initial release
 
-[Unreleased]: https://github.com/taiki-e/install-action/compare/v2.87.18...HEAD
+[Unreleased]: https://github.com/taiki-e/install-action/compare/v2.87.19...HEAD
+[2.87.19]: https://github.com/taiki-e/install-action/compare/v2.87.18...v2.87.19
 [2.87.18]: https://github.com/taiki-e/install-action/compare/v2.87.17...v2.87.18
 [2.87.17]: https://github.com/taiki-e/install-action/compare/v2.87.16...v2.87.17
 [2.87.16]: https://github.com/taiki-e/install-action/compare/v2.87.15...v2.87.16
