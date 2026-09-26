@@ -10,6 +10,8 @@ Note: In this file, do not use the hard wrap in the middle of a sentence for com
 
 ## [Unreleased]
 
+- Update `wasm-bindgen@latest` to 0.2.129.
+
 - Update `protoc-gen-connect-openapi@latest` to 0.27.3.
 
 - Update `wasmtime@latest` to 49.0.1.
