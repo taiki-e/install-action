@@ -1,0 +1,29 @@
+{
+  "rust_crate": "similarity-rs",
+  "template": {
+    "x86_64_linux_gnu": {
+      "url": "https://github.com/mizchi/similarity/releases/download/v${version}/similarity-v${version}-x86_64-unknown-linux-gnu.tar.gz",
+      "bin": "similarity-v${version}-x86_64-unknown-linux-gnu/similarity-rs"
+    },
+    "aarch64_macos": {
+      "url": "https://github.com/mizchi/similarity/releases/download/v${version}/similarity-v${version}-aarch64-apple-darwin.tar.gz",
+      "bin": "similarity-v${version}-aarch64-apple-darwin/similarity-rs"
+    }
+  },
+  "latest": {
+    "version": "0.5.0"
+  },
+  "0.5": {
+    "version": "0.5.0"
+  },
+  "0.5.0": {
+    "x86_64_linux_gnu": {
+      "etag": "0x8DE97D292B71A6B",
+      "hash": "2afda6201b6afb1ee36c1ce51b95a538ec99310c79f661905536d917470a406a"
+    },
+    "aarch64_macos": {
+      "etag": "0x8DE97D2929D94A7",
+      "hash": "d5a6abcf915b87061857c23a1934883a99b93970a66c627cc8b7f3286c0ba916"
+    }
+  }
+}
