@@ -1,0 +1,13 @@
+{
+  "repository": "https://github.com/mizchi/similarity",
+  "license_markdown": "[MIT](https://github.com/mizchi/similarity/blob/main/LICENSE)",
+  "tag_prefix": "v",
+  "version_range": ">= 0.5.0",
+  "rust_crate": "${package}",
+  "asset_name": "similarity-v${version}-${rust_target}.tar.gz",
+  "bin": "similarity-v${version}-${rust_target}/${package}${exe}",
+  "platform": {
+    "x86_64_linux_gnu": {},
+    "aarch64_macos": {}
+  }
+}
