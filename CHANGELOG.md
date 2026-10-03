@@ -10,6 +10,8 @@ Note: In this file, do not use the hard wrap in the middle of a sentence for com
 
 ## [Unreleased]
 
+- Update `espup@latest` to 0.18.0.
+
 - Update `dprint@latest` to 0.58.0.
 
 - Update `cargo-crap@latest` to 0.6.1.
