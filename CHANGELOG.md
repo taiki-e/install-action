@@ -10,6 +10,8 @@ Note: In this file, do not use the hard wrap in the middle of a sentence for com
 
 ## [Unreleased]
 
+- Update `trivy@latest` to 0.75.0.
+
 - Update `tombi@latest` to 1.7.1.
 
 - Update `protoc-gen-connect-openapi@latest` to 0.28.0.
