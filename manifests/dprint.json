@@ -27,7 +27,62 @@
     }
   },
   "latest": {
-    "version": "0.57.4"
+    "version": "0.58.0"
+  },
+  "0.59.0": {
+    "x86_64_linux_musl": {
+      "etag": "0x8DF20C1591510F1",
+      "hash": "c1e709d629caf8c1f8ef8328f2b5136c68dd5e878b36b04403bf9dfd133c559f"
+    },
+    "x86_64_macos": {
+      "etag": "0x8DF20C15906F00D",
+      "hash": "cf3efa1f000125feac934f1afcf76daa35dad4c79dc22ae4c58f92de114e0845"
+    },
+    "x86_64_windows": {
+      "etag": "0x8DF20C158F74A3D",
+      "hash": "f75040d7288d3cf0a271b025dedcab589edec6b363c481790ff53850dadae6f5"
+    },
+    "aarch64_linux_musl": {
+      "etag": "0x8DF20C1591254E9",
+      "hash": "b90a0e7ede5fbae3e9f4e0e50455902a7e436f575c8db3b9b7fea9b7a0303210"
+    },
+    "aarch64_macos": {
+      "etag": "0x8DF20C158FA540F",
+      "hash": "1888b152b3541c3690ec5291dd58bde7116e6c8beb4aa1f242187f22071df22f"
+    },
+    "riscv64_linux_gnu": {
+      "etag": "0x8DF20C15965A071",
+      "hash": "b88f8c1d6affa3743f60404feed51703b8d77306d0fe3b451e4fb7a4e4f84054"
+    }
+  },
+  "0.58": {
+    "version": "0.58.0"
+  },
+  "0.58.0": {
+    "x86_64_linux_musl": {
+      "etag": "0x8DF1E45DCFD2589",
+      "hash": "06c2a239a1214d5f9e76c364cadbd0ffaee710fdb516ca6448b08860364db6e2"
+    },
+    "x86_64_macos": {
+      "etag": "0x8DF1E45DCF062AF",
+      "hash": "47e0c48127c9ac306bc66c4af0c3146ef41bd008c5eccc956691c09e2661f077"
+    },
+    "x86_64_windows": {
+      "etag": "0x8DF1E45DCE634EE",
+      "hash": "6ab827fba525918670ff666edb5fc50917157c803c9abdc463131f75b5df0840"
+    },
+    "aarch64_linux_musl": {
+      "etag": "0x8DF1E45DCF64F6D",
+      "hash": "c74dd4f48dd9b8d6d595acfb238dd32ede67bdf792e8c6e2b8760cdaff9d80fb"
+    },
+    "aarch64_macos": {
+      "etag": "0x8DF1E45DCFD9A36",
+      "hash": "06a7ea017e4d7da296f8a44fabb2f3d6ffafa91bbd5fddd4830bdc418bacb46d"
+    },
+    "riscv64_linux_gnu": {
+      "etag": "0x8DF1E45DCF8E49A",
+      "hash": "81b2e4138324b1bb78bafc13e72d8073e001c7164a579ede11128534ec41bfe4"
+    }
   },
   "0.57": {
     "version": "0.57.4"
