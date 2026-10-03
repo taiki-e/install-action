@@ -396,47 +396,68 @@ fn main() {
                         }
                         "syft" => {
                             // Refs: https://oss.anchore.com/docs/installation/verification/
-                            let [checksum, certificate, signature] =
-                                ["checksums.txt", "checksums.txt.pem", "checksums.txt.sig"].map(
-                                    |f| {
-                                        let asset = release
-                                            .assets
-                                            .iter()
-                                            .find(|asset| asset.name.ends_with(f))
-                                            .unwrap();
-                                        let download_cache =
-                                            download_cache_dir.join(format!("{version}-{f}"));
-                                        let url = &asset.browser_download_url;
-                                        eprint!(
-                                            "downloading {url} for signature verification ... "
-                                        );
-                                        if download_cache.is_file() {
-                                            eprintln!("already downloaded");
-                                        } else {
-                                            download_to_buf(url, &mut buf);
-                                            eprintln!("download complete");
-                                            fs::write(&download_cache, &buf).unwrap();
-                                            buf.clear();
-                                        }
-                                        download_cache
-                                    },
-                                );
+                            let mut checksum = None;
+                            let mut bundle = None;
+                            let mut certificate = None;
+                            let mut signature = None;
+                            for (f, out) in [
+                                ("checksums.txt", &mut checksum),
+                                /* >= 1.54.0 */ ("checksums.txt.sigstore.json", &mut bundle),
+                                /* < 1.54.0 */ ("checksums.txt.pem", &mut certificate),
+                                /* < 1.54.0 */ ("checksums.txt.sig", &mut signature),
+                            ] {
+                                let Some(asset) =
+                                    release.assets.iter().find(|asset| asset.name.ends_with(f))
+                                else {
+                                    continue;
+                                };
+                                let download_cache =
+                                    download_cache_dir.join(format!("{version}-{f}"));
+                                let url = &asset.browser_download_url;
+                                eprint!("downloading {url} for signature verification ... ");
+                                if download_cache.is_file() {
+                                    eprintln!("already downloaded");
+                                } else {
+                                    download_to_buf(url, &mut buf);
+                                    eprintln!("download complete");
+                                    fs::write(&download_cache, &buf).unwrap();
+                                    buf.clear();
+                                }
+                                *out = Some(download_cache);
+                            }
+                            let checksum = checksum.unwrap();
                             eprint!("verifying checksum file for {package}@{version} ... ");
-                            cmd!(
-                                "cosign",
-                                "verify-blob",
-                                &checksum,
-                                "--certificate",
-                                certificate,
-                                "--signature",
-                                signature,
-                                "--certificate-identity-regexp",
-                                format!("https://github\\.com/{repo}/\\.github/workflows/.+"),
-                                "--certificate-oidc-issuer",
-                                "https://token.actions.githubusercontent.com"
-                            )
-                            .run()
-                            .unwrap();
+                            if let Some(bundle) = bundle {
+                                cmd!(
+                                    "cosign",
+                                    "verify-blob",
+                                    &checksum,
+                                    "--bundle",
+                                    bundle,
+                                    "--certificate-identity-regexp",
+                                    format!("https://github\\.com/{repo}/\\.github/workflows/.+"),
+                                    "--certificate-oidc-issuer",
+                                    "https://token.actions.githubusercontent.com"
+                                )
+                                .run()
+                                .unwrap();
+                            } else {
+                                cmd!(
+                                    "cosign",
+                                    "verify-blob",
+                                    &checksum,
+                                    "--certificate",
+                                    certificate.unwrap(),
+                                    "--signature",
+                                    signature.unwrap(),
+                                    "--certificate-identity-regexp",
+                                    format!("https://github\\.com/{repo}/\\.github/workflows/.+"),
+                                    "--certificate-oidc-issuer",
+                                    "https://token.actions.githubusercontent.com"
+                                )
+                                .run()
+                                .unwrap();
+                            }
                             verified_checksum = Some(
                                 fs::read_to_string(checksum)
                                     .unwrap()
