@@ -10,6 +10,8 @@ Note: In this file, do not use the hard wrap in the middle of a sentence for com
 
 ## [Unreleased]
 
+- Update `protoc-gen-connect-openapi@latest` to 0.28.0.
+
 - Update `mise@latest` to 2026.10.0.
 
 - Update `kingfisher@latest` to 2.9.1.
