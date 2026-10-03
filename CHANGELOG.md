@@ -10,6 +10,8 @@ Note: In this file, do not use the hard wrap in the middle of a sentence for com
 
 ## [Unreleased]
 
+- Update `kache@latest` to 0.28.1.
+
 - Update `espup@latest` to 0.18.0.
 
 - Update `dprint@latest` to 0.58.0.
