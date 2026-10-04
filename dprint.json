@@ -27,7 +27,62 @@
     }
   },
   "latest": {
-    "version": "0.58.0"
+    "version": "0.59.0"
+  },
+  "0.60.1": {
+    "x86_64_linux_musl": {
+      "etag": "0x8DF21A61EE01860",
+      "hash": "c4e5e8491f52971f8e3bd0ed80995eafd9119fbe603ba626694a20d56c14a730"
+    },
+    "x86_64_macos": {
+      "etag": "0x8DF21A61ED8CD97",
+      "hash": "551fd5b0ce32a83682f6aaa425317db54402451a0ab66b46c0e11e17900f7db8"
+    },
+    "x86_64_windows": {
+      "etag": "0x8DF21A61EC534A1",
+      "hash": "52f0ee9742df4b56ddffdd058a066153f3a8fea5456be5a9e19f2da10bd80b8b"
+    },
+    "aarch64_linux_musl": {
+      "etag": "0x8DF21A61EDF2F06",
+      "hash": "9b537fdfb75b2402f47d15cc615f1ba31736a37e2aed65662e8d9d4b647c70f1"
+    },
+    "aarch64_macos": {
+      "etag": "0x8DF21A61EB05908",
+      "hash": "b495103be1c01ba097449d73af3d76bbcef3deb291b87e9b7db6e8d12d497ef6"
+    },
+    "riscv64_linux_gnu": {
+      "etag": "0x8DF21A61ED96927",
+      "hash": "bdc9ef53dde39831a47aa74ace0143d82dbb463b55bdd9bb835786d2f5027b9a"
+    }
+  },
+  "0.60.0": {
+    "x86_64_linux_musl": {
+      "etag": "0x8DF2199111D7DE8",
+      "hash": "d9fde88ef9e6793bbc1be395f9a4d6f3555ea1c6610d13e67a690cb664bd3373"
+    },
+    "x86_64_macos": {
+      "etag": "0x8DF219910C85277",
+      "hash": "9473b1151a872eee85b8992aaade260d71ffd8e8c2c82694804c8785a8fe99e2"
+    },
+    "x86_64_windows": {
+      "etag": "0x8DF219910C5E438",
+      "hash": "9a5d46a93ea87db2bb7bf9431aff10b01e83210ad37b574eecae604199a1071a"
+    },
+    "aarch64_linux_musl": {
+      "etag": "0x8DF219910C6CD89",
+      "hash": "46ecd756236a1fc9895dd85479933f6f82c0264b418aa789168e0b744d1fab5a"
+    },
+    "aarch64_macos": {
+      "etag": "0x8DF219910C71B56",
+      "hash": "2fb659de79f3a297c59ab3e2a8686428ba07e8910ee2f416af615ce11f018b8c"
+    },
+    "riscv64_linux_gnu": {
+      "etag": "0x8DF219910D56470",
+      "hash": "ba3aff4dbd00a3d4762032e40fcb8d01ce832df9e8fc413572b61f41d3d14010"
+    }
+  },
+  "0.59": {
+    "version": "0.59.0"
   },
   "0.59.0": {
     "x86_64_linux_musl": {
