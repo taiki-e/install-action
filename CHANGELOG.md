@@ -10,6 +10,8 @@ Note: In this file, do not use the hard wrap in the middle of a sentence for com
 
 ## [Unreleased]
 
+- Update `kingfisher@latest` to 2.10.0.
+
 - Update `dprint@latest` to 0.60.1.
 
 - Update `cargo-semver-checks@latest` to 0.51.0.
