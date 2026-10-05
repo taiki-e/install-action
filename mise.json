@@ -27,13 +27,65 @@
     }
   },
   "latest": {
-    "version": "2026.10.0"
+    "version": "2026.10.2"
   },
   "2026": {
-    "version": "2026.10.0"
+    "version": "2026.10.2"
   },
   "2026.10": {
-    "version": "2026.10.0"
+    "version": "2026.10.2"
+  },
+  "2026.10.3": {
+    "x86_64_linux_musl": {
+      "etag": "0x8DF22CB8A633641",
+      "hash": "23c45c76567f8f1e4cfc40efff3f19e3352d3745e6c25e74891102765d1cdc3c"
+    },
+    "x86_64_macos": {
+      "etag": "0x8DF22CB90327CFF",
+      "hash": "791b92b446729c53e6501acd2b84ea207f541659ca9d0480c9c70c291919a321"
+    },
+    "x86_64_windows": {
+      "etag": "0x8DF22CB9497C858",
+      "hash": "af5cad4d381c4e06e9c488af86ad3d3159474ffa7a18e061436a408f7262f23a"
+    },
+    "aarch64_linux_musl": {
+      "etag": "0x8DF22CB81888DAC",
+      "hash": "0af3379b7a8060b047416576a746078daee3c9d2bf57fa8f6ba07d3cdf5f47aa"
+    },
+    "aarch64_macos": {
+      "etag": "0x8DF22CB8DF13AF8",
+      "hash": "28ecc8640b0a28dab52817766f37fecfd898f1dff82e03f36fcb072e971f9246"
+    },
+    "aarch64_windows": {
+      "etag": "0x8DF22CB9301A244",
+      "hash": "378cad931510d02a840ece40bde9c7a69fc8d59f6902a24579e75a55bd19f279"
+    }
+  },
+  "2026.10.2": {
+    "x86_64_linux_musl": {
+      "etag": "0x8DF2212BEA27526",
+      "hash": "89fd8b87e06ddca63e50857a9abbfc0023ea3e7e31a97ce498e1dd545a027e26"
+    },
+    "x86_64_macos": {
+      "etag": "0x8DF2212C3D64E93",
+      "hash": "cc1497f6c370580d81d386004578f97d36b08031f6534818e0fd2756d54d0aca"
+    },
+    "x86_64_windows": {
+      "etag": "0x8DF2212C692496D",
+      "hash": "6ce4281dc65a4dc22de2aed42db5e8859293a467964763b43fcc33fa0e6c4214"
+    },
+    "aarch64_linux_musl": {
+      "etag": "0x8DF2212B8EC0B7C",
+      "hash": "3f859a421cd2447a8e319d1f89f358da9f377dfafc66a6bebf8882d458f46fe0"
+    },
+    "aarch64_macos": {
+      "etag": "0x8DF2212C163ED62",
+      "hash": "a3f67ff009f1436013eee37864c1c1855d9d9a9e4982a660b6495589635384e7"
+    },
+    "aarch64_windows": {
+      "etag": "0x8DF2212C5D3F91C",
+      "hash": "9c4abb29dc88d956f5d6f2e468bade7843c9e3242690a9dbb22b2bbac4d007be"
+    }
   },
   "2026.10.1": {
     "x86_64_linux_musl": {
