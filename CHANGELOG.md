@@ -10,6 +10,8 @@ Note: In this file, do not use the hard wrap in the middle of a sentence for com
 
 ## [Unreleased]
 
+- Update `kache@latest` to 1.0.0.
+
 - Update `hyperfine@latest` to 1.21.0.
 
 ## [2.87.25] - 2026-10-05
