@@ -10,6 +10,10 @@ Note: In this file, do not use the hard wrap in the middle of a sentence for com
 
 ## [Unreleased]
 
+- Update `rclone@latest` to 1.75.2.
+
+- Update `mise@latest` to 2026.10.6.
+
 ## [2.87.27] - 2026-10-09
 
 - Update `vacuum@latest` to 0.32.0.
