@@ -27,7 +27,62 @@
     }
   },
   "latest": {
-    "version": "0.61.1"
+    "version": "0.62.0"
+  },
+  "0.63.0": {
+    "x86_64_linux_musl": {
+      "etag": "0x8DF27F2CAC3C040",
+      "hash": "8914a940bdf4b9ba438de9ccfb4317105a8501eaf9d5593784c9f41387243475"
+    },
+    "x86_64_macos": {
+      "etag": "0x8DF27F2CA874985",
+      "hash": "17081627eea67c016ba665379d8e721fd8aeaf13348f8757a605d0a9aad66260"
+    },
+    "x86_64_windows": {
+      "etag": "0x8DF27F2CAA4E952",
+      "hash": "a9f6d1146bd2a01585f845086df248297d0e958ede700557c13a5b49ec11f552"
+    },
+    "aarch64_linux_musl": {
+      "etag": "0x8DF27F2CAC178E0",
+      "hash": "26df4a1534db02bb1c1f614e91f02fcee786357de80094a1fd5dcce27dec803e"
+    },
+    "aarch64_macos": {
+      "etag": "0x8DF27F2CAA9ECBF",
+      "hash": "5c0a4a695f9a17754eec0039f28435aedb61e1e1a6b5f448eb098a64e039c857"
+    },
+    "riscv64_linux_gnu": {
+      "etag": "0x8DF27F2CAC4A9A1",
+      "hash": "269538ef77dcbfe1f07d780063484f002d9656d8fb1e8d9a33aae6e4b77b6d75"
+    }
+  },
+  "0.62": {
+    "version": "0.62.0"
+  },
+  "0.62.0": {
+    "x86_64_linux_musl": {
+      "etag": "0x8DF272E4036D8B3",
+      "hash": "e8d4a78fc6aa1b1a3f007d947a3c9a1ae1b0c240868107c496eb2992cc1630be"
+    },
+    "x86_64_macos": {
+      "etag": "0x8DF272E40366409",
+      "hash": "3cf624098a1d49b978b4e87355f087fe4bf8426ea1e1e6ff9b2859138a41eea0"
+    },
+    "x86_64_windows": {
+      "etag": "0x8DF272E401FC133",
+      "hash": "322e47e188bba6ff3784ef1be0c5f569fc270467eeac4dd10015030599d9466d"
+    },
+    "aarch64_linux_musl": {
+      "etag": "0x8DF272E4038847F",
+      "hash": "c423c7ee51187129db67f0bab4584cf7ff6fdeb29faf04d1521fa79a5c12c520"
+    },
+    "aarch64_macos": {
+      "etag": "0x8DF272E402D468F",
+      "hash": "b0d4b4c9c2ea68f86caa044f139b898d2cd0c4080cdc8bf70be9454a8acfe0af"
+    },
+    "riscv64_linux_gnu": {
+      "etag": "0x8DF272E4032E58B",
+      "hash": "20bc8c48affd664cef4bdf1123bf4aa4dfff419ee692b3ec52b94d89a7a84096"
+    }
   },
   "0.61": {
     "version": "0.61.1"
