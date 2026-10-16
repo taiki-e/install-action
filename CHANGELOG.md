@@ -10,6 +10,8 @@ Note: In this file, do not use the hard wrap in the middle of a sentence for com
 
 ## [Unreleased]
 
+- Update `wasm-tools@latest` to 1.262.0.
+
 - Update `uv@latest` to 0.13.1.
 
 - Update `trivy@latest` to 0.76.0.
