@@ -10,6 +10,8 @@ Note: In this file, do not use the hard wrap in the middle of a sentence for com
 
 ## [Unreleased]
 
+- Update `cargo-crap@latest` to 0.8.0.
+
 - Update `bpf-linker@latest` to 0.12.0.
 
 ## [2.87.28] - 2026-10-12
