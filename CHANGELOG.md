@@ -10,6 +10,8 @@ Note: In this file, do not use the hard wrap in the middle of a sentence for com
 
 ## [Unreleased]
 
+- Update `wasmtime@latest` to 50.0.0.
+
 - Update `vacuum@latest` to 0.33.2.
 
 - Update `uv@latest` to 0.13.4.
