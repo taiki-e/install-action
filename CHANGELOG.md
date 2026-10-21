@@ -10,6 +10,8 @@ Note: In this file, do not use the hard wrap in the middle of a sentence for com
 
 ## [Unreleased]
 
+- Update `cosign@latest` to 3.1.4.
+
 - Update `cargo-crap@latest` to 0.9.0.
 
 - Update `cargo-binstall@latest` to 1.26.0.
