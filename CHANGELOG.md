@@ -10,6 +10,8 @@ Note: In this file, do not use the hard wrap in the middle of a sentence for com
 
 ## [Unreleased]
 
+## [2.87.30] - 2026-10-21
+
 - Update `zizmor@latest` to 1.31.1.
 
 - Update `wasmtime@latest` to 50.0.0.
@@ -7876,7 +7878,8 @@ Note: This release is considered a breaking change because installing on version
 
 Initial release
 
-[Unreleased]: https://github.com/taiki-e/install-action/compare/v2.87.29...HEAD
+[Unreleased]: https://github.com/taiki-e/install-action/compare/v2.87.30...HEAD
+[2.87.30]: https://github.com/taiki-e/install-action/compare/v2.87.29...v2.87.30
 [2.87.29]: https://github.com/taiki-e/install-action/compare/v2.87.28...v2.87.29
 [2.87.28]: https://github.com/taiki-e/install-action/compare/v2.87.27...v2.87.28
 [2.87.27]: https://github.com/taiki-e/install-action/compare/v2.87.26...v2.87.27
