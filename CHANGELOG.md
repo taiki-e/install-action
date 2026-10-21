@@ -36,7 +36,7 @@ Note: In this file, do not use the hard wrap in the middle of a sentence for com
 
 - Update `kache@latest` to 1.2.2.
 
-- Update `dprint@latest` to 0.64.0.
+- Update `dprint@latest` to 0.64.1.
 
 - Update `cosign@latest` to 3.1.4.
 
