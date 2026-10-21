@@ -10,6 +10,174 @@ Note: In this file, do not use the hard wrap in the middle of a sentence for com
 
 ## [Unreleased]
 
+## [2.87.29] - 2026-10-16
+
+- Update `zizmor@latest` to 1.31.0.
+
+- Update `wasmtime@latest` to 49.0.3.
+
+- Update `wasm-tools@latest` to 1.262.0.
+
+- Update `uv@latest` to 0.13.1.
+
+- Update `trivy@latest` to 0.76.0.
+
+- Update `tombi@latest` to 1.8.4.
+
+- Update `release-plz@latest` to 0.3.172.
+
+- Update `osv-scanner@latest` to 2.7.0.
+
+- Update `mise@latest` to 2026.10.11.
+
+- Update `mdbook-d2@latest` to 0.3.9.
+
+- Update `kingfisher@latest` to 2.13.0.
+
+- Update `kache@latest` to 1.2.1.
+
+- Update `just@latest` to 1.59.0.
+
+- Update `dprint@latest` to 0.63.0.
+
+- Update `cargo-crap@latest` to 0.8.0.
+
+- Update `bpf-linker@latest` to 0.12.0.
+
+## [2.87.28] - 2026-10-12
+
+- Update `dprint@latest` to 0.62.0.
+
+- Update `vacuum@latest` to 0.33.0.
+
+- Update `uv@latest` to 0.13.0.
+
+- Update `tombi@latest` to 1.8.1.
+
+- Update `release-plz@latest` to 0.3.171.
+
+- Update `rclone@latest` to 1.75.2.
+
+- Update `mise@latest` to 2026.10.7.
+
+- Update `cargo-binstall@latest` to 1.25.3.
+
+## [2.87.27] - 2026-10-09
+
+- Update `vacuum@latest` to 0.32.0.
+
+- Update `uv@latest` to 0.12.24.
+
+- Update `typos@latest` to 1.51.1.
+
+- Update `tombi@latest` to 1.7.3.
+
+- Update `syft@latest` to 1.54.1.
+
+- Update `release-plz@latest` to 0.3.170.
+
+- Update `mise@latest` to 2026.10.4.
+
+- Update `kingfisher@latest` to 2.11.1.
+
+- Update `hyperfine@latest` to 2.0.0.
+
+- Update `dprint@latest` to 0.61.1.
+
+- Update `cargo-nextest@latest` to 0.9.148.
+
+- Update `cargo-neat@latest` to 0.6.0.
+
+- Update `cargo-binstall@latest` to 1.25.2.
+
+## [2.87.26] - 2026-10-06
+
+- Update `tombi@latest` to 1.7.2.
+
+- Update `prek@latest` to 0.5.5.
+
+- Update `mise@latest` to 2026.10.3.
+
+- Update `kache@latest` to 1.0.0.
+
+- Update `hyperfine@latest` to 1.21.0.
+
+## [2.87.25] - 2026-10-05
+
+- Update `uv@latest` to 0.12.23.
+
+- Update `mise@latest` to 2026.10.2.
+
+- Update `kingfisher@latest` to 2.10.0.
+
+- Update `dprint@latest` to 0.60.1.
+
+- Update `cargo-semver-checks@latest` to 0.51.0.
+
+- Update `cargo-binstall@latest` to 1.25.1.
+
+## [2.87.24] - 2026-10-04
+
+- Update `wasmtime@latest` to 49.0.2.
+
+- Update `dprint@latest` to 0.59.0.
+
+- Update `cargo-leptos@latest` to 0.3.11.
+
+- Update `cargo-insta@latest` to 1.49.0.
+
+- Update `cargo-binstall@latest` to 1.25.0.
+
+## [2.87.23] - 2026-10-03
+
+- Update `wasm-tools@latest` to 1.261.0.
+
+- Update `uv@latest` to 0.12.22.
+
+- Update `trivy@latest` to 0.75.0.
+
+- Update `tombi@latest` to 1.7.1.
+
+- Update `protoc-gen-connect-openapi@latest` to 0.28.0.
+
+- Update `mise@latest` to 2026.10.0.
+
+- Update `kingfisher@latest` to 2.9.1.
+
+- Update `kache@latest` to 0.28.1.
+
+- Update `espup@latest` to 0.18.0.
+
+- Update `dprint@latest` to 0.58.0.
+
+- Update `cargo-crap@latest` to 0.6.1.
+
+- Update `cargo-auditable@latest` to 0.7.7.
+
+- Update `biome@latest` to 2.5.15.
+
+- Update `syft@latest` to 1.54.0.
+
+## [2.87.22] - 2026-09-29
+
+- Update `typos@latest` to 1.50.3.
+
+- Update `tombi@latest` to 1.5.8.
+
+- Update `prek@latest` to 0.5.4.
+
+- Update `mise@latest` to 2026.9.16.
+
+- Update `kache@latest` to 0.28.0.
+
+- Update `gungraun-runner@latest` to 0.20.0.
+
+- Update `cargo-tarpaulin@latest` to 0.37.5.
+
+- Update `cargo-leptos@latest` to 0.3.10.
+
+- Update `cargo-binstall@latest` to 1.24.0.
+
 ## [2.87.21] - 2026-09-26
 
 - Update `wasm-bindgen@latest` to 0.2.129.
@@ -7674,7 +7842,15 @@ Note: This release is considered a breaking change because installing on version
 
 Initial release
 
-[Unreleased]: https://github.com/taiki-e/install-action/compare/v2.87.21...HEAD
+[Unreleased]: https://github.com/taiki-e/install-action/compare/v2.87.29...HEAD
+[2.87.29]: https://github.com/taiki-e/install-action/compare/v2.87.28...v2.87.29
+[2.87.28]: https://github.com/taiki-e/install-action/compare/v2.87.27...v2.87.28
+[2.87.27]: https://github.com/taiki-e/install-action/compare/v2.87.26...v2.87.27
+[2.87.26]: https://github.com/taiki-e/install-action/compare/v2.87.25...v2.87.26
+[2.87.25]: https://github.com/taiki-e/install-action/compare/v2.87.24...v2.87.25
+[2.87.24]: https://github.com/taiki-e/install-action/compare/v2.87.23...v2.87.24
+[2.87.23]: https://github.com/taiki-e/install-action/compare/v2.87.22...v2.87.23
+[2.87.22]: https://github.com/taiki-e/install-action/compare/v2.87.21...v2.87.22
 [2.87.21]: https://github.com/taiki-e/install-action/compare/v2.87.20...v2.87.21
 [2.87.20]: https://github.com/taiki-e/install-action/compare/v2.87.19...v2.87.20
 [2.87.19]: https://github.com/taiki-e/install-action/compare/v2.87.18...v2.87.19
