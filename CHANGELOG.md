@@ -12,7 +12,7 @@ Note: In this file, do not use the hard wrap in the middle of a sentence for com
 
 ## [2.87.31] - 2026-10-23
 
-- Update `cargo-sort@latest` to 2.1.3.
+- Downgrade `cargo-sort@latest` to 2.1.3.
 
 - Update `vacuum@latest` to 0.35.0.
 
