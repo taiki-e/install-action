@@ -10,6 +10,8 @@ Note: In this file, do not use the hard wrap in the middle of a sentence for com
 
 ## [Unreleased]
 
+- Update `cargo-sort@latest` to 2.1.3.
+
 - Update `vacuum@latest` to 0.35.0.
 
 - Update `xh@latest` to 0.26.3.
