@@ -2,13 +2,88 @@
   "rust_crate": null,
   "template": null,
   "latest": {
-    "version": "1.8.9"
+    "version": "1.9.0"
   },
   "1": {
-    "version": "1.8.9"
+    "version": "1.9.0"
+  },
+  "1.9": {
+    "version": "1.9.0"
+  },
+  "1.9.0": {
+    "x86_64_linux_musl": {
+      "url": "https://github.com/tombi-toml/tombi/releases/download/v1.9.0/tombi-cli-1.9.0-x86_64-unknown-linux-musl.tar.gz",
+      "etag": "0x8DF2FEEAF4D793E",
+      "hash": "8d67a6d488be4186ad0a14e0cd0293e4893b9c4c66d41f958d22987749d56ec8",
+      "bin": "tombi-cli-1.9.0-x86_64-unknown-linux-musl/tombi"
+    },
+    "x86_64_macos": {
+      "url": "https://github.com/tombi-toml/tombi/releases/download/v1.9.0/tombi-cli-1.9.0-x86_64-apple-darwin.tar.gz",
+      "etag": "0x8DF2FEEAE94A9C1",
+      "hash": "e85b1630a8598c9f2f449de6132a21261e5d57ad963cc7558634bd1af266b04b",
+      "bin": "tombi-cli-1.9.0-x86_64-apple-darwin/tombi"
+    },
+    "x86_64_windows": {
+      "url": "https://github.com/tombi-toml/tombi/releases/download/v1.9.0/tombi-cli-1.9.0-x86_64-pc-windows-msvc.zip",
+      "etag": "0x8DF2FEEAF173D0C",
+      "hash": "ad04974c44fc46fb4a03040ef91a20c00aadb8b32934bb3f909df9a7db8c5d5e"
+    },
+    "aarch64_linux_musl": {
+      "url": "https://github.com/tombi-toml/tombi/releases/download/v1.9.0/tombi-cli-1.9.0-aarch64-unknown-linux-musl.tar.gz",
+      "etag": "0x8DF2FEEAE8F31AB",
+      "hash": "66eae15cf2c7644fa318de6c72857303d86bdadbced9f8c372a6fa5f65e47d47",
+      "bin": "tombi-cli-1.9.0-aarch64-unknown-linux-musl/tombi"
+    },
+    "aarch64_macos": {
+      "url": "https://github.com/tombi-toml/tombi/releases/download/v1.9.0/tombi-cli-1.9.0-aarch64-apple-darwin.tar.gz",
+      "etag": "0x8DF2FEEAE95455B",
+      "hash": "380797de9eeec47ce91a0408f948c424d95ea55bfab59364bd7207f66848996a",
+      "bin": "tombi-cli-1.9.0-aarch64-apple-darwin/tombi"
+    },
+    "aarch64_windows": {
+      "url": "https://github.com/tombi-toml/tombi/releases/download/v1.9.0/tombi-cli-1.9.0-aarch64-pc-windows-msvc.zip",
+      "etag": "0x8DF2FEEAE9E1507",
+      "hash": "cef7287f487f279bb5155d3eb306eeebdd79db8d82fa6abe72e2f57b8a83fc6b"
+    }
   },
   "1.8": {
-    "version": "1.8.9"
+    "version": "1.8.10"
+  },
+  "1.8.10": {
+    "x86_64_linux_musl": {
+      "url": "https://github.com/tombi-toml/tombi/releases/download/v1.8.10/tombi-cli-1.8.10-x86_64-unknown-linux-musl.tar.gz",
+      "etag": "0x8DF2FCE4AAF2271",
+      "hash": "ba176a1ccc522200ab92c02073480f63bfdd83c480ff45fd7b49e273728f53d1",
+      "bin": "tombi-cli-1.8.10-x86_64-unknown-linux-musl/tombi"
+    },
+    "x86_64_macos": {
+      "url": "https://github.com/tombi-toml/tombi/releases/download/v1.8.10/tombi-cli-1.8.10-x86_64-apple-darwin.tar.gz",
+      "etag": "0x8DF2FCE49F493C5",
+      "hash": "9c91ca1a3fe77923a295ee818415e2a73e4fc776535a928cb87219e3961a66db",
+      "bin": "tombi-cli-1.8.10-x86_64-apple-darwin/tombi"
+    },
+    "x86_64_windows": {
+      "url": "https://github.com/tombi-toml/tombi/releases/download/v1.8.10/tombi-cli-1.8.10-x86_64-pc-windows-msvc.zip",
+      "etag": "0x8DF2FCE4A79A8A9",
+      "hash": "39fa233b8133ba22c696eaa5bcbb89a071ea68dcec78f33da130f61f807e581b"
+    },
+    "aarch64_linux_musl": {
+      "url": "https://github.com/tombi-toml/tombi/releases/download/v1.8.10/tombi-cli-1.8.10-aarch64-unknown-linux-musl.tar.gz",
+      "etag": "0x8DF2FCE49ECAD7A",
+      "hash": "1e18b9a23bab0dd0c35f6d175a89767d23708ac4b2716922db00bae230c018eb",
+      "bin": "tombi-cli-1.8.10-aarch64-unknown-linux-musl/tombi"
+    },
+    "aarch64_macos": {
+      "url": "https://github.com/tombi-toml/tombi/releases/download/v1.8.10/tombi-cli-1.8.10-aarch64-apple-darwin.tar.gz",
+      "etag": "0x8DF2FCE4A060C47",
+      "hash": "09b415661230d839e138429bb7563c8365e9c8fd136457d17441ecf0bc476af9",
+      "bin": "tombi-cli-1.8.10-aarch64-apple-darwin/tombi"
+    },
+    "aarch64_windows": {
+      "url": "https://github.com/tombi-toml/tombi/releases/download/v1.8.10/tombi-cli-1.8.10-aarch64-pc-windows-msvc.zip",
+      "etag": "0x8DF2FCE4A07913C",
+      "hash": "60aedbf9b5ea2915aee7818700a6f34fbbde1da4661cae0c1b15027a0317ae3f"
+    }
   },
   "1.8.9": {
     "x86_64_linux_musl": {
