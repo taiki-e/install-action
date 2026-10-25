@@ -10,6 +10,74 @@ Note: In this file, do not use the hard wrap in the middle of a sentence for com
 
 ## [Unreleased]
 
+## [2.87.31] - 2026-10-23
+
+- Downgrade `cargo-sort@latest` to 2.1.3.
+
+- Update `vacuum@latest` to 0.35.0.
+
+- Update `xh@latest` to 0.26.3.
+
+- Update `uv@latest` to 0.13.5.
+
+- Update `ubi@latest` to 0.13.0.
+
+- Update `trivy@latest` to 0.76.1.
+
+- Update `tombi@latest` to 1.9.0.
+
+- Update `release-plz@latest` to 0.3.174.
+
+- Update `prek@latest` to 0.5.7.
+
+- Update `mise@latest` to 2026.10.17.
+
+- Update `jaq@latest` to 3.1.2.
+
+- Update `espup@latest` to 0.17.1.
+
+- Update `cargo-zigbuild@latest` to 0.24.0.
+
+- Update `cargo-nextest@latest` to 0.9.149.
+
+- Update `biome@latest` to 2.6.2.
+
+## [2.87.30] - 2026-10-21
+
+- Update `zizmor@latest` to 1.31.1.
+
+- Update `wasmtime@latest` to 50.0.0.
+
+- Update `vacuum@latest` to 0.33.2.
+
+- Update `uv@latest` to 0.13.4.
+
+- Update `trunk@latest` to 0.22.0.
+
+- Update `tombi@latest` to 1.8.9.
+
+- Update `syft@latest` to 1.55.0.
+
+- Update `release-plz@latest` to 0.3.173.
+
+- Update `prek@latest` to 0.5.6.
+
+- Update `mise@latest` to 2026.10.15.
+
+- Update `knope@latest` to 0.23.1.
+
+- Update `kingfisher@latest` to 2.14.0.
+
+- Update `kache@latest` to 1.2.2.
+
+- Update `dprint@latest` to 0.64.1.
+
+- Update `cosign@latest` to 3.1.4.
+
+- Update `cargo-crap@latest` to 0.9.0.
+
+- Update `cargo-binstall@latest` to 1.26.0.
+
 ## [2.87.29] - 2026-10-16
 
 - Update `zizmor@latest` to 1.31.0.
@@ -7842,7 +7910,9 @@ Note: This release is considered a breaking change because installing on version
 
 Initial release
 
-[Unreleased]: https://github.com/taiki-e/install-action/compare/v2.87.29...HEAD
+[Unreleased]: https://github.com/taiki-e/install-action/compare/v2.87.31...HEAD
+[2.87.31]: https://github.com/taiki-e/install-action/compare/v2.87.30...v2.87.31
+[2.87.30]: https://github.com/taiki-e/install-action/compare/v2.87.29...v2.87.30
 [2.87.29]: https://github.com/taiki-e/install-action/compare/v2.87.28...v2.87.29
 [2.87.28]: https://github.com/taiki-e/install-action/compare/v2.87.27...v2.87.28
 [2.87.27]: https://github.com/taiki-e/install-action/compare/v2.87.26...v2.87.27

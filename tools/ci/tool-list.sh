@@ -127,7 +127,10 @@ case "$(uname -s)" in
       incompat_tools+=(cargo-deb) # no dpkg in package manager
     fi
     case "${runner}" in
-      debian/eol:jessie-slim | ubuntu:14.04 | alpine:3.2) incompat_tools+=(bpf-linker) ;; # no zstd in package manager
+      # no zstd in package manager
+      debian/eol:jessie-slim | ubuntu:14.04 | alpine:3.2) incompat_tools+=(bpf-linker) ;;
+      # x: error while loading shared libraries: libssl.so.3: cannot open shared object file: No such file or directory
+      ubuntu:rolling) incompat_tools+=(xbuild) ;;
     esac
     ;;
   Darwin)

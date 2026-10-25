@@ -2,13 +2,268 @@
   "rust_crate": null,
   "template": null,
   "latest": {
-    "version": "1.8.4"
+    "version": "1.9.0"
   },
   "1": {
-    "version": "1.8.4"
+    "version": "1.9.0"
+  },
+  "1.9": {
+    "version": "1.9.0"
+  },
+  "1.9.1": {
+    "x86_64_linux_musl": {
+      "url": "https://github.com/tombi-toml/tombi/releases/download/v1.9.1/tombi-cli-1.9.1-x86_64-unknown-linux-musl.tar.gz",
+      "etag": "0x8DF3111CC1123EB",
+      "hash": "09194b4f38e414e534c19f382822b3f7aa4f06405d3679126dd2c2a88b926355",
+      "bin": "tombi-cli-1.9.1-x86_64-unknown-linux-musl/tombi"
+    },
+    "x86_64_macos": {
+      "url": "https://github.com/tombi-toml/tombi/releases/download/v1.9.1/tombi-cli-1.9.1-x86_64-apple-darwin.tar.gz",
+      "etag": "0x8DF3111CB4EA3EF",
+      "hash": "b827e6eda2cfbdaebd356923db02679fae05b7e95d209326f00a2c1c9615b23b",
+      "bin": "tombi-cli-1.9.1-x86_64-apple-darwin/tombi"
+    },
+    "x86_64_windows": {
+      "url": "https://github.com/tombi-toml/tombi/releases/download/v1.9.1/tombi-cli-1.9.1-x86_64-pc-windows-msvc.zip",
+      "etag": "0x8DF3111CC1123EB",
+      "hash": "48ecf4c52113c1a7d6ad17f4bbd002d02b596831bc265a9c71504feb130da7c3"
+    },
+    "aarch64_linux_musl": {
+      "url": "https://github.com/tombi-toml/tombi/releases/download/v1.9.1/tombi-cli-1.9.1-aarch64-unknown-linux-musl.tar.gz",
+      "etag": "0x8DF3111CB4AB0B5",
+      "hash": "9c30d1d0c540fdb537c71f056dc610eb40983971ec4c9de813aa1b29934288a2",
+      "bin": "tombi-cli-1.9.1-aarch64-unknown-linux-musl/tombi"
+    },
+    "aarch64_macos": {
+      "url": "https://github.com/tombi-toml/tombi/releases/download/v1.9.1/tombi-cli-1.9.1-aarch64-apple-darwin.tar.gz",
+      "etag": "0x8DF3111CB4EA3EF",
+      "hash": "986131f459c9d953bdd3a4bd025e162cf2296aa3ac8804b1bea6ad5508543d58",
+      "bin": "tombi-cli-1.9.1-aarch64-apple-darwin/tombi"
+    },
+    "aarch64_windows": {
+      "url": "https://github.com/tombi-toml/tombi/releases/download/v1.9.1/tombi-cli-1.9.1-aarch64-pc-windows-msvc.zip",
+      "etag": "0x8DF3111CB4BE7DA",
+      "hash": "1c6e22ce768eec1c81f4da8adaa965534f07584bfee53698838bf96d68c3cdec"
+    }
+  },
+  "1.9.0": {
+    "x86_64_linux_musl": {
+      "url": "https://github.com/tombi-toml/tombi/releases/download/v1.9.0/tombi-cli-1.9.0-x86_64-unknown-linux-musl.tar.gz",
+      "etag": "0x8DF2FEEAF4D793E",
+      "hash": "8d67a6d488be4186ad0a14e0cd0293e4893b9c4c66d41f958d22987749d56ec8",
+      "bin": "tombi-cli-1.9.0-x86_64-unknown-linux-musl/tombi"
+    },
+    "x86_64_macos": {
+      "url": "https://github.com/tombi-toml/tombi/releases/download/v1.9.0/tombi-cli-1.9.0-x86_64-apple-darwin.tar.gz",
+      "etag": "0x8DF2FEEAE94A9C1",
+      "hash": "e85b1630a8598c9f2f449de6132a21261e5d57ad963cc7558634bd1af266b04b",
+      "bin": "tombi-cli-1.9.0-x86_64-apple-darwin/tombi"
+    },
+    "x86_64_windows": {
+      "url": "https://github.com/tombi-toml/tombi/releases/download/v1.9.0/tombi-cli-1.9.0-x86_64-pc-windows-msvc.zip",
+      "etag": "0x8DF2FEEAF173D0C",
+      "hash": "ad04974c44fc46fb4a03040ef91a20c00aadb8b32934bb3f909df9a7db8c5d5e"
+    },
+    "aarch64_linux_musl": {
+      "url": "https://github.com/tombi-toml/tombi/releases/download/v1.9.0/tombi-cli-1.9.0-aarch64-unknown-linux-musl.tar.gz",
+      "etag": "0x8DF2FEEAE8F31AB",
+      "hash": "66eae15cf2c7644fa318de6c72857303d86bdadbced9f8c372a6fa5f65e47d47",
+      "bin": "tombi-cli-1.9.0-aarch64-unknown-linux-musl/tombi"
+    },
+    "aarch64_macos": {
+      "url": "https://github.com/tombi-toml/tombi/releases/download/v1.9.0/tombi-cli-1.9.0-aarch64-apple-darwin.tar.gz",
+      "etag": "0x8DF2FEEAE95455B",
+      "hash": "380797de9eeec47ce91a0408f948c424d95ea55bfab59364bd7207f66848996a",
+      "bin": "tombi-cli-1.9.0-aarch64-apple-darwin/tombi"
+    },
+    "aarch64_windows": {
+      "url": "https://github.com/tombi-toml/tombi/releases/download/v1.9.0/tombi-cli-1.9.0-aarch64-pc-windows-msvc.zip",
+      "etag": "0x8DF2FEEAE9E1507",
+      "hash": "cef7287f487f279bb5155d3eb306eeebdd79db8d82fa6abe72e2f57b8a83fc6b"
+    }
   },
   "1.8": {
-    "version": "1.8.4"
+    "version": "1.8.10"
+  },
+  "1.8.10": {
+    "x86_64_linux_musl": {
+      "url": "https://github.com/tombi-toml/tombi/releases/download/v1.8.10/tombi-cli-1.8.10-x86_64-unknown-linux-musl.tar.gz",
+      "etag": "0x8DF2FCE4AAF2271",
+      "hash": "ba176a1ccc522200ab92c02073480f63bfdd83c480ff45fd7b49e273728f53d1",
+      "bin": "tombi-cli-1.8.10-x86_64-unknown-linux-musl/tombi"
+    },
+    "x86_64_macos": {
+      "url": "https://github.com/tombi-toml/tombi/releases/download/v1.8.10/tombi-cli-1.8.10-x86_64-apple-darwin.tar.gz",
+      "etag": "0x8DF2FCE49F493C5",
+      "hash": "9c91ca1a3fe77923a295ee818415e2a73e4fc776535a928cb87219e3961a66db",
+      "bin": "tombi-cli-1.8.10-x86_64-apple-darwin/tombi"
+    },
+    "x86_64_windows": {
+      "url": "https://github.com/tombi-toml/tombi/releases/download/v1.8.10/tombi-cli-1.8.10-x86_64-pc-windows-msvc.zip",
+      "etag": "0x8DF2FCE4A79A8A9",
+      "hash": "39fa233b8133ba22c696eaa5bcbb89a071ea68dcec78f33da130f61f807e581b"
+    },
+    "aarch64_linux_musl": {
+      "url": "https://github.com/tombi-toml/tombi/releases/download/v1.8.10/tombi-cli-1.8.10-aarch64-unknown-linux-musl.tar.gz",
+      "etag": "0x8DF2FCE49ECAD7A",
+      "hash": "1e18b9a23bab0dd0c35f6d175a89767d23708ac4b2716922db00bae230c018eb",
+      "bin": "tombi-cli-1.8.10-aarch64-unknown-linux-musl/tombi"
+    },
+    "aarch64_macos": {
+      "url": "https://github.com/tombi-toml/tombi/releases/download/v1.8.10/tombi-cli-1.8.10-aarch64-apple-darwin.tar.gz",
+      "etag": "0x8DF2FCE4A060C47",
+      "hash": "09b415661230d839e138429bb7563c8365e9c8fd136457d17441ecf0bc476af9",
+      "bin": "tombi-cli-1.8.10-aarch64-apple-darwin/tombi"
+    },
+    "aarch64_windows": {
+      "url": "https://github.com/tombi-toml/tombi/releases/download/v1.8.10/tombi-cli-1.8.10-aarch64-pc-windows-msvc.zip",
+      "etag": "0x8DF2FCE4A07913C",
+      "hash": "60aedbf9b5ea2915aee7818700a6f34fbbde1da4661cae0c1b15027a0317ae3f"
+    }
+  },
+  "1.8.9": {
+    "x86_64_linux_musl": {
+      "url": "https://github.com/tombi-toml/tombi/releases/download/v1.8.9/tombi-cli-1.8.9-x86_64-unknown-linux-musl.tar.gz",
+      "etag": "0x8DF2DE8B54B65C3",
+      "hash": "26d7207a4de89e5d846d5a9e5d3bc9c407f8b035f06adfdb774564bd7e440c15",
+      "bin": "tombi-cli-1.8.9-x86_64-unknown-linux-musl/tombi"
+    },
+    "x86_64_macos": {
+      "url": "https://github.com/tombi-toml/tombi/releases/download/v1.8.9/tombi-cli-1.8.9-x86_64-apple-darwin.tar.gz",
+      "etag": "0x8DF2DE8B481B571",
+      "hash": "c566db7e0d1b98b75ebdbd080d75407140039eb52a7af503e3028e318f01f8f2",
+      "bin": "tombi-cli-1.8.9-x86_64-apple-darwin/tombi"
+    },
+    "x86_64_windows": {
+      "url": "https://github.com/tombi-toml/tombi/releases/download/v1.8.9/tombi-cli-1.8.9-x86_64-pc-windows-msvc.zip",
+      "etag": "0x8DF2DE8B5366EB8",
+      "hash": "c6b6efff4e1d480087a0c672969d21e66ea60e6844efe94492be10b8fd99a326"
+    },
+    "aarch64_linux_musl": {
+      "url": "https://github.com/tombi-toml/tombi/releases/download/v1.8.9/tombi-cli-1.8.9-aarch64-unknown-linux-musl.tar.gz",
+      "etag": "0x8DF2DE8B49EE091",
+      "hash": "4862f4fea963536bfb07678bed3d005735408e700701e979e6b68b9571084de6",
+      "bin": "tombi-cli-1.8.9-aarch64-unknown-linux-musl/tombi"
+    },
+    "aarch64_macos": {
+      "url": "https://github.com/tombi-toml/tombi/releases/download/v1.8.9/tombi-cli-1.8.9-aarch64-apple-darwin.tar.gz",
+      "etag": "0x8DF2DE8B4A6047C",
+      "hash": "287d02319d42d997237cab16a9876c0c116ea654be82f31e19c10c0a24159a60",
+      "bin": "tombi-cli-1.8.9-aarch64-apple-darwin/tombi"
+    },
+    "aarch64_windows": {
+      "url": "https://github.com/tombi-toml/tombi/releases/download/v1.8.9/tombi-cli-1.8.9-aarch64-pc-windows-msvc.zip",
+      "etag": "0x8DF2DE8B53D929C",
+      "hash": "637c5c76b5cfff2741f46e3fe7069177f0066d387bd498225ca4e3a183127452"
+    }
+  },
+  "1.8.8": {
+    "x86_64_linux_musl": {
+      "url": "https://github.com/tombi-toml/tombi/releases/download/v1.8.8/tombi-cli-1.8.8-x86_64-unknown-linux-musl.tar.gz",
+      "etag": "0x8DF2D83C2B10F39",
+      "hash": "27879624028c0e137978d97a5d6e4da121e993ae295c45e868b9b4612b9ccc15",
+      "bin": "tombi-cli-1.8.8-x86_64-unknown-linux-musl/tombi"
+    },
+    "x86_64_macos": {
+      "url": "https://github.com/tombi-toml/tombi/releases/download/v1.8.8/tombi-cli-1.8.8-x86_64-apple-darwin.tar.gz",
+      "etag": "0x8DF2D83C213F810",
+      "hash": "478bf951f7987c3eb4749a1d686152a76ea3b2673e344ea1ceaa557e8152edd6",
+      "bin": "tombi-cli-1.8.8-x86_64-apple-darwin/tombi"
+    },
+    "x86_64_windows": {
+      "url": "https://github.com/tombi-toml/tombi/releases/download/v1.8.8/tombi-cli-1.8.8-x86_64-pc-windows-msvc.zip",
+      "etag": "0x8DF2D83C2B37D7C",
+      "hash": "ef34c217aecec5f384c259cea958e02e83b46fdf404ecd5dbd55ee8833bc5265"
+    },
+    "aarch64_linux_musl": {
+      "url": "https://github.com/tombi-toml/tombi/releases/download/v1.8.8/tombi-cli-1.8.8-aarch64-unknown-linux-musl.tar.gz",
+      "etag": "0x8DF2D83C20672BF",
+      "hash": "33db6011e191f5c51a89631a714a33fcee883ef32c8d36e63a8b890e1c2e30ec",
+      "bin": "tombi-cli-1.8.8-aarch64-unknown-linux-musl/tombi"
+    },
+    "aarch64_macos": {
+      "url": "https://github.com/tombi-toml/tombi/releases/download/v1.8.8/tombi-cli-1.8.8-aarch64-apple-darwin.tar.gz",
+      "etag": "0x8DF2D83C204047B",
+      "hash": "7730b6eda7684715e74cf0bc1395407da2c494e497f059a6cdcae04d19bbeadf",
+      "bin": "tombi-cli-1.8.8-aarch64-apple-darwin/tombi"
+    },
+    "aarch64_windows": {
+      "url": "https://github.com/tombi-toml/tombi/releases/download/v1.8.8/tombi-cli-1.8.8-aarch64-pc-windows-msvc.zip",
+      "etag": "0x8DF2D83C22218F9",
+      "hash": "ad16a88e53de0283ceaf33888e4db8a4df9e78853caa59008bfeedf88adf238e"
+    }
+  },
+  "1.8.7": {
+    "x86_64_linux_musl": {
+      "url": "https://github.com/tombi-toml/tombi/releases/download/v1.8.7/tombi-cli-1.8.7-x86_64-unknown-linux-musl.tar.gz",
+      "etag": "0x8DF2CC51775D52F",
+      "hash": "05ee5cb56990f5b9129e3637f50b2d11ff316e01cc60750a93742fdaacd9aa63",
+      "bin": "tombi-cli-1.8.7-x86_64-unknown-linux-musl/tombi"
+    },
+    "x86_64_macos": {
+      "url": "https://github.com/tombi-toml/tombi/releases/download/v1.8.7/tombi-cli-1.8.7-x86_64-apple-darwin.tar.gz",
+      "etag": "0x8DF2CC516F4B251",
+      "hash": "7858afa225930b6fef5a8851085eacda0bca5acc7622d003229499f9f14c5259",
+      "bin": "tombi-cli-1.8.7-x86_64-apple-darwin/tombi"
+    },
+    "x86_64_windows": {
+      "url": "https://github.com/tombi-toml/tombi/releases/download/v1.8.7/tombi-cli-1.8.7-x86_64-pc-windows-msvc.zip",
+      "etag": "0x8DF2CC517C1CAED",
+      "hash": "08a5ba68cd5fba091ee54a8e4386113c65402244097dd555edf2ea5438f7a22c"
+    },
+    "aarch64_linux_musl": {
+      "url": "https://github.com/tombi-toml/tombi/releases/download/v1.8.7/tombi-cli-1.8.7-aarch64-unknown-linux-musl.tar.gz",
+      "etag": "0x8DF2CC516C793A7",
+      "hash": "0f625cb29666d4d89257ae4a9dc13d238a9b22278fbd5836d3c658a4eadff8d3",
+      "bin": "tombi-cli-1.8.7-aarch64-unknown-linux-musl/tombi"
+    },
+    "aarch64_macos": {
+      "url": "https://github.com/tombi-toml/tombi/releases/download/v1.8.7/tombi-cli-1.8.7-aarch64-apple-darwin.tar.gz",
+      "etag": "0x8DF2CC516C7E15C",
+      "hash": "c148a484358e9fe2ac05803783603ebc827c4efa7306918fa91c0f56b9b05bcb",
+      "bin": "tombi-cli-1.8.7-aarch64-apple-darwin/tombi"
+    },
+    "aarch64_windows": {
+      "url": "https://github.com/tombi-toml/tombi/releases/download/v1.8.7/tombi-cli-1.8.7-aarch64-pc-windows-msvc.zip",
+      "etag": "0x8DF2CC516D14CA6",
+      "hash": "2a2f8a187fcae371f1027cd8cb4920d4f6fc962fc25e9e0479d2818674205f1e"
+    }
+  },
+  "1.8.6": {
+    "x86_64_linux_musl": {
+      "url": "https://github.com/tombi-toml/tombi/releases/download/v1.8.6/tombi-cli-1.8.6-x86_64-unknown-linux-musl.tar.gz",
+      "etag": "0x8DF2C5E654FEADA",
+      "hash": "5d576f506233ca83bcaf1c288835f9bd48e5df938192833ed33bb3fcf8304b1d",
+      "bin": "tombi-cli-1.8.6-x86_64-unknown-linux-musl/tombi"
+    },
+    "x86_64_macos": {
+      "url": "https://github.com/tombi-toml/tombi/releases/download/v1.8.6/tombi-cli-1.8.6-x86_64-apple-darwin.tar.gz",
+      "etag": "0x8DF2C5E649FCB73",
+      "hash": "58c20e31e91107dc6bb90a99d7c548280e09e1a738acaafdbf888450ea976fde",
+      "bin": "tombi-cli-1.8.6-x86_64-apple-darwin/tombi"
+    },
+    "x86_64_windows": {
+      "url": "https://github.com/tombi-toml/tombi/releases/download/v1.8.6/tombi-cli-1.8.6-x86_64-pc-windows-msvc.zip",
+      "etag": "0x8DF2C5E652FDCC9",
+      "hash": "09fc62d751b84c00eea426da6cb54e881c6db412e1e5e7c7c0092a4d2ee8dd1b"
+    },
+    "aarch64_linux_musl": {
+      "url": "https://github.com/tombi-toml/tombi/releases/download/v1.8.6/tombi-cli-1.8.6-aarch64-unknown-linux-musl.tar.gz",
+      "etag": "0x8DF2C5E64A2FC2C",
+      "hash": "8baea8853d87f076b87b9395feda5132257d1e47aae0430d2e3f94829059b171",
+      "bin": "tombi-cli-1.8.6-aarch64-unknown-linux-musl/tombi"
+    },
+    "aarch64_macos": {
+      "url": "https://github.com/tombi-toml/tombi/releases/download/v1.8.6/tombi-cli-1.8.6-aarch64-apple-darwin.tar.gz",
+      "etag": "0x8DF2C5E649F56D4",
+      "hash": "36e1284631d0fff32440243ee4b1cc609a28f9c2301d84f59c8ed5d70483ffd5",
+      "bin": "tombi-cli-1.8.6-aarch64-apple-darwin/tombi"
+    },
+    "aarch64_windows": {
+      "url": "https://github.com/tombi-toml/tombi/releases/download/v1.8.6/tombi-cli-1.8.6-aarch64-pc-windows-msvc.zip",
+      "etag": "0x8DF2C5E64A7B1D7",
+      "hash": "3741e80f4caa02f17b1ea0940c49eedc23673f93a160c44347baa5f681a08e58"
+    }
   },
   "1.8.5": {
     "x86_64_linux_musl": {
