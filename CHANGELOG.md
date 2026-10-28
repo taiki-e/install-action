@@ -10,6 +10,48 @@ Note: In this file, do not use the hard wrap in the middle of a sentence for com
 
 ## [Unreleased]
 
+- Update `vacuum@latest` to 0.35.4.
+
+- Update `uv@latest` to 0.13.6.
+
+- Update `trunk@latest` to 0.22.1.
+
+- Update `tombi@latest` to 1.9.6.
+
+- Update `release-plz@latest` to 0.4.2.
+
+- Update `mise@latest` to 2026.10.21.
+
+- Update `cargo-nextest@latest` to 0.9.150.
+
+- Update `cargo-about@latest` to 0.9.3.
+
+## [2.87.32] - 2026-10-26
+
+- Update `wild@latest` to 0.11.0.
+
+- Update `vacuum@latest` to 0.35.2.
+
+- Update `tombi@latest` to 1.9.5.
+
+- Update `sccache@latest` to 0.19.0.
+
+- Update `release-plz@latest` to 0.4.1.
+
+- Update `mise@latest` to 2026.10.19.
+
+- Update `knope@latest` to 0.23.2.
+
+- Update `dprint@latest` to 0.64.3.
+
+- Update `cargo-vet@latest` to 0.10.3.
+
+- Update `cargo-sort@latest` to 2.1.4.
+
+- Update `cargo-binstall@latest` to 1.26.1.
+
+- Update `biome@latest` to 2.6.3.
+
 ## [2.87.31] - 2026-10-23
 
 - Downgrade `cargo-sort@latest` to 2.1.3.
@@ -7910,7 +7952,8 @@ Note: This release is considered a breaking change because installing on version
 
 Initial release
 
-[Unreleased]: https://github.com/taiki-e/install-action/compare/v2.87.31...HEAD
+[Unreleased]: https://github.com/taiki-e/install-action/compare/v2.87.32...HEAD
+[2.87.32]: https://github.com/taiki-e/install-action/compare/v2.87.31...v2.87.32
 [2.87.31]: https://github.com/taiki-e/install-action/compare/v2.87.30...v2.87.31
 [2.87.30]: https://github.com/taiki-e/install-action/compare/v2.87.29...v2.87.30
 [2.87.29]: https://github.com/taiki-e/install-action/compare/v2.87.28...v2.87.29
