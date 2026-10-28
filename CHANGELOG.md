@@ -10,6 +10,8 @@ Note: In this file, do not use the hard wrap in the middle of a sentence for com
 
 ## [Unreleased]
 
+- Support `similarity-rs`. ([#2017](https://github.com/taiki-e/install-action/pull/2017), thanks @HardMax71)
+
 ## [2.87.33] - 2026-10-28
 
 - Update `vacuum@latest` to 0.35.4.
