@@ -25,6 +25,7 @@ glibc_pre_2_34_incompat=(
   cargo-sort
   cargo-vet
   espup
+  similarity-rs
   wait-for-them
   xbuild
 )
