@@ -10,6 +10,8 @@ Note: In this file, do not use the hard wrap in the middle of a sentence for com
 
 ## [Unreleased]
 
+## [2.88.0] - 2026-10-28
+
 - Support `similarity-rs`. ([#2017](https://github.com/taiki-e/install-action/pull/2017), thanks @HardMax71)
 
 ## [2.87.33] - 2026-10-28
@@ -7956,7 +7958,8 @@ Note: This release is considered a breaking change because installing on version
 
 Initial release
 
-[Unreleased]: https://github.com/taiki-e/install-action/compare/v2.87.33...HEAD
+[Unreleased]: https://github.com/taiki-e/install-action/compare/v2.88.0...HEAD
+[2.88.0]: https://github.com/taiki-e/install-action/compare/v2.87.33...v2.88.0
 [2.87.33]: https://github.com/taiki-e/install-action/compare/v2.87.32...v2.87.33
 [2.87.32]: https://github.com/taiki-e/install-action/compare/v2.87.31...v2.87.32
 [2.87.31]: https://github.com/taiki-e/install-action/compare/v2.87.30...v2.87.31
