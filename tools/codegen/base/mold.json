@@ -5,13 +5,16 @@
   "version_range": ">= 2.42.1",
   "platform": {
     "x86_64_linux_gnu": {
-      "asset_name": "${package}-${version}-x86_64-linux.tar.gz"
+      "asset_name": "${package}-${version}-x86_64-linux.tar.gz",
+      "bin": "bin/mold"
     },
     "x86_64_windows": {
-      "asset_name": "${package}-${version}-x86_64-windows.zip"
+      "asset_name": "${package}-${version}-x86_64-windows.zip",
+      "bin": "bin/mold"
     },
     "aarch64_linux_gnu": {
-      "asset_name": "${package}-${version}-aarch64-linux.tar.gz"
+      "asset_name": "${package}-${version}-aarch64-linux.tar.gz",
+      "bin": "bin/mold"
     }
   }
 }
