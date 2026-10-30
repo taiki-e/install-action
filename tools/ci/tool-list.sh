@@ -24,6 +24,7 @@ glibc_pre_2_34_incompat=(
   "${glibc_pre_2_35_incompat[@]}"
   cargo-sort
   cargo-vet
+  deepsource
   espup
   similarity-rs
   wait-for-them
