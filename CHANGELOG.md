@@ -10,6 +10,8 @@ Note: In this file, do not use the hard wrap in the middle of a sentence for com
 
 ## [Unreleased]
 
+- Update `biome@latest` to 2.6.4.
+
 ## [2.88.0] - 2026-10-28
 
 - Support `similarity-rs`. ([#2017](https://github.com/taiki-e/install-action/pull/2017), thanks @HardMax71)
