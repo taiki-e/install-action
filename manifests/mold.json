@@ -3,7 +3,7 @@
   "template": {
     "x86_64_linux_gnu": {
       "url": "https://github.com/rui314/mold/releases/download/v${version}/mold-${version}-x86_64-linux.tar.gz",
-      "bin": "bin/mold"
+      "bin": "mold-${version}-x86_64-linux/bin/mold"
     },
     "x86_64_windows": {
       "url": "https://github.com/rui314/mold/releases/download/v${version}/mold-${version}-x86_64-windows.zip",
@@ -11,7 +11,7 @@
     },
     "aarch64_linux_gnu": {
       "url": "https://github.com/rui314/mold/releases/download/v${version}/mold-${version}-aarch64-linux.tar.gz",
-      "bin": "bin/mold"
+      "bin": "mold-${version}-aarch64-linux/bin/mold"
     }
   },
   "latest": {

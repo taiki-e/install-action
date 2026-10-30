@@ -6,7 +6,7 @@
   "platform": {
     "x86_64_linux_gnu": {
       "asset_name": "${package}-${version}-x86_64-linux.tar.gz",
-      "bin": "bin/mold"
+      "bin": "${package}-${version}-x86_64-linux/bin/mold"
     },
     "x86_64_windows": {
       "asset_name": "${package}-${version}-x86_64-windows.zip",
@@ -14,7 +14,7 @@
     },
     "aarch64_linux_gnu": {
       "asset_name": "${package}-${version}-aarch64-linux.tar.gz",
-      "bin": "bin/mold"
+      "bin": "${package}-${version}-aarch64-linux/bin/mold"
     }
   }
 }
