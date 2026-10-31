@@ -85,9 +85,8 @@ case "$(uname -s)" in
     function libc_version_lower_than {
       local host_version=$1
       local version=$2
-      local higher_glibc_version=$(LC_ALL=C sort -Vu <<<"$version"$'\n'"${host_version}" | tail -1)
 
-      if [[ "${higher_glibc_version}" != "${host_version}" ]]; then
+      if [[ "$(LC_ALL=C sort -Vu <<<"${version}"$'\n'"${host_version}" | tail -1)" != "${host_version}" ]]; then
         return 0
       else
         return 1
