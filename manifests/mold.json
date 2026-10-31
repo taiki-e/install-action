@@ -1,0 +1,60 @@
+{
+  "rust_crate": null,
+  "template": {
+    "x86_64_linux_gnu": {
+      "url": "https://github.com/rui314/mold/releases/download/v${version}/mold-${version}-x86_64-linux.tar.gz",
+      "bin": "mold-${version}-x86_64-linux/bin/mold"
+    },
+    "x86_64_windows": {
+      "url": "https://github.com/rui314/mold/releases/download/v${version}/mold-${version}-x86_64-windows.zip",
+      "bin": "bin/mold"
+    },
+    "aarch64_linux_gnu": {
+      "url": "https://github.com/rui314/mold/releases/download/v${version}/mold-${version}-aarch64-linux.tar.gz",
+      "bin": "mold-${version}-aarch64-linux/bin/mold"
+    }
+  },
+  "latest": {
+    "version": "3.0.0"
+  },
+  "3": {
+    "version": "3.0.0"
+  },
+  "3.0": {
+    "version": "3.0.0"
+  },
+  "3.0.0": {
+    "x86_64_linux_gnu": {
+      "etag": "0x8DF22C41E044096",
+      "hash": "6c90d4a474c7c0409dfb575be03a5345878ac14fdba18de8b40fa58c60121189"
+    },
+    "x86_64_windows": {
+      "etag": "0x8DF22C41E000DEA",
+      "hash": "1421fccaf7efee77e53f1dc365f90acb791bedff6be486aed0c0313393e6b8ec"
+    },
+    "aarch64_linux_gnu": {
+      "etag": "0x8DF22C41D48BDBA",
+      "hash": "52c759d3689babaea4c42af2f31062a74ab83e17ffb5a8090232534c67b70577"
+    }
+  },
+  "2": {
+    "version": "2.42.1"
+  },
+  "2.42": {
+    "version": "2.42.1"
+  },
+  "2.42.1": {
+    "x86_64_linux_gnu": {
+      "etag": "0x8DF0FF0371FA9AF",
+      "hash": "6ff270c9bf07d2bec5c98aa324eb7c4daf6a1a4d815c05ff1708049616047855"
+    },
+    "x86_64_windows": {
+      "etag": "0x8DF0FF037239CE2",
+      "hash": "ce38c5d5d6a5169e05883d598592b367976a9575abfafcdc49889fcc788b51c0"
+    },
+    "aarch64_linux_gnu": {
+      "etag": "0x8DF0FF03693F3E6",
+      "hash": "16b025652d3d7456689e6025a77e1903bb2a15e7630877c26cc133f5df95b9c6"
+    }
+  }
+}
