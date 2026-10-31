@@ -50,13 +50,17 @@ glibc_pre_2_27_incompat=(
   protoc
   valgrind
 )
+# version `GLIBC_2.18' not found
+glibc_pre_2_18_incompat=(
+  "${glibc_pre_2_27_incompat[@]}"
+  mold
+)
 # version `GLIBC_2.17' not found
 glibc_pre_2_17_incompat=(
-  "${glibc_pre_2_27_incompat[@]}"
+  "${glibc_pre_2_18_incompat[@]}"
   deepsource # https://github.com/DeepSourceCorp/cli/issues/245
   rafn       # built on ubuntu-24.04, requires GLIBC_2.17+
   rust
-  mold
 )
 musl_incompat=(
   "${glibc_pre_2_17_incompat[@]}"
@@ -78,6 +82,18 @@ esac
 runner="${2:-}"
 case "$(uname -s)" in
   Linux)
+    function libc_version_lower_than {
+      local host_version=$1
+      local version=$2
+      local higher_glibc_version=$(LC_ALL=C sort -Vu <<<"$version"$'\n'"${host_version}" | tail -1)
+
+      if [[ "${higher_glibc_version}" != "${host_version}" ]]; then
+        return 0
+      else
+        return 1
+      fi
+    }
+
     host_os=linux
     ldd_version=$(ldd --version 2>&1 || true)
     if [[ "${ldd_version}" == *'musl'* ]]; then
@@ -85,39 +101,22 @@ case "$(uname -s)" in
     else
       host_glibc_version=$(grep -E "GLIBC|GNU libc" <<<"${ldd_version}")
       host_glibc_version="${host_glibc_version##* }"
-      higher_glibc_version=$(LC_ALL=C sort -Vu <<<"2.39"$'\n'"${host_glibc_version}" | tail -1)
-      if [[ "${higher_glibc_version}" != "${host_glibc_version}" ]]; then
-        higher_glibc_version=$(LC_ALL=C sort -Vu <<<"2.35"$'\n'"${host_glibc_version}" | tail -1)
-        if [[ "${higher_glibc_version}" != "${host_glibc_version}" ]]; then
-          higher_glibc_version=$(LC_ALL=C sort -Vu <<<"2.34"$'\n'"${host_glibc_version}" | tail -1)
-          if [[ "${higher_glibc_version}" != "${host_glibc_version}" ]]; then
-            higher_glibc_version=$(LC_ALL=C sort -Vu <<<"2.31"$'\n'"${host_glibc_version}" | tail -1)
-            if [[ "${higher_glibc_version}" != "${host_glibc_version}" ]]; then
-              higher_glibc_version=$(LC_ALL=C sort -Vu <<<"2.28"$'\n'"${host_glibc_version}" | tail -1)
-              if [[ "${higher_glibc_version}" != "${host_glibc_version}" ]]; then
-                higher_glibc_version=$(LC_ALL=C sort -Vu <<<"2.27"$'\n'"${host_glibc_version}" | tail -1)
-                if [[ "${higher_glibc_version}" != "${host_glibc_version}" ]]; then
-                  higher_glibc_version=$(LC_ALL=C sort -Vu <<<"2.17"$'\n'"${host_glibc_version}" | tail -1)
-                  if [[ "${higher_glibc_version}" != "${host_glibc_version}" ]]; then
-                    incompat_tools+=("${glibc_pre_2_17_incompat[@]}")
-                  else
-                    incompat_tools+=("${glibc_pre_2_27_incompat[@]}")
-                  fi
-                else
-                  incompat_tools+=("${glibc_pre_2_28_incompat[@]}")
-                fi
-              else
-                incompat_tools+=("${glibc_pre_2_31_incompat[@]}")
-              fi
-            else
-              incompat_tools+=("${glibc_pre_2_34_incompat[@]}")
-            fi
-          else
-            incompat_tools+=("${glibc_pre_2_35_incompat[@]}")
-          fi
-        else
-          incompat_tools+=("${glibc_pre_2_39_incompat[@]}")
-        fi
+      if libc_version_lower_than "${host_glibc_version}" 2.17; then
+        incompat_tools+=("${glibc_pre_2_17_incompat[@]}")
+      elif libc_version_lower_than "${host_glibc_version}" 2.18; then
+        incompat_tools+=("${glibc_pre_2_18_incompat[@]}")
+      elif libc_version_lower_than "${host_glibc_version}" 2.27; then
+        incompat_tools+=("${glibc_pre_2_27_incompat[@]}")
+      elif libc_version_lower_than "${host_glibc_version}" 2.28; then
+        incompat_tools+=("${glibc_pre_2_28_incompat[@]}")
+      elif libc_version_lower_than "${host_glibc_version}" 2.31; then
+        incompat_tools+=("${glibc_pre_2_31_incompat[@]}")
+      elif libc_version_lower_than "${host_glibc_version}" 2.34; then
+        incompat_tools+=("${glibc_pre_2_34_incompat[@]}")
+      elif libc_version_lower_than "${host_glibc_version}" 2.35; then
+        incompat_tools+=("${glibc_pre_2_35_incompat[@]}")
+      elif libc_version_lower_than "${host_glibc_version}" 2.39; then
+        incompat_tools+=("${glibc_pre_2_39_incompat[@]}")
       fi
     fi
     if ! type -P snap >/dev/null; then
