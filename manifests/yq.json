@@ -1,0 +1,64 @@
+{
+  "rust_crate": null,
+  "template": {
+    "x86_64_linux_musl": {
+      "url": "https://github.com/mikefarah/yq/releases/download/v${version}/yq_linux_amd64.tar.gz",
+      "bin": "yq_linux_amd64"
+    },
+    "x86_64_macos": {
+      "url": "https://github.com/mikefarah/yq/releases/download/v${version}/yq_darwin_amd64.tar.gz",
+      "bin": "yq_darwin_amd64"
+    },
+    "x86_64_windows": {
+      "url": "https://github.com/mikefarah/yq/releases/download/v${version}/yq_windows_amd64.zip",
+      "bin": "yq_windows_amd64.exe"
+    },
+    "aarch64_linux_musl": {
+      "url": "https://github.com/mikefarah/yq/releases/download/v${version}/yq_linux_arm64.tar.gz",
+      "bin": "yq_linux_arm64"
+    },
+    "aarch64_macos": {
+      "url": "https://github.com/mikefarah/yq/releases/download/v${version}/yq_darwin_arm64.tar.gz",
+      "bin": "yq_darwin_arm64"
+    },
+    "aarch64_windows": {
+      "url": "https://github.com/mikefarah/yq/releases/download/v${version}/yq_windows_arm64.zip",
+      "bin": "yq_windows_arm64.exe"
+    }
+  },
+  "latest": {
+    "version": "4.54.1"
+  },
+  "4": {
+    "version": "4.54.1"
+  },
+  "4.54": {
+    "version": "4.54.1"
+  },
+  "4.54.1": {
+    "x86_64_linux_musl": {
+      "etag": "0x8DF1DE03114DF05",
+      "hash": "e68a456f90c577af3fe4960184b3a3cf5c461e0348407c10f107da3a5fec8972"
+    },
+    "x86_64_macos": {
+      "etag": "0x8DF1DE03109A104",
+      "hash": "b2cc367e9f5491b3b9b191aa19ba3a3163daf99d84f90bc7bd8918010a66e69a"
+    },
+    "x86_64_windows": {
+      "etag": "0x8DF1DE0310C362C",
+      "hash": "c2fb1234e58a3b80e358a0a8baeaf7ec51bfa698bbe40e2fcab0ed37d590c107"
+    },
+    "aarch64_linux_musl": {
+      "etag": "0x8DF1DE030F6F15A",
+      "hash": "8c27f6e7476fb5acefb9352e3d30f6bc2dc93f1956eb92e8da727173fb7ec6d3"
+    },
+    "aarch64_macos": {
+      "etag": "0x8DF1DE030FDEE5A",
+      "hash": "60d0c91aa8bf4030d38e80bb05f84c20be2e955f24d62b2e55d15ad643fa7afa"
+    },
+    "aarch64_windows": {
+      "etag": "0x8DF1DE030F0DDB6",
+      "hash": "2b2d1bc0db6d9801f6579aa2946871f1e6a598737a5ffcc6b043ea8c704e8991"
+    }
+  }
+}

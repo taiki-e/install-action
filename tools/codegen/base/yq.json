@@ -1,0 +1,32 @@
+{
+  "repository": "https://github.com/mikefarah/yq",
+  "license_markdown": "[MIT](https://github.com/mikefarah/yq/blob/master/LICENSE)",
+  "tag_prefix": "v",
+  "version_range": ">= 4.54.1",
+  "platform": {
+    "x86_64_linux_musl": {
+      "asset_name": "yq_linux_amd64.tar.gz",
+      "bin": "yq_linux_amd64${exe}"
+    },
+    "x86_64_macos": {
+      "asset_name": "yq_darwin_amd64.tar.gz",
+      "bin": "yq_darwin_amd64${exe}"
+    },
+    "x86_64_windows": {
+      "asset_name": "yq_windows_amd64.zip",
+      "bin": "yq_windows_amd64${exe}"
+    },
+    "aarch64_linux_musl": {
+      "asset_name": "yq_linux_arm64.tar.gz",
+      "bin": "yq_linux_arm64${exe}"
+    },
+    "aarch64_macos": {
+      "asset_name": "yq_darwin_arm64.tar.gz",
+      "bin": "yq_darwin_arm64${exe}"
+    },
+    "aarch64_windows": {
+      "asset_name": "yq_windows_arm64.zip",
+      "bin": "yq_windows_arm64${exe}"
+    }
+  }
+}
