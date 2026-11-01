@@ -263,9 +263,7 @@ jobs:
       # check it with CI. (e.g., 0.14.0->0.16.0 update change it
       # from "cargo-binstall <version>" to "<version>")
       - run: |
-          if [[ "$(cargo-binstall binstall -V)" != "$(jq -r '.latest.version' manifests/cargo-binstall.json)" ]]; then
-            exit 1
-          fi
+          [[ "$(cargo-binstall binstall -V)" == "$(jq -r '.latest.version' manifests/cargo-binstall.json)" ]] || exit 1
         if: matrix.bash != 'cygwin' && matrix.os != 'windows-11-arm' && !startsWith(matrix.container, 'opensuse')
 
   test-alias:
@@ -313,6 +311,21 @@ jobs:
       # cross attempts to install rust-src when Cargo.toml is available even if `cross --version`
       - run: rm -- Cargo.toml
       - run: env
+      - name: Set up an incompatible cargo-binstall outside the install directory
+        run: |
+          mkdir -p -- "${RUNNER_TEMP}/binstall/bin"
+          cat >"${RUNNER_TEMP}/binstall/bin/cargo-binstall" <<'EOF'
+          #!/usr/bin/env bash
+          if [[ "$*" == 'binstall -V' ]]; then
+            printf '%s\n' '0.0.0'
+          else
+            printf >&2 '%s\n' 'incompatible cargo-binstall was called'
+            exit 1
+          fi
+          EOF
+          chmod +x "${RUNNER_TEMP}/binstall/bin/cargo-binstall"
+          printf '%s\n' "${RUNNER_TEMP}/binstall/bin" >>"${GITHUB_PATH}"
+        if: matrix.fallback == 'cargo-binstall'
       - uses: $/
         id: install
         continue-on-error: ${{ matrix.fallback == 'none' }}
@@ -321,6 +334,10 @@ jobs:
           fallback: ${{ matrix.fallback }}
       - run: exit 1
         if: matrix.fallback == 'none' && steps.install.outcome != 'failure'
+      - run: |
+          [[ "$("${RUNNER_TEMP}/binstall/bin/cargo-binstall" binstall -V)" == '0.0.0' ]] || exit 1
+          [[ "$(cargo-binstall binstall -V)" == "$(jq -r '.latest.version' manifests/cargo-binstall.json)" ]] || exit 1
+        if: matrix.fallback == 'cargo-binstall'
       - name: Test bash
         run: parse-changelog --version
         shell: bash
