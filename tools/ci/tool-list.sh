@@ -12,6 +12,7 @@ glibc_pre_2_39_incompat=(
   cargo-deb
   cargo-mutants
   cargo-spellcheck
+  wasm-bindgen
   zizmor
 )
 # version `GLIBC_2.35' not found
