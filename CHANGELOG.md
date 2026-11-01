@@ -16,7 +16,7 @@ Note: In this file, do not use the hard wrap in the middle of a sentence for com
 
 - Support `mold`. ([#2044](https://github.com/taiki-e/install-action/pull/2044), thanks @FirelightFlagboy)
 
-- Fix an error when cargo-binstall had already been installed at non-standard location. ([#2048](https://github.com/taiki-e/install-action/pull/2048))
+- Fix an error when old cargo-binstall had already been installed at non-standard location. ([#2048](https://github.com/taiki-e/install-action/pull/2048))
 
 - Update `wasm-tools@latest` to 1.263.0.
 
