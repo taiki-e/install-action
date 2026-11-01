@@ -10,6 +10,8 @@ Note: In this file, do not use the hard wrap in the middle of a sentence for com
 
 ## [Unreleased]
 
+## [2.89.0] - 2026-11-01
+
 - Support `yq`. ([#2036](https://github.com/taiki-e/install-action/pull/2036), thanks @FirelightFlagboy)
 
 - Support `mold`. ([#2044](https://github.com/taiki-e/install-action/pull/2044), thanks @FirelightFlagboy)
@@ -7998,7 +8000,8 @@ Note: This release is considered a breaking change because installing on version
 
 Initial release
 
-[Unreleased]: https://github.com/taiki-e/install-action/compare/v2.88.1...HEAD
+[Unreleased]: https://github.com/taiki-e/install-action/compare/v2.89.0...HEAD
+[2.89.0]: https://github.com/taiki-e/install-action/compare/v2.88.1...v2.89.0
 [2.88.1]: https://github.com/taiki-e/install-action/compare/v2.88.0...v2.88.1
 [2.88.0]: https://github.com/taiki-e/install-action/compare/v2.87.33...v2.88.0
 [2.87.33]: https://github.com/taiki-e/install-action/compare/v2.87.32...v2.87.33
