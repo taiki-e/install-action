@@ -378,20 +378,26 @@ install_cargo_binstall() {
   local binstall_version
   binstall_version=$(jq -r '.latest.version' "${manifest_dir}/cargo-binstall.json")
   local install_binstall=1
+  local installed_at
+  installed_at=$(type -P "cargo-binstall${exe}" || true)
   _binstall_version=$("cargo-binstall${exe}" binstall -V 2>/dev/null || true)
   if [[ -n "${_binstall_version}" ]]; then
     if [[ "${_binstall_version}" == "${binstall_version}" ]]; then
-      info "cargo-binstall already installed at ${cargo_bin}/cargo-binstall${exe}"
+      info "cargo-binstall already installed at ${installed_at}"
       install_binstall=''
     else
-      info "cargo-binstall already installed at ${cargo_bin}/cargo-binstall${exe}, but is not compatible version with this action, upgrading"
-      rm -- "${cargo_bin}/cargo-binstall${exe}"
+      info "cargo-binstall already installed at ${installed_at}, but is not compatible version with this action, upgrading"
     fi
   fi
 
   if [[ -n "${install_binstall}" ]]; then
     info "installing cargo-binstall@latest (${binstall_version})"
     download_from_manifest "cargo-binstall" "latest"
+    # Prefer the downloaded binary over an incompatible version elsewhere in PATH.
+    export PATH="${bin_dir}:${PATH}"
+    local _bin_dir
+    _bin_dir=$(canonicalize_windows_path "${bin_dir}")
+    printf '%s\n' "${_bin_dir}" >>"${GITHUB_PATH}"
     installed_at=$(type -P "cargo-binstall${exe}" || true)
     if [[ -n "${installed_at}" ]]; then
       info "cargo-binstall installed at ${installed_at}"
