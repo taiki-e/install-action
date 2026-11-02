@@ -10,6 +10,14 @@ Note: In this file, do not use the hard wrap in the middle of a sentence for com
 
 ## [Unreleased]
 
+- Update `parse-dockerfile@latest` to 0.1.9.
+
+- Update `parse-changelog@latest` to 0.6.18.
+
+- Update `cargo-minimal-versions@latest` to 0.1.38.
+
+- Update `cargo-hack@latest` to 0.6.46.
+
 ## [2.89.0] - 2026-11-01
 
 - Support `yq`. ([#2036](https://github.com/taiki-e/install-action/pull/2036), thanks @FirelightFlagboy)

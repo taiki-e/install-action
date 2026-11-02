@@ -2,12 +2,11 @@
 
 use std::{
     fmt, format,
+    io::{Error, Result},
     process::{Command, ExitStatus, Output},
     str,
     string::{String, ToString as _},
 };
-
-use anyhow::{Context as _, Error, Result};
 
 macro_rules! cmd {
     ($program:expr $(, $arg:expr)* $(,)?) => {{
@@ -55,8 +54,8 @@ impl ProcessBuilder {
     /// Executes a process, waiting for completion, and mapping non-zero exit
     /// status to an error.
     pub(crate) fn run(&mut self) -> Result<()> {
-        let status = self.cmd.status().with_context(|| {
-            process_error(format!("could not execute process {self}"), None, None)
+        let status = self.cmd.status().map_err(|e| {
+            process_error(format!("could not execute process {self}: {e}"), None, None)
         })?;
         if status.success() {
             Ok(())
@@ -151,5 +150,5 @@ fn process_error(mut msg: String, status: Option<ExitStatus>, output: Option<&Ou
         }
     }
 
-    Error::msg(msg)
+    Error::other(msg)
 }

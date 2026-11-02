@@ -14,7 +14,6 @@ use std::{
     time::Duration,
 };
 
-use anyhow::{Context as _, Result, bail};
 use fs_err as fs;
 use install_action_internal_codegen::{
     BaseManifest, HostPlatform, Manifest, ManifestDownloadInfo, ManifestRef, ManifestTemplate,
@@ -54,8 +53,7 @@ fn main() {
     let repo = base_info
         .repository
         .strip_prefix(GITHUB_START)
-        .context("repository must start with https://github.com/")
-        .unwrap();
+        .expect("repository must start with https://github.com/");
 
     eprintln!("downloading metadata from {GITHUB_API_START}repos/{repo}");
 
@@ -108,9 +106,7 @@ fn main() {
     base_info.rust_crate = base_info
         .rust_crate
         .as_ref()
-        .map(|s| replace_vars(s, package, None, None, base_info.rust_crate.as_deref()))
-        .transpose()
-        .unwrap();
+        .map(|s| replace_vars(s, package, None, None, base_info.rust_crate.as_deref()));
     if let Some(crate_name) = &base_info.rust_crate {
         eprintln!("downloading crate info from https://crates.io/api/v1/crates/{crate_name}");
         let info: crates_io::Crate =
@@ -500,8 +496,7 @@ fn main() {
                 .asset_name
                 .as_ref()
                 .or(base_info.asset_name.as_ref())
-                .with_context(|| format!("asset_name is needed for {package} on {platform:?}"))
-                .unwrap()
+                .unwrap_or_else(|| panic!("asset_name is needed for {package} on {platform:?}"))
                 .as_slice()
                 .iter()
                 .map(|asset_name| {
@@ -513,8 +508,7 @@ fn main() {
                         base_info.rust_crate.as_deref(),
                     )
                 })
-                .collect::<Result<Vec<_>>>()
-                .unwrap();
+                .collect::<Vec<_>>();
             let (url, digest, asset_name) = match asset_names.iter().find_map(|asset_name| {
                 release
                     .assets
@@ -536,7 +530,7 @@ fn main() {
                 "{version}-{platform:?}-{}",
                 Path::new(&url).file_name().unwrap().to_str().unwrap()
             ));
-            let response = download(&url).unwrap();
+            let response = download(&url);
             let etag =
                 response.header("etag").expect("binary should have an etag").replace('\"', "");
 
@@ -608,7 +602,7 @@ fn main() {
                             eprintln!("already downloaded");
                             minisign_verify::Signature::from_file(sig_download_cache).unwrap()
                         } else {
-                            let buf = download(&url).unwrap().into_string().unwrap();
+                            let buf = download(&url).into_string().unwrap();
                             eprintln!("download complete");
                             fs::write(sig_download_cache, &buf).unwrap();
                             minisign_verify::Signature::decode(&buf).unwrap()
@@ -715,7 +709,6 @@ fn main() {
                                 Some(platform),
                                 base_info.rust_crate.as_deref(),
                             )
-                            .unwrap()
                         })
                     }),
                 ),
@@ -779,7 +772,7 @@ fn main() {
 
         // update an existing manifests.json to avoid discarding work done in the event of a fetch error.
         if existing_manifest.is_some() && !version_req_given {
-            write_manifests(manifest_path, &manifests.clone()).unwrap();
+            write_manifests(manifest_path, &manifests.clone());
             eprintln!("wrote {} with incomplete data", manifest_path.display());
         }
     }
@@ -939,25 +932,26 @@ fn main() {
 
     manifests.rust_crate = base_info.rust_crate;
 
-    write_manifests(manifest_path, &manifests).unwrap();
+    write_manifests(manifest_path, &manifests);
     eprintln!("wrote {}", manifest_path.display());
 }
 
-fn write_manifests(manifest_path: &Path, manifests: &Manifests) -> Result<()> {
-    let mut buf = serde_json::to_vec_pretty(&manifests)?;
+#[track_caller]
+fn write_manifests(manifest_path: &Path, manifests: &Manifests) {
+    let mut buf = serde_json::to_vec_pretty(&manifests).unwrap();
     buf.push(b'\n');
-    fs::write(manifest_path, buf)?;
-    Ok(())
+    fs::write(manifest_path, buf).unwrap();
 }
 
 #[allow(clippy::literal_string_with_formatting_args)]
+#[track_caller]
 fn replace_vars(
     s: &str,
     package: &str,
     version: Option<&str>,
     platform: Option<HostPlatform>,
     rust_crate: Option<&str>,
-) -> Result<String> {
+) -> String {
     static RUST_SPECIFIC: &[(&str, fn(HostPlatform) -> &'static str)] = &[
         ("${rust_target}", HostPlatform::rust_target),
         ("${rust_target_arch}", HostPlatform::rust_target_arch),
@@ -980,14 +974,14 @@ fn replace_vars(
     if s.contains('$') {
         for &(var, _) in RUST_SPECIFIC {
             if s.contains(var) {
-                bail!(
+                panic!(
                     "base manifest for {package} refers {var}, but 'rust_crate' field is not set"
                 );
             }
         }
-        bail!("variable not fully replaced: '{s}'");
+        panic!("variable not fully replaced: '{s}'");
     }
-    Ok(s)
+    s
 }
 
 struct GitHubTokens {
@@ -1035,7 +1029,8 @@ static GITHUB_TOKENS: LazyLock<GitHubTokens> = LazyLock::new(|| {
     }
 });
 
-fn download(url: &str) -> Result<ureq::Response> {
+#[track_caller]
+fn download(url: &str) -> ureq::Response {
     let mut token = GITHUB_TOKENS.get(url);
     let mut retry = 0;
     let mut retry_time = 0;
@@ -1056,7 +1051,7 @@ fn download(url: &str) -> Result<ureq::Response> {
                 .set("X-GitHub-Api-Version", "2022-11-28");
         }
         match req.call() {
-            Ok(res) => return Ok(res),
+            Ok(res) => return res,
             Err(e) => last_error = Some(e),
         }
         retry_time += 1;
@@ -1073,17 +1068,17 @@ fn download(url: &str) -> Result<ureq::Response> {
         eprintln!("download failed; retrying after {}s ({retry}/{max_retry})", retry_time * 2);
         std::thread::sleep(Duration::from_secs(retry_time * 2));
     }
-    Err(last_error.unwrap().into())
+    panic!("{}", last_error.unwrap())
 }
 
 #[track_caller]
 fn download_to_buf(url: &str, buf: &mut Vec<u8>) {
-    download(url).unwrap().into_reader().read_to_end(buf).unwrap();
+    download(url).into_reader().read_to_end(buf).unwrap();
 }
 
 #[track_caller]
 fn download_json<T: DeserializeOwned>(url: &str) -> T {
-    download(url).unwrap().into_json().unwrap()
+    download(url).into_json().unwrap()
 }
 
 #[allow(dead_code)]
