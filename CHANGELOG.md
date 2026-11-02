@@ -10,6 +10,8 @@ Note: In this file, do not use the hard wrap in the middle of a sentence for com
 
 ## [Unreleased]
 
+- Install `ld.mold` symlink when installing `mold` on Linux. Previously, only `mold` binary was installed. ([#2050](https://github.com/taiki-e/install-action/pull/2050), thanks @FirelightFlagboy)
+
 - Update `parse-dockerfile@latest` to 0.1.9.
 
 - Update `parse-changelog@latest` to 0.6.18.
