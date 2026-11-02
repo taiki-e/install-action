@@ -5,7 +5,6 @@ default-run = "generate-manifest"
 
 [dependencies]
 install-action-manifest-schema = { path = "../manifest-schema" }
-anyhow = "1"
 flate2 = "1"
 fs-err = "3"
 jiff = { version = "0.2", default-features = false, features = ["std", "serde"] }
