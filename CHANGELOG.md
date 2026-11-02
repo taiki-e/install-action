@@ -10,6 +10,8 @@ Note: In this file, do not use the hard wrap in the middle of a sentence for com
 
 ## [Unreleased]
 
+## [2.89.1] - 2026-11-02
+
 - Install `ld.mold` symlink when installing `mold` on Linux. Previously, only `mold` binary was installed. ([#2050](https://github.com/taiki-e/install-action/pull/2050), thanks @FirelightFlagboy)
 
 - Update `parse-dockerfile@latest` to 0.1.9.
@@ -8010,7 +8012,8 @@ Note: This release is considered a breaking change because installing on version
 
 Initial release
 
-[Unreleased]: https://github.com/taiki-e/install-action/compare/v2.89.0...HEAD
+[Unreleased]: https://github.com/taiki-e/install-action/compare/v2.89.1...HEAD
+[2.89.1]: https://github.com/taiki-e/install-action/compare/v2.89.0...v2.89.1
 [2.89.0]: https://github.com/taiki-e/install-action/compare/v2.88.1...v2.89.0
 [2.88.1]: https://github.com/taiki-e/install-action/compare/v2.88.0...v2.88.1
 [2.88.0]: https://github.com/taiki-e/install-action/compare/v2.87.33...v2.88.0
