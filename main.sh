@@ -754,8 +754,8 @@ case "${host_os}" in
     else
       printf '::group::Install packages required for installation (jq)\n'
       mkdir -p -- "${install_action_dir}/jq/bin"
-      url='https://github.com/jqlang/jq/releases/download/jq-1.8.1/jq-windows-amd64.exe'
-      checksum='23cb60a1354eed6bcc8d9b9735e8c7b388cd1fdcb75726b93bc299ef22dd9334'
+      url='https://github.com/jqlang/jq/releases/download/jq-1.8.2/jq-windows-amd64.exe'
+      checksum='a6fc67fedaf9128a3309a1e2ebb8b986aeccf70122ee46d2cb4849e423f0c627'
       (
         cd -- "${install_action_dir}/jq/bin"
         download_and_checksum "${url}" "${checksum}"
