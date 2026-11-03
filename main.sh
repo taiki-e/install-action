@@ -109,53 +109,57 @@ download_and_extract() {
     *.tar.gz | *.tgz)
       tar_args+=('xzf')
       if ! type -P gzip >/dev/null; then
-        case "${base_distro}" in
-          debian | fedora | suse | arch | alpine)
-            printf '::group::Install packages required for installation (gzip)\n'
-            sys_install gzip
-            printf '::endgroup::\n'
-            ;;
-        esac
+        if [[ -n "${base_distro}" ]]; then
+          printf '::group::Install packages required for installation (gzip)\n'
+          sys_install gzip
+          printf '::endgroup::\n'
+        else
+          warn "this action requires gzip to install ${tool}"
+        fi
       fi
       ;;
     *.gz)
       if ! type -P gzip >/dev/null; then
-        case "${base_distro}" in
-          debian | fedora | suse | arch | alpine)
-            printf '::group::Install packages required for installation (gzip)\n'
-            sys_install gzip
-            printf '::endgroup::\n'
-            ;;
-        esac
+        if [[ -n "${base_distro}" ]]; then
+          printf '::group::Install packages required for installation (gzip)\n'
+          sys_install gzip
+          printf '::endgroup::\n'
+        else
+          warn "this action requires gzip to install ${tool}"
+        fi
       fi
       ;;
     *.tar.bz2 | *.tbz2)
       tar_args+=('xjf')
       if ! type -P bzip2 >/dev/null; then
-        case "${base_distro}" in
-          debian | fedora | suse | arch | alpine)
-            printf '::group::Install packages required for installation (bzip2)\n'
-            sys_install bzip2
-            printf '::endgroup::\n'
-            ;;
-        esac
+        if [[ -n "${base_distro}" ]]; then
+          printf '::group::Install packages required for installation (bzip2)\n'
+          sys_install bzip2
+          printf '::endgroup::\n'
+        else
+          warn "this action requires bzip2 to install ${tool}"
+        fi
       fi
       ;;
     *.tar.xz | *.txz)
       tar_args+=('xJf')
       if ! type -P xz >/dev/null; then
-        case "${base_distro}" in
-          debian)
-            printf '::group::Install packages required for installation (xz-utils)\n'
-            sys_install xz-utils
-            printf '::endgroup::\n'
-            ;;
-          fedora | suse | arch | alpine)
-            printf '::group::Install packages required for installation (xz)\n'
-            sys_install xz
-            printf '::endgroup::\n'
-            ;;
-        esac
+        if [[ -n "${base_distro}" ]]; then
+          case "${base_distro}" in
+            debian)
+              printf '::group::Install packages required for installation (xz-utils)\n'
+              sys_install xz-utils
+              printf '::endgroup::\n'
+              ;;
+            *)
+              printf '::group::Install packages required for installation (xz)\n'
+              sys_install xz
+              printf '::endgroup::\n'
+              ;;
+          esac
+        else
+          warn "this action requires xz to install ${tool}"
+        fi
       fi
       ;;
     *.tar.zst | *.tzst)
@@ -172,24 +176,24 @@ download_and_extract() {
       ;;
     *.zip)
       if ! type -P unzip >/dev/null; then
-        case "${base_distro}" in
-          debian | fedora | suse | arch | alpine)
-            printf '::group::Install packages required for installation (unzip)\n'
-            sys_install unzip
-            printf '::endgroup::\n'
-            ;;
-        esac
+        if [[ -n "${base_distro}" ]]; then
+          printf '::group::Install packages required for installation (unzip)\n'
+          sys_install unzip
+          printf '::endgroup::\n'
+        else
+          warn "this action requires unzip to install ${tool}"
+        fi
       fi
       ;;
     *.deb)
       if ! type -P dpkg-deb >/dev/null; then
-        case "${base_distro}" in
-          debian | fedora | suse | arch | alpine)
-            printf '::group::Install packages required for installation (dpkg)\n'
-            sys_install dpkg
-            printf '::endgroup::\n'
-            ;;
-        esac
+        if [[ -n "${base_distro}" ]]; then
+          printf '::group::Install packages required for installation (dpkg)\n'
+          sys_install dpkg
+          printf '::endgroup::\n'
+        else
+          warn "this action requires dpkg-deb to install ${tool}"
+        fi
       fi
       ;;
   esac
@@ -548,19 +552,25 @@ case "${RUNNER_OS}" in
       # /etc/os-release is available on Debian 7+
       base_distro=debian
     elif [[ -e /etc/os-release ]]; then
-      if grep -Eq '^ID_LIKE=' /etc/os-release; then
-        base_distro=$(grep -E '^ID_LIKE=' /etc/os-release | cut -d= -f2)
-        case "${base_distro}" in
-          *debian*) base_distro=debian ;;
-          *fedora*) base_distro=fedora ;;
-          *suse*) base_distro=suse ;;
-          *arch*) base_distro=arch ;;
-          *alpine*) base_distro=alpine ;;
-        esac
-      else
-        base_distro=$(grep -E '^ID=' /etc/os-release | cut -d= -f2)
-      fi
-      base_distro="${base_distro//\"/}"
+      base_distro=$(grep -E '^ID_LIKE=' /etc/os-release || true)
+      case "${base_distro}" in
+        *debian*) base_distro=debian ;;
+        *fedora*) base_distro=fedora ;;
+        *suse*) base_distro=suse ;;
+        *arch*) base_distro=arch ;;
+        *alpine*) base_distro=alpine ;;
+        *)
+          base_distro=$(grep -E '^ID=' /etc/os-release)
+          base_distro="${base_distro#*=}"
+          base_distro="${base_distro//\"/}"
+          case "${base_distro}" in
+            debian | fedora | suse | arch | alpine) ;;
+            *) base_distro='' ;;
+          esac
+          ;;
+      esac
+    else
+      base_distro=''
     fi
     case "${base_distro}" in
       fedora)
@@ -681,39 +691,42 @@ manifest_dir="${GITHUB_ACTION_PATH}/manifests"
 case "${host_os}" in
   linux)
     if ! type -P jq >/dev/null || ! type -P curl >/dev/null || ! type -P tar >/dev/null; then
-      case "${base_distro}" in
-        debian | fedora | suse | arch | alpine)
-          printf '::group::Install packages required for installation (jq, curl, and/or tar)\n'
-          sys_packages=()
-          if ! type -P curl >/dev/null; then
-            sys_packages+=(ca-certificates curl)
-          fi
-          if ! type -P tar >/dev/null; then
-            sys_packages+=(tar)
-          fi
-          if [[ "${dnf:-}" == "yum" ]]; then
-            # On RHEL7-based distribution jq requires EPEL
-            if ! type -P jq >/dev/null; then
-              sys_packages+=(epel-release)
-              sys_install "${sys_packages[@]}"
-              sys_install jq --enablerepo=epel
-            else
-              sys_install "${sys_packages[@]}"
-            fi
+      if [[ -n "${base_distro}" ]]; then
+        printf '::group::Install packages required for installation (jq, curl, and/or tar)\n'
+        sys_packages=()
+        if ! type -P curl >/dev/null; then
+          # Note that we do not fallback to wget.
+          # Common containers do not install GNU Wget by default and BusyBox wget installed in some
+          # common containers by default lacks necessary security options (--https-only --secure-protocol=TLSv1_2).
+          sys_packages+=(ca-certificates curl)
+        fi
+        if ! type -P tar >/dev/null; then
+          # TODO: this is not necessary for some tools using unzip.
+          sys_packages+=(tar)
+        fi
+        if [[ "${dnf:-}" == "yum" ]]; then
+          # On RHEL7-based distribution jq requires EPEL
+          if ! type -P jq >/dev/null; then
+            sys_packages+=(epel-release)
+            sys_install "${sys_packages[@]}"
+            sys_install jq --enablerepo=epel
           else
-            if ! type -P jq >/dev/null; then
-              # https://github.com/taiki-e/install-action/issues/521
-              if [[ "${base_distro}" == "arch" ]]; then
-                sys_packages+=(glibc)
-              fi
-              sys_packages+=(jq)
-            fi
             sys_install "${sys_packages[@]}"
           fi
-          printf '::endgroup::\n'
-          ;;
-        *) warn "this action requires at least jq and curl on non-Debian/Fedora/SUSE/Arch/Alpine-based Linux" ;;
-      esac
+        else
+          if ! type -P jq >/dev/null; then
+            # https://github.com/taiki-e/install-action/issues/521
+            if [[ "${base_distro}" == "arch" ]]; then
+              sys_packages+=(glibc)
+            fi
+            sys_packages+=(jq)
+          fi
+          sys_install "${sys_packages[@]}"
+        fi
+        printf '::endgroup::\n'
+      else
+        warn "this action requires at least jq and curl on non-Debian/Fedora/SUSE/Arch/Alpine-based Linux"
+      fi
     fi
     ;;
   macos)
@@ -913,13 +926,13 @@ for tool in "${tools[@]}"; do
         mkdir -p -- "${include_dir}"
       fi
       if ! type -P unzip >/dev/null; then
-        case "${base_distro}" in
-          debian | fedora | suse | arch | alpine)
-            printf '::group::Install packages required for installation (unzip)\n'
-            sys_install unzip
-            printf '::endgroup::\n'
-            ;;
-        esac
+        if [[ -n "${base_distro}" ]]; then
+          printf '::group::Install packages required for installation (unzip)\n'
+          sys_install unzip
+          printf '::endgroup::\n'
+        else
+          warn "this action requires unzip to install ${tool}"
+        fi
       fi
       mkdir -p -- "${tmp_dir}"
       (
@@ -950,7 +963,9 @@ for tool in "${tools[@]}"; do
         *) bail "unsupported host OS '${host_os}' for ${tool}" ;;
       esac
       # libc6-dbg is needed to run Valgrind
-      apt_install libc6-dbg
+      case "${base_distro}" in
+        debian) sys_install libc6-dbg ;;
+      esac
       # Use snap to install the latest Valgrind
       # https://snapcraft.io/install/valgrind/ubuntu
       snap_install valgrind --classic
@@ -1015,7 +1030,9 @@ for tool in "${tools[@]}"; do
         cyclonedx)
           case "${host_os}" in
             linux)
-              apt_install libicu-dev
+              case "${base_distro}" in
+                debian) sys_install libicu-dev ;;
+              esac
               ;;
           esac
           ;;
