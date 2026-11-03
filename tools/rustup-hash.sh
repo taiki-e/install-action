@@ -8,7 +8,7 @@ cd -- "$(dirname -- "$0")"/..
 # Get sha256 hash of rustup-init binaries
 
 # NB: Synch with main.sh.
-rustup_version=1.29.0
+rustup_version=1.29.2
 targets=(
   x86_64-unknown-linux-gnu
   x86_64-unknown-linux-musl

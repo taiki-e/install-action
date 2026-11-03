@@ -821,7 +821,7 @@ for tool in "${tools[@]}"; do
       else
         # https://github.com/rust-lang/rustup/tags
         # Run tools/rustup-hash.sh to get sha256 hash.
-        rustup_version=1.29.0
+        rustup_version=1.29.2
         # https://rust-lang.github.io/rustup/installation/other.html#manual-installation
         rust_target=''
         checksum=''
@@ -831,33 +831,33 @@ for tool in "${tools[@]}"; do
             case "${host_arch}" in
               x86_64)
                 case "${host_env}" in
-                  gnu) checksum=4acc9acc76d5079515b46346a485974457b5a79893cfb01112423c89aeb5aa10 ;;
-                  musl) checksum=9cd3fda5fd293890e36ab271af6a786ee22084b5f6c2b83fd8323cec6f0992c1 ;;
+                  gnu) checksum=5be191e8c70a5007074254cb74d78dbfdd25cd5a61c27de7b8e5410122ec24f4 ;;
+                  musl) checksum=2ba97d668c06dc4b1884f2a3fa6f4cf14b9bd0c1db379af7e4f87a705ff19edd ;;
                 esac
                 ;;
               aarch64)
                 case "${host_env}" in
-                  gnu) checksum=9732d6c5e2a098d3521fca8145d826ae0aaa067ef2385ead08e6feac88fa5792 ;;
-                  musl) checksum=88761caacddb92cd79b0b1f939f3990ba1997d701a38b3e8dd6746a562f2a759 ;;
+                  gnu) checksum=a9c168dbea81a84671c6b7a5c1795cb0eb699020110d107ddfca427bd797e697 ;;
+                  musl) checksum=7fdbb23acf6495efee2e371580c52b365917551b4835090a225c44ac30915235 ;;
                 esac
                 ;;
               powerpc64le)
                 case "${host_env}" in
-                  gnu) checksum=4bfff85bd3967d988e14567aa9cc6ab0ea386f0ffeff0f9f14d23f0103bf1f97 ;;
-                  musl) checksum=e15d033af90b7a55d170aac2d82cc28ddd96dbfcdda7c6d4eb8cb064a99c4646 ;;
+                  gnu) checksum=96d46b6164ff778288c789e7e94dd09ce55d35777043aabe4e7af1d99b04bd71 ;;
+                  musl) checksum=d0f97151d3ed165ca11c68b460cabf1b828dc605525ce68bb0ef8f62f78ac8b6 ;;
                 esac
                 ;;
               riscv64)
                 rust_target="${host_arch}gc-unknown-${host_os}-${host_env}"
                 # riscv64gc-unknown-linux-musl is tier 2 without host tools
                 case "${host_env}" in
-                  gnu) checksum=7e43f2b2e6307d61da17a4dff61e6bceef408b8189822df64e1094590d2a70f9 ;;
+                  gnu) checksum=1217772975cb864e12a2cad757cd27d7dcdbac3b490a05ad9b86b61ffa6a8b3b ;;
                 esac
                 ;;
               s390x)
                 # s390x-unknown-linux-musl is tier 3
                 case "${host_env}" in
-                  gnu) checksum=66c2c132428b6b77803facb02cbdf33b89d20c00bd20da142be8cb651f2e7cd8 ;;
+                  gnu) checksum=c60999321d0363f6e4d75b646f59ba25feb41b20f872ffb3a46b9a9aea6da1fc ;;
                 esac
                 ;;
             esac
@@ -865,15 +865,15 @@ for tool in "${tools[@]}"; do
           macos)
             rust_target="${host_arch}-apple-darwin"
             case "${host_arch}" in
-              x86_64) checksum=33cf85df9142bc6d29cbc62fa5ca1d4c29622cddb55213a4c1a43c457fb9b2d7 ;;
-              aarch64) checksum=aeb4105778ca1bd3c6b0e75768f581c656633cd51368fa61289b6a71696ac7e1 ;;
+              x86_64) checksum=b9610730ddeef52765723847866fd1e3540b2bf7d5ab0c324aa143a5edf25ba0 ;;
+              aarch64) checksum=f7c7e11eb2e07f006e532a8aaac77b32f4527d305ac386c0c633ca6133d35ca9 ;;
             esac
             ;;
           windows)
             rust_target="${host_arch}-pc-windows-msvc"
             case "${host_arch}" in
-              x86_64) checksum=86478e53f769379d7f0ebfa7c9aa97cb76ca92233f79aa2cc0dbee2efaac73c7 ;;
-              aarch64) checksum=3af309e6c3062aa11df0e932954f69d13b734d8a431e593812f3ecd9ff9e6ef6 ;;
+              x86_64) checksum=00f139da614dced87d3c3d4121c43eebdac3c1bf8a5ee86b9d80dfd71c8d70fd ;;
+              aarch64) checksum=58005a321c5dcb9c4457c0a13bb5d6a56a5793efaef429004edaa1db33019b59 ;;
             esac
             ;;
         esac
