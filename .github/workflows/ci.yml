@@ -300,6 +300,7 @@ jobs:
       matrix:
         include:
           - fallback: none
+          - fallback: skip
           - fallback: cargo-install
           - fallback: cargo-binstall
           - fallback: cargo-binstall
@@ -335,14 +336,17 @@ jobs:
       - run: exit 1
         if: matrix.fallback == 'none' && steps.install.outcome != 'failure'
       - run: |
+          ! type -P parse-changelog
+        if: matrix.fallback == 'skip'
+      - run: |
           [[ "$("${RUNNER_TEMP}/binstall/bin/cargo-binstall" binstall -V)" == '0.0.0' ]] || exit 1
           [[ "$(cargo-binstall binstall -V)" == "$(jq -r '.latest.version' manifests/cargo-binstall.json)" ]] || exit 1
         if: matrix.fallback == 'cargo-binstall'
       - name: Test bash
         run: parse-changelog --version
         shell: bash
-        if: matrix.fallback != 'none'
+        if: matrix.fallback == 'cargo-binstall' || matrix.fallback == 'cargo-install'
       - name: Test sh
         run: parse-changelog --version
         shell: sh
-        if: matrix.fallback != 'none'
+        if: matrix.fallback == 'cargo-binstall' || matrix.fallback == 'cargo-install'
