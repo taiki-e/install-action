@@ -10,6 +10,8 @@ Note: In this file, do not use the hard wrap in the middle of a sentence for com
 
 ## [Unreleased]
 
+- Add `fallback: skip` input option. This is similar to `fallback: none` but skip unsupported tools instead of error. ([#2052](https://github.com/taiki-e/install-action/issues/2052))
+
 - Update `vacuum@latest` to 0.36.2.
 
 - Update `release-plz@latest` to 0.4.3.

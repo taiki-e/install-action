@@ -329,6 +329,13 @@ read_manifest() {
     *) bail "unsupported OS type '${host_os}' for ${tool}" ;;
   esac
 }
+skip_unavailable_tool() {
+  if [[ "${fallback}" == "skip" ]] && [[ "${download_info}" == "null" ]]; then
+    info "$1@$2 for '${host_arch}_${host_os}' is not supported (updating install-action might resolve this); skipping because of 'fallback: skip' input option"
+    return 0
+  fi
+  return 1
+}
 read_download_info() {
   local tool="$1"
   local version="$2"
@@ -514,16 +521,17 @@ esac
 
 fallback="${INPUT_FALLBACK:-}"
 case "${fallback}" in
-  none | cargo-binstall | cargo-install) ;;
-  *) bail "'fallback' input option must be 'none', 'cargo-binstall', or 'cargo-install': '${fallback}'" ;;
+  none | skip | cargo-binstall | cargo-install) ;;
+  *) bail "'fallback' input option must be 'none', 'skip', 'cargo-binstall', or 'cargo-install': '${fallback}'" ;;
 esac
 
 # Unlike gh command, cargo-binstall reads GITHUB_TOKEN first via cli parser, and then reads GH_TOKEN.
 # https://github.com/cargo-bins/cargo-binstall/blob/v1.17.9/crates/bin/src/args.rs#L704
 token="${GITHUB_TOKEN:-"${GH_TOKEN:-"${DEFAULT_GITHUB_TOKEN:-}"}"}"
 # This prevents tokens from being exposed to subprocesses via environment variables.
-# Since the tokens remain in memory, setting `fallback: none` (which prevents the tokens from being
-# set in the first place) remains the best practice from a security standpoint, as readme says.
+# Since the tokens remain in memory, setting `fallback: none`, `fallback: skip`, or
+# `fallback: cargo-install` (which prevents the tokens from being set in the first place) remains
+# the best practice from a security standpoint, as readme says.
 # Note that this does not prevent token leaks via reading `/proc/*/environ` on Linux or
 # via `ps -Eww` on macOS. It only reduces the risk of leaks.
 unset GITHUB_TOKEN GH_TOKEN DEFAULT_GITHUB_TOKEN
@@ -914,8 +922,11 @@ for tool in "${tools[@]}"; do
       installed_bin=("rustc${exe}" "cargo${exe}")
       ;;
     protoc)
-      info "installing ${tool}@${version}"
       read_manifest "protoc" "${version}"
+      if skip_unavailable_tool "${tool}" "${version}"; then
+        continue
+      fi
+      info "installing ${tool}@${version}"
       read_download_info "protoc" "${version}"
       # Copying files to /usr/local/include requires sudo, so do not use it.
       bin_dir="${install_action_dir}/bin"
@@ -975,6 +986,12 @@ for tool in "${tools[@]}"; do
         latest) ;;
         *) warn "specifying the version of ${tool} is not supported" ;;
       esac
+      if [[ "${fallback}" == "skip" ]]; then
+        read_manifest "${tool}" "latest"
+        if skip_unavailable_tool "${tool}" "latest"; then
+          continue
+        fi
+      fi
       install_cargo_binstall
       printf '\n'
       continue
@@ -990,7 +1007,7 @@ for tool in "${tools[@]}"; do
         taplo-cli | typos-cli | wasm-bindgen-cli | wasmtime-cli) tool="${tool%-cli}" ;;
       esac
 
-      # Use cargo-binstall fallback if tool is not available.
+      # Use fallback if tool is not available.
       if [[ ! -f "${manifest_dir}/${tool}.json" ]]; then
         case "${version}" in
           latest) unsupported_tools+=("${tool}") ;;
@@ -999,8 +1016,11 @@ for tool in "${tools[@]}"; do
         continue
       fi
 
-      # Use cargo-binstall fallback if tool is available but the specified version not available.
+      # Use fallback if tool is available but the specified version or platform is not available.
       read_manifest "${tool}" "${version}"
+      if skip_unavailable_tool "${tool}" "${version}"; then
+        continue
+      fi
       if [[ "${download_info}" == "null" ]]; then
         if [[ "${rust_crate}" == "null" ]] || [[ "${fallback}" == "none" ]]; then
           bail "${tool} is supported but version ${version} for '${host_arch}_${host_os}' is not supported (updating install-action might resolve this)"
@@ -1100,6 +1120,10 @@ if [[ ${#unsupported_tools[@]} -gt 0 ]]; then
   IFS=','
   case "${fallback}" in
     none) bail "install-action does not support ${unsupported_tools[*]} (updating install-action might resolve this); aborting because fallback is disabled by 'fallback: none' input option" ;;
+    skip)
+      info "install-action does not support ${unsupported_tools[*]} (updating install-action might resolve this); skipping because of 'fallback: skip' input option"
+      exit 0
+      ;;
     cargo-binstall)
       case "${host_arch}" in
         x86_64 | aarch64 | riscv64) ;;

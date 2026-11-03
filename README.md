@@ -24,7 +24,7 @@ GitHub Action for installing development tools (mainly from GitHub Releases).
 | ---- | :------: | ----------- | ---- | ------- |
 | tool | **✓** | Tools to install (whitespace or comma separated list) | String | |
 | checksum | | Whether to enable checksums (strongly discouraged to disable) | Boolean | `true` |
-| fallback | | Whether to use fallback (none, cargo-binstall, or cargo-install) | String | `cargo-binstall` |
+| fallback | | Whether to use fallback (none, skip, cargo-binstall, or cargo-install) | String | `cargo-binstall` |
 
 ### Example workflow
 
@@ -101,14 +101,15 @@ See [TOOLS.md](TOOLS.md) for the list of tools that are installed from manifests
 
 If a tool not included in the list above is specified, this action uses [cargo-binstall] as a fallback.
 
-If you want to ensure that fallback is not used, use `fallback: none`.
+If you want to ensure that fallback is not used, use `fallback: none` or `fallback: skip`.
 
 ```yaml
 - uses: taiki-e/install-action@v2
   with:
     tool: cargo-hack
     # Possible values:
-    # - none: disable all fallback options
+    # - none: disable all fallback options (error on unsupported tools) 
+    # - skip: disable all fallback options (skip unsupported tools instead of error)
     # - cargo-binstall (default): use cargo-binstall (includes "quickinstall" and "install from source")
     # - cargo-install: use `cargo install`
     fallback: none
