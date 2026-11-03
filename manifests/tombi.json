@@ -10,6 +10,42 @@
   "1.9": {
     "version": "1.9.8"
   },
+  "1.9.9": {
+    "x86_64_linux_musl": {
+      "url": "https://github.com/tombi-toml/tombi/releases/download/v1.9.9/tombi-cli-1.9.9-x86_64-unknown-linux-musl.tar.gz",
+      "etag": "0x8DF3945159052DF",
+      "hash": "f6094fb14fd962c9611ccd7bc73dc7e8b03fe8859fd662e022b8d0a25649b5fc",
+      "bin": "tombi-cli-1.9.9-x86_64-unknown-linux-musl/tombi"
+    },
+    "x86_64_macos": {
+      "url": "https://github.com/tombi-toml/tombi/releases/download/v1.9.9/tombi-cli-1.9.9-x86_64-apple-darwin.tar.gz",
+      "etag": "0x8DF394514DE7F9C",
+      "hash": "6d7d545c4f33fb7e0547b31f6e0b23bffed801f9a58664563fd9e5df10f52802",
+      "bin": "tombi-cli-1.9.9-x86_64-apple-darwin/tombi"
+    },
+    "x86_64_windows": {
+      "url": "https://github.com/tombi-toml/tombi/releases/download/v1.9.9/tombi-cli-1.9.9-x86_64-pc-windows-msvc.zip",
+      "etag": "0x8DF39451565549F",
+      "hash": "fe5ac50c502f40e3f0da3f725c47fea05716afd5785badeca04966043d6b85d2"
+    },
+    "aarch64_linux_musl": {
+      "url": "https://github.com/tombi-toml/tombi/releases/download/v1.9.9/tombi-cli-1.9.9-aarch64-unknown-linux-musl.tar.gz",
+      "etag": "0x8DF394514D70DF1",
+      "hash": "a3ce42ce0825c3ff8c054e443dd8ded013ec5a708bba02e7b4a537b287c75734",
+      "bin": "tombi-cli-1.9.9-aarch64-unknown-linux-musl/tombi"
+    },
+    "aarch64_macos": {
+      "url": "https://github.com/tombi-toml/tombi/releases/download/v1.9.9/tombi-cli-1.9.9-aarch64-apple-darwin.tar.gz",
+      "etag": "0x8DF394514D92E74",
+      "hash": "3e156ba88ae4228b93071d9a4548e6dd64ae0e71d476ae09ee106a0d9a6ca070",
+      "bin": "tombi-cli-1.9.9-aarch64-apple-darwin/tombi"
+    },
+    "aarch64_windows": {
+      "url": "https://github.com/tombi-toml/tombi/releases/download/v1.9.9/tombi-cli-1.9.9-aarch64-pc-windows-msvc.zip",
+      "etag": "0x8DF394514EE7339",
+      "hash": "8a618f3268cb63cadf382464118e26a67d399b1b32d2bdf346f25c71b99e61a6"
+    }
+  },
   "1.9.8": {
     "x86_64_linux_musl": {
       "url": "https://github.com/tombi-toml/tombi/releases/download/v1.9.8/tombi-cli-1.9.8-x86_64-unknown-linux-musl.tar.gz",
