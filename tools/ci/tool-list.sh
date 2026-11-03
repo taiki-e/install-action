@@ -132,7 +132,7 @@ case "$(uname -s)" in
       # no zstd in package manager
       debian/eol:jessie-slim | ubuntu:14.04 | alpine:3.2) incompat_tools+=(bpf-linker) ;;
       # x: error while loading shared libraries: libssl.so.3: cannot open shared object file: No such file or directory
-      ubuntu:rolling) incompat_tools+=(xbuild) ;;
+      ubuntu:rolling | fedora:latest) incompat_tools+=(xbuild) ;;
     esac
     ;;
   Darwin)
