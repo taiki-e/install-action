@@ -803,7 +803,6 @@ for tool in "${tools[@]}"; do
         version=stable
       fi
       info "installing ${tool}@${version}"
-      export RUSTUP_MAX_RETRIES="${RUSTUP_MAX_RETRIES:-10}"
       rustup_args=(--profile minimal)
       if [[ -n "${additional}" ]]; then
         component=''
