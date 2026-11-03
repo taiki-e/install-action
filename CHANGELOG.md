@@ -10,6 +10,8 @@ Note: In this file, do not use the hard wrap in the middle of a sentence for com
 
 ## [Unreleased]
 
+- Update `bpf-linker@latest` to 0.13.0.
+
 ## [2.89.1] - 2026-11-02
 
 - Install `ld.mold` symlink when installing `mold` on Linux. Previously, only `mold` binary was installed. ([#2050](https://github.com/taiki-e/install-action/pull/2050), thanks @FirelightFlagboy)
