@@ -3,8 +3,9 @@
   "license_markdown": "[Apache-2.0](https://github.com/kunobi-ninja/kache/blob/main/LICENSE)",
   "tag_prefix": "v",
   "rust_crate": "${package}",
+  "version_range": ">= 2.0.0",
   "asset_name": "${package}-${rust_target}.tar.gz",
-  "version_range": ">= 0.15.0",
+  "bin": ["${package}${exe}", "${package}-engine${exe}"],
   "platform": {
     "x86_64_linux_musl": {},
     "x86_64_macos": {},
