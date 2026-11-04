@@ -10,6 +10,8 @@ Note: In this file, do not use the hard wrap in the middle of a sentence for com
 
 ## [Unreleased]
 
+## [2.90.1] - 2026-11-04
+
 - Update `zizmor@latest` to 1.32.0.
 
 - Update `uv@latest` to 0.13.7.
@@ -8038,7 +8040,8 @@ Note: This release is considered a breaking change because installing on version
 
 Initial release
 
-[Unreleased]: https://github.com/taiki-e/install-action/compare/v2.90.0...HEAD
+[Unreleased]: https://github.com/taiki-e/install-action/compare/v2.90.1...HEAD
+[2.90.1]: https://github.com/taiki-e/install-action/compare/v2.90.0...v2.90.1
 [2.90.0]: https://github.com/taiki-e/install-action/compare/v2.89.1...v2.90.0
 [2.89.1]: https://github.com/taiki-e/install-action/compare/v2.89.0...v2.89.1
 [2.89.0]: https://github.com/taiki-e/install-action/compare/v2.88.1...v2.89.0
