@@ -7,6 +7,44 @@
   "0.24": {
     "version": "0.24.0"
   },
+  "0.24.1": {
+    "x86_64_linux_musl": {
+      "url": "https://github.com/rust-cross/cargo-zigbuild/releases/download/v0.24.1/cargo-zigbuild-x86_64-unknown-linux-musl.tar.xz",
+      "etag": "0x8DF3A7A32D102F4",
+      "hash": "f09b180a517af0e4dd4bffc921bb88e5ab705452a9dd948c61e489b3020c68c2",
+      "bin": "cargo-zigbuild-x86_64-unknown-linux-musl/cargo-zigbuild"
+    },
+    "x86_64_macos": {
+      "url": "https://github.com/rust-cross/cargo-zigbuild/releases/download/v0.24.1/cargo-zigbuild-x86_64-apple-darwin.tar.xz",
+      "etag": "0x8DF3A7A321AEBAF",
+      "hash": "9f047b1a0f97efbfef64919d7c25e33304a4448b832cde12f6588c4f11489877",
+      "bin": "cargo-zigbuild-x86_64-apple-darwin/cargo-zigbuild"
+    },
+    "x86_64_windows": {
+      "url": "https://github.com/rust-cross/cargo-zigbuild/releases/download/v0.24.1/cargo-zigbuild-x86_64-pc-windows-msvc.zip",
+      "etag": "0x8DF3A7A32900B22",
+      "hash": "7f660482f8dada6dfcd495bfc52a4c4f0cf6b2e01ac9740811855a1de7c4f60a",
+      "bin": "cargo-zigbuild.exe"
+    },
+    "aarch64_linux_gnu": {
+      "url": "https://github.com/rust-cross/cargo-zigbuild/releases/download/v0.24.1/cargo-zigbuild-aarch64-unknown-linux-gnu.tar.xz",
+      "etag": "0x8DF3A7A31CD7122",
+      "hash": "70bb4c9cc71a6d16211b9079996e3cd588671053312adeff4d043499ed887601",
+      "bin": "cargo-zigbuild-aarch64-unknown-linux-gnu/cargo-zigbuild"
+    },
+    "aarch64_macos": {
+      "url": "https://github.com/rust-cross/cargo-zigbuild/releases/download/v0.24.1/cargo-zigbuild-aarch64-apple-darwin.tar.xz",
+      "etag": "0x8DF3A7A317E32CC",
+      "hash": "e38d2a30aa8f4c27bf9e3ced266aae1f47e4dbd6be939852ec07d8662eec408e",
+      "bin": "cargo-zigbuild-aarch64-apple-darwin/cargo-zigbuild"
+    },
+    "aarch64_windows": {
+      "url": "https://github.com/rust-cross/cargo-zigbuild/releases/download/v0.24.1/cargo-zigbuild-aarch64-pc-windows-msvc.zip",
+      "etag": "0x8DF3A7A31590802",
+      "hash": "88d7f482caf2e740b794cc927237b2bd821aa606325be318d7bdc96dcfc27fd7",
+      "bin": "cargo-zigbuild.exe"
+    }
+  },
   "0.24.0": {
     "x86_64_linux_musl": {
       "url": "https://github.com/rust-cross/cargo-zigbuild/releases/download/v0.24.0/cargo-zigbuild-x86_64-unknown-linux-musl.tar.xz",
