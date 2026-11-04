@@ -10,6 +10,8 @@ Note: In this file, do not use the hard wrap in the middle of a sentence for com
 
 ## [Unreleased]
 
+- Update `cargo-nextest@latest` to 0.9.151.
+
 ## [2.90.0] - 2026-11-03
 
 - Add `fallback: skip` input option. This is similar to `fallback: none` but skip unsupported tools instead of error. ([#2052](https://github.com/taiki-e/install-action/issues/2052))
