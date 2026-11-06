@@ -10,6 +10,8 @@ Note: In this file, do not use the hard wrap in the middle of a sentence for com
 
 ## [Unreleased]
 
+- Update `mise@latest` to 2026.11.2.
+
 - Update `mdbook-d2@latest` to 0.3.10.
 
 - Update `cargo-zigbuild@latest` to 0.24.1.
