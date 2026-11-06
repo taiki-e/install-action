@@ -1,46 +1,89 @@
 {
   "rust_crate": null,
-  "template": {
-    "x86_64_linux_musl": {
-      "url": "https://github.com/sudorandom/protoc-gen-connect-openapi/releases/download/v${version}/protoc-gen-connect-openapi_${version}_linux_amd64.tar.gz"
-    },
-    "x86_64_macos": {
-      "url": "https://github.com/sudorandom/protoc-gen-connect-openapi/releases/download/v${version}/protoc-gen-connect-openapi_${version}_darwin_all.tar.gz"
-    },
-    "x86_64_windows": {
-      "url": "https://github.com/sudorandom/protoc-gen-connect-openapi/releases/download/v${version}/protoc-gen-connect-openapi_${version}_windows_amd64.tar.gz"
-    },
-    "aarch64_linux_musl": {
-      "url": "https://github.com/sudorandom/protoc-gen-connect-openapi/releases/download/v${version}/protoc-gen-connect-openapi_${version}_linux_arm64.tar.gz"
-    },
-    "aarch64_windows": {
-      "url": "https://github.com/sudorandom/protoc-gen-connect-openapi/releases/download/v${version}/protoc-gen-connect-openapi_${version}_windows_arm64.tar.gz"
-    }
-  },
+  "template": null,
   "latest": {
     "version": "0.28.0"
+  },
+  "0.30.0": {
+    "x86_64_linux_musl": {
+      "url": "https://github.com/connectrpc/protoc-gen-connect-openapi/releases/download/v0.30.0/protoc-gen-connect-openapi_0.30.0_linux_amd64.tar.gz",
+      "etag": "0x8DF3C36DAB6B2F2",
+      "hash": "242df46e4876bcd1cb5dc01bf8129316621579a15a5d9f4be161221032225837"
+    },
+    "x86_64_macos": {
+      "url": "https://github.com/connectrpc/protoc-gen-connect-openapi/releases/download/v0.30.0/protoc-gen-connect-openapi_0.30.0_darwin_all.tar.gz",
+      "etag": "0x8DF3C36DBBCD2DA",
+      "hash": "5886d542d4b4e86134ec78d42ca320ad3a4af31427b508fa48f8e048eb5cbc02"
+    },
+    "x86_64_windows": {
+      "url": "https://github.com/connectrpc/protoc-gen-connect-openapi/releases/download/v0.30.0/protoc-gen-connect-openapi_0.30.0_windows_amd64.tar.gz",
+      "etag": "0x8DF3C36DABE726E",
+      "hash": "c9a2e0df03d83baae302ffb51929f1e14ff39be9fbfd7c32a0847d836e251ffe"
+    },
+    "aarch64_linux_musl": {
+      "url": "https://github.com/connectrpc/protoc-gen-connect-openapi/releases/download/v0.30.0/protoc-gen-connect-openapi_0.30.0_linux_arm64.tar.gz",
+      "etag": "0x8DF3C36DB00FCD0",
+      "hash": "97b9c980058501d491b445e17d8345c822bf1f62035fe7c3ca578b9e4e5c14b8"
+    },
+    "aarch64_windows": {
+      "url": "https://github.com/connectrpc/protoc-gen-connect-openapi/releases/download/v0.30.0/protoc-gen-connect-openapi_0.30.0_windows_arm64.tar.gz",
+      "etag": "0x8DF3C36DAC4115F",
+      "hash": "abbc1224a45930eaf57453f66a03474d53eb2074c788f0320bf871468009e926"
+    }
+  },
+  "0.29.0": {
+    "x86_64_linux_musl": {
+      "url": "https://github.com/connectrpc/protoc-gen-connect-openapi/releases/download/v0.29.0/protoc-gen-connect-openapi_0.29.0_linux_amd64.tar.gz",
+      "etag": "0x8DF3C1892FBD9F2",
+      "hash": "b0533909845720d4c3c1e46d7e657dc68f0b7216c7102f91a348f1432733d878"
+    },
+    "x86_64_macos": {
+      "url": "https://github.com/connectrpc/protoc-gen-connect-openapi/releases/download/v0.29.0/protoc-gen-connect-openapi_0.29.0_darwin_all.tar.gz",
+      "etag": "0x8DF3C1893F88D0D",
+      "hash": "395c36464b6dfd1bec6f3cfeb76d0410bca4a396bcb739989afde79284ea40d2"
+    },
+    "x86_64_windows": {
+      "url": "https://github.com/connectrpc/protoc-gen-connect-openapi/releases/download/v0.29.0/protoc-gen-connect-openapi_0.29.0_windows_amd64.tar.gz",
+      "etag": "0x8DF3C1893C99734",
+      "hash": "fd1744ac60d363f707129f6ddcb76fc1d0eecdf479c92fa471d354582c50eb43"
+    },
+    "aarch64_linux_musl": {
+      "url": "https://github.com/connectrpc/protoc-gen-connect-openapi/releases/download/v0.29.0/protoc-gen-connect-openapi_0.29.0_linux_arm64.tar.gz",
+      "etag": "0x8DF3C1892F5787D",
+      "hash": "828d93ffc69bc2d10473ca76715991bc4abeb505e5d160cdd7640da8461f52e7"
+    },
+    "aarch64_windows": {
+      "url": "https://github.com/connectrpc/protoc-gen-connect-openapi/releases/download/v0.29.0/protoc-gen-connect-openapi_0.29.0_windows_arm64.tar.gz",
+      "etag": "0x8DF3C18930B99B9",
+      "hash": "4c51da127eccd429d831903a3d3849c3f9cba496eaf047910a703849df9797dd"
+    }
   },
   "0.28": {
     "version": "0.28.0"
   },
   "0.28.0": {
     "x86_64_linux_musl": {
+      "url": "https://github.com/sudorandom/protoc-gen-connect-openapi/releases/download/v0.28.0/protoc-gen-connect-openapi_0.28.0_linux_amd64.tar.gz",
       "etag": "0x8DF1EE9BEBDCE50",
       "hash": "1bc500494b835efa00487d9685ca8e6f74b5a427bdb6f5a456f3287e5f3b336a"
     },
     "x86_64_macos": {
+      "url": "https://github.com/sudorandom/protoc-gen-connect-openapi/releases/download/v0.28.0/protoc-gen-connect-openapi_0.28.0_darwin_all.tar.gz",
       "etag": "0x8DF1EE9BF5A105F",
       "hash": "31d7c1fd7dbacb2f7ec8b870dfe8a5bb4255499d92ed9097501cc972ed549fb5"
     },
     "x86_64_windows": {
+      "url": "https://github.com/sudorandom/protoc-gen-connect-openapi/releases/download/v0.28.0/protoc-gen-connect-openapi_0.28.0_windows_amd64.tar.gz",
       "etag": "0x8DF1EE9BEC53FFB",
       "hash": "10bc77bc0421df29c3607ec63c0f6ff73dcfb19d84d5cbf2319915cb855204cf"
     },
     "aarch64_linux_musl": {
+      "url": "https://github.com/sudorandom/protoc-gen-connect-openapi/releases/download/v0.28.0/protoc-gen-connect-openapi_0.28.0_linux_arm64.tar.gz",
       "etag": "0x8DF1EE9BEBDCE50",
       "hash": "679816cf64acee93a19c6100f16b5144b5b17e59fa697b8a29cbf73eede5ec80"
     },
     "aarch64_windows": {
+      "url": "https://github.com/sudorandom/protoc-gen-connect-openapi/releases/download/v0.28.0/protoc-gen-connect-openapi_0.28.0_windows_arm64.tar.gz",
       "etag": "0x8DF1EE9BEC1E85B",
       "hash": "196d1fef8fc1b2af356ea75f614851f1b1b1546463b7800e0ae708f44c4e358e"
     }
@@ -50,88 +93,108 @@
   },
   "0.27.3": {
     "x86_64_linux_musl": {
+      "url": "https://github.com/sudorandom/protoc-gen-connect-openapi/releases/download/v0.27.3/protoc-gen-connect-openapi_0.27.3_linux_amd64.tar.gz",
       "etag": "0x8DF1AD221AE9402",
       "hash": "88e07dcae8f5532455b8d8e2983a69eec6fe984e816463417937c6d88edb8759"
     },
     "x86_64_macos": {
+      "url": "https://github.com/sudorandom/protoc-gen-connect-openapi/releases/download/v0.27.3/protoc-gen-connect-openapi_0.27.3_darwin_all.tar.gz",
       "etag": "0x8DF1AD22241C9D2",
       "hash": "b04f2d68f0ea6a4a1de3371691aa83ae3bf07eb97986bbdcef5f7ac9fb9b1e3d"
     },
     "x86_64_windows": {
+      "url": "https://github.com/sudorandom/protoc-gen-connect-openapi/releases/download/v0.27.3/protoc-gen-connect-openapi_0.27.3_windows_amd64.tar.gz",
       "etag": "0x8DF1AD221B1500E",
       "hash": "b2b939f615e992b7c3cb246c453bdba3c2b3bdf51b8a5003b2422e9830584ccb"
     },
     "aarch64_linux_musl": {
+      "url": "https://github.com/sudorandom/protoc-gen-connect-openapi/releases/download/v0.27.3/protoc-gen-connect-openapi_0.27.3_linux_arm64.tar.gz",
       "etag": "0x8DF1AD221AFA43C",
       "hash": "a1dfaf348287e7ba4d0a5a3539a85fa67d2e1b9a97338e49852a609c377d7eee"
     },
     "aarch64_windows": {
+      "url": "https://github.com/sudorandom/protoc-gen-connect-openapi/releases/download/v0.27.3/protoc-gen-connect-openapi_0.27.3_windows_arm64.tar.gz",
       "etag": "0x8DF1AD221A7E4C4",
       "hash": "e97e34dc36fcde479f318a86c07ea792518f89de5671c6eb5f9f8e91fbc74cc6"
     }
   },
   "0.27.2": {
     "x86_64_linux_musl": {
+      "url": "https://github.com/sudorandom/protoc-gen-connect-openapi/releases/download/v0.27.2/protoc-gen-connect-openapi_0.27.2_linux_amd64.tar.gz",
       "etag": "0x8DF117759AC815B",
       "hash": "00d8a301cac9d5e24d46ce8654b58c347bac7aebdcbf84a3743c0185d1d5eb66"
     },
     "x86_64_macos": {
+      "url": "https://github.com/sudorandom/protoc-gen-connect-openapi/releases/download/v0.27.2/protoc-gen-connect-openapi_0.27.2_darwin_all.tar.gz",
       "etag": "0x8DF11775A726461",
       "hash": "32e8dd1947e4798281a051662aca320cce78ec0dc92114044393923cccce2de1"
     },
     "x86_64_windows": {
+      "url": "https://github.com/sudorandom/protoc-gen-connect-openapi/releases/download/v0.27.2/protoc-gen-connect-openapi_0.27.2_windows_amd64.tar.gz",
       "etag": "0x8DF117759BC1B11",
       "hash": "96ccf385f70262c446ea7916efc42a3eeaa159559125aad03f788b92f3487f2f"
     },
     "aarch64_linux_musl": {
+      "url": "https://github.com/sudorandom/protoc-gen-connect-openapi/releases/download/v0.27.2/protoc-gen-connect-openapi_0.27.2_linux_arm64.tar.gz",
       "etag": "0x8DF117759B026C8",
       "hash": "e5cc786c35384e936f48a93e007654d6b41489007a50a798488a048533516ea2"
     },
     "aarch64_windows": {
+      "url": "https://github.com/sudorandom/protoc-gen-connect-openapi/releases/download/v0.27.2/protoc-gen-connect-openapi_0.27.2_windows_arm64.tar.gz",
       "etag": "0x8DF117759B7B32F",
       "hash": "8760e570bad0855924eae6be039d30042e3d4261560ea9ad3770d2ab6ad65855"
     }
   },
   "0.27.1": {
     "x86_64_linux_musl": {
+      "url": "https://github.com/sudorandom/protoc-gen-connect-openapi/releases/download/v0.27.1/protoc-gen-connect-openapi_0.27.1_linux_amd64.tar.gz",
       "etag": "0x8DF0FC6F18400B5",
       "hash": "7902ef6088add61741c9da86bd314dc6f5bed02c00f61d6137302cde3b1ab767"
     },
     "x86_64_macos": {
+      "url": "https://github.com/sudorandom/protoc-gen-connect-openapi/releases/download/v0.27.1/protoc-gen-connect-openapi_0.27.1_darwin_all.tar.gz",
       "etag": "0x8DF0FC6F22431AD",
       "hash": "d74d870ac632493088d157db35d2e4fdaa9be4a938b6cc9ef2ac57f242c93c48"
     },
     "x86_64_windows": {
+      "url": "https://github.com/sudorandom/protoc-gen-connect-openapi/releases/download/v0.27.1/protoc-gen-connect-openapi_0.27.1_windows_amd64.tar.gz",
       "etag": "0x8DF0FC6F199E10C",
       "hash": "c3febd7bb2f02e73240291f8485c1f4f48de1ca8163a39d50106f11159171eac"
     },
     "aarch64_linux_musl": {
+      "url": "https://github.com/sudorandom/protoc-gen-connect-openapi/releases/download/v0.27.1/protoc-gen-connect-openapi_0.27.1_linux_arm64.tar.gz",
       "etag": "0x8DF0FC6F170B57E",
       "hash": "8311abcf8e4666eb3e33c990f94a33897a0bf412d45d2c55a84bfd214472eb74"
     },
     "aarch64_windows": {
+      "url": "https://github.com/sudorandom/protoc-gen-connect-openapi/releases/download/v0.27.1/protoc-gen-connect-openapi_0.27.1_windows_arm64.tar.gz",
       "etag": "0x8DF0FC6F18400B5",
       "hash": "9d3739545e799853a9e0ed41129a08f35d2d022af9534fa4455f5bbf778a46e0"
     }
   },
   "0.27.0": {
     "x86_64_linux_musl": {
+      "url": "https://github.com/sudorandom/protoc-gen-connect-openapi/releases/download/v0.27.0/protoc-gen-connect-openapi_0.27.0_linux_amd64.tar.gz",
       "etag": "0x8DF0F4B0D91FC02",
       "hash": "6b601b98a8d053708e9d6e3546660178e8a97ec37cf220954db361c276ac0168"
     },
     "x86_64_macos": {
+      "url": "https://github.com/sudorandom/protoc-gen-connect-openapi/releases/download/v0.27.0/protoc-gen-connect-openapi_0.27.0_darwin_all.tar.gz",
       "etag": "0x8DF0F4B0E41B204",
       "hash": "3cb52bed25f8196cd0dbb8a159bb1c79e08e5e6af404e6d1216f136736901475"
     },
     "x86_64_windows": {
+      "url": "https://github.com/sudorandom/protoc-gen-connect-openapi/releases/download/v0.27.0/protoc-gen-connect-openapi_0.27.0_windows_amd64.tar.gz",
       "etag": "0x8DF0F4B0D82B6E1",
       "hash": "cfa8e91a8320153fe0c364a2ed033e2b41714e650e0c4eed63ad17d790815b3a"
     },
     "aarch64_linux_musl": {
+      "url": "https://github.com/sudorandom/protoc-gen-connect-openapi/releases/download/v0.27.0/protoc-gen-connect-openapi_0.27.0_linux_arm64.tar.gz",
       "etag": "0x8DF0F4B0D7B2C94",
       "hash": "87e6b716867dfa3ab40574760d622f149c514c81bb90f0ca24919cb8348864f3"
     },
     "aarch64_windows": {
+      "url": "https://github.com/sudorandom/protoc-gen-connect-openapi/releases/download/v0.27.0/protoc-gen-connect-openapi_0.27.0_windows_arm64.tar.gz",
       "etag": "0x8DF0F4B0D7D73FF",
       "hash": "71c49908869f73b2e2a271edb022f69b5447e3ac85c4860e0fb053c0ed191b4e"
     }
@@ -141,22 +204,27 @@
   },
   "0.26.0": {
     "x86_64_linux_musl": {
+      "url": "https://github.com/sudorandom/protoc-gen-connect-openapi/releases/download/v0.26.0/protoc-gen-connect-openapi_0.26.0_linux_amd64.tar.gz",
       "etag": "0x8DF0C0534AA0B04",
       "hash": "9e77746bd37099eb50e777bb161cbaaae89191865a55cf5750fcf72bc2c5f03f"
     },
     "x86_64_macos": {
+      "url": "https://github.com/sudorandom/protoc-gen-connect-openapi/releases/download/v0.26.0/protoc-gen-connect-openapi_0.26.0_darwin_all.tar.gz",
       "etag": "0x8DF0C053564902A",
       "hash": "2d8b86a9eff646408a8e60f15aab4a1fc2500e0bf9c389162041ead7f8279338"
     },
     "x86_64_windows": {
+      "url": "https://github.com/sudorandom/protoc-gen-connect-openapi/releases/download/v0.26.0/protoc-gen-connect-openapi_0.26.0_windows_amd64.tar.gz",
       "etag": "0x8DF0C0534AE72D0",
       "hash": "36961ac81b3b9960645a63dffafb92ad08502f7a68a2d9220717ee0f2cc46b38"
     },
     "aarch64_linux_musl": {
+      "url": "https://github.com/sudorandom/protoc-gen-connect-openapi/releases/download/v0.26.0/protoc-gen-connect-openapi_0.26.0_linux_arm64.tar.gz",
       "etag": "0x8DF0C0534ABDDAA",
       "hash": "0fe03cf8fbd4e85f3974a3b2c2d7cf7cbf4f0b079e9fadcb7f881198ffc955f6"
     },
     "aarch64_windows": {
+      "url": "https://github.com/sudorandom/protoc-gen-connect-openapi/releases/download/v0.26.0/protoc-gen-connect-openapi_0.26.0_windows_arm64.tar.gz",
       "etag": "0x8DF0C0534B2B3CC",
       "hash": "2a8d2476deca6e3915d444505375f9d6d95839335bbabf740bce486294471a11"
     }
@@ -166,88 +234,108 @@
   },
   "0.25.8": {
     "x86_64_linux_musl": {
+      "url": "https://github.com/sudorandom/protoc-gen-connect-openapi/releases/download/v0.25.8/protoc-gen-connect-openapi_0.25.8_linux_amd64.tar.gz",
       "etag": "0x8DF06AC4C8409BD",
       "hash": "bd242227fe5500c56f6bb786cba745ad4c371c9107a0922661cec72f566dabeb"
     },
     "x86_64_macos": {
+      "url": "https://github.com/sudorandom/protoc-gen-connect-openapi/releases/download/v0.25.8/protoc-gen-connect-openapi_0.25.8_darwin_all.tar.gz",
       "etag": "0x8DF06AC4D118D4B",
       "hash": "1683611e2bf6899bea8740e1e52af3281d8aa9fba41a8816e94dfb266156865c"
     },
     "x86_64_windows": {
+      "url": "https://github.com/sudorandom/protoc-gen-connect-openapi/releases/download/v0.25.8/protoc-gen-connect-openapi_0.25.8_windows_amd64.tar.gz",
       "etag": "0x8DF06AC4C85B58D",
       "hash": "ffb8aba3ad400e89be87ad36ec5bee4a240e11c71454482c3ebdbc493a8ef07e"
     },
     "aarch64_linux_musl": {
+      "url": "https://github.com/sudorandom/protoc-gen-connect-openapi/releases/download/v0.25.8/protoc-gen-connect-openapi_0.25.8_linux_arm64.tar.gz",
       "etag": "0x8DF06AC4C7EB88E",
       "hash": "35f6f651fec8d6cb08a3f2edb351ebdb58d7da6fca36310480f63b59beadf102"
     },
     "aarch64_windows": {
+      "url": "https://github.com/sudorandom/protoc-gen-connect-openapi/releases/download/v0.25.8/protoc-gen-connect-openapi_0.25.8_windows_arm64.tar.gz",
       "etag": "0x8DF06AC4C911A64",
       "hash": "164b52972927b7c9f12eab88aca875b140b36b298fc3e5525f106e790c426be1"
     }
   },
   "0.25.7": {
     "x86_64_linux_musl": {
+      "url": "https://github.com/sudorandom/protoc-gen-connect-openapi/releases/download/v0.25.7/protoc-gen-connect-openapi_0.25.7_linux_amd64.tar.gz",
       "etag": "0x8DECA3D49E32F02",
       "hash": "ddea887b432df5471ac67ef6167726b46a4f337af0eec4f5f88998fac5fb6cc2"
     },
     "x86_64_macos": {
+      "url": "https://github.com/sudorandom/protoc-gen-connect-openapi/releases/download/v0.25.7/protoc-gen-connect-openapi_0.25.7_darwin_all.tar.gz",
       "etag": "0x8DECA3D4A995633",
       "hash": "717c86c3ca0346457b3e4c5f69596b28b2b2ec6bf047498001c02bfad8e59f52"
     },
     "x86_64_windows": {
+      "url": "https://github.com/sudorandom/protoc-gen-connect-openapi/releases/download/v0.25.7/protoc-gen-connect-openapi_0.25.7_windows_amd64.tar.gz",
       "etag": "0x8DECA3D49E80B84",
       "hash": "aa22bc1563b9701b67ca3b1568ee07f56b6d04b37643eb36dfea1103af3f12ca"
     },
     "aarch64_linux_musl": {
+      "url": "https://github.com/sudorandom/protoc-gen-connect-openapi/releases/download/v0.25.7/protoc-gen-connect-openapi_0.25.7_linux_arm64.tar.gz",
       "etag": "0x8DECA3D49DEEE03",
       "hash": "d7229a3ac65974e024210522cb3920e764fddf408e26cb501eb41406e514d6ec"
     },
     "aarch64_windows": {
+      "url": "https://github.com/sudorandom/protoc-gen-connect-openapi/releases/download/v0.25.7/protoc-gen-connect-openapi_0.25.7_windows_arm64.tar.gz",
       "etag": "0x8DECA3D4A02EF5C",
       "hash": "ea2853b19d937dc4831deaa0fca417ba4362311e0a0a554708d1486f7535bd58"
     }
   },
   "0.25.6": {
     "x86_64_linux_musl": {
+      "url": "https://github.com/sudorandom/protoc-gen-connect-openapi/releases/download/v0.25.6/protoc-gen-connect-openapi_0.25.6_linux_amd64.tar.gz",
       "etag": "0x8DE9D74861DFA1C",
       "hash": "3bcd62bb8353e967018c17e4af3a908255c6e1764ab5b3e10e985193ca5750a8"
     },
     "x86_64_macos": {
+      "url": "https://github.com/sudorandom/protoc-gen-connect-openapi/releases/download/v0.25.6/protoc-gen-connect-openapi_0.25.6_darwin_all.tar.gz",
       "etag": "0x8DE9D7486AAF55F",
       "hash": "e456d56052049748ceb113eb93e5929a0278db94e3acdc159bcefc7260aea7cf"
     },
     "x86_64_windows": {
+      "url": "https://github.com/sudorandom/protoc-gen-connect-openapi/releases/download/v0.25.6/protoc-gen-connect-openapi_0.25.6_windows_amd64.tar.gz",
       "etag": "0x8DE9D7486219F83",
       "hash": "e478565b1e1aac58bf16fbb443b5706b3e1facbfb6d0a47c94ea6b51ae0c5482"
     },
     "aarch64_linux_musl": {
+      "url": "https://github.com/sudorandom/protoc-gen-connect-openapi/releases/download/v0.25.6/protoc-gen-connect-openapi_0.25.6_linux_arm64.tar.gz",
       "etag": "0x8DE9D7486204178",
       "hash": "dacd2874adf145ce0ff401d503652e92a8fd391d2f1f89d4f8ac274f925ec525"
     },
     "aarch64_windows": {
+      "url": "https://github.com/sudorandom/protoc-gen-connect-openapi/releases/download/v0.25.6/protoc-gen-connect-openapi_0.25.6_windows_arm64.tar.gz",
       "etag": "0x8DE9D7486239913",
       "hash": "a72bc2194fcef04e16ef4cde1c114052d03fac4dfc9ab85e0f9844ddaa074259"
     }
   },
   "0.25.5": {
     "x86_64_linux_musl": {
+      "url": "https://github.com/sudorandom/protoc-gen-connect-openapi/releases/download/v0.25.5/protoc-gen-connect-openapi_0.25.5_linux_amd64.tar.gz",
       "etag": "0x8DE7B5765BA6036",
       "hash": "a9cbf821d42bc12a91b853d1fc8c3ffbea19bd8a6096d8db8b39263f1f67da74"
     },
     "x86_64_macos": {
+      "url": "https://github.com/sudorandom/protoc-gen-connect-openapi/releases/download/v0.25.5/protoc-gen-connect-openapi_0.25.5_darwin_all.tar.gz",
       "etag": "0x8DE7B576667DE0B",
       "hash": "07af8e3adbac202a0d09b97d281dcdb24949d642e43c101ea2a1a0d09aff7bd0"
     },
     "x86_64_windows": {
+      "url": "https://github.com/sudorandom/protoc-gen-connect-openapi/releases/download/v0.25.5/protoc-gen-connect-openapi_0.25.5_windows_amd64.tar.gz",
       "etag": "0x8DE7B5765C15D32",
       "hash": "a81e3091acda45b37e375af3399b70c278e9ea365ea92b68660ad5d7943ac85f"
     },
     "aarch64_linux_musl": {
+      "url": "https://github.com/sudorandom/protoc-gen-connect-openapi/releases/download/v0.25.5/protoc-gen-connect-openapi_0.25.5_linux_arm64.tar.gz",
       "etag": "0x8DE7B5765BF8A80",
       "hash": "287575b705cdd4a037baef75adcd8813566c4fda2eba5399483a9cbad8be7422"
     },
     "aarch64_windows": {
+      "url": "https://github.com/sudorandom/protoc-gen-connect-openapi/releases/download/v0.25.5/protoc-gen-connect-openapi_0.25.5_windows_arm64.tar.gz",
       "etag": "0x8DE7B5765BC80A1",
       "hash": "b066a20cf1c18bdad4daee223014a8635d2189ff80c2c8a921967968cfe20d46"
     }
