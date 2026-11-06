@@ -10,6 +10,8 @@ Note: In this file, do not use the hard wrap in the middle of a sentence for com
 
 ## [Unreleased]
 
+- Update `trivy@latest` to 0.76.2.
+
 - Update `tombi@latest` to 1.10.0.
 
 - Update `prek@latest` to 0.5.10.
