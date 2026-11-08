@@ -10,6 +10,8 @@ Note: In this file, do not use the hard wrap in the middle of a sentence for com
 
 ## [Unreleased]
 
+- Update `syft@latest` to 1.57.0.
+
 - Update `rclone@latest` to 1.76.0.
 
 - Update `protoc-gen-connect-openapi@latest` to 0.30.0.
