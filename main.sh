@@ -664,7 +664,7 @@ if [[ "${host_os}" == "windows" ]]; then
   fi
 fi
 install_action_dir="${home}/.install-action"
-tmp_dir="${install_action_dir}/tmp"
+tmp_dir="$(mktemp -p "${install_action_dir}" -d)"
 cargo_bin="${CARGO_HOME:-"${home}/.cargo"}/bin"
 cargo_path=$(type -P cargo || true)
 # If $CARGO_HOME does not exist, or cargo installed outside of $CARGO_HOME/bin
