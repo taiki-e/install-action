@@ -10,6 +10,8 @@ Note: In this file, do not use the hard wrap in the middle of a sentence for com
 
 ## [Unreleased]
 
+- Update `grcov@latest` to 0.10.8.
+
 - Update `cargo-shear@latest` to 1.14.1.
 
 - Update `cargo-cyclonedx@latest` to 0.5.10.
