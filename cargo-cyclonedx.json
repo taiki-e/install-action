@@ -2,10 +2,42 @@
   "rust_crate": "cargo-cyclonedx",
   "template": null,
   "latest": {
-    "version": "0.5.9"
+    "version": "0.5.10"
   },
   "0.5": {
-    "version": "0.5.9"
+    "version": "0.5.10"
+  },
+  "0.5.10": {
+    "x86_64_linux_musl": {
+      "url": "https://github.com/CycloneDX/cyclonedx-rust-cargo/releases/download/cargo-cyclonedx-0.5.10/cargo-cyclonedx-x86_64-unknown-linux-musl.tar.xz",
+      "etag": "0x8DF3F0E8B90889B",
+      "hash": "528be9dd99ae522c3ee14fb881fd0cbf51767e8f12b74248f437e6a66b1a3c1b",
+      "bin": "cargo-cyclonedx-x86_64-unknown-linux-musl/cargo-cyclonedx"
+    },
+    "x86_64_macos": {
+      "url": "https://github.com/CycloneDX/cyclonedx-rust-cargo/releases/download/cargo-cyclonedx-0.5.10/cargo-cyclonedx-x86_64-apple-darwin.tar.xz",
+      "etag": "0x8DF3F0E8B24316E",
+      "hash": "5f14c5123796e278a7a655686162ef7158421836658540270bddfc481e51641c",
+      "bin": "cargo-cyclonedx-x86_64-apple-darwin/cargo-cyclonedx"
+    },
+    "x86_64_windows": {
+      "url": "https://github.com/CycloneDX/cyclonedx-rust-cargo/releases/download/cargo-cyclonedx-0.5.10/cargo-cyclonedx-x86_64-pc-windows-msvc.zip",
+      "etag": "0x8DF3F0E8B1E1DD5",
+      "hash": "b0cdf58875a4b3c83e13fbea19eb6a85d63498aeab90f50456179173c370b3ce",
+      "bin": "cargo-cyclonedx.exe"
+    },
+    "aarch64_linux_gnu": {
+      "url": "https://github.com/CycloneDX/cyclonedx-rust-cargo/releases/download/cargo-cyclonedx-0.5.10/cargo-cyclonedx-aarch64-unknown-linux-gnu.tar.xz",
+      "etag": "0x8DF3F0E8AB130B8",
+      "hash": "6931b234914fa9be8686f46bd1ce71358b4be6d4cd3ce6b7082bec2313e59a8e",
+      "bin": "cargo-cyclonedx-aarch64-unknown-linux-gnu/cargo-cyclonedx"
+    },
+    "aarch64_macos": {
+      "url": "https://github.com/CycloneDX/cyclonedx-rust-cargo/releases/download/cargo-cyclonedx-0.5.10/cargo-cyclonedx-aarch64-apple-darwin.tar.xz",
+      "etag": "0x8DF3F0E8AC3B984",
+      "hash": "4c39e13494d51c9d7f63e2923e7afdb5648a7a806a9ed7684dbe3786d2e2d1da",
+      "bin": "cargo-cyclonedx-aarch64-apple-darwin/cargo-cyclonedx"
+    }
   },
   "0.5.9": {
     "x86_64_linux_musl": {
