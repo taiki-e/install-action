@@ -4,6 +4,20 @@
   "latest": {
     "version": "0.9.2"
   },
+  "0.10.0": {
+    "x86_64_linux_musl": {
+      "url": "https://github.com/bnjbvr/cargo-machete/releases/download/v0.10.0/cargo-machete-v0.10.0-x86_64-unknown-linux-musl.tar.gz",
+      "etag": "0x8DF4265CEF82972",
+      "hash": "a29820e830f3cbfadb176c5e5653803ca04a4afd6964fc7ebca2d08a485f10eb",
+      "bin": "cargo-machete-v0.10.0-x86_64-unknown-linux-musl/cargo-machete"
+    },
+    "x86_64_windows": {
+      "url": "https://github.com/bnjbvr/cargo-machete/releases/download/v0.10.0/cargo-machete-v0.10.0-x86_64-pc-windows-msvc.tar.gz",
+      "etag": "0x8DF4265CFB0F8D8",
+      "hash": "09fd19991fd91e472326d3e6ca6e180414c12044eb08061950ba4d6671fcd16f",
+      "bin": "cargo-machete-v0.10.0-x86_64-pc-windows-msvc/cargo-machete.exe"
+    }
+  },
   "0.9": {
     "version": "0.9.2"
   },
