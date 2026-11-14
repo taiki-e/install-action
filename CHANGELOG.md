@@ -10,6 +10,44 @@ Note: In this file, do not use the hard wrap in the middle of a sentence for com
 
 ## [Unreleased]
 
+## [2.90.4] - 2026-11-14
+
+- Update `yq@latest` to 4.54.3.
+
+- Update `vacuum@latest` to 0.40.1.
+
+- Update `uv@latest` to 0.13.8.
+
+- Update `typos@latest` to 1.52.2.
+
+- Update `tombi@latest` to 1.11.2.
+
+- Update `syft@latest` to 1.57.1.
+
+- Update `rafn@latest` to 0.1.7.
+
+- Update `osv-scanner@latest` to 2.7.1.
+
+- Update `mise@latest` to 2026.11.7.
+
+- Update `knope@latest` to 0.24.0.
+
+- Update `kingfisher@latest` to 2.18.1.
+
+- Update `kache@latest` to 2.1.1.
+
+- Update `grcov@latest` to 0.10.8.
+
+- Update `cargo-shear@latest` to 1.14.1.
+
+- Update `cargo-cyclonedx@latest` to 0.5.10.
+
+- Update `cargo-binstall@latest` to 1.27.0.
+
+- Update `cargo-audit@latest` to 0.23.0.
+
+- Update `biome@latest` to 2.6.7.
+
 ## [2.90.3] - 2026-11-08
 
 - Update `yq@latest` to 4.54.2.
@@ -8076,7 +8114,8 @@ Note: This release is considered a breaking change because installing on version
 
 Initial release
 
-[Unreleased]: https://github.com/taiki-e/install-action/compare/v2.90.3...HEAD
+[Unreleased]: https://github.com/taiki-e/install-action/compare/v2.90.4...HEAD
+[2.90.4]: https://github.com/taiki-e/install-action/compare/v2.90.3...v2.90.4
 [2.90.3]: https://github.com/taiki-e/install-action/compare/v2.90.2...v2.90.3
 [2.90.2]: https://github.com/taiki-e/install-action/compare/v2.90.1...v2.90.2
 [2.90.1]: https://github.com/taiki-e/install-action/compare/v2.90.0...v2.90.1
