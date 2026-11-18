@@ -3,6 +3,7 @@
   "license_markdown": "[MIT](https://github.com/bnjbvr/cargo-machete/blob/main/LICENSE.md)",
   "tag_prefix": "v",
   "rust_crate": "${package}",
+  "broken": ["0.10.0"],
   "asset_name": "${package}-v${version}-${rust_target}.tar.gz",
   "bin": "${package}-v${version}-${rust_target}/${package}${exe}",
   "platform": {
@@ -10,6 +11,7 @@
     "x86_64_macos": {},
     "x86_64_windows": {},
     "aarch64_linux_gnu": {},
+    "aarch64_linux_musl": {},
     "aarch64_macos": {}
   }
 }
