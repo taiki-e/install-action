@@ -2,13 +2,49 @@
   "rust_crate": null,
   "template": null,
   "latest": {
-    "version": "1.11.2"
+    "version": "1.11.3"
   },
   "1": {
-    "version": "1.11.2"
+    "version": "1.11.3"
   },
   "1.11": {
-    "version": "1.11.2"
+    "version": "1.11.3"
+  },
+  "1.11.3": {
+    "x86_64_linux_musl": {
+      "url": "https://github.com/tombi-toml/tombi/releases/download/v1.11.3/tombi-cli-1.11.3-x86_64-unknown-linux-musl.tar.gz",
+      "etag": "0x8DF440109ABFF78",
+      "hash": "36672279d05f093455f01fa5a2799a8cc2162a9195cbbb23f0f8d1107d0de497",
+      "bin": "tombi-cli-1.11.3-x86_64-unknown-linux-musl/tombi"
+    },
+    "x86_64_macos": {
+      "url": "https://github.com/tombi-toml/tombi/releases/download/v1.11.3/tombi-cli-1.11.3-x86_64-apple-darwin.tar.gz",
+      "etag": "0x8DF4401090C4389",
+      "hash": "642900713c3cb04adf45264117649e5f4731395b62cbafee8a9a2824fa479684",
+      "bin": "tombi-cli-1.11.3-x86_64-apple-darwin/tombi"
+    },
+    "x86_64_windows": {
+      "url": "https://github.com/tombi-toml/tombi/releases/download/v1.11.3/tombi-cli-1.11.3-x86_64-pc-windows-msvc.zip",
+      "etag": "0x8DF440109BE3EEB",
+      "hash": "b6b2d9e6419216aaa0b8e74a5c81c48335cb193d6eb87f50a7d77468bce10073"
+    },
+    "aarch64_linux_musl": {
+      "url": "https://github.com/tombi-toml/tombi/releases/download/v1.11.3/tombi-cli-1.11.3-aarch64-unknown-linux-musl.tar.gz",
+      "etag": "0x8DF4401090CB834",
+      "hash": "083614471a69e15f147ba68c96fe1e3ea02e8efe38d6bcdb4606b5a37ab8758a",
+      "bin": "tombi-cli-1.11.3-aarch64-unknown-linux-musl/tombi"
+    },
+    "aarch64_macos": {
+      "url": "https://github.com/tombi-toml/tombi/releases/download/v1.11.3/tombi-cli-1.11.3-aarch64-apple-darwin.tar.gz",
+      "etag": "0x8DF440108FC12D1",
+      "hash": "4e7daae9197910fe3717d241e5ca85cafd0f7f0ead988056fdd0b2cf2a447600",
+      "bin": "tombi-cli-1.11.3-aarch64-apple-darwin/tombi"
+    },
+    "aarch64_windows": {
+      "url": "https://github.com/tombi-toml/tombi/releases/download/v1.11.3/tombi-cli-1.11.3-aarch64-pc-windows-msvc.zip",
+      "etag": "0x8DF4401091C8473",
+      "hash": "621bf39b23546ecf9b2b4759f4203d6c5040a40ccd2abe17fa731999de1f81f0"
+    }
   },
   "1.11.2": {
     "x86_64_linux_musl": {
