@@ -2,13 +2,51 @@
   "rust_crate": null,
   "template": null,
   "latest": {
-    "version": "2.6.7"
+    "version": "2.6.8"
   },
   "2": {
-    "version": "2.6.7"
+    "version": "2.6.8"
   },
   "2.6": {
-    "version": "2.6.7"
+    "version": "2.6.8"
+  },
+  "2.6.8": {
+    "x86_64_linux_musl": {
+      "url": "https://github.com/biomejs/biome/releases/download/%40biomejs/biome%402.6.8/biome-linux-x64-musl",
+      "etag": "0x8DF4325B311BD4F",
+      "hash": "babd16e0725f9c1bc55fa090c11cacd248c29026f61b7fceb7f3d2177313c822",
+      "bin": "biome"
+    },
+    "x86_64_macos": {
+      "url": "https://github.com/biomejs/biome/releases/download/%40biomejs/biome%402.6.8/biome-darwin-x64",
+      "etag": "0x8DF4325B264C94E",
+      "hash": "81fe7e521e010117fe6ef85f96ec4609e316059e630850084ac49a2e5a7b665a",
+      "bin": "biome"
+    },
+    "x86_64_windows": {
+      "url": "https://github.com/biomejs/biome/releases/download/%40biomejs/biome%402.6.8/biome-win32-x64.exe",
+      "etag": "0x8DF4325B35F95F8",
+      "hash": "4328e7468693a259474b8d6810899fafa4af3ef7ceec446d1b98553c8f7b3ace",
+      "bin": "biome.exe"
+    },
+    "aarch64_linux_musl": {
+      "url": "https://github.com/biomejs/biome/releases/download/%40biomejs/biome%402.6.8/biome-linux-arm64-musl",
+      "etag": "0x8DF4325B33B2DE9",
+      "hash": "d0bffa012f42384fcd91bace89955724b6b29c4520d15d84d74caba76724afc5",
+      "bin": "biome"
+    },
+    "aarch64_macos": {
+      "url": "https://github.com/biomejs/biome/releases/download/%40biomejs/biome%402.6.8/biome-darwin-arm64",
+      "etag": "0x8DF4325B2E03229",
+      "hash": "16c2a522889a679768bafe463523aded030c51f17004cf5c579750422443fcc4",
+      "bin": "biome"
+    },
+    "aarch64_windows": {
+      "url": "https://github.com/biomejs/biome/releases/download/%40biomejs/biome%402.6.8/biome-win32-arm64.exe",
+      "etag": "0x8DF4325B2D481B5",
+      "hash": "361f0cd899096988c9da346d8cd16947ef8d7f75b324cd0e1c0ac8554bab4764",
+      "bin": "biome.exe"
+    }
   },
   "2.6.7": {
     "x86_64_linux_musl": {
