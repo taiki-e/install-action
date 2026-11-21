@@ -2,10 +2,69 @@
   "rust_crate": "kache",
   "template": null,
   "latest": {
-    "version": "2.1.1"
+    "version": "2.2.0"
   },
   "2": {
-    "version": "2.1.1"
+    "version": "2.2.0"
+  },
+  "2.2": {
+    "version": "2.2.0"
+  },
+  "2.2.0": {
+    "x86_64_linux_musl": {
+      "url": "https://github.com/kunobi-ninja/kache/releases/download/v2.2.0/kache-x86_64-unknown-linux-musl.tar.gz",
+      "etag": "0x8DF45BE0679F44D",
+      "hash": "eeb6e72b9f55d0e9d61cae0789ffa8f3ab8c33bef166b7af655cc0806447ebac",
+      "bin": [
+        "kache",
+        "kache-engine"
+      ]
+    },
+    "x86_64_macos": {
+      "url": "https://github.com/kunobi-ninja/kache/releases/download/v2.2.0/kache-x86_64-apple-darwin.tar.gz",
+      "etag": "0x8DF45BE0627EADD",
+      "hash": "cb76efd5c23023bff27cb2b7d787b139b18fd0c851dda84f45b5f71128c38b0e",
+      "bin": [
+        "kache",
+        "kache-engine"
+      ]
+    },
+    "x86_64_windows": {
+      "url": "https://github.com/kunobi-ninja/kache/releases/download/v2.2.0/kache-x86_64-pc-windows-msvc.zip",
+      "etag": "0x8DF45BE061BC388",
+      "hash": "83c460ddd9e4baa4aca20c9f8e0929dccb557605dc1c5d1d6fbb1e8465ae20b7",
+      "bin": [
+        "kache.exe",
+        "kache-engine.exe"
+      ]
+    },
+    "aarch64_linux_musl": {
+      "url": "https://github.com/kunobi-ninja/kache/releases/download/v2.2.0/kache-aarch64-unknown-linux-musl.tar.gz",
+      "etag": "0x8DF45BE04EF9BA8",
+      "hash": "99c74e9332a92e8f06d6fbdb077aff5365f364d5b5e6d69cf013fa616e887f22",
+      "bin": [
+        "kache",
+        "kache-engine"
+      ]
+    },
+    "aarch64_macos": {
+      "url": "https://github.com/kunobi-ninja/kache/releases/download/v2.2.0/kache-aarch64-apple-darwin.tar.gz",
+      "etag": "0x8DF45BE050D618A",
+      "hash": "8096492dc878796db6a79fef05f3e15ac8af450059c59db1f546eec00d81c3f5",
+      "bin": [
+        "kache",
+        "kache-engine"
+      ]
+    },
+    "aarch64_windows": {
+      "url": "https://github.com/kunobi-ninja/kache/releases/download/v2.2.0/kache-aarch64-pc-windows-msvc.zip",
+      "etag": "0x8DF45BE04F367FE",
+      "hash": "4055c5d2ee00de8c643f91ff25f19d85b748ae4a7fc133b67d2dd1d9810b04f1",
+      "bin": [
+        "kache.exe",
+        "kache-engine.exe"
+      ]
+    }
   },
   "2.1": {
     "version": "2.1.1"

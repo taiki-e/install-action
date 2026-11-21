@@ -2,10 +2,40 @@
   "rust_crate": "jaq",
   "template": null,
   "latest": {
-    "version": "3.1.2"
+    "version": "3.2.0"
   },
   "3": {
-    "version": "3.1.2"
+    "version": "3.2.0"
+  },
+  "3.2": {
+    "version": "3.2.0"
+  },
+  "3.2.0": {
+    "x86_64_linux_musl": {
+      "url": "https://github.com/01mf02/jaq/releases/download/v3.2.0/jaq-x86_64-unknown-linux-musl",
+      "etag": "0x8DF461B279C7C2E",
+      "hash": "3ae029d4af2f7392aa48fa87670651efc960250c9421acda8933c3661945925f"
+    },
+    "x86_64_macos": {
+      "url": "https://github.com/01mf02/jaq/releases/download/v3.2.0/jaq-x86_64-apple-darwin",
+      "etag": "0x8DF461B4E343430",
+      "hash": "e9406739e61b4dbe0eade99fc3a1f9e6260869332696167c52c7c9b97b690559"
+    },
+    "x86_64_windows": {
+      "url": "https://github.com/01mf02/jaq/releases/download/v3.2.0/jaq-x86_64-pc-windows-msvc.exe",
+      "etag": "0x8DF461B523A7B56",
+      "hash": "81db75319013c11236baf0f71f371f53e1b794e0a1333546e0fc96147822a7ad"
+    },
+    "aarch64_linux_gnu": {
+      "url": "https://github.com/01mf02/jaq/releases/download/v3.2.0/jaq-aarch64-unknown-linux-gnu",
+      "etag": "0x8DF461B4104E87F",
+      "hash": "9c2d8d8958413f4c8a6e13bcecf9ed70c719f6ba22deb36f1960ed5b8b999e60"
+    },
+    "aarch64_macos": {
+      "url": "https://github.com/01mf02/jaq/releases/download/v3.2.0/jaq-aarch64-apple-darwin",
+      "etag": "0x8DF461B50B258FA",
+      "hash": "646dccce6fc943852310dd457640c4abf3f837b0fb12417cb1240b8f384e7cce"
+    }
   },
   "3.1": {
     "version": "3.1.2"
