@@ -4,6 +4,38 @@
   "latest": {
     "version": "0.12.0"
   },
+  "0.13.0": {
+    "x86_64_linux_musl": {
+      "url": "https://github.com/uutils/coreutils/releases/download/0.13.0/coreutils-0.13.0-x86_64-unknown-linux-musl.tar.gz",
+      "etag": "0x8DF46ACE2ADF4B4",
+      "hash": "2f457e5cc3d29bf7b75de5bb2ef60dd6276d1df8b90694bd52b5ec818c738fa6",
+      "bin": "coreutils-0.13.0-x86_64-unknown-linux-musl/coreutils"
+    },
+    "x86_64_windows": {
+      "url": "https://github.com/uutils/coreutils/releases/download/0.13.0/coreutils-0.13.0-x86_64-pc-windows-msvc.zip",
+      "etag": "0x8DF46AE96F39788",
+      "hash": "a91c36e1abc911d47a835877f58bac9ac5ad00f01a1fb076d1012a2f39b4c8d0",
+      "bin": "coreutils-0.13.0-x86_64-pc-windows-msvc/coreutils.exe"
+    },
+    "aarch64_linux_musl": {
+      "url": "https://github.com/uutils/coreutils/releases/download/0.13.0/coreutils-0.13.0-aarch64-unknown-linux-musl.tar.gz",
+      "etag": "0x8DF46AD143EE5E4",
+      "hash": "cc92024aa19c6e2b874d9017ca27ca370428aabef5e856200d1164cecee3dbc3",
+      "bin": "coreutils-0.13.0-aarch64-unknown-linux-musl/coreutils"
+    },
+    "aarch64_windows": {
+      "url": "https://github.com/uutils/coreutils/releases/download/0.13.0/coreutils-0.13.0-aarch64-pc-windows-msvc.zip",
+      "etag": "0x8DF4691C282418A",
+      "hash": "ce8827a11efc8d05f0060b49b4c50a9a59cfa57d1a9a3ed0724b5ab0cb62a2f0",
+      "bin": "coreutils-0.13.0-aarch64-pc-windows-msvc/coreutils.exe"
+    },
+    "riscv64_linux_musl": {
+      "url": "https://github.com/uutils/coreutils/releases/download/0.13.0/coreutils-0.13.0-riscv64gc-unknown-linux-musl.tar.gz",
+      "etag": "0x8DF46ADE0D553B5",
+      "hash": "73a2efc837f9b5961a616a94ee213a81f8e8644050cf6a7572a11b870e6c3baa",
+      "bin": "coreutils-0.13.0-riscv64gc-unknown-linux-musl/coreutils"
+    }
+  },
   "0.12": {
     "version": "0.12.0"
   },
