@@ -7,6 +7,62 @@
   "2": {
     "version": "2.2.0"
   },
+  "2.3.0": {
+    "x86_64_linux_musl": {
+      "url": "https://github.com/kunobi-ninja/kache/releases/download/v2.3.0/kache-x86_64-unknown-linux-musl.tar.gz",
+      "etag": "0x8DF47FA4B92484E",
+      "hash": "60b6c507a1bfd396baba8670e0612feb5dda2c8460c8f02644328dde64359701",
+      "bin": [
+        "kache",
+        "kache-engine"
+      ]
+    },
+    "x86_64_macos": {
+      "url": "https://github.com/kunobi-ninja/kache/releases/download/v2.3.0/kache-x86_64-apple-darwin.tar.gz",
+      "etag": "0x8DF47FA4B54A31F",
+      "hash": "45e33861306133dfd970de7301ed1e560b2db18f999528e2416556064e3e3719",
+      "bin": [
+        "kache",
+        "kache-engine"
+      ]
+    },
+    "x86_64_windows": {
+      "url": "https://github.com/kunobi-ninja/kache/releases/download/v2.3.0/kache-x86_64-pc-windows-msvc.zip",
+      "etag": "0x8DF47FA4B76A1F1",
+      "hash": "07b723787880c0de128f6e9d1f52ee4f96948a574f108c574a4f58728daacf59",
+      "bin": [
+        "kache.exe",
+        "kache-engine.exe"
+      ]
+    },
+    "aarch64_linux_musl": {
+      "url": "https://github.com/kunobi-ninja/kache/releases/download/v2.3.0/kache-aarch64-unknown-linux-musl.tar.gz",
+      "etag": "0x8DF47FA4A6A41D6",
+      "hash": "c3f8dfeef93659eabbb00f7d58cdf882e33560ae61306bb784158ccfa7d02bd5",
+      "bin": [
+        "kache",
+        "kache-engine"
+      ]
+    },
+    "aarch64_macos": {
+      "url": "https://github.com/kunobi-ninja/kache/releases/download/v2.3.0/kache-aarch64-apple-darwin.tar.gz",
+      "etag": "0x8DF47FA4A4C541F",
+      "hash": "66a078e0cb85f80a80a365b61a646791d6fe27f2000832194cadf06deddd6438",
+      "bin": [
+        "kache",
+        "kache-engine"
+      ]
+    },
+    "aarch64_windows": {
+      "url": "https://github.com/kunobi-ninja/kache/releases/download/v2.3.0/kache-aarch64-pc-windows-msvc.zip",
+      "etag": "0x8DF47FA4A783BE1",
+      "hash": "943013b221d867742cb4dd2a8e157e323f9d0f2f3edf16daae98f47a57c61a4a",
+      "bin": [
+        "kache.exe",
+        "kache-engine.exe"
+      ]
+    }
+  },
   "2.2": {
     "version": "2.2.0"
   },
