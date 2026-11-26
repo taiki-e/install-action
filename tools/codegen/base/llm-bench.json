@@ -1,0 +1,35 @@
+{
+  "repository": "https://github.com/Mattbusel/llm-bench",
+  "license_markdown": "[MIT](https://github.com/Mattbusel/llm-bench/blob/main/LICENSE)",
+  "tag_prefix": "v",
+  "version_range": ">= 0.4.0",
+  "signing": {
+    "kind": {
+      "gh-attestation": {
+        "signer-workflow": "${repo}/.github/workflows/release.yml"
+      }
+    }
+  },
+  "platform": {
+    "x86_64_linux_musl": {
+      "asset_name": "${package}-v${version}-x86_64-unknown-linux-musl.tar.gz",
+      "bin": "${package}-v${version}-x86_64-unknown-linux-musl/${package}"
+    },
+    "x86_64_macos": {
+      "asset_name": "${package}-v${version}-x86_64-apple-darwin.tar.gz",
+      "bin": "${package}-v${version}-x86_64-apple-darwin/${package}"
+    },
+    "x86_64_windows": {
+      "asset_name": "${package}-v${version}-x86_64-pc-windows-msvc.zip",
+      "bin": "${package}-v${version}-x86_64-pc-windows-msvc/${package}${exe}"
+    },
+    "aarch64_linux_musl": {
+      "asset_name": "${package}-v${version}-aarch64-unknown-linux-musl.tar.gz",
+      "bin": "${package}-v${version}-aarch64-unknown-linux-musl/${package}"
+    },
+    "aarch64_macos": {
+      "asset_name": "${package}-v${version}-aarch64-apple-darwin.tar.gz",
+      "bin": "${package}-v${version}-aarch64-apple-darwin/${package}"
+    }
+  }
+}

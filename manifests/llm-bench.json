@@ -1,0 +1,53 @@
+{
+  "rust_crate": null,
+  "template": {
+    "x86_64_linux_musl": {
+      "url": "https://github.com/Mattbusel/llm-bench/releases/download/v${version}/llm-bench-v${version}-x86_64-unknown-linux-musl.tar.gz",
+      "bin": "llm-bench-v${version}-x86_64-unknown-linux-musl/llm-bench"
+    },
+    "x86_64_macos": {
+      "url": "https://github.com/Mattbusel/llm-bench/releases/download/v${version}/llm-bench-v${version}-x86_64-apple-darwin.tar.gz",
+      "bin": "llm-bench-v${version}-x86_64-apple-darwin/llm-bench"
+    },
+    "x86_64_windows": {
+      "url": "https://github.com/Mattbusel/llm-bench/releases/download/v${version}/llm-bench-v${version}-x86_64-pc-windows-msvc.zip",
+      "bin": "llm-bench-v${version}-x86_64-pc-windows-msvc/llm-bench.exe"
+    },
+    "aarch64_linux_musl": {
+      "url": "https://github.com/Mattbusel/llm-bench/releases/download/v${version}/llm-bench-v${version}-aarch64-unknown-linux-musl.tar.gz",
+      "bin": "llm-bench-v${version}-aarch64-unknown-linux-musl/llm-bench"
+    },
+    "aarch64_macos": {
+      "url": "https://github.com/Mattbusel/llm-bench/releases/download/v${version}/llm-bench-v${version}-aarch64-apple-darwin.tar.gz",
+      "bin": "llm-bench-v${version}-aarch64-apple-darwin/llm-bench"
+    }
+  },
+  "latest": {
+    "version": "0.4.0"
+  },
+  "0.4": {
+    "version": "0.4.0"
+  },
+  "0.4.0": {
+    "x86_64_linux_musl": {
+      "etag": "0x8DF43725A08EB8E",
+      "hash": "6e07749a771a97317d71b1a31bef937378f6594f6d5ae9d7bcbeba497c93d15e"
+    },
+    "x86_64_macos": {
+      "etag": "0x8DF437259B31DF6",
+      "hash": "dffb91daaf82571d5ffabda684434475fb845a96eac3ccb3da4ff2575bb8d46e"
+    },
+    "x86_64_windows": {
+      "etag": "0x8DF437259B0FD8D",
+      "hash": "1a6e7efb0cdfe6d269d72f445fde7a1b814796d1db763152ec7001380b4aa874"
+    },
+    "aarch64_linux_musl": {
+      "etag": "0x8DF437259BA65DF",
+      "hash": "68c42c51b6a9c6981a8ce22a54406e1b5056bcfbf6040bb5a0b8b4be0f7a7e00"
+    },
+    "aarch64_macos": {
+      "etag": "0x8DF437259BC11AE",
+      "hash": "3b63d2fcc4b07fadd79be27fc6fe525ad4545d47546d5473a19b16047d2e5ed6"
+    }
+  }
+}
