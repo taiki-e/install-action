@@ -114,7 +114,12 @@ fn main() {
 
         if let Some(crate_repository) = info.crate_.repository.clone() {
             if !crate_repository.to_lowercase().starts_with(&base_info.repository.to_lowercase()) {
-                panic!("repository {crate_repository} from crates.io differs from base manifest");
+                // iai-callgrind-runner has been renamed to gungraun and there is no release as iai-callgrind-runner since it.
+                if package != "iai-callgrind-runner" {
+                    panic!(
+                        "repository {crate_repository} from crates.io differs from base manifest"
+                    );
+                }
             }
         } else {
             panic!("crate metadata does not include a repository");
