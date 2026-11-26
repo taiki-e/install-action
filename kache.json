@@ -2,13 +2,69 @@
   "rust_crate": "kache",
   "template": null,
   "latest": {
-    "version": "2.3.0"
+    "version": "2.3.1"
   },
   "2": {
-    "version": "2.3.0"
+    "version": "2.3.1"
+  },
+  "2.4.0": {
+    "x86_64_linux_musl": {
+      "url": "https://github.com/kunobi-ninja/kache/releases/download/v2.4.0/kache-x86_64-unknown-linux-musl.tar.gz",
+      "etag": "0x8DF4BB34DAB4C1D",
+      "hash": "6dc5feb2fdcc982538869bc0d0f63ad0da2c8f1a2c22649e7707ff4eb4dbaab7",
+      "bin": [
+        "kache",
+        "kache-engine"
+      ]
+    },
+    "x86_64_macos": {
+      "url": "https://github.com/kunobi-ninja/kache/releases/download/v2.4.0/kache-x86_64-apple-darwin.tar.gz",
+      "etag": "0x8DF4BB34D4E5276",
+      "hash": "4e729f8836e669e33d60fcfaf4bd7db4806fe4a9feccb7bdaca47238445d70a3",
+      "bin": [
+        "kache",
+        "kache-engine"
+      ]
+    },
+    "x86_64_windows": {
+      "url": "https://github.com/kunobi-ninja/kache/releases/download/v2.4.0/kache-x86_64-pc-windows-msvc.zip",
+      "etag": "0x8DF4BB34D97654A",
+      "hash": "34c77d82e56d0d14509d5704255e8e05462e18fd5f919b5aa11bcaace3acfc3b",
+      "bin": [
+        "kache.exe",
+        "kache-engine.exe"
+      ]
+    },
+    "aarch64_linux_musl": {
+      "url": "https://github.com/kunobi-ninja/kache/releases/download/v2.4.0/kache-aarch64-unknown-linux-musl.tar.gz",
+      "etag": "0x8DF4BB34C4028C4",
+      "hash": "061e02232ba1b5f64a0bb3b8e1cdb97cd2dff12932a1522666e32671f8182aae",
+      "bin": [
+        "kache",
+        "kache-engine"
+      ]
+    },
+    "aarch64_macos": {
+      "url": "https://github.com/kunobi-ninja/kache/releases/download/v2.4.0/kache-aarch64-apple-darwin.tar.gz",
+      "etag": "0x8DF4BB34C34ACC6",
+      "hash": "547c95dc178d02d8db72a0b6217086dfc71d339640b072ccf9eece52a5f621f7",
+      "bin": [
+        "kache",
+        "kache-engine"
+      ]
+    },
+    "aarch64_windows": {
+      "url": "https://github.com/kunobi-ninja/kache/releases/download/v2.4.0/kache-aarch64-pc-windows-msvc.zip",
+      "etag": "0x8DF4BB34C500D9E",
+      "hash": "b54d2e5e87be600923ab3ea0695c7371f95842c8cd1ff5a25ee33be164407394",
+      "bin": [
+        "kache.exe",
+        "kache-engine.exe"
+      ]
+    }
   },
   "2.3": {
-    "version": "2.3.0"
+    "version": "2.3.1"
   },
   "2.3.1": {
     "x86_64_linux_musl": {
