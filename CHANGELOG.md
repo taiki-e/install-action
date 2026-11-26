@@ -10,6 +10,8 @@ Note: In this file, do not use the hard wrap in the middle of a sentence for com
 
 ## [Unreleased]
 
+## [2.90.11] - 2026-11-26
+
 - Update `vacuum@latest` to 0.43.0.
 
 - Update `uv@latest` to 0.13.10.
@@ -8212,7 +8214,8 @@ Note: This release is considered a breaking change because installing on version
 
 Initial release
 
-[Unreleased]: https://github.com/taiki-e/install-action/compare/v2.90.10...HEAD
+[Unreleased]: https://github.com/taiki-e/install-action/compare/v2.90.11...HEAD
+[2.90.11]: https://github.com/taiki-e/install-action/compare/v2.90.10...v2.90.11
 [2.90.10]: https://github.com/taiki-e/install-action/compare/v2.90.9...v2.90.10
 [2.90.9]: https://github.com/taiki-e/install-action/compare/v2.90.8...v2.90.9
 [2.90.8]: https://github.com/taiki-e/install-action/compare/v2.90.7...v2.90.8
