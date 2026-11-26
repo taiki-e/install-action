@@ -137,9 +137,6 @@ case "$(uname -s)" in
     ;;
   Darwin)
     host_os=macos
-    if [[ "${runner}" == 'macos-15-intel' ]]; then
-      incompat_tools+=(cargo-about cargo-deny cargo-rdme cargo-sort martin release-plz) # no prebuilt binary
-    fi
     ;;
   MINGW* | MSYS* | CYGWIN* | Windows_NT) host_os=windows ;;
   *) bail "unrecognized OS type '$(uname -s)'" ;;
@@ -175,7 +172,12 @@ for manifest in tools/codegen/base/*.json; do
       fi
       ;;
     *)
-      if [[ "$(jq -r --arg p "x86_64_${host_os}" '.platform[$p]' "${manifest}")" == "null" ]] && [[ "$(jq -r --arg p "${host_arch}_${host_os}" '.platform[$p]' "${manifest}")" == "null" ]]; then
+      if [[ "${host_os}" == "macos" && "${runner}" == "macos-15-intel" ]]; then
+        has_binary=$(jq '.[.latest.version].x86_64_macos != null' "manifests/${tool_name}.json")
+        if [[ "${has_binary}" != "true" ]]; then
+          continue
+        fi
+      elif [[ "$(jq -r --arg p "x86_64_${host_os}" '.platform[$p]' "${manifest}")" == "null" ]] && [[ "$(jq -r --arg p "${host_arch}_${host_os}" '.platform[$p]' "${manifest}")" == "null" ]]; then
         continue
       fi
       ;;
