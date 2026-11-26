@@ -2,23 +2,23 @@
   "rust_crate": "iai-callgrind-runner",
   "template": {
     "x86_64_linux_musl": {
-      "url": "https://github.com/iai-callgrind/iai-callgrind/releases/download/v${version}/iai-callgrind-runner-v${version}-x86_64-unknown-linux-musl.tar.gz",
+      "url": "https://github.com/gungraun/gungraun/releases/download/v${version}/iai-callgrind-runner-v${version}-x86_64-unknown-linux-musl.tar.gz",
       "bin": "iai-callgrind-runner-v${version}-x86_64-unknown-linux-musl/iai-callgrind-runner"
     },
     "aarch64_linux_gnu": {
-      "url": "https://github.com/iai-callgrind/iai-callgrind/releases/download/v${version}/iai-callgrind-runner-v${version}-aarch64-unknown-linux-gnu.tar.gz",
+      "url": "https://github.com/gungraun/gungraun/releases/download/v${version}/iai-callgrind-runner-v${version}-aarch64-unknown-linux-gnu.tar.gz",
       "bin": "iai-callgrind-runner-v${version}-aarch64-unknown-linux-gnu/iai-callgrind-runner"
     },
     "powerpc64le_linux_gnu": {
-      "url": "https://github.com/iai-callgrind/iai-callgrind/releases/download/v${version}/iai-callgrind-runner-v${version}-powerpc64le-unknown-linux-gnu.tar.gz",
+      "url": "https://github.com/gungraun/gungraun/releases/download/v${version}/iai-callgrind-runner-v${version}-powerpc64le-unknown-linux-gnu.tar.gz",
       "bin": "iai-callgrind-runner-v${version}-powerpc64le-unknown-linux-gnu/iai-callgrind-runner"
     },
     "riscv64_linux_gnu": {
-      "url": "https://github.com/iai-callgrind/iai-callgrind/releases/download/v${version}/iai-callgrind-runner-v${version}-riscv64gc-unknown-linux-gnu.tar.gz",
+      "url": "https://github.com/gungraun/gungraun/releases/download/v${version}/iai-callgrind-runner-v${version}-riscv64gc-unknown-linux-gnu.tar.gz",
       "bin": "iai-callgrind-runner-v${version}-riscv64gc-unknown-linux-gnu/iai-callgrind-runner"
     },
     "s390x_linux_gnu": {
-      "url": "https://github.com/iai-callgrind/iai-callgrind/releases/download/v${version}/iai-callgrind-runner-v${version}-s390x-unknown-linux-gnu.tar.gz",
+      "url": "https://github.com/gungraun/gungraun/releases/download/v${version}/iai-callgrind-runner-v${version}-s390x-unknown-linux-gnu.tar.gz",
       "bin": "iai-callgrind-runner-v${version}-s390x-unknown-linux-gnu/iai-callgrind-runner"
     }
   },
